@@ -1,0 +1,54 @@
+{
+  "schema": "arp.protocol.v1",
+  "seed": 20261014,
+  "n_boot": 1000,
+  "tie_epsilon": 0.01,
+  "denominator_epsilon": 1e-12,
+  "drop": [
+    "absolute",
+    "relative"
+  ],
+  "floor": [
+    false,
+    true
+  ],
+  "headroom": [
+    "none",
+    "raw_family",
+    "corrected_family"
+  ],
+  "rho": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "parse_fail": [
+    "wrong",
+    "exclude"
+  ],
+  "owa": "Descending adjacent-edge gaps; two edges use [rho,1-rho], one edge uses [1].",
+  "parse_exclude": "Common valid-unit intersection within each ladder, including all five paraphrases; recompute floors on the same units.",
+  "equivalence": "First fold algebraically identical functions with identical guard domains; then fold empirically identical per-axis vectors and eligibility masks on each ledger/bootstrap draw, tolerance 1e-12. Report both structural and observed class counts.",
+  "training": {
+    "steps": 1000,
+    "r": 16,
+    "alpha": 32,
+    "lr": 0.0001,
+    "gradient_accumulation": 1,
+    "top_k": 50,
+    "kd_temperature": 1.0,
+    "kd_weight": 0.5,
+    "max_response_tokens": 128,
+    "seed": 20261014
+  },
+  "implementation_supplements": [
+    "Explicit headroom grid",
+    "Two-edge OWA convention",
+    "Fractional tie credit within delta_tie",
+    "Paired parse exclusion",
+    "Top-50 plus tail-bucket KL, mixed equally with teacher-response CE",
+    "Independent training proxies require approval"
+  ]
+}

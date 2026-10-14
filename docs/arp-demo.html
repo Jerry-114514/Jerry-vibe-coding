@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ARP 能力轴量尺演示</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page: light-dark(#f5f6f2, #101412);
+      --surface: light-dark(#ffffff, #191e1b);
+      --surface-soft: light-dark(#f0f3ef, #202723);
+      --text: light-dark(#18221d, #edf2ee);
+      --muted: light-dark(#5f6c64, #aab7af);
+      --line: light-dark(#dce4dd, #343e38);
+      --accent: light-dark(#186c50, #70d4a7);
+      --accent-soft: light-dark(#e5f3eb, #203a2f);
+      --warning: light-dark(#8a5414, #f1c176);
+      --warning-soft: light-dark(#fff3df, #3a2d1c);
+      --axis-1: light-dark(#087f5b, #70d4a7);
+      --axis-2: light-dark(#2867b2, #83b8ff);
+      --axis-3: light-dark(#8158a8, #c6a1f0);
+      --axis-4: light-dark(#a76c13, #f1c176);
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font: 400 15px/1.5 var(--font);
+    }
+    .shell { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 38px 0 56px; }
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 12px; letter-spacing: .11em; text-transform: uppercase; }
+    .brand-mark { width: 10px; height: 10px; border-radius: 3px; background: var(--accent); transform: rotate(45deg); }
+    .demo-tag { color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 6px 11px; font-size: 12px; white-space: nowrap; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin-bottom: 10px; font-size: clamp(30px, 4vw, 44px); line-height: 1.12; letter-spacing: -.035em; font-weight: 500; }
+    .lede { max-width: 790px; color: var(--muted); margin-bottom: 26px; }
+    .section-title { margin-bottom: 4px; font-size: 18px; font-weight: 500; }
+    .section-note { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+    .input-panel { margin-bottom: 22px; }
+    .axis-list { display: grid; gap: 14px; }
+    .axis-input-row { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .axis-input-row:last-child { padding-bottom: 0; border-bottom: 0; }
+    .axis-name { display: flex; align-items: center; gap: 9px; margin-bottom: 9px; font-weight: 500; }
+    .axis-dot { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: var(--axis-color); }
+    .axis-fields { display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: 10px; }
+    .field { min-width: 0; display: grid; gap: 5px; }
+    .field label { color: var(--muted); font-size: 12px; }
+    .field input {
+      width: 100%; min-width: 0; padding: 8px 9px;
+      border: 1px solid var(--line); border-radius: 8px;
+      background: var(--page); color: var(--text); font: inherit; font-variant-numeric: tabular-nums;
+    }
+    .field input:focus-visible, input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .control-row { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--line); }
+    .range-wrap { flex: 1 1 310px; max-width: 560px; }
+    .range-label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 5px; }
+    .range-label label { font-weight: 500; }
+    output, .number { font-variant-numeric: tabular-nums; }
+    input[type="range"] { width: 100%; accent-color: var(--accent); }
+    .control-hint { color: var(--muted); font-size: 12px; margin: 5px 0 0; }
+    .model-note { color: var(--muted); font-size: 12px; max-width: 360px; margin: 0; }
+    .results { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr); gap: 22px; align-items: start; }
+    .result-main, .result-side { min-width: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 16px 0 22px; }
+    .stat { background: var(--surface-soft); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+    .stat-label { color: var(--muted); font-size: 12px; }
+    .stat-value { display: block; margin-top: 2px; font-size: 22px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    .stat-detail { color: var(--muted); font-size: 11px; }
+    .profile-list { display: grid; gap: 12px; margin: 12px 0 16px; }
+    .profile-row { display: grid; grid-template-columns: minmax(130px, 1.05fr) minmax(75px, 1fr) 48px; align-items: center; gap: 10px; }
+    .profile-label { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .profile-name { overflow-wrap: anywhere; }
+    .track { height: 10px; border-radius: 999px; overflow: hidden; background: var(--surface-soft); }
+    .fill { height: 100%; border-radius: inherit; background: var(--axis-color); min-width: 0; }
+    .profile-value { text-align: right; font-variant-numeric: tabular-nums; }
+    .profile-caption { color: var(--muted); font-size: 12px; margin-bottom: 0; }
+    .winner-callout { background: var(--accent-soft); border-radius: 11px; padding: 12px 14px; margin-top: 16px; }
+    .winner-callout strong { color: var(--accent); font-weight: 500; }
+    .winner-callout p { margin: 0; }
+    .noise-block { padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--line); }
+    .noise-values { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .noise-item { padding: 10px 12px; background: var(--surface-soft); border-radius: 10px; }
+    .noise-item span { display: block; color: var(--muted); font-size: 12px; }
+    .noise-item strong { display: block; font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; }
+    .noise-item small { color: var(--muted); font-size: 11px; }
+    .matrix-panel { margin-top: 22px; }
+    .table-wrap { width: 100%; overflow-x: auto; }
+    table { width: 100%; min-width: 720px; border-collapse: collapse; text-align: left; font-variant-numeric: tabular-nums; }
+    th, td { padding: 10px 9px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    thead th { color: var(--muted); font-size: 12px; font-weight: 500; }
+    tbody th { min-width: 175px; font-weight: 400; }
+    td { text-align: right; white-space: nowrap; }
+    .metric-unit { display: block; color: var(--muted); font-size: 11px; font-weight: 400; }
+    .worst { background: var(--accent-soft); color: var(--text); border-radius: 6px; }
+    .worst-tag { display: block; color: var(--accent); font-size: 10px; }
+    .invalid { color: var(--warning); }
+    .warning { margin: 14px 0 0; padding: 11px 13px; border-radius: 10px; color: var(--warning); background: var(--warning-soft); font-size: 12px; }
+    .footnote { margin: 18px 2px 0; color: var(--muted); font-size: 12px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+    .legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--axis-color); }
+    @media (max-width: 820px) {
+      .results { grid-template-columns: 1fr; }
+      .result-side { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+      .noise-block { padding-top: 0; margin-top: 0; border-top: 0; }
+    }
+    @media (max-width: 540px) {
+      .shell { width: min(100% - 24px, 1120px); padding-top: 24px; }
+      .masthead { margin-bottom: 22px; }
+      .panel { padding: 16px; border-radius: 14px; }
+      .axis-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .result-side { display: block; }
+      .noise-block { padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--line); }
+      .profile-row { grid-template-columns: minmax(118px, 1.2fr) minmax(50px, 1fr) 42px; gap: 7px; }
+      .profile-name { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="masthead">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>ARP · Argmax Retention Profiling</span></div>
+      <span class="demo-tag">合成示例数据</span>
+    </div>
+    <header>
+      <h1>预算该投向哪条能力轴？</h1>
+      <p class="lede">调整小模型与大模型的分数、瞎猜基线和题量，观察“退化最严重”的轴会不会随着评测量尺改变。这里演示的是选轴稳定性，不是真实模型评测结果。</p>
+    </header>
+
+    <section class="panel input-panel" aria-labelledby="inputs-title">
+      <h2 class="section-title" id="inputs-title">输入一组能力画像</h2>
+      <p class="section-note">分数范围为 0–1。小模型相对大模型掉分越多，退化越严重。</p>
+      <div id="axisInputs" class="axis-list"></div>
+      <div class="control-row">
+        <div class="range-wrap">
+          <div class="range-label"><label for="sampleSize">每条轴的题量 n</label><output id="sampleSizeLabel" for="sampleSize">800 题</output></div>
+          <input id="sampleSize" type="range" min="100" max="2000" step="100" value="800">
+          <p class="control-hint">只影响下方的测量噪声模拟；ARP 正式分析应使用逐题配对重采样。</p>
+        </div>
+        <p class="model-note">噪声演示采用独立二项分布近似。各轴题量相同、题目相互独立，是为了直观看到题量变化的影响。</p>
+      </div>
+    </section>
+
+    <section class="results" id="liveResults" aria-live="polite">
+      <div class="panel result-main">
+        <h2 class="section-title">量尺稳定度画像</h2>
+        <p class="section-note">每把互不相同的量尺等权计一次；并列差距不超过 0.01 时平分该次计数。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-label">量尺翻转率 Fscale</span><strong class="stat-value" id="fScale">—</strong><span class="stat-detail">1 − 最高 pif</span></div>
+          <div class="stat"><span class="stat-label">有效量尺</span><strong class="stat-value" id="scaleCount">—</strong><span class="stat-detail" id="scaleDetail">去重后统计</span></div>
+          <div class="stat"><span class="stat-label">第一候选轴</span><strong class="stat-value" id="topAxis">—</strong><span class="stat-detail" id="topDetail">最多量尺下排第一</span></div>
+        </div>
+        <h3 class="section-title">最差轴保持率 pif</h3>
+        <div id="profileList" class="profile-list"></div>
+        <p class="profile-caption">pif 表示该轴在多少比例的有效量尺下排在退化首位。它描述对这组量尺的稳定度，不是模型能力“真实最差”的概率。</p>
+        <div class="winner-callout" id="decisionCallout"></div>
+        <div class="legend" id="axisLegend"></div>
+      </div>
+
+      <aside class="panel result-side" aria-label="测量噪声模拟">
+        <div>
+          <h2 class="section-title">量尺效应与抽样噪声</h2>
+          <p class="section-note">量尺效应来自不同计分方法；噪声效应来自有限题量。</p>
+          <div class="noise-values">
+            <div class="noise-item"><span>Fscale</span><strong id="noiseFScale">—</strong><small>跨量尺的选轴变化</small></div>
+            <div class="noise-item"><span>Fnoise（模拟）</span><strong id="fNoise">—</strong><small>绝对掉分下的抽样波动</small></div>
+          </div>
+        </div>
+        <p class="model-note">Fnoise 是 500 次正态近似模拟的结果，不等同于逐题 bootstrap。正式比较应基于缓存的逐题结果，并对 Fscale − Fnoise 做配对区间估计。</p>
+      </aside>
+    </section>
+
+    <section class="panel matrix-panel" aria-labelledby="matrix-title">
+      <h2 class="section-title" id="matrix-title">各量尺下的退化值</h2>
+      <p class="section-note">底线校正后再做余量归一，会与直接余量归一完全相同；重复的退化向量会折叠成同一等价类。</p>
+      <div class="table-wrap">
+        <table>
+          <thead id="matrixHead"></thead>
+          <tbody id="matrixBody"></tbody>
+        </table>
+      </div>
+      <p id="validityWarning" class="warning" hidden></p>
+    </section>
+
+    <p class="footnote">这份演示聚焦于 ARP 的“量尺是否会改变 argmax”部分。它用合成分数展示机制，不代表文稿中的实验结果，也不包含蒸馏训练臂。</p>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const axisSeed = [
+        { id: "pope", name: "物体幻觉（POPE）", short: "物体幻觉", color: "var(--axis-1)", small: 0.62, big: 0.76, chance: 0.50, upper: 0.82 },
+        { id: "grounding", name: "细粒度定位", short: "细粒度定位", color: "var(--axis-2)", small: 0.44, big: 0.64, chance: 0.02, upper: 0.70 },
+        { id: "consistency", name: "改写一致性", short: "改写一致性", color: "var(--axis-3)", small: 0.52, big: 0.66, chance: 0.20, upper: 0.74 },
+        { id: "reasoning", name: "多步推理", short: "多步推理", color: "var(--axis-4)", small: 0.60, big: 0.74, chance: 0.25, upper: 0.80 }
+      ];
+      const tieEpsilon = 0.01;
+      const iterations = 500;
+      const axisHost = document.getElementById("axisInputs");
+      const sampleInput = document.getElementById("sampleSize");
+
+      function makeField(axis, field, label, value) {
+        const id = field + "-" + axis.id;
+        return '<div class="field"><label for="' + id + '">' + label + '</label><input id="' + id + '" type="number" min="0" max="1" step="0.01" value="' + value.toFixed(2) + '" data-axis="' + axis.id + '" data-field="' + field + '" aria-label="' + axis.name + " " + label + '"></div>';
+      }
+
+      axisHost.innerHTML = axisSeed.map(function (axis) {
+        return '<div class="axis-input-row" style="--axis-color:' + axis.color + '">' +
+          '<div class="axis-name"><span class="axis-dot" aria-hidden="true"></span>' + axis.name + '</div>' +
+          '<div class="axis-fields">' +
+          makeField(axis, "small", "小模型", axis.small) +
+          makeField(axis, "big", "大模型", axis.big) +
+          makeField(axis, "chance", "基线 c", axis.chance) +
+          makeField(axis, "upper", "上限 u", axis.upper) +
+          '</div></div>';
+      }).join("");
+
+      const rulers = [
+        { label: "绝对掉分", unit: "分数点", value: function (a) { return a.big - a.small; } },
+        { label: "底线校正", unit: "相对基线", value: function (a) { return a.chance < 1 ? (a.big - a.small) / (1 - a.chance) : null; } },
+        { label: "相对掉分", unit: "相对小模型分数", value: function (a) { return a.small > 0 ? (a.big - a.small) / a.small : null; } },
+        { label: "校正后相对掉分", unit: "相对基线能力", value: function (a) { return a.small > a.chance ? (a.big - a.small) / (a.small - a.chance) : null; } },
+        { label: "余量归一", unit: "相对剩余余量", value: function (a) { return a.upper > a.small ? (a.big - a.small) / (a.upper - a.small) : null; } },
+        { label: "底线校正后余量归一", unit: "与余量归一等价", value: function (a) { return a.chance < 1 && a.upper > a.small ? (a.big - a.small) / (a.upper - a.small) : null; } }
+      ];
+
+      function clamp(value, low, high) { return Math.min(high, Math.max(low, value)); }
+      function getValues() {
+        return axisSeed.map(function (axis) {
+          const result = { id: axis.id, name: axis.name, short: axis.short, color: axis.color };
+          ["small", "big", "chance", "upper"].forEach(function (field) {
+            const element = document.getElementById(field + "-" + axis.id);
+            const raw = element.value.trim();
+            const entered = raw === "" ? NaN : Number(raw);
+            const fallback = axis[field];
+            const valid = Number.isFinite(entered) && entered >= 0 && entered <= 1;
+            result[field] = valid ? entered : fallback;
+            element.setAttribute("aria-invalid", valid ? "false" : "true");
+          });
+          return result;
+        });
+      }
+      function metricVector(ruler, axes) {
+        return axes.map(function (axis) {
+          const value = ruler.value(axis);
+          return Number.isFinite(value) ? value : null;
+        });
+      }
+      function sameVector(left, right) {
+        return left.every(function (value, index) {
+          const other = right[index];
+          if (value === null || other === null) return value === other;
+          return Math.abs(value - other) < 1e-10;
+        });
+      }
+      function getRulerClasses(axes) {
+        const classes = [];
+        rulers.forEach(function (ruler) {
+          const vector = metricVector(ruler, axes);
+          const existing = classes.find(function (candidate) { return sameVector(candidate.values, vector); });
+          if (existing) {
+            existing.labels.push(ruler.label);
+          } else {
+            classes.push({ labels: [ruler.label], unit: ruler.unit, values: vector });
+          }
+        });
+        return classes;
+      }
+      function winners(values) {
+        const valid = values.map(function (value, index) { return { value: value, index: index }; })
+          .filter(function (entry) { return Number.isFinite(entry.value); });
+        if (!valid.length) return [];
+        const max = Math.max.apply(null, valid.map(function (entry) { return entry.value; }));
+        return valid.filter(function (entry) { return max - entry.value <= tieEpsilon; }).map(function (entry) { return entry.index; });
+      }
+      function accumulateWins(values, counts) {
+        const winning = winners(values);
+        if (!winning.length) return false;
+        const share = 1 / winning.length;
+        winning.forEach(function (index) { counts[index] += share; });
+        return true;
+      }
+      function shareCounts(classes) {
+        const counts = axisSeed.map(function () { return 0; });
+        const valid = classes.filter(function (item) { return item.values.every(Number.isFinite); });
+        valid.forEach(function (item) { accumulateWins(item.values, counts); });
+        const shares = counts.map(function (count) { return valid.length ? count / valid.length : 0; });
+        return { counts: counts, shares: shares, valid: valid };
+      }
+      function formatScore(value) {
+        if (!Number.isFinite(value)) return "—";
+        const places = Math.abs(value) >= 10 ? 1 : 3;
+        return value.toFixed(places);
+      }
+      function formatPercent(value) { return (value * 100).toFixed(0) + "%"; }
+      function renderMatrix(classes, axes) {
+        const head = document.getElementById("matrixHead");
+        const body = document.getElementById("matrixBody");
+        head.innerHTML = "<tr><th scope=\"col\">量尺</th>" + axes.map(function (axis) {
+          return '<th scope="col" style="color:' + axis.color + '">' + axis.short + '</th>';
+        }).join("") + "</tr>";
+        body.innerHTML = classes.map(function (item) {
+          const validValues = item.values.filter(Number.isFinite);
+          const max = validValues.length ? Math.max.apply(null, validValues) : NaN;
+          const labels = item.labels.join(" ≡ ");
+          const cells = item.values.map(function (value) {
+            if (!Number.isFinite(value)) return '<td class="invalid">不可辨识</td>';
+            const isWorst = max - value <= tieEpsilon;
+            return '<td' + (isWorst ? ' class="worst"' : '') + '>' + formatScore(value) + (isWorst ? '<span class="worst-tag">最差</span>' : '') + '</td>';
+          }).join("");
+          return '<tr><th scope="row">' + labels + '<span class="metric-unit">' + item.unit + '</span></th>' + cells + '</tr>';
+        }).join("");
+      }
+      function hashSeed(text) {
+        let hash = 2166136261;
+        for (let i = 0; i < text.length; i += 1) {
+          hash ^= text.charCodeAt(i);
+          hash = Math.imul(hash, 16777619);
+        }
+        return hash >>> 0;
+      }
+      function makeRandom(seed) {
+        let state = seed >>> 0;
+        return function () {
+          state += 0x6D2B79F5;
+          let value = state;
+          value = Math.imul(value ^ (value >>> 15), value | 1);
+          value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+          return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      function normal(random) {
+        let first = random();
+        if (first === 0) first = 1e-12;
+        return Math.sqrt(-2 * Math.log(first)) * Math.cos(2 * Math.PI * random());
+      }
+      function simulateNoise(axes, sampleSize) {
+        const counts = axes.map(function () { return 0; });
+        let random = makeRandom(hashSeed(JSON.stringify(axes.map(function (a) {
+          return [a.small, a.big];
+        })) + "|" + sampleSize));
+        for (let run = 0; run < iterations; run += 1) {
+          const deltas = axes.map(function (axis) {
+            const smallSe = Math.sqrt(Math.max(0, axis.small * (1 - axis.small) / sampleSize));
+            const bigSe = Math.sqrt(Math.max(0, axis.big * (1 - axis.big) / sampleSize));
+            const smallDraw = clamp(axis.small + normal(random) * smallSe, 0, 1);
+            const bigDraw = clamp(axis.big + normal(random) * bigSe, 0, 1);
+            return bigDraw - smallDraw;
+          });
+          accumulateWins(deltas, counts);
+        }
+        const proportions = counts.map(function (count) { return count / iterations; });
+        return 1 - Math.max.apply(null, proportions);
+      }
+      function render() {
+        const axes = getValues();
+        const sampleSize = Number(sampleInput.value);
+        const classes = getRulerClasses(axes);
+        const profile = shareCounts(classes);
+        const shares = profile.shares;
+        const maxShare = profile.valid.length ? Math.max.apply(null, shares) : 0;
+        const scaleFlip = profile.valid.length ? 1 - maxShare : NaN;
+        const leaderIndices = profile.valid.length ? shares.map(function (share, index) { return Math.abs(share - maxShare) < 1e-10 ? index : -1; }).filter(function (index) { return index >= 0; }) : [];
+        const noiseFlip = simulateNoise(axes, sampleSize);
+
+        document.getElementById("sampleSizeLabel").textContent = sampleSize + " 题";
+        document.getElementById("fScale").textContent = Number.isFinite(scaleFlip) ? formatPercent(scaleFlip) : "—";
+        document.getElementById("scaleCount").textContent = profile.valid.length + " / " + classes.length;
+        document.getElementById("scaleDetail").textContent = classes.length + " 个去重等价类";
+        document.getElementById("topAxis").textContent = leaderIndices.length ? leaderIndices.map(function (index) { return axes[index].short; }).join(" / ") : "无";
+        document.getElementById("topDetail").textContent = leaderIndices.length ? "pif = " + formatPercent(maxShare) : "没有四轴都有效的量尺";
+        document.getElementById("noiseFScale").textContent = Number.isFinite(scaleFlip) ? formatPercent(scaleFlip) : "—";
+        document.getElementById("fNoise").textContent = formatPercent(noiseFlip);
+
+        const profileList = document.getElementById("profileList");
+        if (!profile.valid.length) {
+          profileList.innerHTML = '<p class="invalid">当前没有四轴都可计算的量尺。请调整分数、基线或上限。</p>';
+        } else {
+          profileList.innerHTML = axes.map(function (axis, index) {
+            const pct = shares[index] * 100;
+            return '<div class="profile-row" style="--axis-color:' + axis.color + '">' +
+              '<div class="profile-label"><span class="axis-dot" aria-hidden="true"></span><span class="profile-name">' + axis.short + '</span></div>' +
+              '<div class="track" role="progressbar" aria-label="' + axis.short + ' 最差轴保持率" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct.toFixed(0) + '"><div class="fill" style="width:' + pct.toFixed(2) + '%"></div></div>' +
+              '<span class="profile-value">' + formatPercent(shares[index]) + '</span></div>';
+          }).join("");
+        }
+
+        const callout = document.getElementById("decisionCallout");
+        if (!leaderIndices.length) {
+          callout.innerHTML = "<p>当前设置无法给出共同有效的跨轴排序。</p>";
+        } else if (leaderIndices.length > 1) {
+          callout.innerHTML = "<p>当前有并列候选轴：<strong>" + leaderIndices.map(function (index) { return axes[index].short; }).join("、") + "</strong>。这组示例不支持单轴押注。</p>";
+        } else {
+          const axis = axes[leaderIndices[0]];
+          callout.innerHTML = '<p>这组量尺中，<strong>' + axis.short + '</strong> 最常排在退化首位（' + formatPercent(maxShare) + '）。文稿提出用这个画像筛选预算候选；是否集中投放还需要训练实验验证。</p>';
+        }
+        document.getElementById("axisLegend").innerHTML = axes.map(function (axis) {
+          return '<span style="--axis-color:' + axis.color + '"><i aria-hidden="true"></i>' + axis.short + '</span>';
+        }).join("");
+        renderMatrix(classes, axes);
+
+        const invalidClasses = classes.length - profile.valid.length;
+        const warning = document.getElementById("validityWarning");
+        if (invalidClasses > 0) {
+          warning.hidden = false;
+          warning.textContent = invalidClasses + " 个等价类因分母为零、分数落在瞎猜基线以下，或超过上限而不可辨识。本演示只在四条轴都有效的类上计算 pif，并显示有效类数量。";
+        } else {
+          warning.hidden = true;
+          warning.textContent = "";
+        }
+      }
+
+      axisHost.addEventListener("input", render);
+      axisHost.addEventListener("change", function (event) {
+        const element = event.target;
+        if (!element.matches("[data-field]")) return;
+        const axis = axisSeed.find(function (item) { return item.id === element.dataset.axis; });
+        if (!axis) return;
+        const value = Number(element.value);
+        element.value = element.value.trim() !== "" && Number.isFinite(value) && value >= 0 && value <= 1
+          ? value.toFixed(2)
+          : axis[element.dataset.field].toFixed(2);
+        render();
+      });
+      sampleInput.addEventListener("input", render);
+      render();
+    }());
+  </script>
+</body>
+</html>

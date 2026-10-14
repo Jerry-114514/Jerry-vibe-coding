@@ -1,0 +1,17 @@
+# Keep the AutoDL image's torch==2.8.0+cu128 / torchvision==0.23.0+cu128.
+transformers==4.51.3
+accelerate==1.6.0
+peft==0.15.2
+huggingface_hub==0.30.2
+timm==1.0.15
+einops==0.8.1
+sentencepiece==0.2.0
+protobuf==5.29.4
+numpy==2.3.2
+matplotlib==3.10.3
+pandas==2.2.3
+pyarrow==19.0.1
+Pillow==11.2.1
+requests==2.32.3
+psutil==7.0.0
+decord==0.6.0

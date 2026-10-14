@@ -1,0 +1,9 @@
+# The stage-A lock hashes original bytes: never normalize its frozen inputs.
+data/** -text
+requirements.txt -text
+tools/prepare_phase_a.py -text
+tools/make_paraphrases.py -text
+tools/refer_api.py -text
+tools/run_degenerate.py -text
+tools/scoring.py -text
+*.pdf binary
