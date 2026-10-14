@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "prompt_rows": 16900,
+  "scoring_units": 13700,
+  "unique_images": 4705,
+  "image_bytes": 467155310,
+  "axis_units": {
+    "consistency": 800,
+    "grounding": 2400,
+    "mmstar": 1500,
+    "pope": 9000
+  },
+  "checks": [
+    "source hashes",
+    "unique item IDs",
+    "all images fully decoded",
+    "image dimensions",
+    "answer keys and box coordinates",
+    "five variants grouped per base question",
+    ">=800 scoring units per axis",
+    "complete baseline coverage",
+    "floor summary agrees with records"
+  ]
+}

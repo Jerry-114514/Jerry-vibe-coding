@@ -1,0 +1,220 @@
+Using pinned source metadata: mmstar
+Using pinned source metadata: mmbench
+Using pinned source metadata: refer_readme
+Using pinned source metadata: pope_sample
+Using pinned source metadata: jxu124/refcoco
+Using pinned source metadata: jxu124/refcocog
+Using pinned source metadata: jxu124/refcocoplus
+{"name": "mmstar", "rows": 1500, "schema": "index: int64\nquestion: string\nanswer: string\ncategory: string\nl2_category: string\nimage: binary\nmeta_info: struct<image_path: string, source: string, split: string>\n  child 0, image_path: string\n  child 1, source: string\n  child 2, split: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"index\": {\"dtype\": \"int64\", \"_type\":' + 430", "sample": {"index": "0", "question": "Which option describe the object relationship in the image correctly?\nOptions: A: The suitcase is on the book., B: The suitcase is beneath the cat., C: The suitcase is beneath the bed., D: The suitcase is beneath the book.", "answer": "A", "category": "coarse perception", "l2_category": "image scene and topic", "image": "b'\\xff\\xd8\\xff\\xe0\\x00\\x10JFIF\\x00\\x01\\x01\\x00\\x00\\x01\\x00\\x01\\x00\\x00\\xff\\xdb\\x00C\\x00\\x08\\x06\\x06\\", "meta_info": "{'image_path': 'images/0.jpg', 'source': 'MMBench', 'split': 'val'}"}}
+{"name": "mmbench", "rows": 4329, "schema": "index: int64\nquestion: string\nhint: string\nanswer: string\nA: string\nB: string\nC: string\nD: string\ncategory: string\nimage: struct<bytes: binary, path: string>\n  child 0, bytes: binary\n  child 1, path: string\nsource: string\nL2-category: string\ncomment: string\nsplit: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"index\": {\"dtype\": \"int64\", \"_type\":' + 616", "sample": {"index": "241", "question": "Identify the question that Madelyn and Tucker's experiment can best answer.", "hint": "The passage below describes an experiment. Read the passage and then follow the instructions below.\n\nMadelyn applied a thin layer of wax to the underside of her snowboard and rode the board straight down a hill. Then, she removed the wax and rode the snowboard straight down the hill again. She repeated the rides four more times, alternating whether she rode with a thin layer of wax on the board or not. Her friend Tucker timed each ride. Madelyn and Tucker calculated the average time it took to slide straight down the hill on the snowboard with wax compared to the average time on the snowboard without wax.\nFigure: snowboarding down a hill.", "answer": "B", "A": "Does Madelyn's snowboard slide down a hill in less time when it has a thin layer of wax or a thick layer of wax?", "B": "Does Madelyn's snowboard slide down a hill in less time when it has a layer of wax or when it does not have a layer of wax?", "C": "nan", "D": "nan", "category": "identity_reasoning", "image": "{'bytes': b'\\xff\\xd8\\xff\\xe0\\x00\\x10JFIF\\x00\\x01\\x01\\x00\\x00\\x01\\x00\\x01\\x00\\x00\\xff\\xdb\\x00C\\x00\\x0", "source": "scienceqa", "L2-category": "attribute_reasoning", "comment": "nan", "split": "dev"}}
+refcoco+.zip: ['refcoco+/instances.json', 'refcoco+/refs(unc).p']
+refcoco.zip: ['refcoco/instances.json', 'refcoco/refs(google).p', 'refcoco/refs(unc).p']
+refcocog.zip: ['refcocog/', 'refcocog/refs(google).p', 'refcocog/refs(umd).p', 'refcocog/instances.json']
+{"name": "train-00000-of-00001-94431d5f4bd5b93f.parquet", "rows": 42404, "schema": "sent_ids: list<item: int64>\n  child 0, item: int64\nfile_name: string\nann_id: int64\nref_id: int64\nimage_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\ncategory_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"sent_ids\": {\"feature\": {\"dtype\": \"i' + 1082", "sample": {"sent_ids": "[0, 1, 2]", "file_name": "COCO_train2014_000000581857_16.jpg", "ann_id": "1719310", "ref_id": "0", "image_id": "581857", "split": "train", "sentences": "[{'raw': 'THE LADY WITH THE BLUE SHIRT', 'sent': 'the lady with the blue shirt', 'sent_id': 0, 'tokens': ['the', 'lady', 'with', 'the', 'blue', 'shirt']}, {'raw': 'lady w back to us', 'sent': 'lady with back to us', 'sent_id': 1, 'tokens': ['lady', 'with', 'back', 'to', 'us']}, {'raw': 'blue shirt', 'sent': 'blue shirt', 'sent_id': 2, 'tokens': ['blue', 'shirt']}]", "category_id": "1", "raw_anns": "{\"segmentation\": [[223.18, 477.41, 178.25, 476.84, 167.3, 468.2, 156.93, 464.16, 151.17, 464.74, 141.38, 471.65, 132.16, 476.26, 125.25, 476.26, 126.98, 451.49, 113.73, 448.61, 103.93, 439.39, 111.42, 419.81, 136.19, 373.15, 140.8, 363.36, 169.03, 352.99, 166.72, 337.43, 174.21, 301.72, 184.01, 300.57, 200.14, 299.99, 214.54, 314.39, 215.69, 332.83, 211.08, 359.32, 224.91, 372.57, 232.97, 388.13, 238.15, 420.96, 237.0, 443.43, 224.91, 452.64, 219.14, 453.22]], \"area\": 14863.615599999997, \"iscrowd\": 0, \"image_id\": 581857, \"bbox\": [103.93, 299.99, 134.22, 177.42], \"category_id\": 1, \"id\": 1719310}", "raw_image_info": "{\"license\": 4, \"file_name\": \"COCO_train2014_000000581857.jpg\", \"coco_url\": \"http://mscoco.org/images/581857\", \"height\": 640, \"width\": 427, \"date_captured\": \"2013-11-19 19:21:09\", \"flickr_url\": \"http://farm6.staticflickr.com/5125/5309665572_6b7872c76a_z.jpg\", \"id\": 581857}", "raw_sentences": "[{\"tokens\": [\"the\", \"lady\", \"with\", \"the\", \"blue\", \"shirt\"], \"raw\": \"THE LADY WITH THE BLUE SHIRT\", \"sent_id\": 0, \"sent\": \"the lady with the blue shirt\"}, {\"tokens\": [\"lady\", \"with\", \"back\", \"to\", \"us\"], \"raw\": \"lady w back to us\", \"sent_id\": 1, \"sent\": \"lady with back to us\"}, {\"tokens\": [\"blue\", \"shirt\"], \"raw\": \"blue shirt\", \"sent_id\": 2, \"sent\": \"blue shirt\"}]", "image_path": "coco/train2014/COCO_train2014_000000581857.jpg", "bbox": "[103.93, 299.99, 238.15, 477.40999999999997]", "captions": "['the lady with the blue shirt', 'lady with back to us', 'blue shirt']", "global_image_id": "coco.581857", "anns_id": "refcoco.1719310"}}
+{"name": "validation-00000-of-00001-bfeafdc84ca37aa2.parquet", "rows": 3811, "schema": "sent_ids: list<item: int64>\n  child 0, item: int64\nfile_name: string\nann_id: int64\nref_id: int64\nimage_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\ncategory_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"sent_ids\": {\"feature\": {\"dtype\": \"i' + 1082", "sample": {"sent_ids": "[222, 223, 224, 225]", "file_name": "COCO_train2014_000000580957_4.jpg", "ann_id": "1537681", "ref_id": "77", "image_id": "580957", "split": "val", "sentences": "[{'raw': 'bowl behind the others can only see part', 'sent': 'bowl behind the others can only see part', 'sent_id': 222, 'tokens': ['bowl', 'behind', 'the', 'others', 'can', 'only', 'see', 'part']}, {'raw': 'Dish in top right corner', 'sent': 'dish in top right corner', 'sent_id': 223, 'tokens': ['dish', 'in', 'top', 'right', 'corner']}, {'raw': 'White dish in the top right corner.', 'sent': 'white dish in the top right corner', 'sent_id': 224, 'tokens': ['white', 'dish', 'in', 'the', 'top', 'right', 'corner']}, {'raw': 'white pot upper right corner', 'sent': 'white pot upper right corner', 'sent_id': 225, 'tokens': ['white', 'pot', 'upper', 'right', 'corner']}]", "category_id": "51", "raw_anns": "{\"segmentation\": [[468.3, 2.83, 471.18, 46.01, 473.1, 83.44, 521.09, 107.43, 580.58, 117.03, 640.0, 106.47, 640.0, 104.55, 640.0, 0.91]], \"area\": 17770.195949999998, \"iscrowd\": 0, \"image_id\": 580957, \"bbox\": [468.3, 0.91, 171.7, 116.12], \"category_id\": 51, \"id\": 1537681}", "raw_image_info": "{\"license\": 4, \"file_name\": \"COCO_train2014_000000580957.jpg\", \"coco_url\": \"http://mscoco.org/images/580957\", \"height\": 428, \"width\": 640, \"date_captured\": \"2013-11-20 04:32:20\", \"flickr_url\": \"http://farm2.staticflickr.com/1278/4712965932_fb98c772c3_z.jpg\", \"id\": 580957}", "raw_sentences": "[{\"tokens\": [\"bowl\", \"behind\", \"the\", \"others\", \"can\", \"only\", \"see\", \"part\"], \"raw\": \"bowl behind the others can only see part\", \"sent_id\": 222, \"sent\": \"bowl behind the others can only see part\"}, {\"tokens\": [\"dish\", \"in\", \"top\", \"right\", \"corner\"], \"raw\": \"Dish in top right corner\", \"sent_id\": 223, \"sent\": \"dish in top right corner\"}, {\"tokens\": [\"white\", \"dish\", \"in\", \"the\", \"top\", \"right\", \"corner\"], \"raw\": \"White dish in the top right corner.\", \"sent_id\": 224, \"sent\": \"white dish in the top right corner\"}, {\"tokens\": [\"white\", \"pot\", \"upper\", \"right\", \"corner\"], \"raw\": \"white pot upper right corner\", \"sent_id\": 225, \"sent\": \"white pot upper right corner\"}]", "image_path": "coco/train2014/COCO_train2014_000000580957.jpg", "bbox": "[468.3, 0.91, 640.0, 117.03]", "captions": "['bowl behind the others can only see part', 'dish in top right corner', 'white dish in the top right corner', 'white pot upper right corner']", "global_image_id": "coco.580957", "anns_id": "refcoco.1537681"}}
+{"name": "train-00000-of-00001-7294665695c630ee.parquet", "rows": 42278, "schema": "sent_ids: list<item: int64>\n  child 0, item: int64\nfile_name: string\nann_id: int64\nref_id: int64\nimage_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\ncategory_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"sent_ids\": {\"feature\": {\"dtype\": \"i' + 1082", "sample": {"sent_ids": "[0, 1, 2]", "file_name": "COCO_train2014_000000581857_16.jpg", "ann_id": "1719310", "ref_id": "0", "image_id": "581857", "split": "train", "sentences": "[{'raw': 'navy blue shirt', 'sent': 'navy blue shirt', 'sent_id': 0, 'tokens': ['navy', 'blue', 'shirt']}, {'raw': 'woman back in blue', 'sent': 'woman back in blue', 'sent_id': 1, 'tokens': ['woman', 'back', 'in', 'blue']}, {'raw': 'blue shirt', 'sent': 'blue shirt', 'sent_id': 2, 'tokens': ['blue', 'shirt']}]", "category_id": "1", "raw_anns": "{\"segmentation\": [[223.18, 477.41, 178.25, 476.84, 167.3, 468.2, 156.93, 464.16, 151.17, 464.74, 141.38, 471.65, 132.16, 476.26, 125.25, 476.26, 126.98, 451.49, 113.73, 448.61, 103.93, 439.39, 111.42, 419.81, 136.19, 373.15, 140.8, 363.36, 169.03, 352.99, 166.72, 337.43, 174.21, 301.72, 184.01, 300.57, 200.14, 299.99, 214.54, 314.39, 215.69, 332.83, 211.08, 359.32, 224.91, 372.57, 232.97, 388.13, 238.15, 420.96, 237.0, 443.43, 224.91, 452.64, 219.14, 453.22]], \"area\": 14863.615599999997, \"iscrowd\": 0, \"image_id\": 581857, \"bbox\": [103.93, 299.99, 134.22, 177.42], \"category_id\": 1, \"id\": 1719310}", "raw_image_info": "{\"license\": 4, \"file_name\": \"COCO_train2014_000000581857.jpg\", \"coco_url\": \"http://mscoco.org/images/581857\", \"height\": 640, \"width\": 427, \"date_captured\": \"2013-11-19 19:21:09\", \"flickr_url\": \"http://farm6.staticflickr.com/5125/5309665572_6b7872c76a_z.jpg\", \"id\": 581857}", "raw_sentences": "[{\"tokens\": [\"navy\", \"blue\", \"shirt\"], \"raw\": \"navy blue shirt\", \"sent_id\": 0, \"sent\": \"navy blue shirt\"}, {\"tokens\": [\"woman\", \"back\", \"in\", \"blue\"], \"raw\": \"woman back in blue\", \"sent_id\": 1, \"sent\": \"woman back in blue\"}, {\"tokens\": [\"blue\", \"shirt\"], \"raw\": \"blue shirt\", \"sent_id\": 2, \"sent\": \"blue shirt\"}]", "image_path": "coco/train2014/COCO_train2014_000000581857.jpg", "bbox": "[103.93, 299.99, 238.15, 477.40999999999997]", "captions": "['navy blue shirt', 'woman back in blue', 'blue shirt']", "global_image_id": "coco.581857", "anns_id": "refcocoplus.1719310"}}
+{"name": "validation-00000-of-00001-8c57d66282bc60c9.parquet", "rows": 3805, "schema": "sent_ids: list<item: int64>\n  child 0, item: int64\nfile_name: string\nann_id: int64\nref_id: int64\nimage_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\ncategory_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"sent_ids\": {\"feature\": {\"dtype\": \"i' + 1082", "sample": {"sent_ids": "[210, 211, 212]", "file_name": "COCO_train2014_000000580957_4.jpg", "ann_id": "1537681", "ref_id": "75", "image_id": "580957", "split": "val", "sentences": "[{'raw': 'White bowl with vertical stripes', 'sent': 'white bowl with vertical stripes', 'sent_id': 210, 'tokens': ['white', 'bowl', 'with', 'vertical', 'stripes']}, {'raw': 'white bowl on corner', 'sent': 'white bowl on corner', 'sent_id': 211, 'tokens': ['white', 'bowl', 'on', 'corner']}, {'raw': 'WHITE BOWL NEXT TO RICE', 'sent': 'white bowl next to rice', 'sent_id': 212, 'tokens': ['white', 'bowl', 'next', 'to', 'rice']}]", "category_id": "51", "raw_anns": "{\"segmentation\": [[468.3, 2.83, 471.18, 46.01, 473.1, 83.44, 521.09, 107.43, 580.58, 117.03, 640.0, 106.47, 640.0, 104.55, 640.0, 0.91]], \"area\": 17770.195949999998, \"iscrowd\": 0, \"image_id\": 580957, \"bbox\": [468.3, 0.91, 171.7, 116.12], \"category_id\": 51, \"id\": 1537681}", "raw_image_info": "{\"license\": 4, \"file_name\": \"COCO_train2014_000000580957.jpg\", \"coco_url\": \"http://mscoco.org/images/580957\", \"height\": 428, \"width\": 640, \"date_captured\": \"2013-11-20 04:32:20\", \"flickr_url\": \"http://farm2.staticflickr.com/1278/4712965932_fb98c772c3_z.jpg\", \"id\": 580957}", "raw_sentences": "[{\"tokens\": [\"white\", \"bowl\", \"with\", \"vertical\", \"stripes\"], \"raw\": \"White bowl with vertical stripes\", \"sent_id\": 210, \"sent\": \"white bowl with vertical stripes\"}, {\"tokens\": [\"white\", \"bowl\", \"on\", \"corner\"], \"raw\": \"white bowl on corner\", \"sent_id\": 211, \"sent\": \"white bowl on corner\"}, {\"tokens\": [\"white\", \"bowl\", \"next\", \"to\", \"rice\"], \"raw\": \"WHITE BOWL NEXT TO RICE\", \"sent_id\": 212, \"sent\": \"white bowl next to rice\"}]", "image_path": "coco/train2014/COCO_train2014_000000580957.jpg", "bbox": "[468.3, 0.91, 640.0, 117.03]", "captions": "['white bowl with vertical stripes', 'white bowl on corner', 'white bowl next to rice']", "global_image_id": "coco.580957", "anns_id": "refcocoplus.1537681"}}
+{"name": "train-00000-of-00001-4fe3e6340cfb69ed.parquet", "rows": 42226, "schema": "image_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\nfile_name: string\ncategory_id: int64\nann_id: int64\nsent_ids: list<item: int64>\n  child 0, item: int64\nref_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"image_id\": {\"dtype\": \"int64\", \"_typ' + 1082", "sample": {"image_id": "519404", "split": "train", "sentences": "[{'raw': 'Two woman one in black eatting and the other has a white shirt at the desk', 'sent': 'two woman one in black eatting and the other has a white shirt at the desk', 'sent_id': 0, 'tokens': ['two', 'woman', 'one', 'in', 'black', 'eatting', 'and', 'the', 'other', 'has', 'a', 'white', 'shirt', 'at', 'the', 'desk']}, {'raw': 'Woman in white shirt looking down at laptop computer.', 'sent': 'woman in white shirt looking down at laptop computer', 'sent_id': 1, 'tokens': ['woman', 'in', 'white', 'shirt', 'looking', 'down', 'at', 'laptop', 'computer']}]", "file_name": "COCO_train2014_000000519404_1241542.jpg", "category_id": "1", "ann_id": "1241542", "sent_ids": "[0, 1]", "ref_id": "5023", "raw_anns": "{\"segmentation\": [[16.22, 84.86, 36.76, 52.43, 69.19, 45.95, 108.11, 50.27, 118.92, 60.0, 134.05, 76.22, 132.97, 104.32, 145.95, 128.11, 151.35, 143.24, 143.78, 164.86, 139.46, 174.59, 151.35, 191.89, 189.19, 223.24, 230.27, 265.41, 235.68, 268.65, 238.92, 282.7, 232.43, 297.84, 223.78, 302.16, 183.78, 290.27, 158.92, 271.89, 105.95, 251.35, 122.16, 272.97, 137.3, 287.03, 149.19, 312.97, 162.16, 338.92, 169.73, 349.73, 174.05, 361.62, 161.08, 396.22, 149.19, 423.24, 139.46, 437.3, 125.41, 448.11, 113.51, 453.51, 104.86, 454.59, 98.38, 444.86, 78.92, 426.49, 55.14, 402.7, 40.0, 387.57, 21.62, 368.11, 1.08, 348.65, 0.0, 136.76, 0.0, 123.78]], \"area\": 57185.38189999998, \"iscrowd\": 0, \"image_id\": 519404, \"bbox\": [0.0, 45.95, 238.92, 408.64], \"category_id\": 1, \"id\": 1241542}", "raw_image_info": "{\"license\": 5, \"file_name\": \"COCO_train2014_000000519404.jpg\", \"coco_url\": \"http://mscoco.org/images/519404\", \"height\": 480, \"width\": 640, \"date_captured\": \"2013-11-23 20:00:51\", \"flickr_url\": \"http://farm1.staticflickr.com/120/287476175_80a28fdfaf_z.jpg\", \"id\": 519404}", "raw_sentences": "[{\"tokens\": [\"two\", \"woman\", \"one\", \"in\", \"black\", \"eatting\", \"and\", \"the\", \"other\", \"has\", \"a\", \"white\", \"shirt\", \"at\", \"the\", \"desk\"], \"raw\": \"Two woman one in black eatting and the other has a white shirt at the desk\", \"sent_id\": 0, \"sent\": \"two woman one in black eatting and the other has a white shirt at the desk\"}, {\"tokens\": [\"woman\", \"in\", \"white\", \"shirt\", \"looking\", \"down\", \"at\", \"laptop\", \"computer\"], \"raw\": \"Woman in white shirt looking down at laptop computer.\", \"sent_id\": 1, \"sent\": \"woman in white shirt looking down at laptop computer\"}]", "image_path": "coco/train2014/COCO_train2014_000000519404.jpg", "bbox": "[0.0, 45.95, 238.92, 454.59]", "captions": "['two woman one in black eatting and the other has a white shirt at the desk', 'woman in white shirt looking down at laptop computer']", "global_image_id": "coco.519404", "anns_id": "refcocog.1241542"}}
+{"name": "validation-00000-of-00001-15168dfe7b5961e5.parquet", "rows": 2573, "schema": "image_id: int64\nsplit: string\nsentences: list<item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>>\n  child 0, item: struct<raw: string, sent: string, sent_id: int64, tokens: list<item: string>>\n      child 0, raw: string\n      child 1, sent: string\n      child 2, sent_id: int64\n      child 3, tokens: list<item: string>\n          child 0, item: string\nfile_name: string\ncategory_id: int64\nann_id: int64\nsent_ids: list<item: int64>\n  child 0, item: int64\nref_id: int64\nraw_anns: string\nraw_image_info: string\nraw_sentences: string\nimage_path: string\nbbox: list<item: double>\n  child 0, item: double\ncaptions: list<item: string>\n  child 0, item: string\nglobal_image_id: string\nanns_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"image_id\": {\"dtype\": \"int64\", \"_typ' + 1082", "sample": {"image_id": "533220", "split": "val", "sentences": "[{'raw': 'a bush of plant behind middle woman', 'sent': 'a bush of plant behind middle woman', 'sent_id': 61, 'tokens': ['a', 'bush', 'of', 'plant', 'behind', 'middle', 'woman']}, {'raw': \"Green plant behind a table visible behind a lady's head.\", 'sent': \"green plant behind a table visible behind a lady ' s head\", 'sent_id': 62, 'tokens': ['green', 'plant', 'behind', 'a', 'table', 'visible', 'behind', 'a', 'lady', \"'\", 's', 'head']}]", "file_name": "COCO_train2014_000000533220_1954731.jpg", "category_id": "64", "ann_id": "1954731", "sent_ids": "[61, 62]", "ref_id": "5044", "raw_anns": "{\"segmentation\": [[316.09, 145.29, 330.51, 133.09, 344.93, 136.42, 364.89, 144.18, 380.42, 146.4, 397.05, 133.09, 413.69, 104.25, 417.02, 89.84, 424.78, 59.89, 422.56, 43.25, 411.47, 33.27, 394.84, 28.84, 381.53, 29.95, 363.78, 31.05, 346.04, 27.73, 321.64, 23.29, 307.22, 26.62, 291.69, 41.04, 286.15, 48.8, 285.04, 57.67, 285.04, 73.2, 291.69, 92.05, 296.13, 107.58, 295.02, 125.33, 301.67, 136.42, 312.76, 144.18, 313.87, 145.29]], \"area\": 13657.727050000001, \"iscrowd\": 0, \"image_id\": 533220, \"bbox\": [285.04, 23.29, 139.74, 123.11], \"category_id\": 64, \"id\": 1954731}", "raw_image_info": "{\"license\": 4, \"file_name\": \"COCO_train2014_000000533220.jpg\", \"coco_url\": \"http://mscoco.org/images/533220\", \"height\": 427, \"width\": 640, \"date_captured\": \"2013-11-25 08:01:30\", \"flickr_url\": \"http://farm3.staticflickr.com/2894/9702951890_326d11c1d9_z.jpg\", \"id\": 533220}", "raw_sentences": "[{\"tokens\": [\"a\", \"bush\", \"of\", \"plant\", \"behind\", \"middle\", \"woman\"], \"raw\": \"a bush of plant behind middle woman\", \"sent_id\": 61, \"sent\": \"a bush of plant behind middle woman\"}, {\"tokens\": [\"green\", \"plant\", \"behind\", \"a\", \"table\", \"visible\", \"behind\", \"a\", \"lady\", \"'\", \"s\", \"head\"], \"raw\": \"Green plant behind a table visible behind a lady's head.\", \"sent_id\": 62, \"sent\": \"green plant behind a table visible behind a lady ' s head\"}]", "image_path": "coco/train2014/COCO_train2014_000000533220.jpg", "bbox": "[285.04, 23.29, 424.78000000000003, 146.4]", "captions": "['a bush of plant behind middle woman', \"green plant behind a table visible behind a lady ' s head\"]", "global_image_id": "coco.533220", "anns_id": "refcocog.1954731"}}
+{
+  "refcoco": {
+    "split_by": "unc",
+    "matched_train_val_references": 46215,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  },
+  "refcoco+": {
+    "split_by": "unc",
+    "matched_train_val_references": 46083,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  },
+  "refcocog": {
+    "split_by": "umd",
+    "matched_train_val_references": 44799,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  }
+}
+{
+  "prompt_rows": 16900,
+  "remote_images": 2405,
+  "selection": {
+    "pope/random": {
+      "available_items": 3000,
+      "selected_items": 3000
+    },
+    "pope/popular": {
+      "available_items": 3000,
+      "selected_items": 3000
+    },
+    "pope/adversarial": {
+      "available_items": 3000,
+      "selected_items": 3000
+    },
+    "grounding/refcoco": {
+      "available_refs": 3811,
+      "available_sentences": 10834,
+      "available_images": 1500,
+      "selected_items": 800,
+      "selected_unique_images": 800
+    },
+    "grounding/refcoco+": {
+      "available_refs": 3805,
+      "available_sentences": 10758,
+      "available_images": 1500,
+      "selected_items": 800,
+      "selected_unique_images": 800
+    },
+    "grounding/refcocog": {
+      "available_refs": 2573,
+      "available_sentences": 4896,
+      "available_images": 1300,
+      "selected_items": 800,
+      "selected_unique_images": 800
+    },
+    "mmstar": {
+      "available_items": 1500,
+      "selected_items": 1500
+    },
+    "consistency": {
+      "source_rows": 4329,
+      "deduplicated_candidates": 1162,
+      "excluded_mmstar_image_overlap_rows": 4,
+      "selected_base_items": 800,
+      "paraphrases_per_item": 5,
+      "selected_prompt_rows": 4000
+    }
+  }
+}
+COCO images checked: 100/2405, failures: 0
+COCO images checked: 200/2405, failures: 0
+COCO images checked: 300/2405, failures: 0
+COCO images checked: 400/2405, failures: 0
+COCO images checked: 500/2405, failures: 0
+COCO images checked: 600/2405, failures: 0
+COCO images checked: 700/2405, failures: 0
+COCO images checked: 800/2405, failures: 0
+COCO images checked: 900/2405, failures: 0
+COCO images checked: 1000/2405, failures: 0
+COCO images checked: 1100/2405, failures: 0
+COCO images checked: 1200/2405, failures: 0
+COCO images checked: 1300/2405, failures: 0
+COCO images checked: 1400/2405, failures: 0
+COCO images checked: 1500/2405, failures: 0
+COCO images checked: 1600/2405, failures: 0
+COCO images checked: 1700/2405, failures: 0
+COCO images checked: 1800/2405, failures: 0
+COCO images checked: 1900/2405, failures: 0
+COCO images checked: 2000/2405, failures: 0
+COCO images checked: 2100/2405, failures: 0
+COCO images checked: 2200/2405, failures: 0
+COCO images checked: 2300/2405, failures: 0
+COCO images checked: 2400/2405, failures: 0
+COCO images checked: 2405/2405, failures: 0
+Manifest frozen: 16900 rows, SHA256 e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746
+{
+  "pope": {
+    "n_scoring_units": 9000,
+    "n_prompt_rows": 9000,
+    "correct": 4500,
+    "c_a": 0.5,
+    "per_subset": {
+      "adversarial": {
+        "n": 3000,
+        "correct": 1500,
+        "c_a": 0.5
+      },
+      "popular": {
+        "n": 3000,
+        "correct": 1500,
+        "c_a": 0.5
+      },
+      "random": {
+        "n": 3000,
+        "correct": 1500,
+        "c_a": 0.5
+      }
+    }
+  },
+  "grounding": {
+    "n_scoring_units": 2400,
+    "n_prompt_rows": 2400,
+    "correct": 67,
+    "c_a": 0.027916666666666666,
+    "per_subset": {
+      "refcoco+": {
+        "n": 800,
+        "correct": 22,
+        "c_a": 0.0275
+      },
+      "refcoco": {
+        "n": 800,
+        "correct": 22,
+        "c_a": 0.0275
+      },
+      "refcocog": {
+        "n": 800,
+        "correct": 23,
+        "c_a": 0.02875
+      }
+    }
+  },
+  "consistency": {
+    "n_scoring_units": 800,
+    "n_prompt_rows": 4000,
+    "correct": 281,
+    "c_a": 0.35125,
+    "per_subset": {
+      "mmbench": {
+        "n": 800,
+        "correct": 281,
+        "c_a": 0.35125
+      }
+    }
+  },
+  "mmstar": {
+    "n_scoring_units": 1500,
+    "n_prompt_rows": 1500,
+    "correct": 391,
+    "c_a": 0.26066666666666666,
+    "per_subset": {
+      "mmstar": {
+        "n": 1500,
+        "correct": 391,
+        "c_a": 0.26066666666666666
+      }
+    }
+  }
+}
+{
+  "status": "passed",
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "prompt_rows": 16900,
+  "scoring_units": 13700,
+  "unique_images": 4705,
+  "image_bytes": 467155310,
+  "axis_units": {
+    "consistency": 800,
+    "grounding": 2400,
+    "mmstar": 1500,
+    "pope": 9000
+  },
+  "checks": [
+    "source hashes",
+    "unique item IDs",
+    "all images fully decoded",
+    "image dimensions",
+    "answer keys and box coordinates",
+    "five variants grouped per base question",
+    ">=800 scoring units per axis",
+    "complete baseline coverage",
+    "floor summary agrees with records"
+  ]
+}

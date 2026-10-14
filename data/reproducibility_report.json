@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "full_cached_pipeline_exit_code": 0,
+  "manifest_and_baseline_hashes_unchanged": true,
+  "sha256": {
+    "data/manifest.jsonl": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+    "data/baselines/per_item.jsonl": "cd7fd304fe1537afd9da695877956e1ace3717107801aa4f839f4f04437bfd26",
+    "data/baselines/per_unit.jsonl": "4611343fdef74c56d3cef59c3b571bee941f2012a543586d2d1c423c361d1d24"
+  }
+}

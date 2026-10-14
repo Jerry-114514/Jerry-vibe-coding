@@ -1,0 +1,47 @@
+{
+  "pope/random": {
+    "available_items": 3000,
+    "selected_items": 3000
+  },
+  "pope/popular": {
+    "available_items": 3000,
+    "selected_items": 3000
+  },
+  "pope/adversarial": {
+    "available_items": 3000,
+    "selected_items": 3000
+  },
+  "grounding/refcoco": {
+    "available_refs": 3811,
+    "available_sentences": 10834,
+    "available_images": 1500,
+    "selected_items": 800,
+    "selected_unique_images": 800
+  },
+  "grounding/refcoco+": {
+    "available_refs": 3805,
+    "available_sentences": 10758,
+    "available_images": 1500,
+    "selected_items": 800,
+    "selected_unique_images": 800
+  },
+  "grounding/refcocog": {
+    "available_refs": 2573,
+    "available_sentences": 4896,
+    "available_images": 1300,
+    "selected_items": 800,
+    "selected_unique_images": 800
+  },
+  "mmstar": {
+    "available_items": 1500,
+    "selected_items": 1500
+  },
+  "consistency": {
+    "source_rows": 4329,
+    "deduplicated_candidates": 1162,
+    "excluded_mmstar_image_overlap_rows": 4,
+    "selected_base_items": 800,
+    "paraphrases_per_item": 5,
+    "selected_prompt_rows": 4000
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "seed": 20261014,
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "consistency_fixed_answer": "A",
+  "axes": {
+    "pope": {
+      "n_scoring_units": 9000,
+      "n_prompt_rows": 9000,
+      "correct": 4500,
+      "c_a": 0.5,
+      "per_subset": {
+        "adversarial": {
+          "n": 3000,
+          "correct": 1500,
+          "c_a": 0.5
+        },
+        "popular": {
+          "n": 3000,
+          "correct": 1500,
+          "c_a": 0.5
+        },
+        "random": {
+          "n": 3000,
+          "correct": 1500,
+          "c_a": 0.5
+        }
+      }
+    },
+    "grounding": {
+      "n_scoring_units": 2400,
+      "n_prompt_rows": 2400,
+      "correct": 67,
+      "c_a": 0.027916666666666666,
+      "per_subset": {
+        "refcoco+": {
+          "n": 800,
+          "correct": 22,
+          "c_a": 0.0275
+        },
+        "refcoco": {
+          "n": 800,
+          "correct": 22,
+          "c_a": 0.0275
+        },
+        "refcocog": {
+          "n": 800,
+          "correct": 23,
+          "c_a": 0.02875
+        }
+      }
+    },
+    "consistency": {
+      "n_scoring_units": 800,
+      "n_prompt_rows": 4000,
+      "correct": 281,
+      "c_a": 0.35125,
+      "per_subset": {
+        "mmbench": {
+          "n": 800,
+          "correct": 281,
+          "c_a": 0.35125
+        }
+      }
+    },
+    "mmstar": {
+      "n_scoring_units": 1500,
+      "n_prompt_rows": 1500,
+      "correct": 391,
+      "c_a": 0.26066666666666666,
+      "per_subset": {
+        "mmstar": {
+          "n": 1500,
+          "correct": 391,
+          "c_a": 0.26066666666666666
+        }
+      }
+    }
+  }
+}

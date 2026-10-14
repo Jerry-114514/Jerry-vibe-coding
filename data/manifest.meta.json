@@ -1,0 +1,35 @@
+{
+  "schema_version": "arp.phase_a.v1",
+  "prepared_date": "2026-10-14",
+  "seed": 20261014,
+  "n_min": 800,
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "prompt_rows": 16900,
+  "axis_order": [
+    "pope",
+    "grounding",
+    "consistency",
+    "mmstar"
+  ],
+  "scoring": {
+    "pope": "yes/no accuracy; equal-weight 3 subsets",
+    "grounding": "IoU >= 0.5; equal-weight 3 datasets",
+    "consistency": "one unit per base_item_id; all 5 variants correct",
+    "mmstar": "option-letter accuracy"
+  },
+  "path_base": "project root; image_path is portable POSIX relative path",
+  "grounding_box_format": "xyxy in original-image pixels",
+  "degenerate_answerers": {
+    "pope": "always no",
+    "grounding": "image-centered rectangle with image aspect ratio; per-dataset training bbox-area median in pixels; clip area to image area only when necessary",
+    "consistency": "always option A on all five variants",
+    "mmstar": "Python random.Random(20261014); uniform over actual options; sorted manifest order"
+  },
+  "consistency_bootstrap": "resample 800 base_item_id groups, preserving all 5 variants",
+  "group_correlation_note": "POPE reuses 500 images; grounding datasets share some COCO images. image_group supports image-cluster sensitivity analyses.",
+  "source_lock_files": [
+    "data/download_sources.json",
+    "data/refer_mirror_sources.json"
+  ],
+  "selection_report": "data/selection_report.json"
+}

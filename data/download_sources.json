@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/RUCAIBox/POPE/main/output/coco/coco_pope_random.json",
+    "path": "data/raw/pope/coco_pope_random.json",
+    "sha256": "ac25245170b975a5bdf9080b23fd431dfe6be458bc038259c1f4f09a6bef7994"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/RUCAIBox/POPE/main/output/coco/coco_pope_popular.json",
+    "path": "data/raw/pope/coco_pope_popular.json",
+    "sha256": "72c1a8ad45d0c13514f5f22598261df41d3b533854d29682e924db50ed8aa753"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/RUCAIBox/POPE/main/output/coco/coco_pope_adversarial.json",
+    "path": "data/raw/pope/coco_pope_adversarial.json",
+    "sha256": "420b3407db1fa9f1187a805dca41cb7b97fd91504e6c2179706188c107fb8ef8"
+  },
+  {
+    "url": "https://web.archive.org/web/20220413011718id_/https://bvisionweb1.cs.unc.edu/licheng/referit/data/refcoco.zip",
+    "path": "data/raw/refer/refcoco.zip",
+    "sha256": "7f924bb7ed8dc4568058e4ff626281918d56e5206f4c868c5a80f088f38c8bf0"
+  },
+  {
+    "url": "https://web.archive.org/web/20220413011656id_/https://bvisionweb1.cs.unc.edu/licheng/referit/data/refcoco+.zip",
+    "path": "data/raw/refer/refcoco+.zip",
+    "sha256": "5f1238112d63199e68da54a28f201471909b21ded7ed79a57d51b4c1443c6b45"
+  },
+  {
+    "url": "https://web.archive.org/web/20220413012904id_/https://bvisionweb1.cs.unc.edu/licheng/referit/data/refcocog.zip",
+    "path": "data/raw/refer/refcocog.zip",
+    "sha256": "3d1f7e5b2ff2205940bf59de55f861f5f2cc1403fb980669933a7f9af1aa8211"
+  },
+  {
+    "url": "https://huggingface.co/datasets/Lin-Chen/MMStar/resolve/bc98d668301da7b14f648724866e57302778ab27/mmstar.parquet",
+    "path": "data/raw/mmstar/mmstar.parquet",
+    "sha256": "29afd74b0134cfab083a8909b5358577ab18fd41c1e612031577cfb3635531c2"
+  },
+  {
+    "url": "https://huggingface.co/datasets/lmms-lab-encoder/MMBench/resolve/56ba1af8954932c4804bd3f522e05ed96e63b654/en/dev-00000-of-00001.parquet",
+    "path": "data/raw/mmbench/dev-00000-of-00001.parquet",
+    "sha256": "765dc6a1a800831e89645d87bdae9ed47f4c8c5fb082bbd58121cd729f34eeb8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/lichengunc/refer/master/refer.py",
+    "path": "data/raw/refer/refer.original.py",
+    "sha256": "e33d603158a1574babdbc4b18c13df0e690771154f8ad3f8fefb9b227064f954"
+  }
+]

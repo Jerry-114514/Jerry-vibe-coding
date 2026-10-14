@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcoco/resolve/9fba8200c5326e996f789191f095bd464ef1d09e/data/train-00000-of-00001-94431d5f4bd5b93f.parquet",
+    "path": "data/raw/refer_mirror/refcoco/train-00000-of-00001-94431d5f4bd5b93f.parquet",
+    "sha256": "66ff9a728b7ee45b8a2d72061d244685a75ba4c90956e0640b0165e71cd5afaa"
+  },
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcoco/resolve/9fba8200c5326e996f789191f095bd464ef1d09e/data/validation-00000-of-00001-bfeafdc84ca37aa2.parquet",
+    "path": "data/raw/refer_mirror/refcoco/validation-00000-of-00001-bfeafdc84ca37aa2.parquet",
+    "sha256": "df03b1b16873f92727f3df010afb3c7260e8396a86592d3c4fee053daca08c05"
+  },
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcocoplus/resolve/12e20b0b6039fbf656e89e2f26597e84c1037847/data/train-00000-of-00001-7294665695c630ee.parquet",
+    "path": "data/raw/refer_mirror/refcocoplus/train-00000-of-00001-7294665695c630ee.parquet",
+    "sha256": "96f3874c88d9eee85b5daa5b476d9a6eddc6b4557802d450015a6e3ac3dca1d9"
+  },
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcocoplus/resolve/12e20b0b6039fbf656e89e2f26597e84c1037847/data/validation-00000-of-00001-8c57d66282bc60c9.parquet",
+    "path": "data/raw/refer_mirror/refcocoplus/validation-00000-of-00001-8c57d66282bc60c9.parquet",
+    "sha256": "d30fcff31b9145c37731474407374db9b1034c15a1dac6fd3cfec1e07aec05e4"
+  },
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcocog/resolve/55319436ad54b9480cefda6b9d64397de92456dd/data/train-00000-of-00001-4fe3e6340cfb69ed.parquet",
+    "path": "data/raw/refer_mirror/refcocog/train-00000-of-00001-4fe3e6340cfb69ed.parquet",
+    "sha256": "6ab9631fb9353e94f440832f272ab15bae5726b62168e930a922aa687ed62b96"
+  },
+  {
+    "url": "https://huggingface.co/datasets/jxu124/refcocog/resolve/55319436ad54b9480cefda6b9d64397de92456dd/data/validation-00000-of-00001-15168dfe7b5961e5.parquet",
+    "path": "data/raw/refer_mirror/refcocog/validation-00000-of-00001-15168dfe7b5961e5.parquet",
+    "sha256": "7bdf9673f6e056d0261d549cef05b58476b23cff0cc8608c6acbb990283039ef"
+  }
+]

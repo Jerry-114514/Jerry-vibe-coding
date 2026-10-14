@@ -1,0 +1,28 @@
+{
+  "schema_version": "arp.phase_a.lock.v1",
+  "python": "3.14.6",
+  "packages": {
+    "requests": "2.34.2",
+    "Pillow": "12.3.0",
+    "pyarrow": "23.0.1"
+  },
+  "files": {
+    "data/manifest.jsonl": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+    "data/manifest.meta.json": "a0f3816de2bd1e185fae3683fd7c7fc70f0d418a605ccce8999659a3f9dcc4bd",
+    "data/baseline_train_statistics.json": "8647519c597e45b44f61d43071c882b8f5b51f9c5fa733e232549d09627e8535",
+    "data/consistency/templates.json": "59dba45684f2221fe010a14bf93105cce2b3124ef74d75874ea06cefb5e3da6c",
+    "data/baselines/per_item.jsonl": "cd7fd304fe1537afd9da695877956e1ace3717107801aa4f839f4f04437bfd26",
+    "data/baselines/per_unit.jsonl": "4611343fdef74c56d3cef59c3b571bee941f2012a543586d2d1c423c361d1d24",
+    "data/baselines/c_a.json": "cdd4936d01f92a0f0cf4233a5f69922d8b2c02327ed2cd45701a0fb76038c686",
+    "data/assets.sha256.jsonl": "9cf2581956a68f5d9ae6217d19b4fae44a8094787f4a203b0e64c70862a5cc08",
+    "data/download_sources.json": "b70b584ade6f842bef9b6e1c06f2604f4fa1fdb36583ff3e0eb0ed8d27cd3786",
+    "data/refer_mirror_sources.json": "4a24d292211f9bf22e2ae433a74dfb595603ecf65228cccd54a2132f11b8ef49",
+    "data/refer_mirror_audit.json": "85d418d25343cfc8d842197548f3323b52f8f88eeebf393d72efda2e207fc93f",
+    "requirements.txt": "f3a00d0d5e8d543502087fa90a37c1bd8ea302505c01d7b96c7fc092688c1c31",
+    "tools/make_paraphrases.py": "2651dd6ce3278ba75681f5ea792243fad7451c75d52eec0a6fe67c72b7505dfd",
+    "tools/prepare_phase_a.py": "7c2caf56aca8e5e1b37b6cad6690594b370560c8c5cd106ce3140a796fdda744",
+    "tools/refer_api.py": "60a29e7a232d5e8f871887a008a4ad6ed0c027a58dfaaa8f48718e11e0d26f39",
+    "tools/run_degenerate.py": "5f5fb945fe70b8ee429d4f9b77269c56b78bccc95917385d1d9e28a890c533a0",
+    "tools/scoring.py": "ea457b26002f492e9822fc89928950b92bde8e99005d6e1e3981471f7e1dc741"
+  }
+}

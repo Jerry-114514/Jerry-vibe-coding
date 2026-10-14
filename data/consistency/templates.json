@@ -1,0 +1,12 @@
+{
+  "p_para": 5,
+  "templates": [
+    "Using the image, answer this question: {question}",
+    "Look at the image and select the answer to the following: {question}",
+    "Which option best answers this question about the image? {question}",
+    "Consider the image carefully. For the question below, choose the correct option: {question}",
+    "Based on the visual evidence, determine the answer to this question: {question}"
+  ],
+  "score": "all_five_correct",
+  "resample_unit": "base_item_id"
+}

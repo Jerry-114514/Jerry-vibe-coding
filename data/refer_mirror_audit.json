@@ -1,0 +1,26 @@
+{
+  "refcoco": {
+    "split_by": "unc",
+    "matched_train_val_references": 46215,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  },
+  "refcoco+": {
+    "split_by": "unc",
+    "matched_train_val_references": 46083,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  },
+  "refcocog": {
+    "split_by": "umd",
+    "matched_train_val_references": 44799,
+    "matched_original_annotations": true,
+    "matched_original_sentences": true,
+    "matched_original_image_metadata": true,
+    "status": "passed"
+  }
+}

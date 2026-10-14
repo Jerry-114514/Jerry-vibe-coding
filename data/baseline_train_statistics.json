@@ -1,0 +1,32 @@
+{
+  "refcoco": {
+    "split_by": "unc",
+    "source": "original_REFER_archive",
+    "train_refs": 42404,
+    "train_unique_annotations": 42404,
+    "median_bbox_area_px2": 43255.8635,
+    "train_val_annotation_overlap": 0,
+    "area_definition": "bbox_width * bbox_height (not segmentation area)",
+    "train_annotation_ids_sha256": "e69cca64f88cd7540735d8c2ff2fdb4819ebf50d8ed3940db27e22804844fd2f"
+  },
+  "refcoco+": {
+    "split_by": "unc",
+    "source": "original_REFER_archive",
+    "train_refs": 42278,
+    "train_unique_annotations": 42278,
+    "median_bbox_area_px2": 43327.98155,
+    "train_val_annotation_overlap": 0,
+    "area_definition": "bbox_width * bbox_height (not segmentation area)",
+    "train_annotation_ids_sha256": "252c7d425d7899dc09e36e65df92046157a019fb817daa22d040e839fb61cd41"
+  },
+  "refcocog": {
+    "split_by": "umd",
+    "source": "original_REFER_archive",
+    "train_refs": 42226,
+    "train_unique_annotations": 42224,
+    "median_bbox_area_px2": 38906.93335,
+    "train_val_annotation_overlap": 0,
+    "area_definition": "bbox_width * bbox_height (not segmentation area)",
+    "train_annotation_ids_sha256": "9b21815bf26619c6c2a01ee42351f7e7ffc4aa7a63e08cfc084eb07b05968311"
+  }
+}
