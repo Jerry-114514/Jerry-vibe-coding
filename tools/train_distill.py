@@ -10,7 +10,7 @@ import shutil
 import time
 
 from experiment_common import ROOT, read_json, read_rows, sha, write_json, write_rows
-from model_backends import Backend
+from model_backends import Backend, BACKEND_VERSION
 
 
 def cache_name(item_id):
@@ -46,6 +46,7 @@ def cached_teacher(manifest, destination, limit=None):
     destination.mkdir(parents=True, exist_ok=True)
     protocol = read_json(ROOT/'configs/experiment.json')
     lock = {'manifest_sha256': sha(manifest), 'top_k': protocol['training']['top_k'],
+            'inference_backend_version': BACKEND_VERSION,
             'temperature': protocol['training']['kd_temperature'], 'teacher': 'qwen7b',
             'model_revision': read_json(ROOT/'configs/models.lock.json')['models']['qwen7b']['revision'],
             'limit': limit}

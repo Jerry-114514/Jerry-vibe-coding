@@ -5,6 +5,8 @@ import time
 
 from experiment_common import MODELS, ROOT, read_json, write_json
 
+BACKEND_VERSION = 'finite-logits-sdpa-qwen-vision-fp32.v2'
+
 
 def finite_logits_processors():
     from transformers import LogitsProcessor, LogitsProcessorList
@@ -127,6 +129,16 @@ class Backend:
         else:
             cls = Qwen2_5_VLForConditionalGeneration if self.kind == 'qwen' else LlavaOnevisionForConditionalGeneration
             self.model = cls.from_pretrained(path, attn_implementation='sdpa', **kwargs).eval()
+            if self.kind == 'qwen':
+                # A real grounding input overflowed visual.blocks.31.mlp.down_proj
+                # in fp16. Promote the already-loaded fp16 vision weights exactly;
+                # retain fp16 language weights and the original input protocol.
+                self.model.visual.float()
+                visual_forward = self.model.visual.forward
+                def stable_visual_forward(*args, **forward_kwargs):
+                    with torch.autocast('cuda', enabled=False):
+                        return visual_forward(*args, **forward_kwargs)
+                self.model.visual.forward = stable_visual_forward
             proc_args = dict(min_pixels=256*28*28, max_pixels=1280*28*28) if self.kind == 'qwen' else {}
             self.processor = AutoProcessor.from_pretrained(path, use_fast=False, **proc_args)
             self.tokenizer = self.processor.tokenizer

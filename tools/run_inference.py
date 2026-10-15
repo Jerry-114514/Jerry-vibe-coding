@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import time
 from experiment_common import AXES, MODELS, ROOT, read_json, read_rows, score_generation, sha, write_json
-from model_backends import Backend, freeze_models
+from model_backends import Backend, freeze_models, BACKEND_VERSION
 
 
 def inference(key, output, smoke=False, shard=0, shards=1, adapter=None):
@@ -26,9 +26,9 @@ def inference(key, output, smoke=False, shard=0, shards=1, adapter=None):
     model_lock = freeze_models()
     metadata = {'schema': 'arp.ledger.v1', 'checkpoint': key,
                 'manifest_sha256': sha(manifest_path), 'model': model_lock['models'][key],
-                'fp16': True, 'do_sample': False, 'num_beams': 1, 'max_new_tokens': 128,
+                'language_dtype': 'float16', 'qwen_vision_dtype': 'float32', 'do_sample': False, 'num_beams': 1, 'max_new_tokens': 128,
                 'parser': 'explicit-json-schema.v2', 'smoke': smoke, 'shard': shard, 'shards': shards,
-                'inference_backend_version':'finite-logits-sdpa.v1',
+                'inference_backend_version':BACKEND_VERSION,
                 'adapter': str(adapter) if adapter else None, 'selected_rows': len(selected),
                 'qwen_pixels': [256*28*28, 1280*28*28], 'intern_max_tiles': 12}
     meta_path = output / f'{key}-{shard:03d}.meta.json'
