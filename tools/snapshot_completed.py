@@ -34,6 +34,16 @@ def snapshot(run):
         target=destination/'frozen-inputs'/relative
         target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(source,target)
+    # These folders are finalized before D2 starts; live teacher caches and
+    # optimizer outputs are deliberately snapshotted separately after completion.
+    analysis_gate=run/'analysis/gate.json'
+    if analysis_gate.exists():
+        gate=read_json(analysis_gate)
+        if gate.get('formal') and not gate.get('synthetic_test'):
+            for name in ['analysis','analysis-cluster','paper','training']:
+                source=run/name
+                if source.is_dir():
+                    shutil.copytree(source,destination/name)
     write_json(destination/'snapshot.json',{'source_run':str(run.relative_to(ROOT)),
         'created_utc':stamp,'completed_ledgers':completed,'full_experiment_complete':False,
         'live_partial_ledgers_included':False})
