@@ -27,12 +27,31 @@ def inference(key, output, smoke=False, shard=0, shards=1, adapter=None):
     metadata = {'schema': 'arp.ledger.v1', 'checkpoint': key,
                 'manifest_sha256': sha(manifest_path), 'model': model_lock['models'][key],
                 'fp16': True, 'do_sample': False, 'num_beams': 1, 'max_new_tokens': 128,
-                'parser': 'strict.v1', 'smoke': smoke, 'shard': shard, 'shards': shards,
+                'parser': 'explicit-json-schema.v2', 'smoke': smoke, 'shard': shard, 'shards': shards,
+                'inference_backend_version':'finite-logits-sdpa.v1',
                 'adapter': str(adapter) if adapter else None, 'selected_rows': len(selected),
                 'qwen_pixels': [256*28*28, 1280*28*28], 'intern_max_tiles': 12}
     meta_path = output / f'{key}-{shard:03d}.meta.json'
     if meta_path.exists() and read_json(meta_path) != metadata:
-        raise ValueError('Cannot resume a ledger under a changed protocol')
+        if not smoke:
+            raise ValueError('Cannot resume a ledger under a changed protocol')
+        # Only preflight ledgers may be upgraded by rescoring existing raw output.
+        old_path=output/f'{key}-{shard:03d}.jsonl'
+        previous=read_json(meta_path)
+        changed={k for k in set(previous)|set(metadata) if previous.get(k)!=metadata.get(k)}
+        if changed-{'parser'}:
+            archive=output/'superseded'/key/str(time.time_ns())
+            archive.mkdir(parents=True,exist_ok=True)
+            for path in [meta_path,old_path,output/f'{key}-{shard:03d}.complete.json']:
+                if path.exists():
+                    path.replace(archive/path.name)
+        elif old_path.exists():
+            by_id={item['item_id']:item for item in selected}
+            from experiment_common import write_rows
+            old=read_rows(old_path)
+            for row in old:
+                row.update(score_generation(row['raw_generation'],by_id[row['item_id']]))
+            write_rows(old_path,old)
     write_json(meta_path, metadata)
     ledger_path = output / f'{key}-{shard:03d}.jsonl'
     # A killed process can leave a partial last line; remove only that tail.
@@ -46,6 +65,10 @@ def inference(key, output, smoke=False, shard=0, shards=1, adapter=None):
     if len(done) != len(existing) or not done <= {x['item_id'] for x in selected}:
         raise ValueError('Duplicate or unrelated ledger rows')
     if len(done) == len(selected):
+        prior_path=output/f'{key}-{shard:03d}.complete.json'
+        prior=read_json(prior_path) if prior_path.exists() else {}
+        write_json(output / f'{key}-{shard:03d}.complete.json',
+                   {**prior,'rows':len(done),'ledger_sha256':sha(ledger_path),'resumed':True})
         print(f'{key}: already complete', flush=True)
         return
     backend = Backend(key, adapter)
@@ -58,6 +81,7 @@ def inference(key, output, smoke=False, shard=0, shards=1, adapter=None):
             # Infrastructure/OOM errors stop the shard; never score them as model failures.
             raw = backend.generate(item)
             row = {'checkpoint': key, 'axis': item['axis'], 'item_id': item['item_id'],
+                   'numerics_checked':True,
                    'dataset': item['dataset'], 'bootstrap_unit': item['bootstrap_unit'],
                    'image_group': item['image_group'], **score_generation(raw, item),
                    'elapsed_seconds': round(time.monotonic() - start, 4)}

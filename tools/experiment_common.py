@@ -67,8 +67,17 @@ def parse_answer(text, item):
         return value if value in item['options'] else None
     try:
         box = json.loads(text)
-        if isinstance(box, dict) and set(box) == {'bbox'}:
-            box = box['bbox']
+        # Explicit JSON schemas only; accept common native bbox_2d wrappers,
+        # never guess coordinates from prose, resize them or select among objects.
+        if isinstance(box,list) and len(box)==1 and isinstance(box[0],dict):
+            box=box[0]
+        if isinstance(box, dict):
+            if set(box)=={'bbox'}:
+                box=box['bbox']
+            elif 'bbox_2d' in box and set(box)<={'bbox_2d','label'}:
+                box=box['bbox_2d']
+            else:
+                return None
         if not isinstance(box, list) or len(box) != 4:
             return None
         if any(isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) for v in box):

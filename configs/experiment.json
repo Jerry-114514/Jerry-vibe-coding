@@ -50,5 +50,7 @@
     "Paired parse exclusion",
     "Top-50 plus tail-bucket KL, mixed equally with teacher-response CE",
     "Independent training proxies require approval"
-  ]
+  ],
+  "answer_parser": "explicit-json-schema.v2: exact yes/no and option letter; xyxy arrays or a single bbox/bbox_2d JSON wrapper, optional label; no heuristic unit conversion",
+  "numerical_backend": "fp16 weights, SDPA language attention including InternVL Qwen LLM; non-finite generation logits abort infrastructure task"
 }

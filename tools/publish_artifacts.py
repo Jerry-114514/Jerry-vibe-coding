@@ -80,6 +80,9 @@ def publish(run, tag, token=None, include_training=False, include_dataset=False,
                         remaining-=len(block)
                 uploads.append(part)
     uploaded=[]
+    inventory['archive']={'name':archive.name,'bytes':archive.stat().st_size,'sha256':sha(archive)}
+    inventory['binary_assets']=[{'name':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in uploads if p!=inventory_path]
+    write_json(inventory_path,inventory)
     upload_url=release['upload_url'].split('{')[0]
     for path in uploads:
         with path.open('rb') as payload:
@@ -87,11 +90,21 @@ def publish(run, tag, token=None, include_training=False, include_dataset=False,
                                   headers={'Content-Type':'application/octet-stream','Content-Length':str(path.stat().st_size)},timeout=(30,600))
         response.raise_for_status()
         result=response.json()
+        if result.get('size')!=path.stat().st_size:
+            raise RuntimeError('GitHub asset length verification failed')
+        digest=result.get('digest')
+        expected=sha(path)
+        if digest and digest!='sha256:'+expected:
+            raise RuntimeError('GitHub asset checksum verification failed')
         uploaded.append({'name':path.name,'bytes':path.stat().st_size,'sha256':sha(path),
                          'url':result['browser_download_url']})
         print('Uploaded:',path.name,path.stat().st_size,flush=True)
     report={'release_url':release['html_url'],'assets':uploaded,'storage':'AutoDL -> GitHub; no local download'}
     write_json(run/'github-storage.json',report)
+    # Disposable export copies have been verified remotely; preserve run originals.
+    for path in {*uploads,archive}:
+        if path.resolve().is_relative_to(export.resolve()) and path.is_file() and not path.is_symlink():
+            path.unlink()
     print(report['release_url'],flush=True)
     return report
 

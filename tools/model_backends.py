@@ -6,6 +6,17 @@ import time
 from experiment_common import MODELS, ROOT, read_json, write_json
 
 
+def finite_logits_processors():
+    from transformers import LogitsProcessor, LogitsProcessorList
+    import torch
+    class FiniteLogits(LogitsProcessor):
+        def __call__(self,input_ids,scores):
+            if not torch.isfinite(scores).all():
+                raise FloatingPointError('Non-finite generation logits; this is an infrastructure error, not an incorrect answer')
+            return scores
+    return LogitsProcessorList([FiniteLogits()])
+
+
 def model_path(key):
     from huggingface_hub import snapshot_download
     lock = read_json(ROOT / 'configs/models.lock.json')
@@ -17,7 +28,8 @@ def model_path(key):
     import shutil
     # Refuse unbounded downloads: preserve at least 5 GiB for run artifacts.
     existing = sum(p.stat().st_size for p in destination.rglob('*') if p.is_file() and p.suffix == '.safetensors')
-    needed = max(0, spec['weight_bytes']-existing)
+    partial_allocated = sum(getattr(p.stat(),'st_blocks',0)*512 for p in destination.rglob('*.range-partial'))
+    needed = max(0, spec['weight_bytes']-existing-partial_allocated)
     if shutil.disk_usage(destination).free < needed+5*1024**3:
         raise RuntimeError('Insufficient space for '+key+' plus 5 GiB artifact reserve')
     from huggingface_hub import HfApi, hf_hub_url, get_hf_file_metadata
@@ -105,13 +117,18 @@ class Backend:
                       offload_folder=str(ROOT / '.offload' / key))
         if self.kind == 'intern':
             self.model = AutoModel.from_pretrained(path, trust_remote_code=True, use_flash_attn=False, **kwargs).eval()
+            # The upstream constructor forces eager Qwen attention, whose fp16
+            # QK product overflowed on the real 2B smoke input. SDPA retains fp16
+            # weights while using stable internal attention accumulation.
+            if self.model.language_model.config.model_type=='qwen2':
+                self.model.language_model.config._attn_implementation='sdpa'
             self.tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
             self.processor = None
         else:
             cls = Qwen2_5_VLForConditionalGeneration if self.kind == 'qwen' else LlavaOnevisionForConditionalGeneration
             self.model = cls.from_pretrained(path, attn_implementation='sdpa', **kwargs).eval()
             proc_args = dict(min_pixels=256*28*28, max_pixels=1280*28*28) if self.kind == 'qwen' else {}
-            self.processor = AutoProcessor.from_pretrained(path, **proc_args)
+            self.processor = AutoProcessor.from_pretrained(path, use_fast=False, **proc_args)
             self.tokenizer = self.processor.tokenizer
         if adapter:
             from peft import PeftModel
@@ -155,7 +172,9 @@ class Backend:
         with self.torch.inference_mode():
             if self.kind == 'intern':
                 return self.model.chat(self.tokenizer, self.intern_pixels(item), '<image>\n' + item['question'],
-                                       {'max_new_tokens': 128, 'do_sample': False, 'num_beams': 1})
+                                       {'max_new_tokens': 128, 'do_sample': False, 'num_beams': 1,
+                                        'logits_processor':finite_logits_processors()})
             inputs = self.inputs(item)
-            out = self.model.generate(**inputs, max_new_tokens=128, do_sample=False, num_beams=1)
+            out = self.model.generate(**inputs, max_new_tokens=128, do_sample=False, num_beams=1,
+                                      logits_processor=finite_logits_processors())
             return self.processor.decode(out[0, inputs['input_ids'].shape[1]:], skip_special_tokens=True).strip()

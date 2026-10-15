@@ -257,9 +257,23 @@ def analyze(run_path, n_boot=None, cluster=False, synthetic_test=False):
             restricted = scan({mode: samples[mode][0] for mode in samples}, {mode: floors[mode][0] for mode in floors}, protocol,
                               frozen={coordinate: value})
             attribution.append({'coordinate': coordinate, 'fixed_value': value, 'F_frozen': restricted['F'],
-                                'F_reduction': point['F']-restricted['F'] if point['F'] is not None and restricted['F'] is not None else None})
-        hom_samples, hom_floors = bootstrap_scores(manifest, ledgers, family, 0, protocol['seed'], homogeneous=True)
-        homogeneous = scan({m: hom_samples[m][0] for m in hom_samples}, {m: hom_floors[m][0] for m in hom_floors}, protocol)
+                                'F_reduction': point['F']-restricted['F'] if point['F'] is not None and restricted['F'] is not None else None,
+                                'explained_flip_fraction':(point['F']-restricted['F'])/point['F'] if point['F'] not in (None,0) and restricted['F'] is not None else None})
+        # D5 changes only c_a -> c_bar; reuse exactly the same paired draws.
+        hom_floors={mode:np.repeat(floors[mode].mean(axis=1)[:,None],len(AXES),axis=1) for mode in floors}
+        homogeneous = scan({m: samples[m][0] for m in samples}, {m: hom_floors[m][0] for m in hom_floors}, protocol)
+        hom_pi,hom_F=[],[]
+        for b in range(1,n_boot+1):
+            value=scan({m:samples[m][b] for m in samples},{m:hom_floors[m][b] for m in hom_floors},protocol)
+            hom_pi.append(value['pi'])
+            hom_F.append(value['F'])
+        hom_attribution=[]
+        for coordinate,value in fixed.items():
+            restricted=scan({m:samples[m][0] for m in samples},{m:hom_floors[m][0] for m in hom_floors},protocol,frozen={coordinate:value})
+            hom_attribution.append({'coordinate':coordinate,'F_frozen':restricted['F'],
+                                    'F_reduction':homogeneous['F']-restricted['F'] if homogeneous['F'] is not None and restricted['F'] is not None else None})
+        write_rows(output/f'{family}-homogeneous-folding.jsonl',homogeneous['mapping'])
+        write_json(output/f'{family}-homogeneous-classes.json',finite_json(homogeneous['classes']))
         result = {'family': family, 'models': LADDERS[family], 'nominal_settings': len(mapping),
                   'quotient_classes': len(point['classes']), 'pi_point': dict(zip(AXES, point['pi'].tolist())),
                   'structural_class_count':point['structural_class_count'],
@@ -273,13 +287,17 @@ def analyze(run_path, n_boot=None, cluster=False, synthetic_test=False):
                   'scores': {k: dict(zip(AXES, samples['wrong'][0, i].tolist())) for i, k in enumerate(LADDERS[family])},
                   'u_a': dict(zip(AXES, samples['wrong'][0, -1].tolist())),
                   'c_a': dict(zip(AXES, floors['wrong'][0].tolist())),
-                  'homogeneous_floor_control': {'pi': homogeneous['pi'].tolist(), 'F_scale': homogeneous['F']}}
+                  'homogeneous_floor_control': {'pi': homogeneous['pi'].tolist(),'pi_boot_mean':np.nanmean(hom_pi,axis=0).tolist(),
+                                                'F_scale': homogeneous['F'],'F_scale_CI':ci(hom_F),
+                                                'stable_axis_set':[AXES[i] for i in homogeneous['stable']],
+                                                'attribution':hom_attribution,'n_boot':n_boot}}
         family_results[family] = finite_json(result)
         summaries.append(finite_json(result))
         np.savez_compressed(output / f'{family}-bootstrap.npz', scores_wrong=samples['wrong'], scores_exclude=samples['exclude'],
                             floors_wrong=floors['wrong'], floors_exclude=floors['exclude'], pi=np.array(boot_pi),
                             F=np.array([np.nan if x is None else x for x in boot_F]), noise_credits=noise_credits,
-                            noise_outer_rates=noise_outer)
+                            noise_outer_rates=noise_outer,homogeneous_pi=np.array(hom_pi),
+                            homogeneous_F=np.array([np.nan if x is None else x for x in hom_F]))
     defined = all(x['F_scale'] is not None for x in summaries)
     falsified = defined and all(x['stable_axis_set'] and x['F_scale'] <= x['F_noise_CI'][1] for x in summaries)
     separated = defined and any(x['F_scale_CI'][0] is not None and x['F_scale_CI'][0] > x['F_noise_CI'][1] for x in summaries)

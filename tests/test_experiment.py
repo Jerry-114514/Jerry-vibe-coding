@@ -25,6 +25,8 @@ class ExperimentTests(unittest.TestCase):
         self.assertIsNone(parse_answer('[10, 10, 5, 5]',item))
         self.assertIsNone(parse_answer('[false,0,4,5]',item))
         self.assertEqual(parse_answer('[0,0,640,480]',item),[0,0,640,480])
+        self.assertEqual(parse_answer('[{"bbox_2d":[0,0,640,480],"label":"target"}]',item),[0,0,640,480])
+        self.assertIsNone(parse_answer('[{"bbox_2d":[0,0,640,480]},{"bbox_2d":[1,1,5,5]}]',item))
 
     def test_own_declared_parse_failure_scores_zero(self):
         item={'axis':'pope','answer_type':'yes_no','answer_key':'yes'}

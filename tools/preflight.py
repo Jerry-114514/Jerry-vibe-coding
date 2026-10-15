@@ -48,10 +48,6 @@ def cpu():
 
 def gpu():
     PREFLIGHT.mkdir(parents=True,exist_ok=True)
-    for key in MODELS:
-        print('GPU smoke:',key,flush=True)
-        subprocess.run([sys.executable,'tools/run_inference.py','--checkpoint',key,'--smoke',
-                        '--output',str(PREFLIGHT/'ledger')],cwd=ROOT,check=True)
     pool=ROOT/'data/training/pool.jsonl'
     if not pool.exists():
         raise RuntimeError('Independent training pool is not ready')
@@ -69,6 +65,10 @@ def gpu():
                     '--steps','4','--smoke'],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'tools/run_inference.py','--checkpoint','qwen3b','--smoke',
                     '--adapter',str(PREFLIGHT/'lora-smoke/adapter'),'--output',str(PREFLIGHT/'adapted-ledger')],cwd=ROOT,check=True)
+    for key in MODELS:
+        print('GPU smoke:',key,flush=True)
+        subprocess.run([sys.executable,'tools/run_inference.py','--checkpoint',key,'--smoke',
+                        '--output',str(PREFLIGHT/'ledger')],cwd=ROOT,check=True)
     readiness()
 
 
@@ -81,6 +81,12 @@ def readiness():
     for path in requirements:
         if not path.exists():
             raise RuntimeError('Missing preflight check: '+str(path))
+    for key in MODELS:
+        path=PREFLIGHT/f'ledger/{key}-000.jsonl'
+        rows=read_rows(path)
+        complete=read_json(path.with_suffix('.complete.json'))
+        if len(rows)!=8 or complete['ledger_sha256']!=sha(path) or not all(x.get('numerics_checked') for x in rows):
+            raise RuntimeError('Real numerical-health/coverage verification missing: '+key)
     if not read_json(PREFLIGHT/'lora-smoke/complete.json')['parameters_changed']:
         raise AssertionError('LoRA optimizer did not update parameters')
     write_json(PREFLIGHT/'ready.json',{'status':'ready','models':list(MODELS),'actual_model_smoke_rows':8*len(MODELS),

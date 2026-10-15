@@ -11,6 +11,7 @@ Phase-A inputs stay frozen; their original byte hashes are authoritative.
 - Venv: `/root/autodl-tmp/arp-venv` (Python 3.12.3).
 - Image's PyTorch 2.8.0+cu128 / torchvision 0.23.0+cu128 are reused.
 - Remaining exact versions: `requirements-experiment.txt`.
+- InternVL's Qwen language attention uses SDPA with fp16 weights. The upstream eager implementation produced non-finite attention on the real 2B preflight input; the same checkpoint passed after the kernel change. A logits processor stops on non-finite generation scores for every model. Old preflight ledgers are archived when the numerical backend changes; no such ledger can enter formal analysis.
 - Public model code/tokenizers come from frozen HF revisions in `configs/models.lock.json`.
 - Large weight downloads may use ModelScope; **every weight must match the SHA256 of the pinned HF file**. A different model version cannot be substituted.
 - InternVL 2B/8B and LLaVA 0.5B weights live on the system disk in `/root/arp-model-cache`; others live on the data disk under `.model_cache`. Each download preserves 5 GiB on its target disk. Models load serially on the one GPU.

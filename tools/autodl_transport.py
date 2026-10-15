@@ -47,7 +47,7 @@ def publish(remote_command):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('action', choices=['run', 'upload', 'upload-lock', 'publish'])
+    p.add_argument('action', choices=['run', 'upload', 'upload-lock', 'publish', 'preview'])
     p.add_argument('args', nargs='*')
     a = p.parse_args()
     if a.action == 'upload':
@@ -58,5 +58,12 @@ if __name__ == '__main__':
         upload([*lock['files'], 'data/experiment.lock.json'])
     elif a.action == 'publish':
         publish(' '.join(a.args))
+    elif a.action == 'preview':
+        import base64,shlex
+        target=a.args[0]
+        if not target.startswith('/root/autodl-tmp/arp/runs/'):
+            raise ValueError('Preview only supports generated run artifacts')
+        result=run('cat '+shlex.quote(target),capture_output=True)
+        print(base64.b64encode(result.stdout).decode())
     else:
         run(' '.join(a.args))

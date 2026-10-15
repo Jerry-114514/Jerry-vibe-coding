@@ -9,7 +9,7 @@ import requests
 from experiment_common import sha, write_json
 
 
-def _download_ranges(url, destination, size, expected_sha=None, workers=8, direct=False):
+def _download_ranges(url, destination, size, expected_sha=None, workers=32, direct=False):
     destination=Path(destination)
     destination.parent.mkdir(parents=True,exist_ok=True)
     if destination.exists():
@@ -73,7 +73,7 @@ def _download_ranges(url, destination, size, expected_sha=None, workers=8, direc
     return destination
 
 
-def download_ranges(url, destination, size, expected_sha=None, workers=8, direct=False):
+def download_ranges(url, destination, size, expected_sha=None, workers=32, direct=False):
     import fcntl
     destination=Path(destination)
     destination.parent.mkdir(parents=True,exist_ok=True)
