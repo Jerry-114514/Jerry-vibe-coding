@@ -61,7 +61,7 @@ cd /root/autodl-tmp/arp
 # After preflight ready.json exists, a detached screen job runs scripts/formal.sh.
 ```
 
-Preflight exercises real inference on eight inputs per checkpoint, all four tasks, real teacher caching, four optimizer steps and reloaded-adapter inference. Synthetic CPU fixtures are labelled and kept only under `runs/preflight`; their gate always has `formal=false`.
+Preflight exercises real inference on eight inputs per checkpoint, all four tasks, real teacher caching, eight optimizer steps covering all four training axes, and reloaded-adapter inference. AMP overflows reduce the scale and retry the same logical step; skipped updates never count toward the formal 1,000-update budget. Synthetic CPU fixtures are labelled and kept only under `runs/preflight`; their gate always has `formal=false`.
 
 The formal job runs B → C → E analysis exports → conditional D → E final exports. It writes `runs/formal-20261014/status.json` and `console.log`, and resumes per-item inference and optimizer checkpoints. A failed infrastructure operation stops the affected stage; it is never converted into a wrong-answer observation.
 

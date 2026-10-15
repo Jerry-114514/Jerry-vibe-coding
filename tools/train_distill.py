@@ -172,23 +172,33 @@ def train_arm(arm, manifest, cache_path, output, steps=None, smoke=False, run=No
             inputs = backend.inputs(item, cache['response'])
             if not torch.equal(inputs['input_ids'].cpu(), cache['input_ids']):
                 raise ValueError('Teacher/student inputs differ')
-            optimizer.zero_grad(set_to_none=True)
-            with torch.autocast('cuda', dtype=torch.float16):
-                logits, targets = response_forward(model, inputs, cache['prompt_length'], base_model=base_model)
-                ce = F.cross_entropy(logits.float().reshape(-1, logits.shape[-1]), targets.reshape(-1))
-                kd = sparse_kl(logits, cache, params['kd_temperature'])
-                loss = (1-params['kd_weight'])*ce+params['kd_weight']*kd
-            if not torch.isfinite(loss):
-                raise FloatingPointError('Non-finite loss')
-            scaler.scale(loss).backward()
-            scaler.unscale_(optimizer)
-            norm = torch.nn.utils.clip_grad_norm_(trainable, 1.0)
-            if not torch.isfinite(norm):
-                raise FloatingPointError('Non-finite gradients')
-            scaler.step(optimizer)
-            scaler.update()
+            # AMP's initial scale can overflow even with finite forward values.
+            # Retry the same logical step at a lower scale; do not count skipped
+            # updates against the fixed 1000 actual-optimizer-update budget.
+            for amp_retry in range(20):
+                optimizer.zero_grad(set_to_none=True)
+                with torch.autocast('cuda', dtype=torch.float16):
+                    logits, targets = response_forward(model, inputs, cache['prompt_length'], base_model=base_model)
+                    ce = F.cross_entropy(logits.float().reshape(-1, logits.shape[-1]), targets.reshape(-1))
+                    kd = sparse_kl(logits, cache, params['kd_temperature'])
+                    loss = (1-params['kd_weight'])*ce+params['kd_weight']*kd
+                if not torch.isfinite(loss):
+                    raise FloatingPointError('Non-finite loss')
+                scaler.scale(loss).backward()
+                scaler.unscale_(optimizer)
+                norm = torch.nn.utils.clip_grad_norm_(trainable, 1.0)
+                if torch.isfinite(norm):
+                    scaler.step(optimizer)
+                    scaler.update()
+                    break
+                new_scale=scaler.get_scale()/2
+                scaler.update(new_scale=new_scale)
+                print(f'{arm}: AMP overflow, retry step {step+1} with scale {new_scale}',flush=True)
+            else:
+                raise FloatingPointError('Gradients remain non-finite after 20 AMP scale reductions')
             entry = {'step':step+1, 'loss':float(loss.detach()), 'ce':float(ce.detach()),
-                     'kd':float(kd.detach()), 'grad_norm':float(norm), 'item_id':item['item_id']}
+                     'kd':float(kd.detach()), 'grad_norm':float(norm), 'item_id':item['item_id'],
+                     'amp_retries':amp_retry,'amp_scale':scaler.get_scale()}
             log.write(json.dumps(entry)+'\n')
             log.flush()
             if smoke or (step+1)%100 == 0:

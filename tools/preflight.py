@@ -61,10 +61,10 @@ def gpu():
     subprocess.run([sys.executable,'tools/train_distill.py','cache','--manifest',str(manifest),
                     '--cache',str(PREFLIGHT/'teacher-cache')],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'tools/train_distill.py','train','--arm','A1','--manifest',str(manifest),
-                    '--cache',str(PREFLIGHT/'teacher-cache'),'--output',str(PREFLIGHT/'lora-smoke'),
-                    '--steps','4','--smoke'],cwd=ROOT,check=True)
+                    '--cache',str(PREFLIGHT/'teacher-cache'),'--output',str(PREFLIGHT/'lora-smoke-8'),
+                    '--steps','8','--smoke'],cwd=ROOT,check=True)
     subprocess.run([sys.executable,'tools/run_inference.py','--checkpoint','qwen3b','--smoke',
-                    '--adapter',str(PREFLIGHT/'lora-smoke/adapter'),'--output',str(PREFLIGHT/'adapted-ledger')],cwd=ROOT,check=True)
+                    '--adapter',str(PREFLIGHT/'lora-smoke-8/adapter'),'--output',str(PREFLIGHT/'adapted-ledger')],cwd=ROOT,check=True)
     for key in MODELS:
         print('GPU smoke:',key,flush=True)
         subprocess.run([sys.executable,'tools/run_inference.py','--checkpoint',key,'--smoke',
@@ -74,7 +74,7 @@ def gpu():
 
 def readiness():
     requirements=[PREFLIGHT/'assets.json',PREFLIGHT/'environment.json',PREFLIGHT/'cpu-integration.json',
-                  ROOT/'data/training/pool.lock.json',PREFLIGHT/'lora-smoke/complete.json',
+                  ROOT/'data/training/pool.lock.json',PREFLIGHT/'lora-smoke-8/complete.json',
                   PREFLIGHT/'adapted-ledger/qwen3b-000.complete.json']
     for key in MODELS:
         requirements.append(PREFLIGHT/f'ledger/{key}-000.complete.json')
@@ -87,10 +87,10 @@ def readiness():
         complete=read_json(path.with_suffix('.complete.json'))
         if len(rows)!=8 or complete['ledger_sha256']!=sha(path) or not all(x.get('numerics_checked') for x in rows):
             raise RuntimeError('Real numerical-health/coverage verification missing: '+key)
-    if not read_json(PREFLIGHT/'lora-smoke/complete.json')['parameters_changed']:
+    if not read_json(PREFLIGHT/'lora-smoke-8/complete.json')['parameters_changed']:
         raise AssertionError('LoRA optimizer did not update parameters')
     write_json(PREFLIGHT/'ready.json',{'status':'ready','models':list(MODELS),'actual_model_smoke_rows':8*len(MODELS),
-               'teacher_cache_items':8,'lora_smoke_steps':4,'protocol_sha256':sha(ROOT/'configs/experiment.json'),
+               'teacher_cache_items':8,'lora_smoke_steps':8,'protocol_sha256':sha(ROOT/'configs/experiment.json'),
                'manifest_sha256':sha(ROOT/'data/manifest.jsonl'),'checks':{str(p.relative_to(ROOT)):sha(p) for p in requirements},
                'formal_experiment_completed':False})
     print('All end-to-end preflight checks passed: ready for formal B -> C -> conditional D -> E.',flush=True)
