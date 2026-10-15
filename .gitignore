@@ -3,3 +3,10 @@ __pycache__/
 data/raw/
 data/images/
 tmp/
+runs/
+.model_cache/
+.offload/
+.exports/
+data/training/
+.autodl_known_hosts
+.gpu.lock
