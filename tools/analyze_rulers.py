@@ -225,6 +225,11 @@ def analyze(run_path, n_boot=None, cluster=False, synthetic_test=False):
             meta = read_json(path.with_suffix('.meta.json'))
             if meta['smoke'] or (meta.get('synthetic',False) and not synthetic_test) or meta['manifest_sha256'] != sha(ROOT / 'data/manifest.jsonl'):
                 raise ValueError('Smoke/foreign ledger cannot enter formal analysis')
+            if not synthetic_test:
+                from model_backends import BACKEND_VERSION
+                complete=read_json(path.with_suffix('.complete.json'))
+                if meta.get('inference_backend_version')!=BACKEND_VERSION or complete.get('ledger_sha256')!=sha(path):
+                    raise ValueError('Unverified or obsolete numerical-backend ledger: '+str(path))
         ledgers[key] = [row for path in paths for row in read_rows(path)]
         units(manifest, ledgers[key])
     output = run_path / ('analysis-cluster' if cluster else 'analysis')
@@ -272,6 +277,10 @@ def analyze(run_path, n_boot=None, cluster=False, synthetic_test=False):
             restricted=scan({m:samples[m][0] for m in samples},{m:hom_floors[m][0] for m in hom_floors},protocol,frozen={coordinate:value})
             hom_attribution.append({'coordinate':coordinate,'F_frozen':restricted['F'],
                                     'F_reduction':homogeneous['F']-restricted['F'] if homogeneous['F'] is not None and restricted['F'] is not None else None})
+        hom_mean=np.nanmean(hom_pi,axis=0)
+        hom_ranking=sorted(range(len(AXES)),key=lambda i:(-hom_mean[i],i))
+        hom_selection_defined=bool(np.isfinite(hom_mean).all() and
+            abs(hom_mean[hom_ranking[0]]-hom_mean[hom_ranking[1]])>protocol['tie_epsilon'])
         write_rows(output/f'{family}-homogeneous-folding.jsonl',homogeneous['mapping'])
         write_json(output/f'{family}-homogeneous-classes.json',finite_json(homogeneous['classes']))
         result = {'family': family, 'models': LADDERS[family], 'nominal_settings': len(mapping),
@@ -288,6 +297,11 @@ def analyze(run_path, n_boot=None, cluster=False, synthetic_test=False):
                   'u_a': dict(zip(AXES, samples['wrong'][0, -1].tolist())),
                   'c_a': dict(zip(AXES, floors['wrong'][0].tolist())),
                   'homogeneous_floor_control': {'pi': homogeneous['pi'].tolist(),'pi_boot_mean':np.nanmean(hom_pi,axis=0).tolist(),
+                                                'axis_ranking':[AXES[i] for i in hom_ranking],
+                                                'arm_selection_defined':hom_selection_defined,
+                                                'top_axis':AXES[hom_ranking[0]] if hom_selection_defined else None,
+                                                'runner_up_axis':AXES[hom_ranking[1]] if hom_selection_defined else None,
+                                                'selection_rule':'Rank mean bootstrap pi; top tie within tie_epsilon leaves selection undefined',
                                                 'F_scale': homogeneous['F'],'F_scale_CI':ci(hom_F),
                                                 'stable_axis_set':[AXES[i] for i in homogeneous['stable']],
                                                 'attribution':hom_attribution,'n_boot':n_boot}}

@@ -249,6 +249,14 @@ def arms(run):
     write_json(output/'arm_selection.json', {'ranking':ranking, 'pi':pi, 'gate':gate,
                                            'pool_sha256':sha(ROOT/'data/training/pool.jsonl'),
                                            'no_op': 'N has no parameter updates; identical baseline ledger is reused.'})
+    control=summary['families']['qwen']['homogeneous_floor_control']
+    write_json(output/'homogeneous_floor_arm_selection.json', {
+        'control':'D5: replace all c_a by c_bar, retaining scores and paired bootstrap draws',
+        'actual_top_axis':ranking[0], 'actual_runner_up_axis':ranking[1],
+        'homogeneous_control':control,
+        'top_axis_changed':control['top_axis']!=ranking[0] if control['arm_selection_defined'] else None,
+        'runner_up_axis_changed':control['runner_up_axis']!=ranking[1] if control['arm_selection_defined'] else None,
+        'additional_training':False})
 
 
 if __name__ == '__main__':
