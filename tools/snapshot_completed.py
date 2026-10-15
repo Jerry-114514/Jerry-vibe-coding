@@ -3,9 +3,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 import argparse
 import shutil
-from experiment_common import ROOT, MODELS, read_json, sha, write_json
+from experiment_common import ROOT, MODELS, read_json, read_rows, sha, write_json
 
-def snapshot(run):
+def snapshot(run, include_training_artifacts=False):
     run=Path(run).resolve()
     if not run.is_relative_to((ROOT/'runs').resolve()):
         raise ValueError('Run must be under project runs')
@@ -44,8 +44,45 @@ def snapshot(run):
                 source=run/name
                 if source.is_dir():
                     shutil.copytree(source,destination/name)
+    teacher_items=0
+    training_arms=[]
+    if include_training_artifacts:
+        teacher=run/'teacher-cache'
+        if (teacher/'complete.json').exists():
+            evidence=read_json(teacher/'complete.json')
+            pool=ROOT/'data/training/pool.jsonl'
+            if evidence['manifest_sha256']!=sha(pool) or evidence['items']!=len(read_rows(pool)):
+                raise ValueError('Teacher cache coverage/manifest mismatch')
+            if len(evidence['files'])!=evidence['items']:
+                raise ValueError('Teacher cache inventory incomplete')
+            for name,digest in evidence['files'].items():
+                if sha(teacher/name)!=digest:
+                    raise ValueError('Teacher cache checksum mismatch')
+            shutil.copytree(teacher,destination/'teacher-cache')
+            teacher_items=evidence['items']
+        for arm in ['A1','A2','U','N']:
+            folder=run/'arms'/arm
+            if not (folder/'complete.json').exists():
+                continue
+            complete=read_json(folder/'complete.json')
+            expected=0 if arm=='N' else 1000
+            if complete.get('smoke') or complete['effective_updates']!=expected:
+                raise ValueError('Training completion mismatch: '+arm)
+            if arm!='N' and [row['step'] for row in read_rows(folder/'loss.jsonl')]!=list(range(1,1001)):
+                raise ValueError('Training history incomplete: '+arm)
+            shutil.copytree(folder,destination/'arms'/arm)
+            training_arms.append(arm)
+            for marker in sorted((run/'post'/arm).glob('*.complete.json')):
+                ledger=marker.with_suffix('').with_suffix('.jsonl')
+                if sha(ledger)!=read_json(marker)['ledger_sha256']:
+                    raise ValueError('Post-training ledger checksum mismatch')
+                target=destination/'post'/arm
+                target.mkdir(parents=True,exist_ok=True)
+                for path in [ledger,ledger.with_suffix('.meta.json'),marker]:
+                    shutil.copy2(path,target/path.name)
     write_json(destination/'snapshot.json',{'source_run':str(run.relative_to(ROOT)),
         'created_utc':stamp,'completed_ledgers':completed,'full_experiment_complete':False,
+        'teacher_cache_items':teacher_items,'completed_training_arms':training_arms,
         'live_partial_ledgers_included':False})
     print(str(destination),flush=True)
     return destination
@@ -53,4 +90,6 @@ def snapshot(run):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--run',default=str(ROOT/'runs/formal-20261014'))
-    snapshot(parser.parse_args().run)
+    parser.add_argument('--include-training-artifacts',action='store_true')
+    args=parser.parse_args()
+    snapshot(args.run,args.include_training_artifacts)
