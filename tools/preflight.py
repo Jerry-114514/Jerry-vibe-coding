@@ -87,8 +87,31 @@ def readiness():
         complete=read_json(path.with_suffix('.complete.json'))
         if len(rows)!=8 or complete['ledger_sha256']!=sha(path) or not all(x.get('numerics_checked') for x in rows):
             raise RuntimeError('Real numerical-health/coverage verification missing: '+key)
-    if not read_json(PREFLIGHT/'lora-smoke-8/complete.json')['parameters_changed']:
+    trained=read_json(PREFLIGHT/'lora-smoke-8/complete.json')
+    if not trained['parameters_changed'] or trained.get('effective_updates')!=8:
         raise AssertionError('LoRA optimizer did not update parameters')
+    losses=read_rows(PREFLIGHT/'lora-smoke-8/loss.jsonl')
+    training_rows=read_rows(PREFLIGHT/'training-smoke.jsonl')
+    training_axes={row['item_id']:row['axis'] for row in training_rows}
+    if [row['step'] for row in losses]!=list(range(1,9)) or {training_axes[row['item_id']] for row in losses}!=set(AXES):
+        raise RuntimeError('LoRA smoke did not perform eight updates covering all four axes')
+    import math
+    if not all(math.isfinite(row[field]) for row in losses for field in ['loss','ce','kd','grad_norm']):
+        raise RuntimeError('Non-finite training smoke statistics')
+    teacher_complete=read_json(PREFLIGHT/'teacher-cache/complete.json')
+    if teacher_complete['items']!=8 or teacher_complete['manifest_sha256']!=sha(PREFLIGHT/'training-smoke.jsonl'):
+        raise RuntimeError('Teacher cache coverage mismatch')
+    for name,digest in teacher_complete['files'].items():
+        if sha(PREFLIGHT/'teacher-cache'/name)!=digest:
+            raise RuntimeError('Teacher cache checksum mismatch')
+    pool_lock=read_json(ROOT/'data/training/pool.lock.json')
+    if sha(ROOT/'data/training/pool.jsonl')!=pool_lock['manifest_sha256']:
+        raise RuntimeError('Frozen training pool changed')
+    for asset in read_rows(ROOT/'data/training/assets.jsonl'):
+        if sha(ROOT/asset['path'])!=asset['sha256']:
+            raise RuntimeError('Frozen training image changed: '+asset['path'])
+    requirements += [PREFLIGHT/'training-smoke.jsonl',PREFLIGHT/'teacher-cache/complete.json',
+                     PREFLIGHT/'lora-smoke-8/loss.jsonl',ROOT/'data/training/assets.jsonl']
     write_json(PREFLIGHT/'ready.json',{'status':'ready','models':list(MODELS),'actual_model_smoke_rows':8*len(MODELS),
                'teacher_cache_items':8,'lora_smoke_steps':8,'protocol_sha256':sha(ROOT/'configs/experiment.json'),
                'manifest_sha256':sha(ROOT/'data/manifest.jsonl'),'checks':{str(p.relative_to(ROOT)):sha(p) for p in requirements},

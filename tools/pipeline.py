@@ -10,11 +10,20 @@ def pipeline(run, publish=False):
     run=Path(run).resolve()
     if not run.is_relative_to((ROOT/'runs').resolve()):
         raise ValueError('Run must reside under runs/')
+    # Re-audit all current evidence with the current verifier before launching.
+    # A long-running preflight parent may have imported an older verifier.
+    from preflight import readiness
+    readiness()
     ready=read_json(ROOT/'runs/preflight/ready.json')
     if ready['status']!='ready':
         raise RuntimeError('End-to-end preflight has not passed')
     if ready['protocol_sha256']!=sha(ROOT/'configs/experiment.json'):
         raise RuntimeError('Protocol changed after preflight')
+    if ready['manifest_sha256']!=sha(ROOT/'data/manifest.jsonl'):
+        raise RuntimeError('Evaluation manifest changed after preflight')
+    for relative,digest in ready['checks'].items():
+        if sha(ROOT/relative)!=digest:
+            raise RuntimeError('Preflight evidence changed: '+relative)
     run.mkdir(parents=True,exist_ok=True)
     def command(args,stage):
         write_json(run/'status.json',{'stage':stage,'status':'running','command':args})
