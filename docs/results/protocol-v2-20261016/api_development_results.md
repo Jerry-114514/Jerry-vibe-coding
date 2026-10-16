@@ -25,6 +25,8 @@ API 定位 8 题中 7 题超出原图范围，严格解析失败；余下一题�
 
 这是在已观察开发样本上进行的格式校准，提示和坐标契约都发生了变化；0%→100% 只能支持这 8 条上的测量约定影响，不能称为独立验证或模型能力提升，也不能事后覆盖原严格协议结果。下一步应在未用于本次校准的开发样本验证契约，然后冻结用于后续审计；人工盲审仍未完成。
 
+已启动后续验证：从原 BF16 开发清单的 100 条定位题中严格排除上述 8 条，其余 92 条全部使用相同的已冻结原生提示与映射，过程中不改提示或按答案选择换算。运行目录为 AutoDL 的 `runs/protocol-v2/calibration/api-native-grounding-validation/`；最多 92 次调用、每次 128 输出 token，累计 token 停止阈值 100,000。它仍是历史开发验证，不是独立最终确认；状态以逐题账本、独立验收及 Release 上传回执为准。
+
 ## 真实产物和限制
 
 - [64 条比较完成摘要](calibration/api-teacher-development/complete.json)、[独立验收](calibration/api-teacher-development/verification.json)、[冻结协议](calibration/api-teacher-development/protocol.json)。

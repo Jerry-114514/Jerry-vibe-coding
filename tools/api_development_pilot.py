@@ -18,6 +18,7 @@ from experiment_common import AXES, ROOT, read_json, read_rows, score_generation
 
 OUT = ROOT / 'runs/protocol-v2/calibration/api-teacher-development'
 NATIVE = False
+VALIDATE_NATIVE = False
 
 
 def freeze():
@@ -69,8 +70,10 @@ def freeze():
 
 
 def freeze_native():
-    source = ROOT / 'runs/protocol-v2/calibration/api-teacher-development/manifest.jsonl'
-    original = [row for row in read_rows(source) if row['axis'] == 'grounding']
+    development = ROOT / 'runs/protocol-v2/calibration/api-teacher-development/manifest.jsonl'
+    source = ROOT / 'runs/protocol-v2/calibration/precision-bridge-manifest.jsonl' if VALIDATE_NATIVE else development
+    excluded = {row['item_id'] for row in read_rows(development) if row['axis'] == 'grounding'} if VALIDATE_NATIVE else set()
+    original = [row for row in read_rows(source) if row['axis'] == 'grounding' and row['item_id'] not in excluded]
     selected = []
     for row in original:
         expression = row['question'].split('Locate the object referred to by: ', 1)[1].split('. Return only its bounding box', 1)[0]
@@ -81,25 +84,33 @@ def freeze_native():
     OUT.mkdir(parents=True, exist_ok=True)
     if (OUT / 'manifest.jsonl').exists() and read_rows(OUT / 'manifest.jsonl') != selected:
         raise ValueError('Native calibration manifest changed')
-    if len(selected) != 8:
-        raise ValueError('Native calibration requires all eight original grounding units')
+    expected = 92 if VALIDATE_NATIVE else 8
+    if len(selected) != expected:
+        raise ValueError('Native coordinate experiment has unexpected coverage')
     write_rows(OUT / 'manifest.jsonl', selected)
-    protocol = {**read_json(source.parent / 'protocol.json'), 'prompts': 8, 'max_requests': 8,
-                'max_cumulative_reported_tokens': 30000,
-                'purpose': 'native_coordinate_development_calibration',
+    protocol = {**read_json(development.parent / 'protocol.json'), 'prompts': expected, 'max_requests': expected,
+                'scoring_units_per_axis': expected,
+                'max_cumulative_reported_tokens': 100000 if VALIDATE_NATIVE else 30000,
+                'purpose': 'held_out_native_contract_development_validation' if VALIDATE_NATIVE else 'native_coordinate_development_calibration',
                 'source_manifest_sha256': sha(source), 'manifest_sha256': sha(OUT / 'manifest.jsonl'),
                 'coordinate_contract': 'normalized_1000',
                 'contract_source': 'https://arxiv.org/html/2511.21631v1#S3.SS2.SSS4',
                 'scoring': 'Strict JSON normalized box in [0,1000], fixed x*width/1000 and y*height/1000 mapping; unconditional pixel IoU >= 0.5',
-                'interpretation': 'Same eight development units, explicit native prompt; no confirmation or scale claim'}
+                'interpretation': 'Remaining 92 historical development units, excluding all eight API calibration units; not independent final confirmation' if VALIDATE_NATIVE else 'Same eight development units, explicit native prompt; no confirmation or scale claim'}
     if (OUT / 'protocol.json').exists() and read_json(OUT / 'protocol.json') != protocol:
         raise ValueError('Native coordinate protocol changed')
     write_json(OUT / 'protocol.json', protocol)
     write_json(OUT / 'public-provenance.json', {
         'all_inputs_from_public_benchmarks': True, 'private_user_files_included': False,
-        'parent_provenance_sha256': sha(source.parent / 'public-provenance.json'),
+        'parent_provenance_sha256': sha(development.parent / 'public-provenance.json'),
         'public_sources': ['https://github.com/lichengunc/refer'],
         'answer_keys_sent': False})
+    original_manifest = {row['item_id']: row for row in read_rows(ROOT / 'data/manifest.jsonl')}
+    for row in original:
+        if row['dataset'] not in ('refcoco', 'refcoco+', 'refcocog'):
+            raise ValueError('Native coordinate data must come from public REFER benchmarks')
+        if {key: value for key, value in row.items() if key != 'protocol_v2_role'} != original_manifest[row['item_id']]:
+            raise ValueError('Public-source input does not match original frozen manifest')
     return selected, protocol
 
 
@@ -233,10 +244,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--worker', action='store_true')
     parser.add_argument('--native-grounding', action='store_true')
+    parser.add_argument('--validate-native-contract', action='store_true')
     args = parser.parse_args()
-    if args.native_grounding:
+    VALIDATE_NATIVE = args.validate_native_contract
+    if args.native_grounding or VALIDATE_NATIVE:
         NATIVE = True
-        OUT = ROOT / 'runs/protocol-v2/calibration/api-native-grounding'
+        OUT = ROOT / 'runs/protocol-v2/calibration' / ('api-native-grounding-validation' if VALIDATE_NATIVE else 'api-native-grounding')
     if args.worker:
         worker()
     else:
@@ -245,11 +258,11 @@ if __name__ == '__main__':
             raise SystemExit('Both API and backup credentials are required')
         freeze()
         sessions = subprocess.run(['screen', '-ls'], capture_output=True, text=True).stdout
-        screen_name = 'arp-v2-api-native-grounding' if NATIVE else 'arp-v2-api-development'
+        screen_name = 'arp-v2-api-native-validation' if VALIDATE_NATIVE else 'arp-v2-api-native-grounding' if NATIVE else 'arp-v2-api-development'
         if '.' + screen_name in sessions:
             raise SystemExit('Development API worker already exists')
         command = ('cd /root/autodl-tmp/arp; exec /root/autodl-tmp/arp-venv/bin/python -u tools/api_development_pilot.py --worker' +
-                   (' --native-grounding' if NATIVE else '') + ' >> ' + str(OUT / 'console.log') + ' 2>&1')
+                   (' --validate-native-contract' if VALIDATE_NATIVE else ' --native-grounding' if NATIVE else '') + ' >> ' + str(OUT / 'console.log') + ' 2>&1')
         subprocess.run(['screen', '-dmS', screen_name, 'bash', '-c', command],
                        env={**os.environ, 'GH_TOKEN': token}, check=True)
         print('Started bounded ' + str(len(read_rows(OUT / 'manifest.jsonl'))) + '-prompt API development experiment with completion backup', flush=True)
