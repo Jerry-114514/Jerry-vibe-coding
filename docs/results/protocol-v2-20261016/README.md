@@ -6,6 +6,8 @@
 
 最新调度按[四阶段更新](route_b_staged_update.md)：500条最小循环优先，验收后才补齐全池与冻结正式计划；4090已释放，评测改用5090。[9B权重与独立环境](qwen35_9b_infrastructure.md)并行准备，GPU烟测等待7B最小循环通过。
 
+**阶段一已于北京时间2026-10-16 21:48通过五项验收**：[真实报告](route-b-minimal-report.md)、[完整数值/token分布](route-b-minimal-report.json)、[独立检查点与逐题重评分验收](route-b-minimal-independent-verification.json)。A1实际从50恢复至100，首恢复损失0.000149575；三臂训练峰值20.563/22.247/21.341GB，N推理峰值18.690GB。正式15次训练结果仍待运行/汇总，不能将阶段一表格当作正式结论。
+
 ## 最新模型分工
 
 教师采用 Qwen3.5-122B-A10B，397B-A17B 为校准对照；两者各 48 条工程校准已完成并保存 Release。用户最新指定审计 API 先使用 qwen3-vl-plus，qwen-vl-plus/max 因当前端点 404 暂缓。详见 [执行映射与限制](../../大模型方案_落地修订_20261016.md)。正式训练未放行。同检查点精度桥接是合并前置条件；精确 3B/7B API 当前均 403，商业审计已在 1,365 条时暂停，详见 [桥接状态与固定阈值](same_checkpoint_precision_bridge.md)。

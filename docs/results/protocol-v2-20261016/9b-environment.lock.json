@@ -1,0 +1,12 @@
+{
+  "shared_readonly_runtime": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "transformers": "4.51.3",
+    "peft": "0.15.2"
+  },
+  "packages": {
+    "transformers": "5.20.1",
+    "peft": "0.21.2"
+  }
+}

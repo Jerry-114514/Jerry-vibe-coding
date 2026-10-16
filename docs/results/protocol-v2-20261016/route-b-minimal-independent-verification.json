@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "phase": "minimal",
+  "trained_runs": 3,
+  "updates_per_trained_run": 100,
+  "evaluated_models": 4,
+  "prompts_per_model": 800,
+  "checks": [
+    "continuous_real_updates",
+    "finite_dual_ce_gradients",
+    "resume_optimizer_and_adapter_match",
+    "frozen_hashes",
+    "exact_eval_coverage",
+    "independent_rescore"
+  ]
+}

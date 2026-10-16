@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "checks": 5,
+  "scores": {
+    "A1": {
+      "pope": 0.83,
+      "grounding": 0.69,
+      "consistency": 0.93,
+      "mmstar": 0.67
+    },
+    "A2": {
+      "pope": 0.84,
+      "grounding": 0.73,
+      "consistency": 0.92,
+      "mmstar": 0.67
+    },
+    "U": {
+      "pope": 0.85,
+      "grounding": 0.74,
+      "consistency": 0.9,
+      "mmstar": 0.72
+    },
+    "N": {
+      "pope": 0.83,
+      "grounding": 0.73,
+      "consistency": 0.86,
+      "mmstar": 0.66
+    }
+  },
+  "protocol_sha256": "98b37d61846f4401505107b8b0240c7986dcd484a3ef364c9f901d000690a265",
+  "timestamp": "2026-10-16T13:48:08.132923+00:00"
+}

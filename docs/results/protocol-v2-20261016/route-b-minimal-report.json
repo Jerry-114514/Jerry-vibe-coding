@@ -1,0 +1,338 @@
+{
+  "status": "passed",
+  "five_checks": {
+    "cache_loading_no_truncation": true,
+    "finite_dual_ce_nonzero_gradients": true,
+    "adapter_saved_and_reloaded": true,
+    "four_axis_eval_output": true,
+    "real_process_resume": true
+  },
+  "teacher_minimal_cache_rows": 500,
+  "training": {
+    "A1": {
+      "updates": 100,
+      "loss_first": 0.056587498635053635,
+      "loss_last": 2.515228152333293e-05,
+      "gt_ce_range": [
+        4.7683693082944956e-07,
+        3.291698455810547
+      ],
+      "teacher_ce_range": [
+        4.7683693082944956e-07,
+        7.9531755447387695
+      ],
+      "minimum_gradient_norm": 6.304121143330121e-06,
+      "mean_seconds_per_step": 0.5695712095126509,
+      "reserved_peak_bytes": 20562575360,
+      "scores": {
+        "pope": 0.83,
+        "grounding": 0.69,
+        "consistency": 0.93,
+        "mmstar": 0.67
+      },
+      "axis_deltas_vs_N": {
+        "pope": 0.0,
+        "grounding": -0.040000000000000036,
+        "consistency": 0.07000000000000006,
+        "mmstar": 0.010000000000000009
+      }
+    },
+    "A2": {
+      "updates": 100,
+      "loss_first": 0.029702410101890564,
+      "loss_last": 1.0424895286560059,
+      "gt_ce_range": [
+        4.371005104530923e-07,
+        3.666710615158081
+      ],
+      "teacher_ce_range": [
+        4.371005104530923e-07,
+        7.683337688446045
+      ],
+      "minimum_gradient_norm": 5.442057499749353e-06,
+      "mean_seconds_per_step": 0.5314416048675775,
+      "reserved_peak_bytes": 22246588416,
+      "scores": {
+        "pope": 0.84,
+        "grounding": 0.73,
+        "consistency": 0.92,
+        "mmstar": 0.67
+      },
+      "axis_deltas_vs_N": {
+        "pope": 0.010000000000000009,
+        "grounding": 0.0,
+        "consistency": 0.06000000000000005,
+        "mmstar": 0.010000000000000009
+      }
+    },
+    "U": {
+      "updates": 100,
+      "loss_first": 2.93639659503242e-05,
+      "loss_last": 0.0002421061071800068,
+      "gt_ce_range": [
+        4.7683684556432127e-07,
+        2.4412424564361572
+      ],
+      "teacher_ce_range": [
+        4.7683684556432127e-07,
+        3.791956901550293
+      ],
+      "minimum_gradient_norm": 5.1904899009969085e-06,
+      "mean_seconds_per_step": 0.5701204104349017,
+      "reserved_peak_bytes": 21340618752,
+      "scores": {
+        "pope": 0.85,
+        "grounding": 0.74,
+        "consistency": 0.9,
+        "mmstar": 0.72
+      },
+      "axis_deltas_vs_N": {
+        "pope": 0.020000000000000018,
+        "grounding": 0.010000000000000009,
+        "consistency": 0.040000000000000036,
+        "mmstar": 0.05999999999999994
+      }
+    }
+  },
+  "baseline": {
+    "axis_scores": {
+      "pope": 0.83,
+      "grounding": 0.73,
+      "consistency": 0.86,
+      "mmstar": 0.66
+    },
+    "rows": 800,
+    "ledger_sha256": "53242e1efd33d5297676039f9939b547f4bb862810e8e4147f0998b1e071e964",
+    "adapter_reloaded_for_inference": false,
+    "original_units": 400,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "peak_reserved_bytes": 18689818624,
+    "peak_allocated_bytes": 17185016832,
+    "total_generation_seconds": 145.47917767241597
+  },
+  "resume": {
+    "restored_step": 50,
+    "optimizer_restored": true,
+    "rng_restored": true,
+    "checkpoint_sha256": "a0a8b1ff6d0423f4eccfc0e2f6de991d9a098deeb28c2b2f59aaeead03429429",
+    "new_pid": 4672,
+    "first_resumed_step": 51,
+    "first_resumed_loss": 0.00014957548410166055,
+    "final_step": 100,
+    "contiguous_unique_steps": true
+  },
+  "token_distribution": {
+    "status": "complete",
+    "pending": 0,
+    "units": "tokens; padded batches are not used",
+    "axes": {
+      "pope": {
+        "question_text": {
+          "n": 125,
+          "min": 15,
+          "max": 17,
+          "mean": 15.304
+        },
+        "prompt_including_visual": {
+          "n": 125,
+          "min": 302,
+          "max": 565,
+          "mean": 397.984
+        },
+        "visual": {
+          "n": 125,
+          "min": 266,
+          "max": 529,
+          "mean": 361.68
+        },
+        "gt_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 3,
+          "mean": 3
+        },
+        "teacher_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 4,
+          "mean": 3.016
+        },
+        "teacher_raw_generated": {
+          "n": 125,
+          "min": 2,
+          "max": 3,
+          "mean": 2.016
+        },
+        "gt_total": {
+          "n": 125,
+          "min": 305,
+          "max": 568,
+          "mean": 400.984
+        },
+        "teacher_total": {
+          "n": 125,
+          "min": 305,
+          "max": 568,
+          "mean": 401
+        }
+      },
+      "grounding": {
+        "question_text": {
+          "n": 125,
+          "min": 52,
+          "max": 67,
+          "mean": 56.488
+        },
+        "prompt_including_visual": {
+          "n": 125,
+          "min": 340,
+          "max": 605,
+          "mean": 436.176
+        },
+        "visual": {
+          "n": 125,
+          "min": 266,
+          "max": 529,
+          "mean": 358.688
+        },
+        "gt_response_including_chat_end": {
+          "n": 125,
+          "min": 29,
+          "max": 58,
+          "mean": 37.856
+        },
+        "teacher_response_including_chat_end": {
+          "n": 125,
+          "min": 17,
+          "max": 57,
+          "mean": 41.32
+        },
+        "teacher_raw_generated": {
+          "n": 125,
+          "min": 16,
+          "max": 56,
+          "mean": 40.32
+        },
+        "gt_total": {
+          "n": 125,
+          "min": 370,
+          "max": 648,
+          "mean": 474.032
+        },
+        "teacher_total": {
+          "n": 125,
+          "min": 358,
+          "max": 645,
+          "mean": 477.496
+        }
+      },
+      "consistency": {
+        "question_text": {
+          "n": 125,
+          "min": 36,
+          "max": 488,
+          "mean": 86.872
+        },
+        "prompt_including_visual": {
+          "n": 125,
+          "min": 314,
+          "max": 789,
+          "mean": 385.384
+        },
+        "visual": {
+          "n": 125,
+          "min": 256,
+          "max": 324,
+          "mean": 277.512
+        },
+        "gt_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 3,
+          "mean": 3
+        },
+        "teacher_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 4,
+          "mean": 3.008
+        },
+        "teacher_raw_generated": {
+          "n": 125,
+          "min": 2,
+          "max": 3,
+          "mean": 2.008
+        },
+        "gt_total": {
+          "n": 125,
+          "min": 317,
+          "max": 792,
+          "mean": 388.384
+        },
+        "teacher_total": {
+          "n": 125,
+          "min": 317,
+          "max": 792,
+          "mean": 388.392
+        }
+      },
+      "mmstar": {
+        "question_text": {
+          "n": 125,
+          "min": 22,
+          "max": 238,
+          "mean": 60.552
+        },
+        "prompt_including_visual": {
+          "n": 125,
+          "min": 309,
+          "max": 653,
+          "mean": 407.216
+        },
+        "visual": {
+          "n": 125,
+          "min": 256,
+          "max": 594,
+          "mean": 325.664
+        },
+        "gt_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 3,
+          "mean": 3
+        },
+        "teacher_response_including_chat_end": {
+          "n": 125,
+          "min": 3,
+          "max": 4,
+          "mean": 3.024
+        },
+        "teacher_raw_generated": {
+          "n": 125,
+          "min": 2,
+          "max": 3,
+          "mean": 2.024
+        },
+        "gt_total": {
+          "n": 125,
+          "min": 312,
+          "max": 656,
+          "mean": 410.216
+        },
+        "teacher_total": {
+          "n": 125,
+          "min": 312,
+          "max": 656,
+          "mean": 410.24
+        }
+      }
+    },
+    "speed_caveat": "Two CE forwards depend on visual/prompt/response lengths; token lengths alone do not fix wall time"
+  },
+  "measured_eval_seconds_per_prompt": 0.21551963136531413,
+  "formal_eval_linear_hours": 16.187918978105817,
+  "formal_eval_linear_CNY": 43.70738124088571,
+  "preflight_source_sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a",
+  "independent_protocol_sha256": "98b37d61846f4401505107b8b0240c7986dcd484a3ef364c9f901d000690a265",
+  "scope": "Engineering validation, one seed100 updates; not formal15-run results or ARP confirmation"
+}

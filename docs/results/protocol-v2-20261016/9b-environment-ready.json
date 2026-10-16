@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "path": "/root/autodl-tmp/arp-qwen35-venv",
+  "probe": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.20.1",
+    "peft": "0.21.2",
+    "qwen35_class_import": true
+  },
+  "old_environment_unchanged": true
+}
