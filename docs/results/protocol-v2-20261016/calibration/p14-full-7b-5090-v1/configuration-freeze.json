@@ -1,0 +1,8 @@
+{
+  "path": "configs/p14_7b_5090.frozen.json",
+  "sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a",
+  "GB26_memory_gate_passed": true,
+  "same_configuration_as_4090_verified": true,
+  "frozen_config_bytes": 2258,
+  "formal_training_allowed": false
+}

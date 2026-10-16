@@ -1,0 +1,57 @@
+{
+  "schema": "arp.p14-full-memory-preflight.5090.v1",
+  "engineering_only": true,
+  "formal_training": false,
+  "student": "qwen7b",
+  "teacher": "qwen3.5-122b-a10b",
+  "steps": 100,
+  "seed": 2026101603,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "scope": "language attention and MLP only"
+  },
+  "loss": {
+    "ground_truth_ce": 0.5,
+    "teacher_response_ce": 0.5,
+    "schedule": "Both forward graphs retained, one combined backward and one optimizer step"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0,
+    "max_grad_norm": 1.0
+  },
+  "bf16": true,
+  "gradient_checkpointing": true,
+  "use_cache": false,
+  "micro_batch": 1,
+  "gradient_accumulation": 1,
+  "max_total_tokens": 2048,
+  "max_visual_tokens": 1280,
+  "max_response_tokens": 128,
+  "teacher_max_requests": 0,
+  "teacher_max_cumulative_tokens": 0,
+  "offline_replication": true,
+  "new_card_reference_headroom_bytes": 4294967296,
+  "stress": "After100 real updates, one synthetic shape-only dual-CE update:2048 total/128 response tokens; separate from real training ledger",
+  "grounding": "Student explicit processed-image pixels; GT original pixels and teacher explicit normalized1000 converted using actual processor grid",
+  "threshold_unit": "GB = 1000000000 bytes; GiB also reported",
+  "thresholds_bytes": [
+    20000000000,
+    22000000000
+  ],
+  "pool_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "source_sha256": "60d36307494fcc4c8bd3f97a79b403d18242d7ab738cb781abb6f3aa7d58a8bd"
+}

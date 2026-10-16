@@ -1,0 +1,18 @@
+{
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+  "assets": [
+    {
+      "name": "arp-protocol-v2-20261016-20261016T124329Z-inventory.json",
+      "bytes": 4883,
+      "sha256": "88e4d0615c6d5bd01f916d8402f7a7427f692aff086de93d6f13e957b9a0f282",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T124329Z-inventory.json"
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T124329Z.tar.gz",
+      "bytes": 149835514,
+      "sha256": "68bf744b4f22f0f1b38cca4ed7119593a823f48c7bb54f3f60581216faa91e3f",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T124329Z.tar.gz"
+    }
+  ],
+  "storage": "AutoDL -> GitHub; no local download"
+}

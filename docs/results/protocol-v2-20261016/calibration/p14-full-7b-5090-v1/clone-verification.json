@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "training_pool_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+  "teacher_ledger_sha256": "1ebf54349b8014755e6274d103445b86955a19475f03ad42f61bd9f99cec16d6",
+  "verified_training_images": 100,
+  "verified_model_weight_files": 5,
+  "source_preflight": "p14-full-7b-v2",
+  "new_gpu": "NVIDIA GeForce RTX5090",
+  "original_experiments_resumed": false
+}

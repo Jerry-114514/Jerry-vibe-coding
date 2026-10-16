@@ -1,0 +1,112 @@
+{
+  "status": "conditional_plan_only",
+  "formal_training_allowed": false,
+  "order_seed": 20261016,
+  "runs": [
+    {
+      "run": 1,
+      "seed": 42,
+      "arm": "U",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 2,
+      "seed": 42,
+      "arm": "A2",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 3,
+      "seed": 42,
+      "arm": "A1",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 4,
+      "seed": 137,
+      "arm": "A1",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 5,
+      "seed": 137,
+      "arm": "A2",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 6,
+      "seed": 137,
+      "arm": "U",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 7,
+      "seed": 256,
+      "arm": "U",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 8,
+      "seed": 256,
+      "arm": "A1",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 9,
+      "seed": 256,
+      "arm": "A2",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 10,
+      "seed": 512,
+      "arm": "A2",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 11,
+      "seed": 512,
+      "arm": "U",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 12,
+      "seed": 512,
+      "arm": "A1",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 13,
+      "seed": 1024,
+      "arm": "A1",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 14,
+      "seed": 1024,
+      "arm": "A2",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    },
+    {
+      "run": 15,
+      "seed": 1024,
+      "arm": "U",
+      "actual_optimizer_updates": 1000,
+      "status": "not_started"
+    }
+  ]
+}

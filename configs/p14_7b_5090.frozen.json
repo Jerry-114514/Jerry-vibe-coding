@@ -1,0 +1,76 @@
+{
+  "arms": [
+    "A1",
+    "A2",
+    "U"
+  ],
+  "baseline_N": "Untrained7B, no repeated training",
+  "bf16": true,
+  "freeze_scope": "Numerical/training recipe only; stageC approval, arm axes/manifests and main runner remain separate prerequisites",
+  "gradient_accumulation": 1,
+  "gradient_checkpointing": true,
+  "grounding": "Student explicit processed-image pixels; GT original pixels and teacher explicit normalized1000 converted using actual processor grid",
+  "hardware": {
+    "CUDA_visible_headroom_bytes": 8694005760,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "nominal32GB_headroom_bytes": 7025016832,
+    "passed": true,
+    "preflight_reserved_bytes": 24974983168,
+    "user_maximum_reserved_bytes": 26000000000
+  },
+  "lora": {
+    "alpha": 32,
+    "dropout": 0,
+    "r": 16,
+    "scope": "language attention and MLP only",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "loss": {
+    "ground_truth_ce": 0.5,
+    "schedule": "Both forward graphs retained, one combined backward and one optimizer step",
+    "teacher_response_ce": 0.5
+  },
+  "max_response_tokens": 128,
+  "max_total_tokens": 2048,
+  "max_visual_tokens": 1280,
+  "micro_batch": 1,
+  "optimizer": {
+    "lr": 0.0001,
+    "max_grad_norm": 1.0,
+    "name": "AdamW",
+    "weight_decay": 0
+  },
+  "preflight_complete_sha256": "ff0232ef7b952203b52e6a331e0fad56025fb4d8ea8eb87e641efe25c0d31ced",
+  "preflight_manifest_sha256": "60ceb01852a33d58b2d51f46bf1e572130098537f661c32f9f0fd45524830402",
+  "preflight_protocol_sha256": "94d797e4cf6432680f4e5febc889f7e4385b8b708ef1d3e32bb26440e80d1cbc",
+  "schema": "arp.p14.7b.5090.frozen-numerical-recipe.v1",
+  "seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "steps_per_arm": 1000,
+  "student": {
+    "id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  "teacher": {
+    "immutable_API_revision_confirmed": false,
+    "method": "offline sequence-response CE",
+    "model": "qwen3.5-122b-a10b"
+  },
+  "trained_runs": 15,
+  "training_pool_prompts": 3545,
+  "training_pool_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+  "use_cache": false
+}

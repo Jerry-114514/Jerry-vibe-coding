@@ -1,0 +1,37 @@
+{
+  "method": "(last loss-file write minus first creation)/99, steps2..100; includes CPU input preparation and per-step logging",
+  "file_birth": "2026-10-16 20:42:31.349685379 +0800",
+  "file_last_write": "2026-10-16 20:43:24.038776329 +0800",
+  "mean_seconds_per_step": 0.5322130404040404,
+  "conservative_seconds_per_step": 0.5708463799580932,
+  "conservative_note": "Whole measured100-update block includes one synthetic stress update and adapter checks/save",
+  "per1000_step_minutes": [
+    8.87021734006734,
+    9.514106332634887
+  ],
+  "fifteen_run_hours": [
+    2.217554335016835,
+    2.3785265831587217
+  ],
+  "planning_hours_including_load_save": [
+    3,
+    4
+  ],
+  "quote_CNY_per_day_user_provided": 64.77,
+  "requested_cost_CNY_per_hour": 2.7,
+  "fifteen_run_compute_cost_CNY": [
+    5.987396704545454,
+    6.422021774528549
+  ],
+  "planning_GPU_cost_CNY": [
+    8.1,
+    10.8
+  ],
+  "billing_note": "Hourly resource estimate; if billing is a daily package, budget64.77CNY for one day; not confirmation of billing granularity",
+  "excludes": [
+    "122B main teacher API generation",
+    "4090 evaluation",
+    "paid storage"
+  ],
+  "uncertainty": "Balanced100-item sample; A1/A2 single-axis length distributions may differ. Re-estimate from first20 scheduled steps without changing step/seed budget"
+}

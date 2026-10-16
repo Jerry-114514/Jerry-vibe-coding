@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-10-16T12:50:44.780358+00:00",
+  "frozen_config_path": "configs/p14_7b_5090.frozen.json",
+  "frozen_config_sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a",
+  "hardware_and_numerical_recipe_frozen": true,
+  "formal_training_allowed": false,
+  "current_C_decision": "indeterminate",
+  "C_is_formal": false,
+  "local7b_audit_prompts": 7400,
+  "audit_expected_prompts_per_model": 9600,
+  "commercial_audit_prompts": 1365,
+  "same_checkpoint_API_bridge_passed": false,
+  "grounding_blind_review_complete": false,
+  "main_teacher_cache_complete": false,
+  "cached_teacher_prompts": 100,
+  "teacher_pool_prompts": 3545,
+  "axis_arm_manifests_frozen": false,
+  "formal7b_dualCE_runner_implemented_and_accepted": false,
+  "independent_distillation_possible": "Technically yes after separate preregistration and preparation; cannot replace original ARP C-dependent axis-selection claim",
+  "original_experiments_resumed": false
+}
