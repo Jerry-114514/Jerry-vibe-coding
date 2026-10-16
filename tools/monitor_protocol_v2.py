@@ -13,7 +13,9 @@ WORKERS = {'api_development_pilot.py', 'precision_bridge.py', 'training_memory_p
            'run_cached_pilots.py', 'run_safe_supplements.py', 'paired_gate_v2.py',
            'prepare_independent_data.py', 'index_independent_sources.py', 'prepare_coco_candidates_v2.py',
            'freeze_independent_candidates.py', 'freeze_clean_candidates_v3.py', 'run_clean_calibration.py',
-           'publish_clean_inputs.py', 'run_protocol_v2.py'}
+           'publish_clean_inputs.py', 'run_protocol_v2.py', 'run_processed_grounding.py',
+           'run_clean_audit.py', 'run_teacher_role_calibration.py', 'run_api_audit_calibration.py',
+           'run_api_audit.py'}
 OUT = ROOT / 'runs/protocol-v2-monitor'
 
 
@@ -40,6 +42,13 @@ def snapshot():
             status = state.get('status', 'unknown')
             ledger = path.parent / 'ledger.jsonl'
             activity = max(path.stat().st_mtime, ledger.stat().st_mtime if ledger.exists() else 0)
+            # Supervisors wait while a child advances its own ledger/status.
+            if state.get('current_model') and '/' not in str(state['current_model']):
+                child = path.parent/str(state['current_model'])
+                for name in ('status.json', 'ledger.jsonl'):
+                    candidate = child/name
+                    if candidate.exists():
+                        activity = max(activity, candidate.stat().st_mtime)
             age = time.time() - activity
             script = state.get('worker_script')
             if not script and path.parent.name.startswith('api-'):
@@ -48,7 +57,7 @@ def snapshot():
             if state.get('pid'):
                 matching = [p for p in matching if p['pid'] == state['pid']]
             issue = None
-            if status in ('running', 'queued', 'waiting'):
+            if status in ('running', 'queued', 'waiting', 'preflight'):
                 if not matching:
                     issue = 'reported_active_but_worker_missing'
                 elif age > 1800:

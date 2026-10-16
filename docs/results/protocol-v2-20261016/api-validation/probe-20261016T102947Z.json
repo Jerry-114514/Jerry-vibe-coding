@@ -1,0 +1,60 @@
+{
+  "checked_utc": "2026-10-16T10:29:46.313250+00:00",
+  "base_url": "https://ws-fqgi0zjpng4gc9i2.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+  "purpose": "synthetic_visual_capability_probe",
+  "formal_training_allowed": false,
+  "models_http_status": 200,
+  "listed_model_count": 176,
+  "configured_model_listed": true,
+  "requested_model": "qwen3.5-122b-a10b",
+  "immutable_model_version_confirmed": false,
+  "attempts": [
+    {
+      "requested_logprobs": true,
+      "http_status": 200
+    }
+  ],
+  "returned_model": "qwen3.5-122b-a10b",
+  "request_id": "chatcmpl-b361952b-8e54-95d6-aca0-b3f78943db49",
+  "answer": " Red",
+  "usage": {
+    "prompt_tokens": 93,
+    "total_tokens": 95,
+    "completion_tokens": 2,
+    "prompt_tokens_details": {
+      "image_tokens": 66,
+      "text_tokens": 27
+    },
+    "completion_tokens_details": {
+      "text_tokens": 2
+    }
+  },
+  "finish_reason": "stop",
+  "logprobs_returned": true,
+  "max_returned_top_logprobs": 5,
+  "visual_probe_passed": true,
+  "original_top50_kd_compatible": false,
+  "structured_grounding_probe": {
+    "http_status": 200,
+    "coordinate_contract": "normalized_1000",
+    "passed": false,
+    "automatic_retry": false,
+    "raw_generation": "```json\n[\n\t{\"bbox_2d\": [196, 348, 804, 750], \"label\": \"red rectangle\"}\n]\n```",
+    "returned_model": "qwen3.5-122b-a10b",
+    "usage": {
+      "prompt_tokens": 134,
+      "total_tokens": 178,
+      "completion_tokens": 44,
+      "prompt_tokens_details": {
+        "image_tokens": 66,
+        "text_tokens": 68
+      },
+      "completion_tokens_details": {
+        "text_tokens": 44
+      }
+    },
+    "request_id": "chatcmpl-268c9765-ca97-9033-b2ac-c363697e4c9e",
+    "finish_reason": "stop",
+    "parse_failed": true
+  }
+}

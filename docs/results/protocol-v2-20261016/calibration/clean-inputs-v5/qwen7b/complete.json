@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "rows": 960,
+  "original_units": 480,
+  "axis_scores": {
+    "pope": 0.9333333333333332,
+    "grounding": 0.675,
+    "consistency": 0.825,
+    "mmstar": 0.44166666666666665
+  },
+  "parse_failures_by_axis": {
+    "pope": 0,
+    "grounding": 21,
+    "consistency": 0,
+    "mmstar": 0
+  },
+  "peak_allocated_bytes": 17213749248,
+  "peak_reserved_bytes": 19256049664,
+  "ledger_sha256": "0fbc9d8c9b2aa3e8c840c99722f720765c2beac51aeecfb73016d6a7d9deb5af",
+  "manifest_sha256": "099b111fd1ab4c5149d4ec8da0ac4ae5ed25d9a6b4f5edea15368ce714b7cf08",
+  "formal_training_allowed": false,
+  "completed_utc": "2026-10-16T09:41:33.089825+00:00"
+}

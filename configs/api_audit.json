@@ -1,0 +1,15 @@
+{
+  "provider": "aliyun-model-studio",
+  "base_url": "https://ws-fqgi0zjpng4gc9i2.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+  "api_key_env": "DASHSCOPE_API_KEY",
+  "model": "qwen3-vl-plus",
+  "role": "commercial_cross_generation_audit_node",
+  "grounding_coordinate_contract": "normalized_1000",
+  "immutable_model_version_confirmed": false,
+  "parameter_count_verified": false,
+  "pure_parameter_scaling_ladder": false,
+  "formal_training_allowed": false,
+  "max_tokens": 128,
+  "temperature": 0,
+  "enable_thinking": false
+}

@@ -58,7 +58,7 @@ def freeze():
                 'max_requests': 64, 'max_cumulative_reported_tokens': 200000,
                 'image_policy': 'Original pixels encoded losslessly as PNG; no manual resizing',
                 'max_image_pixels': 4000000, 'max_encoded_image_bytes': 8000000,
-                'top_logprobs': 5, 'top50_kd_compatible': False,
+                'top_logprobs': read_json(ROOT / 'configs/api_teacher.json').get('verified_top_logprobs') or 0, 'top50_kd_compatible': False,
                 'retry_policy': 'No automatic retries of paid calls; ambiguous in-flight calls stop resume',
                 'source_manifest_sha256': sha(source), 'manifest_sha256': sha(manifest),
                 'scoring': 'Frozen v1 strict parser; same prompts; equal-weight dataset strata',
@@ -183,10 +183,12 @@ def work():
         if len(encoded) > protocol['max_encoded_image_bytes']:
             raise ValueError('Encoded image budget exceeded')
         body = {'model': protocol['model'], 'temperature': 0, 'max_tokens': 128,
-                'enable_thinking': False, 'logprobs': True, 'top_logprobs': 5,
+                'enable_thinking': False,
                 'messages': [{'role': 'user', 'content': [
                     {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,' + base64.b64encode(encoded).decode()}},
                     {'type': 'text', 'text': item['question']}]}]}
+        if protocol['top_logprobs']:
+            body.update(logprobs=True, top_logprobs=protocol['top_logprobs'])
         write_json(inflight, {'item_id': item['item_id'], 'started_utc': datetime.now(timezone.utc).isoformat()})
         tick = time.monotonic()
         response = session.post(base.rstrip('/') + '/chat/completions', json=body, timeout=120)

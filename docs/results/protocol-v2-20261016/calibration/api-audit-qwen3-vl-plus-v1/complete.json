@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "rows": 48,
+  "model": "qwen3-vl-plus",
+  "original_units": 24,
+  "axis_scores": {
+    "consistency": 1.0,
+    "grounding": 1.0,
+    "mmstar": 0.6666666666666666,
+    "pope": 1.0
+  },
+  "parse_failures_by_axis": {
+    "pope": 0,
+    "grounding": 0,
+    "consistency": 0,
+    "mmstar": 0
+  },
+  "truncated_responses": 0,
+  "reported_tokens": 17281,
+  "ledger_sha256": "84ede8180cc60b42e8655044c2e31ee00fe027445e6d35d5ae7ac295f32e3ac6",
+  "measurement_gate": "allow_audit_only",
+  "formal_training_allowed": false,
+  "confirmation": false
+}

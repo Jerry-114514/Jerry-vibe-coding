@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from coordinate_contracts import score_normalized_grounding
+from coordinate_contracts import score_normalized_grounding, score_processed_grounding
 
 
 class CoordinateContractTests(unittest.TestCase):
@@ -26,6 +26,16 @@ class CoordinateContractTests(unittest.TestCase):
         result = score_normalized_grounding('[0,0,1001,1000]', self.item)
         self.assertEqual(result['parse_fail_flag'], 1)
         self.assertEqual(result['correct_bit'], 0)
+
+    def test_processed_pixels_map_using_actual_processor_dimensions(self):
+        result=score_processed_grounding('[252,189,756,567]',self.item,1008,756)
+        self.assertEqual(result['parsed_answer'],self.item['answer_key'])
+        self.assertEqual(result['iou'],1)
+
+    def test_processed_frame_invalid_box_is_not_clamped_or_guessed(self):
+        result=score_processed_grounding('[0,0,1009,756]',self.item,1008,756)
+        self.assertEqual(result['parse_fail_flag'],1)
+        self.assertEqual(result['correct_bit'],0)
 
 
 if __name__ == '__main__':

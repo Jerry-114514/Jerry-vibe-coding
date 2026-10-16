@@ -83,6 +83,13 @@ def main():
                           {'type': 'text', 'text': 'Locate the red rectangle. Return only a JSON object '
                            'with keys color (one English word) and bbox ([x_min, y_min, x_max, y_max]). '
                            'Coordinates must be normalized to [0, 1000] relative to the full image.'}]}]}
+        native_box = config.get('grounding_output_schema') == 'bbox_2d_singleton'
+        if native_box:
+            structured.pop('response_format')
+            structured['messages'][0]['content'][1]['text'] = (
+                'Locate the red rectangle. Return only a JSON array containing exactly one object '
+                'with keys bbox_2d ([x_min, y_min, x_max, y_max]) and label. '
+                'Normalize all coordinates to [0, 1000] relative to the full image.')
         response = session.post(base.rstrip('/') + '/chat/completions', json=structured, timeout=120)
         check = {'http_status': response.status_code, 'coordinate_contract': 'normalized_1000',
                  'passed': False, 'automatic_retry': False}
@@ -93,16 +100,22 @@ def main():
             check.update(raw_generation=raw, returned_model=body.get('model'), usage=body.get('usage'),
                          request_id=body.get('id'), finish_reason=choice.get('finish_reason'))
             try:
-                answer = json.loads(raw)
-                box = answer['bbox']
+                if native_box:
+                    from experiment_common import parse_answer
+                    box = parse_answer(raw, {'answer_type': 'bbox', 'width': 1000, 'height': 1000})
+                    if box is None:
+                        raise ValueError('Invalid native box schema')
+                else:
+                    answer = json.loads(raw)
+                    box = answer['bbox']
                 valid = (len(box) == 4 and all(type(x) in (int, float) and 0 <= x <= 1000 for x in box)
                          and box[0] < box[2] and box[1] < box[3])
                 if valid:
                     intersection = max(0, min(box[2], 750) - max(box[0], 250)) * max(0, min(box[3], 750) - max(box[1], 250))
                     union = (box[2]-box[0])*(box[3]-box[1]) + 500*500 - intersection
                     check['iou'] = intersection / union
-                    check['passed'] = answer['color'].lower() == 'red' and check['iou'] >= .5
-            except (ValueError, TypeError, KeyError):
+                    check['passed'] = check['iou'] >= .5 and (native_box or answer['color'].lower() == 'red')
+            except (ValueError, TypeError, KeyError, IndexError, AttributeError):
                 check['parse_failed'] = True
         else:
             check['error_code'] = response.json().get('error', {}).get('code')

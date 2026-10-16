@@ -2,12 +2,16 @@
   "provider": "aliyun-model-studio",
   "base_url": "https://ws-fqgi0zjpng4gc9i2.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
   "api_key_env": "DASHSCOPE_API_KEY",
-  "model": "qwen3-vl-plus",
+  "model": "qwen3.5-122b-a10b",
   "model_role": "commercial_multimodal_api_teacher",
   "grounding_coordinate_contract": "normalized_1000",
-  "status": "visual_api_verified_development_only",
+  "grounding_output_schema": "bbox_2d_singleton",
+  "status": "bounded_role_calibration_complete_one_truncated_response",
   "immutable_model_version_confirmed": false,
   "verified_top_logprobs": 5,
+  "request_logprobs": false,
+  "distillation_method": "sequence_level_ce",
+  "calibration_control_model": "qwen3.5-397b-a17b",
   "original_top50_kd_compatible": false,
   "formal_training_allowed": false
 }

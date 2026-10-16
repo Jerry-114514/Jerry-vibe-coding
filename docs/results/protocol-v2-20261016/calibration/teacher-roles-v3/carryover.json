@@ -1,0 +1,8 @@
+{
+  "source_run": "/root/autodl-tmp/arp/runs/protocol-v2/calibration/teacher-roles-v1",
+  "source_ledger_sha256": "c10eff5974d3e8919a92838e89a66766066c44546c0014672d4d543eeb32c2ae",
+  "reused_paid_rows": 43,
+  "manifest_unchanged": true,
+  "all_reused_transmitted_image_bytes_verified_identical": true,
+  "reason": "One previously unsent image exceeded pixel and PNG byte budgets; deterministic aspect-preserving resize for over-budget inputs only"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "prompt_rows": 48,
+  "max_image_pixels": 4000000,
+  "max_encoded_image_bytes": 8000000,
+  "image_policy": "Preserve original PNG unless over budget; deterministic aspect-preserving resize; record transmitted hashes and sizes"
+}

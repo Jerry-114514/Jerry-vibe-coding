@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "rows": 960,
+  "original_units": 480,
+  "ledger_sha256": "0fbc9d8c9b2aa3e8c840c99722f720765c2beac51aeecfb73016d6a7d9deb5af",
+  "formal_training_allowed": false,
+  "checks": [
+    "exact_unique_coverage",
+    "independent_rescore",
+    "all_ordered_images_present",
+    "visual_and_output_caps"
+  ]
+}

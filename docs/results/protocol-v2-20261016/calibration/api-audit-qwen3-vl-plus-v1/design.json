@@ -1,0 +1,30 @@
+{
+  "schema": "arp.commercial-audit-calibration.v1",
+  "config": {
+    "provider": "aliyun-model-studio",
+    "base_url": "https://ws-fqgi0zjpng4gc9i2.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "model": "qwen3-vl-plus",
+    "role": "commercial_cross_generation_audit_node",
+    "grounding_coordinate_contract": "normalized_1000",
+    "immutable_model_version_confirmed": false,
+    "parameter_count_verified": false,
+    "pure_parameter_scaling_ladder": false,
+    "formal_training_allowed": false,
+    "max_tokens": 128,
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "prompts": 48,
+  "source_manifest_sha256": "435c7c69da5cfaae88b3de1ca018073662dcf9d48d194bbf16be9d50ed6ad3c3",
+  "formal_training_allowed": false,
+  "interpretation": "Cross-generation commercial node, not a known-size Qwen2.5 checkpoint",
+  "measurement_gate": "At least 95% parsed prompts on every axis; zero truncated responses",
+  "source_code_sha256": {
+    "tools/run_api_audit_calibration.py": "9a73ca52cc1b55e4ec4b767a77bb2acd630c4398781c99cd7729f8515a185178",
+    "tools/run_teacher_role_calibration.py": "c67c6c30bd4d0ce257cc62c48bc5f3cc98977088664e2a96dc208f5599645dae",
+    "tools/coordinate_contracts.py": "6a10787734f06f40a5713110ecb7b267194f67b8f993a59565a673a974096367",
+    "tools/scoring_v2.py": "f04afa81fd10629d234fa14ab699ad102c23eec0e3a8ec7ced90e279651718f3",
+    "tools/axis_aggregation_v2.py": "090cb0789d91cc7d32ffc97eb6c6334b5c9dbf21d3940ac86e3ff5ca693ea136"
+  }
+}

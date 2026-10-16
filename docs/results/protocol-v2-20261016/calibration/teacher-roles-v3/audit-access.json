@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-16T10:28:59.342099+00:00",
+  "models": [
+    {
+      "requested_model": "qwen-vl-plus",
+      "http_status": 404,
+      "error_code": "model_not_found"
+    },
+    {
+      "requested_model": "qwen-vl-max",
+      "http_status": 404,
+      "error_code": "model_not_found"
+    }
+  ],
+  "commercial_parameter_order_verified": false,
+  "formal_training_allowed": false
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": [
+    "exact_120_unit_coverage",
+    "fixed_geometry_mapping",
+    "independent_score_replay"
+  ],
+  "formal_training_allowed": false
+}

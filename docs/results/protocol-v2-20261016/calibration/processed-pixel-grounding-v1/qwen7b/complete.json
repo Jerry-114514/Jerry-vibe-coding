@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "rows": 120,
+  "axis_scores": {
+    "grounding": 0.8333333333333334
+  },
+  "parse_failures": 0,
+  "ledger_sha256": "b24320fdedd1c35acec23a66d9ad4470ecf0ea3f4f59d9148a90469405184613",
+  "peak_allocated_bytes": 16826805248,
+  "peak_reserved_bytes": 17658019840,
+  "formal_training_allowed": false,
+  "completed_utc": "2026-10-16T09:55:46.947923+00:00"
+}

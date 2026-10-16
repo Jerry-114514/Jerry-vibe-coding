@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "model": "qwen3.5-397b-a17b",
+  "rows": 48,
+  "original_units": 24,
+  "axis_scores": {
+    "consistency": 1.0,
+    "grounding": 1.0,
+    "mmstar": 0.5,
+    "pope": 1.0
+  },
+  "parse_failures_by_axis": {
+    "pope": 0,
+    "grounding": 0,
+    "consistency": 0,
+    "mmstar": 0
+  },
+  "truncated_responses": 0,
+  "reported_tokens": 17589,
+  "ledger_sha256": "f0d0623a40b5e0edc5d8fa5f03079c13194568a2b517fc1e506951143c26d7dd",
+  "manifest_sha256": "435c7c69da5cfaae88b3de1ca018073662dcf9d48d194bbf16be9d50ed6ad3c3",
+  "formal_training_allowed": false,
+  "confirmation": false
+}
