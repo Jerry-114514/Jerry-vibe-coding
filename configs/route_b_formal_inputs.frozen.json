@@ -1,0 +1,83 @@
+{
+  "protocol_sha256": "98b37d61846f4401505107b8b0240c7986dcd484a3ef364c9f901d000690a265",
+  "cache_sha256": "0b1547d1e0605da22fce77c0921312d6b391f26bee58bfb3e9e5268ce0321859",
+  "minimal_acceptance_sha256": "57f8c7feb0c13c1115f6170889eb62ea40ee90773a4bdca24df84dd02030b1ee",
+  "run_order": [
+    {
+      "arm": "A2",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 1024,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 1024,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 1024,
+      "steps": 1000
+    }
+  ],
+  "preflight_source_sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a"
+}

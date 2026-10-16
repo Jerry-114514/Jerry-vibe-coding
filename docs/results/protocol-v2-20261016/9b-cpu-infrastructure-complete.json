@@ -1,0 +1,20 @@
+{
+  "status": "passed_weights_and_environment",
+  "model": {
+    "status": "passed",
+    "bytes": 19306310880,
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+  },
+  "environment": {
+    "status": "passed",
+    "path": "/root/autodl-tmp/arp-qwen35-venv",
+    "probe": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.20.1",
+      "peft": "0.21.2",
+      "qwen35_class_import": true
+    },
+    "old_environment_unchanged": true
+  },
+  "gpu_smoke_deferred_for7b_priority": true
+}

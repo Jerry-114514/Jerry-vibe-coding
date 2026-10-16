@@ -1,0 +1,23 @@
+{
+  "contrasts": [
+    "A1-A2",
+    "A1-U",
+    "A1-N"
+  ],
+  "axes": [
+    "pope",
+    "grounding",
+    "consistency",
+    "mmstar"
+  ],
+  "interval": "Pointwise descriptive95% paired seed x source-image-cluster bootstrap",
+  "bootstrap_replicates": 2000,
+  "unmatched_evaluations": "pending, never imputed",
+  "single_seed_limit": "No estimate of training seed uncertainty with onlyone matched seed",
+  "minimal_loop_results_already_observed": true,
+  "formal_evaluation_results_already_observed": false,
+  "extra_training_budget": 0,
+  "scope": "Independent exploratory experiment, notARP confirmation",
+  "observer_source_sha256": "6f0e657672a1020a8e2e41c27c7c5632d2215d9dcaaf4acf55cae161cb4a4fa5",
+  "registered_utc": "2026-10-16T14:13:03.493205+00:00"
+}
