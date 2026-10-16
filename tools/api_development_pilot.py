@@ -53,7 +53,7 @@ def freeze():
     protocol = {'purpose': 'historical_development_only', 'confirmation': False,
                 'training_data': False, 'formal_training_allowed': False,
                 'scoring_units_per_axis': 8, 'prompts': 64,
-                'model': 'qwen3-vl-plus', 'immutable_model_version_confirmed': False,
+                'model': read_json(ROOT / 'configs/api_teacher.json')['model'], 'immutable_model_version_confirmed': False,
                 'temperature': 0, 'max_output_tokens_per_request': 128,
                 'max_requests': 64, 'max_cumulative_reported_tokens': 200000,
                 'image_policy': 'Original pixels encoded losslessly as PNG; no manual resizing',
@@ -143,6 +143,8 @@ def worker():
 def work():
     manifest, protocol = freeze()
     config = read_json(ROOT / 'configs/api_teacher.json')
+    if protocol['model'] != config['model']:
+        raise ValueError('Configured API model differs from frozen experiment; create a new run')
     key = os.environ.get(config['api_key_env'])
     if not key:
         raise RuntimeError('Missing API key')

@@ -1,0 +1,102 @@
+{
+  "checked_utc": "2026-10-16T10:10:00.598915+00:00",
+  "purpose": "synthetic_large_teacher_access",
+  "max_requests": 4,
+  "max_output_tokens_per_request": 128,
+  "formal_training_allowed": false,
+  "top_logprobs_capability": "not_tested",
+  "models": [
+    {
+      "requested_model": "qwen3.5-397b-a17b",
+      "automatic_retry": false,
+      "coordinate_contract": "normalized_1000",
+      "http_status": 200,
+      "returned_model": "qwen3.5-397b-a17b",
+      "usage": {
+        "prompt_tokens": 136,
+        "total_tokens": 175,
+        "completion_tokens": 39,
+        "prompt_tokens_details": {
+          "image_tokens": 66,
+          "text_tokens": 70
+        },
+        "completion_tokens_details": {
+          "text_tokens": 39
+        }
+      },
+      "raw_generation": "[\n\t{\"bbox_2d\": [250, 250, 748, 748], \"label\": \"red rectangle\"}\n]",
+      "finish_reason": "stop",
+      "structured_grounding_passed": false,
+      "parse_failed": true
+    },
+    {
+      "requested_model": "qwen3.5-122b-a10b",
+      "automatic_retry": false,
+      "coordinate_contract": "normalized_1000",
+      "http_status": 200,
+      "returned_model": "qwen3.5-122b-a10b",
+      "usage": {
+        "prompt_tokens": 137,
+        "total_tokens": 175,
+        "completion_tokens": 38,
+        "prompt_tokens_details": {
+          "image_tokens": 66,
+          "text_tokens": 71
+        },
+        "completion_tokens_details": {
+          "text_tokens": 38
+        }
+      },
+      "raw_generation": "[\n\t{\"bbox_2d\": [196, 348, 804, 652], \"label\": \"red\"}\n]",
+      "finish_reason": "stop",
+      "structured_grounding_passed": false,
+      "parse_failed": true
+    },
+    {
+      "requested_model": "qwen3.5-35b-a3b",
+      "automatic_retry": false,
+      "coordinate_contract": "normalized_1000",
+      "http_status": 200,
+      "returned_model": "qwen3.5-35b-a3b",
+      "usage": {
+        "prompt_tokens": 137,
+        "total_tokens": 175,
+        "completion_tokens": 38,
+        "prompt_tokens_details": {
+          "image_tokens": 66,
+          "text_tokens": 71
+        },
+        "completion_tokens_details": {
+          "text_tokens": 38
+        }
+      },
+      "raw_generation": "[\n\t{\"bbox_2d\": [250, 317, 748, 683], \"label\": \"red\"}\n]",
+      "finish_reason": "stop",
+      "structured_grounding_passed": false,
+      "parse_failed": true
+    },
+    {
+      "requested_model": "qwen3.6-35b-a3b",
+      "automatic_retry": false,
+      "coordinate_contract": "normalized_1000",
+      "http_status": 200,
+      "returned_model": "qwen3.6-35b-a3b",
+      "usage": {
+        "prompt_tokens": 136,
+        "total_tokens": 138,
+        "completion_tokens": 2,
+        "prompt_tokens_details": {
+          "image_tokens": 66,
+          "text_tokens": 70
+        },
+        "completion_tokens_details": {
+          "text_tokens": 2
+        }
+      },
+      "raw_generation": "[]",
+      "finish_reason": "stop",
+      "structured_grounding_passed": false,
+      "parse_failed": true
+    }
+  ]
+}
