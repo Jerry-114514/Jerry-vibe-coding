@@ -1,0 +1,17 @@
+{
+  "schema": "arp.paired-scale-noise.development.v2",
+  "n_outer": 1000,
+  "n_inner": 128,
+  "outer_sampling": "Image clusters stratified by joint cross-axis stratum membership profiles",
+  "shared_weights": "All models and baseline; wrong and common-valid exclude; all axes",
+  "nested_sampling": "Inner image-cluster resampling from the SAME outer empirical counts",
+  "noise_reference": "raw absolute, parse_fail=wrong, equal adjacent-edge mean, fixed tie epsilon",
+  "minimum_valid_structural_fraction": 0.8,
+  "minimum_defined_bootstrap_fraction": 0.95,
+  "minimum_excess_F": 0.05,
+  "minimum_point_strict_pair_flip_rate": 0.05,
+  "go_requires": "paired F difference lower CI > .05 AND paired strict difference lower CI > 0",
+  "source_manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "preregistration_scope": "Estimator engineering protocol; historical data are already observed, not a confirmatory preregistration",
+  "training_allowed": false
+}

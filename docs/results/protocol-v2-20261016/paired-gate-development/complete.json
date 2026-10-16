@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "analyses": 6,
+  "n_outer": 1000,
+  "n_inner": 128,
+  "summary_sha256": "7356caffa9ec9955e070da410cdf1934d9274a30a5fd46b691ef5c1e63b49db9",
+  "formal_training_allowed": false
+}

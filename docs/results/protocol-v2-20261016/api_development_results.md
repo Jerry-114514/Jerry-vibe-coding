@@ -27,6 +27,10 @@ API 定位 8 题中 7 题超出原图范围，严格解析失败；余下一题�
 
 已启动后续验证：从原 BF16 开发清单的 100 条定位题中严格排除上述 8 条，其余 92 条全部使用相同的已冻结原生提示与映射，过程中不改提示或按答案选择换算。运行目录为 AutoDL 的 `runs/protocol-v2/calibration/api-native-grounding-validation/`；最多 92 次调用、每次 128 输出 token，累计 token 停止阈值 100,000。它仍是历史开发验证，不是独立最终确认；状态以逐题账本、独立验收及 Release 上传回执为准。
 
+**后续验证已于 13:45 完成 92/92，并通过独立验收和 GitHub 上传核验。** 原生坐标 API 得分为 83.62%，同题本地 BF16 3B 为 69.53%、7B 为 68.42%，均按 dataset/subset 内平均后分层等权；API 有 1 条解析失败。API 使用原生坐标提示，本地比较使用原图像素提示，因此这不是完全相同接口的模型能力比较，也不能替代最终独立确认。该批实际消耗 36,568 token；三批补实验共 164 次调用、57,861 token，另有接入测试 1 次、91 token。
+
+[92 条完成摘要](calibration/api-native-grounding-validation/complete.json)、[独立验收](calibration/api-native-grounding-validation/verification.json)、[GitHub 原始数据回执](calibration/api-native-grounding-validation/github-storage.json)。
+
 ## 真实产物和限制
 
 - [64 条比较完成摘要](calibration/api-teacher-development/complete.json)、[独立验收](calibration/api-teacher-development/verification.json)、[冻结协议](calibration/api-teacher-development/protocol.json)。

@@ -1,0 +1,619 @@
+{
+  "qwen/all_axes": {
+    "point": {
+      "F_scale": 0.25,
+      "F_noise": 0.015625,
+      "F_difference": 0.234375,
+      "strict_scale": 0.0,
+      "strict_noise": 0.0,
+      "strict_difference": 0.0,
+      "valid_structural_fraction": 1.0,
+      "classes": 12,
+      "usable_classes": 12,
+      "full_ties": 4,
+      "partial_ties": 0
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.0,
+        0.29166666666666663
+      ],
+      "F_noise": [
+        0.0,
+        0.3281575520833333
+      ],
+      "F_difference": [
+        0.0008268229166667031,
+        0.25
+      ],
+      "strict_scale": [
+        0.0,
+        0.0
+      ],
+      "strict_noise": [
+        0.0,
+        0.13508858267716536
+      ],
+      "strict_difference": [
+        -0.13367679625984252,
+        0.0
+      ]
+    },
+    "valid_difference_fraction": 0.618,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        -0.011914062499999996,
+        0.25
+      ],
+      "second_half_difference_CI": [
+        0.012565104166666674,
+        0.25
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "qwen3b": 1.0,
+          "qwen7b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "qwen3b": 0.7929166666666667,
+          "qwen7b": 0.79125
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "qwen3b": 0.99875,
+          "qwen7b": 1.0
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "qwen3b": 1.0,
+          "qwen7b": 0.9993333333333333
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  },
+  "qwen/without_grounding": {
+    "point": {
+      "F_scale": 0.2222222222222222,
+      "F_noise": 0.015625,
+      "F_difference": 0.2065972222222222,
+      "strict_scale": 0.0,
+      "strict_noise": 0.0,
+      "strict_difference": 0.0,
+      "valid_structural_fraction": 1.0,
+      "classes": 12,
+      "usable_classes": 12,
+      "full_ties": 4,
+      "partial_ties": 0
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.0,
+        0.26388888888888884
+      ],
+      "F_noise": [
+        0.0,
+        0.328125
+      ],
+      "F_difference": [
+        -0.01736111111111105,
+        0.2222222222222222
+      ],
+      "strict_scale": [
+        0.0,
+        0.0
+      ],
+      "strict_noise": [
+        0.0,
+        0.13981299212598422
+      ],
+      "strict_difference": [
+        -0.13843373449057506,
+        0.0
+      ]
+    },
+    "valid_difference_fraction": 0.644,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        -0.0330186631944444,
+        0.2222222222222222
+      ],
+      "second_half_difference_CI": [
+        -0.0046657986111111145,
+        0.2222222222222222
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "qwen3b": 1.0,
+          "qwen7b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "qwen3b": 0.7929166666666667,
+          "qwen7b": 0.79125
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "qwen3b": 0.99875,
+          "qwen7b": 1.0
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "qwen3b": 1.0,
+          "qwen7b": 0.9993333333333333
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  },
+  "intern/all_axes": {
+    "point": {
+      "F_scale": 0.19999999999999996,
+      "F_noise": 0.0,
+      "F_difference": null,
+      "strict_scale": 0.4,
+      "strict_noise": 0.0,
+      "strict_difference": null,
+      "valid_structural_fraction": 0.08333333333333333,
+      "classes": 60,
+      "usable_classes": 5,
+      "full_ties": 0,
+      "partial_ties": 0
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.0,
+        0.19999999999999996
+      ],
+      "F_noise": [
+        0.0,
+        0.0
+      ],
+      "F_difference": [
+        null,
+        null
+      ],
+      "strict_scale": [
+        0.0,
+        0.4
+      ],
+      "strict_noise": [
+        0.0,
+        0.0
+      ],
+      "strict_difference": [
+        null,
+        null
+      ]
+    },
+    "valid_difference_fraction": 0.0,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        null,
+        null
+      ],
+      "second_half_difference_CI": [
+        null,
+        null
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "intern1b": 0.9682222222222222,
+          "intern2b": 1.0,
+          "intern8b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "intern1b": 0.07250000000000001,
+          "intern2b": 0.04791666666666672,
+          "intern8b": 0.0008333333333333526
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "intern1b": 0.39,
+          "intern2b": 0.35250000000000004,
+          "intern8b": 0.99875
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "intern1b": 0.9653333333333334,
+          "intern2b": 0.9773333333333334,
+          "intern8b": 1.0
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  },
+  "intern/without_grounding": {
+    "point": {
+      "F_scale": 0.3222222222222222,
+      "F_noise": 0.0,
+      "F_difference": null,
+      "strict_scale": 0.3393939393939394,
+      "strict_noise": 0.0,
+      "strict_difference": null,
+      "valid_structural_fraction": 0.75,
+      "classes": 60,
+      "usable_classes": 45,
+      "full_ties": 3,
+      "partial_ties": 3
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.1777777777777778,
+        0.5222222222222221
+      ],
+      "F_noise": [
+        0.0,
+        0.0
+      ],
+      "F_difference": [
+        null,
+        null
+      ],
+      "strict_scale": [
+        0.1716919191919192,
+        0.49747899159663866
+      ],
+      "strict_noise": [
+        0.0,
+        0.0
+      ],
+      "strict_difference": [
+        null,
+        null
+      ]
+    },
+    "valid_difference_fraction": 0.0,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        null,
+        null
+      ],
+      "second_half_difference_CI": [
+        null,
+        null
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "intern1b": 0.9682222222222222,
+          "intern2b": 1.0,
+          "intern8b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "intern1b": 0.07250000000000001,
+          "intern2b": 0.04791666666666672,
+          "intern8b": 0.0008333333333333526
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "intern1b": 0.39,
+          "intern2b": 0.35250000000000004,
+          "intern8b": 0.99875
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "intern1b": 0.9653333333333334,
+          "intern2b": 0.9773333333333334,
+          "intern8b": 1.0
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  },
+  "llava/all_axes": {
+    "point": {
+      "F_scale": 0.5,
+      "F_noise": 0.0,
+      "F_difference": null,
+      "strict_scale": 1.0,
+      "strict_noise": 0.0,
+      "strict_difference": null,
+      "valid_structural_fraction": 0.16666666666666666,
+      "classes": 12,
+      "usable_classes": 2,
+      "full_ties": 0,
+      "partial_ties": 0
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.0,
+        0.5
+      ],
+      "F_noise": [
+        0.0,
+        0.0
+      ],
+      "F_difference": [
+        null,
+        null
+      ],
+      "strict_scale": [
+        0.0,
+        1.0
+      ],
+      "strict_noise": [
+        0.0,
+        0.0
+      ],
+      "strict_difference": [
+        null,
+        null
+      ]
+    },
+    "valid_difference_fraction": 0.0,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        null,
+        null
+      ],
+      "second_half_difference_CI": [
+        null,
+        null
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "llava05b": 0.84,
+          "llava7b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "llava05b": 0.6825,
+          "llava7b": 1.0
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "llava05b": 0.32499999999999996,
+          "llava7b": 1.0
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "llava05b": 0.706,
+          "llava7b": 1.0
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  },
+  "llava/without_grounding": {
+    "point": {
+      "F_scale": 0.4444444444444444,
+      "F_noise": 0.0,
+      "F_difference": null,
+      "strict_scale": 0.2222222222222222,
+      "strict_noise": 0.0,
+      "strict_difference": null,
+      "valid_structural_fraction": 0.75,
+      "classes": 12,
+      "usable_classes": 9,
+      "full_ties": 3,
+      "partial_ties": 0
+    },
+    "n_outer": 1000,
+    "n_inner": 128,
+    "seed": 2026101607,
+    "image_clusters": 4679,
+    "joint_membership_profiles": 10,
+    "axis_indices": [
+      0,
+      2,
+      3
+    ],
+    "paired": true,
+    "CI_95": {
+      "F_scale": [
+        0.4444444444444444,
+        0.5555555555555556
+      ],
+      "F_noise": [
+        0.0,
+        0.0
+      ],
+      "F_difference": [
+        null,
+        null
+      ],
+      "strict_scale": [
+        0.1111111111111111,
+        0.2222222222222222
+      ],
+      "strict_noise": [
+        0.0,
+        0.0
+      ],
+      "strict_difference": [
+        null,
+        null
+      ]
+    },
+    "valid_difference_fraction": 0.0,
+    "monte_carlo_stability": {
+      "first_half_difference_CI": [
+        null,
+        null
+      ],
+      "second_half_difference_CI": [
+        null,
+        null
+      ]
+    },
+    "statistical_candidate_decision": "indeterminate",
+    "measurement": {
+      "pope": {
+        "units": 9000,
+        "image_clusters": 500,
+        "model_parse_rates": {
+          "llava05b": 0.84,
+          "llava7b": 1.0
+        }
+      },
+      "grounding": {
+        "units": 2400,
+        "image_clusters": 1905,
+        "model_parse_rates": {
+          "llava05b": 0.6825,
+          "llava7b": 1.0
+        }
+      },
+      "consistency": {
+        "units": 800,
+        "image_clusters": 774,
+        "model_parse_rates": {
+          "llava05b": 0.32499999999999996,
+          "llava7b": 1.0
+        }
+      },
+      "mmstar": {
+        "units": 1500,
+        "image_clusters": 1500,
+        "model_parse_rates": {
+          "llava05b": 0.706,
+          "llava7b": 1.0
+        }
+      }
+    },
+    "formal": false,
+    "training_allowed": false,
+    "reason": "Historical data and unreviewed measurement validity; statistical candidate is not training permission"
+  }
+}

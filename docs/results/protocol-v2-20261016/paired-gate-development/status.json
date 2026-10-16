@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "worker_script": "paired_gate_v2.py",
+  "pid": 88732,
+  "source_scope": "historical_exploratory",
+  "formal_training_allowed": false,
+  "n_outer": 1000,
+  "n_inner": 128,
+  "started_utc": "2026-10-16T08:44:48.831397+00:00",
+  "current_analysis": "llava/without_grounding",
+  "completed_outer_draws": 1000,
+  "updated_utc": "2026-10-16T08:45:46.625566+00:00",
+  "completed_utc": "2026-10-16T08:45:46.676233+00:00"
+}

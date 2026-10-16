@@ -8,5 +8,6 @@ runs/
 .offload/
 .exports/
 data/training/
+data/protocol-v2/
 .autodl_known_hosts
 .gpu.lock

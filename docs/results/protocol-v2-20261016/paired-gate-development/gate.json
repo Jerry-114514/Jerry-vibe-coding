@@ -1,0 +1,14 @@
+{
+  "decision": "indeterminate",
+  "formal": false,
+  "training_allowed": false,
+  "families": {
+    "qwen/all_axes": "indeterminate",
+    "qwen/without_grounding": "indeterminate",
+    "intern/all_axes": "indeterminate",
+    "intern/without_grounding": "indeterminate",
+    "llava/all_axes": "indeterminate",
+    "llava/without_grounding": "indeterminate"
+  },
+  "reason": "Paired estimator validated on historical data only; new audit and measurement acceptance remain required"
+}

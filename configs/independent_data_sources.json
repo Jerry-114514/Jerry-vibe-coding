@@ -1,0 +1,188 @@
+{
+  "schema": "arp.independent-data-sources.v2",
+  "metadata_source": "official Hugging Face API queried from local control machine; only metadata stored locally",
+  "datasets": [
+    {
+      "repo": "lmms-lab-encoder/ai2d",
+      "revision": "c83a9b9692933aff8349157c88a413df9d02c4e5",
+      "files": [
+        {
+          "path": "data/test-00000-of-00002.parquet",
+          "bytes": 62292686,
+          "sha256": "450ecfa95b0c475ba214cd9a33b7ec5d1d782e7321a54fc652453d8776743702"
+        },
+        {
+          "path": "data/test-00001-of-00002.parquet",
+          "bytes": 77173738,
+          "sha256": "13f5813136e51902cc4048bf48c53104b29dbe7ac7d31b170c0e9c36bceed06b"
+        }
+      ]
+    },
+    {
+      "repo": "MMMU/MMMU",
+      "revision": "876ce5cb130f7f7e290ce4d9984357737d4db5cf",
+      "files": [
+        {
+          "path": "Accounting/test-00000-of-00001.parquet",
+          "bytes": 21666375,
+          "sha256": "4a904bf3b8177cdb3ec7219471dfc939ac9e32cbb1ce9dcea765355e69ab9f65"
+        },
+        {
+          "path": "Agriculture/test-00000-of-00002.parquet",
+          "bytes": 496326124,
+          "sha256": "e6d2d5b258e40a9d7364b0dfce1874cbde6c9dc69ba3d032e2e27f568e233691"
+        },
+        {
+          "path": "Agriculture/test-00001-of-00002.parquet",
+          "bytes": 497491071,
+          "sha256": "575cbaaa045b76a670d9c24b34ec354f97e05f64960ef7fe72162e13e2338983"
+        },
+        {
+          "path": "Architecture_and_Engineering/test-00000-of-00001.parquet",
+          "bytes": 15877230,
+          "sha256": "444ad2998a8fd27a7451490c223df6d50cdde789b59db0be5422c95a91efc274"
+        },
+        {
+          "path": "Art/test-00000-of-00001.parquet",
+          "bytes": 237828444,
+          "sha256": "f7e3ecd6bf73589120a1c2d3bcf43a1bd18542cd75a7083c8b9c905d72248799"
+        },
+        {
+          "path": "Art_Theory/test-00000-of-00002.parquet",
+          "bytes": 280635343,
+          "sha256": "dce0d0bcb146ece0a079fba0614a50f76881b70ef9695e00d30a2ffec0633745"
+        },
+        {
+          "path": "Art_Theory/test-00001-of-00002.parquet",
+          "bytes": 272558259,
+          "sha256": "641ecca8edf2921c931587741468f6bd47042fc3f3b4fa9bc1d91e9d6bb92c4a"
+        },
+        {
+          "path": "Basic_Medical_Science/test-00000-of-00001.parquet",
+          "bytes": 48066435,
+          "sha256": "d99abb5bba6bd0da5b879f3d6a02fe037dde1d8578d5e9e354acece51c477fb7"
+        },
+        {
+          "path": "Biology/test-00000-of-00001.parquet",
+          "bytes": 130347207,
+          "sha256": "47c3314418f7496cceb608befce89a546d5b8a665c8dd57c65fcf4bc9a5de2b0"
+        },
+        {
+          "path": "Chemistry/test-00000-of-00001.parquet",
+          "bytes": 36885586,
+          "sha256": "70c73ec2a90ffab6015f1b13643d8d2d63d1a5bed2ae3f560e1d1a602074e4e5"
+        },
+        {
+          "path": "Clinical_Medicine/test-00000-of-00001.parquet",
+          "bytes": 98112041,
+          "sha256": "46811b260ee47aa56fa5cf41f020aab853f75a62662dd8c1b24b5bcd66a8bcab"
+        },
+        {
+          "path": "Computer_Science/test-00000-of-00001.parquet",
+          "bytes": 30901562,
+          "sha256": "56d63d4b23680644f3c1f1e31497f1bce652bf09c76f014710c8bec204d20a95"
+        },
+        {
+          "path": "Design/test-00000-of-00001.parquet",
+          "bytes": 77250294,
+          "sha256": "523fd30a4ec326c75f9b861424f1cec6b435ead1977fc040b5041423381567f2"
+        },
+        {
+          "path": "Diagnostics_and_Laboratory_Medicine/test-00000-of-00001.parquet",
+          "bytes": 156897245,
+          "sha256": "6792bbd9119fc6361fac84269fca38370e524db6d7d1697024c0b4a26164cc38"
+        },
+        {
+          "path": "Economics/test-00000-of-00001.parquet",
+          "bytes": 11189532,
+          "sha256": "4ab95780bfad4181a47d7c20d63ee86d7b62dc8098298ae4b3fc25e4e0f9af11"
+        },
+        {
+          "path": "Electronics/test-00000-of-00001.parquet",
+          "bytes": 5515788,
+          "sha256": "021e5da4e9f730751f3a43ee4ebcabe53ead6f60dbb6db8ab3dc2c7bc4c144e7"
+        },
+        {
+          "path": "Energy_and_Power/test-00000-of-00001.parquet",
+          "bytes": 14612703,
+          "sha256": "fcd46c1aecf2c1074c5ecd1183053d45833fa777357a2d110e7d741ed1833dc4"
+        },
+        {
+          "path": "Finance/test-00000-of-00001.parquet",
+          "bytes": 11589188,
+          "sha256": "7d0a6f0b2d897a4df59f98878b0cf97f84b4c32b7624018ddc3f8f0d624ee5a6"
+        },
+        {
+          "path": "Geography/test-00000-of-00001.parquet",
+          "bytes": 136432522,
+          "sha256": "bc137338b7e49001ef72efbb9d2ef4386e091c9df78b27264c00998372cb5cb1"
+        },
+        {
+          "path": "History/test-00000-of-00001.parquet",
+          "bytes": 115199496,
+          "sha256": "21e26e48d45597a39dc9d7a3d2223670b154ba96510ced7773289c7ce6e694c1"
+        },
+        {
+          "path": "Literature/test-00000-of-00001.parquet",
+          "bytes": 48446047,
+          "sha256": "f907bc2d9675308fd6d1c701bd68a595b62bef0f0487d833fa081fa73febd18b"
+        },
+        {
+          "path": "Manage/test-00000-of-00001.parquet",
+          "bytes": 29562015,
+          "sha256": "c6a016a2144b04795be745e067a9be4a4453f60362cbf2dcaea5ae396bcf99c0"
+        },
+        {
+          "path": "Marketing/test-00000-of-00001.parquet",
+          "bytes": 7038745,
+          "sha256": "1aad9c514fab5aea0b89eea0e391ec76f23ae15425d7f673ef4c943d05720687"
+        },
+        {
+          "path": "Materials/test-00000-of-00001.parquet",
+          "bytes": 25165899,
+          "sha256": "5fddafb6506303ab7d284bb46e34bbdeb32066475bf089cdce7319ee14b7edb0"
+        },
+        {
+          "path": "Math/test-00000-of-00001.parquet",
+          "bytes": 27629888,
+          "sha256": "9ce9d48b4933c0a00311b1c6ca81e009dcbb5789a97e466af74cf3537b74f404"
+        },
+        {
+          "path": "Mechanical_Engineering/test-00000-of-00001.parquet",
+          "bytes": 14953059,
+          "sha256": "cf52f89e17ee5870c8ddfa81da3dbc49dec395972d24255567582fa3c3b7671b"
+        },
+        {
+          "path": "Music/test-00000-of-00001.parquet",
+          "bytes": 132932970,
+          "sha256": "e67177cddb6092434dcafdf4f1135bc2c31734f7502c93e35220682f5e365bcb"
+        },
+        {
+          "path": "Pharmacy/test-00000-of-00001.parquet",
+          "bytes": 31229172,
+          "sha256": "8b6afb493e472c5455c4c8f684ddedb3dc27e9c2c3fb2999d267e961b3c81c9f"
+        },
+        {
+          "path": "Physics/test-00000-of-00001.parquet",
+          "bytes": 15794643,
+          "sha256": "9757c920be68e166daa8afc79e3c29e2c4668f8c231d71bb0f2e64bb7cb02116"
+        },
+        {
+          "path": "Psychology/test-00000-of-00001.parquet",
+          "bytes": 53584920,
+          "sha256": "115ac7616503ca91b1f48ac6b9f625234f374f65e243e8565c07112c455c4fa2"
+        },
+        {
+          "path": "Public_Health/test-00000-of-00001.parquet",
+          "bytes": 31721697,
+          "sha256": "862d34a3e713b65b211ebeb997fa25100124587a55221a1f99f66d8ca01e1d62"
+        },
+        {
+          "path": "Sociology/test-00000-of-00001.parquet",
+          "bytes": 144225712,
+          "sha256": "cdaf8f9d4610a976d9ccfdd0887d45444731c43876039045b709dd6d1bcc5345"
+        }
+      ]
+    }
+  ]
+}

@@ -49,6 +49,14 @@
 
 13:36 已完成全部 64 条；发现定位坐标约定不匹配后，另冻结显式 `[0,1000]` 坐标契约，于 13:39 完成 8 条原生坐标校准。两批均通过独立验收，完整原始结果已上传 Release。详见 [API 开发实验结果与边界](api_development_results.md)。
 
+13:45 又完成排除上述 8 条后的 92 条开发验证，并通过独立验收和上传核验。16:45 完成六组 [配对量尺与噪声分析](paired_gate_development.md)，仍未满足正式训练放行条件。
+
+## 独立数据与持续监控
+
+新增 AutoDL 后台 `arp-v2-monitor`，每 5 分钟记录真实进程、状态、日志活跃度、GPU 占用、验收与备份回执是否存在；进程缺失、阶段失败和 30 分钟无进度单独记录。不重试付费调用，不覆盖科学 gate。心跳位于 `runs/protocol-v2-monitor/heartbeat.json`，变化事件位于同目录 `events.jsonl`。这是远程日志监控，不是 Codex 定时唤醒或独立通知服务。
+
+已启动 AI2D 与 MMMU test 的独立数据源准备，共 34 个 Parquet、3,397,133,636 字节。官方小型元数据从控制机获取并锁定 revision/文件 SHA256；数据本体通过可用镜像直接下载至 AutoDL，并与官方 LFS SHA256 验证。状态位于 `runs/protocol-v2-data/source-download/status.json`。原始源文件下载完成不等于四轴独立清单已经完成，仍须去重、图像簇划分和清单冻结。
+
 ## GitHub 原始产物与自动备份
 
 [补实验阶段性 Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) 保存完成阶段的原始输出、逐题日志、显存采样、短程训练 adapter 和恢复状态。首次完整上传约 109MB，后续每个模型完成后由 AutoDL 直接上传新快照，并验证服务端大小和 SHA256；不把未完成账本冒充完成结果。
