@@ -1,0 +1,13 @@
+{
+  "schema": "arp.independent-candidate-roles.v2",
+  "calibration_units_per_axis": 120,
+  "audit_units_per_axis": 1200,
+  "confirm_units_per_axis": 1200,
+  "role_seed": "20261016:independent-manifests-v2:",
+  "hf_candidates_sha256": "c7c2b67bcbb2ef1d25e36974fafa5099818bb0f16ec11ab3edea475a00138d11",
+  "coco_candidates_sha256": "21713e67fa49397518bccc0853875bc7e44196e91c470ae3211abf1f8f74e981",
+  "training_pool_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+  "manifest_expansion_code_sha256": "9b0ade2b57128b528a47bdbaf56057797b53d955c11b6f88888f1488dfbb1e6b",
+  "near_duplicate_radius": 4,
+  "near_duplicate_pair_storage_cap": 50000
+}

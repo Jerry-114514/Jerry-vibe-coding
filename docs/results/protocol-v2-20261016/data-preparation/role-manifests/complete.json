@@ -1,0 +1,121 @@
+{
+  "status": "complete",
+  "manifests": {
+    "calibration": {
+      "sha256": "50bf69c5cc45c2f69d22a95b31a80e4718b4ec3dffec96872dcd59126e5af764",
+      "prompt_rows": 960,
+      "original_units": 480
+    },
+    "audit": {
+      "sha256": "556a5c08fe1100af49e81e1dcbcdd1afa93991375976c2e51f36a1c1b946a490",
+      "prompt_rows": 9600,
+      "original_units": 4800
+    },
+    "confirm": {
+      "sha256": "6c2d7547778fdb7b64155227a944dedc95940c21a749617ff9264aa05a78ebaf",
+      "prompt_rows": 9600,
+      "original_units": 4800
+    },
+    "train": {
+      "sha256": "7dd98a04cbaf63dd7a9af3ecfe6091ce8f8c9b3aad48047f5ed3069591f80ed5",
+      "prompt_rows": 3545,
+      "original_units": 2149
+    }
+  },
+  "coverage": {
+    "calibration": {
+      "pope": {
+        "units": 120,
+        "image_components": 98,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 120,
+        "image_components": 86,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 120,
+        "image_components": 54,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 120,
+        "image_components": 112,
+        "multi_image_units": 6,
+        "open_answer_units": 5
+      }
+    },
+    "audit": {
+      "pope": {
+        "units": 1200,
+        "image_components": 821,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 1200,
+        "image_components": 724,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 1200,
+        "image_components": 366,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 1200,
+        "image_components": 1099,
+        "multi_image_units": 77,
+        "open_answer_units": 73
+      }
+    },
+    "confirm": {
+      "pope": {
+        "units": 1200,
+        "image_components": 805,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 1200,
+        "image_components": 722,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 1200,
+        "image_components": 353,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 1200,
+        "image_components": 1088,
+        "multi_image_units": 82,
+        "open_answer_units": 68
+      }
+    }
+  },
+  "role_assignment": "SHA256 of minimum exact-RGB image component: calibration 8%, audit 46%, confirm 46%",
+  "no_model_outputs_used_for_selection": true,
+  "global_exact_image_cross_role_overlap": 0,
+  "historical_exact_overlap_exclusions": 5,
+  "near_duplicate_candidates": {
+    "all_candidate_pairs": 245,
+    "cross_role_or_historical_pairs": 207,
+    "stored_pairs": 245,
+    "truncated": false
+  },
+  "near_duplicate_human_review_complete": false,
+  "grounding_blind_human_review_complete": false,
+  "independent_confirmation_accepted": false,
+  "formal_training_allowed": false,
+  "candidate_roles_frozen": true,
+  "completed_utc": "2026-10-16T09:15:05.635717+00:00"
+}

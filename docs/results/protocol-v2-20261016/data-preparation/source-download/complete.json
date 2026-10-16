@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "worker_script": "prepare_independent_data.py",
+  "pid": 89384,
+  "scope": "Public raw source acquisition only; independent manifests are a later stage",
+  "expected_files": 34,
+  "expected_bytes": 3397133636,
+  "completed_files": 34,
+  "completed_bytes": 3397133636,
+  "started_utc": "2026-10-16T08:55:33.389160+00:00",
+  "formal_training_allowed": false,
+  "failed_files": 0,
+  "updated_utc": "2026-10-16T08:55:39.775390+00:00",
+  "completed_utc": "2026-10-16T08:55:39.778531+00:00",
+  "verified_inventory_sha256": "b04f433dbeb4f87dd4b61216b0c3442b246355e6c058fd5c692038a5c194d71f"
+}

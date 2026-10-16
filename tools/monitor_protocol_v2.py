@@ -11,7 +11,9 @@ from experiment_common import ROOT, read_json, write_json
 
 WORKERS = {'api_development_pilot.py', 'precision_bridge.py', 'training_memory_pilot.py',
            'run_cached_pilots.py', 'run_safe_supplements.py', 'paired_gate_v2.py',
-           'prepare_independent_data.py', 'run_protocol_v2.py'}
+           'prepare_independent_data.py', 'index_independent_sources.py', 'prepare_coco_candidates_v2.py',
+           'freeze_independent_candidates.py', 'freeze_clean_candidates_v3.py', 'run_clean_calibration.py',
+           'publish_clean_inputs.py', 'run_protocol_v2.py'}
 OUT = ROOT / 'runs/protocol-v2-monitor'
 
 
@@ -43,14 +45,23 @@ def snapshot():
             if not script and path.parent.name.startswith('api-'):
                 script = 'api_development_pilot.py'
             matching = [p for p in live if not script or p['script'] == script]
+            if state.get('pid'):
+                matching = [p for p in matching if p['pid'] == state['pid']]
             issue = None
-            if status in ('running', 'queued'):
+            if status in ('running', 'queued', 'waiting'):
                 if not matching:
                     issue = 'reported_active_but_worker_missing'
                 elif age > 1800:
                     issue = 'no_status_or_ledger_progress_for_30_minutes'
             elif status == 'failed':
                 issue = 'stage_failed'
+                replacement = state.get('superseded_by')
+                if replacement:
+                    candidate = (ROOT/replacement/'complete.json').resolve()
+                    if candidate.is_relative_to((ROOT/'runs').resolve()) and candidate.exists():
+                        try:
+                            if read_json(candidate).get('status') == 'complete': issue = None
+                        except (OSError,ValueError): pass
             backup = path.parent / 'github-storage.json'
             verification = path.parent / 'verification.json'
             stages.append({'path': str(path.relative_to(ROOT)), 'status': status,

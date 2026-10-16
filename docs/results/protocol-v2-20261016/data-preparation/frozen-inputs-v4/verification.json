@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "input_images": 5704,
+  "input_bytes": 1398152841,
+  "exact_frozen_input_coverage": true,
+  "all_source_file_sizes_and_sha256_verified": true,
+  "selected_image_inventory_sha256": "2f044118114ee13382f00c0269c8a32e3cc8956ff1940e75f0398b06604b5a32"
+}

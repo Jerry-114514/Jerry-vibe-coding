@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "worker_script": "publish_clean_inputs.py",
+  "pid": 91563,
+  "started_utc": "2026-10-16T09:27:27.545671+00:00",
+  "stage": "upload_verified",
+  "completed_images": 5704,
+  "expected_images": 5704,
+  "updated_utc": "2026-10-16T09:27:30.721479+00:00",
+  "input_bytes": 1398152841,
+  "completed_utc": "2026-10-16T09:31:39.715113+00:00"
+}

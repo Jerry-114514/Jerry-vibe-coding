@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "manifests": {
+    "calibration": {
+      "pope": 120,
+      "grounding": 120,
+      "consistency": 120,
+      "mmstar": 120
+    },
+    "audit": {
+      "pope": 1200,
+      "grounding": 1200,
+      "consistency": 1200,
+      "mmstar": 1200
+    },
+    "confirm": {
+      "pope": 1200,
+      "grounding": 1200,
+      "consistency": 1200,
+      "mmstar": 1200
+    }
+  },
+  "source_images_verified": 5704,
+  "cross_role_exact_image_overlap": 0,
+  "cross_role_conservative_component_overlap": 0,
+  "new_audit_or_confirm_components_linked_to_history": 0,
+  "legacy_development_calibration_explicitly_exempted": true,
+  "checks": [
+    "all_frozen_manifest_hashes",
+    "exact_unit_quotas",
+    "five_paraphrases_per_original",
+    "recomputed_conservative_graph",
+    "full_source_byte_rgb_dhash_dimensions",
+    "exact_input_inventory_coverage",
+    "unchanged_approved_training_pool"
+  ],
+  "human_grounding_review_complete": false,
+  "formal_training_allowed": false
+}

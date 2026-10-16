@@ -1,0 +1,115 @@
+{
+  "status": "complete",
+  "schema": "arp.conservative-image-isolation.v4",
+  "manifests": {
+    "calibration": {
+      "sha256": "099b111fd1ab4c5149d4ec8da0ac4ae5ed25d9a6b4f5edea15368ce714b7cf08",
+      "prompt_rows": 960,
+      "original_units": 480
+    },
+    "audit": {
+      "sha256": "09dd2995899f9849b9eedd90bae8316c3487ccac6b19d93f53c161ff6ebc54dd",
+      "prompt_rows": 9600,
+      "original_units": 4800
+    },
+    "confirm": {
+      "sha256": "7d0ccc2d15d53acce7c59929fe471c02ffabca894a56face5164a57dd15220a9",
+      "prompt_rows": 9600,
+      "original_units": 4800
+    },
+    "train": {
+      "sha256": "7dd98a04cbaf63dd7a9af3ecfe6091ce8f8c9b3aad48047f5ed3069591f80ed5",
+      "prompt_rows": 3545,
+      "original_units": 2149
+    }
+  },
+  "coverage": {
+    "calibration": {
+      "pope": {
+        "units": 120,
+        "image_components": 98,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 120,
+        "image_components": 86,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 120,
+        "image_components": 120,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 120,
+        "image_components": 109,
+        "multi_image_units": 3,
+        "open_answer_units": 6
+      }
+    },
+    "audit": {
+      "pope": {
+        "units": 1200,
+        "image_components": 821,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 1200,
+        "image_components": 722,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 1200,
+        "image_components": 331,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 1200,
+        "image_components": 1089,
+        "multi_image_units": 75,
+        "open_answer_units": 74
+      }
+    },
+    "confirm": {
+      "pope": {
+        "units": 1200,
+        "image_components": 804,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "grounding": {
+        "units": 1200,
+        "image_components": 723,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "consistency": {
+        "units": 1200,
+        "image_components": 315,
+        "multi_image_units": 0,
+        "open_answer_units": 0
+      },
+      "mmstar": {
+        "units": 1200,
+        "image_components": 1074,
+        "multi_image_units": 84,
+        "open_answer_units": 68
+      }
+    }
+  },
+  "excluded_candidate_units": 798,
+  "conservative_near_edges": 4464,
+  "cross_role_conservative_components": 0,
+  "historical_components_retained": 0,
+  "near_duplicate_human_review_complete": false,
+  "grounding_blind_human_review_complete": false,
+  "formal_training_allowed": false,
+  "selected_image_assets_sha256": "2f044118114ee13382f00c0269c8a32e3cc8956ff1940e75f0398b06604b5a32",
+  "completed_utc": "2026-10-16T09:24:01.386115+00:00"
+}

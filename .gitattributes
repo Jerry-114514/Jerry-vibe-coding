@@ -7,3 +7,4 @@ tools/refer_api.py -text
 tools/run_degenerate.py -text
 tools/scoring.py -text
 *.pdf binary
+tools/vendor/** -text

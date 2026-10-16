@@ -1,0 +1,19 @@
+{
+  "repository": "MMMU-Benchmark/MMMU",
+  "revision": "Exact vendored content locked by SHA256; commit lookup unavailable due unauthenticated GitHub API rate limit",
+  "retrieved_date": "2026-10-16",
+  "license": "Apache-2.0",
+  "files": {
+    "mmmu_eval_utils.py": {
+      "source_url": "https://raw.githubusercontent.com/MMMU-Benchmark/MMMU/main/mmmu/utils/eval_utils.py",
+      "sha256": "cc1a89b4a27f697702d340bc6a7578b5237135754ddaa9ef105239a3d9847367",
+      "git_blob_sha1": "a2cf3099f86393ce51acfe7b832ded9870358635"
+    },
+    "MMMU_LICENSE": {
+      "source_url": "https://raw.githubusercontent.com/MMMU-Benchmark/MMMU/main/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    }
+  },
+  "modifications": "none"
+}

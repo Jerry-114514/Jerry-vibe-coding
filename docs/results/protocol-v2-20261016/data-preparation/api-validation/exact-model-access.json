@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-16T09:36:32.082744+00:00",
+  "purpose": "exact_model_access_probe_using_synthetic_image",
+  "models": [
+    {
+      "requested_model": "qwen2.5-vl-32b-instruct",
+      "http_status": 403,
+      "error_code": "access_denied"
+    },
+    {
+      "requested_model": "qwen3-vl-plus-2025-12-19",
+      "http_status": 404,
+      "error_code": "model_not_found"
+    }
+  ],
+  "formal_training_allowed": false
+}

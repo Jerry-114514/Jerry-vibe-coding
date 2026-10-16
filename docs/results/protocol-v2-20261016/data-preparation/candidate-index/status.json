@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "worker_script": "index_independent_sources.py",
+  "pid": 89483,
+  "scope": "Unassigned candidates only; no independent-confirmation claim yet",
+  "started_utc": "2026-10-16T08:56:09.174817+00:00",
+  "formal_training_allowed": false,
+  "stage": "MMMU/MMMU",
+  "completed_items": 10500,
+  "expected_items": null,
+  "updated_utc": "2026-10-16T08:59:24.568788+00:00",
+  "sources_config_sha256": "a3a1f4173f725d411bfee4504419f1f9a01c93aa268137f3ed1d8db2460cc1c6",
+  "raw_rows": {
+    "lmms-lab-encoder/ai2d": 3088,
+    "MMMU/MMMU": 10500
+  },
+  "accepted_candidates": 13578,
+  "by_dataset": {
+    "ai2d": 3088,
+    "mmmu": 10490
+  },
+  "excluded_items": 10,
+  "image_assets": 10422,
+  "unique_pixel_images": 10422,
+  "multi_image_candidates": 797,
+  "open_answer_candidates": 627,
+  "max_choice_count": 9,
+  "candidates_sha256": "c7c2b67bcbb2ef1d25e36974fafa5099818bb0f16ec11ab3edea475a00138d11",
+  "image_assets_sha256": "50bafd5e61e2714d322744c20dd8e967dfbc102b660d7c37212bfc66e667227c",
+  "historical_image_inventory_sha256": "adf258f8975f82a071268dbe4cfc52270bee9b95075fbf6e9c74946fb8731085",
+  "new_train_audit_confirm_roles_frozen": false,
+  "near_duplicate_human_review": "pending",
+  "completed_utc": "2026-10-16T08:59:24.865714+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "arp.conservative-image-isolation.v4",
+  "dhash_radius": 4,
+  "human_near_duplicate_decisions": false,
+  "policy": "Union every candidate image-pair within radius, union multi-image questions, exclude entire components reaching any historical image, then assign roles",
+  "outcome_dependence": false,
+  "targets": {
+    "calibration": 120,
+    "audit": 1200,
+    "confirm": 1200
+  },
+  "allocation": "Hash roles followed by deterministic whole-component quota repair, preserving donor minima",
+  "calibration_consistency_source": "120 historical MMBench development units; preserves scarce clean AI2D test units for both 1200-unit audit and confirmation",
+  "historical_inventory_sha256": "adf258f8975f82a071268dbe4cfc52270bee9b95075fbf6e9c74946fb8731085",
+  "candidate_inputs": {
+    "hf": "c7c2b67bcbb2ef1d25e36974fafa5099818bb0f16ec11ab3edea475a00138d11",
+    "coco": "21713e67fa49397518bccc0853875bc7e44196e91c470ae3211abf1f8f74e981"
+  },
+  "scope": "Conservative dHash control; not a guarantee against arbitrary crops or semantic duplicates"
+}

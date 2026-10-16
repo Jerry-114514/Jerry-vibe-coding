@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "worker_script": "freeze_clean_candidates_v3.py",
+  "pid": 90966,
+  "started_utc": "2026-10-16T09:20:49.599233+00:00",
+  "formal_training_allowed": false,
+  "error_type": "ValueError",
+  "superseded_by": "runs/protocol-v2-data/clean-role-manifests-v4",
+  "resolution": "V4 preserves audit/confirm quotas using whole-component allocation repair; v3 failure and partial artifacts retained"
+}

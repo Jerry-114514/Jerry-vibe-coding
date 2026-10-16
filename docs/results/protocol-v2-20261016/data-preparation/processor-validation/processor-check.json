@@ -1,0 +1,216 @@
+{
+  "status": "passed",
+  "scope": "CPU processor shape and aggregate visual token checks, not model accuracy",
+  "cases": [
+    {
+      "item_id": "mmmu:test_Art_Theory_424",
+      "answer_type": "option_letter_v2",
+      "image_count": 2,
+      "image_grid_thw": [
+        [
+          1,
+          68,
+          36
+        ],
+        [
+          1,
+          60,
+          40
+        ]
+      ],
+      "visual_tokens": 1212,
+      "input_tokens": 1282
+    },
+    {
+      "item_id": "mmmu:test_Chemistry_200",
+      "answer_type": "option_letter_v2",
+      "image_count": 5,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          36
+        ],
+        [
+          1,
+          24,
+          24
+        ],
+        [
+          1,
+          22,
+          26
+        ],
+        [
+          1,
+          22,
+          26
+        ],
+        [
+          1,
+          22,
+          26
+        ]
+      ],
+      "visual_tokens": 717,
+      "input_tokens": 808
+    },
+    {
+      "item_id": "mmmu:test_Chemistry_315",
+      "answer_type": "option_letter_v2",
+      "image_count": 4,
+      "image_grid_thw": [
+        [
+          1,
+          20,
+          34
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          14,
+          50
+        ],
+        [
+          1,
+          12,
+          60
+        ]
+      ],
+      "visual_tokens": 690,
+      "input_tokens": 771
+    },
+    {
+      "item_id": "mmmu:test_Electronics_218",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          52
+        ]
+      ],
+      "visual_tokens": 286,
+      "input_tokens": 352
+    },
+    {
+      "item_id": "mmmu:test_Electronics_95",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          50
+        ]
+      ],
+      "visual_tokens": 275,
+      "input_tokens": 334
+    },
+    {
+      "item_id": "mmmu:test_Electronics_151",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          28,
+          38
+        ]
+      ],
+      "visual_tokens": 266,
+      "input_tokens": 385
+    },
+    {
+      "item_id": "mmmu:test_Finance_213",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          40,
+          28
+        ]
+      ],
+      "visual_tokens": 280,
+      "input_tokens": 387
+    },
+    {
+      "item_id": "mmmu:test_Manage_227",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          18,
+          58
+        ]
+      ],
+      "visual_tokens": 261,
+      "input_tokens": 345
+    },
+    {
+      "item_id": "mmmu:test_Pharmacy_338",
+      "answer_type": "mmmu_open",
+      "image_count": 1,
+      "image_grid_thw": [
+        [
+          1,
+          32,
+          34
+        ]
+      ],
+      "visual_tokens": 272,
+      "input_tokens": 353
+    },
+    {
+      "item_id": "synthetic-seven-image-input-check",
+      "answer_type": "yes_no",
+      "image_count": 7,
+      "image_grid_thw": [
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ],
+        [
+          1,
+          22,
+          30
+        ]
+      ],
+      "visual_tokens": 1155,
+      "input_tokens": 1203
+    }
+  ]
+}

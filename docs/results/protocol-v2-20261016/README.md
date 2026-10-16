@@ -57,6 +57,8 @@
 
 已启动 AI2D 与 MMMU test 的独立数据源准备，共 34 个 Parquet、3,397,133,636 字节。官方小型元数据从控制机获取并锁定 revision/文件 SHA256；数据本体通过可用镜像直接下载至 AutoDL，并与官方 LFS SHA256 验证。状态位于 `runs/protocol-v2-data/source-download/status.json`。原始源文件下载完成不等于四轴独立清单已经完成，仍须去重、图像簇划分和清单冻结。
 
+上述源文件已全部完成。后续已完成候选索引及保守近重复图像隔离，审计/确认分别保持每轴 1,200 原题；5,704 张冻结输入图片也已上传并核验。[最新执行修订](../../ARP_补实验执行修订_20261016.md) 解释分组、校准来源、处理器修复与仍待完成的门槛；[输入图片上传回执](data-preparation/frozen-inputs-v4/github-storage.json) 提供两个原始分片的精确 URL 和 SHA256。修复后的 `clean-inputs-v5` 正在串行运行 Qwen 3B/7B 校准，完成后按模型自动验收和上传。
+
 ## GitHub 原始产物与自动备份
 
 [补实验阶段性 Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) 保存完成阶段的原始输出、逐题日志、显存采样、短程训练 adapter 和恢复状态。首次完整上传约 109MB，后续每个模型完成后由 AutoDL 直接上传新快照，并验证服务端大小和 SHA256；不把未完成账本冒充完成结果。

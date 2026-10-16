@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "candidate_rows": 15690,
+  "images": 3726,
+  "axes": {
+    "grounding": 11690,
+    "pope": 4000
+  },
+  "candidates_sha256": "21713e67fa49397518bccc0853875bc7e44196e91c470ae3211abf1f8f74e981",
+  "assets_sha256": "f7ae77b8486705d014b8b88cdc06a88ff397c5b8d47735493497055632dd1d45",
+  "annotation_scope": "19,994-image COCO subset preserved in public REFER; new POPE-style construction, not official POPE",
+  "roles_frozen": false,
+  "formal_training_allowed": false,
+  "completed_utc": "2026-10-16T09:14:56.992032+00:00"
+}
