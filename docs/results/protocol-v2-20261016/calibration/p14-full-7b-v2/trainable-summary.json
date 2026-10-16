@@ -1,0 +1,5 @@
+{
+  "count": 40370176,
+  "all_base_and_vision_weights_frozen": true,
+  "trainable_parameter_tensor_count": 392
+}

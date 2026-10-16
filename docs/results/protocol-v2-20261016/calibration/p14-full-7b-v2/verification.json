@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": [
+    "100_real_updates",
+    "balanced_training_only_coverage",
+    "122B_teacher_identity",
+    "dual_CE_weights",
+    "seven_module_scope",
+    "nonzero_adapter_updates",
+    "2048_128_shape_stress",
+    "artifact_hashes",
+    "byte_threshold_decision"
+  ],
+  "formal_training": false
+}

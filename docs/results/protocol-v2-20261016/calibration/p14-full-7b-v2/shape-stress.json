@@ -1,0 +1,13 @@
+{
+  "synthetic_engineering_only": true,
+  "optimizer_updates": 1,
+  "response_tokens": 128,
+  "loss": 0.0063001615926623344,
+  "ce_gt": 0.0063001615926623344,
+  "ce_teacher": 0.0063001615926623344,
+  "grad_norm": 0.3375242352485657,
+  "gt_sequence_tokens": 2048,
+  "teacher_sequence_tokens": 2048,
+  "allocated_bytes": 18577423872,
+  "reserved_bytes": 21317550080
+}

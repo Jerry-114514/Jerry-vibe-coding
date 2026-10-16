@@ -1,0 +1,9 @@
+{
+  "source_rows": 3545,
+  "maximum_source_question_tokens": 490,
+  "selected_original_units": 100,
+  "units_per_axis": 25,
+  "longest_question_per_axis_included": true,
+  "all_inputs_from_approved_public_training_pool": true,
+  "evaluation_images_used": false
+}

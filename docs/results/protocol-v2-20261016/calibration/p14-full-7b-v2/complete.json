@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "engineering_only": true,
+  "formal_training": false,
+  "actual_real_updates": 100,
+  "synthetic_stress_updates": 1,
+  "loss_kind": ".5 GT-CE + .5 122B-response-CE",
+  "peak_reserved_bytes": 24431820800,
+  "peak_reserved_GB": 24.4318208,
+  "peak_reserved_GiB": 22.75390625,
+  "peak_allocated_bytes": 20586414592,
+  "real_updates_peak_reserved_bytes": 22563258368,
+  "memory_decision": "exceeds_requested_4090_budget",
+  "formal_training_allowed": false,
+  "formal_blocker": "Stage C and exact-checkpoint API bridge not passed; existing experiment code unchanged",
+  "loss_ledger_sha256": "6ec503ff5b44b8bdbce0532fd5227204183d9cbf7b0798f5d6db3886cb246beb",
+  "teacher_ledger_sha256": "1ebf54349b8014755e6274d103445b86955a19475f03ad42f61bd9f99cec16d6",
+  "adapter_sha256": "e057d1806224c1967aaa0746095c890ae70ef0daeca42751561347e5f09f9295",
+  "all_attention_and_mlp_lora_B_updated": true,
+  "elapsed_training_seconds": 76.95684134215117,
+  "completed_utc": "2026-10-16T11:45:34.852064+00:00"
+}
