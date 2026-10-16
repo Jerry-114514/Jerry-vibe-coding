@@ -1,0 +1,24 @@
+{
+  "status": "running",
+  "completed": [
+    {
+      "model": "intern2b",
+      "rows": 800,
+      "peak_allocated_bytes": 5240006144
+    },
+    {
+      "model": "intern8b",
+      "rows": 800,
+      "peak_allocated_bytes": 16950838784
+    }
+  ],
+  "skipped_completed": [
+    "intern2b",
+    "intern8b"
+  ],
+  "started_utc": "2026-10-16T04:25:06.020929+00:00",
+  "scope": "Development precision pilots; formal C/D remains gated",
+  "backup": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+  "current_model": "llava05b",
+  "updated_utc": "2026-10-16T04:25:06.023194+00:00"
+}

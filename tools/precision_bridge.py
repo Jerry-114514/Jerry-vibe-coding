@@ -86,6 +86,10 @@ def pilot(key, per_axis=100, limit=None):
         raise ValueError('Pilot coverage or identities invalid')
     with gpu_lock():
         free_bytes, total_bytes = torch.cuda.mem_get_info()
+        deadline = time.monotonic()+45
+        while free_bytes < 21*1024**3 and time.monotonic() < deadline:
+            time.sleep(1)
+            free_bytes, total_bytes = torch.cuda.mem_get_info()
         if free_bytes < 21*1024**3:
             raise RuntimeError('Pilot needs an otherwise idle 24GB GPU')
         torch.cuda.set_per_process_memory_fraction(min(1.0, 23*1024**3/total_bytes))
@@ -163,6 +167,15 @@ if __name__ == '__main__':
     if args.prepare_only:
         print(make_manifest(args.per_axis))
     elif args.model:
-        pilot(args.model, args.per_axis, args.limit_per_axis)
+        try:
+            pilot(args.model, args.per_axis, args.limit_per_axis)
+        except Exception as exc:
+            output = RUN/'calibration/precision-bridge'/args.model
+            output.mkdir(parents=True, exist_ok=True)
+            previous = read_json(output/'failed.json') if (output/'failed.json').exists() else {}
+            write_json(output/'failed.json', {**previous, 'status':'failed',
+                       'error':type(exc).__name__, 'message':str(exc),
+                       'stopped_utc':datetime.now(timezone.utc).isoformat()})
+            raise
     else:
         parser.error('--model or --prepare-only is required')

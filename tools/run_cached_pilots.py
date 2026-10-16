@@ -64,20 +64,32 @@ def publish_completed():
             time.sleep(2**(attempt+1))
 
 def worker():
-    status={'status':'running','completed':[],'scope':'Development precision pilots; formal C/D remains gated'}
+    status={'status':'running','completed':[],'skipped_completed':[],
+            'started_utc':datetime.now(timezone.utc).isoformat(),
+            'scope':'Development precision pilots; formal C/D remains gated'}
+    write_json(RUN/'cached-pilots-status.json',status)
     try:
-        # Archive the already completed P0/Qwen work before any additional job.
-        status['backup']=publish_completed()['release_url']
+        reports=sorted((ROOT/'runs/protocol-v2-snapshots').glob('*/github-storage.json'))
+        status['backup']=read_json(reports[-1])['release_url'] if reports else publish_completed()['release_url']
         for key in MODELS:
             status.update(current_model=key,updated_utc=datetime.now(timezone.utc).isoformat())
             write_json(RUN/'cached-pilots-status.json',status)
-            subprocess.run([sys.executable,'-u',str(ROOT/'tools/precision_bridge.py'),'--model',key],cwd=ROOT,check=True)
+            marker=RUN/'calibration/precision-bridge'/key/'complete.json'
+            already_complete=marker.exists()
+            if already_complete:
+                prior=read_json(marker)
+                if prior['rows']!=800 or prior['ledger_sha256']!=sha(marker.parent/'ledger.jsonl'):
+                    raise ValueError('Existing completion is not verified: '+key)
+                status['skipped_completed'].append(key)
+            else:
+                subprocess.run([sys.executable,'-u',str(ROOT/'tools/precision_bridge.py'),'--model',key],cwd=ROOT,check=True)
             complete=read_json(RUN/'calibration/precision-bridge'/key/'complete.json')
             if complete['peak_reserved_bytes']>23*1024**3:
                 raise RuntimeError('Pilot exceeded the registered memory budget')
             status['completed'].append({'model':key,'rows':complete['rows'],
                 'peak_allocated_bytes':complete['peak_allocated_bytes']})
-            status['backup']=publish_completed()['release_url']
+            if not already_complete:
+                status['backup']=publish_completed()['release_url']
         status.update(status='complete',current_model=None,completed_utc=datetime.now(timezone.utc).isoformat())
     except Exception as exc:
         status.update(status='failed',error=type(exc).__name__,message=str(exc))
@@ -115,6 +127,6 @@ if __name__=='__main__':
             'formal_confirmation':False,'large_downloads':False,
             'auto_backup':'Only completed checksummed stages, AutoDL directly to GitHub Release'})
         environment={**os.environ,'GH_TOKEN':token}
-        command='source /etc/network_turbo >/dev/null 2>&1; cd /root/autodl-tmp/arp; exec /root/autodl-tmp/arp-venv/bin/python -u tools/run_cached_pilots.py --worker > runs/protocol-v2/cached-pilots-console.log 2>&1'
+        command='source /etc/network_turbo >/dev/null 2>&1; cd /root/autodl-tmp/arp; exec /root/autodl-tmp/arp-venv/bin/python -u tools/run_cached_pilots.py --worker >> runs/protocol-v2/cached-pilots-console.log 2>&1'
         subprocess.run(['screen','-dmS','arp-v2-cached-pilots','bash','-lc',command],env=environment,check=True)
         print('Started arp-v2-cached-pilots with completion-only GitHub backups',flush=True)

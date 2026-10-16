@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "model": "intern2b",
+  "precision": "bf16",
+  "manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+  "prompt_rows": 800,
+  "limit_per_axis": null,
+  "confirmation": false,
+  "model_revision": "899155015275a9b7338c7f4677e19c784e0e5a21",
+  "rows": 800,
+  "axis_scores": {
+    "pope": 0.9399881164587048,
+    "grounding": 0.0,
+    "consistency": 0.28,
+    "mmstar": 0.58
+  },
+  "ledger_sha256": "e8ed81ad38e80bf3f848a18eedc62d565ed346d7423454b489f28ca3bef09f3d",
+  "elapsed_this_invocation_seconds": 248.12834502756596,
+  "peak_allocated_bytes": 5240006144,
+  "peak_reserved_bytes": 5865734144,
+  "comparison": {
+    "legacy_scores_on_same_items": {
+      "pope": 0.9399881164587048,
+      "grounding": 0.0,
+      "consistency": 0.3,
+      "mmstar": 0.58
+    },
+    "bf16_minus_legacy": {
+      "pope": 0.0,
+      "grounding": 0.0,
+      "consistency": -0.019999999999999962,
+      "mmstar": 0.0
+    },
+    "changed_scoring_units": 6,
+    "parse_failures_by_axis": {
+      "pope": 0,
+      "grounding": 97,
+      "consistency": 67,
+      "mmstar": 0
+    }
+  },
+  "actual_language_dtype": "torch.bfloat16",
+  "actual_visual_dtype": "torch.bfloat16",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_memory_bytes": 25262096384,
+  "is_formal_training_or_confirmation": false
+}

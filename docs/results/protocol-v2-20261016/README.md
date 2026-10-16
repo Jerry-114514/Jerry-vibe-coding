@@ -12,13 +12,18 @@
 | 训练臂配对分析 | [原始/floor 增益](p0/signed-gains-v2.json)、[配对差值区间](p0/arm_paired_contrasts.csv)；1,000 次共享图像簇重采样，仍只有一个训练 seed |
 | Qwen 3B BF16 开发预检 | [800 条完成记录](calibration/precision-bridge/qwen3b/complete.json)；每轴 100 原题，一致性保持五改写 |
 | Qwen 7B BF16 开发预检 | [800 条完成记录](calibration/precision-bridge/qwen7b/complete.json) |
+| InternVL 2B / 8B BF16 开发预检 | [2B 的 800 条完成记录](calibration/precision-bridge/intern2b/complete.json)、[8B 的 800 条完成记录](calibration/precision-bridge/intern8b/complete.json) |
 | 3B 训练显存与蒸馏可行性 | [100 次实际更新](calibration/training-memory-3b/complete.json)、[独立验收](calibration/training-memory-3b/verification.json)、[冻结配置](calibration/training-memory-3b/protocol.json)；属于工程预检，不是正式训练臂 |
+| 7B 教师文本 CE 训练预检 | [100 次实际更新](calibration/training-memory-7b/complete.json)、[独立验收](calibration/training-memory-7b/verification.json)、[冻结配置](calibration/training-memory-7b/protocol.json)；没有调用 API 教师 |
 
 | 实测项目 | PyTorch allocated 峰值 | reserved 峰值 |
 |---|---:|---:|
 | Qwen 3B 全 BF16 推理 | 7.573 GiB | 7.754 GiB |
-| Qwen 7B 全 BF16 推理 | 16.006 GiB | 17.401 GiB |
+| Qwen 7B 全 BF16 推理 | 16.006 GiB | 17.400 GiB |
+| InternVL 2B 全 BF16 推理 | 4.880 GiB | 5.463 GiB |
+| InternVL 8B 全 BF16 推理 | 15.787 GiB | 15.953 GiB |
 | Qwen 3B 全 BF16、100 步 LoRA+KL | 7.755 GiB | 8.457 GiB |
+| Qwen 7B 全 BF16、100 步 LoRA+教师文本 CE | 16.275 GiB | 18.852 GiB |
 
 上述峰值不等于整卡占用；nvidia-smi 采样和原始输出在下方 Release。3B 训练独立验证了逐步实际更新、有限损失/梯度、非零 LoRA B、adapter 与第 100 步恢复状态完全一致。
 
@@ -33,7 +38,7 @@
 
 ## 继续运行的显存受限任务
 
-已排入 InternVL 2B/8B、LLaVA 0.5B 的各 800 条 BF16 开发预检，以及 7B 学生的 100 步教师文本 CE 显存预检。所有 GPU 进程共用互斥锁，单进程 PyTorch 显存上限 23GiB；3B 训练预检上限为 12GiB。
+Qwen/InternVL 四个推理预检和 3B/7B 两个训练预检均已完成。LLaVA 0.5B 在 GPU 进程切换时触发空闲检查退出，尚未生成题目；已增加最多 45 秒的显存释放等待、补齐启动早期失败记录，并于北京时间 2026-10-16 12:25 恢复这一项，跳过已校验完成的模型。所有 GPU 进程共用互斥锁，单进程 PyTorch 显存上限 23GiB；3B 训练预检上限为 12GiB。
 
 这批任务只使用现有已缓存模型，不重新下载 32B/72B。7B 的 CE 预检采用已缓存 7B 教师文本，不调用付费 API，也不使用 logits；它检验序列训练的工程可行性，不声称检验了大教师效应。状态以各阶段完成标记、逐题记录和独立验收为准。
 

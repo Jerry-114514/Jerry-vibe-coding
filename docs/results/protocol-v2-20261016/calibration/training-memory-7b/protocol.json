@@ -1,0 +1,18 @@
+{
+  "scope": "Engineering pilot only; no formal C/D gate opened",
+  "steps": 100,
+  "seed": 2026101601,
+  "student": "qwen7b",
+  "student_precision": "bf16",
+  "teacher_precision": "finite-logits-sdpa-qwen-vision-fp32.v2",
+  "teacher_cache_sha256": "faa7d41a97cdb854913f4c622fc26c3e61cc74829948f5a6d0d1da016f5f7901",
+  "manifest_sha256": "a99684f3bb83635c92b08056ba7dcc7a3f8d85dedacf73bea51141fa21bcd03f",
+  "max_torch_reserved_gib": 23,
+  "confirmation": false,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "lr": 0.0001
+  },
+  "loss": "Teacher-response CE; no logits used"
+}
