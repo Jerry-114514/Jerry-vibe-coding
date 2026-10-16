@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "rows": 3545,
+  "axis_counts": {
+    "pope": 600,
+    "grounding": 600,
+    "consistency": 1745,
+    "mmstar": 600
+  },
+  "raw_eos_verified": true,
+  "tensor_alignment_and_finite_top50": true,
+  "no_truncation": true,
+  "frozen_config_sha256": "cd3ad2b931959814b6324b45c484a48e92b1348a699a891d0e043e0473723925",
+  "cache_inventory_sha256": "0b1547d1e0605da22fce77c0921312d6b391f26bee58bfb3e9e5268ce0321859"
+}
