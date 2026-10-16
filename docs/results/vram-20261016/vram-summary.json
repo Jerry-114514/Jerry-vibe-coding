@@ -1,0 +1,223 @@
+{
+  "created_utc": "2026-10-16T00:39:12.450534+00:00",
+  "experiment_run": "runs/formal-20261014",
+  "rows": [
+    {
+      "stage": "B",
+      "workload": "qwen3b",
+      "peak_allocated_bytes": 9423150080,
+      "peak_allocated_gib": 8.776,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/qwen3b-000.complete.json",
+      "source_sha256": "f0f75b44ece95fa6878c78a7e60b3d655272612f000d4208b2775e96a1005c34",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "qwen7b",
+      "peak_allocated_bytes": 18568911872,
+      "peak_allocated_gib": 17.2936,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/qwen7b-000.complete.json",
+      "source_sha256": "e57b5aefddb654fb2ea50712ad2a2f5bb5b088dde08b7844459e51434dd57637",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "intern1b",
+      "peak_allocated_bytes": 2946118144,
+      "peak_allocated_gib": 2.7438,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/intern1b-000.complete.json",
+      "source_sha256": "a797e0ae58985f758f2f930e082b640e25f962e0baca00286c48003c135deb74",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "intern2b",
+      "peak_allocated_bytes": 5241424384,
+      "peak_allocated_gib": 4.8815,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/intern2b-000.complete.json",
+      "source_sha256": "ca3e378559ddf69e1ccffe3ff234e52fe047cc8b906645e1f9f361a85e93ba96",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "intern8b",
+      "peak_allocated_bytes": 16954333696,
+      "peak_allocated_gib": 15.79,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/intern8b-000.complete.json",
+      "source_sha256": "5a3086ccfb95886203f0e074ff5a8181f8e33395d3f3725ade4421f1eb9e24b8",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "llava05b",
+      "peak_allocated_bytes": 3711966720,
+      "peak_allocated_gib": 3.457,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/llava05b-000.complete.json",
+      "source_sha256": "22aa02e874e197e0b6ac20a0b0e028c90b5938c44ae92ffe455ec18ab94ade11",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "B",
+      "workload": "llava7b",
+      "peak_allocated_bytes": 18057106432,
+      "peak_allocated_gib": 16.817,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/ledger/llava7b-000.complete.json",
+      "source_sha256": "55afacb4074757d048ebf22b9b233f54e461010c768a4fb3110e461a16343395",
+      "note": "Completed full 16,900-item inference"
+    },
+    {
+      "stage": "C",
+      "workload": "CPU analysis",
+      "peak_allocated_bytes": null,
+      "peak_allocated_gib": null,
+      "measurement": "not historically measured",
+      "source": null,
+      "source_sha256": null,
+      "note": "NumPy CPU analysis does not invoke CUDA. Historical board memory was not sampled; missing is not zero."
+    },
+    {
+      "stage": "D1",
+      "workload": "Training-set construction",
+      "peak_allocated_bytes": null,
+      "peak_allocated_gib": null,
+      "measurement": "not historically measured",
+      "source": null,
+      "source_sha256": null,
+      "note": "CPU-only preparation; no historical board sample."
+    },
+    {
+      "stage": "D2",
+      "workload": "Qwen7B teacher cache",
+      "peak_allocated_bytes": null,
+      "peak_allocated_gib": null,
+      "measurement": "not historically measured",
+      "source": "runs/formal-20261014/teacher-cache/complete.json",
+      "source_sha256": "88c293335e11b3310436637226267541678dbb7d90228ce3f93d4adc361e4491",
+      "note": "Completed 3,545 teacher entries; original completion file did not record a GPU peak."
+    },
+    {
+      "stage": "D3",
+      "workload": "A1",
+      "peak_allocated_bytes": 9674675200,
+      "peak_allocated_gib": 9.0102,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/arms/A1/complete.json",
+      "source_sha256": "b3de8e21aa031d693a3ba697c270f20ffd924401ffb0291289c48fed018d1d87",
+      "note": "1,000 actual optimizer updates when complete; pending runs have no peak yet"
+    },
+    {
+      "stage": "D4",
+      "workload": "A1",
+      "peak_allocated_bytes": 9452641280,
+      "peak_allocated_gib": 8.8035,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/post/A1/qwen3b-000.complete.json",
+      "source_sha256": "ab89515beccb2ae2378f269f5d8dae7d5e7fc4c7133975695408241ddcc8249e",
+      "note": "Full post-training evaluation peak becomes available only after completion"
+    },
+    {
+      "stage": "D3",
+      "workload": "A2",
+      "peak_allocated_bytes": 9814526976,
+      "peak_allocated_gib": 9.1405,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/arms/A2/complete.json",
+      "source_sha256": "a792ad5ba5cf55d5bb5de49e4167dec6561a5a98c150a84dcd57256c5377dc33",
+      "note": "1,000 actual optimizer updates when complete; pending runs have no peak yet"
+    },
+    {
+      "stage": "D4",
+      "workload": "A2",
+      "peak_allocated_bytes": 9452641280,
+      "peak_allocated_gib": 8.8035,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/post/A2/qwen3b-000.complete.json",
+      "source_sha256": "36f6a48aaf0333619bd307e0d46140e0f05b9ccd1ed24d72515ae9e12d5c7782",
+      "note": "Full post-training evaluation peak becomes available only after completion"
+    },
+    {
+      "stage": "D3",
+      "workload": "U",
+      "peak_allocated_bytes": 9807461888,
+      "peak_allocated_gib": 9.1339,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/arms/U/complete.json",
+      "source_sha256": "c4ffbe8d7d8d647bec70cfe19d86b0d446f44062bdb5232141c3d5cd92cfcd7c",
+      "note": "1,000 actual optimizer updates when complete; pending runs have no peak yet"
+    },
+    {
+      "stage": "D4",
+      "workload": "U",
+      "peak_allocated_bytes": 9452641280,
+      "peak_allocated_gib": 8.8035,
+      "measurement": "torch.cuda.max_memory_allocated",
+      "source": "runs/formal-20261014/post/U/qwen3b-000.complete.json",
+      "source_sha256": "d0525fe65ce2b664da54f2d81dd03b48729f4e9e2a1392d3522d535aa0837654",
+      "note": "Full post-training evaluation peak becomes available only after completion"
+    },
+    {
+      "stage": "D3",
+      "workload": "N",
+      "peak_allocated_bytes": null,
+      "peak_allocated_gib": null,
+      "measurement": "not historically measured",
+      "source": "runs/formal-20261014/arms/N/complete.json",
+      "source_sha256": "f984c22f9522eca8124cd8920cf6ff8916ff0c3bb8b5892f337ea30fb68406f6",
+      "note": "No-op control; no model training"
+    },
+    {
+      "stage": "D5",
+      "workload": "Homogeneous-floor control",
+      "peak_allocated_bytes": null,
+      "peak_allocated_gib": null,
+      "measurement": "not historically measured",
+      "source": null,
+      "source_sha256": null,
+      "note": "CPU analysis; no historical board sample."
+    }
+  ],
+  "current_nvidia_smi": {
+    "utc": "2026-10-16T00:39:12.450534+00:00",
+    "stage": "E",
+    "stage_status": "complete",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 4090",
+        "total_mib": 24564,
+        "used_mib": 1,
+        "free_mib": 24092,
+        "utilization_percent": 0
+      }
+    ],
+    "compute_processes": []
+  },
+  "sampled_board_peaks_mib": {
+    "D4-A1": 12359,
+    "D3-A2": 10631,
+    "D4-A2": 12359,
+    "D3-U": 12667,
+    "D4-U": 12359,
+    "E-final": 1,
+    "E": 1
+  },
+  "sample_interval_seconds": 15,
+  "sample_count": 995,
+  "experiment_complete": true,
+  "definitions": {
+    "allocated_peak": "PyTorch process peak allocated tensor memory; excludes CUDA context and allocator reserved cache.",
+    "board_used": "nvidia-smi board total used memory including reserved memory and all processes.",
+    "sampled_peak": "Maximum observed since monitoring began; not a retrospective or guaranteed continuous peak.",
+    "units": "GiB=1024^3 bytes; MiB=1024^2 bytes; nvidia-smi uses MiB."
+  },
+  "limitations": [
+    "C and earlier D2 have no historical nvidia-smi trace."
+  ]
+}

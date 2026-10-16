@@ -1,0 +1,42 @@
+[
+  {
+    "arm": "A1",
+    "G_net_raw": 0.030305555555555475,
+    "signed_components": {
+      "pope": 0.0015555555555555323,
+      "grounding": 0.0,
+      "consistency": 0.018749999999999933,
+      "mmstar": 0.010000000000000009
+    }
+  },
+  {
+    "arm": "A2",
+    "G_net_raw": 0.027138888888888824,
+    "signed_components": {
+      "pope": 0.00022222222222223476,
+      "grounding": 0.0025000000000000577,
+      "consistency": 0.00374999999999992,
+      "mmstar": 0.02066666666666661
+    }
+  },
+  {
+    "arm": "U",
+    "G_net_raw": 0.01416666666666655,
+    "signed_components": {
+      "pope": 0.0043333333333333,
+      "grounding": -0.008333333333333415,
+      "consistency": 0.007499999999999951,
+      "mmstar": 0.010666666666666713
+    }
+  },
+  {
+    "arm": "N",
+    "G_net_raw": 0.0,
+    "signed_components": {
+      "pope": 0.0,
+      "grounding": 0.0,
+      "consistency": 0.0,
+      "mmstar": 0.0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+stage,workload,peak_allocated_bytes,peak_allocated_gib,measurement,source,source_sha256,note
+B,qwen3b,9423150080,8.776,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/qwen3b-000.complete.json,f0f75b44ece95fa6878c78a7e60b3d655272612f000d4208b2775e96a1005c34,"Completed full 16,900-item inference"
+B,qwen7b,18568911872,17.2936,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/qwen7b-000.complete.json,e57b5aefddb654fb2ea50712ad2a2f5bb5b088dde08b7844459e51434dd57637,"Completed full 16,900-item inference"
+B,intern1b,2946118144,2.7438,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/intern1b-000.complete.json,a797e0ae58985f758f2f930e082b640e25f962e0baca00286c48003c135deb74,"Completed full 16,900-item inference"
+B,intern2b,5241424384,4.8815,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/intern2b-000.complete.json,ca3e378559ddf69e1ccffe3ff234e52fe047cc8b906645e1f9f361a85e93ba96,"Completed full 16,900-item inference"
+B,intern8b,16954333696,15.79,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/intern8b-000.complete.json,5a3086ccfb95886203f0e074ff5a8181f8e33395d3f3725ade4421f1eb9e24b8,"Completed full 16,900-item inference"
+B,llava05b,3711966720,3.457,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/llava05b-000.complete.json,22aa02e874e197e0b6ac20a0b0e028c90b5938c44ae92ffe455ec18ab94ade11,"Completed full 16,900-item inference"
+B,llava7b,18057106432,16.817,torch.cuda.max_memory_allocated,runs/formal-20261014/ledger/llava7b-000.complete.json,55afacb4074757d048ebf22b9b233f54e461010c768a4fb3110e461a16343395,"Completed full 16,900-item inference"
+C,CPU analysis,,,not historically measured,,,NumPy CPU analysis does not invoke CUDA. Historical board memory was not sampled; missing is not zero.
+D1,Training-set construction,,,not historically measured,,,CPU-only preparation; no historical board sample.
+D2,Qwen7B teacher cache,,,not historically measured,runs/formal-20261014/teacher-cache/complete.json,88c293335e11b3310436637226267541678dbb7d90228ce3f93d4adc361e4491,"Completed 3,545 teacher entries; original completion file did not record a GPU peak."
+D3,A1,9674675200,9.0102,torch.cuda.max_memory_allocated,runs/formal-20261014/arms/A1/complete.json,b3de8e21aa031d693a3ba697c270f20ffd924401ffb0291289c48fed018d1d87,"1,000 actual optimizer updates when complete; pending runs have no peak yet"
+D4,A1,9452641280,8.8035,torch.cuda.max_memory_allocated,runs/formal-20261014/post/A1/qwen3b-000.complete.json,ab89515beccb2ae2378f269f5d8dae7d5e7fc4c7133975695408241ddcc8249e,Full post-training evaluation peak becomes available only after completion
+D3,A2,9814526976,9.1405,torch.cuda.max_memory_allocated,runs/formal-20261014/arms/A2/complete.json,a792ad5ba5cf55d5bb5de49e4167dec6561a5a98c150a84dcd57256c5377dc33,"1,000 actual optimizer updates when complete; pending runs have no peak yet"
+D4,A2,9452641280,8.8035,torch.cuda.max_memory_allocated,runs/formal-20261014/post/A2/qwen3b-000.complete.json,36f6a48aaf0333619bd307e0d46140e0f05b9ccd1ed24d72515ae9e12d5c7782,Full post-training evaluation peak becomes available only after completion
+D3,U,9807461888,9.1339,torch.cuda.max_memory_allocated,runs/formal-20261014/arms/U/complete.json,c4ffbe8d7d8d647bec70cfe19d86b0d446f44062bdb5232141c3d5cd92cfcd7c,"1,000 actual optimizer updates when complete; pending runs have no peak yet"
+D4,U,9452641280,8.8035,torch.cuda.max_memory_allocated,runs/formal-20261014/post/U/qwen3b-000.complete.json,d0525fe65ce2b664da54f2d81dd03b48729f4e9e2a1392d3522d535aa0837654,Full post-training evaluation peak becomes available only after completion
+D3,N,,,not historically measured,runs/formal-20261014/arms/N/complete.json,f984c22f9522eca8124cd8920cf6ff8916ff0c3bb8b5892f337ea30fb68406f6,No-op control; no model training
+D5,Homogeneous-floor control,,,not historically measured,,,CPU analysis; no historical board sample.

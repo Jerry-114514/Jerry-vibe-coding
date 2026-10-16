@@ -29,7 +29,8 @@ def snapshot(run, include_training_artifacts=False):
             completed.append({'checkpoint':key,'rows':evidence['rows'],'ledger_sha256':evidence['ledger_sha256']})
     if not completed:
         raise ValueError('No completed ledgers available')
-    for relative in ['data/manifest.jsonl','data/experiment.lock.json','data/baselines/per_item.jsonl']:
+    frozen_files=list(read_json(ROOT/'data/experiment.lock.json')['files'])+['data/experiment.lock.json']
+    for relative in frozen_files:
         source=ROOT/relative
         target=destination/'frozen-inputs'/relative
         target.parent.mkdir(parents=True,exist_ok=True)
@@ -80,8 +81,14 @@ def snapshot(run, include_training_artifacts=False):
                 target.mkdir(parents=True,exist_ok=True)
                 for path in [ledger,ledger.with_suffix('.meta.json'),marker]:
                     shutil.copy2(path,target/path.name)
+    final_verified=(run/'final-verification.json').exists() and read_json(run/'final-verification.json').get('status')=='passed'
+    for name in ['status.json','audit.json','bc-verification.json','final-verification.json']:
+        if (run/name).exists():
+            shutil.copy2(run/name,destination/name)
+    if final_verified:
+        shutil.copy2(run/'console.log',destination/'console.log')
     write_json(destination/'snapshot.json',{'source_run':str(run.relative_to(ROOT)),
-        'created_utc':stamp,'completed_ledgers':completed,'full_experiment_complete':False,
+        'created_utc':stamp,'completed_ledgers':completed,'full_experiment_complete':final_verified,
         'teacher_cache_items':teacher_items,'completed_training_arms':training_arms,
         'live_partial_ledgers_included':False})
     print(str(destination),flush=True)

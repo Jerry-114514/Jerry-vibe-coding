@@ -1,0 +1,181 @@
+{
+  "status": "complete",
+  "gate_decision": "go",
+  "checks": [
+    {
+      "requirement": "B3-qwen3b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/qwen3b-000.jsonl": "026c68a002edf10403aeae0481dd25788dea3eb5a59abcb866d58957484d6bfb"
+        }
+      }
+    },
+    {
+      "requirement": "B3-qwen7b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/qwen7b-000.jsonl": "24638e405bb411218eeb08610307b2625c65665969b8f15a656257975d941ad8"
+        }
+      }
+    },
+    {
+      "requirement": "B3-intern1b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/intern1b-000.jsonl": "7ef4f1ffbb99d27aa1dde1186f8e4c6fa6a97e059b3a49fe1441bfe12a9ff645"
+        }
+      }
+    },
+    {
+      "requirement": "B3-intern2b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/intern2b-000.jsonl": "dbc7bff82995769562929fbb81b5b13599e3daceffab1c330d2a8706c6fb7d6e"
+        }
+      }
+    },
+    {
+      "requirement": "B3-intern8b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/intern8b-000.jsonl": "cb9875743d41d90012a470bd914bcf0e690fc655f89739f8c8f1af291d779fdd"
+        }
+      }
+    },
+    {
+      "requirement": "B3-llava05b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/llava05b-000.jsonl": "9d041df1838df7e6ee26c4a286b1cffd50ddcc059baf22092eb95c858abe2039"
+        }
+      }
+    },
+    {
+      "requirement": "B3-llava7b",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "ledger/llava7b-000.jsonl": "f95916f302dd09307335e484fbf91f5bf60369a52bfe2b0de7d872b249fd8bba"
+        }
+      }
+    },
+    {
+      "requirement": "C1-C5-and-D5",
+      "passed": true,
+      "evidence": {
+        "decision": "go",
+        "n_boot": 1000,
+        "families": [
+          "qwen",
+          "intern",
+          "llava"
+        ]
+      }
+    },
+    {
+      "requirement": "D2-teacher",
+      "passed": true,
+      "evidence": {
+        "items": 3545,
+        "top_k": 50
+      }
+    },
+    {
+      "requirement": "D3-A1",
+      "passed": true,
+      "evidence": {
+        "steps": 1000,
+        "effective_updates": 1000,
+        "smoke": false,
+        "parameters_changed": null,
+        "trainable_parameters": 7372800,
+        "peak_vram_bytes": 9674675200
+      }
+    },
+    {
+      "requirement": "D4-A1",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "post/A1/qwen3b-000.jsonl": "b29f99b62c0fdc9ec246e93f41adfe864168de5ddb098ec42b8ac7169cbab3ec"
+        }
+      }
+    },
+    {
+      "requirement": "D3-A2",
+      "passed": true,
+      "evidence": {
+        "steps": 1000,
+        "effective_updates": 1000,
+        "smoke": false,
+        "parameters_changed": null,
+        "trainable_parameters": 7372800,
+        "peak_vram_bytes": 9814526976
+      }
+    },
+    {
+      "requirement": "D4-A2",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "post/A2/qwen3b-000.jsonl": "135283924998c3534d7e37d87446656da91ad6b8b8d5d51b4eddb64f0c66b8aa"
+        }
+      }
+    },
+    {
+      "requirement": "D3-U",
+      "passed": true,
+      "evidence": {
+        "steps": 1000,
+        "effective_updates": 1000,
+        "smoke": false,
+        "parameters_changed": null,
+        "trainable_parameters": 7372800,
+        "peak_vram_bytes": 9807461888
+      }
+    },
+    {
+      "requirement": "D4-U",
+      "passed": true,
+      "evidence": {
+        "rows": 16900,
+        "files": {
+          "post/U/qwen3b-000.jsonl": "8a12498c5621e7d565e70901711dd648b5f2e550eab1b3a0db31b7950619ab69"
+        }
+      }
+    },
+    {
+      "requirement": "D3-N",
+      "passed": true,
+      "evidence": {
+        "budget_steps": 1000,
+        "effective_updates": 0,
+        "no_op": true,
+        "smoke": false
+      }
+    },
+    {
+      "requirement": "D4-gains-and-D5-selection",
+      "passed": true,
+      "evidence": {
+        "arms": 4,
+        "signed_axes": 4
+      }
+    }
+  ]
+}

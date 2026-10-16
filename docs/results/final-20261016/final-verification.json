@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "B, C and D including trained weights and final gains",
+  "arms": {
+    "A1": {
+      "actual_optimizer_updates": 1000,
+      "adapter_equals_final_resume_state": true,
+      "learned_lora_B_nonzero": true,
+      "post_rows_rescored": 16900,
+      "adapter_sha256": "22436470f7d1ba7af789976cae0d4405358494d1e8934672581cc6edc482d7da"
+    },
+    "A2": {
+      "actual_optimizer_updates": 1000,
+      "adapter_equals_final_resume_state": true,
+      "learned_lora_B_nonzero": true,
+      "post_rows_rescored": 16900,
+      "adapter_sha256": "6284f593c760c475069c758570e949786a228a29486f89711991efa24b4557d2"
+    },
+    "U": {
+      "actual_optimizer_updates": 1000,
+      "adapter_equals_final_resume_state": true,
+      "learned_lora_B_nonzero": true,
+      "post_rows_rescored": 16900,
+      "adapter_sha256": "fa153ee62ba38544dacfaefb40f17406a9215c26028148f5c1d91215f5b7ea79"
+    }
+  },
+  "no_op_control": "N has zero updates and reuses the unchanged baseline",
+  "signed_gains_and_ruler_class_table_reproduced": true,
+  "status_file_sha256": "b307a26a1937388b7ba4ecce842991b92e5bf0839238254eb971fe8914120dea"
+}

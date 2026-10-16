@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import os
 from pathlib import Path
 import sys
+import shutil
 import tarfile
 from urllib.parse import quote
 import requests
@@ -12,7 +13,7 @@ from experiment_common import ROOT, sha, write_json
 REPO='Jerry-114514/Jerry-vibe-coding'
 
 
-def publish(run, tag, token=None, include_training=False, include_dataset=False, include_teacher=False):
+def publish(run, tag, token=None, include_training=False, include_dataset=False, include_teacher=False, include_eval_images=False):
     token=token or os.environ.get('GH_TOKEN')
     if not token:
         token=sys.stdin.readline().strip()
@@ -41,6 +42,8 @@ def publish(run, tag, token=None, include_training=False, include_dataset=False,
         paths.append(ROOT/'data/training')
     if include_dataset:
         paths += [ROOT/'data/images',ROOT/'data/raw']
+    elif include_eval_images:
+        paths.append(ROOT/'data/images')
     export=ROOT/'.exports'
     export.mkdir(exist_ok=True)
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
@@ -100,6 +103,7 @@ def publish(run, tag, token=None, include_training=False, include_dataset=False,
                          'url':result['browser_download_url']})
         print('Uploaded:',path.name,path.stat().st_size,flush=True)
     report={'release_url':release['html_url'],'assets':uploaded,'storage':'AutoDL -> GitHub; no local download'}
+    shutil.copy2(inventory_path,run/'github-inventory.json')
     write_json(run/'github-storage.json',report)
     # Disposable export copies have been verified remotely; preserve run originals.
     for path in {*uploads,archive}:
@@ -116,5 +120,6 @@ if __name__=='__main__':
     p.add_argument('--include-training',action='store_true')
     p.add_argument('--include-dataset',action='store_true')
     p.add_argument('--include-teacher-cache',action='store_true')
+    p.add_argument('--include-eval-images',action='store_true')
     a=p.parse_args()
-    publish(a.run,a.tag,include_training=a.include_training,include_dataset=a.include_dataset,include_teacher=a.include_teacher_cache)
+    publish(a.run,a.tag,include_training=a.include_training,include_dataset=a.include_dataset,include_teacher=a.include_teacher_cache,include_eval_images=a.include_eval_images)

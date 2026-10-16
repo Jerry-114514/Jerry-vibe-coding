@@ -73,6 +73,7 @@ def report():
                    'Full post-training evaluation peak becomes available only after completion')
     record('D5','Homogeneous-floor control',note='CPU analysis; no historical board sample.')
     current=sample()
+    finished=current['stage']=='E' and current['stage_status']=='complete'
     samples=[]
     if SAMPLES.exists():
         for line in SAMPLES.read_text(encoding='utf-8').splitlines(keepends=True):
@@ -86,13 +87,13 @@ def report():
         observed[key]=max(observed.get(key,0),max(g['used_mib'] for g in value['gpus']))
     summary={'created_utc':current['utc'],'experiment_run':str(RUN.relative_to(ROOT)),
         'rows':rows,'current_nvidia_smi':current,'sampled_board_peaks_mib':observed,
-        'sample_interval_seconds':15,'sample_count':len(samples),
+        'sample_interval_seconds':15,'sample_count':len(samples),'experiment_complete':finished,
         'definitions':{'allocated_peak':'PyTorch process peak allocated tensor memory; excludes CUDA context and allocator reserved cache.',
                        'board_used':'nvidia-smi board total used memory including reserved memory and all processes.',
                        'sampled_peak':'Maximum observed since monitoring began; not a retrospective or guaranteed continuous peak.',
                        'units':'GiB=1024^3 bytes; MiB=1024^2 bytes; nvidia-smi uses MiB.'},
-        'limitations':['C and earlier D2 have no historical nvidia-smi trace.',
-                      'D is ongoing; report contains completed peaks and current samples, not final peaks for pending arms.']}
+        'limitations':['C and earlier D2 have no historical nvidia-smi trace.']+
+                      ([] if finished else ['D is ongoing; pending runs have no final peak yet.'])}
     write_json(destination/'vram-summary.json',summary)
     with (destination/'peak-allocated.csv').open('w',encoding='utf-8',newline='') as out:
         writer=csv.DictWriter(out,fieldnames=list(rows[0]))
@@ -112,7 +113,7 @@ def report():
         '','C 为 CPU 分析，不调用 CUDA；没有历史板卡采样，不能据此填写“总显存占用为 0”。',
         'D2 已完成，但当时未记录峰值，因此不会用后来采样冒充历史峰值。',
         '后续 D 阶段每 15 秒采样一次；采样最大值只是监测开始后的观测值。',
-        'D 尚未全部完成，本报告会在后续阶段补充。',
+        'D 已全部完成；报告包含 A1、A2、U 的训练与完整评测峰值。' if finished else 'D 尚未全部完成，本报告会在后续阶段补充。',
         '','文件：`vram-summary.json`、`peak-allocated.csv`、`nvidia-smi-samples.jsonl`、`evidence/` 原始完成记录。']
     (destination/'README.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(str(destination),flush=True)
