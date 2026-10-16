@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+  "fresh_remote_assets_verified": 9,
+  "all_server_digests_present": true,
+  "assets": [
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z-inventory.json",
+      "bytes": 15909,
+      "sha256": "359efd5fd0448f7bdf29ef85c51a3aaf0390bde41585414cdc8c8be52e54b15b",
+      "server_sha256_confirmed": true,
+      "asset_id": 647482069
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z.tar.gz.part000",
+      "bytes": 1073741824,
+      "sha256": "9c5d66466de8c081d7018d89526a5fee1ec84ec08a9afd3b6ef7c67d3b8122ed",
+      "server_sha256_confirmed": true,
+      "asset_id": 647482162
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z.tar.gz.part001",
+      "bytes": 726750546,
+      "sha256": "8faf090576be93a956f5f347525bb30dab0b1d0550495619040a5bbbe6b70174",
+      "server_sha256_confirmed": true,
+      "asset_id": 647488552
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140316Z-inventory.json",
+      "bytes": 889355,
+      "sha256": "514b756c6e660a61b7f93e0b08111a6dfa566f6bae694b0443ec579d076a81eb",
+      "server_sha256_confirmed": true,
+      "asset_id": 647517750
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140316Z.tar.gz",
+      "bytes": 9846236,
+      "sha256": "5be7643323fb8580ab5a312a67b0dac82d9265c43e39db448b5c581c8b951c5a",
+      "server_sha256_confirmed": true,
+      "asset_id": 647517860
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T142620Z-inventory.json",
+      "bytes": 4906,
+      "sha256": "13f429f7533970193b7ca149aefa4c47da5209ff294344e53b2bb08053e17250",
+      "server_sha256_confirmed": true,
+      "asset_id": 647579911
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T142620Z.tar.gz",
+      "bytes": 600290098,
+      "sha256": "8b8ad2181077a2a7c9fc4814b4fd53da086b9be0e4387022ca0ec45892688f2f",
+      "server_sha256_confirmed": true,
+      "asset_id": 647579989
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T141356Z-inventory.json",
+      "bytes": 4906,
+      "sha256": "c8f0c63d1abdd9946526649f234ecd8a99fc520a61e63c258def1a2f9ad201eb",
+      "server_sha256_confirmed": true,
+      "asset_id": 647547232
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T141356Z.tar.gz",
+      "bytes": 600349015,
+      "sha256": "6171d7a917d015891747e5c01381e03ad4f8a0c60217d425aa24ab0b60031166",
+      "server_sha256_confirmed": true,
+      "asset_id": 647547278
+    }
+  ],
+  "large_payloads_downloaded": false
+}

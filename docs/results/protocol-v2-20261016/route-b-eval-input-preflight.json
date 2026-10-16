@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "rows": 16900,
+  "unique_images_verified": 4705,
+  "original_units": 13700,
+  "axis_prompt_counts": {
+    "consistency": 4000,
+    "grounding": 2400,
+    "mmstar": 1500,
+    "pope": 9000
+  },
+  "prompt_tokens": {
+    "consistency": {
+      "min": 308,
+      "max": 781,
+      "mean": 369.575
+    },
+    "grounding": {
+      "min": 333,
+      "max": 615,
+      "mean": 441.56416666666667
+    },
+    "mmstar": {
+      "min": 308,
+      "max": 1511,
+      "mean": 420.246
+    },
+    "pope": {
+      "min": 296,
+      "max": 567,
+      "mean": 395.8402222222222
+    }
+  },
+  "budget_violations": [],
+  "cpu_only": true,
+  "no_cuda_context": true,
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "asset_manifest_sha256": "9cf2581956a68f5d9ae6217d19b4fae44a8094787f4a203b0e64c70862a5cc08",
+  "elapsed_seconds": 296.7761423178017,
+  "no_evaluation_predictions_generated": true
+}
