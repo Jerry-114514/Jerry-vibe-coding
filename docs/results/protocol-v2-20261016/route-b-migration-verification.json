@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "audit_rows": 7400,
+  "audit_unique_coverage_verified": true,
+  "audit_independent_rescore_verified": true,
+  "audit_ledger_sha256": "90ad54d8548373f4c6f2c7befacc86c5ce04cf87f9959a027b19d129eafb5898",
+  "source_host_byte_comparison": "Source4090 released; current SHA recorded, original-copy identity not independently provable without preclone digest",
+  "teacher_cache_integrity": {
+    "status": "integrity_passed",
+    "checked": 3545,
+    "finite_top50": true,
+    "tensor_targets_untruncated": true,
+    "legacy_finish_reason_absent": true,
+    "generation_nontruncation_certified": false,
+    "possible_length_cap_ids": [],
+    "manifest_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+    "complete_sha256": "88c293335e11b3310436637226267541678dbb7d90228ce3f93d4adc361e4491",
+    "cache_meta_sha256": "faa7d41a97cdb854913f4c622fc26c3e61cc74829948f5a6d0d1da016f5f7901",
+    "elapsed_seconds": 70.610102776438
+  },
+  "weights": {
+    "qwen3b": {
+      "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+      "files": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "sha256": "41a8895c164b4d32bae6b302f4603fcbc1797f32dafa45c7e9bcda23c6755df8",
+          "bytes": 3982649232
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "sha256": "365531ff8752420e89dee707b79d021fb2d6e25abafe486f080555a4fe6972e4",
+          "bytes": 3526688744
+        }
+      ]
+    },
+    "qwen7b": {
+      "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "files": [
+        {
+          "file": "model-00001-of-00005.safetensors",
+          "sha256": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e",
+          "bytes": 3900233256
+        },
+        {
+          "file": "model-00002-of-00005.safetensors",
+          "sha256": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024",
+          "bytes": 3864726320
+        },
+        {
+          "file": "model-00003-of-00005.safetensors",
+          "sha256": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507",
+          "bytes": 3864726424
+        },
+        {
+          "file": "model-00004-of-00005.safetensors",
+          "sha256": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed",
+          "bytes": 3864733680
+        },
+        {
+          "file": "model-00005-of-00005.safetensors",
+          "sha256": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67",
+          "bytes": 1089994880
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 16.33162733912468
+}

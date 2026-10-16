@@ -1,0 +1,208 @@
+{
+  "status": "complete",
+  "pending": 0,
+  "units": "tokens; padded batches are not used",
+  "axes": {
+    "pope": {
+      "question_text": {
+        "n": 125,
+        "min": 15,
+        "max": 17,
+        "mean": 15.304
+      },
+      "prompt_including_visual": {
+        "n": 125,
+        "min": 302,
+        "max": 565,
+        "mean": 397.984
+      },
+      "visual": {
+        "n": 125,
+        "min": 266,
+        "max": 529,
+        "mean": 361.68
+      },
+      "gt_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 3,
+        "mean": 3
+      },
+      "teacher_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 4,
+        "mean": 3.016
+      },
+      "teacher_raw_generated": {
+        "n": 125,
+        "min": 2,
+        "max": 3,
+        "mean": 2.016
+      },
+      "gt_total": {
+        "n": 125,
+        "min": 305,
+        "max": 568,
+        "mean": 400.984
+      },
+      "teacher_total": {
+        "n": 125,
+        "min": 305,
+        "max": 568,
+        "mean": 401
+      }
+    },
+    "grounding": {
+      "question_text": {
+        "n": 125,
+        "min": 52,
+        "max": 67,
+        "mean": 56.488
+      },
+      "prompt_including_visual": {
+        "n": 125,
+        "min": 340,
+        "max": 605,
+        "mean": 436.176
+      },
+      "visual": {
+        "n": 125,
+        "min": 266,
+        "max": 529,
+        "mean": 358.688
+      },
+      "gt_response_including_chat_end": {
+        "n": 125,
+        "min": 29,
+        "max": 58,
+        "mean": 37.856
+      },
+      "teacher_response_including_chat_end": {
+        "n": 125,
+        "min": 17,
+        "max": 57,
+        "mean": 41.32
+      },
+      "teacher_raw_generated": {
+        "n": 125,
+        "min": 16,
+        "max": 56,
+        "mean": 40.32
+      },
+      "gt_total": {
+        "n": 125,
+        "min": 370,
+        "max": 648,
+        "mean": 474.032
+      },
+      "teacher_total": {
+        "n": 125,
+        "min": 358,
+        "max": 645,
+        "mean": 477.496
+      }
+    },
+    "consistency": {
+      "question_text": {
+        "n": 125,
+        "min": 36,
+        "max": 488,
+        "mean": 86.872
+      },
+      "prompt_including_visual": {
+        "n": 125,
+        "min": 314,
+        "max": 789,
+        "mean": 385.384
+      },
+      "visual": {
+        "n": 125,
+        "min": 256,
+        "max": 324,
+        "mean": 277.512
+      },
+      "gt_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 3,
+        "mean": 3
+      },
+      "teacher_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 4,
+        "mean": 3.008
+      },
+      "teacher_raw_generated": {
+        "n": 125,
+        "min": 2,
+        "max": 3,
+        "mean": 2.008
+      },
+      "gt_total": {
+        "n": 125,
+        "min": 317,
+        "max": 792,
+        "mean": 388.384
+      },
+      "teacher_total": {
+        "n": 125,
+        "min": 317,
+        "max": 792,
+        "mean": 388.392
+      }
+    },
+    "mmstar": {
+      "question_text": {
+        "n": 125,
+        "min": 22,
+        "max": 238,
+        "mean": 60.552
+      },
+      "prompt_including_visual": {
+        "n": 125,
+        "min": 309,
+        "max": 653,
+        "mean": 407.216
+      },
+      "visual": {
+        "n": 125,
+        "min": 256,
+        "max": 594,
+        "mean": 325.664
+      },
+      "gt_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 3,
+        "mean": 3
+      },
+      "teacher_response_including_chat_end": {
+        "n": 125,
+        "min": 3,
+        "max": 4,
+        "mean": 3.024
+      },
+      "teacher_raw_generated": {
+        "n": 125,
+        "min": 2,
+        "max": 3,
+        "mean": 2.024
+      },
+      "gt_total": {
+        "n": 125,
+        "min": 312,
+        "max": 656,
+        "mean": 410.216
+      },
+      "teacher_total": {
+        "n": 125,
+        "min": 312,
+        "max": 656,
+        "mean": 410.24
+      }
+    }
+  },
+  "speed_caveat": "Two CE forwards depend on visual/prompt/response lengths; token lengths alone do not fix wall time"
+}

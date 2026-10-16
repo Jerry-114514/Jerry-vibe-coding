@@ -6,5 +6,6 @@ tools/make_paraphrases.py -text
 tools/refer_api.py -text
 tools/run_degenerate.py -text
 tools/scoring.py -text
+tools/route_b_staged.py -text
 *.pdf binary
 tools/vendor/** -text
