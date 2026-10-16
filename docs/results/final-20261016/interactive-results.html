@@ -1,0 +1,626 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>ARP results</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto}img{width:100%}pre{white-space:pre-wrap}</style><h1>ARP frozen-ledger results</h1><p>F_noise fixes absolute drop, no floor correction, no headroom normalization, mean OWA and parse failures scored as wrong.</p><img src="figure1-ruler-scan.png"><img src="figure2-scale-vs-noise.png"><details><summary>Full numerical results and protocol</summary><pre>{
+  &quot;protocol&quot;: {
+    &quot;schema&quot;: &quot;arp.protocol.v1&quot;,
+    &quot;seed&quot;: 20261014,
+    &quot;n_boot&quot;: 1000,
+    &quot;tie_epsilon&quot;: 0.01,
+    &quot;denominator_epsilon&quot;: 1e-12,
+    &quot;drop&quot;: [
+      &quot;absolute&quot;,
+      &quot;relative&quot;
+    ],
+    &quot;floor&quot;: [
+      false,
+      true
+    ],
+    &quot;headroom&quot;: [
+      &quot;none&quot;,
+      &quot;raw_family&quot;,
+      &quot;corrected_family&quot;
+    ],
+    &quot;rho&quot;: [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    &quot;parse_fail&quot;: [
+      &quot;wrong&quot;,
+      &quot;exclude&quot;
+    ],
+    &quot;owa&quot;: &quot;Descending adjacent-edge gaps; two edges use [rho,1-rho], one edge uses [1].&quot;,
+    &quot;parse_exclude&quot;: &quot;Common valid-unit intersection within each ladder, including all five paraphrases; recompute floors on the same units.&quot;,
+    &quot;equivalence&quot;: &quot;First fold algebraically identical functions with identical guard domains; then fold empirically identical per-axis vectors and eligibility masks on each ledger/bootstrap draw, tolerance 1e-12. Report both structural and observed class counts.&quot;,
+    &quot;training&quot;: {
+      &quot;steps&quot;: 1000,
+      &quot;r&quot;: 16,
+      &quot;alpha&quot;: 32,
+      &quot;lr&quot;: 0.0001,
+      &quot;gradient_accumulation&quot;: 1,
+      &quot;top_k&quot;: 50,
+      &quot;kd_temperature&quot;: 1.0,
+      &quot;kd_weight&quot;: 0.5,
+      &quot;max_response_tokens&quot;: 128,
+      &quot;seed&quot;: 20261014
+    },
+    &quot;implementation_supplements&quot;: [
+      &quot;Explicit headroom grid&quot;,
+      &quot;Two-edge OWA convention&quot;,
+      &quot;Fractional tie credit within delta_tie&quot;,
+      &quot;Paired parse exclusion&quot;,
+      &quot;Top-50 plus tail-bucket KL, mixed equally with teacher-response CE&quot;,
+      &quot;Independent training proxies require approval&quot;
+    ],
+    &quot;answer_parser&quot;: &quot;explicit-json-schema.v2: exact yes/no and option letter; xyxy arrays or a single bbox/bbox_2d JSON wrapper, optional label; no heuristic unit conversion&quot;,
+    &quot;numerical_backend&quot;: &quot;fp16 language weights and SDPA attention; Qwen vision weights loaded in fp16 then exactly promoted to fp32, vision forward outside AMP to prevent confirmed grounding-input overflow; non-finite generation logits abort infrastructure task&quot;
+  },
+  &quot;families&quot;: {
+    &quot;qwen&quot;: {
+      &quot;family&quot;: &quot;qwen&quot;,
+      &quot;models&quot;: [
+        &quot;qwen3b&quot;,
+        &quot;qwen7b&quot;
+      ],
+      &quot;nominal_settings&quot;: 120,
+      &quot;quotient_classes&quot;: 9,
+      &quot;pi_point&quot;: {
+        &quot;pope&quot;: 0.027777777777777776,
+        &quot;grounding&quot;: 0.027777777777777776,
+        &quot;consistency&quot;: 0.027777777777777776,
+        &quot;mmstar&quot;: 0.9166666666666666
+      },
+      &quot;structural_class_count&quot;: 12,
+      &quot;pi_boot_mean&quot;: {
+        &quot;pope&quot;: 0.02386203703703739,
+        &quot;grounding&quot;: 0.0283490740740745,
+        &quot;consistency&quot;: 0.03999722222222271,
+        &quot;mmstar&quot;: 0.9077916666666633
+      },
+      &quot;pi_CI&quot;: {
+        &quot;pope&quot;: [
+          0.0,
+          0.05833333333333333
+        ],
+        &quot;grounding&quot;: [
+          0.0,
+          0.037037037037037035
+        ],
+        &quot;consistency&quot;: [
+          0.027777777777777776,
+          0.1388888888888889
+        ],
+        &quot;mmstar&quot;: [
+          0.8055555555555556,
+          0.925925925925926
+        ]
+      },
+      &quot;F_scale&quot;: 0.08333333333333337,
+      &quot;F_scale_CI&quot;: [
+        0.07407407407407396,
+        0.19444444444444442
+      ],
+      &quot;F_noise&quot;: 0.01100000000000001,
+      &quot;F_noise_CI&quot;: [
+        0.0,
+        0.33014999999999983
+      ],
+      &quot;F_noise_CI_method&quot;: &quot;nested paired bootstrap&quot;,
+      &quot;F_noise_MC_CI&quot;: [
+        0.00649999999999995,
+        0.016000000000000014
+      ],
+      &quot;stable_axis_set&quot;: [
+        &quot;mmstar&quot;
+      ],
+      &quot;all_axes_tied&quot;: false,
+      &quot;undefined_bootstraps&quot;: 0,
+      &quot;attribution&quot;: [
+        {
+          &quot;coordinate&quot;: &quot;drop&quot;,
+          &quot;fixed_value&quot;: &quot;absolute&quot;,
+          &quot;F_frozen&quot;: 0.15000000000000002,
+          &quot;F_reduction&quot;: -0.06666666666666665,
+          &quot;explained_flip_fraction&quot;: -0.7999999999999995
+        },
+        {
+          &quot;coordinate&quot;: &quot;floor&quot;,
+          &quot;fixed_value&quot;: false,
+          &quot;F_frozen&quot;: 0.15000000000000002,
+          &quot;F_reduction&quot;: -0.06666666666666665,
+          &quot;explained_flip_fraction&quot;: -0.7999999999999995
+        },
+        {
+          &quot;coordinate&quot;: &quot;headroom&quot;,
+          &quot;fixed_value&quot;: &quot;none&quot;,
+          &quot;F_frozen&quot;: 0.0,
+          &quot;F_reduction&quot;: 0.08333333333333337,
+          &quot;explained_flip_fraction&quot;: 1.0
+        },
+        {
+          &quot;coordinate&quot;: &quot;rho&quot;,
+          &quot;fixed_value&quot;: 0.5,
+          &quot;F_frozen&quot;: 0.08333333333333337,
+          &quot;F_reduction&quot;: 0.0,
+          &quot;explained_flip_fraction&quot;: 0.0
+        },
+        {
+          &quot;coordinate&quot;: &quot;parse_fail&quot;,
+          &quot;fixed_value&quot;: &quot;wrong&quot;,
+          &quot;F_frozen&quot;: 0.15000000000000002,
+          &quot;F_reduction&quot;: -0.06666666666666665,
+          &quot;explained_flip_fraction&quot;: -0.7999999999999995
+        }
+      ],
+      &quot;scores&quot;: {
+        &quot;qwen3b&quot;: {
+          &quot;pope&quot;: 0.8747777777777778,
+          &quot;grounding&quot;: 0.6675,
+          &quot;consistency&quot;: 0.81,
+          &quot;mmstar&quot;: 0.5433333333333333
+        },
+        &quot;qwen7b&quot;: {
+          &quot;pope&quot;: 0.8767777777777778,
+          &quot;grounding&quot;: 0.67625,
+          &quot;consistency&quot;: 0.84125,
+          &quot;mmstar&quot;: 0.6206666666666667
+        }
+      },
+      &quot;u_a&quot;: {
+        &quot;pope&quot;: 0.8767777777777778,
+        &quot;grounding&quot;: 0.67625,
+        &quot;consistency&quot;: 0.84125,
+        &quot;mmstar&quot;: 0.6206666666666667
+      },
+      &quot;c_a&quot;: {
+        &quot;pope&quot;: 0.5,
+        &quot;grounding&quot;: 0.02791666666666667,
+        &quot;consistency&quot;: 0.35125,
+        &quot;mmstar&quot;: 0.26066666666666666
+      },
+      &quot;homogeneous_floor_control&quot;: {
+        &quot;pi&quot;: [
+          0.027777777777777776,
+          0.027777777777777776,
+          0.027777777777777776,
+          0.9166666666666666
+        ],
+        &quot;pi_boot_mean&quot;: [
+          0.02386203703703739,
+          0.0283490740740745,
+          0.03651388888888938,
+          0.9112749999999968
+        ],
+        &quot;axis_ranking&quot;: [
+          &quot;mmstar&quot;,
+          &quot;consistency&quot;,
+          &quot;grounding&quot;,
+          &quot;pope&quot;
+        ],
+        &quot;arm_selection_defined&quot;: true,
+        &quot;top_axis&quot;: &quot;mmstar&quot;,
+        &quot;runner_up_axis&quot;: &quot;consistency&quot;,
+        &quot;selection_rule&quot;: &quot;Rank mean bootstrap pi; top tie within tie_epsilon leaves selection undefined&quot;,
+        &quot;F_scale&quot;: 0.08333333333333337,
+        &quot;F_scale_CI&quot;: [
+          0.07407407407407396,
+          0.1416666666666666
+        ],
+        &quot;stable_axis_set&quot;: [
+          &quot;mmstar&quot;
+        ],
+        &quot;attribution&quot;: [
+          {
+            &quot;coordinate&quot;: &quot;drop&quot;,
+            &quot;F_frozen&quot;: 0.15000000000000002,
+            &quot;F_reduction&quot;: -0.06666666666666665
+          },
+          {
+            &quot;coordinate&quot;: &quot;floor&quot;,
+            &quot;F_frozen&quot;: 0.15000000000000002,
+            &quot;F_reduction&quot;: -0.06666666666666665
+          },
+          {
+            &quot;coordinate&quot;: &quot;headroom&quot;,
+            &quot;F_frozen&quot;: 0.0,
+            &quot;F_reduction&quot;: 0.08333333333333337
+          },
+          {
+            &quot;coordinate&quot;: &quot;rho&quot;,
+            &quot;F_frozen&quot;: 0.08333333333333337,
+            &quot;F_reduction&quot;: 0.0
+          },
+          {
+            &quot;coordinate&quot;: &quot;parse_fail&quot;,
+            &quot;F_frozen&quot;: 0.15000000000000002,
+            &quot;F_reduction&quot;: -0.06666666666666665
+          }
+        ],
+        &quot;n_boot&quot;: 1000
+      }
+    },
+    &quot;intern&quot;: {
+      &quot;family&quot;: &quot;intern&quot;,
+      &quot;models&quot;: [
+        &quot;intern1b&quot;,
+        &quot;intern2b&quot;,
+        &quot;intern8b&quot;
+      ],
+      &quot;nominal_settings&quot;: 120,
+      &quot;quotient_classes&quot;: 54,
+      &quot;pi_point&quot;: {
+        &quot;pope&quot;: 0.16358024691358022,
+        &quot;grounding&quot;: 0.0,
+        &quot;consistency&quot;: 0.4876543209876544,
+        &quot;mmstar&quot;: 0.3487654320987655
+      },
+      &quot;structural_class_count&quot;: 60,
+      &quot;pi_boot_mean&quot;: {
+        &quot;pope&quot;: 0.16354235845040307,
+        &quot;grounding&quot;: 0.015502873563218384,
+        &quot;consistency&quot;: 0.4649510429970212,
+        &quot;mmstar&quot;: 0.35600372498935695
+      },
+      &quot;pi_CI&quot;: {
+        &quot;pope&quot;: [
+          0.16358024691358022,
+          0.16358024691358022
+        ],
+        &quot;grounding&quot;: [
+          0.0,
+          0.07407407407407407
+        ],
+        &quot;consistency&quot;: [
+          0.2932098765432099,
+          0.5987654320987654
+        ],
+        &quot;mmstar&quot;: [
+          0.23742283950617282,
+          0.5154320987654322
+        ]
+      },
+      &quot;F_scale&quot;: 0.5123456790123456,
+      &quot;F_scale_CI&quot;: [
+        0.4012345679012346,
+        0.595679012345679
+      ],
+      &quot;F_noise&quot;: 0.0,
+      &quot;F_noise_CI&quot;: [
+        0.0,
+        0.0
+      ],
+      &quot;F_noise_CI_method&quot;: &quot;nested paired bootstrap&quot;,
+      &quot;F_noise_MC_CI&quot;: [
+        0.0,
+        0.0
+      ],
+      &quot;stable_axis_set&quot;: [],
+      &quot;all_axes_tied&quot;: false,
+      &quot;undefined_bootstraps&quot;: 0,
+      &quot;attribution&quot;: [
+        {
+          &quot;coordinate&quot;: &quot;drop&quot;,
+          &quot;fixed_value&quot;: &quot;absolute&quot;,
+          &quot;F_frozen&quot;: 0.5196078431372548,
+          &quot;F_reduction&quot;: -0.0072621641249092095,
+          &quot;explained_flip_fraction&quot;: -0.014174344436569784
+        },
+        {
+          &quot;coordinate&quot;: &quot;floor&quot;,
+          &quot;fixed_value&quot;: false,
+          &quot;F_frozen&quot;: 0.47549019607843135,
+          &quot;F_reduction&quot;: 0.036855482933914274,
+          &quot;explained_flip_fraction&quot;: 0.07193479801559173
+        },
+        {
+          &quot;coordinate&quot;: &quot;headroom&quot;,
+          &quot;fixed_value&quot;: &quot;none&quot;,
+          &quot;F_frozen&quot;: 0.44999999999999996,
+          &quot;F_reduction&quot;: 0.06234567901234567,
+          &quot;explained_flip_fraction&quot;: 0.1216867469879518
+        },
+        {
+          &quot;coordinate&quot;: &quot;rho&quot;,
+          &quot;fixed_value&quot;: 0.5,
+          &quot;F_frozen&quot;: 0.4545454545454546,
+          &quot;F_reduction&quot;: 0.05780022446689104,
+          &quot;explained_flip_fraction&quot;: 0.11281489594742589
+        },
+        {
+          &quot;coordinate&quot;: &quot;parse_fail&quot;,
+          &quot;fixed_value&quot;: &quot;wrong&quot;,
+          &quot;F_frozen&quot;: 0.5722222222222222,
+          &quot;F_reduction&quot;: -0.059876543209876565,
+          &quot;explained_flip_fraction&quot;: -0.11686746987951813
+        }
+      ],
+      &quot;scores&quot;: {
+        &quot;intern1b&quot;: {
+          &quot;pope&quot;: 0.8712222222222222,
+          &quot;grounding&quot;: 0.0008333333333333334,
+          &quot;consistency&quot;: 0.2675,
+          &quot;mmstar&quot;: 0.49333333333333335
+        },
+        &quot;intern2b&quot;: {
+          &quot;pope&quot;: 0.8984444444444444,
+          &quot;grounding&quot;: 0.0020833333333333333,
+          &quot;consistency&quot;: 0.30125,
+          &quot;mmstar&quot;: 0.5633333333333334
+        },
+        &quot;intern8b&quot;: {
+          &quot;pope&quot;: 0.911,
+          &quot;grounding&quot;: 0.0,
+          &quot;consistency&quot;: 0.8825,
+          &quot;mmstar&quot;: 0.6806666666666666
+        }
+      },
+      &quot;u_a&quot;: {
+        &quot;pope&quot;: 0.911,
+        &quot;grounding&quot;: 0.0,
+        &quot;consistency&quot;: 0.8825,
+        &quot;mmstar&quot;: 0.6806666666666666
+      },
+      &quot;c_a&quot;: {
+        &quot;pope&quot;: 0.5,
+        &quot;grounding&quot;: 0.02791666666666667,
+        &quot;consistency&quot;: 0.35125,
+        &quot;mmstar&quot;: 0.26066666666666666
+      },
+      &quot;homogeneous_floor_control&quot;: {
+        &quot;pi&quot;: [
+          0.2944444444444444,
+          0.0,
+          0.27777777777777773,
+          0.42777777777777776
+        ],
+        &quot;pi_boot_mean&quot;: [
+          0.2796688888888923,
+          0.028860000000000063,
+          0.3164888888888881,
+          0.37498222222222494
+        ],
+        &quot;axis_ranking&quot;: [
+          &quot;mmstar&quot;,
+          &quot;consistency&quot;,
+          &quot;pope&quot;,
+          &quot;grounding&quot;
+        ],
+        &quot;arm_selection_defined&quot;: true,
+        &quot;top_axis&quot;: &quot;mmstar&quot;,
+        &quot;runner_up_axis&quot;: &quot;consistency&quot;,
+        &quot;selection_rule&quot;: &quot;Rank mean bootstrap pi; top tie within tie_epsilon leaves selection undefined&quot;,
+        &quot;F_scale&quot;: 0.5722222222222222,
+        &quot;F_scale_CI&quot;: [
+          0.30666666666666675,
+          0.638888888888889
+        ],
+        &quot;stable_axis_set&quot;: [],
+        &quot;attribution&quot;: [
+          {
+            &quot;coordinate&quot;: &quot;drop&quot;,
+            &quot;F_frozen&quot;: 0.5583333333333333,
+            &quot;F_reduction&quot;: 0.01388888888888884
+          },
+          {
+            &quot;coordinate&quot;: &quot;floor&quot;,
+            &quot;F_frozen&quot;: 0.5583333333333333,
+            &quot;F_reduction&quot;: 0.01388888888888884
+          },
+          {
+            &quot;coordinate&quot;: &quot;headroom&quot;,
+            &quot;F_frozen&quot;: 0.4,
+            &quot;F_reduction&quot;: 0.17222222222222217
+          },
+          {
+            &quot;coordinate&quot;: &quot;rho&quot;,
+            &quot;F_frozen&quot;: 0.6666666666666667,
+            &quot;F_reduction&quot;: -0.09444444444444455
+          },
+          {
+            &quot;coordinate&quot;: &quot;parse_fail&quot;,
+            &quot;F_frozen&quot;: 0.5722222222222222,
+            &quot;F_reduction&quot;: 0.0
+          }
+        ],
+        &quot;n_boot&quot;: 1000
+      }
+    },
+    &quot;llava&quot;: {
+      &quot;family&quot;: &quot;llava&quot;,
+      &quot;models&quot;: [
+        &quot;llava05b&quot;,
+        &quot;llava7b&quot;
+      ],
+      &quot;nominal_settings&quot;: 120,
+      &quot;quotient_classes&quot;: 10,
+      &quot;pi_point&quot;: {
+        &quot;pope&quot;: 0.08333333333333333,
+        &quot;grounding&quot;: 0.0,
+        &quot;consistency&quot;: 0.2333333333333333,
+        &quot;mmstar&quot;: 0.6833333333333333
+      },
+      &quot;structural_class_count&quot;: 12,
+      &quot;pi_boot_mean&quot;: {
+        &quot;pope&quot;: 0.12558333333333135,
+        &quot;grounding&quot;: 0.0,
+        &quot;consistency&quot;: 0.2647833333333292,
+        &quot;mmstar&quot;: 0.6096333333333295
+      },
+      &quot;pi_CI&quot;: {
+        &quot;pope&quot;: [
+          0.08333333333333333,
+          0.3333333333333333
+        ],
+        &quot;grounding&quot;: [
+          0.0,
+          0.0
+        ],
+        &quot;consistency&quot;: [
+          0.2333333333333333,
+          0.4333333333333334
+        ],
+        &quot;mmstar&quot;: [
+          0.3833333333333333,
+          0.6833333333333333
+        ]
+      },
+      &quot;F_scale&quot;: 0.31666666666666665,
+      &quot;F_scale_CI&quot;: [
+        0.31666666666666665,
+        0.5666666666666667
+      ],
+      &quot;F_noise&quot;: 0.0,
+      &quot;F_noise_CI&quot;: [
+        0.0,
+        0.0
+      ],
+      &quot;F_noise_CI_method&quot;: &quot;nested paired bootstrap&quot;,
+      &quot;F_noise_MC_CI&quot;: [
+        0.0,
+        0.0
+      ],
+      &quot;stable_axis_set&quot;: [],
+      &quot;all_axes_tied&quot;: false,
+      &quot;undefined_bootstraps&quot;: 0,
+      &quot;attribution&quot;: [
+        {
+          &quot;coordinate&quot;: &quot;drop&quot;,
+          &quot;fixed_value&quot;: &quot;absolute&quot;,
+          &quot;F_frozen&quot;: 0.36111111111111116,
+          &quot;F_reduction&quot;: -0.04444444444444451,
+          &quot;explained_flip_fraction&quot;: -0.14035087719298267
+        },
+        {
+          &quot;coordinate&quot;: &quot;floor&quot;,
+          &quot;fixed_value&quot;: false,
+          &quot;F_frozen&quot;: 0.5277777777777779,
+          &quot;F_reduction&quot;: -0.21111111111111125,
+          &quot;explained_flip_fraction&quot;: -0.6666666666666672
+        },
+        {
+          &quot;coordinate&quot;: &quot;headroom&quot;,
+          &quot;fixed_value&quot;: &quot;none&quot;,
+          &quot;F_frozen&quot;: 0.25,
+          &quot;F_reduction&quot;: 0.06666666666666665,
+          &quot;explained_flip_fraction&quot;: 0.21052631578947364
+        },
+        {
+          &quot;coordinate&quot;: &quot;rho&quot;,
+          &quot;fixed_value&quot;: 0.5,
+          &quot;F_frozen&quot;: 0.31666666666666665,
+          &quot;F_reduction&quot;: 0.0,
+          &quot;explained_flip_fraction&quot;: 0.0
+        },
+        {
+          &quot;coordinate&quot;: &quot;parse_fail&quot;,
+          &quot;fixed_value&quot;: &quot;wrong&quot;,
+          &quot;F_frozen&quot;: 0.5277777777777779,
+          &quot;F_reduction&quot;: -0.21111111111111125,
+          &quot;explained_flip_fraction&quot;: -0.6666666666666672
+        }
+      ],
+      &quot;scores&quot;: {
+        &quot;llava05b&quot;: {
+          &quot;pope&quot;: 0.7562222222222222,
+          &quot;grounding&quot;: 0.0,
+          &quot;consistency&quot;: 0.22625,
+          &quot;mmstar&quot;: 0.276
+        },
+        &quot;llava7b&quot;: {
+          &quot;pope&quot;: 0.8983333333333334,
+          &quot;grounding&quot;: 0.0,
+          &quot;consistency&quot;: 0.83375,
+          &quot;mmstar&quot;: 0.5993333333333334
+        }
+      },
+      &quot;u_a&quot;: {
+        &quot;pope&quot;: 0.8983333333333334,
+        &quot;grounding&quot;: 0.0,
+        &quot;consistency&quot;: 0.83375,
+        &quot;mmstar&quot;: 0.5993333333333334
+      },
+      &quot;c_a&quot;: {
+        &quot;pope&quot;: 0.5,
+        &quot;grounding&quot;: 0.02791666666666667,
+        &quot;consistency&quot;: 0.35125,
+        &quot;mmstar&quot;: 0.26066666666666666
+      },
+      &quot;homogeneous_floor_control&quot;: {
+        &quot;pi&quot;: [
+          0.3333333333333333,
+          0.0,
+          0.2333333333333333,
+          0.4333333333333333
+        ],
+        &quot;pi_boot_mean&quot;: [
+          0.27633333333333543,
+          0.0,
+          0.25973333333332904,
+          0.46393333333333525
+        ],
+        &quot;axis_ranking&quot;: [
+          &quot;mmstar&quot;,
+          &quot;pope&quot;,
+          &quot;consistency&quot;,
+          &quot;grounding&quot;
+        ],
+        &quot;arm_selection_defined&quot;: true,
+        &quot;top_axis&quot;: &quot;mmstar&quot;,
+        &quot;runner_up_axis&quot;: &quot;pope&quot;,
+        &quot;selection_rule&quot;: &quot;Rank mean bootstrap pi; top tie within tie_epsilon leaves selection undefined&quot;,
+        &quot;F_scale&quot;: 0.5666666666666667,
+        &quot;F_scale_CI&quot;: [
+          0.31666666666666665,
+          0.6666666666666667
+        ],
+        &quot;stable_axis_set&quot;: [],
+        &quot;attribution&quot;: [
+          {
+            &quot;coordinate&quot;: &quot;drop&quot;,
+            &quot;F_frozen&quot;: 0.6111111111111112,
+            &quot;F_reduction&quot;: -0.04444444444444451
+          },
+          {
+            &quot;coordinate&quot;: &quot;floor&quot;,
+            &quot;F_frozen&quot;: 0.6111111111111112,
+            &quot;F_reduction&quot;: -0.04444444444444451
+          },
+          {
+            &quot;coordinate&quot;: &quot;headroom&quot;,
+            &quot;F_frozen&quot;: 0.5,
+            &quot;F_reduction&quot;: 0.06666666666666665
+          },
+          {
+            &quot;coordinate&quot;: &quot;rho&quot;,
+            &quot;F_frozen&quot;: 0.5666666666666667,
+            &quot;F_reduction&quot;: 0.0
+          },
+          {
+            &quot;coordinate&quot;: &quot;parse_fail&quot;,
+            &quot;F_frozen&quot;: 0.44444444444444453,
+            &quot;F_reduction&quot;: 0.12222222222222212
+          }
+        ],
+        &quot;n_boot&quot;: 1000
+      }
+    }
+  },
+  &quot;gate&quot;: {
+    &quot;decision&quot;: &quot;go&quot;,
+    &quot;n_boot&quot;: 1000,
+    &quot;formal&quot;: true,
+    &quot;synthetic_test&quot;: false,
+    &quot;reason&quot;: &quot;Scale exceeds noise CI&quot;,
+    &quot;manifest_sha256&quot;: &quot;e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746&quot;,
+    &quot;protocol_sha256&quot;: &quot;3330a7bfc3bb5769589eca1e6c27051a722e008b48c0a42244530da9fdbbf029&quot;,
+    &quot;ledger_sha256&quot;: {
+      &quot;ledger/intern1b-000.jsonl&quot;: &quot;7ef4f1ffbb99d27aa1dde1186f8e4c6fa6a97e059b3a49fe1441bfe12a9ff645&quot;,
+      &quot;ledger/intern2b-000.jsonl&quot;: &quot;dbc7bff82995769562929fbb81b5b13599e3daceffab1c330d2a8706c6fb7d6e&quot;,
+      &quot;ledger/intern8b-000.jsonl&quot;: &quot;cb9875743d41d90012a470bd914bcf0e690fc655f89739f8c8f1af291d779fdd&quot;,
+      &quot;ledger/llava05b-000.jsonl&quot;: &quot;9d041df1838df7e6ee26c4a286b1cffd50ddcc059baf22092eb95c858abe2039&quot;,
+      &quot;ledger/llava7b-000.jsonl&quot;: &quot;f95916f302dd09307335e484fbf91f5bf60369a52bfe2b0de7d872b249fd8bba&quot;,
+      &quot;ledger/qwen3b-000.jsonl&quot;: &quot;026c68a002edf10403aeae0481dd25788dea3eb5a59abcb866d58957484d6bfb&quot;,
+      &quot;ledger/qwen7b-000.jsonl&quot;: &quot;24638e405bb411218eeb08610307b2625c65665969b8f15a656257975d941ad8&quot;
+    }
+  }
+}</pre></details></html>

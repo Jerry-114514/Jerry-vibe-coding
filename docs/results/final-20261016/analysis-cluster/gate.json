@@ -1,0 +1,18 @@
+{
+  "decision": "go",
+  "n_boot": 1000,
+  "formal": false,
+  "synthetic_test": false,
+  "reason": "Scale exceeds noise CI",
+  "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+  "protocol_sha256": "3330a7bfc3bb5769589eca1e6c27051a722e008b48c0a42244530da9fdbbf029",
+  "ledger_sha256": {
+    "ledger/intern1b-000.jsonl": "7ef4f1ffbb99d27aa1dde1186f8e4c6fa6a97e059b3a49fe1441bfe12a9ff645",
+    "ledger/intern2b-000.jsonl": "dbc7bff82995769562929fbb81b5b13599e3daceffab1c330d2a8706c6fb7d6e",
+    "ledger/intern8b-000.jsonl": "cb9875743d41d90012a470bd914bcf0e690fc655f89739f8c8f1af291d779fdd",
+    "ledger/llava05b-000.jsonl": "9d041df1838df7e6ee26c4a286b1cffd50ddcc059baf22092eb95c858abe2039",
+    "ledger/llava7b-000.jsonl": "f95916f302dd09307335e484fbf91f5bf60369a52bfe2b0de7d872b249fd8bba",
+    "ledger/qwen3b-000.jsonl": "026c68a002edf10403aeae0481dd25788dea3eb5a59abcb866d58957484d6bfb",
+    "ledger/qwen7b-000.jsonl": "24638e405bb411218eeb08610307b2625c65665969b8f15a656257975d941ad8"
+  }
+}

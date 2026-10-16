@@ -1,0 +1,160 @@
+{
+  "verified_utc": "2026-10-16T00:37:54.352990+00:00",
+  "B": {
+    "qwen3b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 501,
+      "sha256": "026c68a002edf10403aeae0481dd25788dea3eb5a59abcb866d58957484d6bfb",
+      "all_rows_rescored": true
+    },
+    "qwen7b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 502,
+      "sha256": "24638e405bb411218eeb08610307b2625c65665969b8f15a656257975d941ad8",
+      "all_rows_rescored": true
+    },
+    "intern1b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 3693,
+      "sha256": "7ef4f1ffbb99d27aa1dde1186f8e4c6fa6a97e059b3a49fe1441bfe12a9ff645",
+      "all_rows_rescored": true
+    },
+    "intern2b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 4066,
+      "sha256": "dbc7bff82995769562929fbb81b5b13599e3daceffab1c330d2a8706c6fb7d6e",
+      "all_rows_rescored": true
+    },
+    "intern8b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 2402,
+      "sha256": "cb9875743d41d90012a470bd914bcf0e690fc655f89739f8c8f1af291d779fdd",
+      "all_rows_rescored": true
+    },
+    "llava05b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 4402,
+      "sha256": "9d041df1838df7e6ee26c4a286b1cffd50ddcc059baf22092eb95c858abe2039",
+      "all_rows_rescored": true
+    },
+    "llava7b": {
+      "rows": 16900,
+      "scoring_units": 13700,
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "parse_failures": 0,
+      "sha256": "f95916f302dd09307335e484fbf91f5bf60369a52bfe2b0de7d872b249fd8bba",
+      "all_rows_rescored": true
+    }
+  },
+  "C": {
+    "qwen": {
+      "paired_draws_reproduced": 1000,
+      "ruler_settings": 120,
+      "saved_bootstrap_rows": 1000,
+      "classes_reproduced": 9,
+      "F_scale": 0.08333333333333337,
+      "F_scale_CI": [
+        0.07407407407407396,
+        0.19444444444444442
+      ],
+      "F_noise": 0.01100000000000001,
+      "F_noise_CI": [
+        0.0,
+        0.33014999999999983
+      ]
+    },
+    "intern": {
+      "paired_draws_reproduced": 1000,
+      "ruler_settings": 120,
+      "saved_bootstrap_rows": 1000,
+      "classes_reproduced": 54,
+      "F_scale": 0.5123456790123456,
+      "F_scale_CI": [
+        0.4012345679012346,
+        0.595679012345679
+      ],
+      "F_noise": 0.0,
+      "F_noise_CI": [
+        0.0,
+        0.0
+      ]
+    },
+    "llava": {
+      "paired_draws_reproduced": 1000,
+      "ruler_settings": 120,
+      "saved_bootstrap_rows": 1000,
+      "classes_reproduced": 10,
+      "F_scale": 0.31666666666666665,
+      "F_scale_CI": [
+        0.31666666666666665,
+        0.5666666666666667
+      ],
+      "F_noise": 0.0,
+      "F_noise_CI": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "status": "passed",
+  "gate_decision": "go",
+  "total_rows": 118300,
+  "formal_log_completion_records": {
+    "qwen3b": true,
+    "qwen7b": true,
+    "intern1b": true,
+    "intern2b": true,
+    "intern8b": true,
+    "llava05b": true,
+    "llava7b": true
+  },
+  "current_formal_log_exception_count": 0,
+  "scope": "B and C complete; this report does not claim D completion"
+}

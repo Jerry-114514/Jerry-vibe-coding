@@ -1,4 +1,31 @@
-# ARP 阶段 A：数据准备
+# ARP 多模态量尺审计与训练实验
+
+截至 2026-10-16，原协议的 B、C、D 正式运行与产物验收已完成。本仓库首页现在直接提供实验结果；大体积数据和训练产物在 GitHub Release 的 Assets 中。
+
+## 查看实验结果
+
+| 需要的内容 | 入口 |
+|---|---|
+| B/C/D 完整结果、阶段状态与限制 | [最终结果总览](docs/results/final-20261016/README.md) |
+| B：7 个基础模型四轴分数 | [基础模型 CSV](docs/results/final-20261016/base-model-scores.csv) |
+| C：量尺等价类、稳定性与归因 | [Table 1](docs/results/final-20261016/table1-equivalence.csv) · [Table 2](docs/results/final-20261016/table2-stability.csv) · [Table 3](docs/results/final-20261016/table3-attribution.csv) |
+| D：训练后结果 | [逐轴增益 JSON](docs/results/final-20261016/signed-gains.json) · [各量尺类增益 CSV](docs/results/final-20261016/table4-arm-gains.csv) |
+| B/C/D 显存占用 | [显存报告和数据](docs/results/vram-20261016/README.md) |
+| 逐题输出、教师缓存、LoRA、恢复状态、图片 | [完整实验 Release 下载](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-formal-20261014) |
+| 完整性和上传验收 | [计算产物验收](docs/results/final-20261016/final-verification.json) · [10,561 个必要文件备份核验](docs/results/final-20261016/github-backup-verification.json) |
+| 下一轮研究设计 | [整体改进与补实验方案](docs/ARP_整体改进与补实验方案_20261016.md)（待执行） |
+
+B 包含 118,300 条推理；D 的三个训练臂各完成 1,000 次实际更新、各 16,900 条训练后评测。A1/A2/U 的四轴原始增益之和分别为 +3.031、+2.714、+1.417 个百分点。这是单 seed 的点估计，不能据此宣称 A1 显著优于 A2；定位协议、量尺定义与平局效应等限制见结果总览和补实验方案。
+
+![原协议量尺与噪声结果](docs/results/final-20261016/figure2-scale-vs-noise.png)
+
+下载完整数据时，请展开 Release 的 **Assets**，选择以 `arp-formal-20261014-20261016T004018Z.tar.gz` 命名的最终实验包（约 1.06 GB），并另取 `...20261016T004031Z.tar.gz` 最终显存包。自动生成的 **Source code (zip/tar.gz)** 只有 Git 文件，不包含这些实验附件。原始数据与权重从 AutoDL 直接上传，未下载到本地电脑。
+
+仓库中的合成量尺演示与正式结果分开标注；真实交互结果为 [interactive-results.html](docs/results/final-20261016/interactive-results.html)，下载后可用浏览器打开。
+
+---
+
+## ARP 阶段 A：数据准备
 
 工作目录：`D:\gpt data`。准备日期：2026-10-14。随机种子：`20261014`。
 
@@ -12,7 +39,7 @@
 | MMStar | 1,500 | 1,500 | 固定种子、实际选项均匀随机 | 0.260667 |
 | 合计 | 13,700 | 16,900 | | |
 
-## 已完成的产物
+### 已完成的产物
 
 - A1：POPE random/popular/adversarial 各 3,000 题；RefCOCO、RefCOCO+、RefCOCOg 原始标注归档及训练/验证标注；MMStar 全量 1,500 题；MMBench 英文 dev 原始 4,329 行。
 - A2：`tools/make_paraphrases.py`；`data/consistency/base_items.jsonl`、`items.jsonl`、`answer_keys.jsonl`、`templates.json`。
@@ -21,7 +48,7 @@
 
 COCO 2014 所需原图共 2,405 张；MMStar 和一致性轴所用内嵌图片共 2,300 张。合计 4,705 个本地图像文件、467,155,310 字节（约 445.5 MiB）。逐图 SHA256 见 `data/assets.sha256.jsonl`。
 
-## 冻结协议
+### 冻结协议
 
 严格采用提供的论文卡第 2 页 M0/M1 的数据与计分定义。论文卡中的定位 floor 示例 0.02 仅是示例，实际实验使用本次逐题测得的 0.0279166667。
 
@@ -35,7 +62,7 @@ COCO 2014 所需原图共 2,405 张；MMStar 和一致性轴所用内嵌图片�
 
 **MMStar。** 保留全部 1,500 题和官方答案键，不改写其题干。使用 `random.Random(20261014)`，按冻结 manifest 的顺序遍历，在每题实际存在的选项中均匀抽样。第 855 题实际只有 A/B/C 三个选项，其余题有四个选项；该题按 1/3 概率抽样。实测分数为 391/1,500，不将理论 0.25 直接用作 floor。
 
-## 阶段 B/C 的数据接口
+### 阶段 B/C 的数据接口
 
 `manifest.jsonl` 每行是一条模型推理输入，必含：
 
@@ -49,7 +76,7 @@ axis, item_id, image_path, question, answer_key
 
 阶段 B 应推理全部 16,900 行，再用 `tools/scoring.py` 的计分规则聚合。一致性轴的 bootstrap 必须重采样 800 个原题分组，保留组内所有 5 个改写；不能把 4,000 个改写当作 4,000 个独立题目。POPE 复用 500 张图片，定位的三个数据集也会共享部分 COCO 图片；`image_group` 字段供后续按图像聚类的敏感性分析使用。当前阶段未计算需要真实模型推理结果的 u_a。
 
-## 来源和溯源
+### 来源和溯源
 
 - POPE：[官方仓库](https://github.com/RUCAIBox/POPE)，`output/coco/coco_pope_{random,popular,adversarial}.json`。
 - RefCOCO：[官方 REFER 仓库](https://github.com/lichengunc/refer)；原站失效后采用[官方仓库列出的归档方案](https://github.com/lichengunc/refer/issues/14#issuecomment-1258318183)。原始三个 ZIP 位于 `data/raw/refer/`，官方 Python 2 API 保留为 `refer.original.py`。
@@ -62,7 +89,7 @@ axis, item_id, image_path, question, answer_key
 
 原始文件下载 URL 和 SHA256 见 `data/download_sources.json`、`data/refer_mirror_sources.json`。POPE 按下载快照的文件 SHA256 冻结；Hugging Face 文件同时固定仓库 revision 和文件 SHA256。`experiment.lock.json` 额外冻结代码、依赖版本、模板、统计量、基线结果和 manifest。
 
-## 运行和复验
+### 运行和复验
 
 当前环境的依赖已安装。其他机器需要 Python 3.10+ 并安装 `requirements.txt` 中的依赖；实际运行环境为 Python 3.14.6。
 

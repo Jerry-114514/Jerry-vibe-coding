@@ -1,0 +1,27 @@
+{
+  "homogeneous_recovered": true,
+  "planted_axis": "pope",
+  "pi": [
+    0.85,
+    0.05,
+    0.05,
+    0.05
+  ],
+  "heterogeneous_flip_recovered": true,
+  "raw": [
+    0.14,
+    0.20000000000000007,
+    0.0,
+    0.0
+  ],
+  "corrected": [
+    0.28,
+    0.20408163265306128,
+    0.0,
+    0.0
+  ],
+  "flip_ratio_boundary": [
+    0.5102040816326531,
+    1.0
+  ]
+}
