@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "arm": "A2",
+  "seed": 137,
+  "real_updates": 1000,
+  "optimizer_step_values": [
+    1000
+  ],
+  "axis_update_counts": {
+    "consistency": 1000
+  },
+  "dual_ce_finite_nonzero_gradients": true,
+  "exact_optimizer_adapter_export_match": true,
+  "peak_reserved_bytes": 20319305728,
+  "peak_reserved_GB": 20.319305728,
+  "peak_reserved_GiB": 18.923828125,
+  "training_step_seconds": 527.1489474214613,
+  "loss_sha256": "fd23c864a42349dc3faf1fb02d5567ed36b96f5ee0ed9eb82b8eef7de3529617",
+  "scope": "Step processing time excludes model loading, checkpoint I/O and backup"
+}

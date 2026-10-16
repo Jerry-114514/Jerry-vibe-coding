@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "scope": "Current training/evaluation inputs only",
+  "datasets": {
+    "training": {
+      "rows": 3545,
+      "referenced_images": 2132
+    },
+    "evaluation": {
+      "rows": 16900,
+      "referenced_images": 4705
+    }
+  },
+  "required_files_verified": 6843,
+  "all_current_file_bytes_and_sha256_match_archived_inventory": true,
+  "archived_inventory_sha256": "a44bf815973ea41d3efa9ca3f88642b68e9336cd09d75eab39b427a0300cdf3f",
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-formal-20261014",
+  "assets": [
+    {
+      "name": "arp-formal-20261014-20261016T004018Z-inventory.json",
+      "bytes": 2232331,
+      "sha256": "a44bf815973ea41d3efa9ca3f88642b68e9336cd09d75eab39b427a0300cdf3f",
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-formal-20261014-20261016T004018Z.tar.gz",
+      "bytes": 1064822655,
+      "sha256": "fcf9780dab9d9533072851e9ee2aa567d6926431e611d75d62d4700d9ab4ec68",
+      "server_digest_verified": true
+    }
+  ],
+  "large_payloads_downloaded": false,
+  "note": "Model weights and new EOS caches have separate delivery records."
+}
