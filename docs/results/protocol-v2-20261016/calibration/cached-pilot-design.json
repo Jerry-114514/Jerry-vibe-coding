@@ -1,0 +1,15 @@
+{
+  "models": [
+    "intern2b",
+    "intern8b",
+    "llava05b"
+  ],
+  "precision": "bf16",
+  "scoring_units_per_axis": 100,
+  "prompts_per_model": 800,
+  "max_torch_reserved_gib": 23,
+  "GPU_policy": "Shared flock; one model at a time",
+  "formal_confirmation": false,
+  "large_downloads": false,
+  "auto_backup": "Only completed checksummed stages, AutoDL directly to GitHub Release"
+}

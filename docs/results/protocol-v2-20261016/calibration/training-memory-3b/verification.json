@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checks": {
+    "100_sequential_actual_updates": true,
+    "finite_losses_and_gradients": true,
+    "resume_step_100": true,
+    "adapter_equals_resume": true,
+    "all_weights_finite": true,
+    "nonzero_lora_B": true
+  },
+  "axis_updates": {
+    "consistency": 25,
+    "grounding": 25,
+    "mmstar": 25,
+    "pope": 25
+  },
+  "loss_sha256": "d1e64bb37c0b70deaf9732a94ca9ed4b797ffbb6ac243d8d6fcffa5777549303",
+  "formal_training": false
+}

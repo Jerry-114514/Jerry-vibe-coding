@@ -1,0 +1,17 @@
+mode,axis,stratum,original_units,common_units,excluded_units,common_images
+wrong,pope,pope/adversarial,3000,3000,0,500
+wrong,pope,pope/popular,3000,3000,0,500
+wrong,pope,pope/random,3000,3000,0,500
+wrong,grounding,refcoco+/unc,800,800,0,800
+wrong,grounding,refcoco/unc,800,800,0,800
+wrong,grounding,refcocog/umd,800,800,0,800
+wrong,consistency,mmbench/,800,800,0,774
+wrong,mmstar,mmstar/,1500,1500,0,1500
+exclude,pope,pope/adversarial,3000,3000,0,500
+exclude,pope,pope/popular,3000,3000,0,500
+exclude,pope,pope/random,3000,3000,0,500
+exclude,grounding,refcoco+/unc,800,596,204,596
+exclude,grounding,refcoco/unc,800,628,172,628
+exclude,grounding,refcocog/umd,800,593,207,593
+exclude,consistency,mmbench/,800,798,2,772
+exclude,mmstar,mmstar/,1500,1499,1,1499

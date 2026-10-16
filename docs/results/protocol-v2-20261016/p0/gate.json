@@ -1,0 +1,6 @@
+{
+  "decision": "indeterminate",
+  "formal": false,
+  "training_allowed": false,
+  "reason": "Historical exploratory P0 only; independent audit and paired noise gate not yet executed"
+}

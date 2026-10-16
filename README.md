@@ -4,6 +4,8 @@
 
 ## 查看实验结果
 
+**新增补实验：** [protocol-v2 补分析与显存预检](docs/results/protocol-v2-20261016/README.md) · [阶段性原始产物 Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API 教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。P0 和 Qwen 3B/7B 开发预检已完成；正式多 seed 与独立确认仍受新 gate 约束。
+
 | 需要的内容 | 入口 |
 |---|---|
 | B/C/D 完整结果、阶段状态与限制 | [最终结果总览](docs/results/final-20261016/README.md) |

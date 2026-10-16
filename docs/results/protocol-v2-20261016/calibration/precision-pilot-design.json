@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-16T03:50:14.422922+00:00",
+  "models": [
+    "qwen3b",
+    "qwen7b"
+  ],
+  "precision": "bf16",
+  "max_torch_reserved_gib": 23,
+  "scoring_units_per_axis": 100,
+  "prompts_per_model": 800,
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 128
+  },
+  "image_budget": {
+    "min_pixels": 200704,
+    "max_pixels": 1003520
+  },
+  "training_started": false,
+  "confirmation": false,
+  "followup_training": "Only after numerical, data and target-family gate checks",
+  "code_sha256": {
+    "tools/precision_bridge.py": "83742bab0f9dd69c5427925bff58f202a268b423cadd4129811f0637045591ad",
+    "tools/model_backends.py": "66efd86af52759840a4d234c41cf348633923c3e82204d142a835d1c9b1dd616"
+  }
+}

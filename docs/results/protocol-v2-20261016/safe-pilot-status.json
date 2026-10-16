@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-16T03:50:14.721165+00:00",
+  "stage": "precision_pilot",
+  "scope": "Legacy-development BF16 bridge; not formal training or independent confirmation",
+  "manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+  "completed": [
+    {
+      "model": "qwen3b",
+      "rows": 800,
+      "peak_allocated_bytes": 8131575808,
+      "peak_reserved_bytes": 8325693440
+    },
+    {
+      "model": "qwen7b",
+      "rows": 800,
+      "peak_allocated_bytes": 17186806272,
+      "peak_reserved_bytes": 18683527168
+    }
+  ],
+  "current_model": null,
+  "updated_utc": "2026-10-16T03:53:50.497032+00:00",
+  "completed_utc": "2026-10-16T03:57:38.813253+00:00"
+}

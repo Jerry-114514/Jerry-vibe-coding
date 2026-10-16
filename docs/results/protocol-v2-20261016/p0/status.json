@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-16T03:59:17.726704+00:00",
+  "source_run": "runs/formal-20261014",
+  "n_boot": 1000,
+  "historical_exploratory_only": true,
+  "training_allowed": false,
+  "elapsed_seconds": 20.631650552153587
+}

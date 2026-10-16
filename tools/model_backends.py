@@ -105,16 +105,23 @@ def freeze_models():
 
 
 class Backend:
-    def __init__(self, key, adapter=None):
+    def __init__(self, key, adapter=None, precision='legacy'):
         import torch
         from transformers import (AutoModel, AutoProcessor, AutoTokenizer,
                                   Qwen2_5_VLForConditionalGeneration,
                                   LlavaOnevisionForConditionalGeneration)
         self.torch = torch
+        if precision not in ('legacy', 'bf16'):
+            raise ValueError('Unknown numerical protocol: ' + precision)
+        if precision == 'bf16' and not torch.cuda.is_bf16_supported():
+            raise RuntimeError('The GPU does not support the BF16 protocol')
+        self.precision = precision
+        self.dtype = torch.bfloat16 if precision == 'bf16' else torch.float16
+        self.backend_version = 'finite-logits-sdpa-all-bf16.v1' if precision == 'bf16' else BACKEND_VERSION
         self.key = key
         self.kind = MODELS[key][1]
         path = model_path(key)
-        kwargs = dict(torch_dtype=torch.float16, low_cpu_mem_usage=True,
+        kwargs = dict(torch_dtype=self.dtype, low_cpu_mem_usage=True,
                       device_map='auto', max_memory={0: '21GiB', 'cpu': '80GiB'},
                       offload_folder=str(ROOT / '.offload' / key))
         if self.kind == 'intern':
@@ -129,7 +136,7 @@ class Backend:
         else:
             cls = Qwen2_5_VLForConditionalGeneration if self.kind == 'qwen' else LlavaOnevisionForConditionalGeneration
             self.model = cls.from_pretrained(path, attn_implementation='sdpa', **kwargs).eval()
-            if self.kind == 'qwen':
+            if self.kind == 'qwen' and precision == 'legacy':
                 # A real grounding input overflowed visual.blocks.31.mlp.down_proj
                 # in fp16. Promote the already-loaded fp16 vision weights exactly;
                 # retain fp16 language weights and the original input protocol.
@@ -155,7 +162,7 @@ class Backend:
             messages.append({'role': 'assistant', 'content': [{'type': 'text', 'text': response}]})
         text = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=response is None)
         inputs = self.processor(text=[text], images=[image], return_tensors='pt')
-        return {k: v.to(self.device, dtype=self.torch.float16) if v.is_floating_point() else v.to(self.device)
+        return {k: v.to(self.device, dtype=self.dtype) if v.is_floating_point() else v.to(self.device)
                 for k, v in inputs.items()}
 
     def intern_pixels(self, item):
@@ -178,7 +185,7 @@ class Backend:
         transform = T.Compose([T.Resize((448, 448), interpolation=InterpolationMode.BICUBIC), T.ToTensor(),
                                T.Normalize((.485, .456, .406), (.229, .224, .225))])
         device = next(self.model.vision_model.parameters()).device
-        return self.torch.stack([transform(tile) for tile in tiles]).to(device, self.torch.float16)
+        return self.torch.stack([transform(tile) for tile in tiles]).to(device, self.dtype)
 
     def generate(self, item):
         with self.torch.inference_mode():
@@ -189,4 +196,7 @@ class Backend:
             inputs = self.inputs(item)
             out = self.model.generate(**inputs, max_new_tokens=128, do_sample=False, num_beams=1,
                                       logits_processor=finite_logits_processors())
+            self.last_usage = {'input_tokens': int(inputs['input_ids'].shape[1]),
+                               'output_tokens': int(out.shape[1] - inputs['input_ids'].shape[1]),
+                               'image_grid_thw': inputs['image_grid_thw'].tolist() if 'image_grid_thw' in inputs else None}
             return self.processor.decode(out[0, inputs['input_ids'].shape[1]:], skip_special_tokens=True).strip()

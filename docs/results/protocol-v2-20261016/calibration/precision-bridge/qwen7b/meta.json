@@ -1,0 +1,9 @@
+{
+  "model": "qwen7b",
+  "precision": "bf16",
+  "manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+  "prompt_rows": 800,
+  "limit_per_axis": null,
+  "confirmation": false,
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+}

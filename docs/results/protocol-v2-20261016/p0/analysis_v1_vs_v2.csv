@@ -1,0 +1,10 @@
+family,analysis,F,F_CI_low,F_CI_high,classes,strict_pair_flip_rate,full_ties,partial_ties,invalid_classes,undefined_bootstraps,axes
+qwen,v1_published,0.08333333333333337,0.07407407407407396,0.19444444444444442,9,,,,,0,"pope,grounding,consistency,mmstar"
+qwen,formula_only_large_legacy_quotient,0.08333333333333337,0.07407407407407396,0.19444444444444442,9,0.0,1,0,0,0,"pope,grounding,consistency,mmstar"
+qwen,v2_structural_common_axes,0.25,0.0,0.33333333333333337,12,0.0,4,0,0,0,"pope,grounding,consistency,mmstar"
+intern,v1_published,0.5123456790123456,0.4012345679012346,0.595679012345679,54,,,,,0,"pope,grounding,consistency,mmstar"
+intern,formula_only_large_legacy_quotient,0.5216049382716048,0.3919753086419754,0.5771604938271604,54,0.5143256464011181,0,5,0,0,"pope,grounding,consistency,mmstar"
+intern,v2_structural_common_axes,0.19999999999999996,0.0,0.19999999999999996,60,0.4,0,0,55,0,"pope,grounding,consistency,mmstar"
+llava,v1_published,0.31666666666666665,0.31666666666666665,0.5666666666666667,10,,,,,0,"pope,grounding,consistency,mmstar"
+llava,formula_only_large_legacy_quotient,0.31666666666666665,0.31666666666666665,0.5666666666666667,10,0.26666666666666666,0,2,0,0,"pope,grounding,consistency,mmstar"
+llava,v2_structural_common_axes,0.5,0.0,0.5,12,1.0,0,0,10,0,"pope,grounding,consistency,mmstar"
