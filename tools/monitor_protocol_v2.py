@@ -15,7 +15,7 @@ WORKERS = {'api_development_pilot.py', 'precision_bridge.py', 'training_memory_p
            'freeze_independent_candidates.py', 'freeze_clean_candidates_v3.py', 'run_clean_calibration.py',
            'publish_clean_inputs.py', 'run_protocol_v2.py', 'run_processed_grounding.py',
            'run_clean_audit.py', 'run_teacher_role_calibration.py', 'run_api_audit_calibration.py',
-           'run_api_audit.py'}
+           'run_api_audit.py', 'run_clean_audit_v2.py'}
 OUT = ROOT / 'runs/protocol-v2-monitor'
 
 
