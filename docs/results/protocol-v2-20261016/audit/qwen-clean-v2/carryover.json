@@ -1,0 +1,9 @@
+{
+  "source_run": "/root/autodl-tmp/arp/runs/protocol-v2/audit/qwen-clean-v1",
+  "source_ledger_sha256": "90a429211b5494ce7f56a1ff1724412052afd160e3011cc31edd8587625bb25a",
+  "reused_rows": 9402,
+  "all_reused_image_sizes_at_least_28": true,
+  "unique_reused_images_verified": 2478,
+  "unchanged_manifest_sha256": "09dd2995899f9849b9eedd90bae8316c3487ccac6b19d93f53c161ff6ebc54dd",
+  "reason": "First sub-28px image was not processed; new policy changes only previously unprocessed inputs"
+}

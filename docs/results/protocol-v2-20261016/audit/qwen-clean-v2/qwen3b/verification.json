@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "exact_unique_coverage",
+    "independent_rescore",
+    "fixed_coordinate_contract",
+    "pre-audit_calibration_replay"
+  ],
+  "training_allowed": false
+}

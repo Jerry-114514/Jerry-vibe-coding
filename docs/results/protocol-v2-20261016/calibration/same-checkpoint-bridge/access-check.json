@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-16T11:14:26.920298+00:00",
+  "purpose": "same_checkpoint_precision_bridge_access",
+  "design_sha256": "7b7a6e86eeca2b9e258594928260e622ed14c2f6a5ab8f1ccbb4f8295e045824",
+  "models": [
+    {
+      "local_model": "qwen3b",
+      "requested_model": "qwen2.5-vl-3b-instruct",
+      "local_revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+      "synthetic_image_only": true,
+      "automatic_retry": false,
+      "exact_model_access_verified": false,
+      "http_status": 403,
+      "error_code": "access_denied"
+    },
+    {
+      "local_model": "qwen7b",
+      "requested_model": "qwen2.5-vl-7b-instruct",
+      "local_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "synthetic_image_only": true,
+      "automatic_retry": false,
+      "exact_model_access_verified": false,
+      "http_status": 403,
+      "error_code": "access_denied"
+    }
+  ],
+  "status": "blocked_exact_model_api_access",
+  "four_axis_comparison_completed": false,
+  "bridge_passed": false,
+  "merge_local_and_api_into_ladder_allowed": false,
+  "formal_training_allowed": false,
+  "qwen3_vl_plus_is_not_a_3b_or_7b_precision_bridge": true
+}

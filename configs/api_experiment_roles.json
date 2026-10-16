@@ -2,9 +2,17 @@
   "schema": "arp.api-experiment-roles.v1",
   "teacher": "qwen3.5-122b-a10b",
   "teacher_control": "qwen3.5-397b-a17b",
-  "audit_local_nodes": ["qwen3b", "qwen7b"],
-  "audit_api_nodes": ["qwen3-vl-plus"],
-  "deferred_audit_api_nodes": ["qwen-vl-plus", "qwen-vl-max"],
+  "audit_local_nodes": [
+    "qwen3b",
+    "qwen7b"
+  ],
+  "audit_api_nodes": [
+    "qwen3-vl-plus"
+  ],
+  "deferred_audit_api_nodes": [
+    "qwen-vl-plus",
+    "qwen-vl-max"
+  ],
   "deferred_reason": "Both return HTTP 404 model_not_found in the current workspace; user selected qwen3-vl-plus instead",
   "audit_interpretation": "Mixed local checkpoints and commercial API nodes; commercial sizes, architecture and immutable revisions not established",
   "commercial_api_parameter_order_verified": false,
@@ -12,10 +20,31 @@
   "immutable_api_versions_confirmed": false,
   "teacher_in_primary_audit_ladder": false,
   "formal_training_allowed": false,
-  "formal_training_requires": ["Valid stage C decision", "Different training-axis selection", "Frozen training protocol", "Grounding measurement acceptance"],
+  "formal_training_requires": [
+    "Valid stage C decision",
+    "Different training-axis selection",
+    "Frozen training protocol",
+    "Grounding measurement acceptance"
+  ],
   "student": "qwen7b",
-  "seeds": [42, 137, 256, 512, 1024],
-  "arms": ["A1", "A2", "U"],
-  "loss_design": {"ground_truth_ce": 0.5, "teacher_response_ce": 0.5},
-  "loss_design_implemented_and_verified": false
+  "seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "arms": [
+    "A1",
+    "A2",
+    "U"
+  ],
+  "loss_design": {
+    "ground_truth_ce": 0.5,
+    "teacher_response_ce": 0.5
+  },
+  "loss_design_implemented_and_verified": false,
+  "merge_local_and_api_into_ladder_allowed": false,
+  "bridge_requirement": "Both exact Qwen2.5-VL 3B/7B checkpoints: all four absolute score differences strictly below0.005, matched item coverage and scoring",
+  "bridge_status": "blocked_exact_model_api_access"
 }

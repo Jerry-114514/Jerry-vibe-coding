@@ -1,0 +1,13 @@
+{
+  "status": "paused_pending_same_checkpoint_bridge",
+  "worker_script": "run_api_audit.py",
+  "pid": 97660,
+  "model": "qwen3-vl-plus",
+  "expected_prompts": 9600,
+  "formal_training_allowed": false,
+  "completed_prompts": 1365,
+  "updated_utc": "2026-10-16T11:15:44.588234+00:00",
+  "paused_utc": "2026-10-16T11:15:52.303623+00:00",
+  "pause_reason": "User requires exact 3B/7B API deployment bridge before combining API and local audit; both exact API calls returned403",
+  "no_request_inflight": true
+}

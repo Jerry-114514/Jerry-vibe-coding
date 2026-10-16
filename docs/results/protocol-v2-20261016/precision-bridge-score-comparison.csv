@@ -1,0 +1,9 @@
+model,axis,local_v1_score,api_score,absolute_difference,threshold,status
+qwen3b,pope,0.8747777777777778,,,0.005,blocked_exact_model_api_access
+qwen3b,grounding,0.6675,,,0.005,blocked_exact_model_api_access
+qwen3b,consistency,0.81,,,0.005,blocked_exact_model_api_access
+qwen3b,mmstar,0.5433333333333333,,,0.005,blocked_exact_model_api_access
+qwen7b,pope,0.8767777777777778,,,0.005,blocked_exact_model_api_access
+qwen7b,grounding,0.67625,,,0.005,blocked_exact_model_api_access
+qwen7b,consistency,0.84125,,,0.005,blocked_exact_model_api_access
+qwen7b,mmstar,0.6206666666666667,,,0.005,blocked_exact_model_api_access

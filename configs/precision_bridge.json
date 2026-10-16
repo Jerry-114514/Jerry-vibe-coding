@@ -1,0 +1,19 @@
+{
+  "schema": "arp.same-checkpoint-deployment-bridge.v1",
+  "models": {
+    "qwen3b": {"repo_id": "Qwen/Qwen2.5-VL-3B-Instruct", "api_model": "qwen2.5-vl-3b-instruct", "local_revision": "66285546d2b821cf421d4f5eb2576359d3770cd3"},
+    "qwen7b": {"repo_id": "Qwen/Qwen2.5-VL-7B-Instruct", "api_model": "qwen2.5-vl-7b-instruct", "local_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"}
+  },
+  "axes": ["pope", "grounding", "consistency", "mmstar"],
+  "absolute_score_difference_threshold": 0.005,
+  "comparison": "Strictly less than threshold on all four axes for both models; no averaging across models or axes",
+  "local_reference": "Verified v1 full 16900-prompt ledgers; same item IDs, prompts, image files, scoring and aggregation",
+  "local_reference_precision": "FP16 language and FP32 Qwen vision; v1 was not pure FP16",
+  "api_precision": "Undisclosed; this tests deployment agreement and does not isolate numerical precision",
+  "five_paraphrases_are_one_unit": true,
+  "paired_source_image_cluster_intervals_required_in_report": true,
+  "missing_or_wrong_model_is_failure_to_establish_bridge": true,
+  "bridge_passed": false,
+  "merge_local_and_api_into_ladder_allowed": false,
+  "formal_training_allowed": false
+}

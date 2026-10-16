@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "rows": 9600,
+  "original_units": 4800,
+  "axis_scores": {
+    "consistency": 0.78,
+    "grounding": 0.8548611111111111,
+    "mmstar": 0.4508333333333334,
+    "pope": 0.9266666666666666
+  },
+  "ledger_sha256": "2d15e50f4220808154d284851c556baa2b9f36f763b2be729e1128ef97f31123",
+  "manifest_sha256": "09dd2995899f9849b9eedd90bae8316c3487ccac6b19d93f53c161ff6ebc54dd",
+  "formal_training_allowed": false,
+  "parse_failures_by_axis": {
+    "pope": 0,
+    "grounding": 1,
+    "consistency": 0,
+    "mmstar": 0
+  },
+  "peak_allocated_bytes": 8268513280,
+  "peak_reserved_bytes": 8965324800,
+  "completed_utc": "2026-10-16T10:53:42.400521+00:00"
+}

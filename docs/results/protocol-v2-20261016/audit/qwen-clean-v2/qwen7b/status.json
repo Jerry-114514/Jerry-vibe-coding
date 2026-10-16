@@ -1,0 +1,10 @@
+{
+  "status": "running",
+  "worker_script": "run_clean_audit_v2.py",
+  "pid": 98281,
+  "model": "qwen7b",
+  "expected_prompts": 9600,
+  "completed_prompts": 2365,
+  "formal_training_allowed": false,
+  "updated_utc": "2026-10-16T11:17:14.996611+00:00"
+}
