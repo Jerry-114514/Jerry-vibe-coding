@@ -1,0 +1,13 @@
+{
+  "status": "integrity_passed",
+  "checked": 3545,
+  "finite_top50": true,
+  "tensor_targets_untruncated": true,
+  "legacy_finish_reason_absent": true,
+  "generation_nontruncation_certified": false,
+  "possible_length_cap_ids": [],
+  "manifest_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+  "complete_sha256": "88c293335e11b3310436637226267541678dbb7d90228ce3f93d4adc361e4491",
+  "cache_meta_sha256": "faa7d41a97cdb854913f4c622fc26c3e61cc74829948f5a6d0d1da016f5f7901",
+  "elapsed_seconds": 70.610102776438
+}
