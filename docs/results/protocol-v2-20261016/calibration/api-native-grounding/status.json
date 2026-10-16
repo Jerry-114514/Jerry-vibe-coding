@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "prompts": 8,
+  "scoring_units": 8,
+  "axis_scores": {
+    "grounding": 1.0
+  },
+  "local_bf16_scores_same_items": {
+    "qwen3b": {
+      "grounding": 1.0
+    },
+    "qwen7b": {
+      "grounding": 0.8333333333333334
+    }
+  },
+  "parse_failures_by_axis": {
+    "pope": 0,
+    "grounding": 0,
+    "consistency": 0,
+    "mmstar": 0
+  },
+  "total_reported_tokens": 3390,
+  "ledger_sha256": "d31460b7a00c94c2e3aa8c66d2e3f6d3087baf7ae9e0473117fa848b2cd50207",
+  "manifest_sha256": "b2c85475b0bef86047701cff7bf98f667235938c6474b0382158bf97c302a997",
+  "formal_training_allowed": false,
+  "confirmation": false,
+  "completed_utc": "2026-10-16T05:39:10.883385+00:00"
+}

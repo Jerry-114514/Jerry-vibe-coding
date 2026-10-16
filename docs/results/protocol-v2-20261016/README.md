@@ -13,6 +13,8 @@
 | Qwen 3B BF16 开发预检 | [800 条完成记录](calibration/precision-bridge/qwen3b/complete.json)；每轴 100 原题，一致性保持五改写 |
 | Qwen 7B BF16 开发预检 | [800 条完成记录](calibration/precision-bridge/qwen7b/complete.json) |
 | InternVL 2B / 8B BF16 开发预检 | [2B 的 800 条完成记录](calibration/precision-bridge/intern2b/complete.json)、[8B 的 800 条完成记录](calibration/precision-bridge/intern8b/complete.json) |
+| LLaVA 0.5B BF16 开发预检 | 800 条已全部完成；真实账本和完成标记见本阶段 Release，五模型合计 4,000 条 |
+| 阿里云视觉 API 接入 | [实际调用验证](api_validation.md)；`qwen3-vl-plus` 视觉调用及 top-5 logprobs 成功，不等同于指定的 32B/72B 检查点 |
 | 3B 训练显存与蒸馏可行性 | [100 次实际更新](calibration/training-memory-3b/complete.json)、[独立验收](calibration/training-memory-3b/verification.json)、[冻结配置](calibration/training-memory-3b/protocol.json)；属于工程预检，不是正式训练臂 |
 | 7B 教师文本 CE 训练预检 | [100 次实际更新](calibration/training-memory-7b/complete.json)、[独立验收](calibration/training-memory-7b/verification.json)、[冻结配置](calibration/training-memory-7b/protocol.json)；没有调用 API 教师 |
 
@@ -22,6 +24,7 @@
 | Qwen 7B 全 BF16 推理 | 16.006 GiB | 17.400 GiB |
 | InternVL 2B 全 BF16 推理 | 4.880 GiB | 5.463 GiB |
 | InternVL 8B 全 BF16 推理 | 15.787 GiB | 15.953 GiB |
+| LLaVA 0.5B 全 BF16 推理 | 2.664 GiB | 以 Release 原始完成记录为准 |
 | Qwen 3B 全 BF16、100 步 LoRA+KL | 7.755 GiB | 8.457 GiB |
 | Qwen 7B 全 BF16、100 步 LoRA+教师文本 CE | 16.275 GiB | 18.852 GiB |
 
@@ -36,11 +39,15 @@
 
 图像簇区间使用全局来源图像共同权重，逐子集计算均值后等权聚合，保留同图跨轴关联；不是各轴独立抽样。它只反映旧数据的评测抽样不确定性，不能替代多 seed 或去除旧选择偏差。
 
-## 继续运行的显存受限任务
+## 显存受限任务完成情况及 API 开发实验
 
-Qwen/InternVL 四个推理预检和 3B/7B 两个训练预检均已完成。LLaVA 0.5B 在 GPU 进程切换时触发空闲检查退出，尚未生成题目；已增加最多 45 秒的显存释放等待、补齐启动早期失败记录，并于北京时间 2026-10-16 12:25 恢复这一项，跳过已校验完成的模型。所有 GPU 进程共用互斥锁，单进程 PyTorch 显存上限 23GiB；3B 训练预检上限为 12GiB。
+五模型推理预检和 3B/7B 两个训练预检均已完成。本批于北京时间 2026-10-16 12:29 完成。LLaVA 0.5B 曾在 GPU 进程切换时触发空闲检查退出；增加最多 45 秒的显存释放等待后，已恢复并完成 800 条。所有 GPU 进程共用互斥锁，单进程 PyTorch 显存上限 23GiB；3B 训练预检上限为 12GiB。
 
 这批任务只使用现有已缓存模型，不重新下载 32B/72B。7B 的 CE 预检采用已缓存 7B 教师文本，不调用付费 API，也不使用 logits；它检验序列训练的工程可行性，不声称检验了大教师效应。状态以各阶段完成标记、逐题记录和独立验收为准。
+
+另于北京时间 13:35 启动有上限的 API 开发比较：每轴 8 个原题单元，共 32 单元、64 条提示；一致性保留五改写，使用历史开发数据，不进入训练集或独立确认。输入全部与公开基准原始清单匹配，不含用户私有文件，不向 API 发送答案。每次最多输出 128 token，累计用量停止阈值 200,000 token；失败及无法确认结果的调用不自动重试。原图像素、原提示和严格解析器保持不变，API 与本地 BF16 3B/7B 在同题上比较；不同服务端图像处理仍是协议差异。本实验不能解锁正式训练，产物完成后由 AutoDL 直接备份 GitHub Release。
+
+13:36 已完成全部 64 条；发现定位坐标约定不匹配后，另冻结显式 `[0,1000]` 坐标契约，于 13:39 完成 8 条原生坐标校准。两批均通过独立验收，完整原始结果已上传 Release。详见 [API 开发实验结果与边界](api_development_results.md)。
 
 ## GitHub 原始产物与自动备份
 

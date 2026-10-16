@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "prompt_rows": 8,
+  "scoring_units": 8,
+  "ledger_sha256": "d31460b7a00c94c2e3aa8c66d2e3f6d3087baf7ae9e0473117fa848b2cd50207",
+  "checks": [
+    "exact_unique_coverage",
+    "manifest_and_ledger_hashes",
+    "independent_strict_rescore",
+    "source_image_hashes",
+    "returned_model_identity",
+    "token_usage_accounting",
+    "output_token_limits",
+    "finite_returned_logprobs"
+  ],
+  "formal_training_allowed": false,
+  "confirmation": false
+}

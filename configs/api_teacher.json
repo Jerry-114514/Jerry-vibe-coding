@@ -1,0 +1,11 @@
+{
+  "provider": "aliyun-model-studio",
+  "base_url": "https://ws-fqgi0zjpng4gc9i2.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+  "api_key_env": "DASHSCOPE_API_KEY",
+  "model": "qwen3-vl-plus",
+  "status": "visual_api_verified_development_only",
+  "immutable_model_version_confirmed": false,
+  "verified_top_logprobs": 5,
+  "original_top50_kd_compatible": false,
+  "formal_training_allowed": false
+}
