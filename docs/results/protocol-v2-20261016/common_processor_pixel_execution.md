@@ -29,6 +29,8 @@
 
 两套注册资产在新预测生成前已重新核对GitHub服务端大小及SHA；[7B回执](7b-processor-pixel-registration.json)、[9B回执](9b-processor-pixel-registration.json)。7B的新U−N比较在复测前固定，直接检查优势是否仍有证据；区间包含0不能解读为“已证明无差异”。五seed、10,000次配对seed/图像簇bootstrap仍有小样本及尾部分位数不确定性，属于事后测量修订。
 
+[独立CPU输入审计](common-processor-input-audit.json)另核对了7B全部2400条、9B最小800条及正式16900条：标签、图像路径、题目身份和分组未变；提示尺寸均等于真实图像网格乘patch大小。15个7B和审计时已完成的10个9B适配器SHA一致，原有80个Python源文件未修改，原训练预算未重置。该审计已上传Release；它只验证输入与产物身份，不能证明尚未开始的GPU校准已通过。
+
 旧7B CPU审计已完成并交付：[逐模型诊断](7b-grounding-cpu-report.md)。它不替代新明确提示下的复测主分。原待执行的千分比GPU方案已取消，新增生成数为0；相应CPU诊断和注册记录保留。
 
 ## 执行顺序与时间

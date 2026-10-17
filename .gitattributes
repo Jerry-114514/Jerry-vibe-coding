@@ -59,3 +59,5 @@ docs/results/protocol-v2-20261016/9b-processor-pixel-protocol.json -text
 docs/results/protocol-v2-20261016/9b-processor-pixel-registration.json -text
 docs/results/protocol-v2-20261016/common-processor-registration-verification.json -text
 docs/results/protocol-v2-20261016/diskguard-live-verification-20261017.json -text
+tools/audit_common_processor_inputs.py -text
+docs/results/protocol-v2-20261016/common-processor-input-audit.json -text
