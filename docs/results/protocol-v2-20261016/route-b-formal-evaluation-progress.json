@@ -1,11 +1,11 @@
 {
   "status": "partial",
-  "completed_models": 14,
+  "completed_models": 15,
   "expected_models": 16,
-  "processed_prompts": 236600,
-  "remaining_estimated_hours": 1.9925076128854342,
-  "remaining_estimated_CNY": 5.379770554790673,
-  "mean_seconds_per_prompt": 0.21221974575111133,
+  "processed_prompts": 253500,
+  "remaining_estimated_hours": 0.9916143579301596,
+  "remaining_estimated_CNY": 2.677358766411431,
+  "mean_seconds_per_prompt": 0.21123146086086242,
   "scores": {
     "N-seed42": {
       "axis_scores": {
@@ -215,6 +215,22 @@
       "peak_allocated_bytes": 17350342656,
       "total_generation_seconds": 3585.7175865471363
     },
+    "A2-seed1024": {
+      "axis_scores": {
+        "pope": 0.8748888888888889,
+        "grounding": 0.6745833333333333,
+        "consistency": 0.85625,
+        "mmstar": 0.626
+      },
+      "rows": 16900,
+      "ledger_sha256": "04ac2c93a87f8c41918203c8d6a23fdc8af8473f06f1a190ac2041c11b4b463d",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3335.98348351568
+    },
     "U-seed1024": {
       "axis_scores": {
         "pope": 0.8813333333333333,
@@ -381,6 +397,6 @@
       }
     }
   },
-  "timestamp": "2026-10-17T07:16:11.474119+00:00",
+  "timestamp": "2026-10-17T08:12:38.218655+00:00",
   "eta_limit": "Observed mix estimate; includes neither future output-length drift nor backup time"
 }

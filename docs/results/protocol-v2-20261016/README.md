@@ -1,36 +1,28 @@
-# protocol-v2：补分析与显存预检
+# protocol-v2：独立7B实验与补分析
 
-日期：2026-10-16。本目录为阶段性产物，**不是全部补实验已经完成**。旧 v1 结果仍保留在 [原结果目录](../final-20261016/README.md)。
+更新：北京时间2026-10-17 16:14。本目录仍为阶段性产物，**不是全部补实验完成**。旧v1结果保留在[原结果目录](../final-20261016/README.md)。
 
-**最新授权：独立路线B已启动**，先用本地7B教师/7B学生、四轴各125条、seed42完成最小循环；五项验收全通过才启动15次训练。[执行计划、成本及原ARP八项阻塞估算](route_b_execution_plan.md)。这是独立双CE序列蒸馏，原ARP阶段C仍未放行；下文的原主线状态不表示本轮独立任务仍待授权。
+## 当前独立路线B
 
-最新调度按[四阶段更新](route_b_staged_update.md)：500条最小循环优先，验收后才补齐全池与冻结正式计划；4090已释放，评测改用5090。[9B权重与独立环境](qwen35_9b_infrastructure.md)并行准备，GPU烟测等待7B最小循环通过。
+本地Qwen2.5-VL-7B教师/学生，双CE序列蒸馏。A1=mmstar推理代理，A2=consistency，U=四轴等比例，N=不更新。原ARP阶段C仍未放行，本实验不冒充ARP确认性结论。[锁定计划与八项原ARP阻塞估算](route_b_execution_plan.md)。训练及评测均在5090，4090已释放。
 
-**阶段一已于北京时间2026-10-16 21:48通过五项验收**：[真实报告](route-b-minimal-report.md)、[完整数值/token分布](route-b-minimal-report.json)、[独立检查点与逐题重评分验收](route-b-minimal-independent-verification.json)。A1实际从50恢复至100，首恢复损失0.000149575；三臂训练峰值20.563/22.247/21.341GB，N推理峰值18.690GB。阶段一表格仅用于最小循环；正式15次训练结果见上述最新汇总，完整评测仍待完成。
+- 最小循环五项验收已通过：[报告](route-b-minimal-report.md)、[token分布与数值](route-b-minimal-report.json)、[独立验收](route-b-minimal-independent-verification.json)。A1由第50步新进程恢复至100步；全量3,545条EOS教师缓存已冻结和备份。
+- 正式训练**15/15完成，15,000次真实更新**；适配器、恢复状态及每次优化器步数/张量匹配均已核实。[训练表](route-b-formal-training-report.md)、[原始汇总](route-b-formal-training-results.json)、[损失曲线](route-b-formal-loss-curves.png)。纯更新8,300.61秒，reserved峰值20.319–24.547GB；不含装载、保存、上传和等待。
+- 评测**15/16完成**，每模型16,900提示、13,700原题，逐题重评分和四轴汇总一致：[最新分数与阶段性区间](route-b-formal-evaluation-progress.md)、[数值](route-b-formal-evaluation-progress.json)、[独立核验](route-b-evaluation-aggregate-verification.json)。当前只剩A1-seed1024运行中。
+- 最后几个模型逐个完成后就核对行数/ID并压缩上传。已核对[U-seed1024](7b-U-seed1024-delivery-verification.json)及[A2-seed1024](7b-A2-seed1024-delivery-verification.json)原始输出和分数文件的服务端摘要，已完成模型的原始输出和训练大文件直接存[GitHub Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
+- 最终完整五seed、A1-A2/A1-U/A1-N乘四轴的12项Bonferroni校正区间、PNG/PDF图和结论表仍待最后模型结束；当前阶段性区间不能当作五seed终局结论。
 
-## 2026-10-17 08:21 运行核验
+## 磁盘与9B接力
 
-独立7B路线B已完成 **15/15训练、15,000次真实更新**，全部适配器及恢复状态已备份；每次的优化器步数和导出张量均经独立复核。纯训练步骤合计8,300.61秒（2.31小时），不含装载、检查点、上传和排队；reserved峰值范围20.319–24.547GB。
+已清理22个未用3B权重/已备份旧预检缓存，空闲从11.80GiB提高至20.21GiB；当前约20.20GiB。[清理记录及严格收尾策略](7b_evaluation_safety_update.md)含恢复指针，保留全部本轮恢复状态、7B/9B权重及数据源。将来恢复3B GPU审计前需按保留的revision/SHA重新下载3B权重。
 
-- [完整训练表](route-b-formal-training-report.md)、[逐次原始汇总](route-b-formal-training-results.json)、[损失曲线](route-b-formal-loss-curves.png)。原始完成报告已于北京时间01:04自动上传Release。
-- [正式评测阶段性报告](route-b-formal-evaluation-progress.md)、[含四轴分数和已匹配seed区间的数值](route-b-formal-evaluation-progress.json)：报告快照为08:07，完成7/16模型。08:21实际第8模型A1/seed256约4,600/16,900提示，PID27898存活；余量估计约9小时，按后续实际吞吐调整。阶段性区间只有已完成seed，不能当作5seed终局结论。
-- 9B权重和独立环境已就绪，GPU推理烟测通过，reserved19.002GB；**不是完整训练预检**。122B教师缓存保存1,307/3,545条后HTTP400停止，未重试失败请求。接力已获用户授权，但教师全量缓存、9B完整配置预检和正式执行器仍需完成，不能声称接力已具备无条件启动能力。7B评测不受影响。
+9B[权重和隔离环境](qwen35_9b_infrastructure.md)就绪，GPU推理烟测通过；**完整训练显存预检尚未执行**。122B教师可用缓存3,540条已完成并核验，5条因供应方图片检查按来源整组隔离，原1,307条前缀保持不变且未重复请求；见[HTTP400诊断与隔离](9b_api400_and_queued_preflight.md)。
 
-以下早期状态保留历史语境；当前独立路线B训练已获授权且训练完成，原ARP阶段C仍未放行。
+9B[最小循环](9b_minimal_loop_execution.md)和[15次正式调度](9b_formal_execution.md)已事前登记，但三个等待队列现按用户要求暂停。只有7B全部评测、原始数据与最终图表保存核验通过后才恢复9B预检；9B仍须依次通过显存与五项最小循环门槛，不提前训练、不追加预算。
 
-后续已定位9B的HTTP400为供应商图片内容检查拒绝，按来源整组隔离后续跑；9B训练显存预检已排队等待7B完整评测结束。最终7B报告已追加12项Bonferroni校正区间的生成与验收。见[诊断、隔离规则与预检队列](9b_api400_and_queued_preflight.md)。
+## 原ARP模型分工与门槛
 
-新增[已完成模型的逐题重评分和四轴汇总一致性证明](route-b-evaluation-aggregate-verification.json)：当前覆盖7个完整模型，各16,900提示；其余模型明确列为待完成。最终完成审计还会要求16个模型全部通过，不能用阶段性证明替代全量验收。
-
-**北京时间2026-10-17 09:05更新：正式评测已完成8/16模型**，均通过逐题重评分、精确覆盖和四轴汇总一致性核验；第9模型U/seed256已实际启动。新增评测归档已核对服务器SHA256。见[最新阶段性分数/配对区间](route-b-formal-evaluation-progress.md)与[独立核验](route-b-evaluation-aggregate-verification.json)。区间仍只使用已完成且匹配的seed；最终5seed校正报告待全部16模型结束。
-
-9B后续[最小循环执行器、输入验收及已排队门槛](9b_minimal_loop_execution.md)已登记到GitHub；当前只等待7B评测和9B显存准入，没有提前运行9B训练，也没有启动15次9B正式实验。
-
-9B后续[固定15次正式调度与恢复归档规则](9b_formal_execution.md)也已在学生最小循环结果出现前登记；控制器正在等待五项真实验收，并未开始正式训练。原7B恢复状态保持不变。
-
-## 最新模型分工
-
-教师采用 Qwen3.5-122B-A10B，397B-A17B 为校准对照；两者各 48 条工程校准已完成并保存 Release。用户最新指定审计 API 先使用 qwen3-vl-plus，qwen-vl-plus/max 因当前端点 404 暂缓。详见 [执行映射与限制](../../大模型方案_落地修订_20261016.md)。正式训练未放行。同检查点精度桥接是合并前置条件；精确 3B/7B API 当前均 403，商业审计已在 1,365 条时暂停，详见 [桥接状态与固定阈值](same_checkpoint_precision_bridge.md)。
+教师采用 Qwen3.5-122B-A10B，397B-A17B 为校准对照；两者各 48 条工程校准已完成并保存 Release。用户最新指定审计 API 先使用 qwen3-vl-plus，qwen-vl-plus/max 因当前端点 404 暂缓。详见 [执行映射与限制](../../大模型方案_落地修订_20261016.md)。原ARP主线训练未放行。同检查点精度桥接是合并前置条件；精确 3B/7B API 上次实测均 403且尚无成功桥接证据，商业审计已在 1,365 条时暂停，详见 [桥接状态与固定阈值](same_checkpoint_precision_bridge.md)。
 
 ## 已完成
 
