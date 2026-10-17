@@ -1,0 +1,22 @@
+{
+  "status": "9b_queues_paused_for_7b_delivery",
+  "utc": "2026-10-17T07:06:06.376491+00:00",
+  "reason": "User requires7B all16 evaluation and verified final storage before9B large generation/download",
+  "processes": [
+    {
+      "pid": 30824,
+      "cmdline": "/root/autodl-tmp/arp-venv/bin/python -u tools/preflight_9b_full.py wait ",
+      "children": ""
+    },
+    {
+      "pid": 32212,
+      "cmdline": "/root/autodl-tmp/arp-venv/bin/python -u tools/run_9b_minimal_when_ready.py ",
+      "children": ""
+    },
+    {
+      "pid": 33356,
+      "cmdline": "/root/autodl-tmp/arp-venv/bin/python -u tools/run_9b_formal_when_ready.py wait ",
+      "children": ""
+    }
+  ]
+}

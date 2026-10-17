@@ -1,0 +1,566 @@
+{
+  "status": "completed",
+  "timestamp": "2026-10-17T07:10:15.742903+00:00",
+  "free_before_bytes": 12669853696,
+  "recoverable_bytes": 9028055040,
+  "expected_free_GiB": 20.207752227783203,
+  "files": [
+    {
+      "path": ".model_cache/qwen3b/model-00001-of-00002.safetensors",
+      "bytes": 3982649232,
+      "sha256": "41a8895c164b4d32bae6b302f4603fcbc1797f32dafa45c7e9bcda23c6755df8",
+      "allocated_bytes": 3982651392,
+      "reason": "Unused public3B weight cache; all7B/9B weights retained",
+      "restore": {
+        "repository": "Qwen/Qwen2.5-VL-3B-Instruct",
+        "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+        "file": "model-00001-of-00002.safetensors",
+        "verify_sha256": "41a8895c164b4d32bae6b302f4603fcbc1797f32dafa45c7e9bcda23c6755df8",
+        "source": "modelscope; content SHA256 matched pinned HuggingFace weight"
+      }
+    },
+    {
+      "path": ".model_cache/qwen3b/model-00002-of-00002.safetensors",
+      "bytes": 3526688744,
+      "sha256": "365531ff8752420e89dee707b79d021fb2d6e25abafe486f080555a4fe6972e4",
+      "allocated_bytes": 3526688768,
+      "reason": "Unused public3B weight cache; all7B/9B weights retained",
+      "restore": {
+        "repository": "Qwen/Qwen2.5-VL-3B-Instruct",
+        "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+        "file": "model-00002-of-00002.safetensors",
+        "verify_sha256": "365531ff8752420e89dee707b79d021fb2d6e25abafe486f080555a4fe6972e4",
+        "source": "modelscope; content SHA256 matched pinned HuggingFace weight"
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-5090-v1/adapter-after-100.pt",
+      "bytes": 161618363,
+      "sha256": "7f06aa5f34ed07fd71e7a3075ef7373b1fa6c36b0bfdbff0a220193a747e2c88",
+      "allocated_bytes": 161619968,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T124329Z-inventory.json",
+            "bytes": 4883,
+            "sha256": "88e4d0615c6d5bd01f916d8402f7a7427f692aff086de93d6f13e957b9a0f282",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T124329Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T124329Z.tar.gz",
+            "bytes": 149835514,
+            "sha256": "68bf744b4f22f0f1b38cca4ed7119593a823f48c7bb54f3f60581216faa91e3f",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T124329Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2/calibration/p14-full-7b-5090-v1/adapter-after-100.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-v2/adapter-after-100.pt",
+      "bytes": 161618363,
+      "sha256": "e057d1806224c1967aaa0746095c890ae70ef0daeca42751561347e5f09f9295",
+      "allocated_bytes": 161619968,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T114537Z-inventory.json",
+            "bytes": 4800,
+            "sha256": "3ed3e00d33d27455ff6b17af80e9632b483d35d1256f1a13088780aa8b863276",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T114537Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T114537Z.tar.gz",
+            "bytes": 149839722,
+            "sha256": "037de96aedbb76983852a3b4475cef533de6ebec630a724fcd7645477f90ee9b",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T114537Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2/calibration/p14-full-7b-v2/adapter-after-100.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-7b/adapter/adapter_model.safetensors",
+      "bytes": 40400200,
+      "sha256": "c4e416a5870cb4f5ce15f947091a0f260b29fd1e37fcd53e8a9d55a48f9416ba",
+      "allocated_bytes": 40402944,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-7b/resume.pt",
+      "bytes": 121378099,
+      "sha256": "041dfe2efb65a3a47d8755f89cf1b091d72f69d1568d07bfdf46536dcca49b8b",
+      "allocated_bytes": 121380864,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/adapter/adapter_model.safetensors",
+      "bytes": 40400200,
+      "sha256": "c4e416a5870cb4f5ce15f947091a0f260b29fd1e37fcd53e8a9d55a48f9416ba",
+      "allocated_bytes": 40402944,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/resume.pt",
+      "bytes": 121378099,
+      "sha256": "041dfe2efb65a3a47d8755f89cf1b091d72f69d1568d07bfdf46536dcca49b8b",
+      "allocated_bytes": 121380864,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-3b/adapter/adapter_model.safetensors",
+      "bytes": 29529752,
+      "sha256": "de6e28d569386e0d168cd5886c668683fb3a8fc598d3fda9d1f88937df157c37",
+      "allocated_bytes": 29532160,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-3b/resume.pt",
+      "bytes": 88817997,
+      "sha256": "866bbc0106c54464885166d29c0f55a9c8a4106f34cfc8f7645e2089901e7682",
+      "allocated_bytes": 88821760,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z-inventory.json",
+            "bytes": 8240,
+            "sha256": "0163ec88b2a89f79e6ce7f81a14205e056c263a10321986cc24959a1a1e289c4",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T040247Z.tar.gz",
+            "bytes": 109442938,
+            "sha256": "765c5ebe432265f2d1a2f7cbd3d708452d9ea725a730f52ac46e604cd572e882",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T040247Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/resume.pt",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-7b/adapter/adapter_model.safetensors",
+      "bytes": 40400200,
+      "sha256": "c4e416a5870cb4f5ce15f947091a0f260b29fd1e37fcd53e8a9d55a48f9416ba",
+      "allocated_bytes": 40402944,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/adapter/adapter_model.safetensors",
+        "server_digest_verified": true
+      }
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-7b/resume.pt",
+      "bytes": 121378099,
+      "sha256": "041dfe2efb65a3a47d8755f89cf1b091d72f69d1568d07bfdf46536dcca49b8b",
+      "allocated_bytes": 121380864,
+      "reason": "Old preflight binary or duplicate snapshot; fresh server digest verified",
+      "restore": {
+        "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+        "assets": [
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z-inventory.json",
+            "bytes": 12560,
+            "sha256": "1fce124cc9eae78e53c43b718b4e58fe3e9fb1c79fd2a478b6f9df5c7bc42cfa",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z-inventory.json"
+          },
+          {
+            "name": "arp-protocol-v2-20261016-20261016T041703Z.tar.gz",
+            "bytes": 259160373,
+            "sha256": "b1d8128d60b865ec572b8b8e36dea179de3e959ecfd75e0e55dcf7a95b83b803",
+            "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261016T041703Z.tar.gz"
+          }
+        ],
+        "archive_member": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/resume.pt",
+        "server_digest_verified": true
+      }
+    }
+  ],
+  "kept": [
+    "7B/9B weights",
+    "all route-B checkpoints/adapters/caches/raw evaluations",
+    "all source datasets and manifests",
+    "old preflight metadata and SHA records"
+  ],
+  "removed_files": 22,
+  "free_after_bytes": 21697900544,
+  "free_after_GiB": 20.207744598388672
+}

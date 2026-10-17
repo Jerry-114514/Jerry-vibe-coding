@@ -1,6 +1,6 @@
 {
   "status": "completed_subset_verified",
-  "timestamp": "2026-10-17T06:23:51.234184+00:00",
+  "timestamp": "2026-10-17T07:16:11.763994+00:00",
   "verified_models": [
     {
       "model": "N-seed42",
@@ -170,12 +170,24 @@
       },
       "ledger_sha256": "19f4ac5f492e7e18491670382f6df8618041d73a914835b95e28e1175b0a3703",
       "score_marker_sha256": "f901e4b9d6715a3da6dd00de9c9b5d2a74c98c386e45bc961d6e5aa7f0c56c7c"
+    },
+    {
+      "model": "U-seed1024",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.8813333333333333,
+        "grounding": 0.7725,
+        "consistency": 0.82,
+        "mmstar": 0.604
+      },
+      "ledger_sha256": "6ba2e883492112ea12983065cfef8f635f9c78643a108cdfc711b980e3a38cb2",
+      "score_marker_sha256": "c145f537f86b92cb19591f6ad14bfb816efaf4bf819c5ade1a5a4e67ecc3093e"
     }
   ],
   "pending_models": [
     "A1-seed1024",
-    "A2-seed1024",
-    "U-seed1024"
+    "A2-seed1024"
   ],
   "expected_models": 16,
   "scope": "Raw output rescore, exact coverage and four-axis aggregate equality",
