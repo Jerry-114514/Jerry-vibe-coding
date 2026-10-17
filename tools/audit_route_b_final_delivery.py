@@ -24,6 +24,7 @@ def requirements():
         'minimal-independent-verification.json', 'minimal-report.json',
         'full-eos-cache-independent-verification.json',
         'eval-input-independent-preflight.json', 'dataset-delivery-verification.json',
+        'evaluation-aggregate-independent-verification.json',
         'requested-report-plan.json', 'stage3-complete.json',
         'formal-independent-verification.json', 'formal-paired-analysis.json',
         'objective-content-verification.json')]

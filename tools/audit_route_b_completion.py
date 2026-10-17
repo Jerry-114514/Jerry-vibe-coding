@@ -46,6 +46,8 @@ def verify():
         for arm in ('A1','A2','U'):
             training_audit(arm,seed)
     verify_outputs('formal')
+    from audit_route_b_evaluation_scores import audit as verify_evaluation_aggregates
+    verify_evaluation_aggregates(require_all=True)
     expected={f'{a}-seed{s}' for s in SEEDS for a in ('A1','A2','U')}|{'N-seed42'}
     actual={p.name for p in (OUT/'formal').iterdir() if p.is_dir()}
     assert actual==expected
