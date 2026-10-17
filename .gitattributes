@@ -19,6 +19,11 @@ tools/verify_9b_student_outputs.py -text
 tools/analyze_9b_formal.py -text
 tools/run_9b_formal_when_ready.py -text
 tools/diagnose_9b_coordinates.py -text
+tools/evaluate_9b_native.py -text
+tools/analyze_9b_native.py -text
+tools/run_9b_native_evaluation.py -text
+tools/continue_9b_training_only.py -text
+tools/handoff_9b_native_controller.py -text
 *.pdf binary
 tools/vendor/** -text
 # Preserve downloaded final evidence bytes against local-copy-manifest SHA256.
