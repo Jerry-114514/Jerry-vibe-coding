@@ -1,11 +1,11 @@
 {
   "status": "partial",
-  "completed_models": 7,
+  "completed_models": 8,
   "expected_models": 16,
-  "processed_prompts": 118300,
-  "remaining_estimated_hours": 8.872080877995385,
-  "remaining_estimated_CNY": 23.954618370587543,
-  "mean_seconds_per_prompt": 0.20999007995255348,
+  "processed_prompts": 135200,
+  "remaining_estimated_hours": 7.840640771892956,
+  "remaining_estimated_CNY": 21.169730084110984,
+  "mean_seconds_per_prompt": 0.20877445842318523,
   "scores": {
     "N-seed42": {
       "axis_scores": {
@@ -118,6 +118,22 @@
       "peak_reserved_bytes": 20122173440,
       "peak_allocated_bytes": 17350342656,
       "total_generation_seconds": 4120.674958970398
+    },
+    "A1-seed256": {
+      "axis_scores": {
+        "pope": 0.8752222222222222,
+        "grounding": 0.67625,
+        "consistency": 0.85,
+        "mmstar": 0.61
+      },
+      "rows": 16900,
+      "ledger_sha256": "550a8d9ac2aff064d0e6c9e606ca405aa1538e2580f8182ac8a25f9572859540",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3384.4803204275668
     }
   },
   "paired_contrasts": {
@@ -219,43 +235,44 @@
       "status": "available",
       "matched_seeds": [
         42,
-        137
+        137,
+        256
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": 0.00022222222222222223,
+          "difference": 0.0,
           "ci95": [
-            -0.0032222222222222222,
-            0.0036666666666666666
+            -0.0032962962962962967,
+            0.0032981481481481377
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.003958333333333334,
+          "difference": -0.003194444444444444,
           "ci95": [
-            -0.013132259547233812,
-            0.005027812689103009
+            -0.012330708409672056,
+            0.005743062477670367
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": 0.010625,
+          "difference": 0.01,
           "ci95": [
-            -0.010013775080485827,
-            0.03241996444593883
+            -0.007908777332243901,
+            0.028291359163591632
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": -0.009333333333333334,
+          "difference": -0.012666666666666666,
           "ci95": [
-            -0.029666666666666668,
-            0.010674999999999954
+            -0.03155555555555556,
+            0.005999999999999999
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -263,6 +280,6 @@
       }
     }
   },
-  "timestamp": "2026-10-17T00:07:00.055768+00:00",
+  "timestamp": "2026-10-17T01:04:06.031184+00:00",
   "eta_limit": "Observed mix estimate; includes neither future output-length drift nor backup time"
 }

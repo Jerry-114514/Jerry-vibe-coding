@@ -22,6 +22,8 @@
 
 新增[已完成模型的逐题重评分和四轴汇总一致性证明](route-b-evaluation-aggregate-verification.json)：当前覆盖7个完整模型，各16,900提示；其余模型明确列为待完成。最终完成审计还会要求16个模型全部通过，不能用阶段性证明替代全量验收。
 
+**北京时间2026-10-17 09:05更新：正式评测已完成8/16模型**，均通过逐题重评分、精确覆盖和四轴汇总一致性核验；第9模型U/seed256已实际启动。新增评测归档已核对服务器SHA256。见[最新阶段性分数/配对区间](route-b-formal-evaluation-progress.md)与[独立核验](route-b-evaluation-aggregate-verification.json)。区间仍只使用已完成且匹配的seed；最终5seed校正报告待全部16模型结束。
+
 ## 最新模型分工
 
 教师采用 Qwen3.5-122B-A10B，397B-A17B 为校准对照；两者各 48 条工程校准已完成并保存 Release。用户最新指定审计 API 先使用 qwen3-vl-plus，qwen-vl-plus/max 因当前端点 404 暂缓。详见 [执行映射与限制](../../大模型方案_落地修订_20261016.md)。正式训练未放行。同检查点精度桥接是合并前置条件；精确 3B/7B API 当前均 403，商业审计已在 1,365 条时暂停，详见 [桥接状态与固定阈值](same_checkpoint_precision_bridge.md)。

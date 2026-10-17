@@ -1,6 +1,6 @@
 {
   "status": "completed_subset_verified",
-  "timestamp": "2026-10-17T00:38:54.661435+00:00",
+  "timestamp": "2026-10-17T01:05:10.409115+00:00",
   "verified_models": [
     {
       "model": "N-seed42",
@@ -92,10 +92,22 @@
       },
       "ledger_sha256": "c1643e5a4b72574996b2625033efcdf29153fc55565a4b5c982b4101c9937953",
       "score_marker_sha256": "8d935a1d6f9fdd697b94ccaa03df6aefbb3fd91c8201d5e6cdb075bc3888b570"
+    },
+    {
+      "model": "A1-seed256",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.8752222222222222,
+        "grounding": 0.67625,
+        "consistency": 0.85,
+        "mmstar": 0.61
+      },
+      "ledger_sha256": "550a8d9ac2aff064d0e6c9e606ca405aa1538e2580f8182ac8a25f9572859540",
+      "score_marker_sha256": "01ab7751c83fbdc1be11689ace6843552487661378dac509331e7bdc7d0a2e77"
     }
   ],
   "pending_models": [
-    "A1-seed256",
     "A2-seed256",
     "U-seed256",
     "A1-seed512",
