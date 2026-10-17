@@ -40,7 +40,7 @@ def run(token):
     HERE.mkdir(exist_ok=True)
     with (HERE/'watchdog.lock').open('w') as handle:
         fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        while not (OUT/'native-evaluation-v2/finalization/complete.json').exists():
+        while not (OUT/'processor-pixel-evaluation-v3/finalization/complete.json').exists():
             marker=OUT/'training-only-stopped.json'
             if marker.exists() and not script_live('continue_9b_training_only.py') and not script_live('route_b_9b_loop.py'):
                 record=read_json(marker)
@@ -48,7 +48,7 @@ def run(token):
                 if transient(record) and datetime.now(timezone.utc)<datetime.fromisoformat(budget['end_utc']):
                     restart('continue_9b_training_only.py',marker,token)
                 else:write_json(HERE/'attention.json',{'unhandled_training_stop':record,'never_retries_validation_or_oom':True})
-            native=OUT/'native-evaluation-v2'
+            native=OUT/'processor-pixel-evaluation-v3'
             marker=native/'stopped.json'
             if marker.exists() and not script_live('run_9b_native_evaluation.py') and not (OUT/'training-only-stopped.json').exists():
                 record=read_json(marker)

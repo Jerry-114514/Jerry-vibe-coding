@@ -95,12 +95,12 @@ def minimum_report():
            'N_grounding_sanity_threshold':.80,'original_pixel_outputs_retained':True,
            'scope':'Original five engineering checks plus user-amended native-coordinate measurement calibration'}
     write_json(NATIVE/'minimal-acceptance.json',proof)
-    lines=['# 9B最小循环五项验收与坐标校准','','旧工程循环的五项检查已通过；本报告补充用户要求的显式0–1000测量校准。三臂各100步训练不重复，N不训练。每模型仅新生成100条定位题，其余700条未变提示的原始输出按摘要复用。','','| 验收 | 结果 |','|---|---|']
+    lines=['# 9B最小循环五项验收与坐标校准','','旧工程循环的五项检查已通过；本报告补充用户要求的处理器像素测量校准。三臂各100步训练不重复，N不训练。每模型仅新生成100条定位题，其余700条未变提示的原始输出按摘要复用。','','| 验收 | 结果 |','|---|---|']
     labels=['教师缓存/学生输入无截断','双CE有限、梯度非零','适配器保存并在新进程加载','四轴输出及原始输出重评分一致','A1新进程从50步恢复到100步']
     for label in labels:lines.append(f'| {label} | 通过；旧工程证据与本次校准分别保留 |')
     lines += ['',f'恢复后首损失：`{legacy["first_resumed_loss"]:.12g}`。N定位校准为{100*scores["N"]["grounding"]:.1f}%，解析失败{sum(r["parse_fail_flag"] for r in ground)}/100。','','| 模型 | pope | grounding | consistency | mmstar |','|---|---:|---:|---:|---:|']
     for arm,s in scores.items():lines.append('| '+arm+' | '+' | '.join(f'{100*s[a]:.2f}%' for a in AXES)+' |')
-    lines += ['','## 测量校准','','所有模型的定位问题明确要求输出0–1000，x乘原宽/1000、y乘原高/1000后与原像素标注计算IoU≥0.5。没有按答案猜坐标系，没有对不同训练臂采用不同解析器。原始文本与换算框分别保存。旧U曾学会像素输出，因此不能对旧U输出直接统一缩放后冒充正确评测。','','本次400条新增定位推理由用户要求的校准单独登记，最多15分钟GPU活动时间；不是追加训练预算，也不冒充旧两小时工程预检的一部分。80%为新预测前固定的N工程合理性检查，低于阈值即停，不为达到分数调提示或重试。原ARP门槛仍未放行。']
+    lines += ['','## 测量校准','','所有模型的定位问题明确要求输出处理器缩放后的像素，x乘原宽/处理器宽、y乘原高/处理器高后与原像素标注计算IoU≥0.5。没有按答案猜坐标系，没有对不同训练臂采用不同解析器。原始文本与换算框分别保存。旧U曾学会像素输出，因此不能对旧U输出直接统一缩放后冒充正确评测。','','本次400条新增定位推理由用户要求的校准单独登记，最多15分钟GPU活动时间；不是追加训练预算，也不冒充旧两小时工程预检的一部分。80%为新预测前固定的N工程合理性检查，低于阈值即停，不为达到分数调提示或重试。原ARP门槛仍未放行。']
     (NATIVE/'minimal-report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return proof
 
@@ -120,12 +120,12 @@ def run(token):
         fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
         subprocess.run([str(ENV),'-u',str(ROOT/'tools/evaluate_9b_native.py'),'prepare'],cwd=ROOT,check=True,timeout=1800)
         from publish_artifacts import publish
-        registration=NATIVE/'registration-user80pct-cloud-recovery';registration.mkdir(exist_ok=True)
+        registration=NATIVE/'registration-common-processor-pixels';registration.mkdir(exist_ok=True)
         for name in ('protocol.json','minimal-manifest.jsonl','formal-manifest.jsonl'):
             shutil.copyfile(NATIVE/name,registration/name)
-        for name in ('evaluate_9b_native.py','run_9b_native_evaluation.py','analyze_9b_native.py','resilient_9b_delivery.py','verify_9b_recovery_availability.py'):
+        for name in read_json(NATIVE/'protocol.json')['source_sha256']:
             shutil.copyfile(ROOT/'tools'/name,registration/name)
-        shutil.copyfile(NATIVE/'night-mode-amendment.json',registration/'night-mode-amendment.json')
+        shutil.copyfile(NATIVE/'processor-dimensions.json',registration/'processor-dimensions.json')
         if not (registration/'github-storage.json').exists():network_retry(lambda:publish(registration,'arp-9b-122b-20261017',token=token),'register-user80pct')
         while not (OUT/'formal-training-complete.json').exists() or live_training_controller():
             assert not (OUT/'training-only-stopped.json').exists(),'Training failed; no calibration/evaluation launch'
@@ -140,6 +140,13 @@ def run(token):
             child([str(ENV),'-u',str(ROOT/'tools/evaluate_9b_native.py'),'calibrate'],token)
             minimum_report()
             metadata_backup(NATIVE,token)
+        seven=ROOT/'runs/7b-processor-pixel-audit-20261017'
+        assert sha(seven/'protocol.json')==read_json(NATIVE/'protocol.json')['required7b_audit_protocol_sha256']
+        while not (seven/'complete.json').exists():
+            assert not (seven/'stopped.json').exists(),'7B common-contract audit stopped; inspect before9B full measurement'
+            write_json(NATIVE/'queue-status.json',{'phase':'waiting7b_common_contract_grounding_audit','pid':os.getpid(),'gpu_used':False})
+            report_tick(token);time.sleep(45)
+        assert read_json(seven/'complete.json')['status']=='all16_processor_pixel_grounding_verified_and_delivered'
         order=read_json(OUT/'formal-plan.json')['run_order']
         models=[('N',42)]+[(j['arm'],j['seed']) for j in order]
         for arm,seed in models:

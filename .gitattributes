@@ -51,3 +51,11 @@ tools/audit_7b_grounding_contracts.py -text
 docs/results/protocol-v2-20261016/7b-grounding-cpu-audit.json -text
 docs/results/protocol-v2-20261016/7b-grounding-cpu-report.md -text
 docs/results/protocol-v2-20261016/7b-grounding-audit-protocol.json -text
+tools/processor_pixel_contract.py -text
+tools/run_7b_processor_grounding.py -text
+docs/results/protocol-v2-20261016/7b-processor-pixel-protocol.json -text
+docs/results/protocol-v2-20261016/7b-processor-pixel-registration.json -text
+docs/results/protocol-v2-20261016/9b-processor-pixel-protocol.json -text
+docs/results/protocol-v2-20261016/9b-processor-pixel-registration.json -text
+docs/results/protocol-v2-20261016/common-processor-registration-verification.json -text
+docs/results/protocol-v2-20261016/diskguard-live-verification-20261017.json -text

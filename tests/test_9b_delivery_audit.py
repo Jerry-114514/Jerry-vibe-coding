@@ -14,7 +14,7 @@ class DeliveryAuditTests(unittest.TestCase):
     def test_native_eval_coverage_keeps_training_and_legacy_minimum_separate(self):
         temporary=ROOT/'tmp';temporary.mkdir(exist_ok=True)
         with TemporaryDirectory(dir=temporary) as name:
-            out=Path(name);native=out/'native-evaluation-v2'
+            out=Path(name);native=out/'processor-pixel-evaluation-v3'
             write_json(native/'protocol.json',{'synthetic':True})
             with patch.object(audit,'OUT',out):required=audit.requirements()
             self.assertIn(out/'formal/A1-seed42/resume.pt',required)

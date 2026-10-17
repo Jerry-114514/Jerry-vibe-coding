@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "timestamp": "2026-10-17T12:39:33.849723+00:00",
+  "7b": {
+    "status": "passed",
+    "verified_assets": 2
+  },
+  "9b": {
+    "status": "passed",
+    "server_assets": 2,
+    "timestamp": "2026-10-17T12:39:33.847749+00:00"
+  },
+  "7b_protocol_sha256": "2b548e57ba5d55dc4b10756586d279508971c596c03e20b7a10181ad271a9147",
+  "9b_protocol_sha256": "9238274aa336d3b3255e2d89e5d709d8798bd818e9ddb7ce957659e9860bcf65",
+  "same_mapping": "Explicit processor pixels x*original_width/processor_width,y*original_height/processor_height",
+  "new_common_contract_predictions_before_registration": 0
+}

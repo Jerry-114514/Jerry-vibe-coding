@@ -27,6 +27,8 @@ def ready():
 
 def finalize(token):
     assert ready()['ready']
+    from evaluate_9b_native import prepare
+    prepare()
     _,evaluations=verify_formal(return_evaluations=True)
     from verify_9b_teacher_delivery import verify as teacher_audit
     teacher=teacher_audit(token)
@@ -54,7 +56,7 @@ def finalize(token):
              'finalizer_source_sha256':sha(Path(__file__)),'validator_source_sha256':sha(ROOT/'tools/finalize_9b_delivery.py'),
              'statistics_sha256':sha(NATIVE/'formal-report/evaluation-results.json')}
     write_json(proof/'content-verification.json',content)
-    text=summary(data,conclusions)+'\n## 测量校准\n\n本版本定位提示对所有模型明确指定0–1000，按原图宽高统一换算为像素，再计算IoU。N小样本校准与旧工程五项验收分别保存；旧U已学会像素输出，故不能对旧输出盲目统一缩放。旧分数和本版本分数不混合。修订由用户在旧最小循环后要求，不冒充训练前登记。\n'
+    text=summary(data,conclusions)+'\n## 测量校准\n\n本版本定位提示对所有模型明确指定处理器像素及实际宽高，按原图/处理器宽高比例换算为原图像素，再计算IoU。N小样本校准与旧工程五项验收分别保存；旧U已学会像素输出，故不能对旧输出盲目统一缩放。旧分数和本版本分数不混合。修订由用户在旧最小循环后要求，不冒充训练前登记。\n'
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt

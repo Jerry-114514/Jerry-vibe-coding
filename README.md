@@ -6,6 +6,8 @@
 
 **7B定位测量补充：** [坐标审计与补救方案](docs/results/protocol-v2-20261016/7b_grounding_recovery_plan.md)。CPU审计发现原图/处理器像素尺度混杂，原U定位增益暂不能解释为纯能力提升；原始分数保留，独立定位复测已登记。
 
+**当前执行：** [7B/9B共同处理器像素协议](docs/results/protocol-v2-20261016/common_processor_pixel_execution.md)。两代统一明确处理器宽高后换回原图计分，替代尚未生成预测的千分比方案；7B定位全16模型复测后进入9B全量评测。
+
 ## 查看实验结果
 
 **新增补实验：** [protocol-v2总览与9B进展](docs/results/protocol-v2-20261016/README.md) · [必要原始产物Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。独立7B五seed实验已由用户单独授权并完成；原ARP主线及独立确认仍受其门槛约束。

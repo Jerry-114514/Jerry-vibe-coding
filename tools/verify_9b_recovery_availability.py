@@ -28,5 +28,5 @@ def verify(token):
             'policy':'Latest user disk policy permits completed archived recovery; protect active local state. Evaluation needs adapters, not optimizer downloads.'}
     # Preserve the established evidence pathname, explicitly recording that
     # availability was verified rather than claiming any new restoration.
-    write_json(OUT/'native-evaluation-v2/recovery-restoration.json',result)
+    write_json(OUT/'processor-pixel-evaluation-v3/recovery-restoration.json',result)
     return result

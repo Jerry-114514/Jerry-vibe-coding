@@ -51,8 +51,16 @@ def collect():
         eta+=(16*counts[axis]-processed[axis])*sum(sample)/len(sample)
     calibration=read_json(NATIVE/'minimal-acceptance.json') if (NATIVE/'minimal-acceptance.json').exists() else None
     stops=[str(p.relative_to(OUT)) for p in OUT.glob('*stopped.json')]
-    if (NATIVE/'stopped.json').exists():stops.append('native-evaluation-v2/stopped.json')
+    if (NATIVE/'stopped.json').exists():stops.append('processor-pixel-evaluation-v3/stopped.json')
+    seven=OUT.parents[1]/'7b-processor-pixel-audit-20261017'
+    seven_scores={};seven_rows=0;seven_seconds=0
+    for folder in (seven/'models').glob('*'):
+        ledger=rows(folder/'eval.jsonl');seven_rows+=len(ledger);seven_seconds+=sum(r['seconds'] for r in ledger)
+        if (folder/'scores.json').exists():seven_scores[folder.name]=read_json(folder/'scores.json')['accuracy']
     return {'timestamp_utc':datetime.now(timezone.utc).isoformat(),'training':training,'training_complete':sum(r['complete'] for r in training),
+            'seven_processor_audit':{'complete_models':len(seven_scores),'processed_rows':seven_rows,'scores':seven_scores,
+                 'remaining_pure_hours':(38400-seven_rows)*seven_seconds/seven_rows/3600 if seven_rows else None,
+                 'stopped':read_json(seven/'stopped.json') if (seven/'stopped.json').exists() else None},
             'updates':updates,'remaining_pure_training_hours':(15000-updates)*seconds/updates/3600 if updates else None,
             'native_calibration_status':calibration['status'] if calibration else 'pending',
             'native_calibration_scores':calibration['scores'] if calibration else None,
@@ -64,7 +72,7 @@ def collect():
 
 def render(data):
     text=['# 9B夜间实验简报','',f'采集UTC时间：{data["timestamp_utc"]}（北京时间加8小时）。', '',
-          f'固定训练完成{data["training_complete"]}/15，真实更新{data["updates"]}/15,000；原生坐标最小循环状态：{data["native_calibration_status"]}。正式评测完成{data["formal_evaluations_complete"]}/16，已生成{data["processed_prompts"]}/270,400提示。磁盘空闲{data["free_GiB"]:.2f}GiB。', '',
+          f'固定训练完成{data["training_complete"]}/15，真实更新{data["updates"]}/15,000；处理器像素坐标最小循环状态：{data["native_calibration_status"]}。正式评测完成{data["formal_evaluations_complete"]}/16，已生成{data["processed_prompts"]}/270,400提示。磁盘空闲{data["free_GiB"]:.2f}GiB。', '',
           '| 训练 | 已更新 | 末步双CE | reserved GB | 恢复状态 |','|---|---:|---:|---:|---|']
     for row in data['training']:
         loss=f'{row["last_loss"]:.6g}' if row['last_loss'] is not None else '待运行'
@@ -73,9 +81,14 @@ def render(data):
     text += ['','| 已完成正式评测模型 | pope | grounding | consistency | mmstar |','|---|---:|---:|---:|---:|']
     for model,scores in data['scores'].items():text.append('| '+model+' | '+' | '.join(f'{100*scores[a]:.3f}%' for a in AXES)+' |')
     if not data['scores']:text += ['','尚无完整正式评测，不能用最小循环分数代替正式结果。']
+    seven=data['seven_processor_audit']
+    text += ['',f'7B统一处理器像素复测：{seven["complete_models"]}/16模型、{seven["processed_rows"]}/38,400条；完成后9B全量评测开始。',
+             '7B已完成模型定位分：'+json.dumps(seven['scores'],ensure_ascii=False)]
+    if seven['remaining_pure_hours'] is not None:text += [f'7B剩余纯生成约{seven["remaining_pure_hours"]:.2f}小时，另加装载、校验及上传。']
+    if seven['stopped']:text += ['7B审计停止记录：'+json.dumps(seven['stopped'],ensure_ascii=False)]
     eta=data['remaining_generation_hours']
     text += ['',f'剩余纯生成预计{eta:.2f}小时；不含装载/上传/校验，未来回答长度变化会改变估计。' if eta is not None else '四轴时延样本尚不足，正式评测剩余时间暂不可靠，不给固定完成时刻。', '',
-             '## 五项验收与测量校准','','正式训练的旧工程五项验收与新原生坐标校准分开保存。坐标校准后才开始本版本正式评测；100条N定位题先检查合理性，再补充三个适配器的定位测量。五项最终报告见同包minimal-report.md（存在时）。原ARP阶段C保持未放行。']
+             '## 五项验收与测量校准','','正式训练的旧工程五项验收与新处理器像素坐标校准分开保存。坐标校准后才开始本版本正式评测；100条N定位题先检查合理性，再补充三个适配器的定位测量。五项最终报告见同包minimal-report.md（存在时）。原ARP阶段C保持未放行。']
     if data['stopped_markers']:text += ['', '需要检查的停止记录：'+', '.join(data['stopped_markers'])]
     return '\n'.join(text)+'\n'
 

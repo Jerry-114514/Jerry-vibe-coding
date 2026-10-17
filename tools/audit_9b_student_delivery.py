@@ -34,7 +34,7 @@ def canonical(path):
 
 
 def requirements():
-    native = OUT / 'native-evaluation-v2'
+    native = OUT / 'processor-pixel-evaluation-v3'
     calibrated = (native / 'protocol.json').exists()
     evaluation_root = native if calibrated else OUT
     paths = [ROOT / 'configs/route_b_9b_5090.frozen.json']
@@ -68,7 +68,7 @@ def requirements():
         eval_root = evaluation_root if phase == 'formal' else OUT
         paths += [eval_root / phase / 'N-seed42' / name for name in ('scores.json', 'eval.jsonl', 'eval.meta.json')]
     if calibrated:
-        paths += [native / name for name in ('protocol.json', 'minimal-manifest.jsonl', 'formal-manifest.jsonl',
+        paths += [native / name for name in ('protocol.json', 'processor-dimensions.json', 'minimal-manifest.jsonl', 'formal-manifest.jsonl',
                   'minimal-acceptance.json', 'minimal-report.md', 'training-health.json',
                   'calibration-active-wall-budget.json', 'recovery-restoration.json')]
         for arm in ('N', 'A1', 'A2', 'U'):

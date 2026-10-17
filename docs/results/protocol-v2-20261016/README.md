@@ -12,6 +12,8 @@
 
 **定位结论须结合[坐标审计与补救方案](7b_grounding_recovery_plan.md)。** 全16模型CPU审计发现原图/处理器像素尺度混杂；旧U定位增益不能直接解释为能力提升，新增固定契约复测另行登记。
 
+**最新批准并执行：[7B/9B共同处理器像素协议](common_processor_pixel_execution.md)。** 新千分比队列尚无预测，现已改为两代统一的处理器像素→原图映射；7B单轴复测增加直接U−N区间，独立4项校正族，9B原12项比较不变。
+
 本地Qwen2.5-VL-7B教师/学生，双CE序列蒸馏。A1=mmstar推理代理，A2=consistency，U=四轴等比例，N=不更新。原ARP阶段C仍未放行，本实验不冒充ARP确认性结论。[锁定计划与八项原ARP阻塞估算](route_b_execution_plan.md)。训练及评测均在5090，4090已释放。
 
 - 最小循环五项验收已通过：[报告](route-b-minimal-report.md)、[token分布与数值](route-b-minimal-report.json)、[独立验收](route-b-minimal-independent-verification.json)。A1由第50步新进程恢复至100步；全量3,545条EOS教师缓存已冻结和备份。

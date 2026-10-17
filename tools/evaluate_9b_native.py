@@ -1,4 +1,4 @@
-"""User-amended9B evaluation: explicit normalized1000 prompt, pixel IoU.
+"""User-amended9B evaluation: explicit processor pixels mapped to original.
 
 Old pixel outputs remain immutable. Minimum calibration generates only100
 grounding prompts per model; the other700 unchanged outputs are reused.
@@ -17,8 +17,9 @@ from experiment_common import ROOT, AXES, read_json, read_rows, write_json, writ
 from scoring import box_iou
 from route_b_9b_loop import OUT, BASE, SEEDS, MINIMAL_MANIFEST, freeze
 
-NATIVE = OUT / 'native-evaluation-v2'
-SOURCES = ('evaluate_9b_native.py', 'run_9b_native_evaluation.py', 'analyze_9b_native.py', 'resilient_9b_delivery.py', 'verify_9b_recovery_availability.py')
+NATIVE = OUT / 'processor-pixel-evaluation-v3'
+SOURCES = ('evaluate_9b_native.py', 'run_9b_native_evaluation.py', 'analyze_9b_native.py', 'resilient_9b_delivery.py', 'verify_9b_recovery_availability.py', 'processor_pixel_contract.py')
+from processor_pixel_contract import dimensions,item_with_contract,score as score_processor,assert_runtime_grid
 
 
 def native_item(item):
@@ -45,6 +46,7 @@ def prepare():
     path = NATIVE / 'protocol.json'
     if path.exists():
         plan = read_json(path)
+        assert sha(NATIVE/'processor-dimensions.json')==plan['processor_dimensions_sha256']
         for name, digest in plan['source_sha256'].items():
             assert sha(ROOT / 'tools' / name) == digest
         for phase, entry in plan['inputs'].items():
@@ -58,26 +60,36 @@ def prepare():
     __import__('torch').set_num_threads(2)
     processor = AutoProcessor.from_pretrained(str(shared.MODEL), local_files_only=True)
     NATIVE.mkdir(parents=True, exist_ok=True)
-    inputs = {}
+    inputs = {};sizes={}
     for phase, source, expected in [('minimal', MINIMAL_MANIFEST, 800), ('formal', ROOT / 'data/manifest.jsonl', 16900)]:
         original = read_rows(source)
         assert len(original) == len({r['item_id'] for r in original}) == expected
-        native = [native_item(r) for r in original]
+        native=[]
+        for item in original:
+            if item['axis']=='grounding':
+                if item['image_path'] not in sizes:sizes[item['image_path']]=dimensions(processor,item,'qwen9b')
+                native.append(item_with_contract(item,sizes[item['image_path']]))
+            else:native.append(dict(item))
         lengths = []
         for row in native:
             if row['axis'] == 'grounding':
                 batch = public_prompt_inputs(processor, row)
+                assert_runtime_grid(batch,row)
                 lengths.append(int(batch['input_ids'].shape[1]))
         target = NATIVE / (phase+'-manifest.jsonl')
         write_rows(target, native)
         inputs[phase] = {'rows': expected, 'original_sha256': sha(source), 'native_sha256': sha(target),
                          'grounding_rows': len(lengths), 'native_grounding_max_prompt_tokens': max(lengths),
                          'unchanged_non_grounding_rows': expected-len(lengths)}
-    plan = {'schema': 'independent.9b.native1000.evaluation.v2', 'user_requested_amendment': True,
+    write_json(NATIVE/'processor-dimensions.json',sizes)
+    plan = {'schema': 'independent.9b.processor-pixels.evaluation.v3', 'user_requested_amendment': True,
             'registered_after_old_pixel_minimum_outputs': True, 'timestamp': datetime.now(timezone.utc).isoformat(),
             'student_protocol_sha256': sha(OUT / 'protocol.json'), 'training_plan_sha256': sha(OUT / 'formal-plan.json'),
             'source_sha256': {n: sha(ROOT / 'tools' / n) for n in SOURCES}, 'inputs': inputs,
-            'coordinate_contract': 'All models output normalized0..1000; x*width/1000,y*height/1000; original-pixel GT and IoU>=.5; no GT-driven unit selection',
+            'coordinate_contract': 'All7B/9B models explicitly output their actual processor-resized-image pixels; x*original_width/processor_width,y*original_height/processor_height; original-pixel GT IoU>=.5; no GT-driven unit selection',
+            'processor_dimensions_sha256':sha(NATIVE/'processor-dimensions.json'),
+            'supersedes_unexecuted_v2_sha256':'883cdefa5d1b15704eab75de49996adbc1d99fbb586454faee9adc9965ab3f84',
+            'required7b_audit_protocol_sha256':sha(ROOT/'runs/7b-processor-pixel-audit-20261017/protocol.json'),
             'training_unchanged': True, 'training_target_coordinate_contract': 'original-pixel targets, as already frozen',
             'extra_calibration_generations': 400, 'calibration_active_wall_seconds_cap': 900,
             'N_grounding_minimum_accuracy': .80, 'N_grounding_maximum_parse_failures': 5,
@@ -142,14 +154,15 @@ def evaluate(phase, arm, seed, locked=False, deadline=None):
             assert shutil.disk_usage(OUT).free >= 5*1024**3
             started=time.monotonic()
             with torch.inference_mode():
-                batch=gpu_inputs(public_prompt_inputs(processor,row))
+                cpu_batch=public_prompt_inputs(processor,row);assert_runtime_grid(cpu_batch,row)
+                batch=gpu_inputs(cpu_batch)
                 generated=model.generate(**batch,max_new_tokens=128,do_sample=False,logits_processor=finite_logits_processors())
                 ids=generated[0,batch['input_ids'].shape[1]:]
                 raw=processor.decode(ids,skip_special_tokens=True).strip()
             torch.cuda.synchronize()
             record={'item_id':row['item_id'],'axis':row['axis'],'seconds':time.monotonic()-started,
                     'finish_reason':'eos' if ids.numel() and int(ids[-1]) in eos else 'length',
-                    'generation_tokens':ids.numel(),**score_native(raw,row)}
+                    'generation_tokens':ids.numel(),**score_processor(raw,row)}
             with ledger.open('a',encoding='utf-8') as stream:
                 stream.write(json.dumps(record,allow_nan=False)+'\n');stream.flush();os.fsync(stream.fileno())
             done.add(row['item_id'])
@@ -184,9 +197,9 @@ def verify_evaluation(arm, seed, phase='formal'):
     assert marker['measurement_protocol_sha256']==sha(NATIVE/'protocol.json')
     assert read_json(folder/'eval.meta.json')['manifest_sha256']==sha(NATIVE/(phase+'-manifest.jsonl'))
     for row in rows:
-        computed=score_native(row['raw_generation'],lookup[row['item_id']])
+        computed=score_processor(row['raw_generation'],lookup[row['item_id']])
         assert all(computed[k]==row[k] for k in ('parsed_answer','correct_bit','parse_fail_flag','iou'))
-        if row['axis']=='grounding':assert computed['parsed_native1000']==row['parsed_native1000']
+        if row['axis']=='grounding':assert computed['parsed_processor_pixels']==row['parsed_processor_pixels']
     original=units(manifest,rows)
     assert marker['axis_scores']=={a:sum(r['correct_bit'] for r in original if r['axis']==a)/sum(r['axis']==a for r in original) for a in AXES}
     assert marker['original_units']==len(original) and marker['optimizer_loaded'] is False and marker['gradients_enabled'] is False
@@ -201,7 +214,7 @@ def verify_formal(return_evaluations=False):
     models=[('N',42)]+[(a,s) for s in SEEDS for a in ('A1','A2','U')]
     evaluations={(a,s):verify_evaluation(a,s) for a,s in models}
     result={'status':'passed','training_runs':15,'updates_per_run':1000,'evaluation_models':16,'prompts_per_model':16900,
-            'measurement_protocol_sha256':sha(NATIVE/'protocol.json'),'coordinate_contract':'explicit_normalized1000_then_pixel_iou'}
+            'measurement_protocol_sha256':sha(NATIVE/'protocol.json'),'coordinate_contract':'explicit_processor_pixels_then_original_pixel_iou'}
     write_json(NATIVE/'formal-independent-verification.json',result)
     return (result,evaluations) if return_evaluations else result
 

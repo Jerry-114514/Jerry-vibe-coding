@@ -19,7 +19,7 @@ from route_b_9b_loop import OUT
 
 SEVEN=ROOT/'runs/route-b-staged-7b-20261016'
 FOLDER=OUT/'disk-protection'
-TARGET=6*1024**3
+TARGET=15*1024**3
 
 
 def allowed(path):
@@ -111,11 +111,14 @@ if __name__=='__main__':
         FOLDER.mkdir(parents=True,exist_ok=True)
         with (FOLDER/'observer.lock').open('w') as lock:
             fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-            write_json(FOLDER/'policy.json',{'user_night_mode':True,'trigger_free_GiB':6,'registered_hard_stop_free_GiB':5,
+            write_json(FOLDER/'policy.json',{'user_night_mode':True,'trigger_free_GiB':15,'registered_hard_stop_free_GiB':5,
                        'allowed':'completed7B formal eval.jsonl only, with current SHA and fresh GitHub asset verification',
                        'never_delete':['9B recovery','adapters','model weights','source datasets','training logs']})
             while True:
+                write_json(FOLDER/'heartbeat.json',{'timestamp':datetime.now(timezone.utc).isoformat(),
+                           'data_free_GiB':shutil.disk_usage(OUT).free/1024**3,
+                           'system_free_GiB':shutil.disk_usage('/').free/1024**3,'pid':os.getpid()})
                 try:protect(token)
                 except Exception as error:write_json(FOLDER/'error.json',{'type':type(error).__name__,'message':str(error),'deletion_refused_without_proof':True})
-                if (OUT/'native-evaluation-v2/finalization/complete.json').exists():break
+                if (OUT/'processor-pixel-evaluation-v3/finalization/complete.json').exists():break
                 time.sleep(45)
