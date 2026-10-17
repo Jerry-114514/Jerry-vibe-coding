@@ -1,8 +1,41 @@
 {
-  "utc": "2026-10-17T15:58:10.840628+00:00",
-  "data_free_bytes": 20524318720,
+  "utc": "2026-10-17T16:22:28.547408+00:00",
+  "data_free_bytes": 20519493632,
   "root_free_bytes": 7243096064,
   "seven_models": {
-    "N-seed42": 1547
-  }
+    "N-seed42": 2400,
+    "A1-seed42": 2400,
+    "A2-seed42": 124
+  },
+  "seven_completed_scores": {
+    "N-seed42": {
+      "rows": 2400,
+      "accuracy": 0.8470833333333333,
+      "parse_failures": 58,
+      "ledger_sha256": "33543d69343ba22c4f74577b5f2ade3db09e9e679c4fff09e850e648120fb846",
+      "protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+      "reserved_peak_bytes": 17764974592,
+      "generation_seconds": 748.3394051492214,
+      "optimizer_loaded": false,
+      "gradients_enabled": false
+    },
+    "A1-seed42": {
+      "rows": 2400,
+      "accuracy": 0.8541666666666666,
+      "parse_failures": 11,
+      "ledger_sha256": "90c87420f1f0c6542754bd956b22a3fb79385eee190f5aa1e0c689d930404ea0",
+      "protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+      "reserved_peak_bytes": 17884512256,
+      "generation_seconds": 1072.683034390211,
+      "optimizer_loaded": false,
+      "gradients_enabled": false
+    }
+  },
+  "live_pids": {
+    "disk_guard": 58025,
+    "7b_controller": 64860,
+    "morning_report": 65750,
+    "7b_worker": 66343
+  },
+  "seven_stopped": false
 }

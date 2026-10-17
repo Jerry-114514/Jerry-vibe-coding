@@ -33,6 +33,11 @@ def run():
     peak = max(x['reserved_peak_bytes'] for x in nine['runs'])
     maxgrad = max(x['max_grad_norm_before_clip'] for x in health['runs'])
     count = sum(snap['seven_models'].values())
+    live = snap.get('live_pids', {})
+    completed = snap.get('seven_completed_scores', {})
+    completed_table = '\n'.join(
+        f"| {name} | {row['rows']:,} | {100*row['accuracy']:.3f}% | {row['parse_failures']} |"
+        for name, row in completed.items())
     stamp = datetime.fromisoformat(snap['utc']).astimezone(
         __import__('datetime').timezone(__import__('datetime').timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
     source = ROOT / 'docs/references/大模型方案_用户修订_20261016.md'
@@ -45,7 +50,7 @@ def run():
         f"{r['reserved_peak_bytes']/1e9:.3f} | {r['last_loss']:.6g} |" for r in nine['runs'])
     report = f'''# 基于《大模型方案》的实验结果报告
 
-版本：2026-10-17；状态快照：北京时间 **{stamp}**。这是阶段性结果报告，原ARP全部补实验尚未完成。配套[实验交接文档](大模型方案_实验交接文档_20261017.md)。
+更新日期：{stamp[:10]}；状态快照：北京时间 **{stamp}**。文件名保留首次交付日期。这是阶段性结果报告，原ARP全部补实验尚未完成。配套[实验交接文档](大模型方案_实验交接文档_20261017.md)。
 
 ## 1. 依据、研究问题与执行变更
 
@@ -101,6 +106,12 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 
 快照时7B新定位已生成 **{count:,}/38,400** 条，完整16模型尚未结束，新五seed终局区间尚未产生；这不是最终定位能力分数。固定GPU预算截止为UTC `{budget['end_utc']}`（北京时间10月18日11:42:49），未因语法修订重置。完整复测后报告A1−A2、A1−U、A1−N及U−N，独立4项Bonferroni族，不与原12项混成事前检验。
 
+新契约下已完成的逐模型结果如下；训练臂暂为单seed，不能据此作五seed显著性结论。
+
+| 模型 | 已完成定位题 | 新契约定位分 | 解析失败 |
+|---|---:|---:|---:|
+{completed_table}
+
 ## 5. 独立9B←122B：15次训练完成，正式评测未放行
 
 学生为官方Qwen3.5-9B，教师为Qwen3.5-122B-A10B API；从3,545训练池得到3,540条可用教师回答，另5条因供应方图片检查按来源组隔离，不能称完整3,545条全部成功。已完成前缀未重复请求。API文本目标不是top-50 logits，也不以`finish_reason=stop`冒充原始EOS token证据。
@@ -149,7 +160,7 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 |---|---|---|
 | 原ARP主线 | C未放行，`training_allowed=false` | 不将独立实验改名为原主线，不擅自放行 |
 | 独立7B原轮 | 15次训练及16模型四轴评测、旧12项统计和归档完成 | 保留全部历史结果；定位能力解释待审计 |
-| 7B定位复测 | 正在运行，快照{count:,}/38,400条 | 优先保持队列；每模型2,400条，最终4项区间 |
+| 7B定位复测 | 正在运行，快照{count:,}/38,400条，{len(completed)}/16模型完成 | 优先保持队列；每模型2,400条，最终4项区间 |
 | 独立9B训练 | 15/15、15,000更新完成 | 不重训、不追加预算，不恢复无用优化器做评测 |
 | 9B正式评测 | N共同契约校准失败，0/16正式评测 | 保留停止；不能用86%事后诊断替换1%注册成绩 |
 | 磁盘 | 数据盘{snap['data_free_bytes']/2**30:.2f}GiB、根分区{snap['root_free_bytes']/2**30:.2f}GiB空闲 | DiskGuard继续运行；删除前先验证云端成员与SHA |
@@ -190,8 +201,8 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 | 数值评测器 | `tools/run_7b_processor_grounding.py` |
 | 原共同单位函数 | `tools/processor_pixel_contract.py`，保持9B历史版本不变 |
 | 新纯语法包装 | `tools/processor_pixel_contract_csv.py` |
-| 控制器screen / 快照PID | `7b-independent-processor-audit` / 64860 |
-| 当前N评测快照PID | 64867；PID会随模型切换变化 |
+| 控制器screen / 快照PID | `7b-independent-processor-audit` / {live.get('7b_controller', '未发现')} |
+| 当前评测快照PID | {live.get('7b_worker', '未发现')}；模型见`queue-status.json`，PID会随模型切换变化 |
 | 控制台 | `runs/7b-processor-pixel-independent-console.log` |
 | 逐模型输出 | 工作目录下`models/<arm>-seed<seed>/eval.jsonl`及`scores.json` |
 | 校准原证据 | `calibration-proof/eval-first100.jsonl`与`calibration.json` |
@@ -207,6 +218,8 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 异常恢复前先检查当前数值子进程、`queue-status.json`、`stopped.json`、预算截止和已完成行数。**运行中不启动第二个控制器。** 仅瞬时网络错误可按已锁定重试策略恢复；OOM、非有限值、哈希不符、门槛失败或预算耗尽不能当网络错误重试。不要盲删完成标记或失败记录。
 
 全部结束后核对16×2,400唯一题目、原始输出重计分及Release回执，生成A1−A2、A1−U、A1−N、U−N的五seed配对区间，10,000 bootstrap、独立4项Bonferroni族。完成状态应为`all16_processor_pixel_grounding_verified_and_delivered`；不能只看进程退出码就宣布完成。
+
+独立CPU图表收尾服务`tools/finish_7b_processor_report.py`已排队，screen为`7b-processor-figures`。它等待全部16模型完成和交付标记后，逐条复核38,400行的映射/IoU、生成PNG/PDF并上传`final-report/`；不增加预测。N全2,400行的独立映射与IoU核验已通过。详见[零点后续跑记录](measurement-progress-20261018.md)。
 
 ## 5. 9B停止原因与下一步边界
 
@@ -227,7 +240,7 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 
 ## 6. 磁盘保护与发布
 
-DiskGuard：`tools/protect_9b_disk.py`，快照PID58025，约45秒采样两个分区；数据盘15GiB触发保护/清理，5GiB硬停止规则保留。当前数据{snap['data_free_bytes']/2**30:.2f}GiB、根分区{snap['root_free_bytes']/2**30:.2f}GiB；这不是“只剩100MB”。
+DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未发现')}，约45秒采样两个分区；数据盘15GiB触发保护/清理，5GiB硬停止规则保留。当前数据{snap['data_free_bytes']/2**30:.2f}GiB、根分区{snap['root_free_bytes']/2**30:.2f}GiB；这不是“只剩100MB”。
 
 18份旧7B恢复副本已核对归档成员、当前SHA、Release服务端SHA并先上传恢复指针后删除，释放8.13GiB。不要把已云端归档的本地缺失误报为产物丢失；需要恢复时按指针校验后下载。后续清理仍优先旧7B已完成且确认备份的大文件，保留适配器、损失曲线、数据源、模型权重及9B必要恢复链。不做无证据的批量递归删除。
 
@@ -241,7 +254,7 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID58025，约45秒采样两个�
 
 ## 7. 托管与时间估算
 
-早报服务`tools/report_9b_native_progress.py`（快照PID58707）预定10月18日08:00，内容以实际产物为准；传输观察器不应绕过校准失败。控制台与完成标记优先于旧进度文案。
+早报服务`tools/report_9b_native_progress.py`（快照PID{live.get('morning_report', '未发现')}）预定10月18日08:00，内容以实际产物为准；已修正为明确报告9B失败及附带修订证据，不再误写等待中。传输观察器不应绕过校准失败。控制台与完成标记优先于旧进度文案。
 
 7B复测原外推纯生成约6.47小时，含装载/校验/上传暂估6–8小时；新增提示及实测可能改变，绝对上限仍是上述12小时。快照只记录已生成条数，不用短时间N速度冒充全部适配器实际耗时。新7B总费用上限约32.40元（12h×2.70）；9B新校准尚未获有效测量，因此正式评测完成日期**不能可靠承诺**。新协议若通过，才依据新实际延迟更新全量评测ETA。
 
