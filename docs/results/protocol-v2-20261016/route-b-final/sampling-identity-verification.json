@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "scope": "actual frozen train.meta.json sampling IDs, not ambiguous protocol prose",
+  "runs": [
+    {
+      "model": "A1-seed42",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A2-seed42",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "U-seed42",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A1-seed137",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A2-seed137",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "U-seed137",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A1-seed256",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A2-seed256",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "U-seed256",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A1-seed512",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A2-seed512",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "U-seed512",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A1-seed1024",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "A2-seed1024",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    },
+    {
+      "model": "U-seed1024",
+      "sampling_rows": 600,
+      "unique_prompt_ids": 600
+    }
+  ]
+}

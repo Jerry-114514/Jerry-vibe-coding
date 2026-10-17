@@ -18,6 +18,7 @@ tools/preflight_9b_evaluation_inputs.py -text
 tools/verify_9b_student_outputs.py -text
 tools/analyze_9b_formal.py -text
 tools/run_9b_formal_when_ready.py -text
+tools/diagnose_9b_coordinates.py -text
 *.pdf binary
 tools/vendor/** -text
 # Preserve downloaded final evidence bytes against local-copy-manifest SHA256.
@@ -26,3 +27,6 @@ docs/results/protocol-v2-20261016/9b-5090-frozen-config.json -text
 docs/results/protocol-v2-20261016/9b-full-preflight-delivery.json -text
 docs/results/protocol-v2-20261016/9b-full-preflight-result.json -text
 docs/results/protocol-v2-20261016/9b-resumed-after-7b.json -text
+docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md -text
+docs/results/protocol-v2-20261016/7b-report-provenance.json -text
+tools/write_7b_experiment_report.py -text

@@ -1,10 +1,12 @@
 # ARP 多模态量尺审计与训练实验
 
-截至 2026-10-16，原协议的 B、C、D 正式运行与产物验收已完成。本仓库首页现在直接提供实验结果；大体积数据和训练产物在 GitHub Release 的 Assets 中。
+截至2026-10-17，旧v1的B/C/D运行产物已完成计算与验收；新增独立7B路线B也已完成15次训练、16模型评测和完整五seed统计。原ARP protocol-v2阶段C仍未放行，独立实验不替代其科学门槛。大体积数据和训练产物在GitHub Release的Assets中。
+
+**7B完整实验报告：** [Qwen2.5-VL-7B独立自蒸馏结果与分析](docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md)。包含16模型四轴分数、15次训练显存/耗时/损失曲线、12项校正配对区间及过程验收。原始数据见[7B实验Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
 
 ## 查看实验结果
 
-**新增补实验：** [protocol-v2 补分析与显存预检](docs/results/protocol-v2-20261016/README.md) · [阶段性原始产物 Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API 教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。P0 和 Qwen 3B/7B 开发预检已完成；正式多 seed 与独立确认仍受新 gate 约束。
+**新增补实验：** [protocol-v2总览与9B进展](docs/results/protocol-v2-20261016/README.md) · [必要原始产物Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。独立7B五seed实验已由用户单独授权并完成；原ARP主线及独立确认仍受其门槛约束。
 
 | 需要的内容 | 入口 |
 |---|---|
