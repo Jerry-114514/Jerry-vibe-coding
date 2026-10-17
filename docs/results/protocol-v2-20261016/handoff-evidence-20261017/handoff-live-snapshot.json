@@ -1,11 +1,12 @@
 {
-  "utc": "2026-10-17T16:22:28.547408+00:00",
-  "data_free_bytes": 20519493632,
+  "utc": "2026-10-17T16:55:21.260147+00:00",
+  "data_free_bytes": 20516818944,
   "root_free_bytes": 7243096064,
   "seven_models": {
     "N-seed42": 2400,
     "A1-seed42": 2400,
-    "A2-seed42": 124
+    "A2-seed42": 2400,
+    "U-seed42": 1538
   },
   "seven_completed_scores": {
     "N-seed42": {
@@ -29,13 +30,43 @@
       "generation_seconds": 1072.683034390211,
       "optimizer_loaded": false,
       "gradients_enabled": false
+    },
+    "A2-seed42": {
+      "rows": 2400,
+      "accuracy": 0.85125,
+      "parse_failures": 16,
+      "ledger_sha256": "80e1f50cfa1f48a53808db45b81465b9c76d149089913bdb5f9f7ba507b16400",
+      "protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+      "reserved_peak_bytes": 17884512256,
+      "generation_seconds": 1068.8762655816972,
+      "optimizer_loaded": false,
+      "gradients_enabled": false
     }
   },
+  "seven_delivered_models": [
+    "N-seed42",
+    "A1-seed42",
+    "A2-seed42"
+  ],
   "live_pids": {
     "disk_guard": 58025,
     "7b_controller": 64860,
     "morning_report": 65750,
-    "7b_worker": 66343
+    "figure_finalizer": 65914,
+    "7b_worker": 67149
   },
-  "seven_stopped": false
+  "seven_stopped": false,
+  "nine_training_complete": {
+    "runs": 15,
+    "updates": 15000,
+    "timestamp": "2026-10-17T14:07:22.180141+00:00",
+    "evaluation": "native-evaluation-v2 only"
+  },
+  "nine_calibration_status": "registered9b_calibration_failed_no_formal_evaluation",
+  "gpu_wall_budget": {
+    "start_utc": "2026-10-17T15:42:49.643461+00:00",
+    "end_utc": "2026-10-18T03:42:49.643461+00:00",
+    "never_reset_on_restart": true,
+    "queue_amendment_sha256": "88688a18dc9340f5eeeab169d3b22ca9ccf99f90c270117c9ae72e7b180b7edb"
+  }
 }

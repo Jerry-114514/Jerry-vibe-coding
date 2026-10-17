@@ -173,6 +173,7 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 - 7B/控制环境：`/root/autodl-tmp/arp-venv/bin/python`；9B环境：`/root/autodl-tmp/arp-qwen35-venv/bin/python`。
 - 使用`tools/autodl_new_instance.py`适配器，不直接用指向旧实例的`autodl_transport.py`入口。SSH私钥及known_hosts位于本地`tmp/autodl/`，不写入GitHub或报告。
 - API key及GitHub凭证均不在本交接中复制。运行中服务从环境读取；发布使用本地凭证助手，经加密SSH标准输入传递。不要打印环境变量或开启shell trace。
+- 远端存在按SHA直接部署的冻结脚本；推送Git引用不等于更新了远端工作树。活动评测期间不要执行`git pull/reset/checkout`覆盖工作树，接手先核对实际文件SHA及进程。
 
 只读状态检查示例：
 
@@ -220,6 +221,8 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 全部结束后核对16×2,400唯一题目、原始输出重计分及Release回执，生成A1−A2、A1−U、A1−N、U−N的五seed配对区间，10,000 bootstrap、独立4项Bonferroni族。完成状态应为`all16_processor_pixel_grounding_verified_and_delivered`；不能只看进程退出码就宣布完成。
 
 独立CPU图表收尾服务`tools/finish_7b_processor_report.py`已排队，screen为`7b-processor-figures`。它等待全部16模型完成和交付标记后，逐条复核38,400行的映射/IoU、生成PNG/PDF并上传`final-report/`；不增加预测。N全2,400行的独立映射与IoU核验已通过。详见[零点后续跑记录](measurement-progress-20261018.md)。
+
+当前图表收尾PID为{live.get('figure_finalizer', '未发现')}。已完成并归档模型：{', '.join(snap.get('seven_delivered_models', [])) or '见逐模型delivery-proof.json'}；全部模型的实时行数以本次[交接快照](handoff-evidence-20261017/handoff-live-snapshot.json)为准。不要为确认进度启动另一个GPU任务。
 
 ## 5. 9B停止原因与下一步边界
 
