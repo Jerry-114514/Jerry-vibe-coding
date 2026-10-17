@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-17T00:29:48.162072+00:00",
+  "source_sha256": "743bdb284ad64226a4fdc7b4d2fadf8d04a0c175c919ae7a7cb372d99d47fc7c",
+  "family_size": 12,
+  "contrasts": [
+    "A1-A2",
+    "A1-U",
+    "A1-N"
+  ],
+  "axes": [
+    "pope",
+    "grounding",
+    "consistency",
+    "mmstar"
+  ],
+  "bootstrap_replicates": 10000,
+  "random_seed": 2026101702,
+  "method": "Percentile paired seed x source-image cluster bootstrap; Bonferroni alpha=.05/12",
+  "registration_timing": "User-requested reporting amendment after partial formal development results; not a confirmatory preregistration",
+  "does_not_change_training_or_evaluation": true,
+  "coverage_caveat": "Nominal approximate bootstrap intervals; five training seeds limit precision"
+}

@@ -14,6 +14,8 @@ def readiness():
                 OUT/'eval-input-independent-preflight.json',OUT/'stage3-complete.json',
                 OUT/'formal-independent-verification.json',OUT/'formal-paired-analysis.json',
                 OUT/'completion-reports/training-report-delivered.json',OUT/'completion-reports/final-report-delivered.json',
+                OUT/'completion-reports/multiplicity/multiplicity-results.json',
+                OUT/'completion-reports/multiplicity/delivered.json',
                 ROOT/'runs/qwen35-9b-infrastructure-20261016/infrastructure-complete.json']
     required += [OUT/'formal'/f'{arm}-seed{seed}'/name for seed in SEEDS for arm in ('A1','A2','U')
                  for name in ('complete.json','resume.pt','adapter/adapter_model.safetensors','scores.json')]
@@ -70,6 +72,25 @@ def verify():
     plan=read_json(OUT/'requested-report-plan.json')
     assert plan['observer_source_sha256']==sha(ROOT/'tools/route_b_completion_reports.py')
     assert plan['bootstrap_replicates']==2000
+    corrected_folder=OUT/'completion-reports/multiplicity'
+    corrected=read_json(corrected_folder/'multiplicity-results.json')
+    correction_plan=read_json(corrected_folder/'reporting-amendment.json')
+    assert corrected['status']=='all16_evaluations_complete' and len(corrected['scores'])==16
+    assert corrected['family_size']==12 and corrected['bootstrap_replicates']==10000
+    assert corrected['matched_seeds']==SEEDS and set(corrected['paired_contrasts'])=={'A1-A2','A1-U','A1-N'}
+    assert correction_plan['source_sha256']==sha(ROOT/'tools/report_route_b_multiplicity.py')
+    assert corrected['amendment_sha256']==sha(corrected_folder/'reporting-amendment.json')
+    for label,axes in corrected['paired_contrasts'].items():
+        assert set(axes)==set(AXES)
+        left,right=label.split('-')
+        for axis,value in axes.items():
+            expected_delta=sum(corrected['scores'][f'{left}-seed{s}'][axis]-
+                    corrected['scores'][f'{right}-seed{42 if right=="N" else s}'][axis] for s in SEEDS)/5
+            assert abs(value['difference']-expected_delta)<1e-12
+            lo,hi=value['pointwise_ci95']
+            adjusted_lo,adjusted_hi=value['bonferroni_familywise_ci95']
+            assert all(math.isfinite(v) for v in (lo,hi,adjusted_lo,adjusted_hi))
+            assert -1<=adjusted_lo<=lo<=hi<=adjusted_hi<=1
     with Image.open(OUT/'completion-reports/training/loss-curves.png') as image:
         image.verify()
     nine=ROOT/'runs/qwen35-9b-infrastructure-20261016'
@@ -82,6 +103,7 @@ def verify():
     proof={'status':'passed','scope':'Full independent routeB objective, not originalARP stageC',
            'training_runs':15,'updates_per_run':1000,'evaluation_models':16,'prompts_per_model':16900,
            'requested_paired_contrasts':['A1-A2','A1-U','A1-N'],'all_five_seeds_verified':True,
+           'multiplicity_family_size':12,'multiplicity_correction':'Bonferroni percentile bootstrap, nominal approximate coverage',
            'full_eos_rows':3545,'9b_gpu_smoke_passed':True,'original_arp_gate_unpassed':True,
            'existing_python_sources_unchanged':existing_code_unchanged(),
            'formal_config_sha256':sha(OUT/'phase2-frozen.json'),

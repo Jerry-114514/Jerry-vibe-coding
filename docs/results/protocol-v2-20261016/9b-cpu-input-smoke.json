@@ -1,0 +1,55 @@
+{
+  "status": "passed_cpu_four_axis_input_checks",
+  "no_cuda_context": true,
+  "checks": [
+    {
+      "axis": "pope",
+      "prompt_tokens": 306,
+      "response_tokens_with_eos": 2,
+      "processor_keys": [
+        "input_ids",
+        "attention_mask",
+        "mm_token_type_ids",
+        "pixel_values",
+        "image_grid_thw"
+      ]
+    },
+    {
+      "axis": "grounding",
+      "prompt_tokens": 327,
+      "response_tokens_with_eos": 29,
+      "processor_keys": [
+        "input_ids",
+        "attention_mask",
+        "mm_token_type_ids",
+        "pixel_values",
+        "image_grid_thw"
+      ]
+    },
+    {
+      "axis": "consistency",
+      "prompt_tokens": 408,
+      "response_tokens_with_eos": 2,
+      "processor_keys": [
+        "input_ids",
+        "attention_mask",
+        "mm_token_type_ids",
+        "pixel_values",
+        "image_grid_thw"
+      ]
+    },
+    {
+      "axis": "mmstar",
+      "prompt_tokens": 494,
+      "response_tokens_with_eos": 2,
+      "processor_keys": [
+        "input_ids",
+        "attention_mask",
+        "mm_token_type_ids",
+        "pixel_values",
+        "image_grid_thw"
+      ]
+    }
+  ],
+  "full_pool_check_pending_teacher_cache": true
+}

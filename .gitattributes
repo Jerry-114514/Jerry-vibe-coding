@@ -7,5 +7,10 @@ tools/refer_api.py -text
 tools/run_degenerate.py -text
 tools/scoring.py -text
 tools/route_b_staged.py -text
+tools/prepare_9b_api_teacher_cache.py -text
+tools/resume_9b_api_teacher_cache.py -text
+tools/resume_9b_teacher_eligible.py -text
+tools/preflight_9b_full.py -text
+tools/report_route_b_multiplicity.py -text
 *.pdf binary
 tools/vendor/** -text

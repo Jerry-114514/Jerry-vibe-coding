@@ -1,0 +1,16 @@
+{
+  "root_cause": "Provider input-image inspection rejection: data_inspection_failed",
+  "http_status": 400,
+  "image_size": [
+    512,
+    408
+  ],
+  "original_response_body_preserved": false,
+  "diagnostic_response_body_preserved": true,
+  "diagnostic_request_is_reconstruction_not_original_capture": true,
+  "initial_cached_rows": 1307,
+  "initial_cached_prefix_sha256": "6c908fe7e80e3dd58e74188757242399a7127b55d5d02d5969f1469153e44b1b",
+  "duplicate_cached_requests_verified": 0,
+  "provider_refused_group_quarantined": true,
+  "no_image_or_prompt_modification": true
+}

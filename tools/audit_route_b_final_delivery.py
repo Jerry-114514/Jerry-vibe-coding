@@ -44,7 +44,8 @@ def requirements():
     paths += [OUT / 'completion-reports' / name for name in (
         'training/training-results.json', 'training/training-report.md',
         'training/loss-curves.png', 'evaluation/evaluation-results.json',
-        'evaluation/evaluation-report.md')]
+        'evaluation/evaluation-report.md', 'multiplicity/reporting-amendment.json',
+        'multiplicity/multiplicity-results.json', 'multiplicity/multiplicity-report.md')]
     paths += [NINE / name for name in (
         'model.lock.json', 'weights-ready.json', 'environment.lock.json',
         'environment-ready.json', 'architecture-inventory.json',
