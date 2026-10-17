@@ -69,5 +69,16 @@ class RecoveryRestoreTests(unittest.TestCase):
         self.assertEqual(get.call_count,2)
         self.assertEqual(get.call_args.kwargs['headers']['Range'],f'bytes=0-{len(payload)-1}')
 
+    def test_parallel_ranges_reassemble_in_exact_order(self):
+        payload=b'0123456789abcdefghijklmnopqrstuv';output=BytesIO()
+        def response(url,headers,**kwargs):
+            start,end=map(int,headers['Range'].removeprefix('bytes=').split('-'))
+            result=Response(payload[start:end+1]);result.headers={'Content-Range':f'bytes {start}-{end}/{len(payload)}'}
+            return result
+        with patch.object(restore,'RANGE_BYTES',5),patch.object(restore.requests.Session,'get',side_effect=response):
+            restore.stream_asset(restore.requests.Session(),{'name':'synthetic','url':'https://example.invalid/never-requested',
+                                 'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()},output)
+        self.assertEqual(output.getvalue(),payload)
+
 
 if __name__=='__main__':unittest.main()

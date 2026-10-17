@@ -1,5 +1,6 @@
 """Restore previously offloaded9B recovery; retain every restored/current state."""
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor
 import argparse
 import hashlib
 import json
@@ -32,34 +33,53 @@ def download_proxies():
     return {k:v for k,v in values.items() if v}
 
 
+RANGE_BYTES=16*1024**2
+RANGE_WORKERS=4
+
+
+def fetch_range(session,asset,start,end):
+    expected=end-start+1
+    for attempt in range(4):
+        try:
+            with session.get(asset['url'],headers={'Range':f'bytes={start}-{end}'},
+                             stream=True,timeout=(30,60)) as response:
+                response.raise_for_status()
+                assert response.status_code==206,'Recovery server did not honor byte range'
+                assert response.headers.get('Content-Range')==f'bytes {start}-{end}/{asset["bytes"]}','Unexpected recovery byte range'
+                buffer=bytearray()
+                for chunk in response.iter_content(1024**2):
+                    if chunk:buffer.extend(chunk)
+                    assert len(buffer)<=expected,'Recovery range body exceeds requested length'
+                if len(buffer)!=expected:raise requests.exceptions.ChunkedEncodingError('Short recovery range')
+            return buffer
+        except requests.RequestException as error:
+            print('Recovery range transient',type(error).__name__,'offset',start,'attempt',attempt+1,flush=True)
+            if attempt==3:raise RuntimeError('Verified GitHub recovery range unavailable after4 bounded GET attempts') from None
+            time.sleep(2*(attempt+1))
+
+
 def stream_asset(session,asset,stream):
     # Large proxy responses can be truncated. Retry only a bounded16MiB range;
     # commit bytes only after exact HTTP range/length checks, then verify the
     # complete asset SHA. A failed segment never enters the archive stream.
     size=0;digest=hashlib.sha256();announced=0
-    while size<asset['bytes']:
-        end=min(size+16*1024**2,asset['bytes'])-1
-        expected=end-size+1
-        for attempt in range(4):
-            try:
-                with session.get(asset['url'],headers={'Range':f'bytes={size}-{end}'},
-                                 stream=True,timeout=(30,60)) as response:
-                    response.raise_for_status()
-                    assert response.status_code==206,'Recovery server did not honor byte range'
-                    assert response.headers.get('Content-Range')==f'bytes {size}-{end}/{asset["bytes"]}','Unexpected recovery byte range'
-                    buffer=bytearray()
-                    for chunk in response.iter_content(1024**2):
-                        if chunk:buffer.extend(chunk)
-                        assert len(buffer)<=expected,'Recovery range body exceeds requested length'
-                    if len(buffer)!=expected:raise requests.exceptions.ChunkedEncodingError('Short recovery range')
-                break
-            except requests.RequestException as error:
-                print('Recovery range transient',type(error).__name__,'offset',size,'attempt',attempt+1,flush=True)
-                if attempt==3:raise RuntimeError('Verified GitHub recovery range unavailable after4 bounded GET attempts') from None
-                time.sleep(2*(attempt+1))
-        stream.write(buffer);digest.update(buffer);size+=len(buffer)
-        if size-announced>=64*1024**2 or size==asset['bytes']:
-            print('Recovery archive',asset['name'],'received_MiB',round(size/1024**2,1),flush=True);announced=size
+    # Each worker owns a Session. Bound submitted ranges to4, retaining at
+    # most64MiB of completed payload even if an earlier range retries.
+    def download(start,end):
+        with requests.Session() as worker:
+            worker.trust_env=False;worker.headers.update(session.headers)
+            worker.proxies.update(session.proxies);worker.verify=session.verify
+            return fetch_range(worker,asset,start,end)
+    with ThreadPoolExecutor(max_workers=RANGE_WORKERS) as pool:
+        while size<asset['bytes']:
+            ranges=[(start,min(start+RANGE_BYTES,asset['bytes'])-1)
+                    for start in range(size,min(size+RANGE_WORKERS*RANGE_BYTES,asset['bytes']),RANGE_BYTES)]
+            futures=[pool.submit(download,start,end) for start,end in ranges]
+            for future in futures:
+                buffer=future.result()
+                stream.write(buffer);digest.update(buffer);size+=len(buffer)
+                if size-announced>=64*1024**2 or size==asset['bytes']:
+                    print('Recovery archive',asset['name'],'received_MiB',round(size/1024**2,1),flush=True);announced=size
     assert digest.hexdigest()==asset['sha256'],'Downloaded archive SHA mismatch'
 
 
