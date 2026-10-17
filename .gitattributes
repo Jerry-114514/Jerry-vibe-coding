@@ -81,3 +81,5 @@ docs/results/protocol-v2-20261016/9b-training-final/training-wall-budget.json -t
 docs/results/protocol-v2-20261016/handoff-evidence-20261017/common-input-audit-csv-lineage.json -text
 
 docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-N-processor-pixels-2400.json -text
+
+tools/finish_7b_processor_report.py -text
