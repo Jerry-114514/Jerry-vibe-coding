@@ -1,0 +1,18 @@
+{
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017",
+  "assets": [
+    {
+      "name": "arp-9b-122b-20261017-20261017T105907Z-inventory.json",
+      "bytes": 3051,
+      "sha256": "09ba03a73fb00475398968ebce7512144f820938205de68288fd27a14ded8f66",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261017T105907Z-inventory.json"
+    },
+    {
+      "name": "arp-9b-122b-20261017-20261017T105907Z.tar.gz",
+      "bytes": 807120,
+      "sha256": "04101e5366a9174619877061bb067ca381af182a76a15b4bec5a940334a1fc6a",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261017T105907Z.tar.gz"
+    }
+  ],
+  "storage": "AutoDL -> GitHub; no local download"
+}

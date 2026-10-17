@@ -1,0 +1,61 @@
+{
+  "status": "all_four_minimum_models_diagnosed",
+  "plan_sha256": "26a4da8aca732e764974cfe15f2389ca0d26f473a25ca413527d02be90e419e3",
+  "manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+  "models": {
+    "N": {
+      "grounding_rows": 100,
+      "primary_pixel_score": 0.01,
+      "primary_pixel_parse_failures": 97,
+      "fixed1000_diagnostic_score": 0.85,
+      "fixed1000_parse_failures": 0,
+      "primary_ledger_sha256": "bdccfb611a43e60872808337967df8f98e596f6aca67d72aac54556f6d889255"
+    },
+    "A1": {
+      "grounding_rows": 100,
+      "primary_pixel_score": 0.01,
+      "primary_pixel_parse_failures": 97,
+      "fixed1000_diagnostic_score": 0.85,
+      "fixed1000_parse_failures": 0,
+      "primary_ledger_sha256": "696bc79fe894ab5f1b2d530f30e0980c044f09de43d530659202e3d1041e6961"
+    },
+    "A2": {
+      "grounding_rows": 100,
+      "primary_pixel_score": 0.01,
+      "primary_pixel_parse_failures": 97,
+      "fixed1000_diagnostic_score": 0.89,
+      "fixed1000_parse_failures": 0,
+      "primary_ledger_sha256": "0ff85ed5977691b87d1f0817379e9763f76394fbf1883cca55f1f2555e1d94e8"
+    },
+    "U": {
+      "grounding_rows": 100,
+      "primary_pixel_score": 0.85,
+      "primary_pixel_parse_failures": 0,
+      "fixed1000_diagnostic_score": 0.0,
+      "fixed1000_parse_failures": 0,
+      "primary_ledger_sha256": "c7961770409b7b2be917131085e7ab2de3e9899b90611abe555b5039278b1e32"
+    }
+  },
+  "diagnostic_ledger_sha256": "18d87a53c58c6ee1ddb582261e10a7e77d65fdb59b31aa43efed7212b91339a2",
+  "primary_scores_and_ledgers_sha256": {
+    "N": {
+      "scores.json": "d27921cb8c334e4b17e04e0ea38d680ed8655f182363f3de9b93e0679573c344",
+      "eval.jsonl": "bdccfb611a43e60872808337967df8f98e596f6aca67d72aac54556f6d889255"
+    },
+    "A1": {
+      "scores.json": "97477a7ae4d0a4fa5b5bad9cfa09c9f1b86bd3986621f459b4f1b6bf9521a669",
+      "eval.jsonl": "696bc79fe894ab5f1b2d530f30e0980c044f09de43d530659202e3d1041e6961"
+    },
+    "A2": {
+      "scores.json": "911d8f36763d6d6ce19052530256ee976bc96937663d01780abc1a4344a4d9df",
+      "eval.jsonl": "0ff85ed5977691b87d1f0817379e9763f76394fbf1883cca55f1f2555e1d94e8"
+    },
+    "U": {
+      "scores.json": "f48df62473cfb7c09632ad7e9e33ae9465ddae30c5d52e9159bee4242c95edb2",
+      "eval.jsonl": "c7961770409b7b2be917131085e7ab2de3e9899b90611abe555b5039278b1e32"
+    }
+  },
+  "primary_files_unchanged": true,
+  "post_hoc_not_confirmatory": true,
+  "extra_inference_or_training": false
+}

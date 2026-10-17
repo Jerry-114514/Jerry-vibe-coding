@@ -32,6 +32,12 @@ docs/results/protocol-v2-20261016/9b-5090-frozen-config.json -text
 docs/results/protocol-v2-20261016/9b-full-preflight-delivery.json -text
 docs/results/protocol-v2-20261016/9b-full-preflight-result.json -text
 docs/results/protocol-v2-20261016/9b-resumed-after-7b.json -text
+docs/results/protocol-v2-20261016/9b-native-evaluation-protocol.json -text
+docs/results/protocol-v2-20261016/9b-native-evaluation-registration.json -text
+docs/results/protocol-v2-20261016/9b-legacy-minimal-acceptance.json -text
+docs/results/protocol-v2-20261016/9b-coordinate-diagnostic-results.json -text
+docs/results/protocol-v2-20261016/9b-coordinate-diagnostic-report.md -text
+docs/results/protocol-v2-20261016/9b-native-controller-handoff.json -text
 docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md -text
 docs/results/protocol-v2-20261016/7b-report-provenance.json -text
 tools/write_7b_experiment_report.py -text

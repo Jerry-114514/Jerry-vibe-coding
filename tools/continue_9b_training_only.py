@@ -1,7 +1,7 @@
 """Continue exactly the registered15 trainings; native evaluation is separate.
 
-No frozen numeric source is changed. Keep recovery locally until the user's
-measurement-calibrated minimum report passes, then use verified offload policy.
+No frozen numeric source is changed. The latest night-mode instruction retains
+every9B recovery state; prior offloaded states are restored by the evaluator.
 """
 from datetime import datetime, timezone
 import json
@@ -15,7 +15,7 @@ import time
 from experiment_common import ROOT, read_json, sha, write_json
 from route_b_9b_loop import OUT
 from run_9b_formal_when_ready import (register, remaining_budget, preserve_incomplete_journal_tail,
-                                     metadata_backup, offload_completed_recovery)
+                                     metadata_backup)
 from verify_9b_student_outputs import verify_training
 from preflight_9b_full import ENV
 
@@ -36,7 +36,7 @@ def run(token):
                   'formal_plan_sha256': sha(OUT / 'formal-plan.json'), 'source_sha256': sha(Path(__file__)),
                   'registered_updates': 15000, 'registered_wall_hours': 12,
                   'never_resets_wall_budget': True, 'no_legacy_pixel_formal_evaluation': True,
-                  'recovery_offload_held_until_native_minimum_report': True}
+                  'recovery_offload_disabled_by_user_night_mode': True}
         write_json(OUT / 'training-only-amendment.json', record)
         from publish_artifacts import publish
         registration = OUT / 'training-only-registration'
@@ -57,10 +57,6 @@ def run(token):
                 publish(folder, 'arp-9b-122b-20261017', token=token)
                 shutil.copyfile(folder / 'github-storage.json', folder / 'training-delivery.json')
                 shutil.copyfile(folder / 'github-inventory.json', folder / 'training-inventory.json')
-            gate = OUT / 'native-evaluation-v2/minimal-acceptance.json'
-            if gate.exists() and read_json(gate)['status'] == 'passed':
-                if (folder / 'resume.pt').exists():
-                    offload_completed_recovery(folder, token)
         write_json(OUT / 'formal-training-complete.json', {'runs': 15, 'updates': 15000,
                    'timestamp': datetime.now(timezone.utc).isoformat(), 'evaluation': 'native-evaluation-v2 only'})
         from analyze_9b_formal import training_report

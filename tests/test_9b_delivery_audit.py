@@ -11,6 +11,18 @@ from experiment_common import ROOT, sha, write_json
 
 
 class DeliveryAuditTests(unittest.TestCase):
+    def test_native_eval_coverage_keeps_training_and_legacy_minimum_separate(self):
+        temporary=ROOT/'tmp';temporary.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=temporary) as name:
+            out=Path(name);native=out/'native-evaluation-v2'
+            write_json(native/'protocol.json',{'synthetic':True})
+            with patch.object(audit,'OUT',out):required=audit.requirements()
+            self.assertIn(out/'formal/A1-seed42/resume.pt',required)
+            self.assertIn(native/'formal/A1-seed42/eval.jsonl',required)
+            self.assertNotIn(out/'formal/A1-seed42/eval.jsonl',required)
+            self.assertIn(out/'minimal/A1-seed42/eval.jsonl',required)
+            self.assertIn(native/'minimal/N-seed42/eval.jsonl',required)
+
     def test_canonicalization_only_accepts_known_snapshot_prefixes(self):
         original = 'runs/route-b-9b-122b-20261017/student-experiment/protocol.json'
         self.assertEqual(audit.canonical('runs/9b-student-delivery-20261017/stamp/files/' + original), original)

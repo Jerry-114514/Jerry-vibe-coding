@@ -34,6 +34,9 @@ def canonical(path):
 
 
 def requirements():
+    native = OUT / 'native-evaluation-v2'
+    calibrated = (native / 'protocol.json').exists()
+    evaluation_root = native if calibrated else OUT
     paths = [ROOT / 'configs/route_b_9b_5090.frozen.json']
     paths += [BASE / name for name in ('teacher.jsonl', 'eligible-pool.jsonl', 'quarantined-pool.jsonl',
              'teacher-eligible-complete.json', 'resume-v3/refusals.jsonl')]
@@ -45,9 +48,12 @@ def requirements():
               'minimal-acceptance.json', 'minimal/A1-seed42/resume-verification.json',
               'formal-plan.json', 'formal-start-verification.json', 'formal-training-complete.json',
               'minimal-wall-budget.json', 'formal-training-wall-budget.json', 'formal-evaluation-wall-budget.json',
-              'formal-independent-verification.json', 'status.json',
               'formal-report/training-results.json', 'formal-report/training-report.md',
-              'formal-report/loss-curves.png', 'formal-report/evaluation-results.json', 'formal-report/evaluation-report.md')]
+              'formal-report/loss-curves.png')]
+    paths += [evaluation_root / name for name in ('formal-independent-verification.json', 'status.json',
+              'formal-report/evaluation-results.json', 'formal-report/evaluation-report.md')]
+    paths += [OUT / 'coordinate-diagnostic' / name for name in (
+        'diagnostic-plan.json', 'diagnostic-results.json', 'diagnostic-ledger.jsonl', 'diagnostic-report.md')]
     for phase, seeds in (('minimal', [42]), ('formal', SEEDS)):
         for seed in seeds:
             for arm in ('A1', 'A2', 'U'):
@@ -56,8 +62,20 @@ def requirements():
                     paths.append(OUT / 'formal-registration' / f'{arm}-seed{seed}.jsonl')
                 paths += [folder / name for name in ('complete.json', 'train.meta.json', 'loss.jsonl',
                           'resume.pt', 'adapter/adapter_model.safetensors', 'adapter/adapter_config.json',
-                          'training-verification.json', 'scores.json', 'eval.jsonl', 'eval.meta.json')]
-        paths += [OUT / phase / 'N-seed42' / name for name in ('scores.json', 'eval.jsonl', 'eval.meta.json')]
+                          'training-verification.json')]
+                eval_folder = evaluation_root / phase / f'{arm}-seed{seed}' if phase == 'formal' else folder
+                paths += [eval_folder / name for name in ('scores.json', 'eval.jsonl', 'eval.meta.json')]
+        eval_root = evaluation_root if phase == 'formal' else OUT
+        paths += [eval_root / phase / 'N-seed42' / name for name in ('scores.json', 'eval.jsonl', 'eval.meta.json')]
+    if calibrated:
+        paths += [native / name for name in ('protocol.json', 'minimal-manifest.jsonl', 'formal-manifest.jsonl',
+                  'minimal-acceptance.json', 'minimal-report.md', 'training-health.json',
+                  'calibration-active-wall-budget.json', 'recovery-restoration.json')]
+        for arm in ('N', 'A1', 'A2', 'U'):
+            paths += [native / 'minimal' / f'{arm}-seed42' / name for name in ('scores.json', 'eval.jsonl', 'eval.meta.json')]
+        paths += [OUT / name for name in ('training-only-amendment.json',
+                  'native-controller-handoff/plan.json', 'native-controller-handoff/complete.json',
+                  'native-controller-handoff/method-amendment.json')]
     # Receipt/inventory bytes are checked through their own server assets above;
     # requiring those same bookkeeping files as archive members is recursive.
     paths += sorted(p for p in (BASE / 'api400-investigation').rglob('*') if p.is_file()

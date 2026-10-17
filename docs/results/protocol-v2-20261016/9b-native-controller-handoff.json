@@ -1,0 +1,15 @@
+{
+  "status": "old_scheduler_exited_at_exclusive_gpu_boundary",
+  "jobs_outside_active_update_region": [
+    {
+      "pid": 52672,
+      "arm": "U",
+      "seed": 137,
+      "completed_updates": 1000
+    }
+  ],
+  "registered_updates_unchanged": 15000,
+  "old_pixel_evaluator_not_started": true,
+  "training_child_interrupted_during_updates": false,
+  "timestamp": "2026-10-17T11:04:34.496746+00:00"
+}

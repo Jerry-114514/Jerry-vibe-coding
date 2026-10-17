@@ -1,0 +1,47 @@
+{
+  "schema": "independent.9b.native1000.evaluation.v2",
+  "user_requested_amendment": true,
+  "registered_after_old_pixel_minimum_outputs": true,
+  "timestamp": "2026-10-17T10:59:06.325227+00:00",
+  "student_protocol_sha256": "38f1c863c5fbcf5bcdfec7184bc580481e88d1a08d805afd2210e7cd6c421a7f",
+  "training_plan_sha256": "d1848b7b349781402c9877b1a986ec3dd511320edff7d10db553830b35d5bd08",
+  "source_sha256": {
+    "evaluate_9b_native.py": "457c25adb1247cb430168cd53bc5e8a85c57fc03003ad210727b0817fbe17456",
+    "run_9b_native_evaluation.py": "3a4d378e457e0bbde2944e07eaa7d468a924cd21aa8e04e0651b5721d3d83562",
+    "analyze_9b_native.py": "3614943ba0a3bb73ea4469acfc751b05e3de2a3168016a1ed9b0bbf5133ac2c2"
+  },
+  "inputs": {
+    "minimal": {
+      "rows": 800,
+      "original_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+      "native_sha256": "be8200239a1455c89bbcf336d8a57b6ef634b9fecd4dc96f6d93a877663ebac5",
+      "grounding_rows": 100,
+      "native_grounding_max_prompt_tokens": 457,
+      "unchanged_non_grounding_rows": 700
+    },
+    "formal": {
+      "rows": 16900,
+      "original_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+      "native_sha256": "0234d162c925fb10e2f089afbe282d3f6f564b88d6d1b5a63c156ec95f51f091",
+      "grounding_rows": 2400,
+      "native_grounding_max_prompt_tokens": 483,
+      "unchanged_non_grounding_rows": 14500
+    }
+  },
+  "coordinate_contract": "All models output normalized0..1000; x*width/1000,y*height/1000; original-pixel GT and IoU>=.5; no GT-driven unit selection",
+  "training_unchanged": true,
+  "training_target_coordinate_contract": "original-pixel targets, as already frozen",
+  "extra_calibration_generations": 400,
+  "calibration_active_wall_seconds_cap": 900,
+  "N_grounding_minimum_accuracy": 0.75,
+  "N_grounding_maximum_parse_failures": 5,
+  "calibration_reuse": "700 unchanged non-grounding outputs per minimum model; retain source ledger SHA",
+  "formal_models": 16,
+  "formal_generations": 270400,
+  "formal_evaluation_wall_hours_cap": 40,
+  "max_new_tokens": 128,
+  "max_total_tokens": 2048,
+  "max_visual_tokens": 1280,
+  "statistics": "Original registered10000 paired seed/image bootstrap,12 Bonferroni comparisons,seed2026101703",
+  "scope": "User-amended measurement calibration; independent extension, not ARP confirmation or capacity-only effect"
+}

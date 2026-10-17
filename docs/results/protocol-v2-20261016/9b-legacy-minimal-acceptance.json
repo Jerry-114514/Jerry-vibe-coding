@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "five_checks": {
+    "cache_loading_and_no_silent_truncation": "Provider stop responses; full student input checks passed before100-update preflight",
+    "finite_dual_ce_nonzero_gradients": true,
+    "adapter_saved_and_reloaded_in_new_eval_process": true,
+    "all_four_axis_scores_written_and_rescored": true,
+    "new_process_resumed50_to100": true
+  },
+  "resume": {
+    "restored_step": 50,
+    "optimizer_restored": true,
+    "rng_restored": true,
+    "checkpoint_sha256": "9dacb0d06b18b8dce291f05c932b9ca20cc791025e0d4d093b0016c413398eb9",
+    "new_pid": 48335
+  },
+  "first_resumed_loss": 7.510128853027709e-06,
+  "scores": {
+    "A1": {
+      "pope": 0.91,
+      "grounding": 0.01,
+      "consistency": 0.93,
+      "mmstar": 0.73
+    },
+    "A2": {
+      "pope": 0.91,
+      "grounding": 0.01,
+      "consistency": 0.91,
+      "mmstar": 0.77
+    },
+    "U": {
+      "pope": 0.93,
+      "grounding": 0.85,
+      "consistency": 0.94,
+      "mmstar": 0.76
+    },
+    "N": {
+      "pope": 0.91,
+      "grounding": 0.01,
+      "consistency": 0.88,
+      "mmstar": 0.68
+    }
+  },
+  "training": {
+    "A1": {
+      "real_updates": 100,
+      "axis_update_counts": {
+        "mmstar": 100
+      },
+      "reserved_peak_bytes": 20514340864,
+      "step_seconds": 96.50644598156214
+    },
+    "A2": {
+      "real_updates": 100,
+      "axis_update_counts": {
+        "consistency": 100
+      },
+      "reserved_peak_bytes": 20858273792,
+      "step_seconds": 97.6203385964036
+    },
+    "U": {
+      "real_updates": 100,
+      "axis_update_counts": {
+        "pope": 25,
+        "grounding": 25,
+        "consistency": 25,
+        "mmstar": 25
+      },
+      "reserved_peak_bytes": 20686307328,
+      "step_seconds": 91.9191997051239
+    }
+  },
+  "protocol_sha256": "38f1c863c5fbcf5bcdfec7184bc580481e88d1a08d805afd2210e7cd6c421a7f",
+  "formal9b_runs_started": false,
+  "scope": "Independent9B+122B engineering loop; not originalARP confirmation"
+}
