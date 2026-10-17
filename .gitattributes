@@ -20,3 +20,5 @@ tools/analyze_9b_formal.py -text
 tools/run_9b_formal_when_ready.py -text
 *.pdf binary
 tools/vendor/** -text
+# Preserve downloaded final evidence bytes against local-copy-manifest SHA256.
+docs/results/protocol-v2-20261016/route-b-final/** -text
