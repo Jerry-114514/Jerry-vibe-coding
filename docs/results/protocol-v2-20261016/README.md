@@ -6,7 +6,17 @@
 
 最新调度按[四阶段更新](route_b_staged_update.md)：500条最小循环优先，验收后才补齐全池与冻结正式计划；4090已释放，评测改用5090。[9B权重与独立环境](qwen35_9b_infrastructure.md)并行准备，GPU烟测等待7B最小循环通过。
 
-**阶段一已于北京时间2026-10-16 21:48通过五项验收**：[真实报告](route-b-minimal-report.md)、[完整数值/token分布](route-b-minimal-report.json)、[独立检查点与逐题重评分验收](route-b-minimal-independent-verification.json)。A1实际从50恢复至100，首恢复损失0.000149575；三臂训练峰值20.563/22.247/21.341GB，N推理峰值18.690GB。正式15次训练结果仍待运行/汇总，不能将阶段一表格当作正式结论。
+**阶段一已于北京时间2026-10-16 21:48通过五项验收**：[真实报告](route-b-minimal-report.md)、[完整数值/token分布](route-b-minimal-report.json)、[独立检查点与逐题重评分验收](route-b-minimal-independent-verification.json)。A1实际从50恢复至100，首恢复损失0.000149575；三臂训练峰值20.563/22.247/21.341GB，N推理峰值18.690GB。阶段一表格仅用于最小循环；正式15次训练结果见上述最新汇总，完整评测仍待完成。
+
+## 2026-10-17 08:21 运行核验
+
+独立7B路线B已完成 **15/15训练、15,000次真实更新**，全部适配器及恢复状态已备份；每次的优化器步数和导出张量均经独立复核。纯训练步骤合计8,300.61秒（2.31小时），不含装载、检查点、上传和排队；reserved峰值范围20.319–24.547GB。
+
+- [完整训练表](route-b-formal-training-report.md)、[逐次原始汇总](route-b-formal-training-results.json)、[损失曲线](route-b-formal-loss-curves.png)。原始完成报告已于北京时间01:04自动上传Release。
+- [正式评测阶段性报告](route-b-formal-evaluation-progress.md)、[含四轴分数和已匹配seed区间的数值](route-b-formal-evaluation-progress.json)：报告快照为08:07，完成7/16模型。08:21实际第8模型A1/seed256约4,600/16,900提示，PID27898存活；余量估计约9小时，按后续实际吞吐调整。阶段性区间只有已完成seed，不能当作5seed终局结论。
+- 9B权重和独立环境已就绪，GPU推理烟测通过，reserved19.002GB；**不是完整训练预检**。122B教师缓存保存1,307/3,545条后HTTP400停止，未重试失败请求。接力已获用户授权，但教师全量缓存、9B完整配置预检和正式执行器仍需完成，不能声称接力已具备无条件启动能力。7B评测不受影响。
+
+以下早期状态保留历史语境；当前独立路线B训练已获授权且训练完成，原ARP阶段C仍未放行。
 
 ## 最新模型分工
 

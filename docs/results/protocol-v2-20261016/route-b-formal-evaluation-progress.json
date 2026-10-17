@@ -1,0 +1,268 @@
+{
+  "status": "partial",
+  "completed_models": 7,
+  "expected_models": 16,
+  "processed_prompts": 118300,
+  "remaining_estimated_hours": 8.872080877995385,
+  "remaining_estimated_CNY": 23.954618370587543,
+  "mean_seconds_per_prompt": 0.20999007995255348,
+  "scores": {
+    "N-seed42": {
+      "axis_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.6779166666666666,
+        "consistency": 0.84125,
+        "mmstar": 0.6293333333333333
+      },
+      "rows": 16900,
+      "ledger_sha256": "b5f58a09fac32ab0a2c95ea1f9eba4ec595cdbc1a7b50642c2a2a7f1f5a7a81d",
+      "adapter_reloaded_for_inference": false,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 19878903808,
+      "peak_allocated_bytes": 17183380992,
+      "total_generation_seconds": 3409.807672280818
+    },
+    "A1-seed42": {
+      "axis_scores": {
+        "pope": 0.8761111111111111,
+        "grounding": 0.675,
+        "consistency": 0.84125,
+        "mmstar": 0.6126666666666667
+      },
+      "rows": 16900,
+      "ledger_sha256": "c22580611b38a65dfd209d734c9dcea4a27f7307fd9f421ac3330bc4288b4d6c",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3413.1887485422194
+    },
+    "A2-seed42": {
+      "axis_scores": {
+        "pope": 0.8757777777777778,
+        "grounding": 0.6779166666666666,
+        "consistency": 0.85125,
+        "mmstar": 0.622
+      },
+      "rows": 16900,
+      "ledger_sha256": "581fad5fdad9cb609fc38f64e415b082376359f8fe9ae9ba86667dd0d14f56ce",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3379.1294666044414
+    },
+    "U-seed42": {
+      "axis_scores": {
+        "pope": 0.9021111111111111,
+        "grounding": 0.79125,
+        "consistency": 0.83875,
+        "mmstar": 0.6106666666666667
+      },
+      "rows": 16900,
+      "ledger_sha256": "5bd7295b8a221a5a2d42cf6f726ea01300bc756d403eab5f8ef94afe908c523e",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3869.368863519281
+    },
+    "A1-seed137": {
+      "axis_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.6729166666666667,
+        "consistency": 0.8625,
+        "mmstar": 0.6273333333333333
+      },
+      "rows": 16900,
+      "ledger_sha256": "3c11fd6727b0738e4fcf4da4c6a4088d4b06909a9d4b366225024e13ea641b82",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3324.391469359398
+    },
+    "A2-seed137": {
+      "axis_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.675,
+        "consistency": 0.86125,
+        "mmstar": 0.624
+      },
+      "rows": 16900,
+      "ledger_sha256": "efe2b00b19780df76b9fe5e317fe47398e0c58c9a6cbf0ca2a111ac1dfc75629",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3325.265279110521
+    },
+    "U-seed137": {
+      "axis_scores": {
+        "pope": 0.8804444444444445,
+        "grounding": 0.83125,
+        "consistency": 0.8425,
+        "mmstar": 0.6206666666666667
+      },
+      "rows": 16900,
+      "ledger_sha256": "c1643e5a4b72574996b2625033efcdf29153fc55565a4b5c982b4101c9937953",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 4120.674958970398
+    }
+  },
+  "paired_contrasts": {
+    "A1-A2": {
+      "status": "available",
+      "matched_seeds": [
+        42,
+        137
+      ],
+      "interval": "Pointwise95%; exploratory",
+      "training_seed_uncertainty_included": true,
+      "axes": {
+        "pope": {
+          "difference": 0.00016666666666666666,
+          "ci95": [
+            -0.0031111111111111114,
+            0.003336111111111096
+          ],
+          "image_clusters": 500,
+          "original_units": 9000
+        },
+        "grounding": {
+          "difference": -0.0025,
+          "ci95": [
+            -0.009228672796928381,
+            0.004377437822358519
+          ],
+          "image_clusters": 1905,
+          "original_units": 2400
+        },
+        "consistency": {
+          "difference": -0.004375,
+          "ci95": [
+            -0.02462199028847259,
+            0.01424906487236804
+          ],
+          "image_clusters": 774,
+          "original_units": 800
+        },
+        "mmstar": {
+          "difference": -0.003,
+          "ci95": [
+            -0.022016666666666664,
+            0.015349999999999909
+          ],
+          "image_clusters": 1500,
+          "original_units": 1500
+        }
+      }
+    },
+    "A1-U": {
+      "status": "available",
+      "matched_seeds": [
+        42,
+        137
+      ],
+      "interval": "Pointwise95%; exploratory",
+      "training_seed_uncertainty_included": true,
+      "axes": {
+        "pope": {
+          "difference": -0.01538888888888889,
+          "ci95": [
+            -0.031669444444444445,
+            -0.0017777777777777779
+          ],
+          "image_clusters": 500,
+          "original_units": 9000
+        },
+        "grounding": {
+          "difference": -0.13729166666666667,
+          "ci95": [
+            -0.17207244536557423,
+            -0.10439489579560644
+          ],
+          "image_clusters": 1905,
+          "original_units": 2400
+        },
+        "consistency": {
+          "difference": 0.01125,
+          "ci95": [
+            -0.010089230130732516,
+            0.03152053194125982
+          ],
+          "image_clusters": 774,
+          "original_units": 800
+        },
+        "mmstar": {
+          "difference": 0.004333333333333333,
+          "ci95": [
+            -0.012,
+            0.02
+          ],
+          "image_clusters": 1500,
+          "original_units": 1500
+        }
+      }
+    },
+    "A1-N": {
+      "status": "available",
+      "matched_seeds": [
+        42,
+        137
+      ],
+      "interval": "Pointwise95%; exploratory",
+      "training_seed_uncertainty_included": true,
+      "axes": {
+        "pope": {
+          "difference": 0.00022222222222222223,
+          "ci95": [
+            -0.0032222222222222222,
+            0.0036666666666666666
+          ],
+          "image_clusters": 500,
+          "original_units": 9000
+        },
+        "grounding": {
+          "difference": -0.003958333333333334,
+          "ci95": [
+            -0.013132259547233812,
+            0.005027812689103009
+          ],
+          "image_clusters": 1905,
+          "original_units": 2400
+        },
+        "consistency": {
+          "difference": 0.010625,
+          "ci95": [
+            -0.010013775080485827,
+            0.03241996444593883
+          ],
+          "image_clusters": 774,
+          "original_units": 800
+        },
+        "mmstar": {
+          "difference": -0.009333333333333334,
+          "ci95": [
+            -0.029666666666666668,
+            0.010674999999999954
+          ],
+          "image_clusters": 1500,
+          "original_units": 1500
+        }
+      }
+    }
+  },
+  "timestamp": "2026-10-17T00:07:00.055768+00:00",
+  "eta_limit": "Observed mix estimate; includes neither future output-length drift nor backup time"
+}
