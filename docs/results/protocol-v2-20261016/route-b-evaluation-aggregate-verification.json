@@ -1,6 +1,6 @@
 {
   "status": "completed_subset_verified",
-  "timestamp": "2026-10-17T01:05:10.409115+00:00",
+  "timestamp": "2026-10-17T05:47:50.515414+00:00",
   "verified_models": [
     {
       "model": "N-seed42",
@@ -105,14 +105,62 @@
       },
       "ledger_sha256": "550a8d9ac2aff064d0e6c9e606ca405aa1538e2580f8182ac8a25f9572859540",
       "score_marker_sha256": "01ab7751c83fbdc1be11689ace6843552487661378dac509331e7bdc7d0a2e77"
+    },
+    {
+      "model": "A2-seed256",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.872,
+        "grounding": 0.67375,
+        "consistency": 0.85,
+        "mmstar": 0.6106666666666667
+      },
+      "ledger_sha256": "d8e4ab54e058899d9dcf420449681f8a21504e44e0fde2218f01bfb56896eaea",
+      "score_marker_sha256": "66c48bacb4821a929d85c2483c7e776d05c565e2ca26556386f0793c0c9d5bca"
+    },
+    {
+      "model": "U-seed256",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.8911111111111111,
+        "grounding": 0.79,
+        "consistency": 0.85,
+        "mmstar": 0.6273333333333333
+      },
+      "ledger_sha256": "e7d9fa24c9723261994eae423a55ebe98f25364e53e4b981795b420050570e9a",
+      "score_marker_sha256": "8097900795a061f3e6a6af35fd3e2dc737ce89d7b3e408f2bfb68cb44085bb27"
+    },
+    {
+      "model": "A2-seed512",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.8754444444444445,
+        "grounding": 0.6716666666666666,
+        "consistency": 0.8425,
+        "mmstar": 0.598
+      },
+      "ledger_sha256": "7acd062ef0b988c4689478ec75ac81fafc323b5c0de97493074c86b0e527ad2c",
+      "score_marker_sha256": "085d76b9d6e758069848b46485f8cf73f9dcb1bac07cc601d20450f1a001ee66"
+    },
+    {
+      "model": "U-seed512",
+      "prompts": 16900,
+      "original_units": 13700,
+      "axis_scores": {
+        "pope": 0.8845555555555555,
+        "grounding": 0.6979166666666666,
+        "consistency": 0.8375,
+        "mmstar": 0.6193333333333333
+      },
+      "ledger_sha256": "19f4ac5f492e7e18491670382f6df8618041d73a914835b95e28e1175b0a3703",
+      "score_marker_sha256": "f901e4b9d6715a3da6dd00de9c9b5d2a74c98c386e45bc961d6e5aa7f0c56c7c"
     }
   ],
   "pending_models": [
-    "A2-seed256",
-    "U-seed256",
     "A1-seed512",
-    "A2-seed512",
-    "U-seed512",
     "A1-seed1024",
     "A2-seed1024",
     "U-seed1024"

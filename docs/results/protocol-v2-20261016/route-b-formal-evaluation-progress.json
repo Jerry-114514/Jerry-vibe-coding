@@ -1,11 +1,11 @@
 {
   "status": "partial",
-  "completed_models": 8,
+  "completed_models": 12,
   "expected_models": 16,
-  "processed_prompts": 135200,
-  "remaining_estimated_hours": 7.840640771892956,
-  "remaining_estimated_CNY": 21.169730084110984,
-  "mean_seconds_per_prompt": 0.20877445842318523,
+  "processed_prompts": 202800,
+  "remaining_estimated_hours": 3.9539901169903438,
+  "remaining_estimated_CNY": 10.67577331587393,
+  "mean_seconds_per_prompt": 0.2105675210231544,
   "scores": {
     "N-seed42": {
       "axis_scores": {
@@ -134,6 +134,70 @@
       "peak_reserved_bytes": 20122173440,
       "peak_allocated_bytes": 17350342656,
       "total_generation_seconds": 3384.4803204275668
+    },
+    "A2-seed256": {
+      "axis_scores": {
+        "pope": 0.872,
+        "grounding": 0.67375,
+        "consistency": 0.85,
+        "mmstar": 0.6106666666666667
+      },
+      "rows": 16900,
+      "ledger_sha256": "d8e4ab54e058899d9dcf420449681f8a21504e44e0fde2218f01bfb56896eaea",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3337.6956730149686
+    },
+    "U-seed256": {
+      "axis_scores": {
+        "pope": 0.8911111111111111,
+        "grounding": 0.79,
+        "consistency": 0.85,
+        "mmstar": 0.6273333333333333
+      },
+      "rows": 16900,
+      "ledger_sha256": "e7d9fa24c9723261994eae423a55ebe98f25364e53e4b981795b420050570e9a",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 4210.880208428949
+    },
+    "A2-seed512": {
+      "axis_scores": {
+        "pope": 0.8754444444444445,
+        "grounding": 0.6716666666666666,
+        "consistency": 0.8425,
+        "mmstar": 0.598
+      },
+      "rows": 16900,
+      "ledger_sha256": "7acd062ef0b988c4689478ec75ac81fafc323b5c0de97493074c86b0e527ad2c",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3342.493016690016
+    },
+    "U-seed512": {
+      "axis_scores": {
+        "pope": 0.8845555555555555,
+        "grounding": 0.6979166666666666,
+        "consistency": 0.8375,
+        "mmstar": 0.6193333333333333
+      },
+      "rows": 16900,
+      "ledger_sha256": "19f4ac5f492e7e18491670382f6df8618041d73a914835b95e28e1175b0a3703",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3585.7175865471363
     }
   },
   "paired_contrasts": {
@@ -141,43 +205,44 @@
       "status": "available",
       "matched_seeds": [
         42,
-        137
+        137,
+        256
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": 0.00016666666666666666,
+          "difference": 0.0011851851851851852,
           "ci95": [
-            -0.0031111111111111114,
-            0.003336111111111096
+            -0.002148148148148148,
+            0.004555555555555555
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.0025,
+          "difference": -0.0008333333333333334,
           "ci95": [
-            -0.009228672796928381,
-            0.004377437822358519
+            -0.007604372012673609,
+            0.006067011327122256
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": -0.004375,
+          "difference": -0.002916666666666667,
           "ci95": [
-            -0.02462199028847259,
-            0.01424906487236804
+            -0.020077178588472515,
+            0.014892068881882103
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": -0.003,
+          "difference": -0.0022222222222222222,
           "ci95": [
-            -0.022016666666666664,
-            0.015349999999999909
+            -0.01845,
+            0.014222222222222221
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -188,43 +253,44 @@
       "status": "available",
       "matched_seeds": [
         42,
-        137
+        137,
+        256
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": -0.01538888888888889,
+          "difference": -0.015555555555555557,
           "ci95": [
-            -0.031669444444444445,
-            -0.0017777777777777779
+            -0.027999999999999997,
+            -0.005111111111111111
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.13729166666666667,
+          "difference": -0.12944444444444445,
           "ci95": [
-            -0.17207244536557423,
-            -0.10439489579560644
+            -0.15915739365242673,
+            -0.1039719388367585
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": 0.01125,
+          "difference": 0.0075,
           "ci95": [
-            -0.010089230130732516,
-            0.03152053194125982
+            -0.010330208162851778,
+            0.025252682100508187
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": 0.004333333333333333,
+          "difference": -0.0028888888888888888,
           "ci95": [
-            -0.012,
-            0.02
+            -0.02266666666666667,
+            0.014672222222222194
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -280,6 +346,6 @@
       }
     }
   },
-  "timestamp": "2026-10-17T01:04:06.031184+00:00",
+  "timestamp": "2026-10-17T05:09:04.782532+00:00",
   "eta_limit": "Observed mix estimate; includes neither future output-length drift nor backup time"
 }
