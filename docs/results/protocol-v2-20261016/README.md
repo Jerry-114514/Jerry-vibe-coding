@@ -4,6 +4,8 @@
 
 ## 当前独立路线B
 
+必要过程数据同样归档，详见[过程记录与复核索引](route_b_process_artifacts.md)：冻结配置、教师 EOS 证据、逐步损失/梯度/显存/耗时、恢复状态、评测原始输出和服务端完整性校验均有对应路径。
+
 本地Qwen2.5-VL-7B教师/学生，双CE序列蒸馏。A1=mmstar推理代理，A2=consistency，U=四轴等比例，N=不更新。原ARP阶段C仍未放行，本实验不冒充ARP确认性结论。[锁定计划与八项原ARP阻塞估算](route_b_execution_plan.md)。训练及评测均在5090，4090已释放。
 
 - 最小循环五项验收已通过：[报告](route-b-minimal-report.md)、[token分布与数值](route-b-minimal-report.json)、[独立验收](route-b-minimal-independent-verification.json)。A1由第50步新进程恢复至100步；全量3,545条EOS教师缓存已冻结和备份。
