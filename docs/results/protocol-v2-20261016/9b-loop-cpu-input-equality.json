@@ -1,0 +1,12 @@
+{
+  "status": "passed_cpu_engine_preflight_input_equality",
+  "axes": [
+    "pope",
+    "grounding",
+    "consistency",
+    "mmstar"
+  ],
+  "minimum_rows": 500,
+  "no_cuda_context": true,
+  "real_training_not_tested": true
+}

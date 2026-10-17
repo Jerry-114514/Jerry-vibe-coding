@@ -1,0 +1,79 @@
+{
+  "status": "passed_cpu_minimal_and_full_evaluation_inputs",
+  "cpu_only": true,
+  "no_cuda_context": true,
+  "cpu_threads": 2,
+  "results": {
+    "minimal": {
+      "rows": 800,
+      "manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+      "axis_rows": {
+        "pope": 100,
+        "grounding": 100,
+        "consistency": 500,
+        "mmstar": 100
+      },
+      "prompt_tokens": {
+        "pope": {
+          "min": 289,
+          "max": 409,
+          "mean": 314.42
+        },
+        "grounding": {
+          "min": 326,
+          "max": 454,
+          "mean": 353.67
+        },
+        "consistency": {
+          "min": 309,
+          "max": 536,
+          "mean": 358.82
+        },
+        "mmstar": {
+          "min": 308,
+          "max": 1364,
+          "mean": 396.67
+        }
+      }
+    },
+    "formal": {
+      "rows": 16900,
+      "manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+      "axis_rows": {
+        "consistency": 4000,
+        "grounding": 2400,
+        "mmstar": 1500,
+        "pope": 9000
+      },
+      "prompt_tokens": {
+        "consistency": {
+          "min": 302,
+          "max": 855,
+          "mean": 359.30625
+        },
+        "grounding": {
+          "min": 324,
+          "max": 480,
+          "mean": 356.81583333333333
+        },
+        "mmstar": {
+          "min": 302,
+          "max": 1402,
+          "mean": 392.99133333333333
+        },
+        "pope": {
+          "min": 289,
+          "max": 431,
+          "mean": 314.6728888888889
+        }
+      }
+    }
+  },
+  "unique_images_hash_checked": 4705,
+  "max_prompt_tokens": 2048,
+  "max_visual_tokens": 1280,
+  "elapsed_seconds": 88.34199112653732,
+  "source_sha256": "e58f1055f1443eff46bf7d0d812736803819f5b6bab05885fa4f6d3d1d6fc7aa",
+  "input_engine_sha256": "64a7c29589e4883261eb6f22b2eb3536c998a360c6c49214bab5eb7e0324a780",
+  "note": "No predictions, model weights, optimizer or gradients loaded; original evaluation manifests preserved byte-for-byte"
+}

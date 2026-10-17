@@ -12,5 +12,8 @@ tools/resume_9b_api_teacher_cache.py -text
 tools/resume_9b_teacher_eligible.py -text
 tools/preflight_9b_full.py -text
 tools/report_route_b_multiplicity.py -text
+tools/route_b_9b_loop.py -text
+tools/run_9b_minimal_when_ready.py -text
+tools/preflight_9b_evaluation_inputs.py -text
 *.pdf binary
 tools/vendor/** -text

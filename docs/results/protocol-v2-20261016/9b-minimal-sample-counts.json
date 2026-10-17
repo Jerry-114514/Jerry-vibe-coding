@@ -1,0 +1,15 @@
+{
+  "rows_by_axis": {
+    "pope": 125,
+    "grounding": 125,
+    "consistency": 125,
+    "mmstar": 125
+  },
+  "original_units_by_axis": {
+    "pope": 125,
+    "grounding": 125,
+    "consistency": 104,
+    "mmstar": 125
+  },
+  "note": "Prompt counts are not independent-original-unit counts"
+}
