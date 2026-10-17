@@ -1,0 +1,12 @@
+{
+  "status": "user_authorized_independent_measurement_continues",
+  "timestamp": "2026-10-17T15:42:40.818533+00:00",
+  "original_protocol_sha256": "2b548e57ba5d55dc4b10756586d279508971c596c03e20b7a10181ad271a9147",
+  "controller_source_sha256": "4609edb5b7f7c98ecba2190a64078753aacba7f0e4c00a9ca0f81755830748b1",
+  "reason": "9B failed common-contract calibration;7B has its own fixed80% gate and must not wait for9B",
+  "supersedes_queue_dependency_only": true,
+  "registered_generations_unchanged": 38400,
+  "sampling_scoring_budget_and_stop_rules_unchanged": true,
+  "new9b_generations": 0,
+  "new7b_predictions_before_amendment": 0
+}

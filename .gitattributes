@@ -61,3 +61,19 @@ docs/results/protocol-v2-20261016/common-processor-registration-verification.jso
 docs/results/protocol-v2-20261016/diskguard-live-verification-20261017.json -text
 tools/audit_common_processor_inputs.py -text
 docs/results/protocol-v2-20261016/common-processor-input-audit.json -text
+
+tools/processor_pixel_contract_csv.py -text
+tools/continue_7b_processor_grounding.py -text
+tools/report_9b_common_calibration_failure.py -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-active-gpu-budget.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-active-processor-protocol.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-calibration-proof.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-csv-schema-amendment.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-independent-queue-amendment.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/9b-failed-processor-calibration.json -text
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/handoff-live-snapshot.json -text
+docs/results/protocol-v2-20261016/9b-training-final/recovery-availability.json -text
+docs/results/protocol-v2-20261016/9b-training-final/training-complete.json -text
+docs/results/protocol-v2-20261016/9b-training-final/training-health.json -text
+docs/results/protocol-v2-20261016/9b-training-final/training-results.json -text
+docs/results/protocol-v2-20261016/9b-training-final/training-wall-budget.json -text

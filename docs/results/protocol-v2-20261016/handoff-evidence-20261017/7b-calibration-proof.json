@@ -1,0 +1,14 @@
+{
+  "rows": 100,
+  "accuracy": 0.8,
+  "parse_failures": 2,
+  "ledger_sha256": "0150e9719917e456fbbbf9933bef4207229fd3bc8fdb12ba11d15991397a9a67",
+  "protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+  "reserved_peak_bytes": 17253269504,
+  "generation_seconds": 31.49783533066511,
+  "optimizer_loaded": false,
+  "gradients_enabled": false,
+  "schema_amendment_sha256": "1a0500616a60cf502c2fe4b334526f6f71ce30e69d241ebd16e85ea82c78a78f",
+  "no_new_generations": true,
+  "source_generation_ledger_sha256": "09a703e7e929907df5593874f60387d1e9fdc74e27398367565b5bfe81e87163"
+}

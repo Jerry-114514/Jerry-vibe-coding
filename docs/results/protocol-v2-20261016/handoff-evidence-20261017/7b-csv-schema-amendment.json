@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-17T15:49:11.617053+00:00",
+  "parent_protocol_sha256": "2b548e57ba5d55dc4b10756586d279508971c596c03e20b7a10181ad271a9147",
+  "reason": "Prompt requests four numbers; exact four-number CSV was incorrectly rejected by JSON-only parser",
+  "accepted_schemas": [
+    "existing strict JSON bbox forms",
+    "exact four finite JSON-numeric literals separated by three commas"
+  ],
+  "all_models_same_grammar": true,
+  "no_coordinate_value_unit_or_GT_selection_change": true,
+  "existing100_generations_reused_without_model_calls": true,
+  "source_raw_ledger_sha256": "09a703e7e929907df5593874f60387d1e9fdc74e27398367565b5bfe81e87163",
+  "no_new_predictions_before_schema_registration": true,
+  "original_gpu_wall_budget_sha256": "7ca35113601bfd1ce3d826163beec3159c653cdefb6e57ce532603502b73377d",
+  "gpu_deadline_not_reset": true,
+  "original38400_generation_cap_unchanged": true
+}

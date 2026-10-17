@@ -11,13 +11,13 @@ import time
 
 from experiment_common import ROOT,read_json,read_rows,write_json,write_rows,sha,units
 from route_b_staged import OUT as SEVEN,SEEDS,freeze
-from processor_pixel_contract import dimensions,item_with_contract,score,assert_runtime_grid,cpu_7b_inputs
+from processor_pixel_contract_csv import dimensions,item_with_contract,score,assert_runtime_grid,cpu_7b_inputs
 
 OUT=ROOT/'runs/7b-processor-pixel-audit-20261017'
 NINE=ROOT/'runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3'
 MODELS=[('N',42)]+[(a,s) for s in SEEDS for a in ('A1','A2','U')]
 ENV=Path('/root/autodl-tmp/arp-venv/bin/python')
-SOURCES=('run_7b_processor_grounding.py','processor_pixel_contract.py')
+SOURCES=('run_7b_processor_grounding.py','processor_pixel_contract.py','processor_pixel_contract_csv.py')
 
 
 def prepare():

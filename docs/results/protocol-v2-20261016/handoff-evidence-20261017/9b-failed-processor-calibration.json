@@ -1,0 +1,27 @@
+{
+  "status": "registered9b_calibration_failed_no_formal_evaluation",
+  "timestamp": "2026-10-17T15:53:38.922123+00:00",
+  "rows": 100,
+  "registered_threshold": 0.8,
+  "source_ledger_sha256": "d5a98f517b80d3cfdce255286db17aaa0bb59fc78aa9faf8c94ab2c6b93faaee",
+  "protocol_sha256": "9238274aa336d3b3255e2d89e5d709d8798bd818e9ddb7ce957659e9860bcf65",
+  "diagnostic_source_sha256": "50b3e69f26d36ffbf549466db76319d50bfdfd00f33d9668f7a3ee28cd258756",
+  "scores": {
+    "registered_processor_pixels": {
+      "accuracy": 0.01,
+      "parse_failures": 95
+    },
+    "processor_pixels_csv_schema": {
+      "accuracy": 0.01,
+      "parse_failures": 95
+    },
+    "posthoc_fixed1000_diagnostic_only": {
+      "accuracy": 0.86,
+      "parse_failures": 0
+    }
+  },
+  "new_predictions": 0,
+  "posthoc1000_score_not_a_pass": true,
+  "no_threshold_or_prompt_retry": true,
+  "scope": "Unit diagnosis only; do not replace the registered processor-pixel score with a higher diagnostic score"
+}

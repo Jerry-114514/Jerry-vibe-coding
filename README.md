@@ -6,7 +6,7 @@
 
 **7B定位测量补充：** [坐标审计与补救方案](docs/results/protocol-v2-20261016/7b_grounding_recovery_plan.md)。CPU审计发现原图/处理器像素尺度混杂，原U定位增益暂不能解释为纯能力提升；原始分数保留，独立定位复测已登记。
 
-**当前执行：** [7B/9B共同处理器像素协议](docs/results/protocol-v2-20261016/common_processor_pixel_execution.md)。两代统一明确处理器宽高后换回原图计分，替代尚未生成预测的千分比方案；7B定位全16模型复测后进入9B全量评测。
+**结果与交接：** [基于《大模型方案》的实验结果报告](docs/results/protocol-v2-20261016/大模型方案_实验结果报告_20261017.md) · [Markdown交接文档](docs/results/protocol-v2-20261016/大模型方案_实验交接文档_20261017.md)。7B定位复测正在运行；9B十五次训练已完成，但共同处理器像素校准未通过，正式评测尚未启动。[当前测量协议及修订](docs/results/protocol-v2-20261016/common_processor_pixel_execution.md)保留失败证据与停止规则。
 
 ## 查看实验结果
 

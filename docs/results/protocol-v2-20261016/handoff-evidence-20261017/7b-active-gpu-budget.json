@@ -1,0 +1,6 @@
+{
+  "start_utc": "2026-10-17T15:42:49.643461+00:00",
+  "end_utc": "2026-10-18T03:42:49.643461+00:00",
+  "never_reset_on_restart": true,
+  "queue_amendment_sha256": "88688a18dc9340f5eeeab169d3b22ca9ccf99f90c270117c9ae72e7b180b7edb"
+}

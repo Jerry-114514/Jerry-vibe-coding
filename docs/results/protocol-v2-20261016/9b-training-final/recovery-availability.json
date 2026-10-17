@@ -1,0 +1,159 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "arm": "A1",
+      "seed": 42,
+      "updates": 1000,
+      "resume_sha256": "1a13ad2463a19c1872ef796c10a5cf07bbb2616598ce8f8476789cfb1fbae0e3",
+      "local": false,
+      "optimizer_tensor_verified_before_archival": true,
+      "fresh_server_verification": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T14:08:05.157013+00:00"
+      },
+      "restore_pointer_sha256": "8732139b0820241dbfb7760af08e1e472209a6b335bc86245b71559e5614049b",
+      "receipt_sha256": "168ffe3493827da528ebdb96b7951ef790ddea91d81fc4154ee2a9ac2f271fab"
+    },
+    {
+      "arm": "A2",
+      "seed": 42,
+      "updates": 1000,
+      "resume_sha256": "4d7a9157270851dd2e9bd095d1fb1440e0bd8774e22548996d37fb5fbc77c69e",
+      "local": false,
+      "optimizer_tensor_verified_before_archival": true,
+      "fresh_server_verification": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T14:08:06.651507+00:00"
+      },
+      "restore_pointer_sha256": "a6d8a688375c7f1da78b5c12c6af8f52363685ec737b915a873cce10fb5fce95",
+      "receipt_sha256": "3646734fd7e840bf77aac4f7fd300fb056f4c776c04b752c41599e04bc28944a"
+    },
+    {
+      "arm": "U",
+      "seed": 42,
+      "updates": 1000,
+      "resume_sha256": "eca0468e193d8953e024d66addc3c9acd01356414092611bfbc91b75735a0985",
+      "local": false,
+      "optimizer_tensor_verified_before_archival": true,
+      "fresh_server_verification": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T14:08:08.710919+00:00"
+      },
+      "restore_pointer_sha256": "663126c39fe243eaed5503e1abbfbe5534d1c507b9a2055fb5b2c7ed708a6791",
+      "receipt_sha256": "99221b64f9a0c60aa3f32f707c59e4f3895d6b4c9d561d22826ca773ef008e2b"
+    },
+    {
+      "arm": "A1",
+      "seed": 137,
+      "updates": 1000,
+      "resume_sha256": "0ad8e900bc0d17a6f1305c38beee1ad4542c2babf2774e1b5bcf9e902e775080",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A2",
+      "seed": 137,
+      "updates": 1000,
+      "resume_sha256": "647a73d2c77ffd625ec7b87fcc480ead6adf87091e15bba553a28a0224155adc",
+      "local": false,
+      "optimizer_tensor_verified_before_archival": true,
+      "fresh_server_verification": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T14:08:12.876859+00:00"
+      },
+      "restore_pointer_sha256": "70803f5244fd9dd0ef0a98914f1d53d7c0edb431c58543789f204c870f177754",
+      "receipt_sha256": "6bc712c8d9a9a20681c2e44854ba095785c035bc01df9411961e43da450ec2a0"
+    },
+    {
+      "arm": "U",
+      "seed": 137,
+      "updates": 1000,
+      "resume_sha256": "6367f60b181f91ae5e14951858986d8ee2b26af15e8bb0d2fc4468820603ebf9",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A1",
+      "seed": 256,
+      "updates": 1000,
+      "resume_sha256": "6d8fa134cba05d3eadcc1587ac5891d4cd0f2f0070112052da173bcad79a6805",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A2",
+      "seed": 256,
+      "updates": 1000,
+      "resume_sha256": "5b76f28ab0cee16e8f2a2d00c117d22462e085bac7a433a902b0b3047b697d63",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "U",
+      "seed": 256,
+      "updates": 1000,
+      "resume_sha256": "9566d8e554d3aeabffaf79740b122566704f350d564969ec5212a82ecb134761",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A1",
+      "seed": 512,
+      "updates": 1000,
+      "resume_sha256": "f4319bb3c706c936da4af80be942ddaa61d588b5804df3af96b5ae04be339945",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A2",
+      "seed": 512,
+      "updates": 1000,
+      "resume_sha256": "273fe850f9de40f6985011bbb28b06a9bc16a63d6ee952685c21ddf386b9f2c2",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "U",
+      "seed": 512,
+      "updates": 1000,
+      "resume_sha256": "988110ffc4f3c03def1290d2ec5ca7bfc8d9cd9af22b090e526b317bdef8523b",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A1",
+      "seed": 1024,
+      "updates": 1000,
+      "resume_sha256": "55499376ea1e675507adc9f13a2cbed5a2981d4a3dbb456c5eb51f6411cae849",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "A2",
+      "seed": 1024,
+      "updates": 1000,
+      "resume_sha256": "a7134ce9096842db2fa009d4fb2950823cee076455ab3481354c4950d2d10bbc",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    },
+    {
+      "arm": "U",
+      "seed": 1024,
+      "updates": 1000,
+      "resume_sha256": "b5fc435768931ddb2fcb38e592f2c772257103a19c91fcb282faacc594d89d62",
+      "local": true,
+      "optimizer_tensor_verified_before_archival": true
+    }
+  ],
+  "available_recoveries": 15,
+  "local_recoveries": 11,
+  "verified_release_recoveries": 4,
+  "restored": [],
+  "timestamp": "2026-10-17T14:08:25.228710+00:00",
+  "policy": "Latest user disk policy permits completed archived recovery; protect active local state. Evaluation needs adapters, not optimizer downloads."
+}
