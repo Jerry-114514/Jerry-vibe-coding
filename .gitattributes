@@ -22,3 +22,7 @@ tools/run_9b_formal_when_ready.py -text
 tools/vendor/** -text
 # Preserve downloaded final evidence bytes against local-copy-manifest SHA256.
 docs/results/protocol-v2-20261016/route-b-final/** -text
+docs/results/protocol-v2-20261016/9b-5090-frozen-config.json -text
+docs/results/protocol-v2-20261016/9b-full-preflight-delivery.json -text
+docs/results/protocol-v2-20261016/9b-full-preflight-result.json -text
+docs/results/protocol-v2-20261016/9b-resumed-after-7b.json -text

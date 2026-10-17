@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-17T09:11:52.911289+00:00",
+  "status": "queues_resumed_after_7b_full_delivery_and_figures",
+  "controllers": [
+    {
+      "controller": "preflight",
+      "command": "tools/preflight_9b_full.py wait"
+    },
+    {
+      "controller": "minimal",
+      "command": "tools/run_9b_minimal_when_ready.py"
+    },
+    {
+      "controller": "formal",
+      "command": "tools/run_9b_formal_when_ready.py wait"
+    }
+  ]
+}

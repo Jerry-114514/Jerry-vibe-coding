@@ -20,9 +20,9 @@
 
 已清理22个未用3B权重/已备份旧预检缓存，空闲从11.80GiB提高至20.21GiB；当前约20.20GiB。[清理记录及严格收尾策略](7b_evaluation_safety_update.md)含恢复指针，保留全部本轮恢复状态、7B/9B权重及数据源。将来恢复3B GPU审计前需按保留的revision/SHA重新下载3B权重。
 
-9B[权重和隔离环境](qwen35_9b_infrastructure.md)就绪，GPU推理烟测通过；**完整训练显存预检正在执行，尚无通过结论**。122B教师可用缓存3,540条已完成并核验，5条因供应方图片检查按来源整组隔离，原1,307条前缀保持不变且未重复请求；见[HTTP400诊断与隔离](9b_api400_and_queued_preflight.md)。
+9B[权重和隔离环境](qwen35_9b_infrastructure.md)就绪，GPU推理烟测及**100次真实更新+独立压力测试完整预检已通过**：[结果](9b-full-preflight-result.json)、[交付回执](9b-full-preflight-delivery.json)。reserved峰值22.750GB/21.188GiB，真实更新均值0.941秒/步；[冻结配置](9b-5090-frozen-config.json) SHA256为`357bf7b87a71640078ccf50ef4ae7ab0e9e93d4310ff1e67b50572bf3e96a244`。122B教师可用缓存3,540条已完成并核验，5条因供应方图片检查按来源整组隔离，原1,307条前缀保持不变且未重复请求；见[HTTP400诊断与隔离](9b_api400_and_queued_preflight.md)。
 
-9B[最小循环](9b_minimal_loop_execution.md)和[15次正式调度](9b_formal_execution.md)已事前登记。7B完整内容、必要原始数据和图表均交付核验通过后，于北京时间17:11:52恢复三个等待队列；当前9B完整训练预检实际运行中。仍须依次通过显存与五项最小循环门槛才可进入正式训练，不追加预算。
+9B[最小循环](9b_minimal_loop_execution.md)和[15次正式调度](9b_formal_execution.md)已事前登记。7B完整内容、必要原始数据和图表均交付核验通过后，于北京时间17:11:52恢复三个等待队列，[恢复证据](9b-resumed-after-7b.json)。预检已于17:13:49通过；当前9B最小循环实际运行，正式训练仍等待五项验收全部通过，不追加预算。
 
 ## 原ARP模型分工与门槛
 

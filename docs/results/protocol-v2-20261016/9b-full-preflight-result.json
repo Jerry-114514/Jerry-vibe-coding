@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "real_updates": 100,
+  "separate_stress_updates": 1,
+  "reserved_peak_bytes": 22749904896,
+  "reserved_peak_GB": 22.749904896,
+  "reserved_peak_GiB": 21.1875,
+  "real_updates_reserved_peak_bytes": 21114126336,
+  "peak_allocated_bytes": 22171681792,
+  "adapter_saved_after_real_updates_before_stress": true,
+  "adapter_export_exact": true,
+  "real_mean_seconds_per_step": 0.9408203002437949,
+  "protocol_sha256": "0975dd0e95e09c0590a9dae40076697793e648a4b8097ae1c7814cbd1ffd102d",
+  "loss_sha256": "98d23fa5fbff9f83457f4cf47f6ada2bc90de8b384529cd64f73d78efff73aa3",
+  "formal_training_started": false,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "timestamp": "2026-10-17T09:13:49.803652+00:00"
+}
