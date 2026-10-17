@@ -33,7 +33,7 @@ def download_proxies():
     return {k:v for k,v in values.items() if v}
 
 
-RANGE_BYTES=16*1024**2
+RANGE_BYTES=4*1024**2
 RANGE_WORKERS=4
 
 
@@ -41,7 +41,8 @@ def fetch_range(session,asset,start,end):
     expected=end-start+1
     for attempt in range(4):
         try:
-            with session.get(asset['url'],headers={'Range':f'bytes={start}-{end}'},
+            with session.get(asset['url'],params={'download':'1','recovery_nonce':str(time.time_ns())},
+                             headers={'Range':f'bytes={start}-{end}','Cache-Control':'no-cache'},
                              stream=True,timeout=(30,60)) as response:
                 response.raise_for_status()
                 assert response.status_code==206,'Recovery server did not honor byte range'
@@ -53,18 +54,28 @@ def fetch_range(session,asset,start,end):
                 if len(buffer)!=expected:raise requests.exceptions.ChunkedEncodingError('Short recovery range')
             return buffer
         except requests.RequestException as error:
-            print('Recovery range transient',type(error).__name__,'offset',start,'attempt',attempt+1,flush=True)
-            if attempt==3:raise RuntimeError('Verified GitHub recovery range unavailable after4 bounded GET attempts') from None
+            status=error.response.status_code if getattr(error,'response',None) is not None else None
+            print('Recovery range transient',type(error).__name__,'http_status',status,'offset',start,'attempt',attempt+1,flush=True)
+            if attempt==3:raise requests.ConnectionError('Verified GitHub recovery range unavailable after4 bounded GET attempts') from None
             time.sleep(2*(attempt+1))
 
 
-def stream_asset(session,asset,stream):
-    # Large proxy responses can be truncated. Retry only a bounded16MiB range;
+def stream_asset(session,asset,stream,resume_bytes=0):
+    # Large proxy responses can be truncated. Retry only a bounded4MiB range;
     # commit bytes only after exact HTTP range/length checks, then verify the
     # complete asset SHA. A failed segment never enters the archive stream.
     size=0;digest=hashlib.sha256();announced=0
+    if resume_bytes:
+        assert 0<=resume_bytes<=asset['bytes']
+        stream.seek(0)
+        while size<resume_bytes:
+            chunk=stream.read(min(4*1024**2,resume_bytes-size))
+            assert chunk,'Owned scratch prefix unexpectedly short'
+            digest.update(chunk);size+=len(chunk)
+        stream.seek(size);announced=size
+        print('Recovery scratch prefix retained_MiB',round(size/1024**2,1),'whole-asset SHA still mandatory',flush=True)
     # Each worker owns a Session. Bound submitted ranges to4, retaining at
-    # most64MiB of completed payload even if an earlier range retries.
+    # most16MiB of completed payload even if an earlier range retries.
     def download(start,end):
         with requests.Session() as worker:
             worker.trust_env=False;worker.headers.update(session.headers)
@@ -84,6 +95,16 @@ def stream_asset(session,asset,stream):
 
 
 def restore_all(token,completed_only=False,models=None):
+    if os.name=='nt':return _restore_all(token,completed_only=completed_only,models=models)
+    import fcntl
+    with (OUT/'recovery-restoration.lock').open('w') as handle:
+        # Prefetch may overlap the end-of-training controller. Only one writer
+        # can own scratch archives and atomically install recovery states.
+        fcntl.flock(handle,fcntl.LOCK_EX)
+        return _restore_all(token,completed_only=completed_only,models=models)
+
+
+def _restore_all(token,completed_only=False,models=None):
     results=[]
     if models is not None:
         assert set(models)<={f'{a}-seed{s}' for s in SEEDS for a in ('A1','A2','U')}
@@ -114,9 +135,16 @@ def restore_all(token,completed_only=False,models=None):
             assert not archive.is_symlink() and archive.resolve().is_relative_to(OUT.resolve())
             needed=sum(a['bytes'] for a in binaries)+pointer['bytes']+5*1024**3
             assert shutil.disk_usage(OUT).free>=needed, 'Insufficient safe room for recovery restore; never evict another recovery'
-            with archive.open('wb') as stream:
-                for asset in binaries:
-                    stream_asset(session,asset,stream)
+            def download():
+                if len(binaries)==1 and archive.exists():
+                    prefix=archive.stat().st_size
+                    assert prefix<=binaries[0]['bytes']
+                    with archive.open('r+b') as stream:stream_asset(session,binaries[0],stream,resume_bytes=prefix)
+                else:
+                    with archive.open('wb') as stream:
+                        for asset in binaries:stream_asset(session,asset,stream)
+            from resilient_9b_delivery import network_retry
+            network_retry(download,'restore9b-archive:'+folder.name)
             assert archive.stat().st_size==inventory['archive']['bytes'] and sha(archive)==inventory['archive']['sha256']
             temporary=folder/'resume.restored.tmp'
             assert not temporary.is_symlink()

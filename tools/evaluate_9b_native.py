@@ -18,7 +18,7 @@ from scoring import box_iou
 from route_b_9b_loop import OUT, BASE, SEEDS, MINIMAL_MANIFEST, freeze
 
 NATIVE = OUT / 'native-evaluation-v2'
-SOURCES = ('evaluate_9b_native.py', 'run_9b_native_evaluation.py', 'analyze_9b_native.py')
+SOURCES = ('evaluate_9b_native.py', 'run_9b_native_evaluation.py', 'analyze_9b_native.py', 'resilient_9b_delivery.py', 'verify_9b_recovery_availability.py')
 
 
 def native_item(item):
@@ -80,7 +80,7 @@ def prepare():
             'coordinate_contract': 'All models output normalized0..1000; x*width/1000,y*height/1000; original-pixel GT and IoU>=.5; no GT-driven unit selection',
             'training_unchanged': True, 'training_target_coordinate_contract': 'original-pixel targets, as already frozen',
             'extra_calibration_generations': 400, 'calibration_active_wall_seconds_cap': 900,
-            'N_grounding_minimum_accuracy': .75, 'N_grounding_maximum_parse_failures': 5,
+            'N_grounding_minimum_accuracy': .80, 'N_grounding_maximum_parse_failures': 5,
             'calibration_reuse': '700 unchanged non-grounding outputs per minimum model; retain source ledger SHA',
             'formal_models': 16, 'formal_generations': 270400, 'formal_evaluation_wall_hours_cap': 40,
             'max_new_tokens': 128, 'max_total_tokens': 2048, 'max_visual_tokens': 1280,
@@ -225,7 +225,7 @@ def calibrate():
             result=evaluate('minimal',arm,42,locked=True,deadline=deadline)
             if arm=='N':
                 ground=[r for r in read_rows(NATIVE/'minimal/N-seed42/eval.jsonl') if r['axis']=='grounding']
-                assert result['axis_scores']['grounding']>=plan['N_grounding_minimum_accuracy'], 'N native calibration below fixed75% sanity threshold; inspect without retries'
+                assert result['axis_scores']['grounding']>=plan['N_grounding_minimum_accuracy'], 'N native calibration below fixed80% sanity threshold; inspect without retries'
                 assert sum(r['parse_fail_flag'] for r in ground)<=plan['N_grounding_maximum_parse_failures']
 
 

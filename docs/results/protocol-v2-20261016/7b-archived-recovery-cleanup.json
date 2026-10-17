@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "removed": [
+    "runs/route-b-staged-7b-20261016/minimal/A1-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/minimal/A2-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/minimal/U-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A2-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A1-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/U-seed42/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A2-seed137/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/U-seed137/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A1-seed137/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A1-seed256/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/U-seed256/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A2-seed256/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/U-seed512/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A2-seed512/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A1-seed512/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/U-seed1024/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A2-seed1024/resume.pt",
+    "runs/route-b-staged-7b-20261016/formal/A1-seed1024/resume.pt"
+  ],
+  "bytes_freed": 8729097386,
+  "free_after_GiB": 23.174610137939453,
+  "all9b_states_untouched": true,
+  "restore_pointers_published_before_delete": true,
+  "timestamp": "2026-10-17T12:04:14.971862+00:00"
+}

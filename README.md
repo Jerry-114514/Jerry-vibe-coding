@@ -4,6 +4,8 @@
 
 **7B完整实验报告：** [Qwen2.5-VL-7B独立自蒸馏结果与分析](docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md)。包含16模型四轴分数、15次训练显存/耗时/损失曲线、12项校正配对区间及过程验收。原始数据见[7B实验Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
 
+**7B定位测量补充：** [坐标审计与补救方案](docs/results/protocol-v2-20261016/7b_grounding_recovery_plan.md)。CPU审计发现原图/处理器像素尺度混杂，原U定位增益暂不能解释为纯能力提升；原始分数保留，独立定位复测已登记。
+
 ## 查看实验结果
 
 **新增补实验：** [protocol-v2总览与9B进展](docs/results/protocol-v2-20261016/README.md) · [必要原始产物Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。独立7B五seed实验已由用户单独授权并完成；原ARP主线及独立确认仍受其门槛约束。

@@ -41,3 +41,13 @@ docs/results/protocol-v2-20261016/9b-native-controller-handoff.json -text
 docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md -text
 docs/results/protocol-v2-20261016/7b-report-provenance.json -text
 tools/write_7b_experiment_report.py -text
+tools/resilient_9b_delivery.py -text
+tools/verify_9b_recovery_availability.py -text
+docs/results/protocol-v2-20261016/9b-native-evaluation-protocol-night.json -text
+docs/results/protocol-v2-20261016/9b-native-evaluation-registration-night.json -text
+docs/results/protocol-v2-20261016/9b-prior-recovery-release-check.json -text
+docs/results/protocol-v2-20261016/7b-archived-recovery-cleanup.json -text
+tools/audit_7b_grounding_contracts.py -text
+docs/results/protocol-v2-20261016/7b-grounding-cpu-audit.json -text
+docs/results/protocol-v2-20261016/7b-grounding-cpu-report.md -text
+docs/results/protocol-v2-20261016/7b-grounding-audit-protocol.json -text

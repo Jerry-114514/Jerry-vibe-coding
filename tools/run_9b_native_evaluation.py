@@ -14,7 +14,12 @@ from experiment_common import ROOT, AXES, read_json, read_rows, write_json, sha
 from route_b_9b_loop import OUT, SEEDS
 from evaluate_9b_native import NATIVE, prepare, verify_evaluation
 from preflight_9b_full import ENV
-from run_9b_formal_when_ready import remaining_budget, metadata_backup, preserve_incomplete_journal_tail
+from run_9b_formal_when_ready import remaining_budget, metadata_backup as original_metadata_backup, preserve_incomplete_journal_tail
+from resilient_9b_delivery import network_retry
+
+
+def metadata_backup(folder,token):
+    return network_retry(lambda:original_metadata_backup(folder,token),"native-metadata:"+str(folder.relative_to(ROOT)))
 
 
 def report_tick(token,force=False):
@@ -80,14 +85,14 @@ def minimum_report():
     nrows=read_rows(NATIVE/'minimal/N-seed42/eval.jsonl')
     ground=[r for r in nrows if r['axis']=='grounding']
     assert len(ground)==100 and sum(r['parse_fail_flag'] for r in ground)<=5
-    assert scores['N']['grounding']>=.75, 'N native-coordinate sanity score below75%; inspect, never tune prompts/retry budget to reach a score'
+    assert scores['N']['grounding']>=.80, 'N native-coordinate sanity score below80%; inspect, never tune prompts/retry budget to reach a score'
     proof={'status':'passed','five_checks':legacy['five_checks'],
            'old_engineering_acceptance_sha256':sha(OUT/'minimal-acceptance.json'),
            'measurement_protocol_sha256':sha(NATIVE/'protocol.json'),'scores':scores,
            'resume':legacy['resume'],'first_resumed_loss':legacy['first_resumed_loss'],
            'new_grounding_generations':400,'reused_unchanged_other_axis_generations':2800,
            'calibration_new_generation_seconds':timings,
-           'N_grounding_sanity_threshold':.75,'original_pixel_outputs_retained':True,
+           'N_grounding_sanity_threshold':.80,'original_pixel_outputs_retained':True,
            'scope':'Original five engineering checks plus user-amended native-coordinate measurement calibration'}
     write_json(NATIVE/'minimal-acceptance.json',proof)
     lines=['# 9B最小循环五项验收与坐标校准','','旧工程循环的五项检查已通过；本报告补充用户要求的显式0–1000测量校准。三臂各100步训练不重复，N不训练。每模型仅新生成100条定位题，其余700条未变提示的原始输出按摘要复用。','','| 验收 | 结果 |','|---|---|']
@@ -95,7 +100,7 @@ def minimum_report():
     for label in labels:lines.append(f'| {label} | 通过；旧工程证据与本次校准分别保留 |')
     lines += ['',f'恢复后首损失：`{legacy["first_resumed_loss"]:.12g}`。N定位校准为{100*scores["N"]["grounding"]:.1f}%，解析失败{sum(r["parse_fail_flag"] for r in ground)}/100。','','| 模型 | pope | grounding | consistency | mmstar |','|---|---:|---:|---:|---:|']
     for arm,s in scores.items():lines.append('| '+arm+' | '+' | '.join(f'{100*s[a]:.2f}%' for a in AXES)+' |')
-    lines += ['','## 测量校准','','所有模型的定位问题明确要求输出0–1000，x乘原宽/1000、y乘原高/1000后与原像素标注计算IoU≥0.5。没有按答案猜坐标系，没有对不同训练臂采用不同解析器。原始文本与换算框分别保存。旧U曾学会像素输出，因此不能对旧U输出直接统一缩放后冒充正确评测。','','本次400条新增定位推理由用户要求的校准单独登记，最多15分钟GPU活动时间；不是追加训练预算，也不冒充旧两小时工程预检的一部分。75%为新预测前固定的N工程合理性检查，低于阈值即停，不为达到分数调提示或重试。原ARP门槛仍未放行。']
+    lines += ['','## 测量校准','','所有模型的定位问题明确要求输出0–1000，x乘原宽/1000、y乘原高/1000后与原像素标注计算IoU≥0.5。没有按答案猜坐标系，没有对不同训练臂采用不同解析器。原始文本与换算框分别保存。旧U曾学会像素输出，因此不能对旧U输出直接统一缩放后冒充正确评测。','','本次400条新增定位推理由用户要求的校准单独登记，最多15分钟GPU活动时间；不是追加训练预算，也不冒充旧两小时工程预检的一部分。80%为新预测前固定的N工程合理性检查，低于阈值即停，不为达到分数调提示或重试。原ARP门槛仍未放行。']
     (NATIVE/'minimal-report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return proof
 
@@ -115,17 +120,20 @@ def run(token):
         fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
         subprocess.run([str(ENV),'-u',str(ROOT/'tools/evaluate_9b_native.py'),'prepare'],cwd=ROOT,check=True,timeout=1800)
         from publish_artifacts import publish
-        registration=NATIVE/'registration';registration.mkdir(exist_ok=True)
+        registration=NATIVE/'registration-user80pct-cloud-recovery';registration.mkdir(exist_ok=True)
         for name in ('protocol.json','minimal-manifest.jsonl','formal-manifest.jsonl'):
             shutil.copyfile(NATIVE/name,registration/name)
-        if not (registration/'github-storage.json').exists():publish(registration,'arp-9b-122b-20261017',token=token)
+        for name in ('evaluate_9b_native.py','run_9b_native_evaluation.py','analyze_9b_native.py','resilient_9b_delivery.py','verify_9b_recovery_availability.py'):
+            shutil.copyfile(ROOT/'tools'/name,registration/name)
+        shutil.copyfile(NATIVE/'night-mode-amendment.json',registration/'night-mode-amendment.json')
+        if not (registration/'github-storage.json').exists():network_retry(lambda:publish(registration,'arp-9b-122b-20261017',token=token),'register-user80pct')
         while not (OUT/'formal-training-complete.json').exists() or live_training_controller():
             assert not (OUT/'training-only-stopped.json').exists(),'Training failed; no calibration/evaluation launch'
             write_json(NATIVE/'queue-status.json',{'phase':'waiting_all15_trainings_and_recovery_checks','pid':os.getpid(),'gpu_used':False})
             report_tick(token)
             time.sleep(45)
-        from restore_9b_recovery import restore_all
-        restore_all(token)
+        from verify_9b_recovery_availability import verify as verify_recovery_availability
+        verify_recovery_availability(token)
         training_health()
         if not (NATIVE/'minimal-acceptance.json').exists():
             # GPU lock waiting time precedes the fixed15min active budget.

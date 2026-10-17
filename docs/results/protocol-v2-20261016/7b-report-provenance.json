@@ -1,8 +1,8 @@
 {
   "status": "generated_from_verified_final_artifacts",
   "report": "7B独立自蒸馏实验结果报告.md",
-  "report_sha256": "d39e0a259095611165bf4e1c33363e73b3f938779d0468e839b94d6bfaded01e",
-  "generator_sha256": "68bafe9c5b2acc1c6ef9bde02e5c0b394167a69cb46f969bfa9777d22b744445",
+  "report_sha256": "2fa34f2f4748d6ac48afc03ebeedfde3863e2338899a8a652eb0e9ad83e2da5b",
+  "generator_sha256": "06abe7c5a0081084b07414a1918ffd6258e1584f77739310ef1437a11813db84",
   "source_sha256": {
     "route-b-final/multiplicity-results.json": "d5603d803deb6da9166d91ec09f556b2b77b6d891a03c501fafd08433b472dc1",
     "route-b-final/evaluation-results.json": "e5fbfe97cf6db7ceea6e32a8fba6a9b18129d84eebd2a116a47fb8ff9a6bbe92",
@@ -11,5 +11,11 @@
     "route-b-final/delivery-verification.json": "3d9a64af9f8943c555185b730f49b52079abf6857276e6ef8d4e21bbadabe5b7",
     "route-b-final/sampling-identity-verification.json": "e25cd39473f15f00c0c89539af0723f89c9a4a67db04f47b5e2d0d3c3b716a81"
   },
-  "no_new_training_or_inference": true
+  "no_new_training_or_inference": true,
+  "measurement_amendment": {
+    "previous_report_sha256": "d39e0a259095611165bf4e1c33363e73b3f938779d0468e839b94d6bfaded01e",
+    "old_numeric_artifacts_unchanged": true,
+    "grounding_ability_interpretation_pending": true,
+    "cpu_audit_sha256": "99b4dc27e11eba0628cb96338e0d9213f26e1ed2aa1e6bf8dbf58b35c9ff588b"
+  }
 }

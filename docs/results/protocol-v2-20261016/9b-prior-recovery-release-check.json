@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "completed_archived": [
+    {
+      "model": "A1-seed42",
+      "fresh_release_check": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T12:07:09.749396+00:00"
+      },
+      "pointer_sha256": "8732139b0820241dbfb7760af08e1e472209a6b335bc86245b71559e5614049b"
+    },
+    {
+      "model": "A2-seed137",
+      "fresh_release_check": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T12:07:10.989307+00:00"
+      },
+      "pointer_sha256": "70803f5244fd9dd0ef0a98914f1d53d7c0edb431c58543789f204c870f177754"
+    },
+    {
+      "model": "A2-seed42",
+      "fresh_release_check": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T12:07:12.535425+00:00"
+      },
+      "pointer_sha256": "a6d8a688375c7f1da78b5c12c6af8f52363685ec737b915a873cce10fb5fce95"
+    },
+    {
+      "model": "U-seed42",
+      "fresh_release_check": {
+        "status": "passed",
+        "server_assets": 2,
+        "timestamp": "2026-10-17T12:07:13.721757+00:00"
+      },
+      "pointer_sha256": "663126c39fe243eaed5503e1abbfbe5534d1c507b9a2055fb5b2c7ed708a6791"
+    }
+  ],
+  "owned_partial_downloads_discarded": true,
+  "timestamp": "2026-10-17T12:07:08.054831+00:00"
+}

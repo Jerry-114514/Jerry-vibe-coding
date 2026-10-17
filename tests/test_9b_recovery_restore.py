@@ -80,5 +80,18 @@ class RecoveryRestoreTests(unittest.TestCase):
                                  'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()},output)
         self.assertEqual(output.getvalue(),payload)
 
+    def test_owned_partial_prefix_resumes_and_whole_sha_is_required(self):
+        payload=b'prefix-and-remainder';prefix=7
+        def response(url,headers,**kwargs):
+            start,end=map(int,headers['Range'].removeprefix('bytes=').split('-'))
+            result=Response(payload[start:end+1]);result.headers={'Content-Range':f'bytes {start}-{end}/{len(payload)}'}
+            return result
+        asset={'name':'synthetic','url':'https://example.invalid/never-requested','bytes':len(payload),
+               'sha256':hashlib.sha256(payload).hexdigest()}
+        with patch.object(restore.requests.Session,'get',side_effect=response):
+            output=BytesIO(payload[:prefix]);restore.stream_asset(restore.requests.Session(),asset,output,resume_bytes=prefix)
+            self.assertEqual(output.getvalue(),payload)
+            with self.assertRaises(AssertionError):restore.stream_asset(restore.requests.Session(),asset,BytesIO(b'x'*prefix),resume_bytes=prefix)
+
 
 if __name__=='__main__':unittest.main()

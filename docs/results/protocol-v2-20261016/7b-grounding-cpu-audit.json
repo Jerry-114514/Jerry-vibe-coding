@@ -1,0 +1,235 @@
+{
+  "status": "passed",
+  "models": 16,
+  "rows_per_model": 2400,
+  "contracts": {
+    "N-seed42": {
+      "original_image_pixels": {
+        "accuracy": 0.6779166666666666,
+        "parse_failures": 498
+      },
+      "normalized1000": {
+        "accuracy": 0.0008333333333333334,
+        "parse_failures": 8
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.855,
+        "parse_failures": 10
+      }
+    },
+    "A1-seed42": {
+      "original_image_pixels": {
+        "accuracy": 0.675,
+        "parse_failures": 500
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 2
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8566666666666667,
+        "parse_failures": 2
+      }
+    },
+    "A2-seed42": {
+      "original_image_pixels": {
+        "accuracy": 0.6779166666666666,
+        "parse_failures": 497
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 3
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8570833333333333,
+        "parse_failures": 4
+      }
+    },
+    "U-seed42": {
+      "original_image_pixels": {
+        "accuracy": 0.79125,
+        "parse_failures": 138
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 0
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.6945833333333333,
+        "parse_failures": 426
+      }
+    },
+    "A1-seed137": {
+      "original_image_pixels": {
+        "accuracy": 0.6729166666666667,
+        "parse_failures": 512
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 4
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8541666666666666,
+        "parse_failures": 6
+      }
+    },
+    "A2-seed137": {
+      "original_image_pixels": {
+        "accuracy": 0.675,
+        "parse_failures": 500
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 10
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8545833333333334,
+        "parse_failures": 12
+      }
+    },
+    "U-seed137": {
+      "original_image_pixels": {
+        "accuracy": 0.83125,
+        "parse_failures": 51
+      },
+      "normalized1000": {
+        "accuracy": 0.0008333333333333334,
+        "parse_failures": 1
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.6879166666666666,
+        "parse_failures": 463
+      }
+    },
+    "A1-seed256": {
+      "original_image_pixels": {
+        "accuracy": 0.67625,
+        "parse_failures": 506
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 3
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8566666666666667,
+        "parse_failures": 3
+      }
+    },
+    "A2-seed256": {
+      "original_image_pixels": {
+        "accuracy": 0.67375,
+        "parse_failures": 496
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 14
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8516666666666667,
+        "parse_failures": 14
+      }
+    },
+    "U-seed256": {
+      "original_image_pixels": {
+        "accuracy": 0.79,
+        "parse_failures": 160
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 8
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.7666666666666667,
+        "parse_failures": 241
+      }
+    },
+    "A1-seed512": {
+      "original_image_pixels": {
+        "accuracy": 0.65375,
+        "parse_failures": 559
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 73
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.83125,
+        "parse_failures": 75
+      }
+    },
+    "A2-seed512": {
+      "original_image_pixels": {
+        "accuracy": 0.6716666666666666,
+        "parse_failures": 506
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 15
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8520833333333333,
+        "parse_failures": 16
+      }
+    },
+    "U-seed512": {
+      "original_image_pixels": {
+        "accuracy": 0.6979166666666666,
+        "parse_failures": 379
+      },
+      "normalized1000": {
+        "accuracy": 0.0004166666666666667,
+        "parse_failures": 4
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.75875,
+        "parse_failures": 197
+      }
+    },
+    "A1-seed1024": {
+      "original_image_pixels": {
+        "accuracy": 0.62875,
+        "parse_failures": 625
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 186
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.7883333333333333,
+        "parse_failures": 186
+      }
+    },
+    "A2-seed1024": {
+      "original_image_pixels": {
+        "accuracy": 0.6745833333333333,
+        "parse_failures": 496
+      },
+      "normalized1000": {
+        "accuracy": 0.0,
+        "parse_failures": 9
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.8533333333333334,
+        "parse_failures": 10
+      }
+    },
+    "U-seed1024": {
+      "original_image_pixels": {
+        "accuracy": 0.7725,
+        "parse_failures": 212
+      },
+      "normalized1000": {
+        "accuracy": 0.00125,
+        "parse_failures": 5
+      },
+      "processor_resized_pixels": {
+        "accuracy": 0.77,
+        "parse_failures": 225
+      }
+    }
+  },
+  "processed_size_differs": 2400,
+  "mean_old_grounding_seconds": 0.606712835036548,
+  "estimated38400_pure_seconds": 23297.772865403444,
+  "interpretation": "Alternative rescoring is sensitivity diagnosis, not corrected primary scores; new explicit-contract generations pending"
+}

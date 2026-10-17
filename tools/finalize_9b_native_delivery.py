@@ -40,13 +40,15 @@ def finalize(token):
     assert minimum['status']=='passed' and all(minimum['five_checks'].values())
     assert minimum['scores']['N']['grounding']>=native['N_grounding_minimum_accuracy']
     assert read_json(NATIVE/'training-health.json')['status']=='passed'
-    assert all((OUT/'formal'/f'{a}-seed{s}'/'resume.pt').exists() for s in SEEDS for a in ('A1','A2','U')),'Keep all9B recovery states per night-mode instruction'
+    from verify_9b_recovery_availability import verify as verify_recovery_availability
+    recovery=verify_recovery_availability(token)
+    assert recovery['available_recoveries']==15
     from audit_route_b_completion import existing_code_unchanged
     assert read_json(ROOT/'runs/protocol-v2/paired-gate-development/gate.json')['training_allowed'] is False
     proof=FINAL/'verified-evidence';proof.mkdir(parents=True,exist_ok=True)
     content={'status':'passed','training_runs':15,'updates_per_run':1000,'evaluation_models':16,
              'prompts_per_model':16900,'matched_seeds':SEEDS,'family_size':12,'teacher_eligible_rows':teacher['eligible_rows'],
-             'all15_recovery_states_retained_locally':True,'original_arp_gate_unpassed':True,
+             'recovery_availability':recovery,'original_arp_gate_unpassed':True,
              'existing_python_sources_unchanged':existing_code_unchanged(),'conclusions':conclusions,
              'native_protocol_sha256':sha(NATIVE/'protocol.json'),
              'finalizer_source_sha256':sha(Path(__file__)),'validator_source_sha256':sha(ROOT/'tools/finalize_9b_delivery.py'),
@@ -72,19 +74,21 @@ def finalize(token):
     (proof/'final-summary.md').write_text(text+'\n![12项校正区间](paired-intervals.png)\n',encoding='utf-8')
     for source in (NATIVE/'minimal-report.md',NATIVE/'training-health.json',NATIVE/'recovery-restoration.json'):
         shutil.copyfile(source,proof/source.name)
-    from run_9b_formal_when_ready import metadata_backup,verify_receipt
+    from run_9b_formal_when_ready import verify_receipt
+    from run_9b_native_evaluation import metadata_backup
+    from resilient_9b_delivery import network_retry
     from audit_9b_student_delivery import audit
     from publish_artifacts import publish
     metadata_backup(OUT,token)
-    delivery=audit(token,strict=True)
+    delivery=network_retry(lambda:audit(token,strict=True),'native-final-delivery-audit')
     shutil.copyfile(OUT/'final-delivery-verification.json',proof/'delivery-verification.json')
-    receipt=publish(proof,'arp-9b-122b-20261017',token=token)
-    server=verify_receipt(receipt,token)
+    receipt=network_retry(lambda:publish(proof,'arp-9b-122b-20261017',token=token),'native-final-evidence-upload')
+    server=network_retry(lambda:verify_receipt(receipt,token),'native-final-evidence-server-check')
     write_json(FINAL/'complete.json',{'status':'full_native9b_content_and_delivery_verified',
                'timestamp':datetime.now(timezone.utc).isoformat(),'required_files':delivery['required_files'],
                'verified_files':delivery['verified_files'],'evidence_delivery':receipt,'fresh_server_verification':server,
                'not_original_arp':True,'no_extra_training_or_inference':True})
-    print('Native9B full content and fresh Release delivery verified; all15 recovery states retained',flush=True)
+    print('Native9B full content and fresh Release delivery verified; all15 recovery states available locally or in exact verified archives',flush=True)
 
 
 def watch(token):
