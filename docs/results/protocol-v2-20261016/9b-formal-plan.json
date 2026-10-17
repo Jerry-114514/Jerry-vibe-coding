@@ -1,0 +1,170 @@
+{
+  "schema": "independent.9b-formal.fixed15.v1",
+  "student_protocol_sha256": "38f1c863c5fbcf5bcdfec7184bc580481e88d1a08d805afd2210e7cd6c421a7f",
+  "source_sha256": {
+    "run_9b_formal_when_ready.py": "75558b2d9f961b423f2bae18fc646218a51c2cd562a1fb834baa5249adb8b4df",
+    "verify_9b_student_outputs.py": "ea8b5941d008e0660e800e56e65e5335bbaead1969e2bb34f5f64d7c100af93d",
+    "analyze_9b_formal.py": "c2aeb1d30cb9372a6e82b592e5c31b99b3cbef24bc9eef1188438f80ffadeeae",
+    "report_route_b_multiplicity.py": "743bdb284ad64226a4fdc7b4d2fadf8d04a0c175c919ae7a7cb372d99d47fc7c"
+  },
+  "manifests": {
+    "A2-seed42": {
+      "rows": 600,
+      "sha256": "fed9ba0b01aba2b660699df386290bb47780aa3595f593428f850cf89f778b91"
+    },
+    "A1-seed42": {
+      "rows": 600,
+      "sha256": "5064a913e8f8cbdfd14e47c89d1e4398cabb1e9cafa83d58960da0e1b2687514"
+    },
+    "U-seed42": {
+      "rows": 600,
+      "sha256": "59585e5eb329afc2eac123f60257aefdabbf6d59627cea423f63f489a9d5b787"
+    },
+    "A2-seed137": {
+      "rows": 600,
+      "sha256": "325424879f065777535a8582f51d5b1215a45394a5bb95e3191b75b22c4ecec5"
+    },
+    "U-seed137": {
+      "rows": 600,
+      "sha256": "61d89fa76891790247ba49b14c56c3f806ab5ff7fe2ef75d48b1bf6b9797c313"
+    },
+    "A1-seed137": {
+      "rows": 600,
+      "sha256": "1b2589cb8ac0b8f8d914d9660d6f06c5980d098e4b72ae3fabe7cb11752f511e"
+    },
+    "A1-seed256": {
+      "rows": 600,
+      "sha256": "bebe06e8c9a0f96d7f592559fc83f34dfd77be33dd3a5941b8e9def8dcc88c91"
+    },
+    "U-seed256": {
+      "rows": 600,
+      "sha256": "d9d863d080fead7faba5f055f56f3494e479cefcbb6224e78a4b019312de3eac"
+    },
+    "A2-seed256": {
+      "rows": 600,
+      "sha256": "53cf3723751cb9b9810e81e9b731724557146299fae054193f3ca9b0f5557989"
+    },
+    "U-seed512": {
+      "rows": 600,
+      "sha256": "1266be4cebf7ff697a84b2da0405e3a44f88fb037b7478fc8b168c64b694853c"
+    },
+    "A2-seed512": {
+      "rows": 600,
+      "sha256": "067ce1274b04f7b1ec82abf1dc704e4b5489e916d941edb6a81c0252949c511d"
+    },
+    "A1-seed512": {
+      "rows": 600,
+      "sha256": "d248a0eef0536acadb6a019ae06ad9747dd5e7f8c42bec56e8e3e7e3f4d9f180"
+    },
+    "U-seed1024": {
+      "rows": 600,
+      "sha256": "552ed4fe6e3851be926937536db791943904aa26fdf6c0a4f0485657de2c8832"
+    },
+    "A2-seed1024": {
+      "rows": 600,
+      "sha256": "cd3b573389d6ea9141efad6e10f5a28b98b00000935992c6c61e402c19fc4b0a"
+    },
+    "A1-seed1024": {
+      "rows": 600,
+      "sha256": "f719a724a2fea4dcf5dac0ec6981bebd6a48bce414b9fabf0b2ccb19ea0fb3a0"
+    }
+  },
+  "run_order": [
+    {
+      "arm": "A2",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 42,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 137,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 256,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 512,
+      "steps": 1000
+    },
+    {
+      "arm": "U",
+      "seed": 1024,
+      "steps": 1000
+    },
+    {
+      "arm": "A2",
+      "seed": 1024,
+      "steps": 1000
+    },
+    {
+      "arm": "A1",
+      "seed": 1024,
+      "steps": 1000
+    }
+  ],
+  "updates": 15000,
+  "primary_contrasts": [
+    "A1-A2",
+    "A1-U",
+    "A1-N"
+  ],
+  "axes": [
+    "pope",
+    "grounding",
+    "consistency",
+    "mmstar"
+  ],
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 2026101703,
+  "family_size": 12,
+  "training_wall_hours_cap": 12,
+  "evaluation_wall_hours_cap": 40,
+  "recovery_storage": "Verify locally and fresh server digests before offloading completed optimizer copies; keep all adapters",
+  "not_original_arp": true,
+  "minimum_loop_pass_required": true,
+  "never_extend_budget_or_select_checkpoint_from_scores": true
+}

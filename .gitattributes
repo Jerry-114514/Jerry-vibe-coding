@@ -15,5 +15,8 @@ tools/report_route_b_multiplicity.py -text
 tools/route_b_9b_loop.py -text
 tools/run_9b_minimal_when_ready.py -text
 tools/preflight_9b_evaluation_inputs.py -text
+tools/verify_9b_student_outputs.py -text
+tools/analyze_9b_formal.py -text
+tools/run_9b_formal_when_ready.py -text
 *.pdf binary
 tools/vendor/** -text
