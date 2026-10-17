@@ -1,0 +1,234 @@
+{
+  "status": "complete",
+  "timestamp": "2026-10-17T09:11:46.131363+00:00",
+  "source_sha256": "d5603d803deb6da9166d91ec09f556b2b77b6d891a03c501fafd08433b472dc1",
+  "figure_source_sha256": "86a147955168760e294650fe3ab66ee2aa87dd408ff18849404429bcce419b43",
+  "models": {
+    "N-seed42": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.6779166666666666,
+      "consistency": 0.84125,
+      "mmstar": 0.6293333333333333
+    },
+    "A1-seed42": {
+      "pope": 0.8761111111111111,
+      "grounding": 0.675,
+      "consistency": 0.84125,
+      "mmstar": 0.6126666666666667
+    },
+    "A2-seed42": {
+      "pope": 0.8757777777777778,
+      "grounding": 0.6779166666666666,
+      "consistency": 0.85125,
+      "mmstar": 0.622
+    },
+    "U-seed42": {
+      "pope": 0.9021111111111111,
+      "grounding": 0.79125,
+      "consistency": 0.83875,
+      "mmstar": 0.6106666666666667
+    },
+    "A1-seed137": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.6729166666666667,
+      "consistency": 0.8625,
+      "mmstar": 0.6273333333333333
+    },
+    "A2-seed137": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.675,
+      "consistency": 0.86125,
+      "mmstar": 0.624
+    },
+    "U-seed137": {
+      "pope": 0.8804444444444445,
+      "grounding": 0.83125,
+      "consistency": 0.8425,
+      "mmstar": 0.6206666666666667
+    },
+    "A1-seed256": {
+      "pope": 0.8752222222222222,
+      "grounding": 0.67625,
+      "consistency": 0.85,
+      "mmstar": 0.61
+    },
+    "A2-seed256": {
+      "pope": 0.872,
+      "grounding": 0.67375,
+      "consistency": 0.85,
+      "mmstar": 0.6106666666666667
+    },
+    "U-seed256": {
+      "pope": 0.8911111111111111,
+      "grounding": 0.79,
+      "consistency": 0.85,
+      "mmstar": 0.6273333333333333
+    },
+    "A1-seed512": {
+      "pope": 0.8834444444444445,
+      "grounding": 0.65375,
+      "consistency": 0.855,
+      "mmstar": 0.6006666666666667
+    },
+    "A2-seed512": {
+      "pope": 0.8754444444444445,
+      "grounding": 0.6716666666666666,
+      "consistency": 0.8425,
+      "mmstar": 0.598
+    },
+    "U-seed512": {
+      "pope": 0.8845555555555555,
+      "grounding": 0.6979166666666666,
+      "consistency": 0.8375,
+      "mmstar": 0.6193333333333333
+    },
+    "A1-seed1024": {
+      "pope": 0.8798888888888889,
+      "grounding": 0.62875,
+      "consistency": 0.8575,
+      "mmstar": 0.6413333333333333
+    },
+    "A2-seed1024": {
+      "pope": 0.8748888888888889,
+      "grounding": 0.6745833333333333,
+      "consistency": 0.85625,
+      "mmstar": 0.626
+    },
+    "U-seed1024": {
+      "pope": 0.8813333333333333,
+      "grounding": 0.7725,
+      "consistency": 0.82,
+      "mmstar": 0.604
+    }
+  },
+  "matched_seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "comparisons": [
+    {
+      "contrast": "A1-A2",
+      "axis": "pope",
+      "difference": 0.0033111111111111093,
+      "adjusted_interval": [
+        -0.0018037499999998998,
+        0.009059444444444443
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-A2",
+      "axis": "grounding",
+      "difference": -0.013249999999999939,
+      "adjusted_interval": [
+        -0.04092430750367362,
+        0.004846314139404781
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-A2",
+      "axis": "consistency",
+      "difference": 0.0010000000000000453,
+      "adjusted_interval": [
+        -0.02225485739945686,
+        0.02357244911342323
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-A2",
+      "axis": "mmstar",
+      "difference": 0.002266666666666661,
+      "adjusted_interval": [
+        -0.02068916666666672,
+        0.025889166666666706
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-U",
+      "axis": "pope",
+      "difference": -0.009844444444444411,
+      "adjusted_interval": [
+        -0.02724097222222227,
+        0.001844444444444556
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-U",
+      "axis": "grounding",
+      "difference": -0.11524999999999996,
+      "adjusted_interval": [
+        -0.16157345643543666,
+        -0.056480616447861495
+      ],
+      "direction": "right_higher"
+    },
+    {
+      "contrast": "A1-U",
+      "axis": "consistency",
+      "difference": 0.015500000000000024,
+      "adjusted_interval": [
+        -0.008580526601433382,
+        0.042521843119474545
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-U",
+      "axis": "mmstar",
+      "difference": 0.0020000000000000018,
+      "adjusted_interval": [
+        -0.028311666666666565,
+        0.038200833333333614
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-N",
+      "axis": "pope",
+      "difference": 0.00239999999999998,
+      "adjusted_interval": [
+        -0.0034334722222222327,
+        0.008870416666666712
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-N",
+      "axis": "grounding",
+      "difference": -0.016583333333333238,
+      "adjusted_interval": [
+        -0.045716901796131686,
+        0.004646695719370179
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-N",
+      "axis": "consistency",
+      "difference": 0.011999999999999966,
+      "adjusted_interval": [
+        -0.010517847720516716,
+        0.03645527724590673
+      ],
+      "direction": "interval_includes_zero"
+    },
+    {
+      "contrast": "A1-N",
+      "axis": "mmstar",
+      "difference": -0.010933333333333305,
+      "adjusted_interval": [
+        -0.040844999999999944,
+        0.020022500000000092
+      ],
+      "direction": "interval_includes_zero"
+    }
+  ],
+  "interpretation": "Exploratory interval exclusion of zero; approximate family coverage, no invented p-values; not ARP confirmation"
+}

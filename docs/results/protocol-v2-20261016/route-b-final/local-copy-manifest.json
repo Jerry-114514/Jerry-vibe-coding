@@ -1,0 +1,97 @@
+{
+  "final-summary.md": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/final-summary.md",
+    "bytes": 3418,
+    "sha256": "1f784d09dce461ccf39e23a493db3d31e66b1d4eba0cf01a059b18955ca45706"
+  },
+  "four-axis-scores.png": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/four-axis-scores.png",
+    "bytes": 139510,
+    "sha256": "dd022084d532c3e22b4b85de96c2121a891666be98e8cb635fbad92a0a4d0c91"
+  },
+  "four-axis-scores.pdf": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/four-axis-scores.pdf",
+    "bytes": 30131,
+    "sha256": "ebc5a1d07fa48d793c7c91b6ba6311e02d33ec59ddeff0f73f8ad3b93a478d39"
+  },
+  "paired-intervals.png": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/paired-intervals.png",
+    "bytes": 75149,
+    "sha256": "41bade6ebd7b25e5d1eade0999d503a95c04b9e7a75f052d82ae65d2db588ee6"
+  },
+  "paired-intervals.pdf": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/paired-intervals.pdf",
+    "bytes": 19042,
+    "sha256": "2b808734500407a2f703c5b9636ab8620ec8c396ce5d3c06e50a753c829522f0"
+  },
+  "figure-data.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/figure-data.json",
+    "bytes": 5887,
+    "sha256": "ee774f8b0a78433753509d96af1f787e463238ea6c8a5cdbf473a919de300f58"
+  },
+  "delivered.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/final-figures/delivered.json",
+    "bytes": 1114,
+    "sha256": "4c99e85ecc84e0d3af8e5935e5b88cc28805275b5701b56f20810158a0ae7768"
+  },
+  "multiplicity-results.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/multiplicity/multiplicity-results.json",
+    "bytes": 8695,
+    "sha256": "d5603d803deb6da9166d91ec09f556b2b77b6d891a03c501fafd08433b472dc1"
+  },
+  "multiplicity-report.md": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/multiplicity/multiplicity-report.md",
+    "bytes": 2551,
+    "sha256": "88ee1c00dd8a5fbb37d6140cbef7d4527e1326ea0012a22eb0d11cae707c43c8"
+  },
+  "reporting-amendment.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/multiplicity/reporting-amendment.json",
+    "bytes": 747,
+    "sha256": "7dde4ee311a8f3f5ca41336bb5c14e8c53acb29b32b4aef44b82e6c2abfffcaf"
+  },
+  "evaluation-results.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/evaluation/evaluation-results.json",
+    "bytes": 13037,
+    "sha256": "e5fbfe97cf6db7ceea6e32a8fba6a9b18129d84eebd2a116a47fb8ff9a6bbe92"
+  },
+  "evaluation-report.md": {
+    "remote_path": "runs/route-b-staged-7b-20261016/completion-reports/evaluation/evaluation-report.md",
+    "bytes": 1951,
+    "sha256": "02c3ba43830771043ac1d8556711a2a3c552f8046701a6af70f2a2732e95c3b7"
+  },
+  "content-verification.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/objective-content-verification.json",
+    "bytes": 3523,
+    "sha256": "a426579a673a0c06a3e636835054e2a2d4f660a2e61639d863f9a99eea5376f2"
+  },
+  "delivery-verification.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/final-delivery-verification.json",
+    "bytes": 20392,
+    "sha256": "3d9a64af9f8943c555185b730f49b52079abf6857276e6ef8d4e21bbadabe5b7"
+  },
+  "finalization.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/finalization/complete.json",
+    "bytes": 1166,
+    "sha256": "2cc253c65d62391ad34294f4ed1f637ecdc86ef7b18fb90c02811f81f9d8bf24"
+  },
+  "evaluation-verification.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/evaluation-aggregate-independent-verification.json",
+    "bytes": 7515,
+    "sha256": "b68b31cb72f3adc946a3a71bff3b75277713c60b4995b21cf1090719af8f7438"
+  },
+  "A1-seed1024-delivery.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/evaluation-delivery-checks/A1-seed1024/complete.json",
+    "bytes": 18953,
+    "sha256": "c2a6bcfd1bd7c1af61a40961ebb3038fee8a5bf1b211087546452784b68d75b9"
+  },
+  "A2-seed1024-delivery.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/evaluation-delivery-checks/A2-seed1024/complete.json",
+    "bytes": 18501,
+    "sha256": "9877483b09801582e55b76d6a40aed593d2a62af6345ffd89dab9b99314dc669"
+  },
+  "U-seed1024-delivery.json": {
+    "remote_path": "runs/route-b-staged-7b-20261016/evaluation-delivery-checks/U-seed1024/complete.json",
+    "bytes": 17595,
+    "sha256": "f24d05d24a73f8fcb9504ef307f9ac203495dc52114253d54903913fbc26159b"
+  }
+}

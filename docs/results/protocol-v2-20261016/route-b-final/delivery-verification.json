@@ -1,0 +1,537 @@
+{
+  "status": "passed",
+  "timestamp": "2026-10-17T09:11:40.751882+00:00",
+  "scope": "Minimum loop, full EOS cache, all 15 training/recovery artifacts, 16 full evaluations, requested reports and 9B infrastructure records",
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+  "verified_files": 3738,
+  "required_files": 3738,
+  "missing_files": [],
+  "unpublished_or_changed_files": [],
+  "objective_content_verified": true,
+  "fresh_server_verified_assets": [
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170414Z-inventory.json",
+      "sha256": "4e3f36ac91209bbb375e7cb428668d5d64fef296f4ccaadf8d4cbc6db650b6a3",
+      "bytes": 6664,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170414Z.tar.gz",
+      "sha256": "77e009be5fdb7aaed39c4ea2086f69a7169cea047251f826754ef16f8ddd1f9e",
+      "bytes": 12553963,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140316Z-inventory.json",
+      "sha256": "514b756c6e660a61b7f93e0b08111a6dfa566f6bae694b0443ec579d076a81eb",
+      "bytes": 889355,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140316Z.tar.gz",
+      "sha256": "5be7643323fb8580ab5a312a67b0dac82d9265c43e39db448b5c581c8b951c5a",
+      "bytes": 9846236,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z-inventory.json",
+      "sha256": "359efd5fd0448f7bdf29ef85c51a3aaf0390bde41585414cdc8c8be52e54b15b",
+      "bytes": 15909,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z.tar.gz.part000",
+      "sha256": "9c5d66466de8c081d7018d89526a5fee1ec84ec08a9afd3b6ef7c67d3b8122ed",
+      "bytes": 1073741824,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T134829Z.tar.gz.part001",
+      "sha256": "8faf090576be93a956f5f347525bb30dab0b1d0550495619040a5bbbe6b70174",
+      "bytes": 726750546,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090930Z-inventory.json",
+      "sha256": "32788143f30977dcc27b3a8001cf3e87bd93a78b71054ad911bbc8e9c26b62aa",
+      "bytes": 3045,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090930Z.tar.gz",
+      "sha256": "a9d1ae16fd08fffad49f39d2bbee18e7e468c456cb098d89f1460548b269487d",
+      "bytes": 20204,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T091032Z-inventory.json",
+      "sha256": "89d1346c896083e5bef4561decbfaa89cd5802cbf6b17b9cfc1b8ee349d0e8d4",
+      "bytes": 3048,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T091032Z.tar.gz",
+      "sha256": "c2ded76fac96969dbf8f708fdd17653df4374e450539dcd5f157a939e86565d1",
+      "bytes": 19471,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170400Z-inventory.json",
+      "sha256": "f6b13b1fbddcce3361d44d84519b74fb8ce843f443e84294a115e0bc661458e8",
+      "bytes": 2817,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170400Z.tar.gz",
+      "sha256": "1d602ded84a41668dba454b71a43635dab8ef46d5d38fbc93f1be26c37f673b7",
+      "bytes": 570522,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T072224Z-inventory.json",
+      "sha256": "c14609edb7281ded2c1dfa9805222bbac72e95a7fbb797212f63bccc4e644290",
+      "bytes": 2996,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T072224Z.tar.gz",
+      "sha256": "cc7d8d1550afcc252d8e37beda6d1e4b056753a740b0050cacb3e08a530c4f4a",
+      "bytes": 19701,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170353Z-inventory.json",
+      "sha256": "c7b8548ad88a7fb23f2dba1e92e198f895d5634e91ad96463fb8be4e54e5a9df",
+      "bytes": 5103,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T170353Z.tar.gz",
+      "sha256": "b6804455b46c3631fdc22b278d1b0fbe36c93ef0c81e0d849bb9a425e74a6ad3",
+      "bytes": 600176495,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T151523Z-inventory.json",
+      "sha256": "f3a2f0e52e7e0460e74f995ac1377ff7be70333692d7c4bf582dc27fe50fa6f3",
+      "bytes": 4920,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T151523Z.tar.gz",
+      "sha256": "cbeab63e8fb6c329d6b4b462e8590a9a7805d880098473f66e3d7392a8d5f69d",
+      "bytes": 600239967,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T152725Z-inventory.json",
+      "sha256": "3c3c8691d2095e6e2aff6cdeb798a22951694f19419b589282e8f1e0cd70a047",
+      "bytes": 4920,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T152725Z.tar.gz",
+      "sha256": "8d99bd3548004abbce075e2f53c962990c4cd5b7fc21e4d6b844ffa1128796ae",
+      "bytes": 600307863,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T142620Z-inventory.json",
+      "sha256": "13f429f7533970193b7ca149aefa4c47da5209ff294344e53b2bb08053e17250",
+      "bytes": 4906,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T142620Z.tar.gz",
+      "sha256": "8b8ad2181077a2a7c9fc4814b4fd53da086b9be0e4387022ca0ec45892688f2f",
+      "bytes": 600290098,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T162720Z-inventory.json",
+      "sha256": "07c7bf247663451ae77917962cce0aaba2f58118173ac21e034f4dbc1f32f7bc",
+      "bytes": 5089,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T162720Z.tar.gz",
+      "sha256": "4263645d0f00acd09bbeee1773222a774c68592af2fdd4975421fd6368e1e2e3",
+      "bytes": 600297076,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T165145Z-inventory.json",
+      "sha256": "72c25a0364d2e69f69d2cc50850c910c656909644eab644e68436d0151b8ec8c",
+      "bytes": 5103,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T165145Z.tar.gz",
+      "sha256": "f8e753bca14a84af1d4d74aa5af1d680ce6aaa520c0a2948b0638b207a2a49e0",
+      "bytes": 600456404,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T145030Z-inventory.json",
+      "sha256": "de9b2c24f9ad0538eb1e6e6d194737033568953e69226486534e02011e8a0430",
+      "bytes": 4920,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T145030Z.tar.gz",
+      "sha256": "105772da63a11602b295cdf01e885e28cb950462d88a066abb058d9fa54d73a1",
+      "bytes": 600230364,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T155107Z-inventory.json",
+      "sha256": "8232a94465d30ae13a73318c9950e141ff056bf5a9f6678ecb0a6fc97dc0d2bc",
+      "bytes": 4920,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T155107Z.tar.gz",
+      "sha256": "da0afe31cd074d1a844fbd1a30c314317a7fd24b6715b9a4439c9e019e0f6072",
+      "bytes": 600312904,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T141356Z-inventory.json",
+      "sha256": "c8f0c63d1abdd9946526649f234ecd8a99fc520a61e63c258def1a2f9ad201eb",
+      "bytes": 4906,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T141356Z.tar.gz",
+      "sha256": "6171d7a917d015891747e5c01381e03ad4f8a0c60217d425aa24ab0b60031166",
+      "bytes": 600349015,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T161456Z-inventory.json",
+      "sha256": "6b861c31976250bdc10a0916aadffb7491bfc445e960506feac331e3f7196eef",
+      "bytes": 5089,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T161456Z.tar.gz",
+      "sha256": "9eceb0ab637389029b6a099be19fae6c07ffcef3ceda6532b8f1e6688923cf6d",
+      "bytes": 600354043,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T163951Z-inventory.json",
+      "sha256": "a351e16f039ac43440a0aab1d3c65a96b5f433acf90e28959e60bd55567f4888",
+      "bytes": 5089,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T163951Z.tar.gz",
+      "sha256": "f89bebb63438d8d695bd4674d9b67bedee0cdf72ea057d47c711e30a2077acd0",
+      "bytes": 599725606,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T150308Z-inventory.json",
+      "sha256": "3b381f944961a177112638c5df16347022f6e1b85bbd168ddce03a5dc40bcceb",
+      "bytes": 4906,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T150308Z.tar.gz",
+      "sha256": "4ed36b696b97b3b87bcaf7d5480fbbd9753a15769245ec87481f9ff7faf15130",
+      "bytes": 599752055,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T153939Z-inventory.json",
+      "sha256": "fe3500a2ea6c6053cebe58643fd66bb4df10c3466abd0636839701af3257d943",
+      "bytes": 4906,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T153939Z.tar.gz",
+      "sha256": "82aebfb29e70f1e3572d94fc27482eda0628982ef9a1ccfb869e69ebcaf26eb1",
+      "bytes": 599799241,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T143838Z-inventory.json",
+      "sha256": "f8db3ad43b459af4c9a3e7865143c44001660a40f6919e7ceaba096476b284d7",
+      "bytes": 4892,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T143838Z.tar.gz",
+      "sha256": "a7b8f042cee95fd79b2fd2781b81c829a44ba1d2a55ebd0f26ebb2c98c79a83d",
+      "bytes": 599719884,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T160316Z-inventory.json",
+      "sha256": "74ce9982b5b22be898b1575b594a82df1ab3adfd3044cfc0eb70df360f75695f",
+      "bytes": 4906,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T160316Z.tar.gz",
+      "sha256": "f4ff1edae12bb19f03eaf578f8d8ea41ffe82eaf5a13030ab1d28b966be87684",
+      "bytes": 599778969,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T135831Z-inventory.json",
+      "sha256": "1d75e38ed0796777ccc3b64f948cb21ca189807d6fd1d7172c8583e2834fc90d",
+      "bytes": 13217,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T135831Z.tar.gz",
+      "sha256": "e396bef3bb6201ffb6e56699c43712aaa499335717cfb69f7b44b5b34208f64a",
+      "bytes": 182077,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140342Z-inventory.json",
+      "sha256": "1517afe3b713e8fc20346fd3a590746923d7f68d7e47c38652ed5c460689a51c",
+      "bytes": 14025,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T140342Z.tar.gz",
+      "sha256": "da932fd704f0f3db2117e8659a1ff691f3a672e0160c60fe49ff60e0d139f8c3",
+      "bytes": 183331,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T155837Z-inventory.json",
+      "sha256": "f7a8e40958a8d28d578b90ca17b229e0bd98141cf226b36f2d7a5af9750bf56f",
+      "bytes": 6461,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T155837Z.tar.gz",
+      "sha256": "f549121d4312b57a2fe32cfef7f1c92414bba558c961d3a5caeab0e4ce87d41a",
+      "bytes": 18794,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T180342Z-inventory.json",
+      "sha256": "88f39143b17cd7e67d0aa7572be176b3abb35f403de8d187ef177121297b4f8f",
+      "bytes": 3241,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T180342Z.tar.gz",
+      "sha256": "64c348c9cf3510c8e9c9d864679d7e1e6585d22e4906badade738161a3eaaa7f",
+      "bytes": 397835,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T190316Z-inventory.json",
+      "sha256": "bc615e9aca75a2165298baa22b51d1b8937e324e0c7339b594052a9a72cad3a4",
+      "bytes": 4951,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T190316Z.tar.gz",
+      "sha256": "28c6b79c35d6a2af6f75c287984d67e7050c72332136973de39c5c5d7bfc77fb",
+      "bytes": 431821,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T200042Z-inventory.json",
+      "sha256": "6a159256ab01203ce3f97c70fbc254ac9bf597c0c457e11db9a500b6f6a8c400",
+      "bytes": 4951,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T200042Z.tar.gz",
+      "sha256": "4bfce7af8f2694b7c9d4c7201074719aa520eb164c7c3a25ab2feeb8a42a15f9",
+      "bytes": 427608,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T210546Z-inventory.json",
+      "sha256": "30998613dbedff6bc7b6f04d845f669fd97f680f7aeacf7afef0402921994183",
+      "bytes": 4942,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T210546Z.tar.gz",
+      "sha256": "f77bb6027c5fcd4e244cf4e2400c62b79655abc1cd657cb6bd0da20143848a89",
+      "bytes": 446505,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T220144Z-inventory.json",
+      "sha256": "4d7db9405015813a1e5c938722870641897bc121fdc3e698401f5a3526c05814",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T220144Z.tar.gz",
+      "sha256": "0d6d93be8202dd23a86424602ad7372975842233c91ccd553de4cca2adb17608",
+      "bytes": 430286,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T231058Z-inventory.json",
+      "sha256": "424dc083e4c770f349772333a58457dbac38462c729c555252de984c2f4625be",
+      "bytes": 4951,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261016T231058Z.tar.gz",
+      "sha256": "19aec6e9c940aa48277a75e45b714bfac47501de0ce2f39806ccbd5106899675",
+      "bytes": 447451,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T000657Z-inventory.json",
+      "sha256": "3bce92fec027ef379a8335ff013fb2ef14fdd540b473cf40d558eb69001dd27f",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T000657Z.tar.gz",
+      "sha256": "54575639f91aba9dade4e517389c862eaaf74e4c4ee964382abf5c595cf651de",
+      "bytes": 428664,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T010356Z-inventory.json",
+      "sha256": "09024c6bfa30c95796af9cdb1fa8715e43faac81eb07609c3423c24f66f3f9e5",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T010356Z.tar.gz",
+      "sha256": "7dc4b5c7f56eed1e9b5640147c92c1d7732a5c4dd114a2d45ab888082fdf6c2d",
+      "bytes": 426963,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T021441Z-inventory.json",
+      "sha256": "cdf37f5da5af2f57b79661f32da6cb52080898274d69afe5a40cab5addebfc4f",
+      "bytes": 4951,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T021441Z.tar.gz",
+      "sha256": "4d2a3ca779248d724346d1353f86110688e7056c07e7015db2a60d32d3ea4b06",
+      "bytes": 451790,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T031105Z-inventory.json",
+      "sha256": "90b26511bb41e01b77413c91d81b31cae987b6a9ff151349badfaeb053ae56a4",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T031105Z.tar.gz",
+      "sha256": "1f089e03e33906d6db524c4b27f56160aef045ffce1826e5c8bafe3f54eb7fd9",
+      "bytes": 429988,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T041204Z-inventory.json",
+      "sha256": "892e9d3274bdf87665ddadb69217e8b12c35c68d8adc631521b37fdad70b9676",
+      "bytes": 4951,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T041204Z.tar.gz",
+      "sha256": "f6351d257d370ba60502fa73df83196d6e7f6ae5e63208380806fe5483ae9d57",
+      "bytes": 440333,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T050854Z-inventory.json",
+      "sha256": "911be41b9e9cf1872c11db8ce19ea2a18f5a393a886bd15796a817da0c0a4ab5",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T050854Z.tar.gz",
+      "sha256": "550ed1053e8329ba19e34a9c3277f36b5f3cf6cdef74adcf7a0fb9cab89fcea2",
+      "bytes": 430175,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T060516Z-inventory.json",
+      "sha256": "693636bfad3a24d9d9c63ea1242b0d44e50171fd0324d7494d730f7c62be97d2",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T060516Z.tar.gz",
+      "sha256": "86d165bcda3e1853684f727913ae1e237dc29747db91d56749a7b2007e39ae54",
+      "bytes": 426117,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T071604Z-inventory.json",
+      "sha256": "0a7b490053bf9a9f8e6a64a50f47a2d51f25619e919d013f1921ac21f21672f5",
+      "bytes": 4960,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T071604Z.tar.gz",
+      "sha256": "efdce6fe44c4a869c0c524850182eedf184ab96b084633eddf1e082995e34b3b",
+      "bytes": 455830,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T081238Z-inventory.json",
+      "sha256": "3f0520bbd70d7c02549b6558f0d78568e31873d3a04f86e108063001ec15b961",
+      "bytes": 4969,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T081238Z.tar.gz",
+      "sha256": "479a3d0df0c7e09efef62d5f85e89b3b838cff733cc02fb79c46ed3c137c7a97",
+      "bytes": 430601,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090916Z-inventory.json",
+      "sha256": "2a9d90547320a78d47b00ab7c595ee8edec643cc02fe90f1f4119da7bb8266ac",
+      "bytes": 4969,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090916Z.tar.gz",
+      "sha256": "c50a626e5556c19d17512b977688bd95069ba6731dddebed7e11e96636c50341",
+      "bytes": 427598,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090945Z-inventory.json",
+      "sha256": "4d8a1b4f2e7ecfe613e17f753ff4163bc48f55d60d11fca1b03777679a9625c1",
+      "bytes": 71067,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T090945Z.tar.gz",
+      "sha256": "fe7662cd79fb20ec6948bfa0ce1aaa1de91674e3daddb6096ec8785e500ccd84",
+      "bytes": 7474233,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T091121Z-inventory.json",
+      "sha256": "3cd1330af6909c518e4442068572870b0763324f1692d58de48dde3e17df2ea5",
+      "bytes": 72853,
+      "server_digest_verified": true
+    },
+    {
+      "name": "arp-protocol-v2-20261016-20261017T091121Z.tar.gz",
+      "sha256": "aa59ae06c4fab1ea1b05c0f505c29ff68e36670d2a7efe01077f3f212e02cebd",
+      "bytes": 7483453,
+      "server_digest_verified": true
+    }
+  ],
+  "large_payloads_downloaded": false,
+  "dataset_release_audit": "dataset-delivery-verification.json (separate historical release)"
+}

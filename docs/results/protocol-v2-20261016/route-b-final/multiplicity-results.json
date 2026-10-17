@@ -1,0 +1,297 @@
+{
+  "status": "all16_evaluations_complete",
+  "scope": "Independent routeB, exploratory development benchmark",
+  "amendment_sha256": "7dde4ee311a8f3f5ca41336bb5c14e8c53acb29b32b4aef44b82e6c2abfffcaf",
+  "family_size": 12,
+  "bootstrap_replicates": 10000,
+  "matched_seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "scores": {
+    "N-seed42": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.6779166666666666,
+      "consistency": 0.84125,
+      "mmstar": 0.6293333333333333
+    },
+    "A1-seed42": {
+      "pope": 0.8761111111111111,
+      "grounding": 0.675,
+      "consistency": 0.84125,
+      "mmstar": 0.6126666666666667
+    },
+    "A2-seed42": {
+      "pope": 0.8757777777777778,
+      "grounding": 0.6779166666666666,
+      "consistency": 0.85125,
+      "mmstar": 0.622
+    },
+    "U-seed42": {
+      "pope": 0.9021111111111111,
+      "grounding": 0.79125,
+      "consistency": 0.83875,
+      "mmstar": 0.6106666666666667
+    },
+    "A1-seed137": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.6729166666666667,
+      "consistency": 0.8625,
+      "mmstar": 0.6273333333333333
+    },
+    "A2-seed137": {
+      "pope": 0.8756666666666667,
+      "grounding": 0.675,
+      "consistency": 0.86125,
+      "mmstar": 0.624
+    },
+    "U-seed137": {
+      "pope": 0.8804444444444445,
+      "grounding": 0.83125,
+      "consistency": 0.8425,
+      "mmstar": 0.6206666666666667
+    },
+    "A1-seed256": {
+      "pope": 0.8752222222222222,
+      "grounding": 0.67625,
+      "consistency": 0.85,
+      "mmstar": 0.61
+    },
+    "A2-seed256": {
+      "pope": 0.872,
+      "grounding": 0.67375,
+      "consistency": 0.85,
+      "mmstar": 0.6106666666666667
+    },
+    "U-seed256": {
+      "pope": 0.8911111111111111,
+      "grounding": 0.79,
+      "consistency": 0.85,
+      "mmstar": 0.6273333333333333
+    },
+    "A1-seed512": {
+      "pope": 0.8834444444444445,
+      "grounding": 0.65375,
+      "consistency": 0.855,
+      "mmstar": 0.6006666666666667
+    },
+    "A2-seed512": {
+      "pope": 0.8754444444444445,
+      "grounding": 0.6716666666666666,
+      "consistency": 0.8425,
+      "mmstar": 0.598
+    },
+    "U-seed512": {
+      "pope": 0.8845555555555555,
+      "grounding": 0.6979166666666666,
+      "consistency": 0.8375,
+      "mmstar": 0.6193333333333333
+    },
+    "A1-seed1024": {
+      "pope": 0.8798888888888889,
+      "grounding": 0.62875,
+      "consistency": 0.8575,
+      "mmstar": 0.6413333333333333
+    },
+    "A2-seed1024": {
+      "pope": 0.8748888888888889,
+      "grounding": 0.6745833333333333,
+      "consistency": 0.85625,
+      "mmstar": 0.626
+    },
+    "U-seed1024": {
+      "pope": 0.8813333333333333,
+      "grounding": 0.7725,
+      "consistency": 0.82,
+      "mmstar": 0.604
+    }
+  },
+  "ledger_sha256": {
+    "N-seed42": "b5f58a09fac32ab0a2c95ea1f9eba4ec595cdbc1a7b50642c2a2a7f1f5a7a81d",
+    "A1-seed42": "c22580611b38a65dfd209d734c9dcea4a27f7307fd9f421ac3330bc4288b4d6c",
+    "A2-seed42": "581fad5fdad9cb609fc38f64e415b082376359f8fe9ae9ba86667dd0d14f56ce",
+    "U-seed42": "5bd7295b8a221a5a2d42cf6f726ea01300bc756d403eab5f8ef94afe908c523e",
+    "A1-seed137": "3c11fd6727b0738e4fcf4da4c6a4088d4b06909a9d4b366225024e13ea641b82",
+    "A2-seed137": "efe2b00b19780df76b9fe5e317fe47398e0c58c9a6cbf0ca2a111ac1dfc75629",
+    "U-seed137": "c1643e5a4b72574996b2625033efcdf29153fc55565a4b5c982b4101c9937953",
+    "A1-seed256": "550a8d9ac2aff064d0e6c9e606ca405aa1538e2580f8182ac8a25f9572859540",
+    "A2-seed256": "d8e4ab54e058899d9dcf420449681f8a21504e44e0fde2218f01bfb56896eaea",
+    "U-seed256": "e7d9fa24c9723261994eae423a55ebe98f25364e53e4b981795b420050570e9a",
+    "A1-seed512": "e0343fc39c1abfc4d78f6bad2e5506322a8ef36690cc09f2560cc9990c34ded0",
+    "A2-seed512": "7acd062ef0b988c4689478ec75ac81fafc323b5c0de97493074c86b0e527ad2c",
+    "U-seed512": "19f4ac5f492e7e18491670382f6df8618041d73a914835b95e28e1175b0a3703",
+    "A1-seed1024": "4b10ad927dea051847e0dd1fb5b57fd89b16bc29d50cb4154d005ba2bb744bc0",
+    "A2-seed1024": "04ac2c93a87f8c41918203c8d6a23fdc8af8473f06f1a190ac2041c11b4b463d",
+    "U-seed1024": "6ba2e883492112ea12983065cfef8f635f9c78643a108cdfc711b980e3a38cb2"
+  },
+  "paired_contrasts": {
+    "A1-A2": {
+      "pope": {
+        "difference": 0.0033111111111111535,
+        "pointwise_ci95": [
+          -0.00015555555555524792,
+          0.00697833333333362
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0018037499999998998,
+          0.009059444444444443
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": -0.013249999999999873,
+        "pointwise_ci95": [
+          -0.03142789269081084,
+          0.0010012829319857332
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.04092430750367362,
+          0.004846314139404781
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.0010000000000000009,
+        "pointwise_ci95": [
+          -0.014485387547649275,
+          0.01614975337961258
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.02225485739945686,
+          0.02357244911342323
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.00226666666666675,
+        "pointwise_ci95": [
+          -0.012533333333333396,
+          0.01760333333333334
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.02068916666666672,
+          0.025889166666666706
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    },
+    "A1-U": {
+      "pope": {
+        "difference": -0.009844444444444433,
+        "pointwise_ci95": [
+          -0.020578888888888695,
+          -0.0011327777777777768
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.02724097222222227,
+          0.001844444444444556
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": -0.11524999999999985,
+        "pointwise_ci95": [
+          -0.14884347336104564,
+          -0.07601325928771578
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.16157345643543666,
+          -0.056480616447861495
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.01550000000000007,
+        "pointwise_ci95": [
+          -0.000984040135967748,
+          0.033750803243574205
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.008580526601433382,
+          0.042521843119474545
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.002000000000000113,
+        "pointwise_ci95": [
+          -0.019600000000000062,
+          0.024933333333333252
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.028311666666666565,
+          0.038200833333333614
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    },
+    "A1-N": {
+      "pope": {
+        "difference": 0.0023999999999999577,
+        "pointwise_ci95": [
+          -0.0016666666666665941,
+          0.006756666666666717
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0034334722222222327,
+          0.008870416666666712
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": -0.016583333333333172,
+        "pointwise_ci95": [
+          -0.03567514347861165,
+          -8.06785270997308e-05
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.045716901796131686,
+          0.004646695719370179
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.01200000000000001,
+        "pointwise_ci95": [
+          -0.0034400152503601842,
+          0.028393524283935268
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.010517847720516716,
+          0.03645527724590673
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": -0.01093333333333324,
+        "pointwise_ci95": [
+          -0.031333333333333324,
+          0.010136666666666612
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.040844999999999944,
+          0.020022500000000092
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    }
+  },
+  "nominal_familywise_confidence": 0.95,
+  "correction": "Bonferroni over3 contrasts x4 axes; no additional macro tests in this family",
+  "caveat": "Nominal approximate bootstrap intervals; five training seeds limit precision"
+}

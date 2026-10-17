@@ -1,26 +1,28 @@
 # protocol-v2：独立7B实验与补分析
 
-更新：北京时间2026-10-17 16:14。本目录仍为阶段性产物，**不是全部补实验完成**。旧v1结果保留在[原结果目录](../final-20261016/README.md)。
+更新：北京时间2026-10-17 17:14。**独立7B路线B已完成并通过内容/交付验收**；9B接力预检已启动，原ARP及全部补实验尚未完成。旧v1结果保留在[原结果目录](../final-20261016/README.md)。
 
 ## 当前独立路线B
 
 必要过程数据同样归档，详见[过程记录与复核索引](route_b_process_artifacts.md)：冻结配置、教师 EOS 证据、逐步损失/梯度/显存/耗时、恢复状态、评测原始输出和服务端完整性校验均有对应路径。
 
+[完成报告与分析](route_b_final_completion.md)汇总四轴均值、校正结论、实测耗时/显存、费用口径及9B接力边界。
+
 本地Qwen2.5-VL-7B教师/学生，双CE序列蒸馏。A1=mmstar推理代理，A2=consistency，U=四轴等比例，N=不更新。原ARP阶段C仍未放行，本实验不冒充ARP确认性结论。[锁定计划与八项原ARP阻塞估算](route_b_execution_plan.md)。训练及评测均在5090，4090已释放。
 
 - 最小循环五项验收已通过：[报告](route-b-minimal-report.md)、[token分布与数值](route-b-minimal-report.json)、[独立验收](route-b-minimal-independent-verification.json)。A1由第50步新进程恢复至100步；全量3,545条EOS教师缓存已冻结和备份。
 - 正式训练**15/15完成，15,000次真实更新**；适配器、恢复状态及每次优化器步数/张量匹配均已核实。[训练表](route-b-formal-training-report.md)、[原始汇总](route-b-formal-training-results.json)、[损失曲线](route-b-formal-loss-curves.png)。纯更新8,300.61秒，reserved峰值20.319–24.547GB；不含装载、保存、上传和等待。
-- 评测**15/16完成**，每模型16,900提示、13,700原题，逐题重评分和四轴汇总一致：[最新分数与阶段性区间](route-b-formal-evaluation-progress.md)、[数值](route-b-formal-evaluation-progress.json)、[独立核验](route-b-evaluation-aggregate-verification.json)。当前只剩A1-seed1024运行中。
-- 最后几个模型逐个完成后就核对行数/ID并压缩上传。已核对[U-seed1024](7b-U-seed1024-delivery-verification.json)及[A2-seed1024](7b-A2-seed1024-delivery-verification.json)原始输出和分数文件的服务端摘要，已完成模型的原始输出和训练大文件直接存[GitHub Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
-- 最终完整五seed、A1-A2/A1-U/A1-N乘四轴的12项Bonferroni校正区间、PNG/PDF图和结论表仍待最后模型结束；当前阶段性区间不能当作五seed终局结论。
+- 评测**16/16全部完成**，共270,400提示，每模型16,900提示、13,700原题；原始生成逐题重评分与四轴汇总一致。见[最终16模型分数与图表](route-b-final/final-summary.md)、[完整评测数值与显存/耗时](route-b-final/evaluation-results.json)、[独立核验](route-b-final/evaluation-verification.json)。旧带progress文件名的报告为历史阶段快照，以本次终局产物为准。
+- 最后三个模型均已逐个检查行数/ID并压缩上传；[最终A1-seed1024证据](route-b-final/A1-seed1024-delivery.json)。完整[内容验收](route-b-final/content-verification.json)通过，GitHub服务端核对**3,738/3,738**必要文件覆盖，见[交付验收](route-b-final/delivery-verification.json)及[最终图表交付](route-b-final/delivered.json)。原始数据、缓存、适配器、恢复状态、日志保存在[GitHub Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
+- 完整五seed、A1-A2/A1-U/A1-N乘四轴的12项Bonferroni校正区间已生成：[报告](route-b-final/multiplicity-report.md)、[原始统计](route-b-final/multiplicity-results.json)、[PNG/PDF与结论](route-b-final/final-summary.md)。校正后仅定位轴U高于A1，均值高11.525个百分点、区间[5.648,16.157]；其余11项区间均包含0。此为探索分析，5seed及尾部分位数存在不确定性。
 
 ## 磁盘与9B接力
 
 已清理22个未用3B权重/已备份旧预检缓存，空闲从11.80GiB提高至20.21GiB；当前约20.20GiB。[清理记录及严格收尾策略](7b_evaluation_safety_update.md)含恢复指针，保留全部本轮恢复状态、7B/9B权重及数据源。将来恢复3B GPU审计前需按保留的revision/SHA重新下载3B权重。
 
-9B[权重和隔离环境](qwen35_9b_infrastructure.md)就绪，GPU推理烟测通过；**完整训练显存预检尚未执行**。122B教师可用缓存3,540条已完成并核验，5条因供应方图片检查按来源整组隔离，原1,307条前缀保持不变且未重复请求；见[HTTP400诊断与隔离](9b_api400_and_queued_preflight.md)。
+9B[权重和隔离环境](qwen35_9b_infrastructure.md)就绪，GPU推理烟测通过；**完整训练显存预检正在执行，尚无通过结论**。122B教师可用缓存3,540条已完成并核验，5条因供应方图片检查按来源整组隔离，原1,307条前缀保持不变且未重复请求；见[HTTP400诊断与隔离](9b_api400_and_queued_preflight.md)。
 
-9B[最小循环](9b_minimal_loop_execution.md)和[15次正式调度](9b_formal_execution.md)已事前登记，但三个等待队列现按用户要求暂停。只有7B全部评测、原始数据与最终图表保存核验通过后才恢复9B预检；9B仍须依次通过显存与五项最小循环门槛，不提前训练、不追加预算。
+9B[最小循环](9b_minimal_loop_execution.md)和[15次正式调度](9b_formal_execution.md)已事前登记。7B完整内容、必要原始数据和图表均交付核验通过后，于北京时间17:11:52恢复三个等待队列；当前9B完整训练预检实际运行中。仍须依次通过显存与五项最小循环门槛才可进入正式训练，不追加预算。
 
 ## 原ARP模型分工与门槛
 
