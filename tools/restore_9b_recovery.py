@@ -33,26 +33,34 @@ def download_proxies():
 
 
 def stream_asset(session,asset,stream):
-    offset=stream.tell()
-    for attempt in range(3):
-        digest=hashlib.sha256();size=0;announced=0
-        try:
-            with session.get(asset['url'],stream=True,timeout=(30,60)) as response:
-                response.raise_for_status()
-                for chunk in response.iter_content(4*1024**2):
-                    if not chunk:continue
-                    stream.write(chunk);digest.update(chunk);size+=len(chunk)
-                    if size-announced>=64*1024**2:
-                        print('Recovery archive',asset['name'],'received_MiB',round(size/1024**2,1),flush=True);announced=size
-            assert size==asset['bytes'] and digest.hexdigest()==asset['sha256'],'Downloaded archive byte/SHA mismatch'
-            return
-        except requests.RequestException as error:
-            # Retry only this owned scratch segment, never a model call or an
-            # optimizer update. A failed/partial download is not a checkpoint.
-            stream.seek(offset);stream.truncate()
-            print('Recovery download transient',type(error).__name__,'attempt',attempt+1,flush=True)
-            if attempt==2:raise RuntimeError('Verified GitHub archive download unavailable after3 bounded GET attempts') from None
-            time.sleep(2*(attempt+1))
+    # Large proxy responses can be truncated. Retry only a bounded16MiB range;
+    # commit bytes only after exact HTTP range/length checks, then verify the
+    # complete asset SHA. A failed segment never enters the archive stream.
+    size=0;digest=hashlib.sha256();announced=0
+    while size<asset['bytes']:
+        end=min(size+16*1024**2,asset['bytes'])-1
+        expected=end-size+1
+        for attempt in range(4):
+            try:
+                with session.get(asset['url'],headers={'Range':f'bytes={size}-{end}'},
+                                 stream=True,timeout=(30,60)) as response:
+                    response.raise_for_status()
+                    assert response.status_code==206,'Recovery server did not honor byte range'
+                    assert response.headers.get('Content-Range')==f'bytes {size}-{end}/{asset["bytes"]}','Unexpected recovery byte range'
+                    buffer=bytearray()
+                    for chunk in response.iter_content(1024**2):
+                        if chunk:buffer.extend(chunk)
+                        assert len(buffer)<=expected,'Recovery range body exceeds requested length'
+                    if len(buffer)!=expected:raise requests.exceptions.ChunkedEncodingError('Short recovery range')
+                break
+            except requests.RequestException as error:
+                print('Recovery range transient',type(error).__name__,'offset',size,'attempt',attempt+1,flush=True)
+                if attempt==3:raise RuntimeError('Verified GitHub recovery range unavailable after4 bounded GET attempts') from None
+                time.sleep(2*(attempt+1))
+        stream.write(buffer);digest.update(buffer);size+=len(buffer)
+        if size-announced>=64*1024**2 or size==asset['bytes']:
+            print('Recovery archive',asset['name'],'received_MiB',round(size/1024**2,1),flush=True);announced=size
+    assert digest.hexdigest()==asset['sha256'],'Downloaded archive SHA mismatch'
 
 
 def restore_all(token,completed_only=False,models=None):

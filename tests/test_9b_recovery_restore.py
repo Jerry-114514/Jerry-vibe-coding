@@ -13,7 +13,9 @@ from experiment_common import ROOT, sha, write_json
 
 
 class Response:
-    def __init__(self,data):self.data=data
+    def __init__(self,data,total=None):
+        self.data=data;self.status_code=206
+        self.headers={'Content-Range':f'bytes 0-{len(data)-1}/{total or len(data)}'}
     def __enter__(self):return self
     def __exit__(self,*args):return False
     def raise_for_status(self):pass
@@ -52,6 +54,20 @@ class RecoveryRestoreTests(unittest.TestCase):
 
     def test_exact_archive_restores_and_keeps_existing_recovery(self):self.perform()
     def test_wrong_archive_bytes_never_replace_recovery(self):self.perform(corrupt=True)
+
+    def test_interrupted_range_does_not_duplicate_committed_bytes(self):
+        import requests
+        class Broken(Response):
+            def iter_content(self,*args):
+                yield b'partial'
+                raise requests.exceptions.ChunkedEncodingError('synthetic interruption')
+        payload=b'verified-complete-range';output=BytesIO(b'prefix');output.seek(6)
+        with patch.object(restore.requests.Session,'get',side_effect=[Broken(payload),Response(payload)]) as get,patch.object(restore.time,'sleep'):
+            restore.stream_asset(restore.requests.Session(),{'name':'synthetic','url':'https://example.invalid/never-requested',
+                                 'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()},output)
+        self.assertEqual(output.getvalue(),b'prefix'+payload)
+        self.assertEqual(get.call_count,2)
+        self.assertEqual(get.call_args.kwargs['headers']['Range'],f'bytes=0-{len(payload)-1}')
 
 
 if __name__=='__main__':unittest.main()
