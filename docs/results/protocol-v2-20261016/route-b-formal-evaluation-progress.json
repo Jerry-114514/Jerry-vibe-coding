@@ -1,11 +1,11 @@
 {
   "status": "partial",
-  "completed_models": 12,
+  "completed_models": 13,
   "expected_models": 16,
-  "processed_prompts": 202800,
-  "remaining_estimated_hours": 3.9539901169903438,
-  "remaining_estimated_CNY": 10.67577331587393,
-  "mean_seconds_per_prompt": 0.2105675210231544,
+  "processed_prompts": 219700,
+  "remaining_estimated_hours": 2.9500737338950143,
+  "remaining_estimated_CNY": 7.965199081516539,
+  "mean_seconds_per_prompt": 0.20947269116414302,
   "scores": {
     "N-seed42": {
       "axis_scores": {
@@ -167,6 +167,22 @@
       "peak_allocated_bytes": 17350342656,
       "total_generation_seconds": 4210.880208428949
     },
+    "A1-seed512": {
+      "axis_scores": {
+        "pope": 0.8834444444444445,
+        "grounding": 0.65375,
+        "consistency": 0.855,
+        "mmstar": 0.6006666666666667
+      },
+      "rows": 16900,
+      "ledger_sha256": "e0343fc39c1abfc4d78f6bad2e5506322a8ef36690cc09f2560cc9990c34ded0",
+      "adapter_reloaded_for_inference": true,
+      "original_units": 13700,
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "peak_reserved_bytes": 20122173440,
+      "peak_allocated_bytes": 17350342656,
+      "total_generation_seconds": 3318.0569852665067
+    },
     "A2-seed512": {
       "axis_scores": {
         "pope": 0.8754444444444445,
@@ -206,43 +222,44 @@
       "matched_seeds": [
         42,
         137,
-        256
+        256,
+        512
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": 0.0011851851851851852,
+          "difference": 0.0028888888888888888,
           "ci95": [
-            -0.002148148148148148,
-            0.004555555555555555
+            -0.0008888888888888889,
+            0.007222222222222222
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.0008333333333333334,
+          "difference": -0.005104166666666667,
           "ci95": [
-            -0.007604372012673609,
-            0.006067011327122256
+            -0.015039101032464542,
+            0.0032627481498149766
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": -0.002916666666666667,
+          "difference": 0.0009375,
           "ci95": [
-            -0.020077178588472515,
-            0.014892068881882103
+            -0.015920102619840778,
+            0.016690636196424795
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": -0.0022222222222222222,
+          "difference": -0.001,
           "ci95": [
-            -0.01845,
-            0.014222222222222221
+            -0.0155,
+            0.014004166666666644
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -254,43 +271,44 @@
       "matched_seeds": [
         42,
         137,
-        256
+        256,
+        512
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": -0.015555555555555557,
+          "difference": -0.011944444444444445,
           "ci95": [
-            -0.027999999999999997,
-            -0.005111111111111111
+            -0.024168750000000003,
+            -0.0021097222222222294
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.12944444444444445,
+          "difference": -0.108125,
           "ci95": [
-            -0.15915739365242673,
-            -0.1039719388367585
+            -0.14903591184294065,
+            -0.06529099327220514
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": 0.0075,
+          "difference": 0.01,
           "ci95": [
-            -0.010330208162851778,
-            0.025252682100508187
+            -0.005064586098611155,
+            0.02500080231065468
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": -0.0028888888888888888,
+          "difference": -0.006833333333333334,
           "ci95": [
-            -0.02266666666666667,
-            0.014672222222222194
+            -0.024666666666666667,
+            0.010000000000000002
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -302,43 +320,44 @@
       "matched_seeds": [
         42,
         137,
-        256
+        256,
+        512
       ],
       "interval": "Pointwise95%; exploratory",
       "training_seed_uncertainty_included": true,
       "axes": {
         "pope": {
-          "difference": 0.0,
+          "difference": 0.0019444444444444444,
           "ci95": [
-            -0.0032962962962962967,
-            0.0032981481481481377
+            -0.0026118055555555556,
+            0.006723611111111105
           ],
           "image_clusters": 500,
           "original_units": 9000
         },
         "grounding": {
-          "difference": -0.003194444444444444,
+          "difference": -0.0084375,
           "ci95": [
-            -0.012330708409672056,
-            0.005743062477670367
+            -0.021418900104328856,
+            0.0028390980541725883
           ],
           "image_clusters": 1905,
           "original_units": 2400
         },
         "consistency": {
-          "difference": 0.01,
+          "difference": 0.0109375,
           "ci95": [
-            -0.007908777332243901,
-            0.028291359163591632
+            -0.005370554373787132,
+            0.026337025279738593
           ],
           "image_clusters": 774,
           "original_units": 800
         },
         "mmstar": {
-          "difference": -0.012666666666666666,
+          "difference": -0.016666666666666666,
           "ci95": [
-            -0.03155555555555556,
-            0.005999999999999999
+            -0.036,
+            0.0023333333333333335
           ],
           "image_clusters": 1500,
           "original_units": 1500
@@ -346,6 +365,6 @@
       }
     }
   },
-  "timestamp": "2026-10-17T05:09:04.782532+00:00",
+  "timestamp": "2026-10-17T06:05:23.403672+00:00",
   "eta_limit": "Observed mix estimate; includes neither future output-length drift nor backup time"
 }
