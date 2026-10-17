@@ -1,0 +1,16 @@
+{
+  "status": "passed_eligible_teacher_and_release",
+  "original_rows": 3545,
+  "eligible_rows": 3540,
+  "quarantined_rows": 5,
+  "teacher_rows_retained": 3540,
+  "initial1307_prefix_unchanged": true,
+  "duplicate_successful_or_initial_cached_requests": 0,
+  "archive_files_verified": 4407,
+  "fresh_server_assets_verified": 2,
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017",
+  "teacher_ledger_sha256": "a6284489265b7dba38b1743fea858364ee5f29eaedb6a54e0d27a7937b962fcd",
+  "eligible_pool_sha256": "c55a72107dffa9786b25441a34a85dde8e32661de09d988f05f86f90bf7383be",
+  "large_payloads_downloaded": false,
+  "student_full_pool_tokenization_separate": true
+}

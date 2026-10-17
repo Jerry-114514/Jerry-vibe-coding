@@ -21,7 +21,7 @@ from experiment_common import ROOT, AXES, read_json, read_rows, sha, write_json,
 BASE = ROOT / 'runs/route-b-9b-122b-20261017'
 OUT = BASE / 'full-preflight'
 MODEL = ROOT / '.model_cache/qwen35_9b'
-ENV = ROOT / '../arp-qwen35-venv/bin/python'
+ENV = ROOT.parent / 'arp-qwen35-venv/bin/python'
 
 
 def prompt_inputs(processor, row):
@@ -286,14 +286,16 @@ def wait():
         if teacher and not (OUT / 'protocol.json').exists():
             # Full-pool CPU preprocessing may run alongside7B GPU evaluation.
             # The later GPU process only rechecks immutable hashes and loads100 rows.
-            subprocess.run([str(ENV.resolve()), '-u', str(Path(__file__)), 'prepare'], cwd=ROOT, check=True, timeout=1800)
+            # Resolve neither the interpreter symlink nor its executable path:
+            # Python locates this virtualenv through its invoked bin/python.
+            subprocess.run([str(ENV), '-u', str(Path(__file__)), 'prepare'], cwd=ROOT, check=True, timeout=1800)
         write_json(OUT / 'queue-status.json', {'waiting_for_7b_complete': not ready,
                    'waiting_for_teacher_eligible_cache': not teacher, 'pid': os.getpid(), 'gpu_used_while_waiting': False})
         if ready and teacher:
             if (OUT / 'complete.json').exists() or (OUT / 'loss.jsonl').exists():
                 raise RuntimeError('Existing preflight artifacts require inspection; never repeat100 updates automatically')
             try:
-                subprocess.run([str(ENV.resolve()), '-u', str(Path(__file__)), 'run'], cwd=ROOT, check=True, timeout=7200)
+                subprocess.run([str(ENV), '-u', str(Path(__file__)), 'run'], cwd=ROOT, check=True, timeout=7200)
             except Exception as error:
                 write_json(OUT / 'failure.json', {'type': type(error).__name__, 'message': str(error),
                            'timestamp': datetime.now(timezone.utc).isoformat(), '7b_experiment_affected': False})

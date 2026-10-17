@@ -1,0 +1,8 @@
+{
+  "cause": "Resolving the Python executable symlink bypassed virtualenv site-packages",
+  "old_manager_pid": 29422,
+  "old_manager_confirmed_exited": true,
+  "gpu_updates_before_repair": 0,
+  "correct_interpreter": "/root/autodl-tmp/arp-qwen35-venv/bin/python",
+  "old_failure_log_preserved": true
+}

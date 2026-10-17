@@ -1,0 +1,20 @@
+{
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017",
+  "assets": [
+    {
+      "name": "arp-9b-122b-20261017-20261017T005602Z-inventory.json",
+      "bytes": 1402318,
+      "sha256": "3c2a33644a7c9713b95a36d65b1e1833827c953515b5c8dad38c927aa4b5f895",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261017T005602Z-inventory.json"
+    },
+    {
+      "name": "arp-9b-122b-20261017-20261017T005602Z.tar.gz",
+      "bytes": 327913638,
+      "sha256": "aeeb4d9595483b7a56ae143ad532b76eb7e48ce3889ebea864dd8385f63a8d58",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261017T005602Z.tar.gz"
+    }
+  ],
+  "storage": "AutoDL -> GitHub; no local download",
+  "snapshot": "runs/9b-teacher-delivery-20261017/20261017T005601Z",
+  "eligible_cache_complete": true
+}

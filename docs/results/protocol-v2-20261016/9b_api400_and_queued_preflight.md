@@ -31,3 +31,13 @@
 原有逐项区间和原始结果保留。新增 `report_route_b_multiplicity.py` 等待全部16个模型、每个16,900提示完成独立验收，再以相同来源图像簇和5个训练seed配对重采样10,000次，报告A1-A2、A1-U、A1-N在四轴的差值、逐项95%区间及Bonferroni校正区间，比较族固定为12项。
 
 [报告修订登记](route-b-multiplicity-reporting-amendment.json)发生在部分开发结果已经出现之后，故明确作为用户要求的后续报告校正，不冒称确认性预注册。校正区间为名义近似的bootstrap区间；有限seed和尾部分位数有不确定性。最终验收和交付审计已加入这套新增结果。
+
+## 缓存完成与队列修复后的实际状态
+
+- [可用教师缓存完成标记](9b-teacher-eligible-complete.json)：3,540条逐条校验通过，隔离5条；新调用累计981,132 token，未达到5,000,000 token上限。不声称原3,545条均可用。
+- [GitHub归档收据](9b-teacher-delivery.json)与[独立交付核验](9b-teacher-delivery-verification.json)：归档327,913,638字节，4,407个文件均核对大小及SHA256；两个GitHub资产服务器摘要一致。初始1,307条字节前缀未改，未重复请求。原始大归档直接AutoDL→GitHub，不经本机。
+- [9B完整预检协议与100原题清单ID](9b-full-preflight-protocol.json)：全3,540条学生输入已在CPU验证，无静默截断，实际两路最大总长度872 token；选定四轴各25个不同原题、包含每轴最长输入。
+- [队列故障与修复记录](9b-preflight-queue-repair.json)：最初管理器错误地解析Python符号链接，绕过虚拟环境，因基础解释器缺少Transformers而退出，未发生GPU更新。确认原管理器终止后，保留日志并修正为直接调用虚拟环境bin/python；修复后CPU全池准备已通过。
+- 当前队列只等待7B全部16模型评测及原分析完成，未占GPU。显存准入结论仍待100次真实更新和单独压力测试，CPU通过不表示显存预检通过。
+
+教师账本SHA256：`a6284489265b7dba38b1743fea858364ee5f29eaedb6a54e0d27a7937b962fcd`；可用池SHA256：`c55a72107dffa9786b25441a34a85dde8e32661de09d988f05f86f90bf7383be`。
