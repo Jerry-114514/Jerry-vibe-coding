@@ -83,3 +83,5 @@ docs/results/protocol-v2-20261016/handoff-evidence-20261017/common-input-audit-c
 docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-N-processor-pixels-2400.json -text
 
 tools/finish_7b_processor_report.py -text
+
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-first-two-server-recheck.json -text

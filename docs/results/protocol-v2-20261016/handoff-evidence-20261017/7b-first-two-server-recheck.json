@@ -1,0 +1,48 @@
+{
+  "timestamp_utc": "2026-10-17T16:32:45.144676+00:00",
+  "status": "passed",
+  "models": {
+    "N-seed42": {
+      "fresh_server_check": {
+        "status": "passed",
+        "verified_assets": 2
+      },
+      "ledger_sha256": "33543d69343ba22c4f74577b5f2ade3db09e9e679c4fff09e850e648120fb846",
+      "assets": [
+        {
+          "name": "arp-protocol-v2-20261016-20261017T160243Z-inventory.json",
+          "bytes": 2955,
+          "sha256": "6e842fdb7e7be37fe55895f5041bb8c0e565026771b03072775b00cd5485c549",
+          "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261017T160243Z-inventory.json"
+        },
+        {
+          "name": "arp-protocol-v2-20261016-20261017T160243Z.tar.gz",
+          "bytes": 215547,
+          "sha256": "52bcd14482a6deaf6e6f174c27232aab4c84b9ea140a39f7ef92860a2b096542",
+          "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261017T160243Z.tar.gz"
+        }
+      ]
+    },
+    "A1-seed42": {
+      "fresh_server_check": {
+        "status": "passed",
+        "verified_assets": 2
+      },
+      "ledger_sha256": "90c87420f1f0c6542754bd956b22a3fb79385eee190f5aa1e0c689d930404ea0",
+      "assets": [
+        {
+          "name": "arp-protocol-v2-20261016-20261017T162105Z-inventory.json",
+          "bytes": 2752,
+          "sha256": "ce90b4123068ccc6213b64205e4b5d00cc7b796ee4c636997d373075cc33e882",
+          "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261017T162105Z-inventory.json"
+        },
+        {
+          "name": "arp-protocol-v2-20261016-20261017T162105Z.tar.gz",
+          "bytes": 214377,
+          "sha256": "5d1c3370386c838b66deecc87823a5ccc33a6ff6c1c22db2812cba91de7f3290",
+          "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-protocol-v2-20261016/arp-protocol-v2-20261016-20261017T162105Z.tar.gz"
+        }
+      ]
+    }
+  }
+}
