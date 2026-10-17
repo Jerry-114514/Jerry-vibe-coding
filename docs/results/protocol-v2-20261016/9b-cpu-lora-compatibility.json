@@ -1,0 +1,11 @@
+{
+  "status": "passed_cpu_meta_lora_compatibility",
+  "trainable_parameters": 43278336,
+  "trainable_tensors": 496,
+  "attention_mlp_and_linear_attention_present": true,
+  "base_and_vision_frozen": true,
+  "gradient_checkpointing_api_accepted": true,
+  "response_only_logits_supported": true,
+  "no_cuda_context": true,
+  "does_not_prove_real_backward_or_memory_safety": true
+}

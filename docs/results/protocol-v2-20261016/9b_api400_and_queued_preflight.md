@@ -16,7 +16,7 @@
 
 ## 等待7B完整评测结束后的显存预检
 
-独立环境和四轴CPU输入/EOS对齐已验证：[CPU验收](9b-cpu-input-smoke.json)。它没有创建CUDA上下文，不能代替真实训练显存测量。后台 `preflight_9b_full.py wait` 已排队：
+独立环境和四轴CPU输入/EOS对齐已验证：[CPU验收](9b-cpu-input-smoke.json)。另已通过[实际9B配置的CPU/meta LoRA兼容验收](9b-cpu-lora-compatibility.json)：496个可训练张量、43,278,336参数，完整注意力/线性注意力/MLP均匹配，视觉与基座冻结，梯度检查点和回答logits接口可用。两项检查均未创建CUDA上下文，不能代替真实反向传播与训练显存测量。后台 `preflight_9b_full.py wait` 已排队：
 
 1. 教师可用缓存完成后，先在CPU检查全可用池的两路回答、总长及学生EOS，冻结100个真实原题的预检清单；四轴各25个，包含每轴最长实际训练输入。
 2. 等待7B的16个模型全部评测并完成原有分析、父进程退出；再取得共享GPU锁，验证至少29GiB空闲后才加载9B。
