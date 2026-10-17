@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "timestamp": "2026-10-17T16:05:24.726455+00:00",
+  "audit_source_sha256": "9c01fe6085e884143611b9341d339322580a5901e4bf58344305a8321dc42305",
+  "7b_protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+  "9b_protocol_sha256": "9238274aa336d3b3255e2d89e5d709d8798bd818e9ddb7ce957659e9860bcf65",
+  "7b_explicit_parent_lineage": {
+    "original_7b_protocol_sha256": "2b548e57ba5d55dc4b10756586d279508971c596c03e20b7a10181ad271a9147",
+    "active_7b_protocol_sha256": "a99a9a430aa20ed33e639d2a734a73821e3af0fd2f5bd52a29c1df9b84599108",
+    "syntax_amendment_sha256": "1a0500616a60cf502c2fe4b334526f6f71ce30e69d241ebd16e85ea82c78a78f",
+    "original_proof_retained": true
+  },
+  "manifests": {
+    "7b": {
+      "rows": 2400,
+      "grounding_rows": 2400,
+      "source_manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+      "measurement_manifest_sha256": "8bf1ddc3b82776797ad5e32e474ebec2425ef89f9fd16b886ecde9073b5ef5b7",
+      "patch_sizes": [
+        14
+      ],
+      "distinct_processed_sizes": 57,
+      "unchanged_labels_image_paths_groups_and_original_dimensions": true,
+      "all_dimensions_match_frozen_grid_times_patch": true,
+      "no_gt_based_unit_choice": true
+    },
+    "9b_minimal": {
+      "rows": 800,
+      "grounding_rows": 100,
+      "source_manifest_sha256": "5ae88ab22213503453ea36f784a8e1db6e9890299b5cd2823bee79473486ff1e",
+      "measurement_manifest_sha256": "41f789991b5c5d23f44bb8e0ec47800124a1c75c6cf32b7f92cfe9bfc1257e92",
+      "patch_sizes": [
+        16
+      ],
+      "distinct_processed_sizes": 17,
+      "unchanged_labels_image_paths_groups_and_original_dimensions": true,
+      "all_dimensions_match_frozen_grid_times_patch": true,
+      "no_gt_based_unit_choice": true
+    },
+    "9b_formal": {
+      "rows": 16900,
+      "grounding_rows": 2400,
+      "source_manifest_sha256": "e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746",
+      "measurement_manifest_sha256": "3dd13a049094541f03209c38e35dbd339fa3cc3922956b363a5e4c3b52407a8b",
+      "patch_sizes": [
+        16
+      ],
+      "distinct_processed_sizes": 42,
+      "unchanged_labels_image_paths_groups_and_original_dimensions": true,
+      "all_dimensions_match_frozen_grid_times_patch": true,
+      "no_gt_based_unit_choice": true
+    }
+  },
+  "adapters": [
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A1-seed42",
+      "adapter_sha256": "71a3a6b7372fd706d1818707df33e52522c3f4d9d4ae15f5e9c8ab1e16d266d1"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A2-seed42",
+      "adapter_sha256": "6aad3b16ade7b3565d322ccf76f3993ec99783f763b558b9ce5cac98924b04bb"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/U-seed42",
+      "adapter_sha256": "5d15dfb49bc44f042d54a504ae96082995dedf9346fa40ff10d7e80b7714cafa"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A1-seed137",
+      "adapter_sha256": "67bfacc6d58e44ecdaa245eef55aafadd01ae4f2a410fa7f129949f0c0cf80a8"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A2-seed137",
+      "adapter_sha256": "133893e1544e50c5325a7906989ab596d21d69de1aec3827ddf7853f0d4740d4"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/U-seed137",
+      "adapter_sha256": "07ce637cf6722c32471ce25bd6144f8594fb8303554bd996c684c02ca941dc6a"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A1-seed256",
+      "adapter_sha256": "53fc2f07445f530182e30897e65870d7cc5beadbb82c4707ebba1c091fbfa18d"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A2-seed256",
+      "adapter_sha256": "b6b13df8dd2254c03a92e451a8dadc4cc571a5d4f5987e9802e7ed84a0d7414a"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/U-seed256",
+      "adapter_sha256": "10248ec7a3cc659c6893fbe0af4cd74ccc571823c4e9d7cfa8c854743892eb6c"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A1-seed512",
+      "adapter_sha256": "1d6ae71140bb782cdaf4e791857a93d30b5ea9415aa325b7167ce0f106637f82"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A2-seed512",
+      "adapter_sha256": "eef2c29bb79f93309c13640892dee928be47008bf0e5fc726de0574846213a26"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/U-seed512",
+      "adapter_sha256": "5e5b3459618273475584b29513b51147afaf0803476d3769dde806e8841d0bc9"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A1-seed1024",
+      "adapter_sha256": "b9e7059a7d1549a3b76ab64e636b051a3248a8b592a818e55a1c9b414f138888"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/A2-seed1024",
+      "adapter_sha256": "31a82c7a1b40fc444662681ccc435e373352670f52f32bd134c2543eba306400"
+    },
+    {
+      "run": "runs/route-b-staged-7b-20261016/formal/U-seed1024",
+      "adapter_sha256": "7ee5b54cd51a7511333939ebdd877242c7fcb441b73d9b222d9d55c096d462d4"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed42",
+      "adapter_sha256": "8d43298ff8f901daf082e19bdea28548dda25476126850390db9df0f0761ae40"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A2-seed42",
+      "adapter_sha256": "7b57bd1e36408da2312b2dd4e8cc78f9e86ccea18be5ccef997830fa22e94912"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed42",
+      "adapter_sha256": "17e9709bde7d932ee03ec88b16e647a733eebe2e945c7f1f12469c135e0a1116"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed137",
+      "adapter_sha256": "08f95bb8385eb2ef3217d7380574fe8ba231841f698fb3addc92b851c009c8fe"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A2-seed137",
+      "adapter_sha256": "bcea7fa872650b8bfe90a8a58fccfd63366cc37d61184f9d5e3e68b28ec1e70d"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed137",
+      "adapter_sha256": "c2b84219a0f4ebd1f0ba520c4077152f60df5fefd70149672669a1b348dbdb46"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed256",
+      "adapter_sha256": "61ec6b05aabaa4309fe98b3619d7c807f8e21c27650bcd733ccd4f35b68bfefc"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A2-seed256",
+      "adapter_sha256": "b55f95194db614996e03be03d3b652e26d2b4a7cd0c31adbe43d8460aa23e09e"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed256",
+      "adapter_sha256": "e5b64c4495a09f9d6759069cfbcb59d6f318b7f383d263e363175c1e299693c2"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed512",
+      "adapter_sha256": "7932c129f318615a1a3b0a1610b8f2166845f9a3c0b19e06e0aed98ebe5a8f30"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A2-seed512",
+      "adapter_sha256": "48b47ecf7de7e5a72eb4b7fff7dd9083998b44d269d1aed70029fc2736eceb9f"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed512",
+      "adapter_sha256": "0cb57db9bf4546365f3ccc0453d40a510d4b0c4d17a233d3a256a5faeedf5d95"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed1024",
+      "adapter_sha256": "5523607347ced24d6ad930fd8445088aa90aa8d43bcf18bd934d2946676cfd15"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/A2-seed1024",
+      "adapter_sha256": "ac723865e8d5e19dd8f1e21b5f389512554ee2cd6a0ed35d03bd4b09179fa0e2"
+    },
+    {
+      "run": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed1024",
+      "adapter_sha256": "3cc21b0a35afb25d527440fd0411076b6fa2bb359f11fec798a2487701444cf6"
+    }
+  ],
+  "original_python_files_unchanged": 80,
+  "training_budget": {
+    "start_utc": "2026-10-17T09:36:27.016574+00:00",
+    "end_utc": "2026-10-17T21:36:27.016574+00:00",
+    "hours_cap": 12,
+    "never_reset_on_restart": true
+  },
+  "no_gpu_or_new_predictions": true,
+  "original_arp_gate_unpassed": true,
+  "scope": "Frozen labels, dimensions, source and completed adapter identities only; does not claim pending GPU calibration passed"
+}

@@ -6,7 +6,7 @@ from experiment_common import ROOT,read_json,read_rows,sha,write_json
 from route_b_staged import OUT as SEVEN,SEEDS
 from route_b_9b_loop import OUT as NINE,MINIMAL_MANIFEST
 
-DEST=NINE/'processor-pixel-evaluation-v3/input-audit'
+DEST=NINE/'processor-pixel-evaluation-v3/input-audit-csv-v2'
 EXTRA={'processor_width','processor_height','processor_grid_thw','processor_patch_size','frozen_prompt_tokens'}
 
 
@@ -43,7 +43,26 @@ def audit_manifest(path,original_path,only_grounding=False):
 def run():
     seven=ROOT/'runs/7b-processor-pixel-audit-20261017';nine=NINE/'processor-pixel-evaluation-v3'
     p7=read_json(seven/'protocol.json');p9=read_json(nine/'protocol.json')
-    assert sha(seven/'protocol.json')==p9['required7b_audit_protocol_sha256']
+    required=p9['required7b_audit_protocol_sha256']
+    lineage={'original_7b_protocol_sha256':required,'active_7b_protocol_sha256':sha(seven/'protocol.json')}
+    if sha(seven/'protocol.json')!=required:
+        # Accept only the externally registered syntax amendment, retaining the
+        # original units, dimensions, manifest, endpoints and sampling identity.
+        historical=seven/'schema-v1-history/protocol.json'
+        parent=read_json(historical)
+        assert sha(historical)==required
+        amendment=p7['schema_amendment']
+        assert amendment['parent_protocol_sha256']==required
+        assert amendment['no_coordinate_value_unit_or_GT_selection_change'] is True
+        assert amendment['all_models_same_grammar'] is True
+        assert amendment['existing100_generations_reused_without_model_calls'] is True
+        for key in ('manifest_sha256','processor_dimensions_sha256','coordinate_contract','models',
+                    'rows_per_model','total_generations','N_first100_minimum_accuracy',
+                    'N_first100_maximum_parse_failures','gpu_wall_hours_cap','contrasts','family_size'):
+            assert p7[key]==parent[key],key
+        assert (seven/'schema-registration/delivery-proof.json').exists()
+        lineage['syntax_amendment_sha256']=sha(seven/'schema-amendment.json')
+        lineage['original_proof_retained']=True
     for plan in (p7,p9):
         for name,digest in plan['source_sha256'].items():assert sha(ROOT/'tools'/name)==digest
     assert p7['source_sha256']['processor_pixel_contract.py']==p9['source_sha256']['processor_pixel_contract.py']
@@ -71,6 +90,7 @@ def run():
     unchanged=existing_code_unchanged()
     proof={'status':'passed','timestamp':datetime.now(timezone.utc).isoformat(),'audit_source_sha256':sha(ROOT/'tools/audit_common_processor_inputs.py'),
            '7b_protocol_sha256':sha(seven/'protocol.json'),'9b_protocol_sha256':sha(nine/'protocol.json'),
+           '7b_explicit_parent_lineage':lineage,
            'manifests':manifests,'adapters':adapters,'original_python_files_unchanged':len(unchanged),
            'training_budget':read_json(NINE/'formal-training-wall-budget.json'),
            'no_gpu_or_new_predictions':True,'original_arp_gate_unpassed':True,

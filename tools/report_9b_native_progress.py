@@ -50,6 +50,8 @@ def collect():
         if not sample:available=False;break
         eta+=(16*counts[axis]-processed[axis])*sum(sample)/len(sample)
     calibration=read_json(NATIVE/'minimal-acceptance.json') if (NATIVE/'minimal-acceptance.json').exists() else None
+    failure_path=NATIVE/'failed-calibration-report/diagnostic.json'
+    failure=read_json(failure_path) if failure_path.exists() else None
     stops=[str(p.relative_to(OUT)) for p in OUT.glob('*stopped.json')]
     if (NATIVE/'stopped.json').exists():stops.append('processor-pixel-evaluation-v3/stopped.json')
     seven=OUT.parents[1]/'7b-processor-pixel-audit-20261017'
@@ -62,7 +64,8 @@ def collect():
                  'remaining_pure_hours':(38400-seven_rows)*seven_seconds/seven_rows/3600 if seven_rows else None,
                  'stopped':read_json(seven/'stopped.json') if (seven/'stopped.json').exists() else None},
             'updates':updates,'remaining_pure_training_hours':(15000-updates)*seconds/updates/3600 if updates else None,
-            'native_calibration_status':calibration['status'] if calibration else 'pending',
+            'native_calibration_status':calibration['status'] if calibration else failure['status'] if failure else 'pending',
+            'native_calibration_failure':failure,
             'native_calibration_scores':calibration['scores'] if calibration else None,
             'formal_evaluations_complete':len(scores),'scores':scores,'partial_models':partial,
             'processed_prompts':sum(processed.values()),'remaining_generation_hours':eta/3600 if available else None,
@@ -82,8 +85,13 @@ def render(data):
     for model,scores in data['scores'].items():text.append('| '+model+' | '+' | '.join(f'{100*scores[a]:.3f}%' for a in AXES)+' |')
     if not data['scores']:text += ['','尚无完整正式评测，不能用最小循环分数代替正式结果。']
     seven=data['seven_processor_audit']
-    text += ['',f'7B统一处理器像素复测：{seven["complete_models"]}/16模型、{seven["processed_rows"]}/38,400条；完成后9B全量评测开始。',
+    text += ['',f'7B统一处理器像素复测：{seven["complete_models"]}/16模型、{seven["processed_rows"]}/38,400条；独立继续，不因9B校准失败而等待。',
              '7B已完成模型定位分：'+json.dumps(seven['scores'],ensure_ascii=False)]
+    if data.get('native_calibration_failure'):
+        failure=data['native_calibration_failure']
+        registered=failure['scores']['registered_processor_pixels']
+        text += ['',f'9B共同坐标校准未通过：N准确率{registered["accuracy"]*100:.1f}%，解析失败{registered["parse_failures"]}/100；正式评测保持停止。',
+                 '同输出0–1000解释的86%仅作事后单位诊断，不是通过。原校准预算不重置，不为达到门槛反复调提示。']
     if seven['remaining_pure_hours'] is not None:text += [f'7B剩余纯生成约{seven["remaining_pure_hours"]:.2f}小时，另加装载、校验及上传。']
     if seven['stopped']:text += ['7B审计停止记录：'+json.dumps(seven['stopped'],ensure_ascii=False)]
     eta=data['remaining_generation_hours']
@@ -113,6 +121,14 @@ def maybe_publish(token,force=False):
         for source in [NATIVE/'minimal-report.md',NATIVE/'minimal-acceptance.json',NATIVE/'training-health.json',
                        OUT/'formal-report/training-results.json',OUT/'formal-report/training-report.md',OUT/'formal-report/loss-curves.png']:
             if source.exists():shutil.copyfile(source,destination/source.name)
+        # Carry failure and syntax-only measurement repairs as explicit evidence,
+        # rather than silently substituting them for successful calibration.
+        for label,source in [
+            ('9b-failed-calibration.json',NATIVE/'failed-calibration-report/diagnostic.json'),
+            ('9b-failed-calibration.md',NATIVE/'failed-calibration-report/report.md'),
+            ('7b-csv-schema-amendment.json',OUT.parents[1]/'7b-processor-pixel-audit-20261017/schema-amendment.json'),
+            ('7b-calibration.json',OUT.parents[1]/'7b-processor-pixel-audit-20261017/calibration-proof/calibration.json')]:
+            if source.exists():shutil.copyfile(source,destination/label)
         from publish_artifacts import publish
         receipt=publish(destination,'arp-9b-122b-20261017',token=token)
         write_json(destination/'published.json',{'status':'uploaded_and_server_digest_checked','timestamp':now.isoformat(),'receipt':receipt})

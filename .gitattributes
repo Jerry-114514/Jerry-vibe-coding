@@ -77,3 +77,7 @@ docs/results/protocol-v2-20261016/9b-training-final/training-complete.json -text
 docs/results/protocol-v2-20261016/9b-training-final/training-health.json -text
 docs/results/protocol-v2-20261016/9b-training-final/training-results.json -text
 docs/results/protocol-v2-20261016/9b-training-final/training-wall-budget.json -text
+
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/common-input-audit-csv-lineage.json -text
+
+docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-N-processor-pixels-2400.json -text
