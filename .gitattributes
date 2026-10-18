@@ -105,3 +105,6 @@ docs/results/protocol-v2-20261016/9b-native-frontend-v4-registration-precheck.js
 tools/run_9b_native_frontend_v41.py -text
 tools/qwen35_termination_contract.py -text
 docs/results/protocol-v2-20261016/9b-native-frontend-v41-*.json -text
+
+tools/diagnose_u137_geometry.py -text
+docs/results/protocol-v2-20261016/u137-diagnosis/** -text

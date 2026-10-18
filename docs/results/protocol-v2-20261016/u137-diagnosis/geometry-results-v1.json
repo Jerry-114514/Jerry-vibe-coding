@@ -1,0 +1,1844 @@
+{
+  "plan_sha256": "d2b4ca5043e6c4b09e0231e67d35be8f94347890f7f3ed180da9aea37215ec3e",
+  "timestamp_utc": "2026-10-18T13:18:17.412343+00:00",
+  "official_results_unchanged": true,
+  "new_predictions": 0,
+  "results": {
+    "N-seed42": {
+      "official_axis_scores": {
+        "pope": 0.8986666666666666,
+        "grounding": 0.8825,
+        "consistency": 0.81625,
+        "mmstar": 0.6066666666666667
+      },
+      "parse_failures": 0,
+      "length_capped": 0,
+      "unique_boxes": 2354,
+      "most_repeated_boxes": [
+        [
+          [
+            0,
+            0,
+            1000,
+            1000
+          ],
+          8
+        ],
+        [
+          [
+            76,
+            181,
+            354,
+            1000
+          ],
+          2
+        ],
+        [
+          [
+            39,
+            0,
+            277,
+            484
+          ],
+          2
+        ],
+        [
+          [
+            369,
+            176,
+            1000,
+            714
+          ],
+          2
+        ],
+        [
+          [
+            565,
+            58,
+            840,
+            388
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        296.0,
+        248.0,
+        703.0,
+        869.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 2118,
+          "accuracy": 0.8825,
+          "mean_iou": 0.8158352180768447,
+          "median_iou": 0.9270057041902966,
+          "within_image_bounds": 2400,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 737,
+                "accuracy": 0.92125,
+                "mean_iou": 0.8485850681100036,
+                "median_iou": 0.9328226188988369,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 670,
+                "accuracy": 0.8375,
+                "mean_iou": 0.7782279726272293,
+                "median_iou": 0.9231293002047696,
+                "within_image_bounds": 800
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 711,
+                "accuracy": 0.88875,
+                "mean_iou": 0.8206926134933009,
+                "median_iou": 0.9240245463514161,
+                "within_image_bounds": 800
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 1904,
+                "accuracy": 0.8880597014925373,
+                "mean_iou": 0.8204740983985779,
+                "median_iou": 0.928664971043512,
+                "within_image_bounds": 2144
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 214,
+                "accuracy": 0.8359375,
+                "mean_iou": 0.7769845953823283,
+                "median_iou": 0.9157192589676157,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 1674,
+                "accuracy": 0.8801261829652997,
+                "mean_iou": 0.8163704289972378,
+                "median_iou": 0.9299012587368269,
+                "within_image_bounds": 1902
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 352,
+                "accuracy": 0.8866498740554156,
+                "mean_iou": 0.8087930960228085,
+                "median_iou": 0.9147739389400645,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 92,
+                "accuracy": 0.9108910891089109,
+                "mean_iou": 0.8334367159467904,
+                "median_iou": 0.9190737917229598,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 3,
+          "accuracy": 0.00125,
+          "mean_iou": 0.05880252042052999,
+          "median_iou": 0.0,
+          "within_image_bounds": 98,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 1,
+                "accuracy": 0.00125,
+                "mean_iou": 0.06091869375445264,
+                "median_iou": 0.005355799440458829,
+                "within_image_bounds": 27
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.06150484237259679,
+                "median_iou": 0.0010566284856434096,
+                "within_image_bounds": 41
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.053984025134540536,
+                "median_iou": 0.0,
+                "within_image_bounds": 30
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 3,
+                "accuracy": 0.0013992537313432835,
+                "mean_iou": 0.06212866830918928,
+                "median_iou": 0.0029753763354379886,
+                "within_image_bounds": 95
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.030946031853008385,
+                "median_iou": 0.0,
+                "within_image_bounds": 3
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 3,
+                "accuracy": 0.0015772870662460567,
+                "mean_iou": 0.0545810041092772,
+                "median_iou": 0.0,
+                "within_image_bounds": 55
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06800023100771675,
+                "median_iou": 0.007282570345521027,
+                "within_image_bounds": 27
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10214740082537811,
+                "median_iou": 0.0492309732922656,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 4,
+          "accuracy": 0.0016666666666666668,
+          "mean_iou": 0.06305199503103542,
+          "median_iou": 0.0040010445724459835,
+          "within_image_bounds": 105,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 1,
+                "accuracy": 0.00125,
+                "mean_iou": 0.06529047788955623,
+                "median_iou": 0.009387203889202146,
+                "within_image_bounds": 26
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 3,
+                "accuracy": 0.00375,
+                "mean_iou": 0.06518468669121562,
+                "median_iou": 0.003649177462450239,
+                "within_image_bounds": 42
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.058680820512334426,
+                "median_iou": 0.0,
+                "within_image_bounds": 37
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 4,
+                "accuracy": 0.0018656716417910447,
+                "mean_iou": 0.06265507559939373,
+                "median_iou": 0.002630125915718305,
+                "within_image_bounds": 97
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06637619527103461,
+                "median_iou": 0.012457088642432921,
+                "within_image_bounds": 8
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 4,
+                "accuracy": 0.002103049421661409,
+                "mean_iou": 0.05906550541301504,
+                "median_iou": 0.0012935532657568033,
+                "within_image_bounds": 60
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.07252889410827632,
+                "median_iou": 0.00972003589871696,
+                "within_image_bounds": 29
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.1008735229499477,
+                "median_iou": 0.0460365106325301,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        }
+      }
+    },
+    "A1-seed42": {
+      "official_axis_scores": {
+        "pope": 0.9027777777777778,
+        "grounding": 0.865,
+        "consistency": 0.81875,
+        "mmstar": 0.564
+      },
+      "parse_failures": 0,
+      "length_capped": 0,
+      "unique_boxes": 2324,
+      "most_repeated_boxes": [
+        [
+          [
+            0,
+            0,
+            1000,
+            1000
+          ],
+          6
+        ],
+        [
+          [
+            75,
+            181,
+            350,
+            988
+          ],
+          2
+        ],
+        [
+          [
+            488,
+            288,
+            942,
+            883
+          ],
+          2
+        ],
+        [
+          [
+            577,
+            169,
+            919,
+            852
+          ],
+          2
+        ],
+        [
+          [
+            127,
+            477,
+            398,
+            838
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        315.0,
+        247.5,
+        712.0,
+        862.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 2076,
+          "accuracy": 0.865,
+          "mean_iou": 0.8007553252510567,
+          "median_iou": 0.9223689534210169,
+          "within_image_bounds": 2400,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 730,
+                "accuracy": 0.9125,
+                "mean_iou": 0.8380037162434465,
+                "median_iou": 0.9295002532987726,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 649,
+                "accuracy": 0.81125,
+                "mean_iou": 0.7567553756812313,
+                "median_iou": 0.9119925154762495,
+                "within_image_bounds": 800
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 697,
+                "accuracy": 0.87125,
+                "mean_iou": 0.8075068838284924,
+                "median_iou": 0.9201542105124627,
+                "within_image_bounds": 800
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 1868,
+                "accuracy": 0.871268656716418,
+                "mean_iou": 0.8061144338888022,
+                "median_iou": 0.9240288991831642,
+                "within_image_bounds": 2144
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 208,
+                "accuracy": 0.8125,
+                "mean_iou": 0.7558727904099384,
+                "median_iou": 0.9054186695945776,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 1646,
+                "accuracy": 0.8654048370136698,
+                "mean_iou": 0.8040521866684966,
+                "median_iou": 0.9247360245625762,
+                "within_image_bounds": 1902
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 344,
+                "accuracy": 0.8664987405541562,
+                "mean_iou": 0.788591876231288,
+                "median_iou": 0.9091494363505981,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 86,
+                "accuracy": 0.8514851485148515,
+                "mean_iou": 0.7864806603488532,
+                "median_iou": 0.9104470135413022,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 4,
+          "accuracy": 0.0016666666666666668,
+          "mean_iou": 0.058926993276742085,
+          "median_iou": 0.0,
+          "within_image_bounds": 96,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06209347072562363,
+                "median_iou": 0.006715730403505423,
+                "within_image_bounds": 28
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 4,
+                "accuracy": 0.005,
+                "mean_iou": 0.0600258438858238,
+                "median_iou": 0.0,
+                "within_image_bounds": 38
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.05466166521877883,
+                "median_iou": 0.0,
+                "within_image_bounds": 30
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 4,
+                "accuracy": 0.0018656716417910447,
+                "mean_iou": 0.0621284675765114,
+                "median_iou": 0.0011156958499490646,
+                "within_image_bounds": 93
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.03211464601617409,
+                "median_iou": 0.0,
+                "within_image_bounds": 3
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 4,
+                "accuracy": 0.002103049421661409,
+                "mean_iou": 0.055017694382553724,
+                "median_iou": 0.0,
+                "within_image_bounds": 52
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06690475148367103,
+                "median_iou": 0.004443463397945303,
+                "within_image_bounds": 29
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10118755256976661,
+                "median_iou": 0.03755285295487483,
+                "within_image_bounds": 15
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 4,
+          "accuracy": 0.0016666666666666668,
+          "mean_iou": 0.06322982717620228,
+          "median_iou": 0.0021836592356696913,
+          "within_image_bounds": 99,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06637935374213487,
+                "median_iou": 0.009506863610730453,
+                "within_image_bounds": 27
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 4,
+                "accuracy": 0.005,
+                "mean_iou": 0.06390393391399493,
+                "median_iou": 0.0,
+                "within_image_bounds": 36
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.059406193872477024,
+                "median_iou": 0.0,
+                "within_image_bounds": 36
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 4,
+                "accuracy": 0.0018656716417910447,
+                "mean_iou": 0.06270018792754249,
+                "median_iou": 0.0018457490654561555,
+                "within_image_bounds": 91
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06766555588372795,
+                "median_iou": 0.008915645607159309,
+                "within_image_bounds": 8
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 4,
+                "accuracy": 0.002103049421661409,
+                "mean_iou": 0.05962225640420612,
+                "median_iou": 0.0005166919341790847,
+                "within_image_bounds": 55
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.07117448258258054,
+                "median_iou": 0.006262935917669075,
+                "within_image_bounds": 30
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.09993845501783108,
+                "median_iou": 0.03503011542762721,
+                "within_image_bounds": 14
+              }
+            }
+          }
+        }
+      }
+    },
+    "A2-seed42": {
+      "official_axis_scores": {
+        "pope": 0.904,
+        "grounding": 0.8879166666666667,
+        "consistency": 0.88375,
+        "mmstar": 0.652
+      },
+      "parse_failures": 0,
+      "length_capped": 0,
+      "unique_boxes": 2326,
+      "most_repeated_boxes": [
+        [
+          [
+            0,
+            0,
+            1000,
+            1000
+          ],
+          7
+        ],
+        [
+          [
+            73,
+            177,
+            352,
+            988
+          ],
+          2
+        ],
+        [
+          [
+            577,
+            167,
+            922,
+            852
+          ],
+          2
+        ],
+        [
+          [
+            262,
+            61,
+            544,
+            611
+          ],
+          2
+        ],
+        [
+          [
+            127,
+            477,
+            402,
+            838
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        296.5,
+        245.0,
+        705.0,
+        874.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 2131,
+          "accuracy": 0.8879166666666667,
+          "mean_iou": 0.8201844037485919,
+          "median_iou": 0.9251320497999254,
+          "within_image_bounds": 2400,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 739,
+                "accuracy": 0.92375,
+                "mean_iou": 0.8514999151018816,
+                "median_iou": 0.9313807672738099,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 683,
+                "accuracy": 0.85375,
+                "mean_iou": 0.7913567973950836,
+                "median_iou": 0.9198651164302248,
+                "within_image_bounds": 800
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 709,
+                "accuracy": 0.88625,
+                "mean_iou": 0.8176964987488105,
+                "median_iou": 0.922431997280384,
+                "within_image_bounds": 800
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 1912,
+                "accuracy": 0.8917910447761194,
+                "mean_iou": 0.8235370569019969,
+                "median_iou": 0.9264299380532772,
+                "within_image_bounds": 2144
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 219,
+                "accuracy": 0.85546875,
+                "mean_iou": 0.7921059335888251,
+                "median_iou": 0.9087150643757678,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 1685,
+                "accuracy": 0.8859095688748686,
+                "mean_iou": 0.8220687677378558,
+                "median_iou": 0.9281063023228631,
+                "within_image_bounds": 1902
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 354,
+                "accuracy": 0.8916876574307305,
+                "mean_iou": 0.8082752784382948,
+                "median_iou": 0.9092231355068853,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 92,
+                "accuracy": 0.9108910891089109,
+                "mean_iou": 0.8315097744476819,
+                "median_iou": 0.9223712630164291,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 5,
+          "accuracy": 0.0020833333333333333,
+          "mean_iou": 0.06051732345317572,
+          "median_iou": 0.0,
+          "within_image_bounds": 93,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.06345214455352113,
+                "median_iou": 0.005361308206090286,
+                "within_image_bounds": 27
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 3,
+                "accuracy": 0.00375,
+                "mean_iou": 0.06323342995094632,
+                "median_iou": 0.0028390258461507664,
+                "within_image_bounds": 37
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.0548663958550597,
+                "median_iou": 0.0,
+                "within_image_bounds": 29
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 5,
+                "accuracy": 0.0023320895522388058,
+                "mean_iou": 0.06382849152064682,
+                "median_iou": 0.003246076165145915,
+                "within_image_bounds": 90
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.032786290888105175,
+                "median_iou": 0.0,
+                "within_image_bounds": 3
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 5,
+                "accuracy": 0.0026288117770767614,
+                "mean_iou": 0.05669651648918708,
+                "median_iou": 0.0,
+                "within_image_bounds": 51
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06814850859856984,
+                "median_iou": 0.0032153300229582193,
+                "within_image_bounds": 27
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10247370308470952,
+                "median_iou": 0.038366701273539146,
+                "within_image_bounds": 15
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 4,
+          "accuracy": 0.0016666666666666668,
+          "mean_iou": 0.06490197019724242,
+          "median_iou": 0.005583199846384125,
+          "within_image_bounds": 102,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.06808407257116834,
+                "median_iou": 0.009947619826644192,
+                "within_image_bounds": 29
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.06738247979270723,
+                "median_iou": 0.007115436359710225,
+                "within_image_bounds": 37
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.05923935822785169,
+                "median_iou": 0.0,
+                "within_image_bounds": 36
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 4,
+                "accuracy": 0.0018656716417910447,
+                "mean_iou": 0.06436855282246788,
+                "median_iou": 0.003755161608797046,
+                "within_image_bounds": 93
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06936934071097918,
+                "median_iou": 0.01612695238230579,
+                "within_image_bounds": 9
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 4,
+                "accuracy": 0.002103049421661409,
+                "mean_iou": 0.061367146391662,
+                "median_iou": 0.002485795808387102,
+                "within_image_bounds": 59
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.0725990426525689,
+                "median_iou": 0.006908560967420957,
+                "within_image_bounds": 28
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10121382280565189,
+                "median_iou": 0.035564290937095205,
+                "within_image_bounds": 15
+              }
+            }
+          }
+        }
+      }
+    },
+    "U-seed42": {
+      "official_axis_scores": {
+        "pope": 0.8924444444444445,
+        "grounding": 0.8233333333333334,
+        "consistency": 0.89,
+        "mmstar": 0.694
+      },
+      "parse_failures": 0,
+      "length_capped": 0,
+      "unique_boxes": 2325,
+      "most_repeated_boxes": [
+        [
+          [
+            0.0,
+            0.0,
+            1000.0,
+            1000.0
+          ],
+          7
+        ],
+        [
+          [
+            78.0,
+            170.0,
+            428.0,
+            1000.0
+          ],
+          2
+        ],
+        [
+          [
+            586.0,
+            150.0,
+            916.0,
+            820.0
+          ],
+          2
+        ],
+        [
+          [
+            381.0,
+            116.0,
+            780.0,
+            832.0
+          ],
+          2
+        ],
+        [
+          [
+            108.0,
+            100.0,
+            670.0,
+            750.0
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        260.0,
+        190.0,
+        680.0,
+        870.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 1976,
+          "accuracy": 0.8233333333333334,
+          "mean_iou": 0.7239599489122753,
+          "median_iou": 0.83167395015654,
+          "within_image_bounds": 2400,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 683,
+                "accuracy": 0.85375,
+                "mean_iou": 0.7502020898457198,
+                "median_iou": 0.8516893134505185,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 639,
+                "accuracy": 0.79875,
+                "mean_iou": 0.70002110232468,
+                "median_iou": 0.8152986203061613,
+                "within_image_bounds": 800
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 654,
+                "accuracy": 0.8175,
+                "mean_iou": 0.7216566545664261,
+                "median_iou": 0.8314397163029268,
+                "within_image_bounds": 800
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 1761,
+                "accuracy": 0.8213619402985075,
+                "mean_iou": 0.7240012976828526,
+                "median_iou": 0.8356615974221394,
+                "within_image_bounds": 2144
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 215,
+                "accuracy": 0.83984375,
+                "mean_iou": 0.723613652958691,
+                "median_iou": 0.80552588646119,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 1567,
+                "accuracy": 0.823869610935857,
+                "mean_iou": 0.7229441604265877,
+                "median_iou": 0.8314773858055251,
+                "within_image_bounds": 1902
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 323,
+                "accuracy": 0.8136020151133502,
+                "mean_iou": 0.7214860447312779,
+                "median_iou": 0.8262561162038397,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 86,
+                "accuracy": 0.8514851485148515,
+                "mean_iou": 0.7528131138591436,
+                "median_iou": 0.8618515995265162,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 6,
+          "accuracy": 0.0025,
+          "mean_iou": 0.0783797268258947,
+          "median_iou": 0.03681242537991569,
+          "within_image_bounds": 109,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.08042501917254888,
+                "median_iou": 0.03859200436645353,
+                "within_image_bounds": 32
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.08296233008496627,
+                "median_iou": 0.049911211933543365,
+                "within_image_bounds": 41
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.07175183122016893,
+                "median_iou": 0.02491107225950135,
+                "within_image_bounds": 36
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 6,
+                "accuracy": 0.002798507462686567,
+                "mean_iou": 0.08251099802187946,
+                "median_iou": 0.043087463720081265,
+                "within_image_bounds": 104
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.04378033055952229,
+                "median_iou": 0.0,
+                "within_image_bounds": 5
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 5,
+                "accuracy": 0.0026288117770767614,
+                "mean_iou": 0.07455249786428715,
+                "median_iou": 0.033244742781601264,
+                "within_image_bounds": 58
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 1,
+                "accuracy": 0.0025188916876574307,
+                "mean_iou": 0.08755498688988701,
+                "median_iou": 0.054459206781416,
+                "within_image_bounds": 35
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.11438775890087076,
+                "median_iou": 0.06835161550369484,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 6,
+          "accuracy": 0.0025,
+          "mean_iou": 0.08377331763207707,
+          "median_iou": 0.0454741748625809,
+          "within_image_bounds": 121,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.08556670389725814,
+                "median_iou": 0.04407728590307207,
+                "within_image_bounds": 33
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.08788563038015496,
+                "median_iou": 0.05492375673660006,
+                "within_image_bounds": 44
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.07786761861881812,
+                "median_iou": 0.03715437718686677,
+                "within_image_bounds": 44
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 6,
+                "accuracy": 0.002798507462686567,
+                "mean_iou": 0.0833083299034483,
+                "median_iou": 0.04616960286789594,
+                "within_image_bounds": 110
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.08766758985934298,
+                "median_iou": 0.04006101098430859,
+                "within_image_bounds": 11
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 5,
+                "accuracy": 0.0026288117770767614,
+                "mean_iou": 0.08021338936129604,
+                "median_iou": 0.040561233150488374,
+                "within_image_bounds": 69
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 1,
+                "accuracy": 0.0025188916876574307,
+                "mean_iou": 0.09338533358769364,
+                "median_iou": 0.05484615059347182,
+                "within_image_bounds": 36
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.1130308744305497,
+                "median_iou": 0.06746105021988832,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        }
+      }
+    },
+    "A2-seed137": {
+      "official_axis_scores": {
+        "pope": 0.905,
+        "grounding": 0.8916666666666667,
+        "consistency": 0.87,
+        "mmstar": 0.68
+      },
+      "parse_failures": 0,
+      "length_capped": 0,
+      "unique_boxes": 2323,
+      "most_repeated_boxes": [
+        [
+          [
+            0,
+            0,
+            1000,
+            1000
+          ],
+          9
+        ],
+        [
+          [
+            75,
+            181,
+            352,
+            988
+          ],
+          2
+        ],
+        [
+          [
+            492,
+            288,
+            938,
+            883
+          ],
+          2
+        ],
+        [
+          [
+            577,
+            169,
+            919,
+            852
+          ],
+          2
+        ],
+        [
+          [
+            127,
+            477,
+            402,
+            838
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        298.0,
+        244.5,
+        705.0,
+        874.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 2140,
+          "accuracy": 0.8916666666666667,
+          "mean_iou": 0.8207657094746507,
+          "median_iou": 0.9238370264263155,
+          "within_image_bounds": 2400,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 740,
+                "accuracy": 0.925,
+                "mean_iou": 0.8514714523593974,
+                "median_iou": 0.9327363772761339,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 687,
+                "accuracy": 0.85875,
+                "mean_iou": 0.7928917086986613,
+                "median_iou": 0.9210744852096273,
+                "within_image_bounds": 800
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 713,
+                "accuracy": 0.89125,
+                "mean_iou": 0.8179339673658934,
+                "median_iou": 0.918016104160955,
+                "within_image_bounds": 800
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 1919,
+                "accuracy": 0.8950559701492538,
+                "mean_iou": 0.8251614701781456,
+                "median_iou": 0.9252567440495686,
+                "within_image_bounds": 2144
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 221,
+                "accuracy": 0.86328125,
+                "mean_iou": 0.7839512135828807,
+                "median_iou": 0.9070760125668278,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 1695,
+                "accuracy": 0.8911671924290221,
+                "mean_iou": 0.8236445143323796,
+                "median_iou": 0.9272107154762141,
+                "within_image_bounds": 1902
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 358,
+                "accuracy": 0.9017632241813602,
+                "mean_iou": 0.8123186781872778,
+                "median_iou": 0.9055376218916577,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 87,
+                "accuracy": 0.8613861386138614,
+                "mean_iou": 0.799755655827984,
+                "median_iou": 0.9253361258581604,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 3,
+          "accuracy": 0.00125,
+          "mean_iou": 0.060226253149662436,
+          "median_iou": 0.00040564961037590716,
+          "within_image_bounds": 96,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 1,
+                "accuracy": 0.00125,
+                "mean_iou": 0.06283867283421199,
+                "median_iou": 0.006316518324974145,
+                "within_image_bounds": 27
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.0627984590509882,
+                "median_iou": 0.0045712472029052955,
+                "within_image_bounds": 37
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.05504162756378711,
+                "median_iou": 0.0,
+                "within_image_bounds": 32
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 3,
+                "accuracy": 0.0013992537313432835,
+                "mean_iou": 0.0634213399008165,
+                "median_iou": 0.0034954984553068873,
+                "within_image_bounds": 93
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.033467401608747165,
+                "median_iou": 0.0,
+                "within_image_bounds": 3
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 3,
+                "accuracy": 0.0015772870662460567,
+                "mean_iou": 0.05634035454259137,
+                "median_iou": 0.0,
+                "within_image_bounds": 52
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.06840701577366265,
+                "median_iou": 0.007040850950164407,
+                "within_image_bounds": 28
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10124819759442565,
+                "median_iou": 0.03367469759525037,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 3,
+          "accuracy": 0.00125,
+          "mean_iou": 0.0647007940810708,
+          "median_iou": 0.005341952963763173,
+          "within_image_bounds": 105,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 1,
+                "accuracy": 0.00125,
+                "mean_iou": 0.06767314224410424,
+                "median_iou": 0.010833434167199243,
+                "within_image_bounds": 28
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 2,
+                "accuracy": 0.0025,
+                "mean_iou": 0.06690809583411013,
+                "median_iou": 0.006871500242597299,
+                "within_image_bounds": 38
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.059521144164998006,
+                "median_iou": 0.0,
+                "within_image_bounds": 39
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 3,
+                "accuracy": 0.0013992537313432835,
+                "mean_iou": 0.06395925138797387,
+                "median_iou": 0.004296837600986412,
+                "within_image_bounds": 96
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.07091121413575747,
+                "median_iou": 0.017543053152033146,
+                "within_image_bounds": 9
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 3,
+                "accuracy": 0.0015772870662460567,
+                "mean_iou": 0.061120474051030535,
+                "median_iou": 0.0034105825578347407,
+                "within_image_bounds": 59
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.07285967466163058,
+                "median_iou": 0.008244674650821878,
+                "within_image_bounds": 30
+              },
+              "square": {
+                "rows": 101,
+                "correct": 0,
+                "accuracy": 0.0,
+                "mean_iou": 0.10005419117665823,
+                "median_iou": 0.032122553320276276,
+                "within_image_bounds": 16
+              }
+            }
+          }
+        }
+      }
+    },
+    "U-seed137": {
+      "official_axis_scores": {
+        "pope": 0.8234444444444444,
+        "grounding": 0.42583333333333334,
+        "consistency": 0.8775,
+        "mmstar": 0.7013333333333334
+      },
+      "parse_failures": 3,
+      "length_capped": 0,
+      "unique_boxes": 2317,
+      "most_repeated_boxes": [
+        [
+          [
+            0.0,
+            0.0,
+            330.0,
+            990.0
+          ],
+          4
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            270.0,
+            990.0
+          ],
+          4
+        ],
+        [
+          [
+            800.0,
+            0.0,
+            1000.0,
+            200.0
+          ],
+          3
+        ],
+        [
+          [
+            68.0,
+            84.0,
+            336.0,
+            990.0
+          ],
+          2
+        ],
+        [
+          [
+            0.0,
+            100.0,
+            333.33,
+            990.0
+          ],
+          2
+        ]
+      ],
+      "coordinate_medians": [
+        133.33,
+        120.0,
+        520.0,
+        880.0
+      ],
+      "maps": {
+        "registered_native1000": {
+          "rows": 2400,
+          "correct": 1022,
+          "accuracy": 0.42583333333333334,
+          "mean_iou": 0.42179970351681245,
+          "median_iou": 0.4379677643636608,
+          "within_image_bounds": 2397,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 359,
+                "accuracy": 0.44875,
+                "mean_iou": 0.44277862058236306,
+                "median_iou": 0.45993226321186753,
+                "within_image_bounds": 800
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 330,
+                "accuracy": 0.4125,
+                "mean_iou": 0.40276302044857604,
+                "median_iou": 0.42270987382745695,
+                "within_image_bounds": 798
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 333,
+                "accuracy": 0.41625,
+                "mean_iou": 0.4198574695194982,
+                "median_iou": 0.4328330148610361,
+                "within_image_bounds": 799
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 898,
+                "accuracy": 0.41884328358208955,
+                "mean_iou": 0.4155069013565962,
+                "median_iou": 0.4330678387913342,
+                "within_image_bounds": 2141
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 124,
+                "accuracy": 0.484375,
+                "mean_iou": 0.4745019216086234,
+                "median_iou": 0.49059113069706783,
+                "within_image_bounds": 256
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 839,
+                "accuracy": 0.4411146161934805,
+                "mean_iou": 0.4266692045562085,
+                "median_iou": 0.44998093127388006,
+                "within_image_bounds": 1899
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 150,
+                "accuracy": 0.3778337531486146,
+                "mean_iou": 0.4127731992146606,
+                "median_iou": 0.4006053834187928,
+                "within_image_bounds": 397
+              },
+              "square": {
+                "rows": 101,
+                "correct": 33,
+                "accuracy": 0.32673267326732675,
+                "mean_iou": 0.36557922065565324,
+                "median_iou": 0.3637596757366885,
+                "within_image_bounds": 101
+              }
+            }
+          }
+        },
+        "hypothetical_original_pixels": {
+          "rows": 2400,
+          "correct": 80,
+          "accuracy": 0.03333333333333333,
+          "mean_iou": 0.16409493983730808,
+          "median_iou": 0.14706206354454776,
+          "within_image_bounds": 325,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 30,
+                "accuracy": 0.0375,
+                "mean_iou": 0.1728706484200649,
+                "median_iou": 0.15845582236476616,
+                "within_image_bounds": 103
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 20,
+                "accuracy": 0.025,
+                "mean_iou": 0.16172338051273183,
+                "median_iou": 0.1471916730291189,
+                "within_image_bounds": 115
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 30,
+                "accuracy": 0.0375,
+                "mean_iou": 0.1576907905791275,
+                "median_iou": 0.13465166286030023,
+                "within_image_bounds": 107
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 79,
+                "accuracy": 0.03684701492537314,
+                "mean_iou": 0.17086980053041273,
+                "median_iou": 0.15685527133106414,
+                "within_image_bounds": 310
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 1,
+                "accuracy": 0.00390625,
+                "mean_iou": 0.10735548153255645,
+                "median_iou": 0.08791800555797882,
+                "within_image_bounds": 15
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 61,
+                "accuracy": 0.03207150368033649,
+                "mean_iou": 0.15689990392856443,
+                "median_iou": 0.14197798845314705,
+                "within_image_bounds": 244
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 10,
+                "accuracy": 0.02518891687657431,
+                "mean_iou": 0.17969368146325154,
+                "median_iou": 0.16256089772727272,
+                "within_image_bounds": 52
+              },
+              "square": {
+                "rows": 101,
+                "correct": 9,
+                "accuracy": 0.0891089108910891,
+                "mean_iou": 0.23827571085642552,
+                "median_iou": 0.21244197183486743,
+                "within_image_bounds": 29
+              }
+            }
+          }
+        },
+        "hypothetical_processor_pixels": {
+          "rows": 2400,
+          "correct": 83,
+          "accuracy": 0.034583333333333334,
+          "mean_iou": 0.17157894428669004,
+          "median_iou": 0.1583596816335177,
+          "within_image_bounds": 326,
+          "strata": {
+            "dataset": {
+              "refcoco": {
+                "rows": 800,
+                "correct": 31,
+                "accuracy": 0.03875,
+                "mean_iou": 0.1800220547363112,
+                "median_iou": 0.1674204696175629,
+                "within_image_bounds": 102
+              },
+              "refcoco+": {
+                "rows": 800,
+                "correct": 20,
+                "accuracy": 0.025,
+                "mean_iou": 0.16801620183528074,
+                "median_iou": 0.15621480999251858,
+                "within_image_bounds": 115
+              },
+              "refcocog": {
+                "rows": 800,
+                "correct": 32,
+                "accuracy": 0.04,
+                "mean_iou": 0.16669857628847823,
+                "median_iou": 0.1480076471347456,
+                "within_image_bounds": 109
+              }
+            },
+            "size_bin": {
+              "512to999": {
+                "rows": 2144,
+                "correct": 76,
+                "accuracy": 0.03544776119402985,
+                "mean_iou": 0.17049362979971727,
+                "median_iou": 0.15712355643089482,
+                "within_image_bounds": 302
+              },
+              "under512": {
+                "rows": 256,
+                "correct": 7,
+                "accuracy": 0.02734375,
+                "mean_iou": 0.180668453115087,
+                "median_iou": 0.17583423533962145,
+                "within_image_bounds": 24
+              }
+            },
+            "aspect": {
+              "landscape": {
+                "rows": 1902,
+                "correct": 62,
+                "accuracy": 0.03259726603575184,
+                "mean_iou": 0.16447223769560476,
+                "median_iou": 0.152915406766475,
+                "within_image_bounds": 243
+              },
+              "portrait": {
+                "rows": 397,
+                "correct": 12,
+                "accuracy": 0.030226700251889168,
+                "mean_iou": 0.18869158610872164,
+                "median_iou": 0.17985784409325523,
+                "within_image_bounds": 54
+              },
+              "square": {
+                "rows": 101,
+                "correct": 9,
+                "accuracy": 0.0891089108910891,
+                "mean_iou": 0.23814564857280554,
+                "median_iou": 0.20967402782146946,
+                "within_image_bounds": 29
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

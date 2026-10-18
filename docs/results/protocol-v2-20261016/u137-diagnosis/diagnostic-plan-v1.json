@@ -1,0 +1,45 @@
+{
+  "timestamp_utc": "2026-10-18T13:17:40.357135+00:00",
+  "scope": "Exploratory post-result diagnosis; not a repaired primary score or confirmation",
+  "source_sha256": {
+    "diagnose_u137_geometry.py": "cca6bc9197f23b9232ce595c13fa5d3cbdbb5b2c8678e1f40b06d95a46291e4a",
+    "qwen35_native_frontend.py": "b3a05125215242c8a903699ffc92df005c7b21f715c42a3fb4d0d9dac436db07",
+    "experiment_common.py": "b88f5160bfaa13d41350c24cd200f16b360ddc00a0aece066639d2aa78f82fec",
+    "scoring.py": "ea457b26002f492e9822fc89928950b92bde8e99005d6e1e3981471f7e1dc741"
+  },
+  "input_sha256": {
+    "protocol": "03ad2816908390d748acccfda8825542923cc0db994a40b31fa3dd4c1656802e",
+    "manifest": "ce73beba2aef17a8a9d074aba9c97cafb8a1008c7e51886e269f506f5c11c1e6",
+    "N-seed42/eval.jsonl": "b38c9bebe8bf1f7fe678f4e63eec18d731ff34f9b1591cf1b44988cadd285a11",
+    "N-seed42/scores.json": "2ecf0fe4ca53fe247b8165b21884e31abcae5be29379232aa9fe69a7530f6c19",
+    "A1-seed42/eval.jsonl": "d59ae783b04d6d10854db818dd0585f5fc85b43d785a6dbfef347166d4a8153c",
+    "A1-seed42/scores.json": "d0484901cfa105ea59554c199e7a02228a367b39f8db8b7157b40416b1b9a3e6",
+    "A2-seed42/eval.jsonl": "95b4d33012abd391225649d66d06dd2ec46c1f9b3e415e5de07ffd3918072409",
+    "A2-seed42/scores.json": "b5f11193a57e73b3e868a0736f7bec4b694806330b7efe9ba24157a102053469",
+    "U-seed42/eval.jsonl": "e5b670ae50f679586b329fcc474cf67f7f4dae775a71468724b98453a05fb83e",
+    "U-seed42/scores.json": "bd9f9f944023758cca90953c76ad69729339932fa637ca6730e6ab506c8b99a9",
+    "A2-seed137/eval.jsonl": "e7c16d8dc4eb1bf5e50316c56d334268aa4a331d79a456d7332642ce54c01526",
+    "A2-seed137/scores.json": "ca3fb81f0b3b547f8f62f6337bcd6bf4d91449591a6321ae79683ee057fa5f0a",
+    "U-seed137/eval.jsonl": "3e7dab757c14be7300b88877a0021cf197d5c994cda12e321e3a2ee0835a3a3a",
+    "U-seed137/scores.json": "ab1d1bc32cf0a1f46787b0084e950cbafca16acb2e9f81ce3d094a93e0ed3532"
+  },
+  "models": [
+    "N-seed42",
+    "A1-seed42",
+    "A2-seed42",
+    "U-seed42",
+    "A2-seed137",
+    "U-seed137"
+  ],
+  "hypotheses": [
+    "registered_native1000",
+    "hypothetical_original_pixels",
+    "hypothetical_processor_pixels"
+  ],
+  "no_per_item_best_units": true,
+  "no_clipping_or_GT_fit": true,
+  "same_three_global_maps_for_all_six_models": true,
+  "official_score_remains_native1000": true,
+  "new_predictions": 0,
+  "training_checks": "1000 contiguous real updates, sampling metadata, dualCE/grad finite, hashes, axis exposure, target conflict, saved adapter finite"
+}

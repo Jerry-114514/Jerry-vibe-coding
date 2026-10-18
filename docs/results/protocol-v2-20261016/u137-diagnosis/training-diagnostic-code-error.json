@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-10-18T13:19:11.500613+00:00", "type": "NameError", "message": "Missing json import in new CPU diagnostic script, not in training or evaluation", "geometry_results_valid_and_retained": true, "new_predictions": 0, "next_revision": "r2; import json only; same inputs and hypotheses"}

@@ -1,0 +1,289 @@
+{
+  "timestamp_utc": "2026-10-18T13:19:21.438080+00:00",
+  "plan_sha256": "5e5cedc97be3a6709f710e5d5218e9d46e2c587fb097729ba5083f23e00d1bc5",
+  "cuda_initialized": false,
+  "results": {
+    "U-seed42": {
+      "hashes_match": true,
+      "real_updates_contiguous_and_finite": true,
+      "sampling_matches_metadata": true,
+      "sample_pool_size": 600,
+      "sampling_ids_sha256": "b6b1a321ba648315bd8468f355afa3abc1b9230d21a99cbab7d2a4017bdf1a8a",
+      "axes": {
+        "pope": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.35225102899415645,
+          "last25_mean_loss": 0.2940984254796058,
+          "mean_ce_gt": 0.12782608698474354,
+          "mean_ce_teacher": 0.576675974016136,
+          "max_grad_before_clip": 104.42406463623047,
+          "preclip_grad_over1": 85,
+          "gt_teacher_target_text_mismatches": 37,
+          "grounding_numeric_maxdiff_median": null
+        },
+        "grounding": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.9466216602325439,
+          "last25_mean_loss": 0.828247287273407,
+          "mean_ce_gt": 1.036838280916214,
+          "mean_ce_teacher": 0.8564050368070603,
+          "max_grad_before_clip": 34.90022277832031,
+          "preclip_grad_over1": 248,
+          "gt_teacher_target_text_mismatches": 150,
+          "grounding_numeric_maxdiff_median": 6.560000000000002
+        },
+        "consistency": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 134,
+          "mean_loss": 0.12771468243778142,
+          "last25_mean_loss": 0.19630996076273732,
+          "mean_ce_gt": 0.11828068725943373,
+          "mean_ce_teacher": 0.1371486791508032,
+          "max_grad_before_clip": 102.47107696533203,
+          "preclip_grad_over1": 35,
+          "gt_teacher_target_text_mismatches": 11,
+          "grounding_numeric_maxdiff_median": null
+        },
+        "mmstar": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.14376399115972935,
+          "last25_mean_loss": 0.030306563136982732,
+          "mean_ce_gt": 0.16001621160900004,
+          "mean_ce_teacher": 0.1275117713581899,
+          "max_grad_before_clip": 177.39059448242188,
+          "preclip_grad_over1": 30,
+          "gt_teacher_target_text_mismatches": 4,
+          "grounding_numeric_maxdiff_median": null
+        }
+      },
+      "adapter_tensor_summary": {
+        "lora_A": {
+          "tensors": 248,
+          "norm": 38.97688206770857,
+          "max_abs": 0.034495189785957336
+        },
+        "lora_B": {
+          "tensors": 248,
+          "norm": 13.427693454992193,
+          "max_abs": 0.0227406844496727
+        }
+      },
+      "largest_preclip_gradients": [
+        {
+          "step": 52,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:140",
+          "axis": "mmstar",
+          "loss": 1.2896277904510498,
+          "ce_gt": 1.2896277904510498,
+          "ce_teacher": 1.2896277904510498,
+          "grad_norm": 177.39059448242188,
+          "seconds": 0.8968277424573898,
+          "reserved_peak_bytes": 20692598784,
+          "allocated_peak_bytes": 20069787648,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 540,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:1015",
+          "axis": "mmstar",
+          "loss": 2.939049243927002,
+          "ce_gt": 2.939049243927002,
+          "ce_teacher": 2.939049243927002,
+          "grad_norm": 156.6893768310547,
+          "seconds": 1.0430622398853302,
+          "reserved_peak_bytes": 21095251968,
+          "allocated_peak_bytes": 20468945408,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 832,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:579",
+          "axis": "mmstar",
+          "loss": 0.5687851309776306,
+          "ce_gt": 0.5687851309776306,
+          "ce_teacher": 0.5687851309776306,
+          "grad_norm": 151.835693359375,
+          "seconds": 1.062412865459919,
+          "reserved_peak_bytes": 21095251968,
+          "allocated_peak_bytes": 20468945408,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 16,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:562",
+          "axis": "mmstar",
+          "loss": 0.7031107544898987,
+          "ce_gt": 0.7031107544898987,
+          "ce_teacher": 0.7031107544898987,
+          "grad_norm": 150.58053588867188,
+          "seconds": 1.0020218081772327,
+          "reserved_peak_bytes": 20520632320,
+          "allocated_peak_bytes": 19969464832,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 428,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:575",
+          "axis": "mmstar",
+          "loss": 1.2898902893066406,
+          "ce_gt": 1.2898902893066406,
+          "ce_teacher": 1.2898902893066406,
+          "grad_norm": 148.3287353515625,
+          "seconds": 0.9479538463056087,
+          "reserved_peak_bytes": 21093154816,
+          "allocated_peak_bytes": 20468945408,
+          "actual_optimizer_update": true
+        }
+      ],
+      "resume_record": null
+    },
+    "U-seed137": {
+      "hashes_match": true,
+      "real_updates_contiguous_and_finite": true,
+      "sampling_matches_metadata": true,
+      "sample_pool_size": 600,
+      "sampling_ids_sha256": "6769cb5487d9ef823006ed31edc60dcdc9196dac99386a9ab6c381fa630f2098",
+      "axes": {
+        "pope": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.28723322050322897,
+          "last25_mean_loss": 0.13857344503514468,
+          "mean_ce_gt": 0.09097646160228397,
+          "mean_ce_teacher": 0.4834899816699617,
+          "max_grad_before_clip": 113.83824157714844,
+          "preclip_grad_over1": 70,
+          "gt_teacher_target_text_mismatches": 31,
+          "grounding_numeric_maxdiff_median": null
+        },
+        "grounding": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.9509336007833481,
+          "last25_mean_loss": 0.8564079141616822,
+          "mean_ce_gt": 1.0444655163288117,
+          "mean_ce_teacher": 0.857401688337326,
+          "max_grad_before_clip": 16.955425262451172,
+          "preclip_grad_over1": 244,
+          "gt_teacher_target_text_mismatches": 150,
+          "grounding_numeric_maxdiff_median": 7.210000000000008
+        },
+        "consistency": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 127,
+          "mean_loss": 0.14627751565210653,
+          "last25_mean_loss": 0.05347715319723648,
+          "mean_ce_gt": 0.14149259503929076,
+          "mean_ce_teacher": 0.15106243614664433,
+          "max_grad_before_clip": 121.03926086425781,
+          "preclip_grad_over1": 32,
+          "gt_teacher_target_text_mismatches": 11,
+          "grounding_numeric_maxdiff_median": null
+        },
+        "mmstar": {
+          "updates": 250,
+          "unique_examples": 150,
+          "unique_image_paths": 150,
+          "mean_loss": 0.11288004442552665,
+          "last25_mean_loss": 0.11711589445578284,
+          "mean_ce_gt": 0.10679270606689716,
+          "mean_ce_teacher": 0.11896738336250746,
+          "max_grad_before_clip": 211.79931640625,
+          "preclip_grad_over1": 22,
+          "gt_teacher_target_text_mismatches": 2,
+          "grounding_numeric_maxdiff_median": null
+        }
+      },
+      "adapter_tensor_summary": {
+        "lora_A": {
+          "tensors": 248,
+          "norm": 38.891890238943546,
+          "max_abs": 0.03376283496618271
+        },
+        "lora_B": {
+          "tensors": 248,
+          "norm": 13.597182161296235,
+          "max_abs": 0.022256113588809967
+        }
+      },
+      "largest_preclip_gradients": [
+        {
+          "step": 660,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:510",
+          "axis": "mmstar",
+          "loss": 1.175279974937439,
+          "ce_gt": 1.175279974937439,
+          "ce_teacher": 1.175279974937439,
+          "grad_norm": 211.79931640625,
+          "seconds": 1.1128854416310787,
+          "reserved_peak_bytes": 20757610496,
+          "allocated_peak_bytes": 20375400448,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 136,
+          "item_id": "train:scienceqa:train-00000-of-00001-1028f23e353fbe3e:1150",
+          "axis": "mmstar",
+          "loss": 3.2507565021514893,
+          "ce_gt": 3.2507565021514893,
+          "ce_teacher": 3.2507565021514893,
+          "grad_norm": 172.02627563476562,
+          "seconds": 0.9263102412223816,
+          "reserved_peak_bytes": 20470300672,
+          "allocated_peak_bytes": 20081405952,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 103,
+          "item_id": "train:consistency:2001715:p1",
+          "axis": "consistency",
+          "loss": 1.7192672491073608,
+          "ce_gt": 3.4380173683166504,
+          "ce_teacher": 0.0005171009106561542,
+          "grad_norm": 121.03926086425781,
+          "seconds": 0.9068162739276886,
+          "reserved_peak_bytes": 20470300672,
+          "allocated_peak_bytes": 20081405952,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 109,
+          "item_id": "train:pope:345833:58",
+          "axis": "pope",
+          "loss": 1.9916815757751465,
+          "ce_gt": 1.9916815757751465,
+          "ce_teacher": 1.9916815757751465,
+          "grad_norm": 113.83824157714844,
+          "seconds": 0.9199075773358345,
+          "reserved_peak_bytes": 20470300672,
+          "allocated_peak_bytes": 20081405952,
+          "actual_optimizer_update": true
+        },
+        {
+          "step": 409,
+          "item_id": "train:pope:220838:75",
+          "axis": "pope",
+          "loss": 1.4062304496765137,
+          "ce_gt": 1.4062304496765137,
+          "ce_teacher": 1.4062304496765137,
+          "grad_norm": 88.1284408569336,
+          "seconds": 0.8702781051397324,
+          "reserved_peak_bytes": 20757610496,
+          "allocated_peak_bytes": 20375400448,
+          "actual_optimizer_update": true
+        }
+      ],
+      "resume_record": null
+    }
+  }
+}

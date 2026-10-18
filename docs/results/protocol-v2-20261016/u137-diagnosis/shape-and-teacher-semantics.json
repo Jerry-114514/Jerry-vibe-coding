@@ -1,0 +1,109 @@
+{
+  "timestamp_utc": "2026-10-18T13:21:27.332079+00:00",
+  "scope": "Posthoc shape and teacher label diagnosis, no fit or score changes",
+  "models": {
+    "N-seed42": {
+      "valid_rows": 2400,
+      "medians": {
+        "center_dx_by_image_width": -0.00042986432613167274,
+        "center_dy_by_image_height": 0.0005396296838407698,
+        "box_width_ratio_to_GT": 0.9981107619006488,
+        "box_height_ratio_to_GT": 1.0004444432294513
+      },
+      "iqr_centers": {
+        "center_dx_by_image_width": [
+          -0.0038157894736842207,
+          0.0035899999999999183
+        ],
+        "center_dy_by_image_height": [
+          -0.00439929742388766,
+          0.006024630541871986
+        ]
+      }
+    },
+    "U-seed42": {
+      "valid_rows": 2400,
+      "medians": {
+        "center_dx_by_image_width": -0.00017093750000001862,
+        "center_dy_by_image_height": -0.010414215686274493,
+        "box_width_ratio_to_GT": 1.0019449425870532,
+        "box_height_ratio_to_GT": 1.0144539757279456
+      },
+      "iqr_centers": {
+        "center_dx_by_image_width": [
+          -0.007359374999999968,
+          0.005242187500000028
+        ],
+        "center_dy_by_image_height": [
+          -0.046013986013986034,
+          -0.0002352941176471264
+        ]
+      }
+    },
+    "U-seed137": {
+      "valid_rows": 2397,
+      "medians": {
+        "center_dx_by_image_width": -0.05591666666666668,
+        "center_dy_by_image_height": -0.07389121338912133,
+        "box_width_ratio_to_GT": 1.0326149590872413,
+        "box_height_ratio_to_GT": 1.1076028622540255
+      },
+      "iqr_centers": {
+        "center_dx_by_image_width": [
+          -0.1628984375,
+          -0.007187500000000002
+        ],
+        "center_dy_by_image_height": [
+          -0.13128350515463907,
+          -0.026497916666666715
+        ]
+      }
+    }
+  },
+  "teachers": {
+    "U-seed42": {
+      "pope": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 5,
+        "teacher_parse_failures": 0
+      },
+      "grounding": {
+        "examples": 150,
+        "teacher_GT_median_IoU": 0.9404247074745946,
+        "teacher_GT_IoU_below05": 10
+      },
+      "consistency": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 11,
+        "teacher_parse_failures": 0
+      },
+      "mmstar": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 4,
+        "teacher_parse_failures": 0
+      }
+    },
+    "U-seed137": {
+      "pope": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 4,
+        "teacher_parse_failures": 0
+      },
+      "grounding": {
+        "examples": 150,
+        "teacher_GT_median_IoU": 0.9320686505086164,
+        "teacher_GT_IoU_below05": 12
+      },
+      "consistency": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 11,
+        "teacher_parse_failures": 1
+      },
+      "mmstar": {
+        "examples": 150,
+        "teacher_semantic_disagreement_with_GT": 2,
+        "teacher_parse_failures": 1
+      }
+    }
+  }
+}
