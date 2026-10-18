@@ -1,5 +1,7 @@
 # protocol-v2：独立7B实验与补分析
 
+**9B v4.1新修订：** 用户已授权EOS修复及独立900秒校准预算；新队列已启动，校准全通过后才进入正式评测，旧v4失败仍保留。见[修订登记](9b_v41_eos_execution_registration.md)。
+
 更新：北京时间2026-10-18 11:04核查。**独立7B原轮及随后16模型定位复测均已完成并归档；9B十五次训练完成，但共同坐标契约校准失败，正式评测未启动。** 原ARP及全部补实验尚未完成。旧v1结果保留在[原结果目录](../final-20261016/README.md)。
 
 [新定位终局结果与四项校正区间](7b-processor-final/report.md)：N/A1/A2/U为84.708%/85.592%/84.975%/82.275%。仅A1−U校正区间排除0；A1相对N、A2未显著。旧U定位优势未在新契约下保留。[图表](7b-processor-final/final-report/grounding-final.png)、[38,400行独立复核及新服务端检查](7b-processor-final/final-report/reverification.json)。

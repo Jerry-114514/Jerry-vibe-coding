@@ -329,6 +329,8 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未�
                   '下文9B停止描述保留为v3失败及此前快照；新版本实际状态见方案和进度证据，不撤销旧失败记录。\n\n')
         if (DEST / '9b-native-frontend-v4-termination-diagnostic.json').exists():
             notice = '> **最新状态：2026-10-18 12:28 北京时间。v4校准已失败停止（13/16模型、340/400条）；正式评测未启动。N为89%，A1-seed512出现20次长度截断、11次解析失败。CPU定位到tokenizer与默认生成EOS不一致；原始失败及900秒预算保留，不自动重跑。详见[停止报告与修复规格](9b_v4_calibration_stop_and_eos_diagnosis.md)。**\n\n'
+        if (DEST / '9b-native-frontend-v41-protocol.json').exists():
+            notice = '> **9B v4.1 已获授权并启动独立队列（2026-10-18）：仅修复EOS；先验证预注册归档，再做新400条/900秒校准，全通过才续跑正式评测。旧v3/v4失败完整保留。见[新修订登记](9b_v41_eos_execution_registration.md)。GPU验收尚待实际结果。**\n\n'
         report = report.replace('\n\n', '\n\n'+notice, 1)
         handoff = handoff.replace('\n\n', '\n\n'+notice, 1)
     for name, content in [('大模型方案_实验结果报告_20261017.md', report),

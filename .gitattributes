@@ -101,3 +101,7 @@ docs/results/protocol-v2-20261016/9b-native-frontend-v4-pilot-progress.json -tex
 docs/results/protocol-v2-20261016/9b-native-frontend-v4-protocol.json -text
 
 docs/results/protocol-v2-20261016/9b-native-frontend-v4-registration-precheck.json -text
+
+tools/run_9b_native_frontend_v41.py -text
+tools/qwen35_termination_contract.py -text
+docs/results/protocol-v2-20261016/9b-native-frontend-v41-*.json -text

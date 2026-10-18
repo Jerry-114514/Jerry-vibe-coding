@@ -1,5 +1,7 @@
 # ARP 多模态量尺审计与训练实验
 
+**9B v4.1新修订：** 用户已授权EOS修复及独立900秒校准预算；新队列已启动，校准全通过后才进入正式评测，旧v4失败仍保留。见[修订登记](docs/results/protocol-v2-20261016/9b_v41_eos_execution_registration.md)。
+
 截至2026-10-17，旧v1的B/C/D运行产物已完成计算与验收；新增独立7B路线B也已完成15次训练、16模型评测和完整五seed统计。原ARP protocol-v2阶段C仍未放行，独立实验不替代其科学门槛。大体积数据和训练产物在GitHub Release的Assets中。
 
 **7B完整实验报告：** [Qwen2.5-VL-7B独立自蒸馏结果与分析](docs/results/protocol-v2-20261016/7B独立自蒸馏实验结果报告.md)。包含16模型四轴分数、15次训练显存/耗时/损失曲线、12项校正配对区间及过程验收。原始数据见[7B实验Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。
