@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-10-18T14:17:53.935670+00:00",
+  "reviewer": "assistant visual inspection; not independent human ARP blind review",
+  "model_identities_viewed": false,
+  "scope": "Qualitative non-score-selected12-panel sample; not prevalence estimates or GT corrections",
+  "observations": [
+    {
+      "panel": 2,
+      "labels": [
+        "A"
+      ],
+      "observation": "Box appears on banana while GT and other boxes mark the foreground apple; object-selection error."
+    },
+    {
+      "panel": 4,
+      "labels": [
+        "C"
+      ],
+      "observation": "Same sink region, but box extends substantially into wall above target; extent error."
+    },
+    {
+      "panel": 6,
+      "labels": [
+        "B"
+      ],
+      "observation": "Box shifts left onto neighboring person/region rather than the GT subject."
+    },
+    {
+      "panel": 7,
+      "labels": [
+        "C"
+      ],
+      "observation": "Box covers background dessert display instead of foreground cake with missing slices."
+    },
+    {
+      "panel": 8,
+      "labels": [
+        "B",
+        "C"
+      ],
+      "observation": "Large boxes on left donuts differ from lower-right GT donut; referring expression is potentially ambiguous, so do not relabel GT."
+    },
+    {
+      "panel": 9,
+      "labels": [
+        "B"
+      ],
+      "observation": "Box marks the left adult instead of the GT child in orange."
+    },
+    {
+      "panel": 12,
+      "labels": [
+        "B"
+      ],
+      "observation": "Box is on upper-left background/window, away from the GT person; not a small global shift."
+    }
+  ],
+  "conclusion": "Mixture of object/region selection and box extent errors; a single fitted translation would not be a justified repair."
+}

@@ -1,0 +1,141 @@
+{
+  "timestamp_utc": "2026-10-18T14:16:21.779841+00:00",
+  "source_sha256": "7531919a1c36384538651bd8d016ecff200b7c8fdf9682c5046e109fcaefb423",
+  "selection": "4 per dataset, hash seed2026101805, distinct image groups, no score/parse filtering",
+  "rows": [
+    {
+      "panel": 1,
+      "item_id": "grounding:refcoco:unc:11481:32686",
+      "image_group": "COCO_train2014_000000450162.jpg",
+      "model_key": {
+        "A": "N-seed42",
+        "B": "U-seed42",
+        "C": "U-seed137"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 2,
+      "item_id": "grounding:refcoco:unc:46282:131618",
+      "image_group": "COCO_train2014_000000043892.jpg",
+      "model_key": {
+        "A": "U-seed137",
+        "B": "N-seed42",
+        "C": "U-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 3,
+      "item_id": "grounding:refcoco:unc:5068:14432",
+      "image_group": "COCO_train2014_000000523561.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "N-seed42",
+        "C": "U-seed137"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 4,
+      "item_id": "grounding:refcoco:unc:11900:33873",
+      "image_group": "COCO_train2014_000000445392.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "N-seed42",
+        "C": "U-seed137"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 5,
+      "item_id": "grounding:refcoco+:unc:21429:60942",
+      "image_group": "COCO_train2014_000000332905.jpg",
+      "model_key": {
+        "A": "U-seed137",
+        "B": "N-seed42",
+        "C": "U-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 6,
+      "item_id": "grounding:refcoco+:unc:27675:78650",
+      "image_group": "COCO_train2014_000000261673.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "U-seed137",
+        "C": "N-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 7,
+      "item_id": "grounding:refcoco+:unc:12839:36492",
+      "image_group": "COCO_train2014_000000433647.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "N-seed42",
+        "C": "U-seed137"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 8,
+      "item_id": "grounding:refcoco+:unc:28428:80781",
+      "image_group": "COCO_train2014_000000253049.jpg",
+      "model_key": {
+        "A": "N-seed42",
+        "B": "U-seed42",
+        "C": "U-seed137"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 9,
+      "item_id": "grounding:refcocog:umd:40190:91530",
+      "image_group": "COCO_train2014_000000337621.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "U-seed137",
+        "C": "N-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 10,
+      "item_id": "grounding:refcocog:umd:24570:50963",
+      "image_group": "COCO_train2014_000000399276.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "U-seed137",
+        "C": "N-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 11,
+      "item_id": "grounding:refcocog:umd:35191:78575",
+      "image_group": "COCO_train2014_000000092685.jpg",
+      "model_key": {
+        "A": "U-seed42",
+        "B": "U-seed137",
+        "C": "N-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    },
+    {
+      "panel": 12,
+      "item_id": "grounding:refcocog:umd:16790:30728",
+      "image_group": "COCO_train2014_000000074217.jpg",
+      "model_key": {
+        "A": "N-seed42",
+        "B": "U-seed137",
+        "C": "U-seed42"
+      },
+      "selection_not_based_on_IoU": true
+    }
+  ],
+  "human_ARP_blind_review_complete": false,
+  "no_prompt_change_no_new_inference": true
+}
