@@ -333,6 +333,8 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未�
             notice = '> **9B v4.1 已获授权并启动独立队列（2026-10-18）：仅修复EOS；先验证预注册归档，再做新400条/900秒校准，全通过才续跑正式评测。旧v3/v4失败完整保留。见[新修订登记](9b_v41_eos_execution_registration.md)。GPU验收尚待实际结果。**\n\n'
         if (DEST / '9b-native-frontend-v41-calibration-acceptance.json').exists():
             notice = '> **9B最新状态：v4.1全16检查点、400条GPU校准通过，零解析失败/截断；N89%。正式16×16,900评测已启动，40小时硬截止为北京时间10月20日04:43:21。旧v3/v4失败保留，完整统计尚未完成。见[验收、EOS完整排查链路和启动证明](9b_v41_calibration_acceptance_and_formal_start.md)。**\n\n'
+        if (DEST / 'u137-repair/protocol.json').exists():
+            notice = '> **U137独立修复已获授权并挂接（2026-10-18）：2×2方案八端点、两seed，复用两个历史P-D端点，新增六次固定1000步训练；CPU准备/权重/图像校验通过，队列等待原16模型终局交付后接力。新训练0/6，42.58%旧分数保留。见[独立执行方案](U137_独立修复实验执行方案.md)。**\n\n'
         report = report.replace('\n\n', '\n\n'+notice, 1)
         handoff = handoff.replace('\n\n', '\n\n'+notice, 1)
     for name, content in [('大模型方案_实验结果报告_20261017.md', report),

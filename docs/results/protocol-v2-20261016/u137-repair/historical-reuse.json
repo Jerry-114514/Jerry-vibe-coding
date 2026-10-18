@@ -1,0 +1,16 @@
+{
+  "P-D-seed42": {
+    "source": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed42",
+    "adapter_sha256": "17e9709bde7d932ee03ec88b16e647a733eebe2e945c7f1f12469c135e0a1116",
+    "loss_sha256": "05cfb74579f24db5019a868e9d9a6aa1af40d7aecaf8eb4c8ef1542555ec4b5b",
+    "meta_sha256": "b6b1a321ba648315bd8468f355afa3abc1b9230d21a99cbab7d2a4017bdf1a8a",
+    "source_sha256": "64a7c29589e4883261eb6f22b2eb3536c998a360c6c49214bab5eb7e0324a780"
+  },
+  "P-D-seed137": {
+    "source": "runs/route-b-9b-122b-20261017/student-experiment/formal/U-seed137",
+    "adapter_sha256": "c2b84219a0f4ebd1f0ba520c4077152f60df5fefd70149672669a1b348dbdb46",
+    "loss_sha256": "cd6884e52d225215c3637e66bdf9ee1b6cdded710aeba64a28242034ed060856",
+    "meta_sha256": "6769cb5487d9ef823006ed31edc60dcdc9196dac99386a9ab6c381fa630f2098",
+    "source_sha256": "64a7c29589e4883261eb6f22b2eb3536c998a360c6c49214bab5eb7e0324a780"
+  }
+}

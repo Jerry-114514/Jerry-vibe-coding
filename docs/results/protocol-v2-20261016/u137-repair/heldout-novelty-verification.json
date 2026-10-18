@@ -1,0 +1,1167 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-10-18T13:58:55.676630+00:00",
+  "prompt_ids_checked": 960,
+  "image_paths_checked": 426,
+  "prior_inference_ids": 31000,
+  "prior_observed_image_paths": 9532,
+  "inference_files": [
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 1068719
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 1068071
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 1069747
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 1068388
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 1068891
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 1069184
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 1068616
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 1068507
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 1068189
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 1067802
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 1065367
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 1110663
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 1154173
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 1171497
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 1088505
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/models/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 1089585
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/schema-v1-history/eval.jsonl",
+      "bytes_at_snapshot": 30925
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 197146
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 197143
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 201393
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 201781
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 197146
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 197143
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 201393
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 201781
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13083
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13110
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13097
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 28104
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13047
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13106
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13058
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13056
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 65046
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13851
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 14036
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13989
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/calibration-proof/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13970
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13083
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13110
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13097
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 28104
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13047
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13106
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13058
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13056
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 65046
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13851
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 14036
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13989
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13970
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 12828
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 12821
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 12850
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 12839
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 12819
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 12765
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 12786
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 12847
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 12797
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 12795
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 63750
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 13695
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 13594
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13775
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 13729
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/calibration-proof/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13708
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 12828
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 2656282
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 12850
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 5882596
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 12819
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 12765
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 5880947
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 12847
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 5881756
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 12795
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 6043333
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 13695
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 5979091
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 13775
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 5989720
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 13708
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 238777
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3277840
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3280993
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280282
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3280803
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3279120
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3281040
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3281099
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280694
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3281695
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3280495
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3453391
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3370065
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3354383
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3372351
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3340828
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3301162
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 160726
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167580
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167675
+    },
+    {
+      "path": "runs/route-b-staged-7b-20261016/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 166460
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T135829Z-1792159109144964324/files/runs/route-b-staged-7b-20261016/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 160726
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T135829Z-1792159109144964324/files/runs/route-b-staged-7b-20261016/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167580
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T135829Z-1792159109144964324/files/runs/route-b-staged-7b-20261016/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167675
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T135829Z-1792159109144964324/files/runs/route-b-staged-7b-20261016/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 166460
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T140334Z-1792159414285913453/files/runs/route-b-staged-7b-20261016/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 160726
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T140334Z-1792159414285913453/files/runs/route-b-staged-7b-20261016/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167580
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T140334Z-1792159414285913453/files/runs/route-b-staged-7b-20261016/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167675
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T140334Z-1792159414285913453/files/runs/route-b-staged-7b-20261016/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 166460
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T180341Z-1792173821472379383/files/runs/route-b-staged-7b-20261016/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3453391
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T190315Z-1792177395594445514/files/runs/route-b-staged-7b-20261016/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3281695
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T200042Z-1792180842019380615/files/runs/route-b-staged-7b-20261016/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3280803
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T210545Z-1792184745334528836/files/runs/route-b-staged-7b-20261016/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3340828
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T220144Z-1792188104175308625/files/runs/route-b-staged-7b-20261016/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3281099
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261016T231057Z-1792192257627801571/files/runs/route-b-staged-7b-20261016/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3354383
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T000655Z-1792195615915961629/files/runs/route-b-staged-7b-20261016/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3280993
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T010354Z-1792199034991281068/files/runs/route-b-staged-7b-20261016/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280282
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T021440Z-1792203280377602289/files/runs/route-b-staged-7b-20261016/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3372351
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T031104Z-1792206664120194387/files/runs/route-b-staged-7b-20261016/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280694
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T041203Z-1792210323157659723/files/runs/route-b-staged-7b-20261016/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3301162
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T050853Z-1792213733523418193/files/runs/route-b-staged-7b-20261016/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3280495
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T060514Z-1792217114871134362/files/runs/route-b-staged-7b-20261016/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3279120
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T071602Z-1792221362545158317/files/runs/route-b-staged-7b-20261016/formal/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3370065
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T081235Z-1792224755569883648/files/runs/route-b-staged-7b-20261016/formal/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3281040
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090914Z-1792228154271829881/files/runs/route-b-staged-7b-20261016/formal/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3277840
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3277840
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3280993
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280282
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3280803
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3279120
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3281040
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3281099
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280694
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3281695
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3280495
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3453391
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3370065
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3354383
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3372351
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3340828
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3301162
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 160726
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167580
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167675
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T090944Z-1792228184591081054/files/runs/route-b-staged-7b-20261016/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 166460
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A1-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3277840
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A1-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3280993
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A1-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280282
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3280803
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A1-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3279120
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A2-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3281040
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A2-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3281099
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A2-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3280694
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3281695
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/A2-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3280495
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3453391
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/U-seed1024/eval.jsonl",
+      "bytes_at_snapshot": 3370065
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/U-seed137/eval.jsonl",
+      "bytes_at_snapshot": 3354383
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/U-seed256/eval.jsonl",
+      "bytes_at_snapshot": 3372351
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 3340828
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/formal/U-seed512/eval.jsonl",
+      "bytes_at_snapshot": 3301162
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/minimal/A1-seed42/eval.jsonl",
+      "bytes_at_snapshot": 160726
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/minimal/A2-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167580
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/minimal/N-seed42/eval.jsonl",
+      "bytes_at_snapshot": 167675
+    },
+    {
+      "path": "runs/route-b-staged-delivery-20261016/20261017T091119Z-1792228279763790054/files/runs/route-b-staged-7b-20261016/minimal/U-seed42/eval.jsonl",
+      "bytes_at_snapshot": 166460
+    },
+    {
+      "path": "runs/protocol-v2/audit/api-qwen3-vl-plus-v1/ledger.jsonl",
+      "bytes_at_snapshot": 1477609
+    },
+    {
+      "path": "runs/protocol-v2/audit/qwen-clean-v1/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 4595903
+    },
+    {
+      "path": "runs/protocol-v2/audit/qwen-clean-v2/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 4676050
+    },
+    {
+      "path": "runs/protocol-v2/audit/qwen-clean-v2/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 3781568
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-audit-qwen3-vl-plus-v1/ledger.jsonl",
+      "bytes_at_snapshot": 62724
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-native-grounding/ledger.jsonl",
+      "bytes_at_snapshot": 141925
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-native-grounding-validation/ledger.jsonl",
+      "bytes_at_snapshot": 1413448
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-teacher-development/ledger.jsonl",
+      "bytes_at_snapshot": 243440
+    },
+    {
+      "path": "runs/protocol-v2/calibration/clean-inputs-v4/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 333755
+    },
+    {
+      "path": "runs/protocol-v2/calibration/clean-inputs-v5/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 365886
+    },
+    {
+      "path": "runs/protocol-v2/calibration/clean-inputs-v5/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 368189
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge/intern2b/ledger.jsonl",
+      "bytes_at_snapshot": 258531
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge/intern8b/ledger.jsonl",
+      "bytes_at_snapshot": 276665
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge/llava05b/ledger.jsonl",
+      "bytes_at_snapshot": 322375
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/protocol-v2/calibration/processed-pixel-grounding-v1/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 121079
+    },
+    {
+      "path": "runs/protocol-v2/calibration/processed-pixel-grounding-v1/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 121121
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v1/qwen3.5-122b-a10b/ledger.jsonl",
+      "bytes_at_snapshot": 48816
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v3/qwen3.5-122b-a10b/ledger.jsonl",
+      "bytes_at_snapshot": 55834
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v3/qwen3.5-397b-a17b/ledger.jsonl",
+      "bytes_at_snapshot": 62076
+    },
+    {
+      "path": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-native-grounding/ledger.jsonl",
+      "bytes_at_snapshot": 141925
+    },
+    {
+      "path": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-teacher-development/ledger.jsonl",
+      "bytes_at_snapshot": 243440
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/precision-bridge/intern2b/ledger.jsonl",
+      "bytes_at_snapshot": 258531
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/precision-bridge/intern2b/ledger.jsonl",
+      "bytes_at_snapshot": 258531
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/precision-bridge/intern8b/ledger.jsonl",
+      "bytes_at_snapshot": 276665
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/precision-bridge/intern2b/ledger.jsonl",
+      "bytes_at_snapshot": 258531
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/precision-bridge/intern8b/ledger.jsonl",
+      "bytes_at_snapshot": 276665
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/precision-bridge/intern2b/ledger.jsonl",
+      "bytes_at_snapshot": 258531
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/precision-bridge/intern8b/ledger.jsonl",
+      "bytes_at_snapshot": 276665
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/precision-bridge/llava05b/ledger.jsonl",
+      "bytes_at_snapshot": 322375
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/precision-bridge/qwen3b/ledger.jsonl",
+      "bytes_at_snapshot": 317247
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/precision-bridge/qwen7b/ledger.jsonl",
+      "bytes_at_snapshot": 318019
+    },
+    {
+      "path": "runs/9b-teacher-delivery-20261017/20261017T005601Z/files/runs/route-b-9b-122b-20261017/teacher.jsonl",
+      "bytes_at_snapshot": 4204149
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-5090-v1/teacher.jsonl",
+      "bytes_at_snapshot": 106754
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-v1/teacher.jsonl",
+      "bytes_at_snapshot": 106754
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-v2/teacher.jsonl",
+      "bytes_at_snapshot": 106754
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/teacher.jsonl",
+      "bytes_at_snapshot": 4204149
+    }
+  ],
+  "prompt_manifests": [
+    {
+      "path": "data/manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "data/training/pool.jsonl",
+      "matched_inferred_ids": 3540
+    },
+    {
+      "path": "runs/7b-grounding-contract-audit-20261017/normalized1000-manifest.jsonl",
+      "matched_inferred_ids": 2400
+    },
+    {
+      "path": "runs/7b-grounding-contract-audit-20261017/registration/normalized1000-manifest.jsonl",
+      "matched_inferred_ids": 2400
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/manifest.jsonl",
+      "matched_inferred_ids": 2400
+    },
+    {
+      "path": "runs/7b-processor-pixel-audit-20261017/registration/manifest.jsonl",
+      "matched_inferred_ids": 2400
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct-cloud-recovery/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct-cloud-recovery/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/registration-common-processor-pixels/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/registration-common-processor-pixels/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/registration/eval-input-formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/9b-student-delivery-20261017/20261017T140723Z-1792246043091213147/files/runs/route-b-9b-122b-20261017/student-experiment/registration/eval-input-minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/github-snapshots/formal-20261014-20261015T091521Z/frozen-inputs/data/manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/github-snapshots/formal-20261014-20261015T131256Z/frozen-inputs/data/manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/github-snapshots/formal-20261014-20261015T143054Z/frozen-inputs/data/manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/protocol-v2/audit/api-qwen3-vl-plus-v1/manifest.jsonl",
+      "matched_inferred_ids": 9600
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-audit-qwen3-vl-plus-v1/manifest.jsonl",
+      "matched_inferred_ids": 48
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-native-grounding/manifest.jsonl",
+      "matched_inferred_ids": 8
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-native-grounding-validation/manifest.jsonl",
+      "matched_inferred_ids": 92
+    },
+    {
+      "path": "runs/protocol-v2/calibration/api-teacher-development/manifest.jsonl",
+      "matched_inferred_ids": 64
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-5090-v1/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-v1/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2/calibration/p14-full-7b-v2/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v1/manifest.jsonl",
+      "matched_inferred_ids": 48
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v2/manifest.jsonl",
+      "matched_inferred_ids": 48
+    },
+    {
+      "path": "runs/protocol-v2/calibration/teacher-roles-v3/manifest.jsonl",
+      "matched_inferred_ids": 48
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2/calibration/training-memory-7b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-native-grounding/manifest.jsonl",
+      "matched_inferred_ids": 8
+    },
+    {
+      "path": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-teacher-development/manifest.jsonl",
+      "matched_inferred_ids": 64
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040245Z/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T040721Z/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041558Z/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T041700Z/training-memory-7b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/calibration/precision-bridge-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-3b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/protocol-v2-snapshots/20261016T042825Z/training-memory-7b/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/eligible-pool.jsonl",
+      "matched_inferred_ids": 3540
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/evaluation-input-preparation/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/evaluation-input-preparation/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/full-preflight/manifest.jsonl",
+      "matched_inferred_ids": 100
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct-cloud-recovery/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-evaluation-v2/registration-user80pct-cloud-recovery/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v4/registration/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/registration/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/registration-common-processor-pixels/formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/processor-pixel-evaluation-v3/registration-common-processor-pixels/minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/registration/eval-input-formal-manifest.jsonl",
+      "matched_inferred_ids": 16900
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/registration/eval-input-minimal-manifest.jsonl",
+      "matched_inferred_ids": 800
+    }
+  ],
+  "prior_prompt_exact_overlap": 0,
+  "prior_image_path_overlap": 0,
+  "prior_image_bytes_overlap": 0,
+  "prior_selected_RGB_alias_overlap": 0,
+  "source_history_exact_dhash_exclusion_already_verified": true,
+  "selection_did_not_consult_scores": true,
+  "heldout_manifest_sha256": "555740f6f16146aa8a4aecba99ff27c7d46a472a21f71be979001163b5b48d20"
+}

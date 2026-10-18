@@ -1,0 +1,35 @@
+{
+  "seed": 2026101802,
+  "jobs": [
+    {
+      "condition": "N-G",
+      "seed": 137,
+      "id": "N-G-seed137"
+    },
+    {
+      "condition": "N-D",
+      "seed": 42,
+      "id": "N-D-seed42"
+    },
+    {
+      "condition": "N-G",
+      "seed": 42,
+      "id": "N-G-seed42"
+    },
+    {
+      "condition": "P-G",
+      "seed": 137,
+      "id": "P-G-seed137"
+    },
+    {
+      "condition": "P-G",
+      "seed": 42,
+      "id": "P-G-seed42"
+    },
+    {
+      "condition": "N-D",
+      "seed": 137,
+      "id": "N-D-seed137"
+    }
+  ]
+}

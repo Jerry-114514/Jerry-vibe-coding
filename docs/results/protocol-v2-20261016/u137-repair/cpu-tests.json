@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "tests": 32,
+  "new_study_tests": 8,
+  "checks": [
+    "legacy pixel byte identity",
+    "normalized GT/teacher geometry",
+    "GT-only full scale",
+    "unknown condition rejection",
+    "separate absolute clocks never reset",
+    "old queue admission blocks new budget",
+    "factorial effect coefficients",
+    "existing geometry/frontend/EOS regressions"
+  ],
+  "command": "python -m pytest tests/test_repair_9b_codec.py tests/test_9b_repair_controls.py tests/test_u137_geometry.py tests/test_qwen35_termination_contract.py tests/test_qwen35_native_frontend.py tests/test_9b_v41_execution_guards.py -q -p no:cacheprovider --basetemp tmp/pytest-repair-20261018-run2",
+  "no_GPU_work": true,
+  "timestamp_utc": "2026-10-18T14:09:11.414437+00:00"
+}

@@ -108,3 +108,14 @@ docs/results/protocol-v2-20261016/9b-native-frontend-v41-*.json -text
 
 tools/diagnose_u137_geometry.py -text
 docs/results/protocol-v2-20261016/u137-diagnosis/** -text
+
+tools/prepare_9b_repair.py -text
+tools/repair_9b_codec.py -text
+tools/train_9b_repair.py -text
+tools/evaluate_9b_repair.py -text
+tools/run_9b_repair.py -text
+tools/report_9b_repair.py -text
+tools/verify_9b_repair_environment.py -text
+tools/verify_9b_repair_holdout.py -text
+tools/bundle_9b_repair_inputs.py -text
+docs/results/protocol-v2-20261016/u137-repair/** -text
