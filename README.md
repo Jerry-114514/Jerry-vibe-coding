@@ -8,6 +8,8 @@
 
 **结果与交接：** [基于《大模型方案》的实验结果报告](docs/results/protocol-v2-20261016/大模型方案_实验结果报告_20261017.md) · [Markdown交接文档](docs/results/protocol-v2-20261016/大模型方案_实验交接文档_20261017.md)。7B定位复测已完成16/16模型并归档，[新五seed终局](docs/results/protocol-v2-20261016/7b-processor-final/report.md)中仅A1−U四项校正区间排除0，A1对N/A2未显著；9B十五次训练已完成，但共同处理器像素校准未通过，正式评测尚未启动。[当前测量协议及修订](docs/results/protocol-v2-20261016/common_processor_pixel_execution.md)保留失败证据与停止规则。
 
+**9B新目标正在执行：** [原生前端v4修复方案](docs/results/protocol-v2-20261016/9b_native_frontend_repair_plan_20261018.md)。新协议已注册并启动最多400预测的一次性校准；旧v3失败保留。新N100条为89%、零解析失败/截断，尚须全部15适配器通过才进入正式评测。
+
 ## 查看实验结果
 
 **新增补实验：** [protocol-v2总览与9B进展](docs/results/protocol-v2-20261016/README.md) · [必要原始产物Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016) · [API教师与内存方案核查](docs/大模型方案_核查意见_20261016.md)。独立7B五seed实验已由用户单独授权并完成；原ARP主线及独立确认仍受其门槛约束。

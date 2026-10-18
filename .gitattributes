@@ -87,3 +87,17 @@ tools/finish_7b_processor_report.py -text
 docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-first-two-server-recheck.json -text
 
 docs/results/protocol-v2-20261016/7b-processor-final/** -text
+
+tools/qwen35_native_frontend.py -text
+
+tools/run_9b_native_frontend_v4.py -text
+
+docs/results/protocol-v2-20261016/9b-native-frontend-cpu-verification.json -text
+
+docs/results/protocol-v2-20261016/9b-native-frontend-v4-live.json -text
+
+docs/results/protocol-v2-20261016/9b-native-frontend-v4-pilot-progress.json -text
+
+docs/results/protocol-v2-20261016/9b-native-frontend-v4-protocol.json -text
+
+docs/results/protocol-v2-20261016/9b-native-frontend-v4-registration-precheck.json -text

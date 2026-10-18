@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "2026-10-18T03:26:39.800454+00:00",
+  "rows": {
+    "N-seed42": 100,
+    "A2-seed42": 20,
+    "A1-seed42": 20,
+    "U-seed42": 4
+  },
+  "scores": {
+    "N-seed42": {
+      "rows": 100,
+      "ledger_sha256": "03b29e8760474f2e9998f3170730f785cc6c81374247d5f8c51612869e88a586",
+      "protocol_sha256": "a7d448656c7b555f4b9450ac393f1288dd28f5fd9da7383f0b9e419002adb3d2",
+      "peak_reserved_bytes": 19161677824,
+      "peak_allocated_bytes": 19045213184,
+      "optimizer_loaded": false,
+      "gradients_enabled": false,
+      "adapter_reloaded_for_inference": false,
+      "total_generation_seconds": 59.36758701503277,
+      "active_process_seconds": 66.92960385233164,
+      "length_capped_outputs": 0,
+      "finished_utc": "2026-10-18T03:25:24.377670+00:00",
+      "accuracy": 0.89,
+      "parse_failures": 0
+    },
+    "A2-seed42": {
+      "rows": 20,
+      "ledger_sha256": "400d21930c5bbc80d058b8bf2b1251cf774f0b45f4e1a78e479b0f12b83ab59f",
+      "protocol_sha256": "a7d448656c7b555f4b9450ac393f1288dd28f5fd9da7383f0b9e419002adb3d2",
+      "peak_reserved_bytes": 19469959168,
+      "peak_allocated_bytes": 19213886464,
+      "optimizer_loaded": false,
+      "gradients_enabled": false,
+      "adapter_reloaded_for_inference": true,
+      "total_generation_seconds": 18.7209466509521,
+      "active_process_seconds": 26.489004094153643,
+      "length_capped_outputs": 0,
+      "finished_utc": "2026-10-18T03:25:53.032546+00:00",
+      "accuracy": 0.95,
+      "parse_failures": 0
+    },
+    "A1-seed42": {
+      "rows": 20,
+      "ledger_sha256": "6adaba07bb6e69466f65384e35a5b07421541dd48d8dbd5b76cc59ab1fc95b4f",
+      "protocol_sha256": "a7d448656c7b555f4b9450ac393f1288dd28f5fd9da7383f0b9e419002adb3d2",
+      "peak_reserved_bytes": 19469959168,
+      "peak_allocated_bytes": 19213886464,
+      "optimizer_loaded": false,
+      "gradients_enabled": false,
+      "adapter_reloaded_for_inference": true,
+      "total_generation_seconds": 20.20814971625805,
+      "active_process_seconds": 28.484327509999275,
+      "length_capped_outputs": 0,
+      "finished_utc": "2026-10-18T03:26:23.677543+00:00",
+      "accuracy": 0.8,
+      "parse_failures": 0
+    }
+  },
+  "processes": "84405 /root/autodl-tmp/arp-venv/bin/python -u tools/run_9b_native_frontend_v4.py run\n84753 /root/autodl-tmp/arp-qwen35-venv/bin/python -u /root/autodl-tmp/arp/tools/run_9b_native_frontend_v4.py eval --arm U --seed 42 --pilot\n"
+}

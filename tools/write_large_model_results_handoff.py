@@ -323,6 +323,12 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未�
 
 文档生成器`tools/write_large_model_results_handoff.py`只读取已保存的小型证据，不运行GPU/API、不改变实验状态。后续更新须先刷新证据快照，再运行生成器，避免只修改叙述而不更新证据。
 '''
+    if (DEST / '9b-native-frontend-v4-protocol.json').exists():
+        notice = ('> 9B新目标更新（2026-10-18）：用户已授权执行[原生前端v4修复方案]'
+                  '(9b_native_frontend_repair_plan_20261018.md)，新协议已注册并启动一次性校准。'
+                  '下文9B停止描述保留为v3失败及此前快照；新版本实际状态见方案和进度证据，不撤销旧失败记录。\n\n')
+        report = report.replace('\n\n', '\n\n'+notice, 1)
+        handoff = handoff.replace('\n\n', '\n\n'+notice, 1)
     for name, content in [('大模型方案_实验结果报告_20261017.md', report),
                           ('大模型方案_实验交接文档_20261017.md', handoff)]:
         (DEST / name).write_text(content, encoding='utf-8', newline='\n')

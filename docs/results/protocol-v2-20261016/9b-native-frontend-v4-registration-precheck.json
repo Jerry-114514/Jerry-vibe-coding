@@ -1,0 +1,9 @@
+{
+  "protocol_sha256": "a7d448656c7b555f4b9450ac393f1288dd28f5fd9da7383f0b9e419002adb3d2",
+  "selection_summary": {
+    "rows": 100,
+    "distinct_RGB_images": 100,
+    "distinct_image_groups": 100,
+    "excluded": 135
+  }
+}
