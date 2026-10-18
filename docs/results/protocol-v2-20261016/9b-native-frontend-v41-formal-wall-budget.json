@@ -1,0 +1,6 @@
+{
+  "start_utc": "2026-10-18T04:43:21.847069+00:00",
+  "end_utc": "2026-10-19T20:43:21.847069+00:00",
+  "seconds_cap": 144000,
+  "never_reset_on_restart": true
+}

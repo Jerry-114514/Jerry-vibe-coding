@@ -1,5 +1,7 @@
 # ARP 多模态量尺审计与训练实验
 
+**9B最新状态：** v4.1全部16检查点、400条校准通过，零解析失败/截断；N89%。正式评测已启动，40小时硬截止北京时间10月20日04:43:21。见[验收报告与EOS排查全链路](docs/results/protocol-v2-20261016/9b_v41_calibration_acceptance_and_formal_start.md)。
+
 **9B v4.1新修订：** 用户已授权EOS修复及独立900秒校准预算；新队列已启动，校准全通过后才进入正式评测，旧v4失败仍保留。见[修订登记](docs/results/protocol-v2-20261016/9b_v41_eos_execution_registration.md)。
 
 截至2026-10-17，旧v1的B/C/D运行产物已完成计算与验收；新增独立7B路线B也已完成15次训练、16模型评测和完整五seed统计。原ARP protocol-v2阶段C仍未放行，独立实验不替代其科学门槛。大体积数据和训练产物在GitHub Release的Assets中。

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests": 23,
+  "command": "python -m pytest tests/test_qwen35_native_frontend.py tests/test_9b_v4_execution_guards.py tests/test_9b_v41_execution_guards.py tests/test_qwen35_termination_contract.py -q -p no:cacheprovider --basetemp tmp/pytest-v41-20261018-run1",
+  "initial_environment_error": "system pytest temporary directory access denied; rerun in unique workspace directory; no assertions changed",
+  "cuda_used": false,
+  "timestamp_utc": "2026-10-18T04:35:17.690903+00:00"
+}
