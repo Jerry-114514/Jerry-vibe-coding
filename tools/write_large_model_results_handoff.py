@@ -38,6 +38,35 @@ def run():
     completed_table = '\n'.join(
         f"| {name} | {row['rows']:,} | {100*row['accuracy']:.3f}% | {row['parse_failures']} |"
         for name, row in completed.items())
+    finished = len(completed) == 16 and count == 38400 and bool(snap.get('seven_complete'))
+    final_summary = ''
+    if finished:
+        final = read(DEST / '7b-processor-final/results.json')
+        contrasts = '\n'.join(
+            f"| {name} | {100*row['difference']:+.3f} | "
+            f"[{100*row['bonferroni_familywise_ci95'][0]:.3f}, {100*row['bonferroni_familywise_ci95'][1]:.3f}] | "
+            f"{'是' if row['bonferroni_familywise_ci95'][0] > 0 or row['bonferroni_familywise_ci95'][1] < 0 else '否'} |"
+            for name, row in final['paired_contrasts'].items())
+        pure_hours = sum(row['generation_seconds'] for row in completed.values()) / 3600
+        final_summary = f'''
+### 统一契约复测终局：五seed与四项校正
+
+16模型、38,400条已于北京时间10月18日05:34完成并归档，独立CPU图表收尾同分钟通过。N定位84.708%；五seed均值A1为85.592%、A2为84.975%、U为82.275%。
+
+| 比较 | 差值：百分点 | 四项Bonferroni校正区间：百分点 | 区间排除0 |
+|---|---:|---|---|
+{contrasts}
+
+只有A1−U校正区间排除0；A1相对N、A2均未证明显著提升。U−N点估计为负但区间跨0，也不能宣称U显著退化。旧计分中U高于A1的方向没有在新明确提示/共同单位下保留，说明旧定位优势不稳健；不能把这项事后测量修订写成原ARP确认性结论，也不能单独断言所有差异仅由格式造成。
+
+U-seed1024有258/2,400次解析失败，定位75.708%；该异常seed保留在五seed均值和区间中，没有根据结果剔除。解析/指令遵循与空间定位仍存在交互，当前不是纯定位能力隔离实验。
+
+新复测纯生成合计{pure_hours:.3f}小时，按2.70元/小时折算约{pure_hours*2.70:.2f}元，不含装载、保存、上传及等待。全部模型评测均无优化器、无梯度。
+
+![新定位分数与四项校正区间](7b-processor-final/final-report/grounding-final.png)
+
+[全部16模型与区间](7b-processor-final/report.md)、[统计JSON](7b-processor-final/results.json)、[独立38,400行核验](7b-processor-final/final-report/verification.json)、[图表PDF](7b-processor-final/final-report/grounding-final.pdf)。
+'''
     stamp = datetime.fromisoformat(snap['utc']).astimezone(
         __import__('datetime').timezone(__import__('datetime').timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
     source = ROOT / 'docs/references/大模型方案_用户修订_20261016.md'
@@ -67,7 +96,7 @@ def run():
 | P0-1 公式核对 | [审计](p0/formula_audit.md)、[新旧表](p0/analysis_v1_vs_v2.csv)已输出 | 旧数据探索性重算，不是新独立确认 |
 | P0-2 平局/反转/分母 | [敏感性及guard表](p0/tie_and_guard_report.csv)已输出 | 不将定义性平局当作严格翻转 |
 | P0-3 全120设置 | [120设置×4臂](p0/arm_gains_all_120.csv)、[共同题集](p0/arm_common_support.csv)已输出 | 旧训练结果的补分析 |
-| P0-4 定位测量审计 | 7B全16模型旧输出CPU审计完成；明确提示的GPU复测进行中 | 双人独立盲审未完成；9B共同契约校准失败 |
+| P0-4 定位测量审计 | 7B全16模型旧输出CPU审计完成；明确提示的GPU复测{'已完成并归档' if finished else '进行中'} | 双人独立盲审未完成；9B共同契约校准失败 |
 | P1-1 独立确认集 | 尚无全部冻结并验收完成的证据 | 当前16,900提示是既有开发基准，不能称独立确认集 |
 | P1-2 3B←7B KL桥接 | 尚未完成15次原协议桥接实验 | 最小工程预检不能替代正式桥接 |
 | P1-3 扩展阶梯及§4.5精度桥接 | 精确3B/7B API上次403；商业审计暂停于1,365条 | 四轴严格差异<0.005未获证明，不能合并阶梯 |
@@ -104,13 +133,14 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 
 7B新提示要求“四个数”，第一版JSON-only解析器错误拒绝了严格CSV输出。为此在重新计分前发布纯语法修订：所有16模型统一接受既有JSON格式及严格四数CSV，不改变坐标值、单位、样本或IoU。保留原100条及旧协议，不新增生成。相同N前100条在修订后为**80%准确率、2次解析失败**，恰好达到冻结门槛≥80%、≤5次失败；属于事后测量修订，须披露，不能表述为首次协议直接通过。
 
-快照时7B新定位已生成 **{count:,}/38,400** 条，完整16模型尚未结束，新五seed终局区间尚未产生；这不是最终定位能力分数。固定GPU预算截止为UTC `{budget['end_utc']}`（北京时间10月18日11:42:49），未因语法修订重置。完整复测后报告A1−A2、A1−U、A1−N及U−N，独立4项Bonferroni族，不与原12项混成事前检验。
+快照时7B新定位已生成 **{count:,}/38,400** 条，{'完整16模型及五seed终局区间已完成，见下方终局分析' if finished else '完整16模型尚未结束，新五seed终局区间尚未产生，不能据部分结果作终局判断'}。固定GPU预算截止为UTC `{budget['end_utc']}`（北京时间10月18日11:42:49），未因语法修订重置。新复测报告A1−A2、A1−U、A1−N及U−N，独立4项Bonferroni族，不与原12项混成事前检验。
 
-新契约下已完成的逐模型结果如下；训练臂暂为单seed，不能据此作五seed显著性结论。
+新契约下已完成的逐模型结果如下；{'每训练臂五seed全部保留，显著性依据下方校正配对区间' if finished else '训练臂暂未齐备五seed，不能据此作五seed显著性结论'}。
 
 | 模型 | 已完成定位题 | 新契约定位分 | 解析失败 |
 |---|---:|---:|---:|
 {completed_table}
+{final_summary}
 
 ## 5. 独立9B←122B：15次训练完成，正式评测未放行
 
@@ -133,7 +163,7 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 ## 6. 对研究假设的结论与限制
 
 1. 已验证单卡完整多臂、多seed双CE蒸馏、保存/加载、恢复及逐题归档流程可运行；不等于原ARP量尺选轴因果命题成立。
-2. 7B现有证据未证明A1优于A2或N；旧U定位优势存在测量混杂，必须等待新统一契约复测，不能据旧优势写论文主结论。
+2. 7B现有证据未证明A1优于A2或N；旧U定位优势存在测量混杂，{'统一契约复测后旧优势未保留，当前仅A1高于U的四项校正区间排除0' if finished else '须等待新统一契约复测'}，不能据旧优势写论文主结论。
 3. 9B训练完成但测量未通过，暂不能判断122B教师带来的能力收益。
 4. 两轮同时改变学生代际/容量、教师、tokenizer/视觉处理器及可用训练池，不能将差异单独归因于7B→9B容量变化或教师规模。
 5. 当前结果主要来自既有开发基准，未完成独立确认、同检查点API桥接、双人盲审及有效阶段C；不能声称P0–P2全部完成、商业阶梯等于精确参数阶梯或ARP主线已验证。
@@ -142,7 +172,7 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 
 7B原轮3,738/3,738必要文件的交付覆盖已核验，缓存、适配器、恢复链、逐步日志及原始评测见[7B Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016)。9B缓存、训练适配器、恢复链及必要过程见[9B Release](https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017)。新7B定位复测逐模型核对2,400唯一ID、SHA和服务器归档后续跑；尚未生成的结果不能视作已上传。
 
-快照时数据盘空闲{snap['data_free_bytes']/2**30:.2f}GiB，系统盘{snap['root_free_bytes']/2**30:.2f}GiB，DiskGuard运行。优先完成7B复测和独立4项区间；9B保留失败记录，另行固定可审阅的新接口校准；原ARP八项前置工作详见[执行计划](route_b_execution_plan.md)。执行入口、监控与恢复注意事项均在[交接文档](大模型方案_实验交接文档_20261017.md)。
+快照时数据盘空闲{snap['data_free_bytes']/2**30:.2f}GiB，系统盘{snap['root_free_bytes']/2**30:.2f}GiB，DiskGuard运行。{'7B复测、独立4项区间和图表均已交付' if finished else '优先完成7B复测和独立4项区间'}；9B保留失败记录，另行固定可审阅的新接口校准；原ARP八项前置工作详见[执行计划](route_b_execution_plan.md)。执行入口、监控与恢复注意事项均在[交接文档](大模型方案_实验交接文档_20261017.md)。
 
 | 证据文件 | SHA256 |
 |---|---|
@@ -160,7 +190,7 @@ A1使用mmstar轴的ScienceQA训练代理，A2使用consistency，U四轴等比�
 |---|---|---|
 | 原ARP主线 | C未放行，`training_allowed=false` | 不将独立实验改名为原主线，不擅自放行 |
 | 独立7B原轮 | 15次训练及16模型四轴评测、旧12项统计和归档完成 | 保留全部历史结果；定位能力解释待审计 |
-| 7B定位复测 | 正在运行，快照{count:,}/38,400条，{len(completed)}/16模型完成 | 优先保持队列；每模型2,400条，最终4项区间 |
+| 7B定位复测 | {'已完成并归档' if finished else '正在运行'}，快照{count:,}/38,400条，{len(completed)}/16模型完成 | {'四项区间和图表已完成；禁止重跑已完成队列' if finished else '优先保持队列；每模型2,400条，最终4项区间'} |
 | 独立9B训练 | 15/15、15,000更新完成 | 不重训、不追加预算，不恢复无用优化器做评测 |
 | 9B正式评测 | N共同契约校准失败，0/16正式评测 | 保留停止；不能用86%事后诊断替换1%注册成绩 |
 | 磁盘 | 数据盘{snap['data_free_bytes']/2**30:.2f}GiB、根分区{snap['root_free_bytes']/2**30:.2f}GiB空闲 | DiskGuard继续运行；删除前先验证云端成员与SHA |
@@ -192,7 +222,7 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 
 当前7B复测协议SHA：`{sha(EVIDENCE/'7b-active-processor-protocol.json')}`；[副本](handoff-evidence-20261017/7b-active-processor-protocol.json)。9B失败协议SHA：`{sha(DEST/'9b-processor-pixel-protocol.json')}`。冻结数值源码与哈希必须一致；不要用改文件的方式掩盖历史失败。
 
-## 4. 7B正在运行的任务
+## 4. 7B执行入口与{'终局产物' if finished else '正在运行的任务'}
 
 工作目录：`runs/7b-processor-pixel-audit-20261017`。
 
@@ -220,9 +250,11 @@ A1=mmstar轴ScienceQA训练代理；A2=consistency；U四轴等比例；N不更�
 
 全部结束后核对16×2,400唯一题目、原始输出重计分及Release回执，生成A1−A2、A1−U、A1−N、U−N的五seed配对区间，10,000 bootstrap、独立4项Bonferroni族。完成状态应为`all16_processor_pixel_grounding_verified_and_delivered`；不能只看进程退出码就宣布完成。
 
-独立CPU图表收尾服务`tools/finish_7b_processor_report.py`已排队，screen为`7b-processor-figures`。它等待全部16模型完成和交付标记后，逐条复核38,400行的映射/IoU、生成PNG/PDF并上传`final-report/`；不增加预测。N全2,400行的独立映射与IoU核验已通过。详见[零点后续跑记录](measurement-progress-20261018.md)。
+独立CPU图表收尾服务`tools/finish_7b_processor_report.py`{'已完成并交付' if finished else '已排队'}，screen名为`7b-processor-figures`。其流程是在全部16模型完成和交付标记后，逐条复核38,400行的映射/IoU、生成PNG/PDF并上传`final-report/`；不增加预测。{'全部38,400行及新一次服务端SHA核验已通过' if finished else 'N全2,400行的独立映射与IoU核验已通过'}。详见[零点后续跑记录](measurement-progress-20261018.md)。
 
 当前图表收尾PID为{live.get('figure_finalizer', '未发现')}。已完成并归档模型：{', '.join(snap.get('seven_delivered_models', [])) or '见逐模型delivery-proof.json'}；全部模型的实时行数以本次[交接快照](handoff-evidence-20261017/handoff-live-snapshot.json)为准。不要为确认进度启动另一个GPU任务。
+
+{'当前7B评测器、控制器、图表收尾进程均已正常结束，不是异常失联。complete.json及final-report/complete.json、38,400行核验和Release回执共同证明完成。A1−U校正差值区间为[0.529,8.013]个百分点；A1−A2、A1−N、U−N均跨0。详见结果报告的终局分析。接手不得重启已完成队列。' if finished else '尚未发现完成标记时，不把进程状态单独作为完成证明。'}
 
 ## 5. 9B停止原因与下一步边界
 
@@ -259,7 +291,7 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未�
 
 早报服务`tools/report_9b_native_progress.py`（快照PID{live.get('morning_report', '未发现')}）预定10月18日08:00，内容以实际产物为准；已修正为明确报告9B失败及附带修订证据，不再误写等待中。传输观察器不应绕过校准失败。控制台与完成标记优先于旧进度文案。
 
-7B复测原外推纯生成约6.47小时，含装载/校验/上传暂估6–8小时；新增提示及实测可能改变，绝对上限仍是上述12小时。快照只记录已生成条数，不用短时间N速度冒充全部适配器实际耗时。新7B总费用上限约32.40元（12h×2.70）；9B新校准尚未获有效测量，因此正式评测完成日期**不能可靠承诺**。新协议若通过，才依据新实际延迟更新全量评测ETA。
+{'7B复测及图表实际于10月18日05:34完成，原6–8小时计划不再是剩余时间。' if finished else '7B复测原外推纯生成约6.47小时，含装载/校验/上传暂估6–8小时；未来输出长度变化可能改变耗时。'}绝对上限仍是上述12小时，新7B注册费用上限约32.40元（12h×2.70）。9B新校准尚未获有效测量，因此正式评测完成日期**不能可靠承诺**。新协议若通过，才依据新实际延迟更新全量评测ETA。
 
 ## 8. 原ARP八项问题与工作量
 
@@ -278,10 +310,10 @@ DiskGuard：`tools/protect_9b_disk.py`，快照PID{live.get('disk_guard', '未�
 
 ## 9. 接手后的验收顺序
 
-1. 查看真实行数、进程、两个分区空间、停止记录及绝对预算；保护正在运行的7B。
-2. 每完成一个7B模型立即核对2,400唯一ID、提示/网格/单位契约、原始输出重评分和Release SHA。
-3. 全16模型完成后生成新4项区间与图表，明确U−N优势是否仍有证据；保留旧12项结果和全部测量修订。
-4. 核实7B最终完成和交付标记后更新结果报告；9B仍未放行则保持该事实，不能为了接力空跑而绕过门槛。
+1. 查看真实行数、完成标记、两个分区空间和停止记录；{'7B已完成，不再启动其GPU队列' if finished else '保护正在运行的7B'}。
+2. {'全部16个7B模型的2,400唯一ID、提示/网格/单位契约、原始输出重评分和Release SHA均已通过；复核时保留现有证据' if finished else '每完成一个7B模型立即核对2,400唯一ID、提示/网格/单位契约、原始输出重评分和Release SHA'}。
+3. {'新4项区间与图表已生成，旧U优势未保留，U−N校正区间跨0' if finished else '全16模型完成后生成新4项区间与图表，明确U−N优势是否仍有证据'}；保留旧12项结果和全部测量修订。
+4. {'7B最终完成、交付标记和结果报告现已更新' if finished else '核实7B最终完成和交付标记后更新结果报告'}；9B仍未放行则保持该事实，不能为了接力空跑而绕过门槛。
 5. 为9B另立可审阅的原生前端协议；在固定新预算前不生成新校准预测。通过后再启动其16模型正式评测，不加载优化器/不保留梯度。
 6. 最终9B四轴五seed及12项校正区间齐备后报告；原ARP另外补齐八项依赖、有效C和独立确认，不能顺势宣布ARP完成。
 

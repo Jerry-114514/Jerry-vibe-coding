@@ -1,8 +1,8 @@
 {
   "status": "generated_from_verified_final_artifacts",
   "report": "7B独立自蒸馏实验结果报告.md",
-  "report_sha256": "2fa34f2f4748d6ac48afc03ebeedfde3863e2338899a8a652eb0e9ad83e2da5b",
-  "generator_sha256": "06abe7c5a0081084b07414a1918ffd6258e1584f77739310ef1437a11813db84",
+  "report_sha256": "e497d4c4b8566aad616344b64f9981bcdbf5e7886460b7a72522e3d9802e92b7",
+  "generator_sha256": "b63da9a0fa8a1db1561877864d89ec42600de9e04011f7d2ad74d2c868129bde",
   "source_sha256": {
     "route-b-final/multiplicity-results.json": "d5603d803deb6da9166d91ec09f556b2b77b6d891a03c501fafd08433b472dc1",
     "route-b-final/evaluation-results.json": "e5fbfe97cf6db7ceea6e32a8fba6a9b18129d84eebd2a116a47fb8ff9a6bbe92",
@@ -15,7 +15,9 @@
   "measurement_amendment": {
     "previous_report_sha256": "d39e0a259095611165bf4e1c33363e73b3f938779d0468e839b94d6bfaded01e",
     "old_numeric_artifacts_unchanged": true,
-    "grounding_ability_interpretation_pending": true,
+    "grounding_ability_interpretation_pending": false,
+    "new_explicit_contract_results_sha256": "013a0e178532e2224fcb987045716a063d0dc38e303442de7bd9e23693f3068f",
+    "posthoc_remeasurement_not_confirmatory": true,
     "cpu_audit_sha256": "99b4dc27e11eba0628cb96338e0d9213f26e1ed2aa1e6bf8dbf58b35c9ff588b"
   }
 }

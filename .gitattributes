@@ -85,3 +85,5 @@ docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-N-processor-pixel
 tools/finish_7b_processor_report.py -text
 
 docs/results/protocol-v2-20261016/handoff-evidence-20261017/7b-first-two-server-recheck.json -text
+
+docs/results/protocol-v2-20261016/7b-processor-final/** -text

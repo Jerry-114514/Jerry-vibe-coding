@@ -41,7 +41,7 @@ def generate():
     lines = [
         '# 独立路线B：Qwen2.5-VL-7B自蒸馏实验结果报告', '',
         '日期：2026年10月17日。状态：最小循环、正式训练、完整评测、终局统计及必要数据交付均已完成。', '',
-        '> 测量补充（2026-10-17晚）：全16模型定位CPU审计发现原图/处理器像素尺度混杂。N原分67.792%，统一按处理器像素换算的诊断分85.500%；U五seed均值从原77.658%变为该诊断下73.558%。不能择优解释单位，也不能将旧U定位增益归因于纯能力提升。下文原分数与区间作为旧提示/旧计分结果保留；定位能力、含该轴的宏均值/G_floor及跨版本比较须等待独立复测。见[审计与补救方案](7b_grounding_recovery_plan.md)、[CPU实证](7b-grounding-cpu-report.md)。', '',
+        '> 测量补充：全16模型CPU审计发现原图/处理器像素尺度混杂；旧分数与12项区间在下文作为历史结果保留。2026-10-18 05:34，明确处理器像素提示的38,400条独立复测及图表已完成并归档。新定位五seed均值N/A1/A2/U为84.708%/85.592%/84.975%/82.275%；独立4项校正中仅A1高于U的区间排除0，A1相对N/A2未显著。旧U优势未保留，不能解释为纯能力提升。见[复测终局](7b-processor-final/report.md)、[完整更新分析](大模型方案_实验结果报告_20261017.md)、[原CPU诊断](7b-grounding-cpu-report.md)。', '',
         '## 摘要', '',
         '本实验在单张RTX 5090上，以相同Qwen2.5-VL-7B-Instruct检查点作为教师和学生，比较推理代理训练A1、一致性训练A2、四轴等比例混合训练U与不更新基线N。三个训练臂分别运行五个seed、每次固定1,000次真实更新；N与15个适配器各评测16,900提示，共270,400条输出。所有必要产物经独立内容核验，GitHub服务端确认3,738/3,738项文件覆盖。', '',
         '完整五seed、三组对比乘四轴共12项Bonferroni校正bootstrap区间中，只有定位轴A1−U区间排除0：A1平均低11.525个百分点，校正区间为[-16.157,-5.648]个百分点。A1−A2和A1−N四轴区间全部包含0，未给出推理代理单轴训练的可靠优势证据。实验完成了多臂训练与恢复流程验证，结果属于已有开发基准上的探索性分析，不能替代原ARP阶段C判定。', '',
@@ -163,7 +163,7 @@ def generate():
               '| EOS缓存清单 | `0b1547d1e0605da22fce77c0921312d6b391f26bee58bfb3e9e5268ce0321859` |',
               '| 全量评测清单 | `e92d3b13f95e457024b274d0077e917d4fbfc64e1af1221fd75ff30e88506746` |', '',
               '## 10. 结论', '',
-              '7B独立路线B的原定流程已完成并具备可复核产物。实验验证了教师缓存、双CE多臂训练、跨进程恢复、适配器重载和完整评测链路。在旧像素提示与计分下，12项比较中定位A1−U差异最明确；新增坐标CPU审计表明其能力解释受测量契约混杂，不能将显著性解释为纯定位能力提升。其他三轴结果保留，当前没有确认A1相对A2或N的四轴优势。独立定位复测与原ARP科学门槛均未完成，后续9B+122B的代际、容量、教师和测量变化也不能单独归因为模型大小。', '']
+              '7B独立路线B的原定流程及随后独立定位复测均已完成并具备可复核产物。实验验证了教师缓存、双CE多臂训练、跨进程恢复、适配器重载和完整评测链路。旧定位显著性受测量契约混杂；新明确提示/共同单位复测未保留旧U优势，独立4项校正中A1高于U，但未确认A1相对A2或N的优势。其他三轴结果保留，新旧统计族分开解释。原ARP科学门槛仍未放行，后续9B+122B的代际、容量、教师和测量变化也不能单独归因为模型大小。', '']
     target = DOC / '7B独立自蒸馏实验结果报告.md'
     target.write_text('\n'.join(lines), encoding='utf-8')
     proof = {'status': 'generated_from_verified_final_artifacts', 'report': target.name,
@@ -175,7 +175,9 @@ def generate():
                  'route-b-final/delivery-verification.json', 'route-b-final/sampling-identity-verification.json')},
              'no_new_training_or_inference': True,
              'measurement_amendment': {'previous_report_sha256':'d39e0a259095611165bf4e1c33363e73b3f938779d0468e839b94d6bfaded01e',
-                 'old_numeric_artifacts_unchanged':True,'grounding_ability_interpretation_pending':True,
+                 'old_numeric_artifacts_unchanged':True,'grounding_ability_interpretation_pending':False,
+                 'new_explicit_contract_results_sha256':hashlib.sha256((DOC/'7b-processor-final/results.json').read_bytes()).hexdigest(),
+                 'posthoc_remeasurement_not_confirmatory':True,
                  'cpu_audit_sha256':hashlib.sha256((DOC/'7b-grounding-cpu-audit.json').read_bytes()).hexdigest()}}
     (DOC / '7b-report-provenance.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     print(json.dumps({'report': str(target), 'bytes': target.stat().st_size, 'sha256': proof['report_sha256']}))
