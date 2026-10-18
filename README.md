@@ -8,7 +8,7 @@
 
 **结果与交接：** [基于《大模型方案》的实验结果报告](docs/results/protocol-v2-20261016/大模型方案_实验结果报告_20261017.md) · [Markdown交接文档](docs/results/protocol-v2-20261016/大模型方案_实验交接文档_20261017.md)。7B定位复测已完成16/16模型并归档，[新五seed终局](docs/results/protocol-v2-20261016/7b-processor-final/report.md)中仅A1−U四项校正区间排除0，A1对N/A2未显著；9B十五次训练已完成，但共同处理器像素校准未通过，正式评测尚未启动。[当前测量协议及修订](docs/results/protocol-v2-20261016/common_processor_pixel_execution.md)保留失败证据与停止规则。
 
-**9B新目标正在执行：** [原生前端v4修复方案](docs/results/protocol-v2-20261016/9b_native_frontend_repair_plan_20261018.md)。新协议已注册并启动最多400预测的一次性校准；旧v3失败保留。新N100条为89%、零解析失败/截断，尚须全部15适配器通过才进入正式评测。
+**9B v4校准已停止：** 13/16模型、340/400条；N为89%，A1-seed512因终止符配置不一致发生20次长度截断。正式全量评测未启动，旧预算不重置。见[停止证据与EOS修复规格](docs/results/protocol-v2-20261016/9b_v4_calibration_stop_and_eos_diagnosis.md)。
 
 ## 查看实验结果
 
