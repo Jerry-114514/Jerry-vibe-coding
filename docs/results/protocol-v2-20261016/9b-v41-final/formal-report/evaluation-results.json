@@ -1,0 +1,298 @@
+{
+  "status": "all16_verified",
+  "timestamp": "2026-10-19T07:08:01.022153+00:00",
+  "scope": "Independent9B+122B extension; development benchmark, not ARP confirmation",
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 2026101703,
+  "matched_seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "family_size": 12,
+  "correction": "Bonferroni nominal95% percentile bootstrap intervals",
+  "caveat": "Approximate bootstrap coverage; only5 training seeds; no capacity-only causal attribution versus7B",
+  "scores": {
+    "N-seed42": {
+      "pope": 0.8986666666666666,
+      "grounding": 0.8825,
+      "consistency": 0.81625,
+      "mmstar": 0.6066666666666667
+    },
+    "A1-seed42": {
+      "pope": 0.9027777777777778,
+      "grounding": 0.865,
+      "consistency": 0.81875,
+      "mmstar": 0.564
+    },
+    "A2-seed42": {
+      "pope": 0.904,
+      "grounding": 0.8879166666666667,
+      "consistency": 0.88375,
+      "mmstar": 0.652
+    },
+    "U-seed42": {
+      "pope": 0.8924444444444445,
+      "grounding": 0.8233333333333334,
+      "consistency": 0.89,
+      "mmstar": 0.694
+    },
+    "A1-seed137": {
+      "pope": 0.9073333333333333,
+      "grounding": 0.895,
+      "consistency": 0.88125,
+      "mmstar": 0.6893333333333334
+    },
+    "A2-seed137": {
+      "pope": 0.905,
+      "grounding": 0.8916666666666667,
+      "consistency": 0.87,
+      "mmstar": 0.68
+    },
+    "U-seed137": {
+      "pope": 0.8234444444444444,
+      "grounding": 0.42583333333333334,
+      "consistency": 0.8775,
+      "mmstar": 0.7013333333333334
+    },
+    "A1-seed256": {
+      "pope": 0.9008888888888889,
+      "grounding": 0.8854166666666666,
+      "consistency": 0.8575,
+      "mmstar": 0.658
+    },
+    "A2-seed256": {
+      "pope": 0.9048888888888889,
+      "grounding": 0.88875,
+      "consistency": 0.86125,
+      "mmstar": 0.646
+    },
+    "U-seed256": {
+      "pope": 0.8906666666666667,
+      "grounding": 0.6245833333333334,
+      "consistency": 0.885,
+      "mmstar": 0.6993333333333334
+    },
+    "A1-seed512": {
+      "pope": 0.9053333333333333,
+      "grounding": 0.8925,
+      "consistency": 0.895,
+      "mmstar": 0.6806666666666666
+    },
+    "A2-seed512": {
+      "pope": 0.9007777777777778,
+      "grounding": 0.88125,
+      "consistency": 0.825,
+      "mmstar": 0.6346666666666667
+    },
+    "U-seed512": {
+      "pope": 0.8996666666666666,
+      "grounding": 0.8345833333333333,
+      "consistency": 0.88625,
+      "mmstar": 0.7026666666666667
+    },
+    "A1-seed1024": {
+      "pope": 0.9057777777777778,
+      "grounding": 0.88625,
+      "consistency": 0.88125,
+      "mmstar": 0.6726666666666666
+    },
+    "A2-seed1024": {
+      "pope": 0.8927777777777778,
+      "grounding": 0.79875,
+      "consistency": 0.81,
+      "mmstar": 0.6406666666666667
+    },
+    "U-seed1024": {
+      "pope": 0.8494444444444444,
+      "grounding": 0.65875,
+      "consistency": 0.88375,
+      "mmstar": 0.664
+    }
+  },
+  "ledger_sha256": {
+    "N-seed42": "b38c9bebe8bf1f7fe678f4e63eec18d731ff34f9b1591cf1b44988cadd285a11",
+    "A1-seed42": "d59ae783b04d6d10854db818dd0585f5fc85b43d785a6dbfef347166d4a8153c",
+    "A2-seed42": "95b4d33012abd391225649d66d06dd2ec46c1f9b3e415e5de07ffd3918072409",
+    "U-seed42": "e5b670ae50f679586b329fcc474cf67f7f4dae775a71468724b98453a05fb83e",
+    "A1-seed137": "accc66654ee0816e772aa66417855323d4ac9d4360f276621ce9dbe94449184f",
+    "A2-seed137": "e7c16d8dc4eb1bf5e50316c56d334268aa4a331d79a456d7332642ce54c01526",
+    "U-seed137": "3e7dab757c14be7300b88877a0021cf197d5c994cda12e321e3a2ee0835a3a3a",
+    "A1-seed256": "ea85a0c3484317ec0921254b07305d7941b320b7f31e6c24d690cdfb7df6cba5",
+    "A2-seed256": "4eff87b96342d130df815450ed201dc7850440a7f8dafa8ab6337f2b5e5b7a84",
+    "U-seed256": "ce588c4e91e234a802795dc33864de6bd55329d94bd5ee2cb7799595c4529517",
+    "A1-seed512": "1a99088b7787a59c2f19d42b97ed259ae034fd323112cbc5b887339a016335dd",
+    "A2-seed512": "14d5f13551ab257517edf7f4ecd67571ffefb8d5aa992c8e7a27edaf487122b8",
+    "U-seed512": "bbc13d52112d9c10448b24131d59a066af888a387d7e65d2ef184efa38a25900",
+    "A1-seed1024": "827d79fbc7891284e2384628e0c1fe4ed743d71cbc4d258a72610851134889e1",
+    "A2-seed1024": "e86c67be5eed7e52f46bf5303e1251f6b66f6ab0f43479d61f4afb97ecf45b52",
+    "U-seed1024": "f463e1f6cd3b076732588328d3a2a0dc6f58fee3e7671227dc661733dade49d6"
+  },
+  "paired_contrasts": {
+    "A1-A2": {
+      "pope": {
+        "difference": 0.0029333333333333433,
+        "pointwise_ci95": [
+          -0.0026444444444445603,
+          0.009600555555555598
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.005092638888888926,
+          0.013722638888889022
+        ],
+        "original_units": 9000,
+        "image_clusters": 500
+      },
+      "grounding": {
+        "difference": 0.01516666666666655,
+        "pointwise_ci95": [
+          -0.011854863440723442,
+          0.05326796025580931
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.020784205789997737,
+          0.07197338666692639
+        ],
+        "original_units": 2400,
+        "image_clusters": 1905
+      },
+      "consistency": {
+        "difference": 0.016750000000000043,
+        "pointwise_ci95": [
+          -0.03144724229033712,
+          0.06240601503759391
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.05491704291362374,
+          0.0822003855790985
+        ],
+        "original_units": 800,
+        "image_clusters": 774
+      },
+      "mmstar": {
+        "difference": 0.002266666666666639,
+        "pointwise_ci95": [
+          -0.04707000000000003,
+          0.039866666666666606
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0752016666666666,
+          0.05137833333333353
+        ],
+        "original_units": 1500,
+        "image_clusters": 1500
+      }
+    },
+    "A1-U": {
+      "pope": {
+        "difference": 0.033288888888889034,
+        "pointwise_ci95": [
+          0.007488888888888767,
+          0.06382444444444463
+        ],
+        "bonferroni_familywise_ci95": [
+          0.0041518055555556845,
+          0.07622791666666742
+        ],
+        "original_units": 9000,
+        "image_clusters": 500
+      },
+      "grounding": {
+        "difference": 0.2114166666666666,
+        "pointwise_ci95": [
+          0.08410337002320907,
+          0.3526568211014914
+        ],
+        "bonferroni_familywise_ci95": [
+          0.04484760174418596,
+          0.42354816439797793
+        ],
+        "original_units": 2400,
+        "image_clusters": 1905
+      },
+      "consistency": {
+        "difference": -0.01774999999999982,
+        "pointwise_ci95": [
+          -0.04918861516272345,
+          0.008397540397540296
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.06557187500000008,
+          0.01625531095172263
+        ],
+        "original_units": 800,
+        "image_clusters": 774
+      },
+      "mmstar": {
+        "difference": -0.03933333333333333,
+        "pointwise_ci95": [
+          -0.08880666666666676,
+          -0.0010666666666667712
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.11295750000000002,
+          0.011222500000000064
+        ],
+        "original_units": 1500,
+        "image_clusters": 1500
+      }
+    },
+    "A1-N": {
+      "pope": {
+        "difference": 0.005755555555555625,
+        "pointwise_ci95": [
+          0.0005555555555556396,
+          0.011199999999999988
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0021333333333333204,
+          0.013644444444444367
+        ],
+        "original_units": 9000,
+        "image_clusters": 500
+      },
+      "grounding": {
+        "difference": 0.0023333333333332984,
+        "pointwise_ci95": [
+          -0.009950957449859051,
+          0.013289699943206893
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.01674137382672275,
+          0.01770697800716493
+        ],
+        "original_units": 2400,
+        "image_clusters": 1905
+      },
+      "consistency": {
+        "difference": 0.05049999999999999,
+        "pointwise_ci95": [
+          0.018858111266947086,
+          0.07995232273838611
+        ],
+        "bonferroni_familywise_ci95": [
+          0.003446684094661579,
+          0.09282511615860861
+        ],
+        "original_units": 800,
+        "image_clusters": 774
+      },
+      "mmstar": {
+        "difference": 0.04626666666666668,
+        "pointwise_ci95": [
+          -0.0028033333333333517,
+          0.08599999999999997
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.027755833333333365,
+          0.0987999999999999
+        ],
+        "original_units": 1500,
+        "image_clusters": 1500
+      }
+    }
+  },
+  "measurement_protocol_sha256": "03ad2816908390d748acccfda8825542923cc0db994a40b31fa3dd4c1656802e"
+}

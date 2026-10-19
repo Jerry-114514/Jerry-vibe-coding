@@ -1,0 +1,104 @@
+{
+  "repository": "Jerry-114514/Jerry-vibe-coding",
+  "tag": "arp-9b-122b-20261017",
+  "created_utc": "20261019T070806Z",
+  "files": [
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/evaluation-report.md",
+      "bytes": 2918,
+      "sha256": "dd8cdd0881422ef109b80ac7b7a793799f956357820839d016f7469bcdae157d"
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/evaluation-results.json",
+      "bytes": 8710,
+      "sha256": "635ee90e8f06f7e333a5a1f470c794600798be37e34fd53629ef8fcf8386b9d2"
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/four-axis-scores.pdf",
+      "bytes": 19598,
+      "sha256": "5351414dd9d2696e9a11b2065523dc1c7e835b0abcceafc9dde42e216e4e63ac"
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/four-axis-scores.png",
+      "bytes": 169060,
+      "sha256": "f65616147ee7839ac98f1494d688072f535250f4be0f5faffd133514d7aec357"
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/paired-intervals.pdf",
+      "bytes": 16897,
+      "sha256": "96c26d2228828980137a582e2420455aae9958aefd5f0b4c632a402abba838cc"
+    },
+    {
+      "path": "runs/route-b-9b-122b-20261017/student-experiment/native-frontend-evaluation-v41/formal-report/paired-intervals.png",
+      "bytes": 94083,
+      "sha256": "5b19aa7bdbccf7cbc12e082be336fb43c0958c5ae81dad0aa2491b064be469da"
+    },
+    {
+      "path": "configs/api_audit.json",
+      "bytes": 535,
+      "sha256": "b16aa15aa77d0ba0befce83ecad535e33a7bd59b376956b9c310be42ccea0aaf"
+    },
+    {
+      "path": "configs/api_experiment_roles.json",
+      "bytes": 1558,
+      "sha256": "955365a98702ca7488384870a3bd1bc8db6831c7c2143f3b8a1a389cdacaba00"
+    },
+    {
+      "path": "configs/api_teacher.json",
+      "bytes": 712,
+      "sha256": "251420ce8567161fd513d0b9eb06eeeceb2aabad6fdb9af42d64152f50a1b9ce"
+    },
+    {
+      "path": "configs/experiment.json",
+      "bytes": 1872,
+      "sha256": "3330a7bfc3bb5769589eca1e6c27051a722e008b48c0a42244530da9fdbbf029"
+    },
+    {
+      "path": "configs/independent_data_sources.json",
+      "bytes": 7377,
+      "sha256": "a3a1f4173f725d411bfee4504419f1f9a01c93aa268137f3ed1d8db2460cc1c6"
+    },
+    {
+      "path": "configs/models.lock.json",
+      "bytes": 1428,
+      "sha256": "b0c776a4493202444d6406ce2d6ceb48b9e983c85544a59f73b0d9aaa5d19f7f"
+    },
+    {
+      "path": "configs/p14_7b_5090.frozen.json",
+      "bytes": 2258,
+      "sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a"
+    },
+    {
+      "path": "configs/precision_bridge.json",
+      "bytes": 1229,
+      "sha256": "7b7a6e86eeca2b9e258594928260e622ed14c2f6a5ab8f1ccbb4f8295e045824"
+    },
+    {
+      "path": "configs/route_b_7b.frozen.json",
+      "bytes": 24868,
+      "sha256": "7fd97ca71105274219c7683d4aa0e07586f5aa9ff51798a0010bba73a7e397c5"
+    },
+    {
+      "path": "configs/route_b_9b_122b.plan.json",
+      "bytes": 17819,
+      "sha256": "71804ceb87e978619e6652df047745e8f3aca6f084bf57b8f4467f5d6261fcfc"
+    },
+    {
+      "path": "configs/route_b_9b_5090.frozen.json",
+      "bytes": 16011,
+      "sha256": "357bf7b87a71640078ccf50ef4ae7ab0e9e93d4310ff1e67b50572bf3e96a244"
+    }
+  ],
+  "archive": {
+    "name": "arp-9b-122b-20261017-20261019T070806Z.tar.gz",
+    "bytes": 245506,
+    "sha256": "e9b2c2f7e9dea4e632a272bf36b368800c3304a8421885cbaef49d36dd3ef171"
+  },
+  "binary_assets": [
+    {
+      "name": "arp-9b-122b-20261017-20261019T070806Z.tar.gz",
+      "bytes": 245506,
+      "sha256": "e9b2c2f7e9dea4e632a272bf36b368800c3304a8421885cbaef49d36dd3ef171"
+    }
+  ]
+}
