@@ -1,0 +1,49 @@
+{
+  "version": "draft-v0.1",
+  "date": "2026-10-20",
+  "scope": "complete staged empirical record; not original ARP confirmation",
+  "sources": {
+    "docs/idea.std.zh.pdf": "b7f7f4cefc1a08f1a4f56f7afe30e15b4bc2faade728277c9cd85669fc471547",
+    "docs/experiment_checklist.source.md": "cb01e9b50158074fb918cd4fa62047bd9bc90466be7a1661cfb915aa467ecfdf",
+    "docs/references/大模型方案_用户修订_20261016.md": "4060c0b95fecca2735babf8661dd40df18acba59e3238f6ba0ff071bfe44329e",
+    "docs/results/final-20261016/results.json": "5354fc30f60edd53c9e8e2625173d57899abc92da426eeaae260c4cbc6005e20",
+    "docs/results/final-20261016/signed-gains.json": "e95812b267fa4eacf4f4401b76772c016d12444f41e8e7b166569b5328b5ffa9",
+    "docs/results/protocol-v2-20261016/p0/analysis_v1_vs_v2.csv": "6b363ba3ca8960f922ab8037375f22171f12502261eb5873b3a995b422fc6ae1",
+    "docs/results/protocol-v2-20261016/paired_gate_development.md": "9661e4f09bc13dc4141ac6a8f831a18a590530cdb139a04aa8e91fa21358e6e1",
+    "docs/results/protocol-v2-20261016/route-b-final/multiplicity-results.json": "d5603d803deb6da9166d91ec09f556b2b77b6d891a03c501fafd08433b472dc1",
+    "docs/results/protocol-v2-20261016/7b-processor-final/results.json": "013a0e178532e2224fcb987045716a063d0dc38e303442de7bd9e23693f3068f",
+    "docs/results/protocol-v2-20261016/9b-v41-final/formal-report/evaluation-results.json": "635ee90e8f06f7e333a5a1f470c794600798be37e34fd53629ef8fcf8386b9d2",
+    "docs/results/protocol-v2-20261016/9b-repair-final/report/results.json": "c4ad118381d6044466130c65ae8f28d88c9e64b81fea0f12f52502b20b6cfc21",
+    "docs/results/protocol-v2-20261016/9b-repair-final/report/verification.json": "f6a06feb2c7a551ba3ca7f469e468ed2b4d4bb568286fc52d164d47b3b2b0408"
+  },
+  "counts": {
+    "v1_base": 118300,
+    "v1_post": 50700,
+    "7b_formal": 270400,
+    "7b_grounding_retest": 38400,
+    "9b_formal": 270400,
+    "repair_new": 110040,
+    "sum_formal_records_not_independent_samples": 858240,
+    "new_fixed_endpoint_trainings": 39,
+    "new_fixed_updates": 39000
+  },
+  "author_information": "not supplied",
+  "human_independent_grounding_review": "not completed",
+  "original_ARP_revised_gate": "not admitted",
+  "evidence_map": {
+    "historical_go_vs_revised_gate": [
+      "docs/results/final-20261016/analysis/gate.json",
+      "docs/results/protocol-v2-20261016/paired-gate-development/gate.json"
+    ],
+    "7b_direction_change": [
+      "docs/results/protocol-v2-20261016/route-b-final/multiplicity-results.json",
+      "docs/results/protocol-v2-20261016/7b-processor-final/results.json"
+    ],
+    "9b_consistency_gain": [
+      "docs/results/protocol-v2-20261016/9b-v41-final/formal-report/evaluation-results.json"
+    ],
+    "representation_effect": [
+      "docs/results/protocol-v2-20261016/9b-repair-final/report/results.json"
+    ]
+  }
+}
