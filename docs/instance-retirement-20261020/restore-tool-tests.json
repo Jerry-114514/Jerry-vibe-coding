@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "tests": 4,
+  "command": "python -m pytest tests/test_retirement_restore.py -q -p no:cacheprovider --basetemp tmp/pytest-retirement-restore-20261020-final2",
+  "checks": [
+    "multipart archive roundtrip and idempotence",
+    "archive corruption rejected before restoring",
+    "path traversal and overwrite refusal",
+    "compact map and prefix selection"
+  ],
+  "sources_sha256": {
+    "tools/restore_instance_retirement.py": "ec24fb08125ff7ebfb442199d9c10ce54ad35432d513798626fc3d9fc1a83669",
+    "tests/test_retirement_restore.py": "40c28cc272bc6081edf406a0d058673dc8597e63a20f3b552baf012bf6372ba0"
+  }
+}

@@ -1,5 +1,7 @@
 # ARP 多模态量尺审计与训练实验
 
+**实例释放前归档已验收（2026-10-20）：** [备份清单、校验结果与恢复指南](docs/instance-retirement-20261020/README.md)。52,159个现存研究文件全部覆盖，217项关键哈希通过，已完成GitHub实际恢复演练。
+
 **English manuscript (2026-10-20):** [Full English version](docs/paper/paper_draft_full_experiment_20261020_en.md), including all experimental stages, numerical tables, figures, equations, and appendices.
 
 **全流程论文初稿（2026-10-20）：** [阅读全文](docs/paper/论文初稿_全实验流程_20261020.md)。覆盖原B/C/D审计、公式与门槛复核、7B独立训练及定位复测、9B五seed实验与坐标×监督补充对照；包含中英文摘要、完整结果、图表、参考文献和证据索引。

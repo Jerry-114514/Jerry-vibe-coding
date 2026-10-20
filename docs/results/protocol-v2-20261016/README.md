@@ -1,5 +1,7 @@
 # protocol-v2：独立7B实验与补分析
 
+**实例释放前完整归档：** [验收报告与恢复指南](../../instance-retirement-20261020/README.md)。
+
 **English manuscript (2026-10-20):** [Full English version](../../paper/paper_draft_full_experiment_20261020_en.md), including all experimental stages, numerical tables, figures, equations, and appendices.
 
 **全流程论文初稿（2026-10-20）：** [阅读全文](../../paper/论文初稿_全实验流程_20261020.md)。覆盖原B/C/D审计、公式与门槛复核、7B独立训练及定位复测、9B五seed实验与坐标×监督补充对照；包含中英文摘要、完整结果、图表、参考文献和证据索引。

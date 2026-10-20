@@ -1,0 +1,60 @@
+{
+  "utc": "2026-10-20T08:31:13.163250+00:00",
+  "gpu": "NVIDIA GeForce RTX 5090, 580.76.05, 32607 MiB, 0 MiB, 0 %",
+  "environments": {
+    "arp-venv": {
+      "python": "Python 3.12.3",
+      "freeze_exit_code": 0
+    },
+    "arp-qwen35-venv": {
+      "python": "Python 3.12.3",
+      "freeze_exit_code": 0
+    }
+  },
+  "os_release": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n",
+  "outside_project_listing": {
+    "/root": [
+      {
+        "name": "autodl-pub",
+        "directory": true,
+        "symlink": true
+      },
+      {
+        "name": "arp-model-cache",
+        "directory": true,
+        "symlink": false
+      },
+      {
+        "name": "autodl-tmp",
+        "directory": true,
+        "symlink": false
+      },
+      {
+        "name": "data",
+        "directory": true,
+        "symlink": false
+      },
+      {
+        "name": "miniconda3",
+        "directory": true,
+        "symlink": false
+      },
+      {
+        "name": "tf-logs",
+        "directory": true,
+        "symlink": false
+      },
+      {
+        "name": "test_api.py",
+        "directory": false,
+        "symlink": false
+      }
+    ]
+  },
+  "excluded": [
+    "credentials, SSH keys, .bashrc and environment-variable values",
+    "reinstallable virtual-environment binaries",
+    "public pretrained base-weight binaries; pinned metadata retained",
+    "reproducible package/download caches and .exports duplicates"
+  ]
+}

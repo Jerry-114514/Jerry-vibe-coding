@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "utc": "2026-10-20T09:06:39.094185+00:00",
+  "selected_files": 52159,
+  "restore_map_files": 52207,
+  "previously_offloaded_files_added": 48,
+  "selected_logical_bytes": 45714583243,
+  "all_selected_contents_fresh_server_verified": true,
+  "missing_files": 0,
+  "required_endpoint_digests": 217,
+  "verified_endpoint_digests": 217,
+  "includes_offloaded_recovery_states": true,
+  "restore_roundtrip_members": 343,
+  "restored_adapter_families": 3,
+  "no_active_experiment_processes": true,
+  "unchanged_since_final_hash_snapshot": true,
+  "no_original_data_deleted": true,
+  "user_releases_instance": true,
+  "whole_machine_image": false,
+  "public_base_weights_mirrored": false,
+  "credentials_archived": false,
+  "free_gib": 14.139881134033203,
+  "restore_map_sha256": "c90424989ce1ec97cd71f06f2f2490b96a591395b2db30cbc09a2aa8923f71ab",
+  "report_receipt": {
+    "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-instance-retirement-20261020",
+    "assets": [
+      {
+        "name": "arp-instance-retirement-20261020-20261020T090640Z-inventory.json",
+        "bytes": 6583,
+        "sha256": "93bc257ffef830de5df4de99c4b331d02e9d5679417a98532877850d0116af7e",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T090640Z-inventory.json"
+      },
+      {
+        "name": "arp-instance-retirement-20261020-20261020T090640Z.tar.gz",
+        "bytes": 7389414,
+        "sha256": "30427fb5674c6a95ca1df5f156c219fed45118732e7839e4c4a7321ade25614d",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T090640Z.tar.gz"
+      }
+    ],
+    "storage": "AutoDL -> GitHub; no local download"
+  },
+  "capsule_receipt": {
+    "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-instance-retirement-20261020",
+    "assets": [
+      {
+        "name": "arp-instance-retirement-20261020-20261020T082955Z-inventory.json",
+        "bytes": 88031,
+        "sha256": "eaf4377f87b1a46542fa6a185829f0960ea0ec615074b664687b90a77b956a33",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T082955Z-inventory.json"
+      },
+      {
+        "name": "arp-instance-retirement-20261020-20261020T082955Z.tar.gz",
+        "bytes": 508840928,
+        "sha256": "6f81970e2c2afe49369b81c3e5c8f17cc3e414f57da43052580e3d5d71ab912f",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T082955Z.tar.gz"
+      }
+    ],
+    "storage": "AutoDL -> GitHub; no local download"
+  }
+}

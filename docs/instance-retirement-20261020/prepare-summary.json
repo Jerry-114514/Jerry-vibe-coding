@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-20T08:31:59.508521+00:00",
+  "files": 52159,
+  "logical_bytes": 29652756692,
+  "directory_bytes": {
+    "runs": 21343851131,
+    "data": 8299918413,
+    "configs": 75667,
+    "tools": 1279236,
+    "scripts": 1213,
+    "tests": 66569,
+    "docs": 7549921,
+    "README.md": 12070,
+    ".gitattributes": 2040,
+    ".gitignore": 47,
+    "requirements.txt": 48,
+    "requirements-experiment.txt": 337
+  },
+  "suspicious_text_files": [],
+  "symlinks": 0,
+  "free_gib": 14.660377502441406
+}

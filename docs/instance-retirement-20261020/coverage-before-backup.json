@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-20T08:05:29.899183+00:00",
+  "status": "missing",
+  "selected_files": 52155,
+  "covered_files": 42901,
+  "missing_files": 9254,
+  "missing_bytes": 6537307356,
+  "server_assets": 449,
+  "inventories_checked": 222,
+  "unusable_inventories": [],
+  "release_urls": {
+    "arp-formal-20261014": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-formal-20261014",
+    "arp-protocol-v2-20261016": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-protocol-v2-20261016",
+    "arp-9b-122b-20261017": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017"
+  }
+}

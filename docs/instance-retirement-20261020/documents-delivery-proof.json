@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "utc": "2026-10-20T09:08:17.959885+00:00",
+  "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-instance-retirement-20261020",
+  "assets": [
+    {
+      "name": "INSTANCE_RELEASE_READY.json",
+      "bytes": 2856,
+      "sha256": "8504d43d1a654e07f0ad0ae236c447d2984c952fc1bf52855b7d3eff15435eb9",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/INSTANCE_RELEASE_READY.json"
+    },
+    {
+      "name": "INSTANCE_RESTORE_MAP.compact.json.gz",
+      "bytes": 3341234,
+      "sha256": "0f471f4ff0f9079eccd426bb615ec1ed118bd33803b3851feded532d3da52b5b",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/INSTANCE_RESTORE_MAP.compact.json.gz"
+    },
+    {
+      "name": "INSTANCE_RETIREMENT_REPORT.md",
+      "bytes": 4808,
+      "sha256": "3b755f44d49a939b816607e6f32754b5a995da784fe5f9d85cacdc3aed5735b4",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/INSTANCE_RETIREMENT_REPORT.md"
+    },
+    {
+      "name": "RESTORE.md",
+      "bytes": 5779,
+      "sha256": "db95421235b1145bee059a5413e59be8dbb4456c199da97b0233e5a4370c5fae",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/RESTORE.md"
+    },
+    {
+      "name": "RESTORE_TOOL.py",
+      "bytes": 7323,
+      "sha256": "ec24fb08125ff7ebfb442199d9c10ce54ad35432d513798626fc3d9fc1a83669",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/RESTORE_TOOL.py"
+    },
+    {
+      "name": "RESTORE_TOOL_TESTS.json",
+      "bytes": 651,
+      "sha256": "b45ac65f5f9b0b74b84b76da6e162ec460bd5a954b0b83ce653d5675fd269565",
+      "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/RESTORE_TOOL_TESTS.json"
+    }
+  ],
+  "fresh_server_size_and_sha256_verified": true
+}

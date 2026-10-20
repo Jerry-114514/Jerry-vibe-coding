@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "utc": "2026-10-20T08:58:46.633329+00:00",
+  "downloaded_from_github": true,
+  "archive_bytes": 508840928,
+  "archive_sha256": "6f81970e2c2afe49369b81c3e5c8f17cc3e414f57da43052580e3d5d71ab912f",
+  "verified_members": 343,
+  "adapters": [
+    {
+      "archive_member": "runs/instance-retirement-20261020/reproduction-capsule/files/runs/9b-u137-factorial-20261018/training/N-G-seed42/adapter/adapter_model.safetensors",
+      "tensors": 496,
+      "all_finite": true
+    },
+    {
+      "archive_member": "runs/instance-retirement-20261020/reproduction-capsule/files/runs/route-b-9b-122b-20261017/student-experiment/formal/A1-seed42/adapter/adapter_model.safetensors",
+      "tensors": 496,
+      "all_finite": true
+    },
+    {
+      "archive_member": "runs/instance-retirement-20261020/reproduction-capsule/files/runs/route-b-staged-7b-20261016/formal/A1-seed42/adapter/adapter_model.safetensors",
+      "tensors": 392,
+      "all_finite": true
+    }
+  ],
+  "cuda_initialized": false,
+  "no_extraction_over_original_files": true,
+  "range_downloader_used": true,
+  "source_sha256": "31dc78c9015e69af45f5ee62f19dd90b42a64f820e6056b900ac69e75f418891",
+  "receipt": {
+    "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-instance-retirement-20261020",
+    "assets": [
+      {
+        "name": "arp-instance-retirement-20261020-20261020T082955Z-inventory.json",
+        "bytes": 88031,
+        "sha256": "eaf4377f87b1a46542fa6a185829f0960ea0ec615074b664687b90a77b956a33",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T082955Z-inventory.json"
+      },
+      {
+        "name": "arp-instance-retirement-20261020-20261020T082955Z.tar.gz",
+        "bytes": 508840928,
+        "sha256": "6f81970e2c2afe49369b81c3e5c8f17cc3e414f57da43052580e3d5d71ab912f",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-instance-retirement-20261020/arp-instance-retirement-20261020-20261020T082955Z.tar.gz"
+      }
+    ],
+    "storage": "AutoDL -> GitHub; no local download"
+  }
+}
