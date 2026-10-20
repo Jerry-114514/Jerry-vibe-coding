@@ -1,0 +1,331 @@
+# Grounding Degradation and Coordinate Representation Compatibility in Multimodal Sequence Distillation: From Cross-Axis Auditing to Controlled Experiments
+
+Authors and affiliations: to be supplied by the authors. English manuscript draft v0.1, October 20, 2026.
+
+> This draft is based on completed experiments and their verification artifacts. The main text develops a self-contained research argument; the appendices retain historical experiments, failures, and all endpoints. This is a staged exploratory empirical study. The revised ARP Stage C gate has not been passed, and the independent sequence-distillation experiments do not establish the original ARP claims. Author information, submission formatting, and independent human grounding review remain to be completed. This English version translates the [full Chinese draft](论文初稿_全实验流程_20261020.md), with its duplicate Chinese and English abstracts consolidated into the abstract below.
+
+## Abstract
+
+Cross-task score changes are often used to diagnose capability degradation and allocate fine-tuning budgets, although they also depend on scoring conventions, output contracts, and target representations. We present a staged empirical investigation spanning seven model checkpoints, 7B self-distillation, 9B sequence distillation from a large API teacher, and a coordinate-by-supervision factorial follow-up. Reanalysis of 120 scoring specifications shows that a historical audit admission decision does not establish validity under revised denominators, tie handling, and common-domain requirements. We complete fifteen fixed-budget training runs for each of the 7B and 9B settings, using five seeds and 1,000 updates per run. In the 7B setting, the A1–U grounding contrast changes from −11.53 percentage points under the historical evaluation to +3.32 points under an explicit processor-pixel protocol, demonstrating sensitivity to measurement conventions. In the 9B setting, reasoning-proxy training improves consistency over the unchanged baseline by 5.05 points, with a 12-comparison-adjusted interval of [0.35, 9.28], while mixed-axis training reduces mean grounding accuracy by 20.91 points relative to the baseline. A two-seed 2×2 follow-up contrasts pixel versus normalized targets and dual cross-entropy versus ground-truth-only supervision. The normalized-target grounding main effect is +22.75 points on the development set and +21.88 points on an independently reserved subset, with both 24-comparison-adjusted bootstrap intervals excluding zero. These exploratory results identify target-representation compatibility as an important contributor to grounding outcomes in the studied setting. They do not establish universal distillation benefits, broad seed stability, or a capacity-only effect. All fixed endpoints, failures, recovery checks, and final artifacts are retained for verification.
+
+**Keywords:** multimodal large language models; sequence-level distillation; visual grounding; coordinate representation; cross-task evaluation; measurement validity; reproducibility.
+
+## 1 Introduction
+
+Fine-tuning vision–language models often involves object recognition, referring-expression grounding, multimodal multiple-choice answering, and instruction following. Improvement on one task does not imply improvement on every task, and accuracies across tasks do not automatically share the same interpretation. For tasks requiring structured coordinates, the final score also depends on generated units, image resizing, parsing rules, and generation termination. Unless these components are explicitly fixed, capability changes and interface adaptation can be mixed in the same measurement.
+
+Our initial question was whether the axis with the largest degradation remains unchanged across a defensible family of scoring scales when comparing large and small members of a model family. The original Argmax Retention Profiling (ARP) research card proposed measuring input-independent baseline scores, enumerating degradation operators, collapsing equivalent specifications, and comparing scale sensitivity with sampling noise. That card is an internal research proposal rather than a published paper. Its conjectures, constructed examples, and planned results are not treated as new empirical observations in this study.
+
+Execution exposed a more basic measurement problem. Some models' grounding outputs could not be read reliably by a shared pixel-coordinate parser. Relative-gap formulas and tie handling also affected interpretation of the scale audit. We therefore preserved the original results, revised the analysis, and registered subsequent multi-arm training as an independent experiment rather than treating the unresolved revised ARP admission gate as satisfied.
+
+The independent experiments raised a more specific question. The apparently strong grounding benefit of mixed training in the original 7B experiment did not persist under an explicit processor-pixel reassessment. After calibrating the 9B native output frontend, poor grounding scores in the mixed arm remained and could no longer be removed by a simple reinterpretation of coordinate units. This motivated two separate training interventions: representing targets in original-image pixels or normalized coordinates, and using ground-truth-only targets or jointly fitting ground-truth and teacher responses.
+
+We address three research questions. **RQ1:** After reassessing scoring scales and valid domains, does the cross-axis audit still justify a budget-allocation decision? **RQ2:** Under a fixed update budget, what improvements and degradations arise from multi-axis sequence distillation? **RQ3:** How do coordinate-target representation and teacher supervision affect grounding, and do these effects recur on data not previously used within the project?
+
+Our contributions are threefold. First, we document the full evidence leading from the historical scale audit to non-admission under the revised gate, showing why validity coverage and ties must accompany disagreement rates. Second, we report fixed-endpoint 7B and 9B experiments with five seeds each, together with revised grounding measurements, exposing gains and costs across axes. Third, a two-seed factorial follow-up with an independently reserved subset provides evidence for a coordinate-representation effect in this setting. We introduce neither a new distillation optimizer nor the first observation that coordinate representation matters.
+
+## 2 Related Work
+
+**Multimodal models and multi-axis evaluation.** Qwen2.5-VL, InternVL, and LLaVA-OneVision provide publicly available checkpoints, but changes in model size within a family do not necessarily change capacity alone. The Qwen2.5-VL report discusses dynamic resolution and localization interfaces, while the official Qwen3.5-9B model card specifies visual inputs and generation interfaces. We therefore record exact checkpoints and the processors used in our experiments rather than inserting vendor leaderboard results into our scale ladders. See the [Qwen2.5-VL report](https://arxiv.org/abs/2502.13923), [Qwen3.5-9B model card](https://huggingface.co/Qwen/Qwen3.5-9B), [InternVL3](https://arxiv.org/abs/2504.10479), and [LLaVA-OneVision](https://arxiv.org/abs/2408.03326).
+
+POPE studies object hallucination through object-existence questions. MMBench and MMStar provide multimodal evaluation resources. We use their sources or related subsets to construct particular probes; our custom five-paraphrase consistency score is not the standard full MMBench score. We also distinguish the ScienceQA training proxy from MMStar evaluation. See [POPE](https://arxiv.org/abs/2305.10355), [MMBench](https://arxiv.org/abs/2307.06281), [MMStar](https://arxiv.org/abs/2403.20330), and [ScienceQA](https://arxiv.org/abs/2209.09513).
+
+**Representing grounding targets.** Ranasinghe et al. study instruction tuning with image-space coordinates to improve localization and spatial reasoning, including alternative coordinate representations. Our focus is grounding degradation already observed during multi-axis sequence distillation. We separate target representation and supervision into two factors and report the representation intervention alongside an audit of the measurement frontend. We do not claim novelty for the general proposition that normalized coordinates may be useful. See [Learning to Localize Objects](https://arxiv.org/abs/2404.07449).
+
+**Distillation and parameter-efficient training.** Sequence-level knowledge distillation supervises a student with teacher-generated targets, while LoRA provides low-rank parameter updates. We use these established techniques in fixed-budget multi-arm comparisons. The early v1 top-50-plus-tail KL objective differs from the subsequent dual-CE objective; they are not direct replications of the same loss. See [Sequence-Level Knowledge Distillation](https://arxiv.org/abs/1606.07947) and [LoRA](https://arxiv.org/abs/2106.09685).
+
+## 3 Study Design, Data, and Statistical Conventions
+
+### 3.1 Stages and Status of Evidence
+
+{{TABLE_0}}
+
+Table 1 accounts for 858,240 formal generation records, excluding minimal-loop runs, additional failed calibrations, and API calls. Development items are reused across stages, so this total is not an independent sample size. The study includes 39 newly trained fixed endpoints, each with 1,000 updates, for 39,000 updates in total. The two historical endpoints reused in E5 are not counted again. We do not retrospectively describe E0–E5 as one fully preregistered experiment.
+
+### 3.2 Tasks and Scoring Units
+
+{{TABLE_1}}
+
+Our consistency probe is an operational definition using five templates, not a general measure of semantic consistency. The 9,000 POPE questions share 500 image clusters; the 2,400 grounding items correspond to 1,905 clusters; the 800 consistency items to 774 clusters; and MMStar to 1,500 clusters. Resampling accounts for these dependencies. The four axes are not an exhaustive decomposition of multimodal capability.
+
+The original training pool contains 600 POPE, 600 grounding, 1,745 consistency, and 600 ScienceQA-proxy prompts, totaling 3,545. For 9B, the teacher API produced 3,540 usable targets. Five entries were quarantined by source group following the provider's image checks; we do not report all 3,545 as successful. The initial construction from separate training sources and the stricter image-isolation audits performed later are recorded separately. Later audits cannot retrospectively establish that every historical experiment met the same isolation standard.
+
+### 3.3 Training Arms and Exposure Budgets
+
+In independent stages E2 and E4, A1 is fixed in advance as the ScienceQA-based proxy for the `mmstar` axis, A2 uses consistency data, U mixes all four axes equally, and N receives no updates. For each training arm and seed, 600 distinct prompt IDs are selected and then cycled until 1,000 actual optimizer updates have occurred. U uses 150 prompts and 250 updates per axis. Seeds are 42, 137, 256, 512, and 1024. Six hundred consistency prompts do not represent 600 independent original items.
+
+Equal update counts do not imply equal token counts, independent image exposure, or compute. Different seeds jointly change initialization, sampled subsets, and ordering. Pairing conditions by seed retains their shared random design; it does not isolate optimization randomness alone. N is a single unchanged checkpoint, and we do not invent five training replicates for it.
+
+### 3.4 Sequence-Level Objectives and Optimization
+
+The later sequence-distillation experiments use two response sequences for each example: the ground-truth target $y^{GT}$ and the cached teacher target $y^T$. The objective is
+
+$$\mathcal L_D=\tfrac12\operatorname{CE}(y^{GT})+\tfrac12\operatorname{CE}(y^T).$$
+
+Each CE term is computed over its respective target tokens. In E2, both teacher and student are Qwen2.5-VL-7B. Although top-50 teacher logits are retained in the cache, the training KL weight is zero. In E4, the student is Qwen3.5-9B and the teacher is an API text-target source identified as Qwen3.5-122B-A10B. These text targets do not provide the same internal evidence as local logit caches.
+
+E2 and E4 use LoRA on language attention and MLP modules, with rank 16, alpha 32, and zero dropout. AdamW uses a learning rate of 1e-4 and zero weight decay. The microbatch size and gradient accumulation are both one, with gradient checkpointing, BF16, and gradient clipping at 1.0. Visual modules remain frozen. For the hybrid E4 architecture, the actual module selection in the frozen script is authoritative; module names from the older architecture are not substituted for it. Endpoints are fixed at update 1,000, without selecting checkpoints by development scores.
+
+### 3.5 Intervals, Comparison Families, and Interpretation
+
+E2 and E4 each define 12 comparisons: A1–A2, A1–U, and A1–N across four axes. E3 defines a separate family of four grounding contrasts. E5 defines 24 comparisons: three factorial effects across four axes and two datasets. These later stages use 10,000 paired seed/source-image-cluster bootstrap replicates. The five consistency paraphrases are first aggregated into an original item, and related models share image-cluster resampling weights. Cross-axis statistics and the historical admission analysis retain their own registered procedures rather than being mixed after the fact.
+
+Bonferroni-adjusted percentile intervals use a per-comparison alpha of 0.05/m for nominal 95% familywise coverage. We report whether an adjusted interval excludes zero rather than presenting an exact p-value. Both two and five training seeds limit generalization. In the 24-comparison family, each adjusted tail contains only about ten bootstrap draws, making tail estimates sensitive to Monte Carlo variation. An interval including zero does not establish equivalence. Comparison families are stage-specific; we do not claim project-wide error control across all exploratory paths.
+
+## 4 From Model-Size Ladders to Measurement Validity: The Early ARP Experiments
+
+### 4.1 Operator Families, Input-Independent Baselines, and Domains
+
+E0 compares Qwen2.5-VL 3B/7B, InternVL3 1B/2B/8B, and LLaVA-OneVision 0.5B/7B. Each item records raw text, the parsed answer, correctness, and parsing failure, enabling later recomputation from cached ledgers. FP16 overflow occurred in Qwen's visual component. Formal v1 therefore reran both Qwen checkpoints with FP32 visual forward passes and FP16 language weights. Overflowed historical outputs are not mixed into formal ledgers. This also constitutes an explicit difference from the subsequent BF16 experiments.
+
+For axis $a$, let $c_a$ be the measured score of an input-independent responder and $x_{m,a}$ the observed model score. Floor correction is $\widetilde x_{m,a}=(x_{m,a}-c_a)/(1-c_a)$, giving
+
+$$\widetilde x_{L,a}-\widetilde x_{s,a}=\frac{x_{L,a}-x_{s,a}}{1-c_a}.$$
+
+Baseline responders always answer “no,” output a central box, return a fixed option, or sample a uniform option with a fixed seed, respectively. They are evaluated on the same manifests; we do not automatically assign a 0.5 baseline to every binary task. The 120 nominal specifications combine absolute/relative gaps, floor correction, three headroom choices, five ordered weighted averaging (OWA) weights, and two parsing-failure policies. A two-node ladder has only one adjacent gap, so OWA adds no information; a three-node ladder weights sorted adjacent gaps.
+
+The revised analysis explicitly divides relative gaps by the larger member's score, or by that score minus the floor; the historical implementation used the smaller member's denominator. Floor-domain violations, zero denominators, and invalid headroom signs are marked undefined under the registered guards rather than clipped to zero. When headroom is the family maximum minus the smaller member's score, floor scaling can cancel algebraically. Thus 120 nominal settings are not 120 distinct scoring scales. Structural equivalence groups functions together with their domains; empirical equivalence additionally groups equal values on the current ledger. These are different estimands.
+
+### 4.2 Ties Versus Strict Reversals
+
+If $S_g$ is the set of axes within tolerance of the maximum under scale $g$, axis $a$ receives credit $\mathbf1[a\in S_g]/|S_g|$. Retention is the mean credit across valid classes, and $F=1-\max_a\pi(a)$. A tie among all axes can therefore increase $F$; it is not a pure strict-ranking-reversal rate.
+
+The revised implementation separately counts pairs of usable scale classes whose maxima are both unique but identify different axes. Its denominator includes all usable class pairs, not only pairs with unique maxima. We also retain tie rates, invalid-class counts, common four-axis coverage, and the fraction of outer resamples for which paired differences are defined. Without these diagnostics, a high $F$ can reflect ties or a sparse valid domain.
+
+### 4.3 Seven-Checkpoint Results and Reassessment of the Historical Decision
+
+{{TABLE_2}}
+
+Table 2 reports historical percentage scores. Near-zero grounding for InternVL and LLaVA primarily exposes the applicability of parsing and coordinate contracts; it does not directly establish near-zero general grounding ability. Under original v1, the empirical class counts for Qwen, InternVL, and LLaVA were 9, 54, and 10, and their point estimates of $F_{scale}$ were 0.083, 0.512, and 0.317. V1 issued a “go” under its own rule, supported mainly by the latter two families. This historical decision remains archived, but it is not admission under the revised protocol.
+
+{{TABLE_3}}
+
+The revised gate requires at least 80% valid structural classes, at least 95% defined outer-resample differences, a paired $F$-difference interval lower bound greater than 0.05, a strict-reversal-difference interval lower bound above zero, and a strict-reversal point estimate of at least 0.05. Although Qwen has $F_{scale}\approx0.25$ and a noise estimate of approximately 0.0156, its strict reversal rate is zero and its outer valid-domain coverage is insufficient. Most classes for the other families are invalid. Removing grounding raises valid coverage to 75%, still below the threshold. All six four-axis/grounding-removed analyses are indeterminate. Because this reassessment uses previously observed data, it checks the estimator pipeline rather than providing a new confirmatory test.
+
+Coordinate attribution does not support the original prediction that floor correction dominates reversals. The homogeneous-floor negative control for Qwen also does not change the training-arm ordering. Successful algebraic boundary checks and synthetic planted examples are therefore not treated as evidence that the proposed mechanism was validated on real models.
+
+### 4.4 Historical Observations from the Original 3B-from-7B Training
+
+V1 conducts three single-seed runs with a Qwen7B teacher and a 3B student. It uses attention LoRA and equal weights on top-50-plus-explicit-tail-bucket KL at temperature 1 and teacher-response CE. Teacher/student vocabulary mappings are checked, and the teacher is unloaded after caching. This objective differs from the later ground-truth/teacher dual CE.
+
+{{TABLE_4}}
+
+These single-seed estimates cannot establish that A1 outperforms A2 or U. The sum of four changes is not an overall accuracy. We retain these observations to document the early experiments, not to treat the historical admission and one-run gains as validation of revised ARP budget allocation.
+
+## 5 Independent 7B Self-Distillation: Pipeline Reproducibility and Measurement Sensitivity
+
+### 5.1 Minimal Loop and Formal Experiment
+
+E2 first validates the pipeline on 125 prompts per axis, totaling 500. A1, A2, and U each receive 100 actual updates, while N is evaluated without training. All five acceptance checks pass: cache readability without silent truncation, finite dual CE with nonzero gradients, adapter reload, four-axis scoring, and interrupted-run recovery. A1 exits at update 50; in a new process, the loss at update 51 is 0.000149575484102, and training continues consecutively to update 100. Only then are the 15 formal runs launched.
+
+All 3,545 new teacher-cache entries are checked for raw generated IDs, EOS, and top-50 tensor alignment. Failure to hit a generation cap in an old cache is not accepted as EOS evidence. Fifteen fixed 1,000-update runs and 16 × 16,900 evaluation prompts are completed. Pure training-step time totals 2.306 hours, with peak reserved memory of 24.547 GB. Recovery states correspond to exported adapters.
+
+### 5.2 Historical Four-Axis Results and Their Measurement Status
+
+{{TABLE_5}}
+
+In the historical 12-comparison analysis, only A1–U grounding has an adjusted interval excluding zero: −11.525 pp, with interval [−16.157, −5.648] pp. The remaining 11 intervals include zero. This initially suggests a substantial grounding advantage for U. However, the grounding column is explicitly labeled as affected by original-image/processor-pixel ambiguity and is not the main conclusion under the revised measurement protocol.
+
+### 5.3 Grounding Reassessment Without Retraining
+
+E3 retains all adapter endpoints and separately registers an explicit “actual processor-resized pixels to original-image pixels” evaluation. Horizontal coordinates are multiplied by original width/processor width, and vertical coordinates by original height/processor height, followed by IoU ≥ 0.5 scoring. All 2,400 grounding prompts are rerun for each of 16 models, producing 38,400 new outputs and a separate four-comparison post hoc analysis.
+
+{{TABLE_6}}
+
+{{TABLE_7}}
+
+The A1–U direction changes to +3.317 pp, with the adjusted interval excluding zero. A1–N and A1–A2 still lack clear evidence of a difference. Reassessed U-seed1024 remains at 75.708% with 258 parse failures; these failures are not discarded. Reassessment changes the prompt and coordinate frontend and generates new outputs. The disappearance of the historical advantage therefore supports protocol sensitivity, not attribution of the entire original difference solely to coordinate units or format adaptation. The other three axes are not rerun in this stage. We do not combine reassessed grounding and the three historical columns into a supposedly joint “corrected four-axis” result.
+
+![Figure 1. 7B grounding reassessment and four adjusted contrasts.](../results/protocol-v2-20261016/7b-processor-final/final-report/grounding-final.png)
+
+## 6 9B Sequence Distillation from a Large Teacher: Complete Five-Seed Results
+
+### 6.1 Models, Targets, and Admission
+
+E4 uses the official Qwen/Qwen3.5-9B student at revision `c202236235762e1c871ad0ccb60c8ee5ba337b9a`. The teacher API endpoint is identified as Qwen3.5-122B-A10B. We freeze local weights and target caches, but an endpoint identifier is not equivalent to verification of all internal commercial-teacher weights. Fifteen 1,000-update runs begin only after the 9B minimal loop passes its five engineering checks and numerical preflight. Both the 7B and 9B evaluations run on the 5090; the released 4090 is not described as an evaluation device actually used for these stages.
+
+Grounding training targets in the original 9B experiment remain in original-image pixels. The early minimal loop yields approximately 1% grounding for N, indicating that default coordinate reading is inappropriate; it is not interpreted as loss of the model's grounding ability. Formal evaluation requires a separately registered native frontend and renewed calibration. Training endpoints are neither retrained nor optimized in response to measurement failure.
+
+### 6.2 Termination Failure and Independent v4.1 Calibration
+
+The old v4 calibration for A1-seed512 produces 20/20 length-capped outputs and 11 parsing failures. Investigation finds the following chain: `generation_config.json` is absent from the model cache; generation falls back to `<|endoftext|>` (248044); the response emits `<|im_end|>` (248046) without terminating, then continues into repeated dialogue. Offline truncation at the first termination token supports the diagnosis but does not retroactively change the old admission decision.
+
+The original 900-second budget is retained and never reset. Following explicit authorization, v4.1 and a new independent 900-second calibration budget are registered. Only EOS recognition changes to `[248046, 248044]`; prompts, coordinates, and acceptance criteria remain fixed. All 16 checkpoints pass 400 calibration predictions with zero parse failures and zero truncations before formal evaluation starts. These 400 outputs are reused within the 270,400 formal predictions. The v4.1 grounding frontend requests normalized 0–1000 coordinates and maps them through the fixed processor geometry to original-image coordinates. Sharing an original-image scoring endpoint does not make the 7B and 9B frontends identical.
+
+Formal evaluation loads one adapter at a time, without optimizer states or gradients, with thinking disabled and at most 128 new tokens. The full N baseline still has 120 length-capped outputs, while the 15 trained adapters have none. All are retained as actual outcomes. Prompts and EOS are not changed again in response to formal scores.
+
+### 6.3 Final Scores and Cross-Axis Trade-offs
+
+{{TABLE_8}}
+
+U's grounding scores across the five seeds are 82.33%, 42.58%, 62.46%, 83.46%, and 65.88%, all below N's 88.25%. The mean is 67.34%, a decrease of 20.91 pp. U's mean MMStar score is 69.23%, descriptively 8.56 pp above N. U–N is not part of the registered 12-comparison family, however, so we do not add an unregistered significance claim for this descriptive difference.
+
+A1's MMStar score ranges from 56.40% for seed 42 to 68.93% for seed 137, illustrating joint sensitivity to training sampling and initialization. A2 appears comparatively consistent early in evaluation, but its seed1024 grounding score falls to 79.88%. Completing all seeds helps avoid selecting a paper narrative from interim results.
+
+{{TABLE_9}}
+
+Three of the 12 adjusted intervals exclude zero: A1–N consistency, +5.05 pp; A1–U POPE, +3.33 pp; and A1–U grounding, +21.14 pp. None of the A1–A2 axes provides clear evidence of a difference. The pointwise A1–U MMStar interval excludes zero, but its adjusted interval includes zero. The results therefore support localized benefits and costs rather than uniform superiority of A1.
+
+![Figure 2. Four-axis scores for all 16 models in the original 9B experiment.](../results/protocol-v2-20261016/9b-v41-final/formal-report/four-axis-scores.png)
+
+![Figure 3. All 12 adjusted paired contrasts in the original 9B experiment.](../results/protocol-v2-20261016/9b-v41-final/formal-report/paired-intervals.png)
+
+### 6.4 Output Validity and Capability Interpretation
+
+A post hoc output-validity decomposition compares N with A2-seed42. Of the 6.75 pp total consistency gain, units valid for both models contribute a net 0.50 pp, while units invalid for N but valid for A2 contribute 6.25 pp. Of the 4.53 pp MMStar gain, jointly valid units contribute −0.27 pp, while units invalid for N but valid for A2 contribute +4.80 pp. These groups are defined by model outputs. The decomposition is descriptive, does not establish formatting as a causal mediator, and cannot be generalized to mean that all gains in every arm arise from formatting. It shows why improved scores still require care when interpreted as improved latent capability.
+
+## 7 Diagnosing Grounding Instability: From 42.58% to Testable Explanations
+
+For U-seed137, we verify the 1,000-update adapter, recovery state, raw ledger, target tensors, sample coverage, and SHA hashes. Only three of 2,400 grounding predictions fail parsing, and none is length-capped. A high parsing-failure rate cannot explain the 42.58% score. Applying three fixed interpretations to the entire output set—native normalized coordinates, original-image pixels, and processor pixels—gives 42.58%, 3.33%, and 3.46%, respectively. Simply changing units does not restore performance. The formal score retains the native protocol; no ground-truth-dependent per-item choice is made.
+
+U137 has a median IoU of approximately 0.438, compared with approximately 0.832 for U42 and 0.927 for N. Degradation occurs in all three grounding subsets. Of 2,397 valid boxes, 2,317 are distinct, and the most frequently repeated exact box occurs only four times, arguing against collapse to a single fixed box. Median center offsets are approximately −5.59% of image width and −7.39% of image height, but the distributions are broad. We do not fit translations or scales against ground truth to manufacture a recovery score.
+
+The median IoU of teacher grounding targets against ground truth is approximately 0.940 for U42 and 0.932 for U137; 10/150 and 12/150 targets, respectively, are below 0.5. Both runs have finite losses, weights, and gradients, with matched update counts per training axis. We find no clear numerical-corruption evidence, but these checks do not exclude more subtle optimization or semantic errors.
+
+A fixed-hash sample selects four images from each of three datasets, totaling 12. N/U42/U137 labels are randomized independently in each panel, observations are written before unblinding, and both neighboring-object/person errors and box-extent errors are visible. Counterexamples where several models fail together are retained. This visual diagnosis creates no new ground truth, is not independent two-reviewer human adjudication, and does not estimate population error-type frequencies.
+
+These checks motivate two factors for a controlled follow-up: pixel targets may be incompatible with the student's native normalized output conventions, and joint fitting of ground-truth and teacher targets may introduce additional supervision interference. Continuing to change the evaluation parser cannot distinguish these explanations; training conditions must change.
+
+## 8 Coordinate Representation × Supervision: A Factorial Follow-up
+
+### 8.1 Conditions, Budgets, and Controls
+
+{{TABLE_10}}
+
+The condition prefix N means normalized coordinates and is distinct from the unchanged baseline N. Within seeds 42 and 137, the four conditions match training rows and exposure order, and every endpoint is fixed at 1,000 updates. Normalization transforms the previously frozen pixel ground-truth and teacher targets separately by the corresponding image-axis dimensions. Teacher targets are not cleaned, and no result-dependent rounding or clipping is introduced. Changing units also changes numeric text and token length, so the factor is target representation rather than pure spatial capability.
+
+GT-only receives weight 1 rather than 0.5 to avoid an additional gradient-scale change. Dual CE requires two forward passes and GT-only one, so updates rather than compute are matched. Six new runs follow the registered randomized order. P-G42 exits at update 50; a new process restores the optimizer and RNG at 50 and completes updates 51–1,000. This establishes engineering continuity, not floating-point identity with a separate uninterrupted run.
+
+The independent absolute budgets are six hours for new training and 24 hours for new evaluation; neither is reset for restarts or scores. Stop rules cover nonfinite values, budget exhaustion, changes to frozen inputs, coverage errors, and resource limits. All six runs finish, followed by 101,400 new development predictions and 8,640 held-out predictions. Final delivery at 08:45 precedes the 17:51 evaluation deadline, both in Beijing time on October 20, 2026.
+
+### 8.2 Independently Reserved Subset
+
+We freeze 120 original items per axis from existing role-isolated manifests, totaling 480 original items, 960 prompts, and 426 images. Item IDs, paths, byte/RGB aliases, and deduplication graphs are checked against within-project training and historical inference exposure. Selected items have not appeared in prior development evaluation or training. Items are not replaced according to scores after freezing. Independence is limited to observed project exposure; it does not guarantee absence from student or API-teacher pretraining.
+
+Held-out consistency uses AI2D-source five-paraphrase items, and the reasoning axis uses a single-image A–D multiple-choice subset of MMMU. It is neither full MMMU nor MMStar. Artifacts retain the technical axis key `mmstar`, while the paper calls it a “reasoning proxy” to avoid confusion. With 120 original items per axis, intervals are relatively wide. This set is a supplementary replication check, not the independent confirmation stage required by original ARP.
+
+### 8.3 Main Effects, Interaction, and Grounding Results
+
+Let $z_{PD},z_{PG},z_{ND},z_{NG}$ denote scores on an axis, averaged across the two seeds. The three fixed factorial effects are
+
+$$E_C=\tfrac12(z_{ND}+z_{NG}-z_{PD}-z_{PG}),\qquad E_T=\tfrac12(z_{PD}+z_{ND}-z_{PG}-z_{NG}),$$
+
+$$E_{CT}=(z_{ND}-z_{NG})-(z_{PD}-z_{PG}).$$
+
+C measures normalized versus pixel representation; T measures dual CE versus GT-only. T does not isolate a pure causal effect of teacher knowledge.
+
+{{TABLE_11}}
+
+On development data, normalized dual CE reaches 87.92%/89.58%, and normalized GT-only 88.79%/87.00%. Corresponding held-out results are 88.33%/90.83% and 90.00%/88.33%. The unchanged baseline scores 88.25% on development and 88.33% on held-out grounding. The appropriate description is recovery to approximately baseline performance, not a claim of reliably exceeding it. Pixel GT-only changes the two seeds in different directions, providing no general support for “removing the teacher solves grounding.”
+
+{{TABLE_12}}
+
+The coordinate-representation grounding main effect is +22.75 pp on development and +21.88 pp on held-out data; both adjusted intervals exclude zero. The adjusted grounding intervals for teacher supervision and interaction include zero, which does not establish absence of an effect or equivalence. Among the other comparisons, only the development POPE teacher effect excludes zero: −3.64 pp, with interval [−7.50, −0.14]. That decline is not supported by the adjusted held-out interval and cannot be generalized to distillation being harmful overall.
+
+![Figure 4. All 24 adjusted coordinate-by-supervision effects.](../results/protocol-v2-20261016/9b-repair-final/report/factorial-effects.png)
+
+![Figure 5. All endpoints on the independently reserved subset.](../results/protocol-v2-20261016/9b-repair-final/report/heldout-scores.png)
+
+### 8.4 Strength of Interpretation
+
+Averaged over the two supervision conditions, the normalized grounding effect recurs on both datasets, supporting the importance of target-representation compatibility in this setting. The intervention changes training targets; it does not simply reinterpret historical low-scoring predictions as correct. The original U137 endpoint retains its 42.58% score. However, only two seeds, reuse of historical P-D endpoints, and differences in execution timing limit precise causal attribution. Without cross-family replication, token-length controls, or newly retrained P-D conditions, we cannot claim a complete explanation of grounding degradation.
+
+## 9 Discussion
+
+### 9.1 From Budget Allocation to a Measurable Representation Question
+
+ARP originally asks which axis should receive a repair budget. Our experiments show that validating how each axis is read out is more fundamental than immediately comparing degradation across axes. Near-zero historical grounding scores, the protocol-dependent reversal of the 7B contrast, and the 9B target-representation effect all show why measurement assumptions belong in a cross-axis decision record. They are not three replications of the same phenomenon: they concern, respectively, cross-model interfaces, changed evaluation of the same endpoints, and a training-target intervention.
+
+### 9.2 Scores, Format Following, and Latent Capability
+
+The observed consistency gain is useful, but strict short-answer tasks are also sensitive to EOS, format, and decoding budgets. Restoring a compatible coordinate representation can improve measured performance without directly establishing additional spatial-reasoning knowledge. The validity decomposition makes observable components explicit, but output-selected subgroups do not identify a causal mediator. We therefore retain the wording “task-performance improvement.”
+
+### 9.3 Practical Implications
+
+Before multi-axis fine-tuning, both training and evaluation coordinate contracts should be fixed, actual processor dimensions checked, and raw generated tokens and EOS retained. Signed changes should be reported per axis. When an anomaly appears, input, endpoint, parsing, and numerical issues should be checked before registering independent training controls. Stopping rules should be independent of scores, and low-performing seeds and parse failures should not be silently removed. This procedure requires no new optimizer, but can reduce the risk of interpreting engineering incompatibility as a capability result.
+
+## 10 Limitations and Research Ethics
+
+**Generalization.** E5 has only two seeds, and E2/E4 only five. Capacity, student generation, teacher, and available training pool change together across stages, preventing attribution to capacity or teacher size alone. Checkpoints within a family may also differ in recipe. We claim neither a universally optimal representation nor state-of-the-art performance.
+
+**Selection and statistics.** The research direction changes after anomalies are observed. Development data are inspected repeatedly, and multiplicity adjustment is stage-specific rather than project-wide. Bootstrap intervals with two seeds may have limited coverage, and adjusted tail quantiles have Monte Carlo uncertainty. More seeds, new confirmation data, and frozen cross-model validation are needed for broader conclusions.
+
+**Measurement.** The 7B reassessment changes prompts and the output frontend; 9B normalized targets change textual length. Neither is a mathematical-unit change with no other consequences. Held-out reasoning differs from development reasoning, so cross-dataset scores are not interpreted as gains on one identical task. Independent two-reviewer grounding adjudication is unfinished; the small anonymous visual review cannot replace it.
+
+**Data and services.** Deduplication guarantees concern observable within-project exposure, not contamination in foundation-model pretraining. The API teacher can be affected by provider moderation or backend changes. Five quarantined entries are not counted as successes. Unfinished exact-checkpoint API bridging and the revised ARP admission gate are not described as completed by the present engineering results.
+
+**Openness and privacy.** We release code, adapters, ledgers, statistics, and data provenance/hashes. Redistribution of underlying images and datasets must follow their original licenses and terms. Research use does not imply permission for commercial redistribution. SSH credentials, API keys, and personal paths are not released as necessary reproduction artifacts, and experimental billing information is not treated as author identity.
+
+## 11 Conclusion
+
+This paper documents a complete research path from cross-axis scale auditing through multi-arm distillation, measurement revision, and coordinate-representation controls. The original scale-dominance prediction is not confirmed under revised validity requirements, so subsequent training is conducted independently. Five-seed results show localized gains together with cross-axis degradation. The 7B grounding contrast is sensitive to the measurement protocol, while the 9B mixed arm retains grounding degradation under calibrated native evaluation. A two-seed controlled follow-up then finds a normalized-target grounding main effect whose adjusted interval excludes zero on both development and independently reserved data. The resulting empirical conclusion is that target representation and generation contracts should be part of interpreting multimodal sequence distillation, rather than implementation details whose compatibility is assumed.
+
+## References
+
+{{REFERENCES}}
+
+Internal project sources: the user-provided [ARP research card](../idea.std.zh.pdf), [original experiment checklist](../experiment_checklist.source.md), and [revised large-model plan](../references/大模型方案_用户修订_20261016.md). These are not peer-reviewed references. Their assessments of prior work are not adopted as factual literature claims unless independently checked.
+
+## Appendix A Complete Endpoints and Intervals
+
+### A.1 Historical Seven-Checkpoint Scales and Scores
+
+The complete seven-checkpoint ledgers and 120-specification mappings are indexed in the [v1 final results](../results/final-20261016/README.md). Revised formulas and domain diagnostics are documented in the [P0 formula audit](../results/protocol-v2-20261016/p0/formula_audit.md) and [paired development gate](../results/protocol-v2-20261016/paired_gate_development.md). Historical “go” and revised “indeterminate” correspond to different protocols. Preserving both provides version provenance; it does not simultaneously assert admission and non-admission under one rule.
+
+### A.2 All 16 7B Models: Historical Four Axes and Separate Grounding Reassessment
+
+{{TABLE_13}}
+
+The reassessed grounding column in each row comes from a separate generation run under an explicit contract. It is a side-by-side version comparison, not a new joint four-axis evaluation.
+
+### A.3 All 16 9B Models: Formal v4.1 Four-Axis Evaluation
+
+{{TABLE_14}}
+
+### A.4 All Four Axes in the Factorial Experiment
+
+#### Development Set
+
+{{TABLE_15}}
+
+#### Independently Reserved Subset
+
+{{TABLE_16}}
+
+### A.5 All 24 Factorial Comparisons
+
+{{TABLE_17}}
+
+## Appendix B Engineering Acceptance, Resources, and Reproduction
+
+### B.1 Training and Memory
+
+Pure step processing across the 15 independent 7B runs totals 2.306 hours, with peak reserved memory of 24.547 GB. The original 15-run 9B experiment totals 3.919 hours and peaks at 21.104 GB. The six new factorial runs total approximately 2.36 hours and peak at 21.534 GB. These are PyTorch reserved-memory measurements, not whole-device `nvidia-smi` usage. The original complete 7B preflight on the 4090 reserves 24.43 GB, exceeding the then-fixed 22 GB admission limit. Formal independent training consequently runs on the 5090 after migration. The formal 24.547 GB peak is distinct from the preflight measurement.
+
+The maximum pre-clipping gradient norm in the original 9B experiment is 768.76, with clipping at 1.0. Finite losses and gradients do not imply absence of spikes. BF16 checks, weight hashes, recovery states, and logs are retained. Historical whole-device memory traces are missing for old Stage C. Missing measurements are not filled with zero, and later samples are not substituted for historical peaks.
+
+![Figure B1. Loss curves for the 15 independent 7B runs.](../results/protocol-v2-20261016/route-b-formal-loss-curves.png)
+
+![Figure B2. Loss curves for the original 15 9B runs.](../results/protocol-v2-20261016/9b-training-final/loss-curves.png)
+
+![Figure B3. Training curves for the factorial conditions.](../results/protocol-v2-20261016/9b-repair-final/report/loss-curves.png)
+
+### B.2 Cost Accounting
+
+At the user-specified rate of CNY 2.70/hour, pure step processing and generation in the original independent 7B experiment correspond to approximately CNY 48.89, excluding grounding reassessment. Original 9B pure training steps correspond to approximately CNY 10.58. Formal 9B evaluation and delivery take 26.417 wall-clock hours, corresponding to approximately CNY 71.33. These quantities use different scopes and cannot simply be combined with overlapping stages into an account total. The factorial budget cap is six training hours plus 24 evaluation hours, nominally CNY 81, but both phases finish early. Teacher API fees, loading, uploading, waiting, and historical debugging must be accounted for from actual usage; no total project bill is fabricated without complete billing evidence.
+
+### B.3 Minimal-Loop and Recovery Acceptance
+
+{{TABLE_18}}
+
+### B.4 Artifact Releases and Evidence Versions
+
+{{TABLE_19}}
+
+The final 9B measurement protocol SHA256 is `03ad2816908390d748acccfda8825542923cc0db994a40b31fa3dd4c1656802e`. The factorial protocol SHA256 is `ddb7c44059dd5b83ab19b25d8840c2280a545ae676c90dff155b9dc4e06553ba`. Large archives are compressed and uploaded directly from AutoDL, then checked against server-side sizes and SHA hashes. Local storage retains only the manuscript, figures, and small statistical artifacts. Source-code ZIP files do not include Release data assets.
+
+## Appendix C Outstanding Original ARP Requirements and Submission Preparation
+
+Exact-checkpoint API/local bridging, valid new audits and a formal revised C decision, independent two-reviewer grounding review, and budget interventions following an independent C-based choice remain incomplete. Commercial aliases such as `qwen3-vl-plus` cannot replace exact Qwen2.5-VL parameter nodes. The required per-axis bridge difference below 0.5 percentage points is not automatically satisfied by the present engineering success. Fixing A1/A2/U in the independent experiment does not validate the causal chain from scoring scale to axis selection.
+
+Before submission, the authors should supply accurate names and affiliations, check dataset licenses and reproduction commands, verify bibliography metadata, and adapt the manuscript to the selected venue's format. Within its present evidence scope, the study can be framed as exploratory empirical research. Broader claims about a general mechanism or a cross-model method would require newly registered experiments with more seeds, additional model families, and representation-length controls. These boundaries remain explicit without preventing transparent reporting of the completed experiments.

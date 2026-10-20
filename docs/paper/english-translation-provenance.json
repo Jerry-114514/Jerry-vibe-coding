@@ -1,0 +1,9 @@
+{
+  "translation_of": "docs/paper/\u8bba\u6587\u521d\u7a3f_\u5168\u5b9e\u9a8c\u6d41\u7a0b_20261020.md",
+  "source_sha256": "ee8a00ae7d46b7f50d1f36b69864fe5d2588087a63312ef20db377d8b02a63a4",
+  "english_sha256": "9137bb952e2e5a4cd16db631ac9e181e22c8555e4fae5f4490e9099c00853cf8",
+  "date": "2026-10-20",
+  "scope": "Complete English translation, including all 20 tables, 8 figure references, equations, references and appendices; duplicate Chinese/English abstracts consolidated into one English abstract.",
+  "numeric_tables": "Copied from the Chinese manuscript; descriptive cells and headers translated.",
+  "no_new_experiments": true
+}
