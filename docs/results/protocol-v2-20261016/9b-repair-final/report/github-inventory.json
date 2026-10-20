@@ -1,0 +1,129 @@
+{
+  "repository": "Jerry-114514/Jerry-vibe-coding",
+  "tag": "arp-9b-122b-20261017",
+  "created_utc": "20261020T003354Z",
+  "files": [
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/development-scores.pdf",
+      "bytes": 17122,
+      "sha256": "5e7eae3b81e47a2093fc40be79bf726d750c81269f3896b0766b57e6410bf174"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/development-scores.png",
+      "bytes": 147924,
+      "sha256": "6757651a2055ee01c151e6ce3c2763dc41a60501e411758c9ab4d189b639421c"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/factorial-effects.pdf",
+      "bytes": 19059,
+      "sha256": "e81a63c0a7447ed205b26f9bb54ce4db515e49bccce57964ece6a7cabfb366e6"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/factorial-effects.png",
+      "bytes": 202856,
+      "sha256": "8be130b9339eb2e5c56926037834be9b656f707a6060fb6deb13d09b63498b25"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/heldout-scores.pdf",
+      "bytes": 17338,
+      "sha256": "39e00f043e5fc4c1227a7cd5ef7f723a37738a5717a250268c7721b86b174c4f"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/heldout-scores.png",
+      "bytes": 146939,
+      "sha256": "d7f32f7753bf05cf11c7c6bf956d55d12e46d7877fefefb0a22cda812ad80afd"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/loss-curves.pdf",
+      "bytes": 74040,
+      "sha256": "6ad801e03cae316249576718cb03d747fcc052640d1e13ac983db10ef08f4040"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/loss-curves.png",
+      "bytes": 555298,
+      "sha256": "adbc82f57133654d0e7dcfc2a1694b74039f58df8bb543c670db92fcf12e3e48"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/report.md",
+      "bytes": 4681,
+      "sha256": "c87cd4c38742b4ac4ffefcb8c1213da3ebd4ad5c83e68b2569b43323b29ee989"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/results.json",
+      "bytes": 22634,
+      "sha256": "c4ad118381d6044466130c65ae8f28d88c9e64b81fea0f12f52502b20b6cfc21"
+    },
+    {
+      "path": "runs/9b-u137-factorial-20261018/report/verification.json",
+      "bytes": 216,
+      "sha256": "f6a06feb2c7a551ba3ca7f469e468ed2b4d4bb568286fc52d164d47b3b2b0408"
+    },
+    {
+      "path": "configs/api_audit.json",
+      "bytes": 535,
+      "sha256": "b16aa15aa77d0ba0befce83ecad535e33a7bd59b376956b9c310be42ccea0aaf"
+    },
+    {
+      "path": "configs/api_experiment_roles.json",
+      "bytes": 1558,
+      "sha256": "955365a98702ca7488384870a3bd1bc8db6831c7c2143f3b8a1a389cdacaba00"
+    },
+    {
+      "path": "configs/api_teacher.json",
+      "bytes": 712,
+      "sha256": "251420ce8567161fd513d0b9eb06eeeceb2aabad6fdb9af42d64152f50a1b9ce"
+    },
+    {
+      "path": "configs/experiment.json",
+      "bytes": 1872,
+      "sha256": "3330a7bfc3bb5769589eca1e6c27051a722e008b48c0a42244530da9fdbbf029"
+    },
+    {
+      "path": "configs/independent_data_sources.json",
+      "bytes": 7377,
+      "sha256": "a3a1f4173f725d411bfee4504419f1f9a01c93aa268137f3ed1d8db2460cc1c6"
+    },
+    {
+      "path": "configs/models.lock.json",
+      "bytes": 1428,
+      "sha256": "b0c776a4493202444d6406ce2d6ceb48b9e983c85544a59f73b0d9aaa5d19f7f"
+    },
+    {
+      "path": "configs/p14_7b_5090.frozen.json",
+      "bytes": 2258,
+      "sha256": "781d0f024aa74a0ec02f4628380c5a5d4176d6bac123f84de7a60e78171d060a"
+    },
+    {
+      "path": "configs/precision_bridge.json",
+      "bytes": 1229,
+      "sha256": "7b7a6e86eeca2b9e258594928260e622ed14c2f6a5ab8f1ccbb4f8295e045824"
+    },
+    {
+      "path": "configs/route_b_7b.frozen.json",
+      "bytes": 24868,
+      "sha256": "7fd97ca71105274219c7683d4aa0e07586f5aa9ff51798a0010bba73a7e397c5"
+    },
+    {
+      "path": "configs/route_b_9b_122b.plan.json",
+      "bytes": 17819,
+      "sha256": "71804ceb87e978619e6652df047745e8f3aca6f084bf57b8f4467f5d6261fcfc"
+    },
+    {
+      "path": "configs/route_b_9b_5090.frozen.json",
+      "bytes": 16011,
+      "sha256": "357bf7b87a71640078ccf50ef4ae7ab0e9e93d4310ff1e67b50572bf3e96a244"
+    }
+  ],
+  "archive": {
+    "name": "arp-9b-122b-20261017-20261020T003354Z.tar.gz",
+    "bytes": 1031182,
+    "sha256": "5df5a1ffa56a1e5f0b9ae947669ffbf49fbf4cda5d39a421448fb1bb9987465d"
+  },
+  "binary_assets": [
+    {
+      "name": "arp-9b-122b-20261017-20261020T003354Z.tar.gz",
+      "bytes": 1031182,
+      "sha256": "5df5a1ffa56a1e5f0b9ae947669ffbf49fbf4cda5d39a421448fb1bb9987465d"
+    }
+  ]
+}

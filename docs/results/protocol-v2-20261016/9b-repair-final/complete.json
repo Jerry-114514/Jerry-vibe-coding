@@ -1,0 +1,43 @@
+{
+  "status": "all_fixed_factorial_endpoints_verified_and_delivered",
+  "new_runs": 6,
+  "new_updates": 6000,
+  "timestamp_utc": "2026-10-20T00:45:28.035657+00:00",
+  "protocol_sha256": "ddb7c44059dd5b83ab19b25d8840c2280a545ae676c90dff155b9dc4e06553ba",
+  "receipt": {
+    "release_url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/tag/arp-9b-122b-20261017",
+    "assets": [
+      {
+        "name": "arp-9b-122b-20261017-20261020T003400Z-inventory.json",
+        "bytes": 432860,
+        "sha256": "e2c3e3dbb981d9c38e9098317a34b5bc1bb1ed9ca6d1e1e51e1c55cf6fdfb8d5",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261020T003400Z-inventory.json"
+      },
+      {
+        "name": "arp-9b-122b-20261017-20261020T003400Z.tar.gz.part000",
+        "bytes": 1073741824,
+        "sha256": "66baf8de550f91f387aa232e75876d0ca364eea14813da4b8831b57fbe90fa49",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261020T003400Z.tar.gz.part000"
+      },
+      {
+        "name": "arp-9b-122b-20261017-20261020T003400Z.tar.gz.part001",
+        "bytes": 1073741824,
+        "sha256": "ad195f75809a3ccad58656f6fe8675fd5b5683a710ad0d58995cce4c0c246422",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261020T003400Z.tar.gz.part001"
+      },
+      {
+        "name": "arp-9b-122b-20261017-20261020T003400Z.tar.gz.part002",
+        "bytes": 1073741824,
+        "sha256": "46f575d114fdc1f14c17c4940f4f5a651261166269bfe3f7fbbfe3b6c7979198",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261020T003400Z.tar.gz.part002"
+      },
+      {
+        "name": "arp-9b-122b-20261017-20261020T003400Z.tar.gz.part003",
+        "bytes": 849108222,
+        "sha256": "77baf9b2d10682e5904b73b28c17fe34ae1729cd3e0a978afce440503945376b",
+        "url": "https://github.com/Jerry-114514/Jerry-vibe-coding/releases/download/arp-9b-122b-20261017/arp-9b-122b-20261017-20261020T003400Z.tar.gz.part003"
+      }
+    ],
+    "storage": "AutoDL -> GitHub; no local download"
+  }
+}

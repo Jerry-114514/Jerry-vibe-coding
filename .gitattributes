@@ -120,3 +120,4 @@ tools/verify_9b_repair_holdout.py -text
 tools/bundle_9b_repair_inputs.py -text
 docs/results/protocol-v2-20261016/u137-repair/** -text
 docs/results/protocol-v2-20261016/9b-v41-final/** -text
+docs/results/protocol-v2-20261016/9b-repair-final/** -text

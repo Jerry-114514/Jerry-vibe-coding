@@ -1,0 +1,718 @@
+{
+  "status": "fixed_factorial_endpoints_verified",
+  "timestamp_utc": "2026-10-20T00:33:23.489087+00:00",
+  "protocol_sha256": "ddb7c44059dd5b83ab19b25d8840c2280a545ae676c90dff155b9dc4e06553ba",
+  "seeds": [
+    42,
+    137
+  ],
+  "analysis_environment": {
+    "numpy": "2.3.2",
+    "matplotlib": "3.10.3"
+  },
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 2026101804,
+  "family_size": 24,
+  "scope": "Post-result exploratory2seed follow-up; historical PD reused; heldout single-image choice subset; not ARP confirmation",
+  "caveat": "Percentile bootstrap intervals are approximate; only2 training seeds cannot establish broad seed stability or equivalence",
+  "datasets": {
+    "development": {
+      "scores": {
+        "P-D-seed42": {
+          "pope": 0.8924444444444445,
+          "grounding": 0.8233333333333334,
+          "consistency": 0.89,
+          "mmstar": 0.694
+        },
+        "P-G-seed42": {
+          "pope": 0.8965555555555556,
+          "grounding": 0.7091666666666666,
+          "consistency": 0.88625,
+          "mmstar": 0.69
+        },
+        "N-D-seed42": {
+          "pope": 0.8837777777777778,
+          "grounding": 0.8791666666666667,
+          "consistency": 0.89125,
+          "mmstar": 0.7206666666666667
+        },
+        "N-G-seed42": {
+          "pope": 0.8966666666666666,
+          "grounding": 0.8879166666666667,
+          "consistency": 0.8875,
+          "mmstar": 0.7046666666666667
+        },
+        "P-D-seed137": {
+          "pope": 0.8234444444444444,
+          "grounding": 0.42583333333333334,
+          "consistency": 0.8775,
+          "mmstar": 0.7013333333333334
+        },
+        "P-G-seed137": {
+          "pope": 0.901,
+          "grounding": 0.6645833333333333,
+          "consistency": 0.8775,
+          "mmstar": 0.6773333333333333
+        },
+        "N-D-seed137": {
+          "pope": 0.8514444444444444,
+          "grounding": 0.8958333333333334,
+          "consistency": 0.8925,
+          "mmstar": 0.696
+        },
+        "N-G-seed137": {
+          "pope": 0.9023333333333333,
+          "grounding": 0.87,
+          "consistency": 0.8925,
+          "mmstar": 0.69
+        }
+      },
+      "N_scores": {
+        "pope": 0.8986666666666666,
+        "grounding": 0.8825,
+        "consistency": 0.81625,
+        "mmstar": 0.6066666666666667
+      },
+      "effects": {
+        "coordinate": {
+          "pope": {
+            "difference": 0.0051944444444443905,
+            "pointwise_ci95": [
+              -0.007277777777777772,
+              0.01866666666666661
+            ],
+            "bonferroni24_ci95": [
+              -0.010453819444444418,
+              0.022953819444444502
+            ],
+            "original_units": 9000,
+            "image_clusters": 500
+          },
+          "grounding": {
+            "difference": 0.22749999999999992,
+            "pointwise_ci95": [
+              0.10907144677597484,
+              0.34960570720263034
+            ],
+            "bonferroni24_ci95": [
+              0.09988404351144083,
+              0.36065550597518886
+            ],
+            "original_units": 2400,
+            "image_clusters": 1905
+          },
+          "consistency": {
+            "difference": 0.008124999999999938,
+            "pointwise_ci95": [
+              -0.00566055558195903,
+              0.0234177215189873
+            ],
+            "bonferroni24_ci95": [
+              -0.013783243033205989,
+              0.033576430612955434
+            ],
+            "original_units": 800,
+            "image_clusters": 774
+          },
+          "mmstar": {
+            "difference": 0.012166666666666659,
+            "pointwise_ci95": [
+              -0.004341666666666733,
+              0.02833333333333332
+            ],
+            "bonferroni24_ci95": [
+              -0.012528125000000008,
+              0.036194791666666795
+            ],
+            "original_units": 1500,
+            "image_clusters": 1500
+          }
+        },
+        "teacher": {
+          "pope": {
+            "difference": -0.03636111111111112,
+            "pointwise_ci95": [
+              -0.06944444444444442,
+              -0.005000000000000002
+            ],
+            "bonferroni24_ci95": [
+              -0.075009375,
+              -0.0013795138888889032
+            ],
+            "original_units": 9000,
+            "image_clusters": 500
+          },
+          "grounding": {
+            "difference": -0.026874999999999927,
+            "pointwise_ci95": [
+              -0.11427991554656833,
+              0.05919973638151109
+            ],
+            "bonferroni24_ci95": [
+              -0.12343334134375317,
+              0.06630935610894435
+            ],
+            "original_units": 2400,
+            "image_clusters": 1905
+          },
+          "consistency": {
+            "difference": 0.001875000000000071,
+            "pointwise_ci95": [
+              -0.008827238335435084,
+              0.012701363073110209
+            ],
+            "bonferroni24_ci95": [
+              -0.015339425491714765,
+              0.02005617590295033
+            ],
+            "original_units": 800,
+            "image_clusters": 774
+          },
+          "mmstar": {
+            "difference": 0.012499999999999956,
+            "pointwise_ci95": [
+              0.0006666666666667043,
+              0.024666666666666726
+            ],
+            "bonferroni24_ci95": [
+              -0.0067229166666666566,
+              0.0338614583333335
+            ],
+            "original_units": 1500,
+            "image_clusters": 1500
+          }
+        },
+        "interaction": {
+          "pope": {
+            "difference": 0.008944444444444533,
+            "pointwise_ci95": [
+              -0.015780555555555555,
+              0.03400000000000003
+            ],
+            "bonferroni24_ci95": [
+              -0.024287152777777737,
+              0.04188888888888893
+            ],
+            "original_units": 9000,
+            "image_clusters": 500
+          },
+          "grounding": {
+            "difference": 0.07083333333333319,
+            "pointwise_ci95": [
+              -0.1371658857599004,
+              0.28045787960486135
+            ],
+            "bonferroni24_ci95": [
+              -0.15398295978508433,
+              0.2981740123014604
+            ],
+            "original_units": 2400,
+            "image_clusters": 1905
+          },
+          "consistency": {
+            "difference": 0.0,
+            "pointwise_ci95": [
+              -0.019826517967781898,
+              0.020050125313283207
+            ],
+            "bonferroni24_ci95": [
+              -0.03305122988867631,
+              0.03174463509044545
+            ],
+            "original_units": 800,
+            "image_clusters": 774
+          },
+          "mmstar": {
+            "difference": -0.0030000000000001137,
+            "pointwise_ci95": [
+              -0.03400000000000003,
+              0.026666666666666616
+            ],
+            "bonferroni24_ci95": [
+              -0.04799999999999993,
+              0.03999999999999999
+            ],
+            "original_units": 1500,
+            "image_clusters": 1500
+          }
+        }
+      },
+      "per_seed_effects": {
+        "coordinate": {
+          "pope": {
+            "42": -0.00427777777777788,
+            "137": 0.014666666666666661
+          },
+          "grounding": {
+            "42": 0.11729166666666668,
+            "137": 0.3377083333333334
+          },
+          "consistency": {
+            "42": 0.0012499999999999178,
+            "137": 0.015000000000000013
+          },
+          "mmstar": {
+            "42": 0.020666666666666722,
+            "137": 0.003666666666666596
+          }
+        },
+        "teacher": {
+          "pope": {
+            "42": -0.008499999999999952,
+            "137": -0.06422222222222224
+          },
+          "grounding": {
+            "42": 0.05270833333333336,
+            "137": -0.10645833333333327
+          },
+          "consistency": {
+            "42": 0.003750000000000031,
+            "137": 0.0
+          },
+          "mmstar": {
+            "42": 0.010000000000000009,
+            "137": 0.015000000000000013
+          }
+        },
+        "interaction": {
+          "pope": {
+            "42": -0.008777777777777773,
+            "137": 0.026666666666666727
+          },
+          "grounding": {
+            "42": -0.12291666666666679,
+            "137": 0.2645833333333333
+          },
+          "consistency": {
+            "42": 0.0,
+            "137": 0.0
+          },
+          "mmstar": {
+            "42": 0.01200000000000001,
+            "137": -0.018000000000000016
+          }
+        }
+      },
+      "errors": {
+        "P-D-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "e5b670ae50f679586b329fcc474cf67f7f4dae775a71468724b98453a05fb83e"
+        },
+        "P-G-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "5d5f736848e03bd774c29584d94b83307adc6a6f57d12238a5259c15316da75a"
+        },
+        "N-D-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "0b464825180f1abd16f6a5c118f18945a5938b08acb28be921041afa406ae8a5"
+        },
+        "N-G-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "726a7a6d16b3f840f31ca497b9de3b176596f57414d7771ed9e73c064f5a6d4a"
+        },
+        "P-D-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "3e7dab757c14be7300b88877a0021cf197d5c994cda12e321e3a2ee0835a3a3a"
+        },
+        "P-G-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "ed281571c0c21e22f9868996f8784aa1d7b8b3873d2cf278e2d8cdee6f7058aa"
+        },
+        "N-D-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "ad48a8b35a73419d4087ffcd1038c33734d80e12e5647ebfe464f9fcc598c6fa"
+        },
+        "N-G-seed137": {
+          "length_capped_outputs": 1,
+          "ledger_sha256": "ec37f039acc2c859142995b9f9ee42bcffd047008af2728001eeb491fa89f2ba"
+        }
+      }
+    },
+    "heldout": {
+      "scores": {
+        "P-D-seed42": {
+          "pope": 0.9,
+          "grounding": 0.8333333333333334,
+          "consistency": 0.8833333333333333,
+          "mmstar": 0.5833333333333334
+        },
+        "P-G-seed42": {
+          "pope": 0.9083333333333333,
+          "grounding": 0.6916666666666667,
+          "consistency": 0.8916666666666667,
+          "mmstar": 0.5833333333333334
+        },
+        "N-D-seed42": {
+          "pope": 0.9,
+          "grounding": 0.8833333333333333,
+          "consistency": 0.8583333333333333,
+          "mmstar": 0.5833333333333334
+        },
+        "N-G-seed42": {
+          "pope": 0.925,
+          "grounding": 0.9,
+          "consistency": 0.8833333333333333,
+          "mmstar": 0.575
+        },
+        "P-D-seed137": {
+          "pope": 0.85,
+          "grounding": 0.43333333333333335,
+          "consistency": 0.8416666666666667,
+          "mmstar": 0.5583333333333333
+        },
+        "P-G-seed137": {
+          "pope": 0.9083333333333333,
+          "grounding": 0.7416666666666667,
+          "consistency": 0.8666666666666667,
+          "mmstar": 0.5416666666666666
+        },
+        "N-D-seed137": {
+          "pope": 0.825,
+          "grounding": 0.9083333333333333,
+          "consistency": 0.8833333333333333,
+          "mmstar": 0.5583333333333333
+        },
+        "N-G-seed137": {
+          "pope": 0.9416666666666667,
+          "grounding": 0.8833333333333333,
+          "consistency": 0.9,
+          "mmstar": 0.575
+        }
+      },
+      "N_scores": {
+        "pope": 0.9333333333333333,
+        "grounding": 0.8833333333333333,
+        "consistency": 0.85,
+        "mmstar": 0.5583333333333333
+      },
+      "effects": {
+        "coordinate": {
+          "pope": {
+            "difference": 0.006250000000000089,
+            "pointwise_ci95": [
+              -0.028925619834710703,
+              0.04094915912945169
+            ],
+            "bonferroni24_ci95": [
+              -0.058132963154269995,
+              0.0714285714285714
+            ],
+            "original_units": 120,
+            "image_clusters": 116
+          },
+          "grounding": {
+            "difference": 0.2187499999999999,
+            "pointwise_ci95": [
+              0.09090909090909094,
+              0.359504132231405
+            ],
+            "bonferroni24_ci95": [
+              0.05327868852459017,
+              0.4085450634057972
+            ],
+            "original_units": 120,
+            "image_clusters": 110
+          },
+          "consistency": {
+            "difference": 0.01041666666666663,
+            "pointwise_ci95": [
+              -0.03913043478260869,
+              0.05814437984496116
+            ],
+            "bonferroni24_ci95": [
+              -0.0669897852824682,
+              0.0847457627118644
+            ],
+            "original_units": 120,
+            "image_clusters": 92
+          },
+          "mmstar": {
+            "difference": 0.006249999999999978,
+            "pointwise_ci95": [
+              -0.0378151260504202,
+              0.048790483806477256
+            ],
+            "bonferroni24_ci95": [
+              -0.07889473570936639,
+              0.07499999999999998
+            ],
+            "original_units": 120,
+            "image_clusters": 119
+          }
+        },
+        "teacher": {
+          "pope": {
+            "difference": -0.052083333333333315,
+            "pointwise_ci95": [
+              -0.11570247933884292,
+              -0.004032258064516234
+            ],
+            "bonferroni24_ci95": [
+              -0.14705882352941174,
+              0.012499999999999956
+            ],
+            "original_units": 120,
+            "image_clusters": 116
+          },
+          "grounding": {
+            "difference": -0.03958333333333336,
+            "pointwise_ci95": [
+              -0.17241760756789748,
+              0.08974358974358976
+            ],
+            "bonferroni24_ci95": [
+              -0.2033898305084746,
+              0.12285045903954803
+            ],
+            "original_units": 120,
+            "image_clusters": 110
+          },
+          "consistency": {
+            "difference": -0.018749999999999933,
+            "pointwise_ci95": [
+              -0.04385964912280693,
+              0.004546497080900815
+            ],
+            "bonferroni24_ci95": [
+              -0.06355932203389836,
+              0.02868177083333379
+            ],
+            "original_units": 120,
+            "image_clusters": 92
+          },
+          "mmstar": {
+            "difference": 0.002083333333333326,
+            "pointwise_ci95": [
+              -0.03749999999999998,
+              0.03749999999999998
+            ],
+            "bonferroni24_ci95": [
+              -0.06933440563725488,
+              0.06126768042782908
+            ],
+            "original_units": 120,
+            "image_clusters": 119
+          }
+        },
+        "interaction": {
+          "pope": {
+            "difference": -0.03749999999999998,
+            "pointwise_ci95": [
+              -0.11475409836065575,
+              0.03305785123966931
+            ],
+            "bonferroni24_ci95": [
+              -0.1716361478912709,
+              0.08403361344537814
+            ],
+            "original_units": 120,
+            "image_clusters": 116
+          },
+          "grounding": {
+            "difference": 0.08750000000000002,
+            "pointwise_ci95": [
+              -0.2148760330578513,
+              0.39167500000000005
+            ],
+            "bonferroni24_ci95": [
+              -0.27985911016949155,
+              0.45634630200308274
+            ],
+            "original_units": 120,
+            "image_clusters": 110
+          },
+          "consistency": {
+            "difference": -0.004166666666666652,
+            "pointwise_ci95": [
+              -0.04761904761904767,
+              0.045454545454545414
+            ],
+            "bonferroni24_ci95": [
+              -0.07735450873940679,
+              0.08538747266944947
+            ],
+            "original_units": 120,
+            "image_clusters": 92
+          },
+          "mmstar": {
+            "difference": -0.012499999999999956,
+            "pointwise_ci95": [
+              -0.09917355371900827,
+              0.06199638429752038
+            ],
+            "bonferroni24_ci95": [
+              -0.16215947444551587,
+              0.09999999999999998
+            ],
+            "original_units": 120,
+            "image_clusters": 119
+          }
+        }
+      },
+      "per_seed_effects": {
+        "coordinate": {
+          "pope": {
+            "42": 0.00833333333333336,
+            "137": 0.004166666666666652
+          },
+          "grounding": {
+            "42": 0.1291666666666667,
+            "137": 0.3083333333333333
+          },
+          "consistency": {
+            "42": -0.016666666666666663,
+            "137": 0.03749999999999992
+          },
+          "mmstar": {
+            "42": -0.004166666666666707,
+            "137": 0.016666666666666607
+          }
+        },
+        "teacher": {
+          "pope": {
+            "42": -0.016666666666666663,
+            "137": -0.08750000000000002
+          },
+          "grounding": {
+            "42": 0.062499999999999944,
+            "137": -0.14166666666666666
+          },
+          "consistency": {
+            "42": -0.01666666666666672,
+            "137": -0.02083333333333337
+          },
+          "mmstar": {
+            "42": 0.004166666666666707,
+            "137": 5.551115123125783e-17
+          }
+        },
+        "interaction": {
+          "pope": {
+            "42": -0.01666666666666672,
+            "137": -0.05833333333333335
+          },
+          "grounding": {
+            "42": -0.15833333333333344,
+            "137": 0.3333333333333335
+          },
+          "consistency": {
+            "42": -0.016666666666666607,
+            "137": 0.008333333333333304
+          },
+          "mmstar": {
+            "42": 0.008333333333333415,
+            "137": -0.033333333333333326
+          }
+        }
+      },
+      "errors": {
+        "P-D-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "5bf2141c7a4c858673038c5283134f1f8212185ad09f5b8f587a03900ed92074"
+        },
+        "P-G-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "32cbc419a1521522099ca3a7582a7c967a8ed8defe2eeb1bae307c49d17cec54"
+        },
+        "N-D-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "0cf8900ad3d565216d0811356f463644b17baea521116dc093e8560be15b0697"
+        },
+        "N-G-seed42": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "4a4ec86d4bbc5fd7533ceafeefa46a99afaae4b9c42bcf13f74780d1af0b2b0a"
+        },
+        "P-D-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "4d084756091e0589ad63628e396b5d4a2f8d45858d5f38ca8e2861867c31fc32"
+        },
+        "P-G-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "5c55d845ee7fbe1c1b7b9586938ab6a1a005ffb3195a552c78e4b51c078e7374"
+        },
+        "N-D-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "f9db24af1967db425a788b1879dff1fe4209decb26ddfb2ad257e3a0af99abd2"
+        },
+        "N-G-seed137": {
+          "length_capped_outputs": 0,
+          "ledger_sha256": "8d04a8a595f162c8a6573e00f01e8d745a18c70f2364965d9b3d5ee0f789cbdf"
+        }
+      }
+    }
+  },
+  "training": {
+    "P-D-seed42": {
+      "updates": 1000,
+      "adapter_sha256": "17e9709bde7d932ee03ec88b16e647a733eebe2e945c7f1f12469c135e0a1116",
+      "loss_sha256": "05cfb74579f24db5019a868e9d9a6aa1af40d7aecaf8eb4c8ef1542555ec4b5b",
+      "last_loss": 0.009337916038930416,
+      "pure_step_seconds": 938.5440038144588,
+      "peak_reserved_bytes": 21095251968,
+      "source": "historical fixed endpoint"
+    },
+    "P-G-seed42": {
+      "updates": 1000,
+      "adapter_sha256": "e981d82d348a996356a37387ff4aae333fb406fa495a1419da70b4f62222b9a4",
+      "loss_sha256": "8b1381589d2fd78f5d01b3cb6f4e10ae449835bff3c419cc37e28fda950cd177",
+      "last_loss": 0.00013230499462224543,
+      "pure_step_seconds": 1073.4114107638597,
+      "peak_reserved_bytes": 20803747840,
+      "source": "new fixed endpoint"
+    },
+    "N-D-seed42": {
+      "updates": 1000,
+      "adapter_sha256": "2bb0212f4bd616978ca7d43f172f77f53a251e7d040b30f9883b2c6771030855",
+      "loss_sha256": "d673d74d5ea05523d523767e57fc5993edcd82340cb7258c9d7aa0344b8c7230",
+      "last_loss": 0.031067464500665665,
+      "pure_step_seconds": 2047.4069286361337,
+      "peak_reserved_bytes": 21030240256,
+      "source": "new fixed endpoint"
+    },
+    "N-G-seed42": {
+      "updates": 1000,
+      "adapter_sha256": "692396069899c1765dc93d2d84bfb8072c21b0deaf1f2d1cdabc281e4e47b758",
+      "loss_sha256": "95e1e033c6edee9537dc571237743a42450c03495e60314edc9f35948f470ff1",
+      "last_loss": 0.00045529252383857965,
+      "pure_step_seconds": 1067.9142867550254,
+      "peak_reserved_bytes": 20709376000,
+      "source": "new fixed endpoint"
+    },
+    "P-D-seed137": {
+      "updates": 1000,
+      "adapter_sha256": "c2b84219a0f4ebd1f0ba520c4077152f60df5fefd70149672669a1b348dbdb46",
+      "loss_sha256": "cd6884e52d225215c3637e66bdf9ee1b6cdded710aeba64a28242034ed060856",
+      "last_loss": 2.5629651645431295e-05,
+      "pure_step_seconds": 931.9956158697605,
+      "peak_reserved_bytes": 20799553536,
+      "source": "historical fixed endpoint"
+    },
+    "P-G-seed137": {
+      "updates": 1000,
+      "adapter_sha256": "43e3b83c861424de34cad39b405a6d24e76ca87a754f5f2c8301d8ace105ed7f",
+      "loss_sha256": "08b790dad138599f811d2c9087ed008eb9575446c5f3e58bd54fbc37a41a931b",
+      "last_loss": 0.0007289811037480831,
+      "pure_step_seconds": 1003.8487494923174,
+      "peak_reserved_bytes": 20524826624,
+      "source": "new fixed endpoint"
+    },
+    "N-D-seed137": {
+      "updates": 1000,
+      "adapter_sha256": "c76a91f0b5430257a1f49394178f4465fc8e3231629527a10327b70d029e023e",
+      "loss_sha256": "66550f1ab1302767d48c8286ffb376c591b2822dae6d68a0c583ceb2fbd61bee",
+      "last_loss": 0.000210375408641994,
+      "pure_step_seconds": 1983.7281194888055,
+      "peak_reserved_bytes": 21533556736,
+      "source": "new fixed endpoint"
+    },
+    "N-G-seed137": {
+      "updates": 1000,
+      "adapter_sha256": "5cea4cdd592f560e53343ed7d2d3d265b74aa602c565ecf37161ee73edccd496",
+      "loss_sha256": "7ada68ab2e2cad70007808ad501d4b45d713d6f0e1722d94b71ffbd0fbea3366",
+      "last_loss": 5.54320740775438e-06,
+      "pure_step_seconds": 1314.2523322999477,
+      "peak_reserved_bytes": 21250441216,
+      "source": "new fixed endpoint"
+    }
+  }
+}
