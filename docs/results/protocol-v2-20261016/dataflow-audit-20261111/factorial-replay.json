@@ -1,0 +1,378 @@
+{
+  "frozen_training_inputs": {
+    "42": {
+      "non_grounding_rows_identical": 450,
+      "grounding_rows": 150,
+      "grounding_prompt_hash_changed": 150,
+      "grounding_gt_ids_changed": 150,
+      "target_last_token_id_counts": {
+        "248046": 4800
+      },
+      "normalized_minus_pixel_token_lengths": {
+        "prompt_tokens": {
+          "min": 35,
+          "mean": 35,
+          "max": 35
+        },
+        "gt_target_ids": {
+          "min": 1,
+          "mean": 25.573333333333334,
+          "max": 48
+        },
+        "teacher_target_ids": {
+          "min": -6,
+          "mean": 8.253333333333334,
+          "max": 37
+        }
+      }
+    },
+    "137": {
+      "non_grounding_rows_identical": 450,
+      "grounding_rows": 150,
+      "grounding_prompt_hash_changed": 150,
+      "grounding_gt_ids_changed": 150,
+      "target_last_token_id_counts": {
+        "248046": 4800
+      },
+      "normalized_minus_pixel_token_lengths": {
+        "prompt_tokens": {
+          "min": 35,
+          "mean": 35,
+          "max": 35
+        },
+        "gt_target_ids": {
+          "min": 3,
+          "mean": 25.02,
+          "max": 48
+        },
+        "teacher_target_ids": {
+          "min": -6,
+          "mean": 7.033333333333333,
+          "max": 32
+        }
+      }
+    }
+  },
+  "heldout_vs_eligible_pool": {
+    "training_paths": 2131,
+    "training_unique_byte_hashes": 2092,
+    "training_coco_ids_from_filenames": 1183,
+    "comparisons": {
+      "heldout": {
+        "eval_paths": 426,
+        "eval_unique_byte_hashes": 426,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 214,
+        "shared_coco_ids_from_filenames": 0
+      }
+    },
+    "basis": "Frozen manifest paths joined to verified restore-map file SHA256. No image decoding."
+  },
+  "heldout_vs_development": {
+    "training_paths": 4705,
+    "training_unique_byte_hashes": 4609,
+    "training_coco_ids_from_filenames": 2405,
+    "comparisons": {
+      "heldout": {
+        "eval_paths": 426,
+        "eval_unique_byte_hashes": 426,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 214,
+        "shared_coco_ids_from_filenames": 0
+      }
+    },
+    "basis": "Frozen manifest paths joined to verified restore-map file SHA256. No image decoding."
+  },
+  "datasets": {
+    "development": {
+      "effects": {
+        "coordinate": {
+          "pope": {
+            "difference": 0.0051944444444443905,
+            "pointwise_ci95": [
+              -0.007277777777777827,
+              0.01866666666666661
+            ],
+            "bonferroni24_ci95": [
+              -0.010453819444444465,
+              0.022953819444444527
+            ]
+          },
+          "grounding": {
+            "difference": 0.22749999999999992,
+            "pointwise_ci95": [
+              0.10907144677597484,
+              0.34960570720263034
+            ],
+            "bonferroni24_ci95": [
+              0.0998840435114408,
+              0.36065550597518886
+            ]
+          },
+          "consistency": {
+            "difference": 0.008124999999999938,
+            "pointwise_ci95": [
+              -0.005660555581959032,
+              0.023417721518987248
+            ],
+            "bonferroni24_ci95": [
+              -0.013783243033205933,
+              0.03357643061295538
+            ]
+          },
+          "mmstar": {
+            "difference": 0.012166666666666659,
+            "pointwise_ci95": [
+              -0.004341666666666733,
+              0.02833333333333332
+            ],
+            "bonferroni24_ci95": [
+              -0.012528125,
+              0.036194791666666795
+            ]
+          }
+        },
+        "teacher": {
+          "pope": {
+            "difference": -0.03636111111111112,
+            "pointwise_ci95": [
+              -0.06944444444444442,
+              -0.005000000000000003
+            ],
+            "bonferroni24_ci95": [
+              -0.07500937499999999,
+              -0.0013795138888888707
+            ]
+          },
+          "grounding": {
+            "difference": -0.026874999999999927,
+            "pointwise_ci95": [
+              -0.1142799155465683,
+              0.05919973638151098
+            ],
+            "bonferroni24_ci95": [
+              -0.12343334134375314,
+              0.06630935610894433
+            ]
+          },
+          "consistency": {
+            "difference": 0.001875000000000071,
+            "pointwise_ci95": [
+              -0.008827238335435084,
+              0.012701363073110261
+            ],
+            "bonferroni24_ci95": [
+              -0.015339425491714775,
+              0.020056175902950245
+            ]
+          },
+          "mmstar": {
+            "difference": 0.012499999999999956,
+            "pointwise_ci95": [
+              0.0006666666666667043,
+              0.02466666666666667
+            ],
+            "bonferroni24_ci95": [
+              -0.0067229166666666566,
+              0.03386145833333344
+            ]
+          }
+        },
+        "interaction": {
+          "pope": {
+            "difference": 0.008944444444444533,
+            "pointwise_ci95": [
+              -0.015780555555555555,
+              0.03400000000000003
+            ],
+            "bonferroni24_ci95": [
+              -0.024287152777777737,
+              0.04188888888888893
+            ]
+          },
+          "grounding": {
+            "difference": 0.07083333333333319,
+            "pointwise_ci95": [
+              -0.1371658857599004,
+              0.28045787960486135
+            ],
+            "bonferroni24_ci95": [
+              -0.15398295978508433,
+              0.2981740123014604
+            ]
+          },
+          "consistency": {
+            "difference": 0.0,
+            "pointwise_ci95": [
+              -0.019826517967781898,
+              0.020050125313283207
+            ],
+            "bonferroni24_ci95": [
+              -0.03305122988867631,
+              0.03174463509044545
+            ]
+          },
+          "mmstar": {
+            "difference": -0.0030000000000001137,
+            "pointwise_ci95": [
+              -0.03400000000000003,
+              0.026666666666666616
+            ],
+            "bonferroni24_ci95": [
+              -0.04799999999999993,
+              0.03999999999999999
+            ]
+          }
+        }
+      },
+      "replayed_rows": 152100
+    },
+    "heldout": {
+      "effects": {
+        "coordinate": {
+          "pope": {
+            "difference": 0.006250000000000089,
+            "pointwise_ci95": [
+              -0.028925619834710647,
+              0.040949159129451636
+            ],
+            "bonferroni24_ci95": [
+              -0.058132963154269995,
+              0.0714285714285714
+            ]
+          },
+          "grounding": {
+            "difference": 0.2187499999999999,
+            "pointwise_ci95": [
+              0.09090909090909094,
+              0.359504132231405
+            ],
+            "bonferroni24_ci95": [
+              0.05327868852459017,
+              0.4085450634057972
+            ]
+          },
+          "consistency": {
+            "difference": 0.01041666666666663,
+            "pointwise_ci95": [
+              -0.03913043478260869,
+              0.05814437984496127
+            ],
+            "bonferroni24_ci95": [
+              -0.06698978528246825,
+              0.0847457627118644
+            ]
+          },
+          "mmstar": {
+            "difference": 0.006249999999999978,
+            "pointwise_ci95": [
+              -0.037815126050420256,
+              0.0487904838064772
+            ],
+            "bonferroni24_ci95": [
+              -0.07889473570936645,
+              0.07500000000000002
+            ]
+          }
+        },
+        "teacher": {
+          "pope": {
+            "difference": -0.052083333333333315,
+            "pointwise_ci95": [
+              -0.11570247933884298,
+              -0.0040322580645161255
+            ],
+            "bonferroni24_ci95": [
+              -0.14705882352941174,
+              0.012500000000000011
+            ]
+          },
+          "grounding": {
+            "difference": -0.03958333333333336,
+            "pointwise_ci95": [
+              -0.17241760756789748,
+              0.08974358974358976
+            ],
+            "bonferroni24_ci95": [
+              -0.2033898305084746,
+              0.12285045903954801
+            ]
+          },
+          "consistency": {
+            "difference": -0.018749999999999933,
+            "pointwise_ci95": [
+              -0.04385964912280699,
+              0.0045464970809007636
+            ],
+            "bonferroni24_ci95": [
+              -0.0635593220338983,
+              0.028681770833333783
+            ]
+          },
+          "mmstar": {
+            "difference": 0.002083333333333326,
+            "pointwise_ci95": [
+              -0.03749999999999998,
+              0.03749999999999998
+            ],
+            "bonferroni24_ci95": [
+              -0.06933440563725489,
+              0.061267680427829034
+            ]
+          }
+        },
+        "interaction": {
+          "pope": {
+            "difference": -0.03749999999999998,
+            "pointwise_ci95": [
+              -0.11475409836065575,
+              0.03305785123966931
+            ],
+            "bonferroni24_ci95": [
+              -0.1716361478912709,
+              0.08403361344537814
+            ]
+          },
+          "grounding": {
+            "difference": 0.08750000000000002,
+            "pointwise_ci95": [
+              -0.2148760330578513,
+              0.391675
+            ],
+            "bonferroni24_ci95": [
+              -0.27985911016949155,
+              0.45634630200308274
+            ]
+          },
+          "consistency": {
+            "difference": -0.004166666666666652,
+            "pointwise_ci95": [
+              -0.04761904761904767,
+              0.045454545454545414
+            ],
+            "bonferroni24_ci95": [
+              -0.07735450873940679,
+              0.08538747266944947
+            ]
+          },
+          "mmstar": {
+            "difference": -0.012499999999999956,
+            "pointwise_ci95": [
+              -0.09917355371900827,
+              0.06199638429752038
+            ],
+            "bonferroni24_ci95": [
+              -0.16215947444551587,
+              0.09999999999999998
+            ]
+          }
+        }
+      },
+      "replayed_rows": 8640
+    }
+  },
+  "registered_effect_intervals_reproduced": 24,
+  "scope": "CPU replay of frozen token arrays and saved raw generations, not tokenizer re-encoding or training-state tensor replay."
+}

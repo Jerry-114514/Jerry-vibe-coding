@@ -2,6 +2,8 @@
 
 2026-11-11。依据[设计复审](../experiment-design-review-20261111.md)，本轮用 CPU 重新读了 GitHub 原始逐题输出、冻结评测输入和角色清单。这里区分了原始数据复算、历史验收记录和还没有重做的检查。未启动训练、未修改历史分数。
 
+后续复算已覆盖[原 B/C/D](v1-replay.json)、[30 次训练与 API 教师](training-chain-replay.json)、[登记区间和图像别名敏感性](paired-intervals-replay.json)。细节见[第二批证据](training-and-statistics.md)；下方保留第一批证据及其当时的核验范围。
+
 ## 已重算的结果
 
 | 范围 | 重算与核验 | 结果 |

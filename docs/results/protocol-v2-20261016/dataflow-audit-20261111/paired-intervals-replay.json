@@ -1,0 +1,393 @@
+{
+  "9b_registered": {
+    "A1-A2": {
+      "pope": {
+        "difference": 0.0029333333333333433,
+        "pointwise_ci95": [
+          -0.0026444444444445603,
+          0.009600555555555598
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.005092638888888926,
+          0.013722638888889022
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.01516666666666655,
+        "pointwise_ci95": [
+          -0.011854863440723442,
+          0.05326796025580931
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.020784205789997737,
+          0.07197338666692639
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.016750000000000043,
+        "pointwise_ci95": [
+          -0.03144724229033712,
+          0.06240601503759391
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.05491704291362374,
+          0.0822003855790985
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.002266666666666639,
+        "pointwise_ci95": [
+          -0.04707000000000003,
+          0.039866666666666606
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0752016666666666,
+          0.05137833333333353
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    },
+    "A1-U": {
+      "pope": {
+        "difference": 0.033288888888889034,
+        "pointwise_ci95": [
+          0.007488888888888767,
+          0.06382444444444463
+        ],
+        "bonferroni_familywise_ci95": [
+          0.0041518055555556845,
+          0.07622791666666742
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.2114166666666666,
+        "pointwise_ci95": [
+          0.08410337002320907,
+          0.3526568211014914
+        ],
+        "bonferroni_familywise_ci95": [
+          0.04484760174418596,
+          0.42354816439797793
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": -0.01774999999999982,
+        "pointwise_ci95": [
+          -0.04918861516272345,
+          0.008397540397540296
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.06557187500000008,
+          0.01625531095172263
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": -0.03933333333333333,
+        "pointwise_ci95": [
+          -0.08880666666666676,
+          -0.0010666666666667712
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.11295750000000002,
+          0.011222500000000064
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    },
+    "A1-N": {
+      "pope": {
+        "difference": 0.005755555555555625,
+        "pointwise_ci95": [
+          0.0005555555555556396,
+          0.011199999999999988
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0021333333333333204,
+          0.013644444444444367
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.0023333333333332984,
+        "pointwise_ci95": [
+          -0.009950957449859051,
+          0.013289699943206893
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.01674137382672275,
+          0.01770697800716493
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.05049999999999999,
+        "pointwise_ci95": [
+          0.018858111266947086,
+          0.07995232273838611
+        ],
+        "bonferroni_familywise_ci95": [
+          0.003446684094661579,
+          0.09282511615860861
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.04626666666666668,
+        "pointwise_ci95": [
+          -0.0028033333333333517,
+          0.08599999999999997
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.027755833333333365,
+          0.0987999999999999
+        ],
+        "image_clusters": 1500,
+        "original_units": 1500
+      }
+    }
+  },
+  "7b_grounding_registered": {
+    "A1-A2": {
+      "grounding": {
+        "difference": 0.006166666666666765,
+        "pointwise_ci95": [
+          -0.0009263157894736668,
+          0.013549566167226771
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.003015749585537323,
+          0.016028344997941646
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      }
+    },
+    "A1-U": {
+      "grounding": {
+        "difference": 0.03316666666666679,
+        "pointwise_ci95": [
+          0.008018842686511738,
+          0.07038783801983314
+        ],
+        "bonferroni_familywise_ci95": [
+          0.005287836068512873,
+          0.08012801692431801
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      }
+    },
+    "A1-N": {
+      "grounding": {
+        "difference": 0.00883333333333336,
+        "pointwise_ci95": [
+          0.0001656177983763052,
+          0.017627585993818484
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.002074287574709552,
+          0.019804912588551823
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      }
+    },
+    "U-N": {
+      "grounding": {
+        "difference": -0.02433333333333343,
+        "pointwise_ci95": [
+          -0.05950420130338842,
+          0.0010632343459705167
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.07109714121520391,
+          0.004518794326241041
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      }
+    }
+  },
+  "9b_byte_alias_cluster_sensitivity": {
+    "A1-A2": {
+      "pope": {
+        "difference": 0.0029333333333333433,
+        "pointwise_ci95": [
+          -0.0026444444444445603,
+          0.009600555555555598
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.005092638888888926,
+          0.013722638888889022
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.01516666666666655,
+        "pointwise_ci95": [
+          -0.011854863440723442,
+          0.05326796025580931
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.020784205789997737,
+          0.07197338666692639
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.016750000000000043,
+        "pointwise_ci95": [
+          -0.03144724229033712,
+          0.06240601503759391
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.05491704291362374,
+          0.0822003855790985
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.002266666666666639,
+        "pointwise_ci95": [
+          -0.04688669735849272,
+          0.04024532459770321
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.07678685123432412,
+          0.05331262625518409
+        ],
+        "image_clusters": 1430,
+        "original_units": 1500
+      }
+    },
+    "A1-U": {
+      "pope": {
+        "difference": 0.033288888888889034,
+        "pointwise_ci95": [
+          0.007488888888888767,
+          0.06382444444444463
+        ],
+        "bonferroni_familywise_ci95": [
+          0.0041518055555556845,
+          0.07622791666666742
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.2114166666666666,
+        "pointwise_ci95": [
+          0.08410337002320907,
+          0.3526568211014914
+        ],
+        "bonferroni_familywise_ci95": [
+          0.04484760174418596,
+          0.42354816439797793
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": -0.01774999999999982,
+        "pointwise_ci95": [
+          -0.04918861516272345,
+          0.008397540397540296
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.06557187500000008,
+          0.01625531095172263
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": -0.03933333333333333,
+        "pointwise_ci95": [
+          -0.08835662009314704,
+          -0.0005311996869853898
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.11493095901392131,
+          0.01071156011405887
+        ],
+        "image_clusters": 1430,
+        "original_units": 1500
+      }
+    },
+    "A1-N": {
+      "pope": {
+        "difference": 0.005755555555555625,
+        "pointwise_ci95": [
+          0.0005555555555556396,
+          0.011199999999999988
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.0021333333333333204,
+          0.013644444444444367
+        ],
+        "image_clusters": 500,
+        "original_units": 9000
+      },
+      "grounding": {
+        "difference": 0.0023333333333332984,
+        "pointwise_ci95": [
+          -0.009950957449859051,
+          0.013289699943206893
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.01674137382672275,
+          0.01770697800716493
+        ],
+        "image_clusters": 1905,
+        "original_units": 2400
+      },
+      "consistency": {
+        "difference": 0.05049999999999999,
+        "pointwise_ci95": [
+          0.018858111266947086,
+          0.07995232273838611
+        ],
+        "bonferroni_familywise_ci95": [
+          0.003446684094661579,
+          0.09282511615860861
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "mmstar": {
+        "difference": 0.04626666666666668,
+        "pointwise_ci95": [
+          -0.0033378394528263714,
+          0.08588554670747349
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.02982297226039444,
+          0.09752067572099288
+        ],
+        "image_clusters": 1430,
+        "original_units": 1500
+      }
+    }
+  },
+  "scope": "A post-hoc sensitivity; exact archived file SHA only, not RGB or semantic near-duplicates."
+}

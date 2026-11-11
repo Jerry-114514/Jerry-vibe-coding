@@ -1,0 +1,513 @@
+{
+  "map_sha256": "c90424989ce1ec97cd71f06f2f2490b96a591395b2db30cbc09a2aa8923f71ab",
+  "images_v4_pool": {
+    "training_paths": 2132,
+    "training_unique_byte_hashes": 2093,
+    "training_coco_ids_from_filenames": 1183,
+    "comparisons": {
+      "calibration": {
+        "eval_paths": 381,
+        "eval_unique_byte_hashes": 381,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 142,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "audit": {
+        "eval_paths": 2677,
+        "eval_unique_byte_hashes": 2677,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 1098,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "confirm": {
+        "eval_paths": 2646,
+        "eval_unique_byte_hashes": 2646,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 1091,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "historical_v41": {
+        "eval_paths": 4705,
+        "eval_unique_byte_hashes": 4609,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 2405,
+        "shared_coco_ids_from_filenames": 0
+      }
+    },
+    "basis": "Frozen manifest paths joined to verified restore-map file SHA256. No image decoding."
+  },
+  "images_9b_eligible": {
+    "training_paths": 2131,
+    "training_unique_byte_hashes": 2092,
+    "training_coco_ids_from_filenames": 1183,
+    "comparisons": {
+      "calibration": {
+        "eval_paths": 381,
+        "eval_unique_byte_hashes": 381,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 142,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "audit": {
+        "eval_paths": 2677,
+        "eval_unique_byte_hashes": 2677,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 1098,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "confirm": {
+        "eval_paths": 2646,
+        "eval_unique_byte_hashes": 2646,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 1091,
+        "shared_coco_ids_from_filenames": 0
+      },
+      "historical_v41": {
+        "eval_paths": 4705,
+        "eval_unique_byte_hashes": 4609,
+        "shared_paths": 0,
+        "shared_byte_hashes": 0,
+        "coco_ids_from_filenames": 2405,
+        "shared_coco_ids_from_filenames": 0
+      }
+    },
+    "basis": "Frozen manifest paths joined to verified restore-map file SHA256. No image decoding."
+  },
+  "eligible_matches_v4_pool": 3540,
+  "excluded_item_axes": {
+    "consistency": 5
+  },
+  "7b": {
+    "A1-seed42": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "5f4d019b4c57bca960a0f299493acf2966781fe50c47125cf12cfc97647ba608",
+      "adapter_sha256": "71a3a6b7372fd706d1818707df33e52522c3f4d9d4ae15f5e9c8ab1e16d266d1",
+      "recovery_sha256": "74363b159fc6dec79a5687366af8447fa25b556dc7cd8d6ac3a25b331542b3ef",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A2-seed42": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 301,
+      "loss_sha256": "3fd87ea9bb31a7d1a7c3a3847d078cdb1359846695597658b97773e164f95c85",
+      "adapter_sha256": "6aad3b16ade7b3565d322ccf76f3993ec99783f763b558b9ce5cac98924b04bb",
+      "recovery_sha256": "06d070cdc229061708f92f7dd5fe5c69046a5ae8bf274581aa320107a6648252",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "U-seed42": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 579,
+      "loss_sha256": "b08b6bf1f0fdf250ac9d3d29002769c21bb7554aecf1808c41f09d29d1d17357",
+      "adapter_sha256": "5d15dfb49bc44f042d54a504ae96082995dedf9346fa40ff10d7e80b7714cafa",
+      "recovery_sha256": "5cd74979e46ed0ed1734f83182c6646f37516258c65df9afe8cab0f516c7c148",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A1-seed137": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "ced321eb4378534377c56266e5526164b11774af626c1281fccb9a04c4493bc7",
+      "adapter_sha256": "67bfacc6d58e44ecdaa245eef55aafadd01ae4f2a410fa7f129949f0c0cf80a8",
+      "recovery_sha256": "29face3ffd73c7b64b3b6540b3d14d232ce54e2f02ec55c21de527cd262f427b",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A2-seed137": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 302,
+      "loss_sha256": "fd23c864a42349dc3faf1fb02d5567ed36b96f5ee0ed9eb82b8eef7de3529617",
+      "adapter_sha256": "133893e1544e50c5325a7906989ab596d21d69de1aec3827ddf7853f0d4740d4",
+      "recovery_sha256": "615eafd38cb7ff9e466fc6dae0da2a3e40ffb8d9bcf019c900fcdf1fe5de192f",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "U-seed137": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 565,
+      "loss_sha256": "de2a37a5be5a63dde270542da5b335f53f6dca44c7401e8e239e903f8149cbb9",
+      "adapter_sha256": "07ce637cf6722c32471ce25bd6144f8594fb8303554bd996c684c02ca941dc6a",
+      "recovery_sha256": "40e8b7cfea41731ea1bcc624910e553016c590b0f87efe27aa828ca2b4e1367a",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A1-seed256": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "676c19ebfdcb57896ba1db8556e2711f8d6dbe438c4c12b7f9721fc8fd306d7e",
+      "adapter_sha256": "53fc2f07445f530182e30897e65870d7cc5beadbb82c4707ebba1c091fbfa18d",
+      "recovery_sha256": "a6d675a991323d218b42bff2b42653da9f57688a4d9275ba9da078bcb14b29db",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A2-seed256": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 310,
+      "loss_sha256": "190074888f888ef708cb7eccaf7216ec774f650d4c8f59f7005fc647142b44b6",
+      "adapter_sha256": "b6b13df8dd2254c03a92e451a8dadc4cc571a5d4f5987e9802e7ed84a0d7414a",
+      "recovery_sha256": "3d2afee4d085c361ebaabd8d970fa461f9df4793caf295bfd2b32d906631120e",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "U-seed256": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 572,
+      "loss_sha256": "df80e0f4a221a11725e9490b3669554a604dd275afccaab4125d3b5d66bded9e",
+      "adapter_sha256": "10248ec7a3cc659c6893fbe0af4cd74ccc571823c4e9d7cfa8c854743892eb6c",
+      "recovery_sha256": "01c99c33e872be7ba14f1d0dccc2fb940bef6e1d6e0595e3e954ee138b1f0a35",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A1-seed512": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "07d13b26fac896c693e6821473216f077db64b87952513052bbdb36b7b27b7fa",
+      "adapter_sha256": "1d6ae71140bb782cdaf4e791857a93d30b5ea9415aa325b7167ce0f106637f82",
+      "recovery_sha256": "353d9c6723950d1c8870a34adc4907b5e2836f0d528b12d997c5aacadb63641d",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A2-seed512": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 300,
+      "loss_sha256": "d9dd9ef498dadfede57e40ea6cb600a2be733fd68efceded303c0756f2e1bd83",
+      "adapter_sha256": "eef2c29bb79f93309c13640892dee928be47008bf0e5fc726de0574846213a26",
+      "recovery_sha256": "8eeca66603f47ae097a70293697c4370ab7f2f0351db41da8a7f13bbfe88bc81",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "U-seed512": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 573,
+      "loss_sha256": "7daf31a96b0792e6eb5e79893492c0326ed8b34c9b2b94f46ec06a29ad124076",
+      "adapter_sha256": "5e5b3459618273475584b29513b51147afaf0803476d3769dde806e8841d0bc9",
+      "recovery_sha256": "ed8ce8a4a4e22451284909f62f2012201a3ce27638d26d54135ab8a1b1c41a9e",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A1-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "68cdaaae74ddb99fe8a7e947a79f6b0b8892b56de7990973f1964a58f2477c53",
+      "adapter_sha256": "b9e7059a7d1549a3b76ab64e636b051a3248a8b592a818e55a1c9b414f138888",
+      "recovery_sha256": "01d58cae301f76a4c60609f340a66e03414bf0d9b7a78088cbfcbb134cf93bdd",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "A2-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 304,
+      "loss_sha256": "fe8f3b777bdaa78bde0ff421e20a503360ca037ab006687f63017da90721cb68",
+      "adapter_sha256": "31a82c7a1b40fc444662681ccc435e373352670f52f32bd134c2543eba306400",
+      "recovery_sha256": "088a3651dd87848f3953305c3cfc210eae70547634141aab319d23437df3e117",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    },
+    "U-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 575,
+      "loss_sha256": "04d689a4d7689729caf111c2e92bdc4fabda1d20cbc3d4ffc0e8d9886a125e72",
+      "adapter_sha256": "7ee5b54cd51a7511333939ebdd877242c7fcb441b73d9b222d9d55c096d462d4",
+      "recovery_sha256": "929513bd5d947f594b2f1d4fec906d5b71c3813ae8fe5f6e5f3f6f101de267d9",
+      "recovery_link": "restore map only; endpoint marker has no recovery digest"
+    }
+  },
+  "9b": {
+    "A1-seed42": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "87bd5f09a3fac923512ae4ffd273d5feca960ad8b2af6c83b0bd389d18019a8f",
+      "adapter_sha256": "8d43298ff8f901daf082e19bdea28548dda25476126850390db9df0f0761ae40",
+      "recovery_sha256": "1a13ad2463a19c1872ef796c10a5cf07bbb2616598ce8f8476789cfb1fbae0e3",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A2-seed42": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 302,
+      "loss_sha256": "5fbf52c8e11b5fe2bc9d0563b701dda985095bb0f1c1c3235ee2112955773183",
+      "adapter_sha256": "7b57bd1e36408da2312b2dd4e8cc78f9e86ccea18be5ccef997830fa22e94912",
+      "recovery_sha256": "4d7a9157270851dd2e9bd095d1fb1440e0bd8774e22548996d37fb5fbc77c69e",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "U-seed42": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 584,
+      "loss_sha256": "05cfb74579f24db5019a868e9d9a6aa1af40d7aecaf8eb4c8ef1542555ec4b5b",
+      "adapter_sha256": "17e9709bde7d932ee03ec88b16e647a733eebe2e945c7f1f12469c135e0a1116",
+      "recovery_sha256": "eca0468e193d8953e024d66addc3c9acd01356414092611bfbc91b75735a0985",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A1-seed137": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "0354b101c1f3a53d7d0a7e46f89be2e8f1bca9961bc226ba153530e55121a600",
+      "adapter_sha256": "08f95bb8385eb2ef3217d7380574fe8ba231841f698fb3addc92b851c009c8fe",
+      "recovery_sha256": "0ad8e900bc0d17a6f1305c38beee1ad4542c2babf2774e1b5bcf9e902e775080",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A2-seed137": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 304,
+      "loss_sha256": "06b5bd3b51b2f884c1e0a0482fb1c42764fd9d81361ddc9d3863f9a6a380ed69",
+      "adapter_sha256": "bcea7fa872650b8bfe90a8a58fccfd63366cc37d61184f9d5e3e68b28ec1e70d",
+      "recovery_sha256": "647a73d2c77ffd625ec7b87fcc480ead6adf87091e15bba553a28a0224155adc",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "U-seed137": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 576,
+      "loss_sha256": "cd6884e52d225215c3637e66bdf9ee1b6cdded710aeba64a28242034ed060856",
+      "adapter_sha256": "c2b84219a0f4ebd1f0ba520c4077152f60df5fefd70149672669a1b348dbdb46",
+      "recovery_sha256": "6367f60b181f91ae5e14951858986d8ee2b26af15e8bb0d2fc4468820603ebf9",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A1-seed256": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "b364e3aeb608fa8a3bd8429fc6f4545afc8d9001ca6d4c20e818e25a18cf897f",
+      "adapter_sha256": "61ec6b05aabaa4309fe98b3619d7c807f8e21c27650bcd733ccd4f35b68bfefc",
+      "recovery_sha256": "6d8fa134cba05d3eadcc1587ac5891d4cd0f2f0070112052da173bcad79a6805",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A2-seed256": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 314,
+      "loss_sha256": "246baa3bda96b457ecc8eaf371f5167f7eac77b26b3751d009de980024742182",
+      "adapter_sha256": "b55f95194db614996e03be03d3b652e26d2b4a7cd0c31adbe43d8460aa23e09e",
+      "recovery_sha256": "5b76f28ab0cee16e8f2a2d00c117d22462e085bac7a433a902b0b3047b697d63",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "U-seed256": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 577,
+      "loss_sha256": "32de7695d1b02f4b52bfce0165bc0e130fc52c7af6438bf6f6ef31efba5b9d2d",
+      "adapter_sha256": "e5b64c4495a09f9d6759069cfbcb59d6f318b7f383d263e363175c1e299693c2",
+      "recovery_sha256": "9566d8e554d3aeabffaf79740b122566704f350d564969ec5212a82ecb134761",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A1-seed512": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "b806e39134c7ab737a27bb928f96aabfd9936903522dd6039dc083aa58881044",
+      "adapter_sha256": "7932c129f318615a1a3b0a1610b8f2166845f9a3c0b19e06e0aed98ebe5a8f30",
+      "recovery_sha256": "f4319bb3c706c936da4af80be942ddaa61d588b5804df3af96b5ae04be339945",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A2-seed512": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 306,
+      "loss_sha256": "5e8799e00840f25121e45096e9b52c17864fbfd6ef24a582d5f0e91c1b753ba4",
+      "adapter_sha256": "48b47ecf7de7e5a72eb4b7fff7dd9083998b44d269d1aed70029fc2736eceb9f",
+      "recovery_sha256": "273fe850f9de40f6985011bbb28b06a9bc16a63d6ee952685c21ddf386b9f2c2",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "U-seed512": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 574,
+      "loss_sha256": "eb9689cb5ad5e2a6c3af8c15d02a9c4250f6d512c35c387e5ada76c1f58600a5",
+      "adapter_sha256": "0cb57db9bf4546365f3ccc0453d40a510d4b0c4d17a233d3a256a5faeedf5d95",
+      "recovery_sha256": "988110ffc4f3c03def1290d2ec5ca7bfc8d9cd9af22b090e526b317bdef8523b",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A1-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "mmstar": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 600,
+      "loss_sha256": "7aa23e8c56ed0d68e8bf6a5fb85c009cfdbbb0dee297caa769b46adda141c508",
+      "adapter_sha256": "5523607347ced24d6ad930fd8445088aa90aa8d43bcf18bd934d2946676cfd15",
+      "recovery_sha256": "55499376ea1e675507adc9f13a2cbed5a2981d4a3dbb456c5eb51f6411cae849",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "A2-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "consistency": 1000
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 310,
+      "loss_sha256": "8bee0568b7bfe9a409c1e975d449a72085466c48e37c9c5e7424f13efd87dd2f",
+      "adapter_sha256": "ac723865e8d5e19dd8f1e21b5f389512554ee2cd6a0ed35d03bd4b09179fa0e2",
+      "recovery_sha256": "a7134ce9096842db2fa009d4fb2950823cee076455ab3481354c4950d2d10bbc",
+      "recovery_link": "same digest in endpoint and restore map"
+    },
+    "U-seed1024": {
+      "steps": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "unique_sample_ids": 600,
+      "unique_image_paths": 575,
+      "loss_sha256": "500f0d886b4301304f2e80824483158969a0167274e46256cbc734215602d139",
+      "adapter_sha256": "3cc21b0a35afb25d527440fd0411076b6fa2bb359f11fec798a2487701444cf6",
+      "recovery_sha256": "b5fc435768931ddb2fcb38e592f2c772257103a19c91fcb282faacc594d89d62",
+      "recovery_link": "same digest in endpoint and restore map"
+    }
+  },
+  "teacher_122b": {
+    "ledger_sha256": "a6284489265b7dba38b1743fea858364ee5f29eaedb6a54e0d27a7937b962fcd",
+    "by_axis": {
+      "pope": {
+        "records": 600,
+        "actual_prompt_differs_from_pool": 0,
+        "strict_unparseable": 0,
+        "strict_agrees_with_gt": 579
+      },
+      "grounding": {
+        "records": 600,
+        "actual_prompt_differs_from_pool": 600,
+        "agrees_with_gt_at_iou50": 553
+      },
+      "consistency": {
+        "records": 1740,
+        "actual_prompt_differs_from_pool": 0,
+        "strict_unparseable": 5,
+        "strict_agrees_with_gt": 1637
+      },
+      "mmstar": {
+        "records": 600,
+        "actual_prompt_differs_from_pool": 0,
+        "strict_unparseable": 6,
+        "strict_agrees_with_gt": 588
+      }
+    },
+    "grounding_median_iou": 0.9373465454449323,
+    "grounding_targets_below_iou50": 47,
+    "scope": "API stop metadata, image SHA and text targets. The provider token IDs and an internal teacher EOS are not in this cache."
+  },
+  "scope": "Metadata and complete loss ledgers replayed; adapter and resume bytes not downloaded or tensor-tested."
+}

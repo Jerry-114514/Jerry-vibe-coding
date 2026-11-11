@@ -1,0 +1,172 @@
+{
+  "B": {
+    "qwen3b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.8747777777777778,
+        "grounding": 0.6675,
+        "consistency": 0.81,
+        "mmstar": 0.5433333333333333
+      }
+    },
+    "qwen7b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.8767777777777778,
+        "grounding": 0.67625,
+        "consistency": 0.84125,
+        "mmstar": 0.6206666666666667
+      }
+    },
+    "intern1b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.8712222222222222,
+        "grounding": 0.0008333333333333334,
+        "consistency": 0.2675,
+        "mmstar": 0.49333333333333335
+      }
+    },
+    "intern2b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.8984444444444444,
+        "grounding": 0.0020833333333333333,
+        "consistency": 0.30125,
+        "mmstar": 0.5633333333333334
+      }
+    },
+    "intern8b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.911,
+        "grounding": 0.0,
+        "consistency": 0.8825,
+        "mmstar": 0.6806666666666666
+      }
+    },
+    "llava05b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.7562222222222222,
+        "grounding": 0.0,
+        "consistency": 0.22625,
+        "mmstar": 0.276
+      }
+    },
+    "llava7b": {
+      "rows": 16900,
+      "scores": {
+        "pope": 0.8983333333333334,
+        "grounding": 0.0,
+        "consistency": 0.83375,
+        "mmstar": 0.5993333333333334
+      }
+    }
+  },
+  "C": {
+    "qwen": {
+      "classes": 9,
+      "settings": 120,
+      "paired_score_draws": 1000,
+      "F_scale_CI_from_saved_F": [
+        0.07407407407407396,
+        0.19444444444444442
+      ],
+      "F_noise_CI_from_saved_draws": [
+        0.0,
+        0.33014999999999983
+      ]
+    },
+    "intern": {
+      "classes": 54,
+      "settings": 120,
+      "paired_score_draws": 1000,
+      "F_scale_CI_from_saved_F": [
+        0.4012345679012346,
+        0.595679012345679
+      ],
+      "F_noise_CI_from_saved_draws": [
+        0.0,
+        0.0
+      ]
+    },
+    "llava": {
+      "classes": 10,
+      "settings": 120,
+      "paired_score_draws": 1000,
+      "F_scale_CI_from_saved_F": [
+        0.31666666666666665,
+        0.5666666666666667
+      ],
+      "F_noise_CI_from_saved_draws": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "D": {
+    "A1": {
+      "rows": 16900,
+      "gain": {
+        "arm": "A1",
+        "G_net_raw": 0.030305555555555475,
+        "signed_components": {
+          "pope": 0.0015555555555555323,
+          "grounding": 0.0,
+          "consistency": 0.018749999999999933,
+          "mmstar": 0.010000000000000009
+        }
+      },
+      "ruler_classes": 9,
+      "reuse_base": false
+    },
+    "A2": {
+      "rows": 16900,
+      "gain": {
+        "arm": "A2",
+        "G_net_raw": 0.027138888888888824,
+        "signed_components": {
+          "pope": 0.00022222222222223476,
+          "grounding": 0.0025000000000000577,
+          "consistency": 0.00374999999999992,
+          "mmstar": 0.02066666666666661
+        }
+      },
+      "ruler_classes": 9,
+      "reuse_base": false
+    },
+    "U": {
+      "rows": 16900,
+      "gain": {
+        "arm": "U",
+        "G_net_raw": 0.01416666666666655,
+        "signed_components": {
+          "pope": 0.0043333333333333,
+          "grounding": -0.008333333333333415,
+          "consistency": 0.007499999999999951,
+          "mmstar": 0.010666666666666713
+        }
+      },
+      "ruler_classes": 9,
+      "reuse_base": false
+    },
+    "N": {
+      "rows": 16900,
+      "gain": {
+        "arm": "N",
+        "G_net_raw": 0.0,
+        "signed_components": {
+          "pope": 0.0,
+          "grounding": 0.0,
+          "consistency": 0.0,
+          "mmstar": 0.0
+        }
+      },
+      "ruler_classes": 9,
+      "reuse_base": true
+    }
+  },
+  "historical_gate": "go",
+  "scope": "v1 paired score/floor draws and 120 class maps replayed. F/noise intervals checked from saved draws; nested draws not regenerated. D tensor/optimizer state not loaded."
+}
