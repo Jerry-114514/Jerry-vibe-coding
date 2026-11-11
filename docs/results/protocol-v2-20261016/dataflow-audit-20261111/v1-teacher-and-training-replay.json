@@ -1,0 +1,66 @@
+{
+  "teacher_cache_rows": 3545,
+  "axis_counts": {
+    "pope": 600,
+    "grounding": 600,
+    "consistency": 1745,
+    "mmstar": 600
+  },
+  "retokenized_target_last_ids": {
+    "198": 3545
+  },
+  "raw_generation_or_finish_metadata_count": 0,
+  "legacy_nontruncation_certified": false,
+  "teacher_cache_protocol": {
+    "manifest_sha256": "c9b3c4a99725dabb1dcd5ef286f1103954410b4b86e41eeb52be1f909a2dc997",
+    "top_k": 50,
+    "inference_backend_version": "finite-logits-sdpa-qwen-vision-fp32.v2",
+    "temperature": 1.0,
+    "teacher": "qwen7b",
+    "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "limit": null
+  },
+  "training": {
+    "A1": {
+      "updates": 1000,
+      "axis_counts": {
+        "mmstar": 1000
+      },
+      "amp_retries": 5,
+      "frozen_samples": 600,
+      "loss_sha256": "46c63e08b9557d809b07392fd60826cb4260aa6d7b03482d055bcc5b201213e5"
+    },
+    "A2": {
+      "updates": 1000,
+      "axis_counts": {
+        "consistency": 1000
+      },
+      "amp_retries": 3,
+      "frozen_samples": 1745,
+      "loss_sha256": "1de6a85022c378abe66bd6cd0a46c10ab79b164db76f7a845d6171e1db77df27"
+    },
+    "U": {
+      "updates": 1000,
+      "axis_counts": {
+        "pope": 249,
+        "mmstar": 257,
+        "consistency": 253,
+        "grounding": 241
+      },
+      "amp_retries": 5,
+      "frozen_samples": 2400,
+      "loss_sha256": "7eeeff8c7dbf4a279d45a26f55892a0da04846f1e8c182bc193c185cd5206cd3"
+    },
+    "N": {
+      "updates": 0,
+      "no_op": true
+    }
+  },
+  "ranked_axes": [
+    "mmstar",
+    "consistency",
+    "grounding",
+    "pope"
+  ],
+  "scope": "All v1 top-50 tensors and per-step D logs loaded from verified archive; optimizer tensors were not reloaded."
+}
