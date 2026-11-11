@@ -1,0 +1,178 @@
+{
+  "7b": {
+    "manifest_sha256": "8bf1ddc3b82776797ad5e32e474ebec2425ef89f9fd16b886ecde9073b5ef5b7",
+    "scores": {
+      "A1-seed1024": {
+        "accuracy": 0.8608333333333333,
+        "parse_failures": 9,
+        "rows": 2400
+      },
+      "A1-seed137": {
+        "accuracy": 0.8529166666666667,
+        "parse_failures": 14,
+        "rows": 2400
+      },
+      "A1-seed256": {
+        "accuracy": 0.8566666666666667,
+        "parse_failures": 1,
+        "rows": 2400
+      },
+      "A1-seed42": {
+        "accuracy": 0.8541666666666666,
+        "parse_failures": 11,
+        "rows": 2400
+      },
+      "A1-seed512": {
+        "accuracy": 0.855,
+        "parse_failures": 4,
+        "rows": 2400
+      },
+      "A2-seed1024": {
+        "accuracy": 0.85375,
+        "parse_failures": 12,
+        "rows": 2400
+      },
+      "A2-seed137": {
+        "accuracy": 0.855,
+        "parse_failures": 15,
+        "rows": 2400
+      },
+      "A2-seed256": {
+        "accuracy": 0.8466666666666667,
+        "parse_failures": 10,
+        "rows": 2400
+      },
+      "A2-seed42": {
+        "accuracy": 0.85125,
+        "parse_failures": 16,
+        "rows": 2400
+      },
+      "A2-seed512": {
+        "accuracy": 0.8420833333333333,
+        "parse_failures": 22,
+        "rows": 2400
+      },
+      "N-seed42": {
+        "accuracy": 0.8470833333333333,
+        "parse_failures": 58,
+        "rows": 2400
+      },
+      "U-seed1024": {
+        "accuracy": 0.7570833333333333,
+        "parse_failures": 258,
+        "rows": 2400
+      },
+      "U-seed137": {
+        "accuracy": 0.8266666666666667,
+        "parse_failures": 60,
+        "rows": 2400
+      },
+      "U-seed256": {
+        "accuracy": 0.8479166666666667,
+        "parse_failures": 19,
+        "rows": 2400
+      },
+      "U-seed42": {
+        "accuracy": 0.8383333333333334,
+        "parse_failures": 20,
+        "rows": 2400
+      },
+      "U-seed512": {
+        "accuracy": 0.84375,
+        "parse_failures": 10,
+        "rows": 2400
+      }
+    },
+    "means": {
+      "A1": 0.8559166666666667,
+      "A2": 0.84975,
+      "U": 0.8227499999999999
+    },
+    "A1_minus_U": 0.03316666666666679
+  },
+  "roles": {
+    "roles": {
+      "calibration": {
+        "prompts": 960,
+        "units": 480,
+        "unit_axes": {
+          "grounding": 120,
+          "consistency": 120,
+          "mmstar": 120,
+          "pope": 120
+        },
+        "known_pixel_hashes": 381,
+        "paths_not_in_selected_inventory": 0
+      },
+      "audit": {
+        "prompts": 9600,
+        "units": 4800,
+        "unit_axes": {
+          "grounding": 1200,
+          "consistency": 1200,
+          "pope": 1200,
+          "mmstar": 1200
+        },
+        "known_pixel_hashes": 2677,
+        "paths_not_in_selected_inventory": 0
+      },
+      "confirm": {
+        "prompts": 9600,
+        "units": 4800,
+        "unit_axes": {
+          "mmstar": 1200,
+          "pope": 1200,
+          "grounding": 1200,
+          "consistency": 1200
+        },
+        "known_pixel_hashes": 2646,
+        "paths_not_in_selected_inventory": 0
+      },
+      "train": {
+        "prompts": 3545,
+        "units": 2149,
+        "unit_axes": {
+          "pope": 600,
+          "mmstar": 600,
+          "consistency": 349,
+          "grounding": 600
+        },
+        "known_pixel_hashes": 0,
+        "paths_not_in_selected_inventory": 2132
+      }
+    },
+    "observed_overlaps": {
+      "calibration/audit": {
+        "units": 0,
+        "pixels": 0,
+        "groups": 0
+      },
+      "calibration/confirm": {
+        "units": 0,
+        "pixels": 0,
+        "groups": 0
+      },
+      "calibration/train": {
+        "units": 0,
+        "pixels": null,
+        "groups": null
+      },
+      "audit/confirm": {
+        "units": 0,
+        "pixels": 0,
+        "groups": 0
+      },
+      "audit/train": {
+        "units": 0,
+        "pixels": null,
+        "groups": null
+      },
+      "confirm/train": {
+        "units": 0,
+        "pixels": null,
+        "groups": null
+      }
+    },
+    "scope": "Archived manifests and indexed image hashes only; no pixel rehashing or near-graph reconstruction."
+  }
+}
