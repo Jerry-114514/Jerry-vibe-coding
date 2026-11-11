@@ -1,0 +1,5430 @@
+{
+  "normalized_distinct_prompt_keys": 105,
+  "train_distinct_units": 28,
+  "eval_distinct_units": 81,
+  "cross_image_prompt_pairs": 665,
+  "pairs_same_label": 230,
+  "pairs_different_label": 435,
+  "pairs_same_image_bytes": 0,
+  "comparisons": {
+    "full": {
+      "A1-A2": {
+        "difference": 0.016750000000000043,
+        "pointwise_ci95": [
+          -0.03144724229033712,
+          0.06240601503759391
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.05491704291362374,
+          0.0822003855790985
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "A1-U": {
+        "difference": -0.01774999999999982,
+        "pointwise_ci95": [
+          -0.04918861516272345,
+          0.008397540397540296
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.06557187500000008,
+          0.01625531095172263
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      },
+      "A1-N": {
+        "difference": 0.05049999999999999,
+        "pointwise_ci95": [
+          0.018858111266947086,
+          0.07995232273838611
+        ],
+        "bonferroni_familywise_ci95": [
+          0.003446684094661579,
+          0.09282511615860861
+        ],
+        "image_clusters": 774,
+        "original_units": 800
+      }
+    },
+    "exclude_prompt_reuse": {
+      "A1-A2": {
+        "difference": 0.020305980528511847,
+        "pointwise_ci95": [
+          -0.027983539094650237,
+          0.06759226595858622
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.050608404996547555,
+          0.0890253520797268
+        ],
+        "image_clusters": 694,
+        "original_units": 719
+      },
+      "A1-U": {
+        "difference": -0.017246175243393447,
+        "pointwise_ci95": [
+          -0.04675685192234463,
+          0.008192206168380066
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.06657509227965933,
+          0.01724068297126316
+        ],
+        "image_clusters": 694,
+        "original_units": 719
+      },
+      "A1-N": {
+        "difference": 0.03838664812239223,
+        "pointwise_ci95": [
+          0.0064695337315697965,
+          0.06758639873387365
+        ],
+        "bonferroni_familywise_ci95": [
+          -0.008127099856796605,
+          0.079146228747219
+        ],
+        "image_clusters": 694,
+        "original_units": 719
+      }
+    }
+  },
+  "match_index": [
+    {
+      "train_id": "train:consistency:1117:p5",
+      "eval_id": "consistency:mmbench_en_dev:1118:p5",
+      "train_unit": "train:consistency:1117",
+      "eval_unit": "consistency:mmbench_en_dev:1118",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p5",
+      "eval_id": "consistency:mmbench_en_dev:1085:p5",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1085",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p5",
+      "eval_id": "consistency:mmbench_en_dev:1086:p5",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1086",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p5",
+      "eval_id": "consistency:mmbench_en_dev:1087:p5",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1087",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p5",
+      "eval_id": "consistency:mmbench_en_dev:1165:p5",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1165",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p5",
+      "eval_id": "consistency:mmbench_en_dev:1166:p5",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1166",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1139:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1139",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1143:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1143",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1148:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1148",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1150:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1150",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1153:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1153",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1154:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1154",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1156:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1156",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p5",
+      "eval_id": "consistency:mmbench_en_dev:1158:p5",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1158",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p5",
+      "eval_id": "consistency:mmbench_en_dev:1179:p5",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p5",
+      "eval_id": "consistency:mmbench_en_dev:1181:p5",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p5",
+      "eval_id": "consistency:mmbench_en_dev:1179:p5",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p5",
+      "eval_id": "consistency:mmbench_en_dev:1181:p5",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p5",
+      "eval_id": "consistency:mmbench_en_dev:1313:p5",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1313",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p5",
+      "eval_id": "consistency:mmbench_en_dev:1314:p5",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1314",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p5",
+      "eval_id": "consistency:mmbench_en_dev:1301:p5",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p5",
+      "eval_id": "consistency:mmbench_en_dev:1304:p5",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p5",
+      "eval_id": "consistency:mmbench_en_dev:1305:p5",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p5",
+      "eval_id": "consistency:mmbench_en_dev:1306:p5",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p5",
+      "eval_id": "consistency:mmbench_en_dev:1307:p5",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p5",
+      "eval_id": "consistency:mmbench_en_dev:1301:p5",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p5",
+      "eval_id": "consistency:mmbench_en_dev:1304:p5",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p5",
+      "eval_id": "consistency:mmbench_en_dev:1305:p5",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p5",
+      "eval_id": "consistency:mmbench_en_dev:1306:p5",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p5",
+      "eval_id": "consistency:mmbench_en_dev:1307:p5",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p5",
+      "eval_id": "consistency:mmbench_en_dev:1301:p5",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p5",
+      "eval_id": "consistency:mmbench_en_dev:1304:p5",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p5",
+      "eval_id": "consistency:mmbench_en_dev:1305:p5",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p5",
+      "eval_id": "consistency:mmbench_en_dev:1306:p5",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p5",
+      "eval_id": "consistency:mmbench_en_dev:1307:p5",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1736:p5",
+      "eval_id": "consistency:mmbench_en_dev:1749:p5",
+      "train_unit": "train:consistency:1736",
+      "eval_unit": "consistency:mmbench_en_dev:1749",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1290:p5",
+      "eval_id": "consistency:mmbench_en_dev:1288:p5",
+      "train_unit": "train:consistency:1290",
+      "eval_unit": "consistency:mmbench_en_dev:1288",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p5",
+      "eval_id": "consistency:mmbench_en_dev:1054:p5",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1054",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p5",
+      "eval_id": "consistency:mmbench_en_dev:1060:p5",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1060",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p5",
+      "eval_id": "consistency:mmbench_en_dev:1061:p5",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1061",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p5",
+      "eval_id": "consistency:mmbench_en_dev:1062:p5",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1062",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p5",
+      "eval_id": "consistency:mmbench_en_dev:1595:p5",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1595",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p5",
+      "eval_id": "consistency:mmbench_en_dev:1597:p5",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1597",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p5",
+      "eval_id": "consistency:mmbench_en_dev:1602:p5",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1602",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p5",
+      "eval_id": "consistency:mmbench_en_dev:1603:p5",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1603",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p5",
+      "eval_id": "consistency:mmbench_en_dev:1606:p5",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1606",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1193:p5",
+      "eval_id": "consistency:mmbench_en_dev:1195:p5",
+      "train_unit": "train:consistency:1193",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1189:p5",
+      "eval_id": "consistency:mmbench_en_dev:1195:p5",
+      "train_unit": "train:consistency:1189",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p5",
+      "eval_id": "consistency:mmbench_en_dev:1710:p5",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1710",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p5",
+      "eval_id": "consistency:mmbench_en_dev:1712:p5",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1712",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1689:p5",
+      "eval_id": "consistency:mmbench_en_dev:1691:p5",
+      "train_unit": "train:consistency:1689",
+      "eval_unit": "consistency:mmbench_en_dev:1691",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:944:p5",
+      "eval_id": "consistency:mmbench_en_dev:946:p5",
+      "train_unit": "train:consistency:944",
+      "eval_unit": "consistency:mmbench_en_dev:946",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1231:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1232:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1235:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1237:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1243:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1244:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1248:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1251:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1254:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1255:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1256:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1258:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p5",
+      "eval_id": "consistency:mmbench_en_dev:1259:p5",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1231:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1232:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1235:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1237:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1243:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1244:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1248:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1251:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1254:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1255:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1256:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1258:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p5",
+      "eval_id": "consistency:mmbench_en_dev:1259:p5",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1231:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1232:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1235:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1237:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1243:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1244:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1248:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1251:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1254:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1255:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1256:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1258:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p5",
+      "eval_id": "consistency:mmbench_en_dev:1259:p5",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1262:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1262",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1264:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1264",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1267:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1267",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1268:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1268",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1269:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1269",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1270:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1270",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1275:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1275",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1276:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1276",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1277:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1277",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1278:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1278",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p5",
+      "eval_id": "consistency:mmbench_en_dev:1279:p5",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1279",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p5",
+      "eval_id": "consistency:mmbench_en_dev:773:p5",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:773",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p5",
+      "eval_id": "consistency:mmbench_en_dev:785:p5",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:785",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p5",
+      "eval_id": "consistency:mmbench_en_dev:801:p5",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:801",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1333:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1339:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1343:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1344:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1346:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1355:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1357:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1361:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1362:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1364:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1367:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1373:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p5",
+      "eval_id": "consistency:mmbench_en_dev:1374:p5",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1333:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1339:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1343:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1344:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1346:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1355:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1357:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1361:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1362:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1364:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1367:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1373:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p5",
+      "eval_id": "consistency:mmbench_en_dev:1374:p5",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1792:p5",
+      "eval_id": "consistency:mmbench_en_dev:1791:p5",
+      "train_unit": "train:consistency:1792",
+      "eval_unit": "consistency:mmbench_en_dev:1791",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1117:p4",
+      "eval_id": "consistency:mmbench_en_dev:1118:p4",
+      "train_unit": "train:consistency:1117",
+      "eval_unit": "consistency:mmbench_en_dev:1118",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p4",
+      "eval_id": "consistency:mmbench_en_dev:1085:p4",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1085",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p4",
+      "eval_id": "consistency:mmbench_en_dev:1086:p4",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1086",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p4",
+      "eval_id": "consistency:mmbench_en_dev:1087:p4",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1087",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p4",
+      "eval_id": "consistency:mmbench_en_dev:1165:p4",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1165",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p4",
+      "eval_id": "consistency:mmbench_en_dev:1166:p4",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1166",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1139:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1139",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1143:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1143",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1148:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1148",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1150:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1150",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1153:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1153",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1154:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1154",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1156:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1156",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p4",
+      "eval_id": "consistency:mmbench_en_dev:1158:p4",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1158",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p4",
+      "eval_id": "consistency:mmbench_en_dev:1179:p4",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p4",
+      "eval_id": "consistency:mmbench_en_dev:1181:p4",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p4",
+      "eval_id": "consistency:mmbench_en_dev:1179:p4",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p4",
+      "eval_id": "consistency:mmbench_en_dev:1181:p4",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p4",
+      "eval_id": "consistency:mmbench_en_dev:1313:p4",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1313",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p4",
+      "eval_id": "consistency:mmbench_en_dev:1314:p4",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1314",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p4",
+      "eval_id": "consistency:mmbench_en_dev:1301:p4",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p4",
+      "eval_id": "consistency:mmbench_en_dev:1304:p4",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p4",
+      "eval_id": "consistency:mmbench_en_dev:1305:p4",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p4",
+      "eval_id": "consistency:mmbench_en_dev:1306:p4",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p4",
+      "eval_id": "consistency:mmbench_en_dev:1307:p4",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p4",
+      "eval_id": "consistency:mmbench_en_dev:1301:p4",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p4",
+      "eval_id": "consistency:mmbench_en_dev:1304:p4",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p4",
+      "eval_id": "consistency:mmbench_en_dev:1305:p4",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p4",
+      "eval_id": "consistency:mmbench_en_dev:1306:p4",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p4",
+      "eval_id": "consistency:mmbench_en_dev:1307:p4",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p4",
+      "eval_id": "consistency:mmbench_en_dev:1301:p4",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p4",
+      "eval_id": "consistency:mmbench_en_dev:1304:p4",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p4",
+      "eval_id": "consistency:mmbench_en_dev:1305:p4",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p4",
+      "eval_id": "consistency:mmbench_en_dev:1306:p4",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p4",
+      "eval_id": "consistency:mmbench_en_dev:1307:p4",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1736:p4",
+      "eval_id": "consistency:mmbench_en_dev:1749:p4",
+      "train_unit": "train:consistency:1736",
+      "eval_unit": "consistency:mmbench_en_dev:1749",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1290:p4",
+      "eval_id": "consistency:mmbench_en_dev:1288:p4",
+      "train_unit": "train:consistency:1290",
+      "eval_unit": "consistency:mmbench_en_dev:1288",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p4",
+      "eval_id": "consistency:mmbench_en_dev:1054:p4",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1054",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p4",
+      "eval_id": "consistency:mmbench_en_dev:1060:p4",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1060",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p4",
+      "eval_id": "consistency:mmbench_en_dev:1061:p4",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1061",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p4",
+      "eval_id": "consistency:mmbench_en_dev:1062:p4",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1062",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p4",
+      "eval_id": "consistency:mmbench_en_dev:1595:p4",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1595",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p4",
+      "eval_id": "consistency:mmbench_en_dev:1597:p4",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1597",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p4",
+      "eval_id": "consistency:mmbench_en_dev:1602:p4",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1602",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p4",
+      "eval_id": "consistency:mmbench_en_dev:1603:p4",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1603",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p4",
+      "eval_id": "consistency:mmbench_en_dev:1606:p4",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1606",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1189:p4",
+      "eval_id": "consistency:mmbench_en_dev:1195:p4",
+      "train_unit": "train:consistency:1189",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1193:p4",
+      "eval_id": "consistency:mmbench_en_dev:1195:p4",
+      "train_unit": "train:consistency:1193",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p4",
+      "eval_id": "consistency:mmbench_en_dev:1710:p4",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1710",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p4",
+      "eval_id": "consistency:mmbench_en_dev:1712:p4",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1712",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1689:p4",
+      "eval_id": "consistency:mmbench_en_dev:1691:p4",
+      "train_unit": "train:consistency:1689",
+      "eval_unit": "consistency:mmbench_en_dev:1691",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:944:p4",
+      "eval_id": "consistency:mmbench_en_dev:946:p4",
+      "train_unit": "train:consistency:944",
+      "eval_unit": "consistency:mmbench_en_dev:946",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1231:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1232:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1235:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1237:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1243:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1244:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1248:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1251:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1254:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1255:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1256:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1258:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p4",
+      "eval_id": "consistency:mmbench_en_dev:1259:p4",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1231:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1232:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1235:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1237:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1243:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1244:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1248:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1251:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1254:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1255:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1256:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1258:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p4",
+      "eval_id": "consistency:mmbench_en_dev:1259:p4",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1231:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1232:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1235:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1237:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1243:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1244:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1248:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1251:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1254:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1255:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1256:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1258:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p4",
+      "eval_id": "consistency:mmbench_en_dev:1259:p4",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1262:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1262",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1264:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1264",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1267:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1267",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1268:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1268",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1269:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1269",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1270:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1270",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1275:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1275",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1276:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1276",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1277:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1277",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1278:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1278",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p4",
+      "eval_id": "consistency:mmbench_en_dev:1279:p4",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1279",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p4",
+      "eval_id": "consistency:mmbench_en_dev:773:p4",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:773",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p4",
+      "eval_id": "consistency:mmbench_en_dev:785:p4",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:785",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p4",
+      "eval_id": "consistency:mmbench_en_dev:801:p4",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:801",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1333:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1339:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1343:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1344:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1346:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1355:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1357:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1361:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1362:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1364:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1367:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1373:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p4",
+      "eval_id": "consistency:mmbench_en_dev:1374:p4",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1333:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1339:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1343:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1344:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1346:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1355:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1357:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1361:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1362:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1364:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1367:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1373:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p4",
+      "eval_id": "consistency:mmbench_en_dev:1374:p4",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1792:p4",
+      "eval_id": "consistency:mmbench_en_dev:1791:p4",
+      "train_unit": "train:consistency:1792",
+      "eval_unit": "consistency:mmbench_en_dev:1791",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:313:p5",
+      "eval_id": "consistency:mmbench_en_dev:308:p5",
+      "train_unit": "train:consistency:313",
+      "eval_unit": "consistency:mmbench_en_dev:308",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:313:p4",
+      "eval_id": "consistency:mmbench_en_dev:308:p4",
+      "train_unit": "train:consistency:313",
+      "eval_unit": "consistency:mmbench_en_dev:308",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:313:p2",
+      "eval_id": "consistency:mmbench_en_dev:308:p2",
+      "train_unit": "train:consistency:313",
+      "eval_unit": "consistency:mmbench_en_dev:308",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:313:p1",
+      "eval_id": "consistency:mmbench_en_dev:308:p1",
+      "train_unit": "train:consistency:313",
+      "eval_unit": "consistency:mmbench_en_dev:308",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:313:p3",
+      "eval_id": "consistency:mmbench_en_dev:308:p3",
+      "train_unit": "train:consistency:313",
+      "eval_unit": "consistency:mmbench_en_dev:308",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1117:p2",
+      "eval_id": "consistency:mmbench_en_dev:1118:p2",
+      "train_unit": "train:consistency:1117",
+      "eval_unit": "consistency:mmbench_en_dev:1118",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p2",
+      "eval_id": "consistency:mmbench_en_dev:1085:p2",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1085",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p2",
+      "eval_id": "consistency:mmbench_en_dev:1086:p2",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1086",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p2",
+      "eval_id": "consistency:mmbench_en_dev:1087:p2",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1087",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p2",
+      "eval_id": "consistency:mmbench_en_dev:1165:p2",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1165",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p2",
+      "eval_id": "consistency:mmbench_en_dev:1166:p2",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1166",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1139:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1139",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1143:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1143",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1148:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1148",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1150:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1150",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1153:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1153",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1154:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1154",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1156:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1156",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p2",
+      "eval_id": "consistency:mmbench_en_dev:1158:p2",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1158",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p2",
+      "eval_id": "consistency:mmbench_en_dev:1179:p2",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p2",
+      "eval_id": "consistency:mmbench_en_dev:1181:p2",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p2",
+      "eval_id": "consistency:mmbench_en_dev:1179:p2",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p2",
+      "eval_id": "consistency:mmbench_en_dev:1181:p2",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p2",
+      "eval_id": "consistency:mmbench_en_dev:1313:p2",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1313",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p2",
+      "eval_id": "consistency:mmbench_en_dev:1314:p2",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1314",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p2",
+      "eval_id": "consistency:mmbench_en_dev:1301:p2",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p2",
+      "eval_id": "consistency:mmbench_en_dev:1304:p2",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p2",
+      "eval_id": "consistency:mmbench_en_dev:1305:p2",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p2",
+      "eval_id": "consistency:mmbench_en_dev:1306:p2",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p2",
+      "eval_id": "consistency:mmbench_en_dev:1307:p2",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p2",
+      "eval_id": "consistency:mmbench_en_dev:1301:p2",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p2",
+      "eval_id": "consistency:mmbench_en_dev:1304:p2",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p2",
+      "eval_id": "consistency:mmbench_en_dev:1305:p2",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p2",
+      "eval_id": "consistency:mmbench_en_dev:1306:p2",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p2",
+      "eval_id": "consistency:mmbench_en_dev:1307:p2",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p2",
+      "eval_id": "consistency:mmbench_en_dev:1301:p2",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p2",
+      "eval_id": "consistency:mmbench_en_dev:1304:p2",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p2",
+      "eval_id": "consistency:mmbench_en_dev:1305:p2",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p2",
+      "eval_id": "consistency:mmbench_en_dev:1306:p2",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p2",
+      "eval_id": "consistency:mmbench_en_dev:1307:p2",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1736:p2",
+      "eval_id": "consistency:mmbench_en_dev:1749:p2",
+      "train_unit": "train:consistency:1736",
+      "eval_unit": "consistency:mmbench_en_dev:1749",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1290:p2",
+      "eval_id": "consistency:mmbench_en_dev:1288:p2",
+      "train_unit": "train:consistency:1290",
+      "eval_unit": "consistency:mmbench_en_dev:1288",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p2",
+      "eval_id": "consistency:mmbench_en_dev:1054:p2",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1054",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p2",
+      "eval_id": "consistency:mmbench_en_dev:1060:p2",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1060",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p2",
+      "eval_id": "consistency:mmbench_en_dev:1061:p2",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1061",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p2",
+      "eval_id": "consistency:mmbench_en_dev:1062:p2",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1062",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p2",
+      "eval_id": "consistency:mmbench_en_dev:1595:p2",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1595",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p2",
+      "eval_id": "consistency:mmbench_en_dev:1597:p2",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1597",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p2",
+      "eval_id": "consistency:mmbench_en_dev:1602:p2",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1602",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p2",
+      "eval_id": "consistency:mmbench_en_dev:1603:p2",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1603",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p2",
+      "eval_id": "consistency:mmbench_en_dev:1606:p2",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1606",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1193:p2",
+      "eval_id": "consistency:mmbench_en_dev:1195:p2",
+      "train_unit": "train:consistency:1193",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1189:p2",
+      "eval_id": "consistency:mmbench_en_dev:1195:p2",
+      "train_unit": "train:consistency:1189",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p2",
+      "eval_id": "consistency:mmbench_en_dev:1710:p2",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1710",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p2",
+      "eval_id": "consistency:mmbench_en_dev:1712:p2",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1712",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1689:p2",
+      "eval_id": "consistency:mmbench_en_dev:1691:p2",
+      "train_unit": "train:consistency:1689",
+      "eval_unit": "consistency:mmbench_en_dev:1691",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:944:p2",
+      "eval_id": "consistency:mmbench_en_dev:946:p2",
+      "train_unit": "train:consistency:944",
+      "eval_unit": "consistency:mmbench_en_dev:946",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1231:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1232:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1235:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1237:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1243:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1244:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1248:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1251:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1254:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1255:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1256:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1258:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p2",
+      "eval_id": "consistency:mmbench_en_dev:1259:p2",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1231:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1232:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1235:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1237:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1243:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1244:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1248:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1251:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1254:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1255:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1256:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1258:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p2",
+      "eval_id": "consistency:mmbench_en_dev:1259:p2",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1231:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1232:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1235:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1237:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1243:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1244:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1248:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1251:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1254:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1255:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1256:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1258:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p2",
+      "eval_id": "consistency:mmbench_en_dev:1259:p2",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1262:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1262",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1264:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1264",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1267:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1267",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1268:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1268",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1269:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1269",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1270:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1270",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1275:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1275",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1276:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1276",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1277:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1277",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1278:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1278",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p2",
+      "eval_id": "consistency:mmbench_en_dev:1279:p2",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1279",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p2",
+      "eval_id": "consistency:mmbench_en_dev:773:p2",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:773",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p2",
+      "eval_id": "consistency:mmbench_en_dev:785:p2",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:785",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p2",
+      "eval_id": "consistency:mmbench_en_dev:801:p2",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:801",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1333:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1339:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1343:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1344:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1346:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1355:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1357:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1361:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1362:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1364:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1367:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1373:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p2",
+      "eval_id": "consistency:mmbench_en_dev:1374:p2",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1333:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1339:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1343:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1344:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1346:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1355:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1357:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1361:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1362:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1364:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1367:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1373:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p2",
+      "eval_id": "consistency:mmbench_en_dev:1374:p2",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1792:p2",
+      "eval_id": "consistency:mmbench_en_dev:1791:p2",
+      "train_unit": "train:consistency:1792",
+      "eval_unit": "consistency:mmbench_en_dev:1791",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1117:p1",
+      "eval_id": "consistency:mmbench_en_dev:1118:p1",
+      "train_unit": "train:consistency:1117",
+      "eval_unit": "consistency:mmbench_en_dev:1118",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p1",
+      "eval_id": "consistency:mmbench_en_dev:1085:p1",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1085",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p1",
+      "eval_id": "consistency:mmbench_en_dev:1086:p1",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1086",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p1",
+      "eval_id": "consistency:mmbench_en_dev:1087:p1",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1087",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p1",
+      "eval_id": "consistency:mmbench_en_dev:1165:p1",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1165",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p1",
+      "eval_id": "consistency:mmbench_en_dev:1166:p1",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1166",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1139:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1139",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1143:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1143",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1148:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1148",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1150:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1150",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1153:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1153",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1154:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1154",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1156:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1156",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p1",
+      "eval_id": "consistency:mmbench_en_dev:1158:p1",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1158",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p1",
+      "eval_id": "consistency:mmbench_en_dev:1179:p1",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p1",
+      "eval_id": "consistency:mmbench_en_dev:1181:p1",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p1",
+      "eval_id": "consistency:mmbench_en_dev:1179:p1",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p1",
+      "eval_id": "consistency:mmbench_en_dev:1181:p1",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p1",
+      "eval_id": "consistency:mmbench_en_dev:1313:p1",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1313",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p1",
+      "eval_id": "consistency:mmbench_en_dev:1314:p1",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1314",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p1",
+      "eval_id": "consistency:mmbench_en_dev:1301:p1",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p1",
+      "eval_id": "consistency:mmbench_en_dev:1304:p1",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p1",
+      "eval_id": "consistency:mmbench_en_dev:1305:p1",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p1",
+      "eval_id": "consistency:mmbench_en_dev:1306:p1",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p1",
+      "eval_id": "consistency:mmbench_en_dev:1307:p1",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p1",
+      "eval_id": "consistency:mmbench_en_dev:1301:p1",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p1",
+      "eval_id": "consistency:mmbench_en_dev:1304:p1",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p1",
+      "eval_id": "consistency:mmbench_en_dev:1305:p1",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p1",
+      "eval_id": "consistency:mmbench_en_dev:1306:p1",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p1",
+      "eval_id": "consistency:mmbench_en_dev:1307:p1",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p1",
+      "eval_id": "consistency:mmbench_en_dev:1301:p1",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p1",
+      "eval_id": "consistency:mmbench_en_dev:1304:p1",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p1",
+      "eval_id": "consistency:mmbench_en_dev:1305:p1",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p1",
+      "eval_id": "consistency:mmbench_en_dev:1306:p1",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p1",
+      "eval_id": "consistency:mmbench_en_dev:1307:p1",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1736:p1",
+      "eval_id": "consistency:mmbench_en_dev:1749:p1",
+      "train_unit": "train:consistency:1736",
+      "eval_unit": "consistency:mmbench_en_dev:1749",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1290:p1",
+      "eval_id": "consistency:mmbench_en_dev:1288:p1",
+      "train_unit": "train:consistency:1290",
+      "eval_unit": "consistency:mmbench_en_dev:1288",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p1",
+      "eval_id": "consistency:mmbench_en_dev:1054:p1",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1054",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p1",
+      "eval_id": "consistency:mmbench_en_dev:1060:p1",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1060",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p1",
+      "eval_id": "consistency:mmbench_en_dev:1061:p1",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1061",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p1",
+      "eval_id": "consistency:mmbench_en_dev:1062:p1",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1062",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p1",
+      "eval_id": "consistency:mmbench_en_dev:1595:p1",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1595",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p1",
+      "eval_id": "consistency:mmbench_en_dev:1597:p1",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1597",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p1",
+      "eval_id": "consistency:mmbench_en_dev:1602:p1",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1602",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p1",
+      "eval_id": "consistency:mmbench_en_dev:1603:p1",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1603",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p1",
+      "eval_id": "consistency:mmbench_en_dev:1606:p1",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1606",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1189:p1",
+      "eval_id": "consistency:mmbench_en_dev:1195:p1",
+      "train_unit": "train:consistency:1189",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1193:p1",
+      "eval_id": "consistency:mmbench_en_dev:1195:p1",
+      "train_unit": "train:consistency:1193",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p1",
+      "eval_id": "consistency:mmbench_en_dev:1710:p1",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1710",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p1",
+      "eval_id": "consistency:mmbench_en_dev:1712:p1",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1712",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1689:p1",
+      "eval_id": "consistency:mmbench_en_dev:1691:p1",
+      "train_unit": "train:consistency:1689",
+      "eval_unit": "consistency:mmbench_en_dev:1691",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:944:p1",
+      "eval_id": "consistency:mmbench_en_dev:946:p1",
+      "train_unit": "train:consistency:944",
+      "eval_unit": "consistency:mmbench_en_dev:946",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1231:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1232:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1235:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1237:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1243:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1244:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1248:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1251:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1254:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1255:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1256:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1258:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p1",
+      "eval_id": "consistency:mmbench_en_dev:1259:p1",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1231:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1232:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1235:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1237:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1243:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1244:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1248:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1251:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1254:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1255:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1256:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1258:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p1",
+      "eval_id": "consistency:mmbench_en_dev:1259:p1",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1231:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1232:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1235:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1237:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1243:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1244:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1248:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1251:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1254:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1255:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1256:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1258:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p1",
+      "eval_id": "consistency:mmbench_en_dev:1259:p1",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1262:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1262",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1264:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1264",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1267:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1267",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1268:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1268",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1269:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1269",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1270:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1270",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1275:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1275",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1276:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1276",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1277:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1277",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1278:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1278",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p1",
+      "eval_id": "consistency:mmbench_en_dev:1279:p1",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1279",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p1",
+      "eval_id": "consistency:mmbench_en_dev:773:p1",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:773",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p1",
+      "eval_id": "consistency:mmbench_en_dev:785:p1",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:785",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p1",
+      "eval_id": "consistency:mmbench_en_dev:801:p1",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:801",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1333:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1339:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1343:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1344:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1346:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1355:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1357:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1361:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1362:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1364:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1367:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1373:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p1",
+      "eval_id": "consistency:mmbench_en_dev:1374:p1",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1333:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1339:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1343:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1344:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1346:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1355:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1357:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1361:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1362:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1364:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1367:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1373:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p1",
+      "eval_id": "consistency:mmbench_en_dev:1374:p1",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1792:p1",
+      "eval_id": "consistency:mmbench_en_dev:1791:p1",
+      "train_unit": "train:consistency:1792",
+      "eval_unit": "consistency:mmbench_en_dev:1791",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1117:p3",
+      "eval_id": "consistency:mmbench_en_dev:1118:p3",
+      "train_unit": "train:consistency:1117",
+      "eval_unit": "consistency:mmbench_en_dev:1118",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p3",
+      "eval_id": "consistency:mmbench_en_dev:1085:p3",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1085",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p3",
+      "eval_id": "consistency:mmbench_en_dev:1086:p3",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1086",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1088:p3",
+      "eval_id": "consistency:mmbench_en_dev:1087:p3",
+      "train_unit": "train:consistency:1088",
+      "eval_unit": "consistency:mmbench_en_dev:1087",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p3",
+      "eval_id": "consistency:mmbench_en_dev:1165:p3",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1165",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1168:p3",
+      "eval_id": "consistency:mmbench_en_dev:1166:p3",
+      "train_unit": "train:consistency:1168",
+      "eval_unit": "consistency:mmbench_en_dev:1166",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1139:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1139",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1143:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1143",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1148:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1148",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1150:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1150",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1153:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1153",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1154:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1154",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1156:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1156",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1157:p3",
+      "eval_id": "consistency:mmbench_en_dev:1158:p3",
+      "train_unit": "train:consistency:1157",
+      "eval_unit": "consistency:mmbench_en_dev:1158",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p3",
+      "eval_id": "consistency:mmbench_en_dev:1179:p3",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1176:p3",
+      "eval_id": "consistency:mmbench_en_dev:1181:p3",
+      "train_unit": "train:consistency:1176",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p3",
+      "eval_id": "consistency:mmbench_en_dev:1179:p3",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1179",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1177:p3",
+      "eval_id": "consistency:mmbench_en_dev:1181:p3",
+      "train_unit": "train:consistency:1177",
+      "eval_unit": "consistency:mmbench_en_dev:1181",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p3",
+      "eval_id": "consistency:mmbench_en_dev:1313:p3",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1313",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1320:p3",
+      "eval_id": "consistency:mmbench_en_dev:1314:p3",
+      "train_unit": "train:consistency:1320",
+      "eval_unit": "consistency:mmbench_en_dev:1314",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p3",
+      "eval_id": "consistency:mmbench_en_dev:1301:p3",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p3",
+      "eval_id": "consistency:mmbench_en_dev:1304:p3",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p3",
+      "eval_id": "consistency:mmbench_en_dev:1305:p3",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p3",
+      "eval_id": "consistency:mmbench_en_dev:1306:p3",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1311:p3",
+      "eval_id": "consistency:mmbench_en_dev:1307:p3",
+      "train_unit": "train:consistency:1311",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p3",
+      "eval_id": "consistency:mmbench_en_dev:1301:p3",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p3",
+      "eval_id": "consistency:mmbench_en_dev:1304:p3",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p3",
+      "eval_id": "consistency:mmbench_en_dev:1305:p3",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p3",
+      "eval_id": "consistency:mmbench_en_dev:1306:p3",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1303:p3",
+      "eval_id": "consistency:mmbench_en_dev:1307:p3",
+      "train_unit": "train:consistency:1303",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p3",
+      "eval_id": "consistency:mmbench_en_dev:1301:p3",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1301",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p3",
+      "eval_id": "consistency:mmbench_en_dev:1304:p3",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1304",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p3",
+      "eval_id": "consistency:mmbench_en_dev:1305:p3",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1305",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p3",
+      "eval_id": "consistency:mmbench_en_dev:1306:p3",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1306",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1308:p3",
+      "eval_id": "consistency:mmbench_en_dev:1307:p3",
+      "train_unit": "train:consistency:1308",
+      "eval_unit": "consistency:mmbench_en_dev:1307",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1736:p3",
+      "eval_id": "consistency:mmbench_en_dev:1749:p3",
+      "train_unit": "train:consistency:1736",
+      "eval_unit": "consistency:mmbench_en_dev:1749",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1290:p3",
+      "eval_id": "consistency:mmbench_en_dev:1288:p3",
+      "train_unit": "train:consistency:1290",
+      "eval_unit": "consistency:mmbench_en_dev:1288",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p3",
+      "eval_id": "consistency:mmbench_en_dev:1054:p3",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1054",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p3",
+      "eval_id": "consistency:mmbench_en_dev:1060:p3",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1060",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p3",
+      "eval_id": "consistency:mmbench_en_dev:1061:p3",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1061",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1053:p3",
+      "eval_id": "consistency:mmbench_en_dev:1062:p3",
+      "train_unit": "train:consistency:1053",
+      "eval_unit": "consistency:mmbench_en_dev:1062",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p3",
+      "eval_id": "consistency:mmbench_en_dev:1595:p3",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1595",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p3",
+      "eval_id": "consistency:mmbench_en_dev:1597:p3",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1597",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p3",
+      "eval_id": "consistency:mmbench_en_dev:1602:p3",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1602",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p3",
+      "eval_id": "consistency:mmbench_en_dev:1603:p3",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1603",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1598:p3",
+      "eval_id": "consistency:mmbench_en_dev:1606:p3",
+      "train_unit": "train:consistency:1598",
+      "eval_unit": "consistency:mmbench_en_dev:1606",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1189:p3",
+      "eval_id": "consistency:mmbench_en_dev:1195:p3",
+      "train_unit": "train:consistency:1189",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1193:p3",
+      "eval_id": "consistency:mmbench_en_dev:1195:p3",
+      "train_unit": "train:consistency:1193",
+      "eval_unit": "consistency:mmbench_en_dev:1195",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p3",
+      "eval_id": "consistency:mmbench_en_dev:1710:p3",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1710",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1711:p3",
+      "eval_id": "consistency:mmbench_en_dev:1712:p3",
+      "train_unit": "train:consistency:1711",
+      "eval_unit": "consistency:mmbench_en_dev:1712",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1689:p3",
+      "eval_id": "consistency:mmbench_en_dev:1691:p3",
+      "train_unit": "train:consistency:1689",
+      "eval_unit": "consistency:mmbench_en_dev:1691",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:944:p3",
+      "eval_id": "consistency:mmbench_en_dev:946:p3",
+      "train_unit": "train:consistency:944",
+      "eval_unit": "consistency:mmbench_en_dev:946",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1231:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1232:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1235:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1237:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1243:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1244:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1248:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1251:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1254:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1255:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1256:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1258:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1247:p3",
+      "eval_id": "consistency:mmbench_en_dev:1259:p3",
+      "train_unit": "train:consistency:1247",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1231:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1232:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1235:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1237:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1243:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1244:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1248:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1251:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1254:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1255:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1256:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1258:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1257:p3",
+      "eval_id": "consistency:mmbench_en_dev:1259:p3",
+      "train_unit": "train:consistency:1257",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1231:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1231",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1232:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1232",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1235:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1235",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1237:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1237",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1243:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1243",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1244:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1244",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1248:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1248",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1251:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1251",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1254:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1254",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1255:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1255",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1256:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1256",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1258:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1258",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1238:p3",
+      "eval_id": "consistency:mmbench_en_dev:1259:p3",
+      "train_unit": "train:consistency:1238",
+      "eval_unit": "consistency:mmbench_en_dev:1259",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1262:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1262",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1264:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1264",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1267:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1267",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1268:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1268",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1269:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1269",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1270:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1270",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1275:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1275",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1276:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1276",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1277:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1277",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1278:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1278",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1273:p3",
+      "eval_id": "consistency:mmbench_en_dev:1279:p3",
+      "train_unit": "train:consistency:1273",
+      "eval_unit": "consistency:mmbench_en_dev:1279",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p3",
+      "eval_id": "consistency:mmbench_en_dev:773:p3",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:773",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p3",
+      "eval_id": "consistency:mmbench_en_dev:785:p3",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:785",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:805:p3",
+      "eval_id": "consistency:mmbench_en_dev:801:p3",
+      "train_unit": "train:consistency:805",
+      "eval_unit": "consistency:mmbench_en_dev:801",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1333:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1339:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1343:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1344:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1346:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1355:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1357:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1361:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1362:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1364:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1367:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1373:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1350:p3",
+      "eval_id": "consistency:mmbench_en_dev:1374:p3",
+      "train_unit": "train:consistency:1350",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1333:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1333",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1339:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1339",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1343:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1343",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1344:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1344",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1346:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1346",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1355:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1355",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1357:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1357",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1361:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1361",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1362:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1362",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1364:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1364",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1367:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1367",
+      "same_label": true,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1373:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1373",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1351:p3",
+      "eval_id": "consistency:mmbench_en_dev:1374:p3",
+      "train_unit": "train:consistency:1351",
+      "eval_unit": "consistency:mmbench_en_dev:1374",
+      "same_label": false,
+      "same_image_bytes": false
+    },
+    {
+      "train_id": "train:consistency:1792:p3",
+      "eval_id": "consistency:mmbench_en_dev:1791:p3",
+      "train_unit": "train:consistency:1792",
+      "eval_unit": "consistency:mmbench_en_dev:1791",
+      "same_label": false,
+      "same_image_bytes": false
+    }
+  ],
+  "label_prior": {
+    "scienceqa_train": {
+      "A": 218,
+      "C": 108,
+      "B": 216,
+      "D": 58
+    },
+    "mmstar_eval": {
+      "A": 429,
+      "B": 447,
+      "D": 315,
+      "C": 309
+    }
+  },
+  "scope": "Common templates can be semantically appropriate on different images. This is prompt reuse, not proof of sample leakage; exclusion is post-hoc."
+}

@@ -1,0 +1,18 @@
+{
+  "source": {
+    "revision": "f18b0a70359ebfb41f658fd564208d0355b013f4",
+    "path": "data/train-00000-of-00001-1028f23e353fbe3e.parquet",
+    "sha256": "62c90a28e3fb1bc0ad7bbcab1ac62b483ae6758291a655944d8f494bf6445745",
+    "bytes": 377460993
+  },
+  "range_bytes_read": 262893,
+  "http_range_requests": 9,
+  "exact_parquet_row_matches": 600,
+  "columns": [
+    "question",
+    "choices",
+    "answer",
+    "hint"
+  ],
+  "scope": "Pinned file identity via LFS SHA/size metadata and verified byte ranges; no image column or full binary downloaded."
+}

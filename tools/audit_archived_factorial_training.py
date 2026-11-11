@@ -59,9 +59,17 @@ def verify(cache):
             assert complete[field]==mapping[base+file]['sha256']
             if (folder/file).is_file():
                 assert sha(folder/file)==complete[field]
+        evaluation_links = {}
+        for split in ('development','heldout'):
+            eval_meta = run/'evaluations'/split/name/'eval.meta.json'
+            proof = read_json(eval_meta)
+            assert proof['adapter_sha256']==complete['adapter_sha256']
+            assert proof['protocol_sha256']==protocols
+            evaluation_links[split] = sha(eval_meta)
         results[name] = {'actual_updates':1000,'axes':dict(axis_counts),'dual':condition.endswith('-D'),
                          'loss_sha256':complete['loss_sha256'],'adapter_sha256':complete['adapter_sha256'],
                          'resume_sha256':complete['resume_sha256'],
+                         'evaluation_metadata_sha256':evaluation_links,
                          'historical_state_verification':prior,
                          'fresh_scope':'per-step ledger and artifact digests; no fresh tensor reload'}
     return {'verified_runs':len(results),'expected_new_runs':6,'runs':results}

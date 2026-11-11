@@ -1,0 +1,210 @@
+{
+  "verified_runs": 6,
+  "expected_new_runs": 6,
+  "runs": {
+    "N-D-seed137": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": true,
+      "loss_sha256": "66550f1ab1302767d48c8286ffb376c591b2822dae6d68a0c583ceb2fbd61bee",
+      "adapter_sha256": "c76a91f0b5430257a1f49394178f4465fc8e3231629527a10327b70d029e023e",
+      "resume_sha256": "606bfc959846de6619abcddc63ef9ff7fa83b26e77087989672160ead094d93f",
+      "evaluation_metadata_sha256": {
+        "development": "7f8576efa33b364036c144248bb026f166451167f2431fc78fbfedd86ba32500",
+        "heldout": "bc3c908ef6c2bad4b6157df7d445bc49cef7d9c7554b9ad258d3c4c64ba60de2"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "N-D",
+        "seed": 137,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:48.957055+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    },
+    "N-D-seed42": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": true,
+      "loss_sha256": "d673d74d5ea05523d523767e57fc5993edcd82340cb7258c9d7aa0344b8c7230",
+      "adapter_sha256": "2bb0212f4bd616978ca7d43f172f77f53a251e7d040b30f9883b2c6771030855",
+      "resume_sha256": "e6abdc677c148c0ab2c2877dc01d62c767ec5f7644c7cabf38f12312739bf1ce",
+      "evaluation_metadata_sha256": {
+        "development": "2611a3fb14ae4e85c9561189dbceef617b6d02a47918b22346d5deef6735bcfe",
+        "heldout": "ce91c6960c62eafd6e271c4b63196d09706d66b6d436ea27ad38401a777b5171"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "N-D",
+        "seed": 42,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:44.728495+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    },
+    "N-G-seed137": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": false,
+      "loss_sha256": "7ada68ab2e2cad70007808ad501d4b45d713d6f0e1722d94b71ffbd0fbea3366",
+      "adapter_sha256": "5cea4cdd592f560e53343ed7d2d3d265b74aa602c565ecf37161ee73edccd496",
+      "resume_sha256": "8c22c4799fb7846e16c6003215cfe6424218eae9db45aabd03bc33f4aeaa5c53",
+      "evaluation_metadata_sha256": {
+        "development": "4f9920289624025bb1bcea40cab5516b6842864f4f9f820e5d04e78c6aff1114",
+        "heldout": "0f430e1fb056718c8fa5f9df618d8d6b1c599745786b0152b101bb222e1b8894"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "N-G",
+        "seed": 137,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:50.296391+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    },
+    "N-G-seed42": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": false,
+      "loss_sha256": "95e1e033c6edee9537dc571237743a42450c03495e60314edc9f35948f470ff1",
+      "adapter_sha256": "692396069899c1765dc93d2d84bfb8072c21b0deaf1f2d1cdabc281e4e47b758",
+      "resume_sha256": "1aa6d86456b4e234bdd9739599154302163ef66e708ffcc8ebe487f5fe175c70",
+      "evaluation_metadata_sha256": {
+        "development": "65dd4ce56a4dcd65793ca20a8d346c31e479e0ef3b0a643a6c7fa3a8a780f17b",
+        "heldout": "01fb617f89f5062ceef3ee5606f887985d5f1c8ff9f17c5d3e9d7d00393320a1"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "N-G",
+        "seed": 42,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:45.893652+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    },
+    "P-G-seed137": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": false,
+      "loss_sha256": "08b790dad138599f811d2c9087ed008eb9575446c5f3e58bd54fbc37a41a931b",
+      "adapter_sha256": "43e3b83c861424de34cad39b405a6d24e76ca87a754f5f2c8301d8ace105ed7f",
+      "resume_sha256": "7e977b07e633747d225b16bd64594816002eb074dbfb0987eef85658cc8502a8",
+      "evaluation_metadata_sha256": {
+        "development": "8ab1eeae424fe878fc0bd7d4fe123abd8ccb8e60c79a9714f87076cb8dcb1248",
+        "heldout": "9e29ba6f13812e6095c0e1397de687f7064b6f2d90e2ac33a30f12f043e32fe8"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "P-G",
+        "seed": 137,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:47.408561+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    },
+    "P-G-seed42": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": false,
+      "loss_sha256": "8b1381589d2fd78f5d01b3cb6f4e10ae449835bff3c419cc37e28fda950cd177",
+      "adapter_sha256": "e981d82d348a996356a37387ff4aae333fb406fa495a1419da70b4f62222b9a4",
+      "resume_sha256": "ed58a2db9536afa3dd048ee4c3f07c32a82f2de2d690d12c6dac2992cdd8b9df",
+      "evaluation_metadata_sha256": {
+        "development": "ad5a6980a1195a0c1d8f5de4d646db881f0bb8a69d3ec07a8f862b6cd394e573",
+        "heldout": "313bd4d6d4411cbf3e9e340904a8c9267c3931dd4fc037cf005c6e92e30385ed"
+      },
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "P-G",
+        "seed": 42,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:42.801614+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    }
+  }
+}
