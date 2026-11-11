@@ -1,0 +1,205 @@
+{
+  "historical_rows_replayed": 270400,
+  "registered_intervals_replayed": 12,
+  "endpoints": {
+    "N-seed42": {
+      "historical_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.6779166666666666,
+        "consistency": 0.84125,
+        "mmstar": 0.6293333333333333
+      },
+      "historical_generations_historical_pixel_score": 0.6779166666666666,
+      "historical_generations_processor_pixel_score": 0.855,
+      "processor_generations_historical_pixel_score": 0.017916666666666668,
+      "processor_generations_processor_pixel_score": 0.8470833333333333
+    },
+    "A1-seed42": {
+      "historical_scores": {
+        "pope": 0.8761111111111111,
+        "grounding": 0.675,
+        "consistency": 0.84125,
+        "mmstar": 0.6126666666666667
+      },
+      "historical_generations_historical_pixel_score": 0.675,
+      "historical_generations_processor_pixel_score": 0.8570833333333333,
+      "processor_generations_historical_pixel_score": 0.012083333333333333,
+      "processor_generations_processor_pixel_score": 0.8541666666666666
+    },
+    "A2-seed42": {
+      "historical_scores": {
+        "pope": 0.8757777777777778,
+        "grounding": 0.6779166666666666,
+        "consistency": 0.85125,
+        "mmstar": 0.622
+      },
+      "historical_generations_historical_pixel_score": 0.6779166666666666,
+      "historical_generations_processor_pixel_score": 0.8570833333333333,
+      "processor_generations_historical_pixel_score": 0.0033333333333333335,
+      "processor_generations_processor_pixel_score": 0.85125
+    },
+    "U-seed42": {
+      "historical_scores": {
+        "pope": 0.9021111111111111,
+        "grounding": 0.79125,
+        "consistency": 0.83875,
+        "mmstar": 0.6106666666666667
+      },
+      "historical_generations_historical_pixel_score": 0.79125,
+      "historical_generations_processor_pixel_score": 0.6945833333333333,
+      "processor_generations_historical_pixel_score": 0.20208333333333334,
+      "processor_generations_processor_pixel_score": 0.8383333333333334
+    },
+    "A1-seed137": {
+      "historical_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.6729166666666667,
+        "consistency": 0.8625,
+        "mmstar": 0.6273333333333333
+      },
+      "historical_generations_historical_pixel_score": 0.6729166666666667,
+      "historical_generations_processor_pixel_score": 0.8541666666666666,
+      "processor_generations_historical_pixel_score": 0.002916666666666667,
+      "processor_generations_processor_pixel_score": 0.8529166666666667
+    },
+    "A2-seed137": {
+      "historical_scores": {
+        "pope": 0.8756666666666667,
+        "grounding": 0.675,
+        "consistency": 0.86125,
+        "mmstar": 0.624
+      },
+      "historical_generations_historical_pixel_score": 0.675,
+      "historical_generations_processor_pixel_score": 0.855,
+      "processor_generations_historical_pixel_score": 0.002916666666666667,
+      "processor_generations_processor_pixel_score": 0.855
+    },
+    "U-seed137": {
+      "historical_scores": {
+        "pope": 0.8804444444444445,
+        "grounding": 0.83125,
+        "consistency": 0.8425,
+        "mmstar": 0.6206666666666667
+      },
+      "historical_generations_historical_pixel_score": 0.83125,
+      "historical_generations_processor_pixel_score": 0.6879166666666666,
+      "processor_generations_historical_pixel_score": 0.45125,
+      "processor_generations_processor_pixel_score": 0.8266666666666667
+    },
+    "A1-seed256": {
+      "historical_scores": {
+        "pope": 0.8752222222222222,
+        "grounding": 0.67625,
+        "consistency": 0.85,
+        "mmstar": 0.61
+      },
+      "historical_generations_historical_pixel_score": 0.67625,
+      "historical_generations_processor_pixel_score": 0.8570833333333333,
+      "processor_generations_historical_pixel_score": 0.00125,
+      "processor_generations_processor_pixel_score": 0.8566666666666667
+    },
+    "A2-seed256": {
+      "historical_scores": {
+        "pope": 0.872,
+        "grounding": 0.67375,
+        "consistency": 0.85,
+        "mmstar": 0.6106666666666667
+      },
+      "historical_generations_historical_pixel_score": 0.67375,
+      "historical_generations_processor_pixel_score": 0.855,
+      "processor_generations_historical_pixel_score": 0.0008333333333333334,
+      "processor_generations_processor_pixel_score": 0.8466666666666667
+    },
+    "U-seed256": {
+      "historical_scores": {
+        "pope": 0.8911111111111111,
+        "grounding": 0.79,
+        "consistency": 0.85,
+        "mmstar": 0.6273333333333333
+      },
+      "historical_generations_historical_pixel_score": 0.79,
+      "historical_generations_processor_pixel_score": 0.7666666666666667,
+      "processor_generations_historical_pixel_score": 0.5983333333333334,
+      "processor_generations_processor_pixel_score": 0.8479166666666667
+    },
+    "A1-seed512": {
+      "historical_scores": {
+        "pope": 0.8834444444444445,
+        "grounding": 0.65375,
+        "consistency": 0.855,
+        "mmstar": 0.6006666666666667
+      },
+      "historical_generations_historical_pixel_score": 0.65375,
+      "historical_generations_processor_pixel_score": 0.8583333333333333,
+      "processor_generations_historical_pixel_score": 0.0020833333333333333,
+      "processor_generations_processor_pixel_score": 0.855
+    },
+    "A2-seed512": {
+      "historical_scores": {
+        "pope": 0.8754444444444445,
+        "grounding": 0.6716666666666666,
+        "consistency": 0.8425,
+        "mmstar": 0.598
+      },
+      "historical_generations_historical_pixel_score": 0.6716666666666666,
+      "historical_generations_processor_pixel_score": 0.85375,
+      "processor_generations_historical_pixel_score": 0.0025,
+      "processor_generations_processor_pixel_score": 0.8420833333333333
+    },
+    "U-seed512": {
+      "historical_scores": {
+        "pope": 0.8845555555555555,
+        "grounding": 0.6979166666666666,
+        "consistency": 0.8375,
+        "mmstar": 0.6193333333333333
+      },
+      "historical_generations_historical_pixel_score": 0.6979166666666666,
+      "historical_generations_processor_pixel_score": 0.75875,
+      "processor_generations_historical_pixel_score": 0.33666666666666667,
+      "processor_generations_processor_pixel_score": 0.84375
+    },
+    "A1-seed1024": {
+      "historical_scores": {
+        "pope": 0.8798888888888889,
+        "grounding": 0.62875,
+        "consistency": 0.8575,
+        "mmstar": 0.6413333333333333
+      },
+      "historical_generations_historical_pixel_score": 0.62875,
+      "historical_generations_processor_pixel_score": 0.8395833333333333,
+      "processor_generations_historical_pixel_score": 0.0025,
+      "processor_generations_processor_pixel_score": 0.8608333333333333
+    },
+    "A2-seed1024": {
+      "historical_scores": {
+        "pope": 0.8748888888888889,
+        "grounding": 0.6745833333333333,
+        "consistency": 0.85625,
+        "mmstar": 0.626
+      },
+      "historical_generations_historical_pixel_score": 0.6745833333333333,
+      "historical_generations_processor_pixel_score": 0.85375,
+      "processor_generations_historical_pixel_score": 0.0020833333333333333,
+      "processor_generations_processor_pixel_score": 0.85375
+    },
+    "U-seed1024": {
+      "historical_scores": {
+        "pope": 0.8813333333333333,
+        "grounding": 0.7725,
+        "consistency": 0.82,
+        "mmstar": 0.604
+      },
+      "historical_generations_historical_pixel_score": 0.7725,
+      "historical_generations_processor_pixel_score": 0.77,
+      "processor_generations_historical_pixel_score": 0.35375,
+      "processor_generations_processor_pixel_score": 0.7570833333333333
+    }
+  },
+  "A1_minus_U_cross_scoring_matrix": {
+    "historical_generations_historical_pixel_score": -0.11524999999999996,
+    "historical_generations_processor_pixel_score": 0.11766666666666659,
+    "processor_generations_historical_pixel_score": -0.38425000000000004,
+    "processor_generations_processor_pixel_score": 0.03316666666666668
+  },
+  "scope": "Counterfactual reinterpretation of fixed raw texts is diagnostic only. Archived generators used different prompts; no per-item unit choice."
+}

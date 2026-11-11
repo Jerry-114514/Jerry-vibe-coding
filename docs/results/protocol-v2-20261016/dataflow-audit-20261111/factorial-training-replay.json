@@ -1,0 +1,36 @@
+{
+  "verified_runs": 1,
+  "expected_new_runs": 6,
+  "runs": {
+    "N-D-seed137": {
+      "actual_updates": 1000,
+      "axes": {
+        "pope": 250,
+        "grounding": 250,
+        "consistency": 250,
+        "mmstar": 250
+      },
+      "dual": true,
+      "loss_sha256": "66550f1ab1302767d48c8286ffb376c591b2822dae6d68a0c583ceb2fbd61bee",
+      "adapter_sha256": "c76a91f0b5430257a1f49394178f4465fc8e3231629527a10327b70d029e023e",
+      "resume_sha256": "606bfc959846de6619abcddc63ef9ff7fa83b26e77087989672160ead094d93f",
+      "historical_state_verification": {
+        "status": "passed",
+        "actual_updates": 1000,
+        "condition": "N-D",
+        "seed": 137,
+        "axes": {
+          "pope": 250,
+          "grounding": 250,
+          "consistency": 250,
+          "mmstar": 250
+        },
+        "adapter_export_matches_checkpoint": true,
+        "optimizer_states_at1000": true,
+        "loss_finite": true,
+        "timestamp_utc": "2026-10-20T00:33:48.957055+00:00"
+      },
+      "fresh_scope": "per-step ledger and artifact digests; no fresh tensor reload"
+    }
+  }
+}
