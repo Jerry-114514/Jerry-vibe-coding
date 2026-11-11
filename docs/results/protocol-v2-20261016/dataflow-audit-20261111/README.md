@@ -4,6 +4,8 @@
 
 后续复算已覆盖[原 B/C/D](v1-replay.json)、[30 次训练与 API 教师](training-chain-replay.json)、[登记区间和图像别名敏感性](paired-intervals-replay.json)。细节见[第二批证据](training-and-statistics.md)；下方保留第一批证据及其当时的核验范围。
 
+第三批已独立加载 7B BF16 教师缓存，核对训练–评测图像指纹，重算排除候选近重复的敏感性，并复现修订 C 的全部六项分析，见[第三批证据](image-cache-and-revised-gate.md)。
+
 ## 已重算的结果
 
 | 范围 | 重算与核验 | 结果 |
