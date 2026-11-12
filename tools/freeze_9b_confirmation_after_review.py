@@ -1,6 +1,7 @@
 """Validate independent localization reviews and emit the confirmation manifests."""
 import argparse
 from collections import Counter, defaultdict
+import hashlib
 from pathlib import Path
 
 from experiment_common import parse_answer, read_json, read_rows, sha, write_json, write_rows
@@ -112,6 +113,21 @@ def freeze(run, first_path, second_path, output):
     main = [item for item in items if item.get('coordinate_system') != 'original_pixels']
     if Counter(row['axis'] for row in main) != AXIS_PROMPTS or len({row['item_id'] for row in items}) != 1320:
         raise ValueError('Confirmation prompt quotas or IDs differ from the protocol')
+    token_file = run / 'private/evaluation-token-verification.jsonl'
+    token_report = read_json(run / 'tokenization-verification.json')
+    if sha(token_file) != token_report['evaluation_token_rows_sha256']:
+        raise ValueError('Evaluation token or image lock changed')
+    token_rows = read_rows(token_file)
+    tokens = {row['item_id']: row for row in token_rows}
+    if len(tokens) != len(token_rows):
+        raise ValueError('Evaluation token lock contains duplicate IDs')
+    for row in items:
+        lock = tokens[row['item_id']]
+        if (lock['image_path'] != row['image_path']
+                or lock['prompt_sha256'] != hashlib.sha256(row['question'].encode('utf-8')).hexdigest()):
+            raise ValueError(f"Prompt or image path differs from token lock: {row['item_id']}")
+        for field in ('image_sha256', 'image_grid_thw', 'prompt_tokens', 'prompt_ids_sha256'):
+            row[field] = lock[field]
     write_rows(output / 'evaluation-manifest.jsonl', items)
     write_json(output / 'review-status.json', {
         'status': 'reviewed_manifest_frozen', 'scope': 'Evaluation manifest only. GPU run authorization is separate.',
@@ -121,6 +137,8 @@ def freeze(run, first_path, second_path, output):
         'review_sha256': [sha(first_path), sha(second_path)],
         'script_sha256': sha(Path(__file__)),
         'adjudication_sha256': sha(output / 'adjudication.jsonl'),
+        'model_revision': token_report['model_revision'],
+        'evaluation_token_lock_sha256': sha(token_file),
         'evaluation_manifest_sha256': sha(output / 'evaluation-manifest.jsonl'),
     })
 

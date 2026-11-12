@@ -118,17 +118,26 @@ def verify(run, historical, metadata, source, historical_lock):
     for entry in read_rows(run / 'private/grounding-queue.jsonl'):
         row = entry['source']
         for contract in ('native_1000', 'original_pixels'):
-            candidates.append({**row, 'question': prompt(row, contract), 'coordinate_system': contract})
+            candidates.append({**row, 'item_id': f"{row['item_id']}:{contract}",
+                               'question': prompt(row, contract), 'coordinate_system': contract})
     eval_lengths = defaultdict(list)
+    eval_tokens = []
     for row in candidates:
-        with Image.open(ROOT / row['image_path']) as image:
+        image_path = ROOT / row['image_path']
+        with Image.open(image_path) as image:
             width, height = image.size
-        _, ids = processor.inputs(row['question'], width, height)
+        grid, ids = processor.inputs(row['question'], width, height)
         if len(ids) > 2048:
             raise ValueError(f"Evaluation prompt exceeds cap: {row['item_id']}")
         eval_lengths[f"{row['axis']}/{row.get('coordinate_system', 'default')}"].append(len(ids))
+        eval_tokens.append({'item_id': row['item_id'], 'image_path': row['image_path'],
+                            'image_sha256': sha(image_path), 'image_grid_thw': grid,
+                            'prompt_sha256': hashlib.sha256(row['question'].encode('utf-8')).hexdigest(),
+                            'prompt_tokens': len(ids), 'prompt_ids_sha256': digest(ids)})
     token_path = run / 'private' / 'training-token-verification.jsonl'
+    eval_token_path = run / 'private' / 'evaluation-token-verification.jsonl'
     write_rows(token_path, records)
+    write_rows(eval_token_path, eval_tokens)
     write_json(run / 'tokenization-verification.json', {
         'scope': 'CPU tokenizer IDs and image grids. No tensor preprocessing or model forward.',
         'model_revision': lock['model_revision'], 'tokenizers_version': tokenizer_version,
@@ -137,6 +146,7 @@ def verify(run, historical, metadata, source, historical_lock):
         'training': {key: {metric: describe(values) for metric, values in metrics.items()}
                      for key, metrics in sorted(lengths.items())},
         'provisional_evaluation_prompts': len(candidates),
+        'evaluation_token_rows_sha256': sha(eval_token_path),
         'evaluation_prompt_lengths': {key: describe(values) for key, values in sorted(eval_lengths.items())},
     })
 
