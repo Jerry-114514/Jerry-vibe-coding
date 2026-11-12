@@ -35,7 +35,7 @@ def text_choices(row):
     return (canon(q),tuple(sorted(canon(v) for v in opts.values()))) if opts else None
 
 
-def audit(cache):
+def audit(cache, *, candidate_export=None):
     manifest = {r:from_archive(cache,'094432','/'+r+'.jsonl') for r in ('calibration','audit','confirm','train')}
     known_eval = from_archive(cache,'070813','/formal-manifest.jsonl')
     old_heldout = read_rows(next((cache/'selective').rglob('heldout-manifest.jsonl')))
@@ -79,6 +79,7 @@ def audit(cache):
             historical_text.add(key)
     reasons = Counter()
     kept = defaultdict(list)
+    decisions = []
     for k,group in original.items():
         r = group[0]
         a = r['axis']
@@ -94,8 +95,16 @@ def audit(cache):
             why = 'choice_question_and_option_set_reuse'
         else:
             kept[a].append(r)
+            if candidate_export is not None:
+                decisions.append({'original_id': k, 'axis': a, 'component': r['image_group'],
+                                  'rows': group, 'exclusion': None})
             continue
         reasons[a,why] += 1
+        if candidate_export is not None:
+            decisions.append({'original_id': k, 'axis': a, 'component': r['image_group'],
+                              'exclusion': why})
+    if candidate_export is not None:
+        candidate_export.extend(decisions)
     feasibility = {}
     for a in AXES:
         groups = Counter((r['dataset'],r['subset']) for r in kept[a])

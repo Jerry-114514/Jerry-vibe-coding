@@ -1,0 +1,204 @@
+{
+  "scope": "CPU tokenizer IDs and image grids. No tensor preprocessing or model forward.",
+  "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "tokenizers_version": "0.23.3",
+  "resize_source_sha256": "ebdb484798a6aefebc5dbe5431d3e4af8f460404d95d4cb67165fdff624ed333",
+  "historical_gt_rows_exact": 2400,
+  "training_rows": 1200,
+  "training_token_rows_sha256": "85c57af7e30ec030673c080ff4c16c6fa4c8708836b653cd098e5b3712f35bb6",
+  "training": {
+    "N-G/consistency": {
+      "prompt": {
+        "count": 150,
+        "min": 310,
+        "max": 765,
+        "mean": 357
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 312,
+        "max": 767,
+        "mean": 359
+      }
+    },
+    "N-G/grounding": {
+      "prompt": {
+        "count": 150,
+        "min": 348,
+        "max": 489,
+        "mean": 377.12
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 24,
+        "max": 30,
+        "mean": 28.706666666666667
+      },
+      "total": {
+        "count": 150,
+        "min": 375,
+        "max": 517,
+        "mean": 405.82666666666665
+      }
+    },
+    "N-G/mmstar": {
+      "prompt": {
+        "count": 150,
+        "min": 298,
+        "max": 604,
+        "mean": 369.17333333333335
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 300,
+        "max": 606,
+        "mean": 371.17333333333335
+      }
+    },
+    "N-G/pope": {
+      "prompt": {
+        "count": 150,
+        "min": 286,
+        "max": 429,
+        "mean": 314.3
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 288,
+        "max": 431,
+        "mean": 316.3
+      }
+    },
+    "P-G/consistency": {
+      "prompt": {
+        "count": 150,
+        "min": 310,
+        "max": 765,
+        "mean": 357
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 312,
+        "max": 767,
+        "mean": 359
+      }
+    },
+    "P-G/grounding": {
+      "prompt": {
+        "count": 150,
+        "min": 344,
+        "max": 485,
+        "mean": 373.12
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 22,
+        "max": 30,
+        "mean": 28.14
+      },
+      "total": {
+        "count": 150,
+        "min": 369,
+        "max": 512,
+        "mean": 401.26
+      }
+    },
+    "P-G/mmstar": {
+      "prompt": {
+        "count": 150,
+        "min": 298,
+        "max": 604,
+        "mean": 369.17333333333335
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 300,
+        "max": 606,
+        "mean": 371.17333333333335
+      }
+    },
+    "P-G/pope": {
+      "prompt": {
+        "count": 150,
+        "min": 286,
+        "max": 429,
+        "mean": 314.3
+      },
+      "target_including_eos": {
+        "count": 150,
+        "min": 2,
+        "max": 2,
+        "mean": 2
+      },
+      "total": {
+        "count": 150,
+        "min": 288,
+        "max": 431,
+        "mean": 316.3
+      }
+    }
+  },
+  "provisional_evaluation_prompts": 1440,
+  "evaluation_prompt_lengths": {
+    "consistency/default": {
+      "count": 600,
+      "min": 317,
+      "max": 1351,
+      "mean": 488.0833333333333
+    },
+    "grounding/native_1000": {
+      "count": 300,
+      "min": 348,
+      "max": 496,
+      "mean": 378.33666666666664
+    },
+    "grounding/original_pixels": {
+      "count": 300,
+      "min": 344,
+      "max": 492,
+      "mean": 374.33666666666664
+    },
+    "mmstar/default": {
+      "count": 120,
+      "min": 324,
+      "max": 1396,
+      "mean": 550.125
+    },
+    "pope/default": {
+      "count": 120,
+      "min": 289,
+      "max": 390,
+      "mean": 312.90833333333336
+    }
+  }
+}
