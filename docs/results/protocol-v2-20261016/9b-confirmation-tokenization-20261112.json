@@ -5,7 +5,7 @@
   "resize_source_sha256": "ebdb484798a6aefebc5dbe5431d3e4af8f460404d95d4cb67165fdff624ed333",
   "historical_gt_rows_exact": 2400,
   "training_rows": 1200,
-  "training_token_rows_sha256": "85c57af7e30ec030673c080ff4c16c6fa4c8708836b653cd098e5b3712f35bb6",
+  "training_token_rows_sha256": "d27c3c50ed78ef1c910fd93a11f2e69090183e5c3fbd1ef9795a0ff16c983714",
   "training": {
     "N-G/consistency": {
       "prompt": {

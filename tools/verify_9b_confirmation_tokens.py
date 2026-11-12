@@ -106,7 +106,9 @@ def verify(run, historical, metadata, source, historical_lock):
             for metric, n in (('prompt', len(ids)), ('target_including_eos', len(target)), ('total', total)):
                 lengths[key][metric].append(n)
             pair_records.append({'item_id': row['item_id'], 'image_grid_thw': grid,
-                                 'prompt_ids_sha256': digest(ids), 'target_ids': target})
+                                 'prompt_ids_sha256': digest(ids), 'target_ids': target,
+                                 'prompt_tokens': len(ids), 'target_tokens': len(target),
+                                 'visual_tokens': math.prod(grid) // processor.merge**2})
         left, right = pair_records
         if left['item_id'] != right['item_id'] or left['image_grid_thw'] != right['image_grid_thw']:
             raise ValueError('Paired training image grids or sample IDs differ')

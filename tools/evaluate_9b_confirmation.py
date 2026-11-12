@@ -106,8 +106,10 @@ def evaluate(manifest_path, endpoint, run, deadline):
             raise ValueError('Adapter is not a registered 1000-step training endpoint')
         adapter = training / 'adapter'
         adapter_hashes = {name: sha(adapter / name) for name in ('adapter_model.safetensors', 'adapter_config.json')}
-        if adapter_hashes['adapter_model.safetensors'] != finished['adapter_sha256']:
-            raise ValueError('Adapter weights changed after training')
+        if (finished['review_sha256'] != sha(manifest_path.parent / 'review-status.json')
+                or finished['model_revision'] != review['model_revision']
+                or any(digest != finished['files'][f'adapter/{name}'] for name, digest in adapter_hashes.items())):
+            raise ValueError('Adapter or training provenance differs from the frozen run')
 
     def guard():
         if time.time() >= deadline:
