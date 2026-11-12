@@ -1,0 +1,210 @@
+{
+  "old_heldout_prompt_overlap": 960,
+  "old_heldout_originals": 480,
+  "old_heldout_components": 425,
+  "available_compact_ledger_checks": [
+    {
+      "member": "runs/protocol-v2/audit/api-qwen3-vl-plus-v1/ledger.jsonl",
+      "unique_ids": 1365,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/audit/qwen-clean-v2/qwen3b/ledger.jsonl",
+      "unique_ids": 9600,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/api-audit-qwen3-vl-plus-v1/ledger.jsonl",
+      "unique_ids": 48,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/api-native-grounding-validation/ledger.jsonl",
+      "unique_ids": 92,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-native-grounding/ledger.jsonl",
+      "unique_ids": 8,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2-api-snapshots/20261016T054045Z/api-teacher-development/ledger.jsonl",
+      "unique_ids": 64,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/clean-inputs-v5/qwen3b/ledger.jsonl",
+      "unique_ids": 960,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/clean-inputs-v5/qwen7b/ledger.jsonl",
+      "unique_ids": 960,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/processed-pixel-grounding-v1/qwen3b/ledger.jsonl",
+      "unique_ids": 120,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/processed-pixel-grounding-v1/qwen7b/ledger.jsonl",
+      "unique_ids": 120,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/teacher-roles-v3/qwen3.5-122b-a10b/ledger.jsonl",
+      "unique_ids": 48,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/protocol-v2/calibration/teacher-roles-v3/qwen3.5-397b-a17b/ledger.jsonl",
+      "unique_ids": 48,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/instance-retirement-20261020/gap-batches/batch-010/files/runs/protocol-v2/audit/qwen-clean-v1/qwen3b/ledger.jsonl",
+      "unique_ids": 9402,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/instance-retirement-20261020/gap-batches/batch-010/files/runs/protocol-v2/audit/qwen-clean-v2/qwen7b/ledger.jsonl",
+      "unique_ids": 7400,
+      "matched_prompt_ids": 0
+    },
+    {
+      "member": "runs/instance-retirement-20261020/gap-batches/batch-012/files/runs/protocol-v2/calibration/clean-inputs-v4/qwen3b/ledger.jsonl",
+      "unique_ids": 869,
+      "matched_prompt_ids": 0
+    }
+  ],
+  "missing_expected_compact_archives": [],
+  "archived_exposed_confirm_originals": [],
+  "exclusion_counts": {
+    "pope": {
+      "old_heldout_image_component": 266
+    },
+    "grounding": {
+      "old_heldout_image_component": 318
+    },
+    "consistency": {
+      "old_heldout_image_component": 529,
+      "choice_question_and_option_set_reuse": 25
+    },
+    "mmstar": {
+      "not_single_image_public_ABCD": 261,
+      "old_heldout_image_component": 158,
+      "choice_question_and_option_set_reuse": 16
+    }
+  },
+  "feasibility": {
+    "pope": {
+      "feasible": true,
+      "remaining": 934,
+      "selected_count": 120,
+      "selected_components": 114,
+      "remaining_strata": {
+        "coco-refer-pope-style/adversarial": 307,
+        "coco-refer-pope-style/popular": 311,
+        "coco-refer-pope-style/random": 316
+      }
+    },
+    "grounding": {
+      "feasible": true,
+      "remaining": 882,
+      "selected_count": 120,
+      "selected_components": 117,
+      "remaining_strata": {
+        "refcoco/testA": 166,
+        "refcoco/testB": 177,
+        "refcoco+/testA": 169,
+        "refcoco+/testB": 177,
+        "refcocog/test": 193
+      }
+    },
+    "consistency": {
+      "feasible": true,
+      "remaining": 646,
+      "selected_count": 120,
+      "selected_components": 91,
+      "remaining_strata": {
+        "ai2d/ai2d": 646
+      }
+    },
+    "mmstar": {
+      "feasible": false,
+      "reason": "Insufficient original units in stratum ('mmmu', 'Agriculture'): 2 < 4",
+      "remaining": 765,
+      "remaining_strata": {
+        "mmmu/Accounting": 32,
+        "mmmu/Agriculture": 2,
+        "mmmu/Architecture_and_Engineering": 32,
+        "mmmu/Art": 35,
+        "mmmu/Art_Theory": 22,
+        "mmmu/Basic_Medical_Science": 27,
+        "mmmu/Biology": 15,
+        "mmmu/Chemistry": 9,
+        "mmmu/Clinical_Medicine": 25,
+        "mmmu/Computer_Science": 16,
+        "mmmu/Design": 32,
+        "mmmu/Diagnostics_and_Laboratory_Medicine": 12,
+        "mmmu/Economics": 27,
+        "mmmu/Electronics": 19,
+        "mmmu/Energy_and_Power": 35,
+        "mmmu/Finance": 31,
+        "mmmu/Geography": 32,
+        "mmmu/History": 33,
+        "mmmu/Literature": 34,
+        "mmmu/Manage": 17,
+        "mmmu/Marketing": 31,
+        "mmmu/Materials": 30,
+        "mmmu/Math": 24,
+        "mmmu/Mechanical_Engineering": 34,
+        "mmmu/Music": 20,
+        "mmmu/Pharmacy": 24,
+        "mmmu/Physics": 33,
+        "mmmu/Psychology": 18,
+        "mmmu/Public_Health": 29,
+        "mmmu/Sociology": 35
+      },
+      "unfrozen_capped_quota_alternative": {
+        "target_met": true,
+        "counts": {
+          "mmmu/Accounting": 5,
+          "mmmu/Agriculture": 2,
+          "mmmu/Architecture_and_Engineering": 5,
+          "mmmu/Art": 4,
+          "mmmu/Art_Theory": 4,
+          "mmmu/Basic_Medical_Science": 4,
+          "mmmu/Biology": 4,
+          "mmmu/Chemistry": 4,
+          "mmmu/Clinical_Medicine": 4,
+          "mmmu/Computer_Science": 4,
+          "mmmu/Design": 4,
+          "mmmu/Diagnostics_and_Laboratory_Medicine": 4,
+          "mmmu/Economics": 4,
+          "mmmu/Electronics": 4,
+          "mmmu/Energy_and_Power": 4,
+          "mmmu/Finance": 4,
+          "mmmu/Geography": 4,
+          "mmmu/History": 4,
+          "mmmu/Literature": 4,
+          "mmmu/Manage": 4,
+          "mmmu/Marketing": 4,
+          "mmmu/Materials": 4,
+          "mmmu/Math": 4,
+          "mmmu/Mechanical_Engineering": 4,
+          "mmmu/Music": 4,
+          "mmmu/Pharmacy": 4,
+          "mmmu/Physics": 4,
+          "mmmu/Psychology": 4,
+          "mmmu/Public_Health": 4,
+          "mmmu/Sociology": 4
+        },
+        "all_subjects_retained": true
+      }
+    }
+  },
+  "scope": "Conservative planning exclusions only. Not a complete archived inference inventory, no new confirmation manifest or human review."
+}

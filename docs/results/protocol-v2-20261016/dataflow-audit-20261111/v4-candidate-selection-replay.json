@@ -1,0 +1,49 @@
+{
+  "candidate_originals": 29268,
+  "assigned_originals": 28470,
+  "edge_and_exclusion_counts": {
+    "near-component-edges": 4464,
+    "exclusions": 798
+  },
+  "quota_repairs": 11,
+  "reproduced_role_hashes": {
+    "calibration": "099b111fd1ab4c5149d4ec8da0ac4ae5ed25d9a6b4f5edea15368ce714b7cf08",
+    "audit": "09dd2995899f9849b9eedd90bae8316c3487ccac6b19d93f53c161ff6ebc54dd",
+    "confirm": "7d0ccc2d15d53acce7c59929fe471c02ffabca894a56face5164a57dd15220a9"
+  },
+  "selected_originals_by_role_dataset": {
+    "calibration": {
+      "coco-refer-pope-style": 120,
+      "refcoco": 48,
+      "refcoco+": 48,
+      "refcocog": 24,
+      "mmbench-legacy-calibration": 120,
+      "mmmu": 120
+    },
+    "audit": {
+      "coco-refer-pope-style": 1200,
+      "refcoco": 480,
+      "refcoco+": 480,
+      "refcocog": 240,
+      "ai2d": 1200,
+      "mmmu": 1200
+    },
+    "confirm": {
+      "coco-refer-pope-style": 1200,
+      "refcoco": 480,
+      "refcoco+": 480,
+      "refcocog": 240,
+      "ai2d": 1200,
+      "mmmu": 1200
+    }
+  },
+  "raw_coco_candidate_labels": {
+    "grounding/refcoco": 3523,
+    "pope/random": 1334,
+    "pope/popular": 1334,
+    "pope/adversarial": 1332,
+    "grounding/refcoco+": 3513,
+    "grounding/refcocog": 4654
+  },
+  "scope": "Replay of frozen candidates, dHash graph, role repair, sampling and prompt expansion. No new human review or model outcomes."
+}

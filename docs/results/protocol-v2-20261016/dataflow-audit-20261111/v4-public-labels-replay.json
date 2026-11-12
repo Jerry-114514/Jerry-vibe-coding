@@ -1,0 +1,20 @@
+{
+  "expected_by_role": {
+    "calibration": 120,
+    "audit": 2400,
+    "confirm": 2400
+  },
+  "exact_source_row_matches": {
+    "audit": 2400,
+    "confirm": 2400,
+    "calibration": 120
+  },
+  "source_id_only_matches_after_missing_shard": {},
+  "mismatch_ids": [],
+  "shard_errors": {},
+  "shards_read": 34,
+  "shards_expected": 34,
+  "range_bytes": 4125003,
+  "http_ranges": 400,
+  "scope": "Pinned source text, options and labels; image columns not fetched. Shard identities tied to frozen lock and retirement map."
+}
